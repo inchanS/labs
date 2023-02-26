@@ -4,5 +4,21 @@
         <link>https://www.codject.dev/categories/</link>
         <description>Categories - Category - cOdject</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><atom:link href="https://www.codject.dev/categories/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sun, 26 Feb 2023 19:15:09 &#43;0900</lastBuildDate><atom:link href="https://www.codject.dev/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>categorySample2&#34;</title>
+    <link>https://www.codject.dev/categories/categorysample2/</link>
+    <pubDate>Sun, 26 Feb 2023 19:15:09 &#43;0900</pubDate>
+    <author>cOdject</author>
+    <guid>https://www.codject.dev/categories/categorysample2/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>categorySample</title>
+    <link>https://www.codject.dev/categories/categorysample/</link>
+    <pubDate>Sun, 26 Feb 2023 18:14:39 &#43;0900</pubDate>
+    <author>cOdject</author>
+    <guid>https://www.codject.dev/categories/categorysample/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>

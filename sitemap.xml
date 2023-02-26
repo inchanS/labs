@@ -2,6 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://www.codject.dev/categories/</loc></url><url>
-            <loc>https://www.codject.dev/</loc></url><url>
-            <loc>https://www.codject.dev/tags/</loc></url></urlset>
+            <loc>https://www.codject.dev/categories/</loc><lastmod>2023-02-26T19:15:09&#43;09:00</lastmod></url><url>
+            <loc>https://www.codject.dev/categories/categorysample2/</loc><lastmod>2023-02-26T19:15:09&#43;09:00</lastmod></url><url>
+            <loc>https://www.codject.dev/</loc><lastmod>2023-02-26T19:15:09&#43;09:00</lastmod></url><url>
+            <loc>https://www.codject.dev/posts/</loc><lastmod>2023-02-26T19:15:09&#43;09:00</lastmod></url><url>
+            <loc>https://www.codject.dev/tags/tag2/</loc><lastmod>2023-02-26T19:15:09&#43;09:00</lastmod></url><url>
+            <loc>https://www.codject.dev/tags/</loc><lastmod>2023-02-26T19:15:09&#43;09:00</lastmod></url><url>
+            <loc>https://www.codject.dev/posts/test2/</loc><lastmod>2023-02-26T19:15:09&#43;09:00</lastmod></url><url>
+            <loc>https://www.codject.dev/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</loc><lastmod>2023-02-26T19:15:09&#43;09:00</lastmod></url><url>
+            <loc>https://www.codject.dev/categories/categorysample/</loc><lastmod>2023-02-26T18:14:39&#43;09:00</lastmod></url><url>
+            <loc>https://www.codject.dev/posts/test/</loc><lastmod>2023-02-26T18:14:39&#43;09:00</lastmod></url><url>
+            <loc>https://www.codject.dev/tags/tag/</loc><lastmod>2023-02-26T18:14:39&#43;09:00</lastmod></url></urlset>

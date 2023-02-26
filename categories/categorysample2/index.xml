@@ -1,12 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>cOdject</title>
-        <link>https://www.codject.dev/</link>
-        <description>Code Object proJECT</description>
+        <title>categorySample2&#34; - Category - cOdject</title>
+        <link>https://www.codject.dev/categories/categorysample2/</link>
+        <description>categorySample2&#34; - Category - cOdject</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sun, 26 Feb 2023 19:15:09 &#43;0900</lastBuildDate>
-            <atom:link href="https://www.codject.dev/index.xml" rel="self" type="application/rss+xml" />
-        <item>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sun, 26 Feb 2023 19:15:09 &#43;0900</lastBuildDate><atom:link href="https://www.codject.dev/categories/categorysample2/" rel="self" type="application/rss+xml" /><item>
     <title>Test2</title>
     <link>https://www.codject.dev/posts/test2/</link>
     <pubDate>Sun, 26 Feb 2023 19:15:09 &#43;0900</pubDate>
@@ -29,16 +27,6 @@ tag : #devonthink source : Script: Replace link references with real links in Ma
 이때, 클리핑 포맷은 보통 PDF로 하지만 가끔 code block내 스크롤이 있는 경우에는
 PDF에서 짤린채로 수집되는 문제가 있어 MarkDown 포맷으로 클리핑을 한다.
 나는 주로 아래 두 도구를 사용하여 자료를 정리한다.]]></description>
-</item>
-<item>
-    <title>format sample</title>
-    <link>https://www.codject.dev/posts/test/</link>
-    <pubDate>Sun, 26 Feb 2023 18:14:39 &#43;0900</pubDate>
-    <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/test/</guid>
-    <description><![CDATA[테스트 블로그
-H1 타이틀 H2 title H3 title this is content
-h1 title h2 title ]]></description>
 </item>
 </channel>
 </rss>
