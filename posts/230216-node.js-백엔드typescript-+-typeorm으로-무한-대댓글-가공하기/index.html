@@ -235,12 +235,10 @@ mySQL의 출력방식을 따르기때문에 SQL의 query문에 직접적인 수�
 이런 방법이 불가하다.</strong><br>
 이것도 확실한지는 모르겠는데 며칠을 찾아보고 시도해본 결과,</p>
 <blockquote>
-<p>TypeORM의 <code>getRawMany()</code> 메서드는 쿼리 결과를 직접적으로 반환하는 반면, <code>getMany()</code> 메서드는 Entity 객체를 반환한다.</p>
-<blockquote>
-<p>때문에 <code>select &lt;column&gt;</code>에 바로 수정을 가하게 되면 Entity의 type을 그대로 가져다 쓰는 특성상, 이 컬럼의 <strong>type error</strong>가 난다.
+<p>TypeORM의 <code>getRawMany()</code> 메서드는 쿼리 결과를 직접적으로 반환하는 반면, <code>getMany()</code> 메서드는 Entity 객체를 반환한다.
+때문에 <code>select &lt;column&gt;</code>에 바로 수정을 가하게 되면 Entity의 type을 그대로 가져다 쓰는 특성상, 이 컬럼의 <strong>type error</strong>가 난다.
 즉, select 또는 addSelect로 <strong>Alias하거나 수정을 함과 동시에 출력이 되지 않고 되려 해당 컬럼이 사라진다.</strong></p>
-<p>이러한 상태로의 해결방법은 Entity에서 직접 Alias 해줘야 하는데, 또 이렇게 되면 @CreateDateColumn의 데코레이션 default 옵션이 깨진다.(피나는 시도 결과 ;; ㅠ)</p>
-</blockquote>
+<p>이러한 상태로의 해결방법은 Entity에서 직접 Alias 해줘야 하는데, 또 이렇게 되면 CreateDateColumn의 데코레이션 default 옵션이 깨진다.(피나는 시도 결과 ;; ㅠ)</p>
 </blockquote>
 <!-- raw HTML omitted -->
 <p>때문에 결국 양자택일을 하는 수밖에 없었다.</p>
