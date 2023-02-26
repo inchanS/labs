@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>CSS 선택자 - 조합, 그룹, 가상 - cOdject</title><meta name="Description" content="cOde proJECT"><meta property="og:title" content="CSS 선택자 - 조합, 그룹, 가상" />
+<meta property="og:description" content="CSS 선택자 - 조합, 그룹, 가상 Quote HTML, CSS 실력을 단숨에 수직상승 시킬 수 있는 팁! 바로 ‘클론 코딩’ 입니다.
+단순 반복의 목록형 페이지 - 쇼핑몰이 클론코딩을 하기에 실용적이고, 어렵지 않으면서도 자주 쓰이는 기술이 많이 들어갑니다.
+여러분들이 자주 접속하는 쇼핑몰 중에 심플하고 세련된 사이트를 선정하여, 똑.같.이! 한 페이지만 만들어보세요. 개발자도구를 보면 HTML, CSS 힌트를 얻으실 수 있습니다.
+CSS 선택자 상속(Inheritance) 부모 자식관계의 태그나 요소에서 상위에서 설정된 스타일이 상속된다. 이를테면 body태그에 스타일을 지정하면, 해당 태그내의 모든 태그는 영향을 받아 스타일이 적용된다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.codject.dev/posts/220923-css-%EC%84%A0%ED%83%9D%EC%9E%90-%EC%A1%B0%ED%95%A9-%EA%B7%B8%EB%A3%B9-%EA%B0%80%EC%83%81/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-23T05:19:57+09:00" />
+<meta property="article:modified_time" content="2022-09-23T05:19:57+09:00" /><meta property="og:site_name" content="cOdject" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CSS 선택자 - 조합, 그룹, 가상"/>
+<meta name="twitter:description" content="CSS 선택자 - 조합, 그룹, 가상 Quote HTML, CSS 실력을 단숨에 수직상승 시킬 수 있는 팁! 바로 ‘클론 코딩’ 입니다.
+단순 반복의 목록형 페이지 - 쇼핑몰이 클론코딩을 하기에 실용적이고, 어렵지 않으면서도 자주 쓰이는 기술이 많이 들어갑니다.
+여러분들이 자주 접속하는 쇼핑몰 중에 심플하고 세련된 사이트를 선정하여, 똑.같.이! 한 페이지만 만들어보세요. 개발자도구를 보면 HTML, CSS 힌트를 얻으실 수 있습니다.
+CSS 선택자 상속(Inheritance) 부모 자식관계의 태그나 요소에서 상위에서 설정된 스타일이 상속된다. 이를테면 body태그에 스타일을 지정하면, 해당 태그내의 모든 태그는 영향을 받아 스타일이 적용된다."/>
+<meta name="application-name" content="cOdject">
+<meta name="apple-mobile-web-app-title" content="cOdject"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.codject.dev/posts/220923-css-%EC%84%A0%ED%83%9D%EC%9E%90-%EC%A1%B0%ED%95%A9-%EA%B7%B8%EB%A3%B9-%EA%B0%80%EC%83%81/" /><link rel="prev" href="https://www.codject.dev/posts/220922-css-image-sprite/" /><link rel="next" href="https://www.codject.dev/posts/221004-%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%99%94%EB%A9%B4-%EA%B5%AC%EC%84%B1/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CSS 선택자 - 조합, 그룹, 가상",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.codject.dev\/posts\/220923-css-%EC%84%A0%ED%83%9D%EC%9E%90-%EC%A1%B0%ED%95%A9-%EA%B7%B8%EB%A3%B9-%EA%B0%80%EC%83%81\/"
+        },"genre": "posts","keywords": "css","wordcount":  182 ,
+        "url": "https:\/\/www.codject.dev\/posts\/220923-css-%EC%84%A0%ED%83%9D%EC%9E%90-%EC%A1%B0%ED%95%A9-%EA%B7%B8%EB%A3%B9-%EA%B0%80%EC%83%81\/","datePublished": "2022-09-23T05:19:57+09:00","dateModified": "2022-09-23T05:19:57+09:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "cOdject"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="cOdject">cOdject</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="cOdject">cOdject</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">CSS 선택자 - 조합, 그룹, 가상</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>cOdject</a></span>&nbsp;<span class="post-category">included in <a href="/categories/front-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Front-End</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-23">2022-09-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;182 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#css-선택자---조합-그룹-가상">CSS 선택자 - 조합, 그룹, 가상</a></li>
+    <li><a href="#css-선택자">CSS 선택자</a>
+      <ul>
+        <li><a href="#상속inheritance">상속(Inheritance)</a></li>
+        <li><a href="#그룹grouping">그룹(Grouping)</a></li>
+        <li><a href="#조합">조합</a></li>
+        <li><a href="#css-적용-우선순위">CSS 적용 우선순위</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="css-선택자---조합-그룹-가상">CSS 선택자 - 조합, 그룹, 가상</h2>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw" aria-hidden="true"></i>Quote<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>HTML, CSS 실력을 단숨에 수직상승 시킬 수 있는 팁! 바로 <strong>‘클론 코딩’</strong> 입니다.</p>
+<p>단순 반복의 목록형 페이지 - 쇼핑몰이 클론코딩을 하기에 실용적이고, 어렵지 않으면서도 자주 쓰이는 기술이 많이 들어갑니다.</p>
+<p>여러분들이 자주 접속하는 쇼핑몰 중에 심플하고 세련된 사이트를 선정하여, 똑.같.이! 한 페이지만 만들어보세요. 개발자도구를 보면 HTML, CSS 힌트를 얻으실 수 있습니다.</p>
+</div>
+        </div>
+    </div>
+<h2 id="css-선택자">CSS 선택자</h2>
+<h3 id="상속inheritance">상속(Inheritance)</h3>
+<p>부모 자식관계의 태그나 요소에서 상위에서 설정된 스타일이 상속된다.
+이를테면 <code>body</code>태그에 스타일을 지정하면, 해당 태그내의 모든 태그는 영향을 받아 스타일이 적용된다.</p>
+<h3 id="그룹grouping">그룹(Grouping)</h3>
+<p>다중 요소의 스타일을 한번에 처리하고자 할때, 해당 요소 사이에 <code>, </code>로 구분하여 처리한다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* 예시 코드 */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">name</span><span class="o">,</span> <span class="nt">span</span><span class="o">,</span> <span class="p">#</span><span class="nn">hero</span><span class="o">,</span> <span class="nt">p</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">color</span><span class="o">:</span> <span class="nt">green</span><span class="o">;</span>
+</span></span></code></pre></div><p>일관성이 필요한 스타일의 경우 유용하게 쓸 수 있으며, 한번에 유지보수가 가능한 이점이 있다.</p>
+<h3 id="조합">조합</h3>
+<p>부모-자식간의 관계는 <strong>한칸 띄워쓰기</strong>로 표현한다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* class=&#34;pre&#34; 안에 있는 모든 span태그를 지칭 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">pre</span> <span class="nt">span</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">background-color</span><span class="p">:</span> <span class="kc">yellow</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>하나의 요소에서 클래스,ID로 조합될 경우에는 <strong>붙여쓰기</strong>로 표현한다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>빨간색으로 표현됨<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;hero&#34;</span><span class="p">&gt;</span>빨간색에다가 밑줄 적용이 추가됨<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* p태그의 컬러는 상속되고, hero아이디의 속성이 개별적으로 적용된다.*/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">p</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">p</span><span class="p">#</span><span class="nn">hero</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">text-decoration</span><span class="p">:</span> <span class="kc">underline</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="css-적용-우선순위">CSS 적용 우선순위</h3>
+<ol>
+<li>inline styling (ex. <code>&lt;p style=&quot;font-size: 30px;&quot;&gt;인라인스타일 적용&lt;/p&gt;</code>)</li>
+<li>id</li>
+<li>class</li>
+<li>tag</li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-09-23</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/css/">css</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/220922-css-image-sprite/" class="prev" rel="prev" title="CSS - Image Sprite"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>CSS - Image Sprite</a>
+            <a href="/posts/221004-%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%99%94%EB%A9%B4-%EA%B5%AC%EC%84%B1/" class="next" rel="next" title="인스타그램 로그인 화면 구성">인스타그램 로그인 화면 구성<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">cOdject</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"c0dject/blog-comments"}},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"codject","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-8M6THXHH8G', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-8M6THXHH8G" async></script></body>
+</html>

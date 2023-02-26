@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기 - cOdject</title><meta name="Description" content="cOde proJECT"><meta property="og:title" content="Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기" />
+<meta property="og:description" content="#project_review
+기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker #typeORM createQueryBuilder 메소드로 출력시
+2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다.
+우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
+mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.codject.dev/posts/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-&#43;-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-16T04:17:07+09:00" />
+<meta property="article:modified_time" content="2023-02-16T04:17:07+09:00" /><meta property="og:site_name" content="cOdject" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기"/>
+<meta name="twitter:description" content="#project_review
+기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker #typeORM createQueryBuilder 메소드로 출력시
+2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다.
+우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
+mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
+<meta name="application-name" content="cOdject">
+<meta name="apple-mobile-web-app-title" content="cOdject"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.codject.dev/posts/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-&#43;-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0/" /><link rel="prev" href="https://www.codject.dev/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./" /><link rel="next" href="https://www.codject.dev/posts/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Node.js 백엔드TypeScript + typeORM으로 무한 대댓글 가공하기",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.codject.dev\/posts\/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-\u002b-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0\/"
+        },"genre": "posts","keywords": "TypeScript, typeORM","wordcount":  1287 ,
+        "url": "https:\/\/www.codject.dev\/posts\/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-\u002b-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0\/","datePublished": "2023-02-16T04:17:07+09:00","dateModified": "2023-02-16T04:17:07+09:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "cOdject"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="cOdject">cOdject</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="cOdject">cOdject</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Node.js 백엔드TypeScript + typeORM으로 무한 대댓글 가공하기</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>cOdject</a></span>&nbsp;<span class="post-category">included in <a href="/categories/node.js/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Node.js</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-16">2023-02-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1287 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#기능-구현-목표">기능 구현 목표</a></li>
+    <li><a href="#가장-오랜시간을-지연시켰던-blocker">가장 오랜시간을 지연시켰던 Blocker</a></li>
+    <li><a href="#해결방안">해결방안</a>
+      <ul>
+        <li><a href="#1-local-시간대-맞추기">1. local 시간대 맞추기</a></li>
+        <li><a href="#2-시간-구분자-제거">2. 시간 구분자 제거</a></li>
+        <li><a href="#3-정밀-초단위는-제거하고-시분까지만-출력">3. 정밀 초단위는 제거하고 시,분까지만 출력</a></li>
+        <li><a href="#entity">Entity</a></li>
+        <li><a href="#repository단">Repository단!!!</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>#project_review</p>
+<hr>
+<h2 id="기능-구현-목표">기능 구현 목표</h2>
+<ol>
+<li>댓글, 대댓글&hellip; 대댓글 등의 <strong>무한대댓글</strong> 구조</li>
+<li>typeORM의 <strong>Entity를 연계한 createQueryBuilder</strong> 등을 <strong>지향하며</strong>, 최대한 직접적인 QueryRunner 방식 <strong>지양</strong></li>
+<li>삭제 및 비공개 댓글 가림</li>
+<li>json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! )</li>
+</ol>
+<h2 id="가장-오랜시간을-지연시켰던-blocker">가장 오랜시간을 지연시켰던 Blocker</h2>
+<p>#typeORM createQueryBuilder 메소드로 출력시</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="nx">14T08</span>:<span class="kt">55</span><span class="o">:</span><span class="mf">24.090</span><span class="nx">Z</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//        ^         ^^^^     &lt;- 거추장스럽다.
+</span></span></span></code></pre></div><p>이런 식으로 나오는 문제가 있는데 꽤나 씨름했다.</p>
+<p>우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.<br>
+<strong>mySQL에서의 출력은</strong> DB가 설치된 서버의 시간대를 따르기에<br>
+아래와 같이 문제가 없다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mySQL" data-lang="mySQL"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">comments</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">feedId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mySQL" data-lang="mySQL"><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">14</span><span class="w"> </span><span class="mi">17</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">24</span><span class="p">.</span><span class="mi">106558</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 이게 실제 한국 시간
+</span></span></span></code></pre></div><p>문제는,<br>
+typeORM에서의 repository + createQueryBuilder를 이용한 직접 출력이다.<br>
+typeORM의 <code>.find</code>나 <code>createQueryBuilder</code> 메소드를 통해 출력을 하게 되면 ISO 8601 형식으로 내보내지기 때문에 먼저 보여줬던 예와 같이 문제가 생기는데 다시 정리하면 아래와 같다.</p>
+<ol>
+<li><strong>시간대 안맞음 (실제 시간은 17:55:24)</strong></li>
+<li>시간대 앞 뒤로 <strong>T, 090Z와 같은 부가요소가 함께 출력</strong></li>
+</ol>
+<p>현재 데이터를 출력하려는 query는 다음과 같다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">CommentRepository</span> <span class="o">=</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">getRepository</span><span class="p">(</span><span class="nx">Comment</span><span class="p">).</span><span class="nx">extend</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">getCommentList</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">createQueryBuilder</span><span class="p">(</span><span class="s1">&#39;comment&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">leftJoinAndSelect</span><span class="p">(</span><span class="s1">&#39;comment.children&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">leftJoinAndSelect</span><span class="p">(</span><span class="s1">&#39;comment.user&#39;</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">leftJoinAndSelect</span><span class="p">(</span><span class="s1">&#39;comment.feed&#39;</span><span class="p">,</span> <span class="s1">&#39;feed&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">leftJoinAndSelect</span><span class="p">(</span><span class="s1">&#39;children.user&#39;</span><span class="p">,</span> <span class="s1">&#39;childrenUser&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">leftJoinAndSelect</span><span class="p">(</span><span class="s1">&#39;children.feed&#39;</span><span class="p">,</span> <span class="s1">&#39;childrenFeed&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">where</span><span class="p">(</span><span class="s1">&#39;comment.feed = :id&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">})</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">andWhere</span><span class="p">(</span><span class="s1">&#39;comment.parentId IS NULL&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">orderBy</span><span class="p">(</span><span class="s1">&#39;comment.id&#39;</span><span class="p">,</span> <span class="s1">&#39;ASC&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">addOrderBy</span><span class="p">(</span><span class="s1">&#39;children.id&#39;</span><span class="p">,</span> <span class="s1">&#39;ASC&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">setParameter</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">getMany</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="해결방안">해결방안</h2>
+<h3 id="1-local-시간대-맞추기">1. local 시간대 맞추기</h3>
+<p>우선, 이를 local의 시간대로 맞추기 위해
+아래와 같이 DataSource 설정에 <code>timezone: 'Z'</code> 를 추가하여 local 시간대로 출력되게끔 한다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DataSource</span><span class="p">({</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">type</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_CONNECTION</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">host</span>: <span class="kt">process.env.TYPEORM_HOST</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">port</span>: <span class="kt">process.env.TYPEORM_PORT</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">username</span>: <span class="kt">process.env.TYPEORM_USERNAME</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">password</span>: <span class="kt">process.env.TYPEORM_PASSWORD</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">database</span>: <span class="kt">process.env.TYPEORM_DATABASE</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">entities</span><span class="o">:</span> <span class="p">[</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">&#39;/../**/*.entity.{js,ts}&#39;</span><span class="p">],</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">timezone</span><span class="o">:</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span>  <span class="c1">// &lt;-- 이렇게 추가
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">logging</span>: <span class="kt">Boolean</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_LOGGING</span><span class="p">),</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">synchronize</span>: <span class="kt">Boolean</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_SYNCHRONIZE</span><span class="p">),</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">charset</span><span class="o">:</span> <span class="s1">&#39;utf8mb4&#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 출력시,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="nx">14T17</span>:<span class="kt">55</span><span class="o">:</span><span class="mf">24.106</span><span class="nx">Z</span>
+</span></span></code></pre></div><p>자 이제 시간대는 맞춰졌다.</p>
+<h3 id="2-시간-구분자-제거">2. 시간 구분자 제거</h3>
+<p>다음은 문제의 저 <code>T</code>와 <code>Z</code>를 날려보자.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="nx">dateStrings</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span></code></pre></div><p>DataSouce 연결 설정에 이걸 넣어준다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DataSource</span><span class="p">({</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">type</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_CONNECTION</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">host</span>: <span class="kt">process.env.TYPEORM_HOST</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">port</span>: <span class="kt">process.env.TYPEORM_PORT</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">username</span>: <span class="kt">process.env.TYPEORM_USERNAME</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">password</span>: <span class="kt">process.env.TYPEORM_PASSWORD</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">database</span>: <span class="kt">process.env.TYPEORM_DATABASE</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">entities</span><span class="o">:</span> <span class="p">[</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">&#39;/../**/*.entity.{js,ts}&#39;</span><span class="p">],</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">timezone</span><span class="o">:</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">dateStrings</span>: <span class="kt">true</span><span class="p">,</span>  <span class="c1">// &lt;-- 이렇게 추가
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">logging</span>: <span class="kt">Boolean</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_LOGGING</span><span class="p">),</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">synchronize</span>: <span class="kt">Boolean</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_SYNCHRONIZE</span><span class="p">),</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">charset</span><span class="o">:</span> <span class="s1">&#39;utf8mb4&#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></div><p>그리고 다시 출력을 해보면</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">14</span> <span class="nx">17</span>:<span class="kt">55</span><span class="o">:</span><span class="mf">24.106558</span>
+</span></span></code></pre></div><p>드디어 불필요한 알파벳은 사라졌다&hellip;라기보단,
+<strong>그런데 더 거추장스럽게도 밀리초(?)로 바뀌었다.</strong><br>
+이제 이걸 제거해보자!</p>
+<h3 id="3-정밀-초단위는-제거하고-시분까지만-출력">3. 정밀 초단위는 제거하고 시,분까지만 출력</h3>
+<p>여기서 정말 많이 찾아보고 공부했다.<br>
+typeORM의 queryRunner를 사용하거나,<br>
+createQueryBuilder에서 getRawMany()를 사용해 자료를 뽑아낸다면,<br>
+mySQL의 출력방식을 따르기때문에 SQL의 query문에 직접적인 수정을 가하여 컬럼값을 조정할 수가 있다.<br>
+(또는 toISOString()과 같은 메소드를 사용하여도 된다.)</p>
+<p>예시)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nf">SUBSTRING</span><span class="p">(</span><span class="n">created_at</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">created_at</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">comments</span><span class="w">
+</span></span></span></code></pre></div><p>결과</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mySQL" data-lang="mySQL"><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">14</span><span class="w"> </span><span class="mi">17</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">24</span><span class="w">
+</span></span></span></code></pre></div><p>하지만, 위에서 쓰고 있는 <strong>Entity에서 그대로 가져오는 getMany() 메소드를 이용해 자료를 가져오게 되면,<br>
+이런 방법이 불가하다.</strong><br>
+이것도 확실한지는 모르겠는데 며칠을 찾아보고 시도해본 결과,</p>
+<blockquote>
+<p>TypeORM의 <code>getRawMany()</code> 메서드는 쿼리 결과를 직접적으로 반환하는 반면, <code>getMany()</code> 메서드는 Entity 객체를 반환한다.</p>
+<blockquote>
+<p>때문에 <code>select &lt;column&gt;</code>에 바로 수정을 가하게 되면 Entity의 type을 그대로 가져다 쓰는 특성상, 이 컬럼의 <strong>type error</strong>가 난다.
+즉, select 또는 addSelect로 <strong>Alias하거나 수정을 함과 동시에 출력이 되지 않고 되려 해당 컬럼이 사라진다.</strong></p>
+<p>이러한 상태로의 해결방법은 Entity에서 직접 Alias 해줘야 하는데, 또 이렇게 되면 @CreateDateColumn의 데코레이션 default 옵션이 깨진다.(피나는 시도 결과 ;; ㅠ)</p>
+</blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>때문에 결국 양자택일을 하는 수밖에 없었다.</p>
+<ul>
+<li>getMany() 방식을 포기하거나,</li>
+<li>service단에서 복잡하지만 수정을 가한다.</li>
+</ul>
+<h5 id="굳이-getmany-방식을-고집하는-이유는-다음과-같다">굳이 getMany() 방식을 고집하는 이유는 다음과 같다.</h5>
+<ul>
+<li>현재 저 코드  Comment Entity에서 가져오며, 해당 Entity는 parent와 children&lt;Comment[]&gt;의 자기참조 컬럼을 가지고 있는 Tree 구조로 이루어져 있다. 그리고 typeORM의 createQueryBuilder는 이 구조 특성을 그대로 살려서 출력이 가능하다.</li>
+<li>반대로 <strong>query runner 방식으로 처리하여 같은 tree 구조를 출력하려면,  repository단에서 굉장히 지독히도 가독성이 떨어지는 코드로</strong> 구현된다(물론 현재의 내 수준에서;;).<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>  typeORM의 Tree 방식으로 출력가능한 getMany() 메소드를 포기하게 된다면, repository단에서의 query가 생각보다 복잡하게 된다.</li>
+<li>추후 유지보수의 가능성을 염두에 둔다.</li>
+</ul>
+<p>대댓글 뿐만 아니라, 대대댓글 등의 무한 대댓글 구조역시 가능하도록 진행을 하는데 현재 Date type만의 수정을 원한다면, service단에서의 조정이 맞다는 판단이 들었다.</p>
+<p>때문에 다음과 같이 service단에서 코드를 <strong>재귀함수(무한대댓글을 구현하기 위해)로</strong> 추가하며,<br>
+원하는 결과를 가져올 수 있도록 조정한다.</p>
+<p>추가코드</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// comments.service.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 가공영역에 대한 재귀함수
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">formatComment</span> <span class="o">=</span> <span class="p">(</span><span class="nx">comment</span>: <span class="kt">any</span><span class="p">,</span> <span class="nx">userId</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">any</span> <span class="o">=&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">isPrivate</span> <span class="o">=</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">is_private</span> <span class="o">===</span> <span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">userId</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">isDeleted</span> <span class="o">=</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">deleted_at</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">formattedComment</span> <span class="o">=</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="c1">// 로그인 사용자의 비밀덧글 조회시 유효성 확인 및 삭제된 덧글 필터링  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">...</span><span class="nx">comment</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">    <span class="nx">comment</span>: <span class="kt">isDeleted</span>  
+</span></span><span class="line"><span class="cl">      <span class="o">?</span> <span class="s1">&#39;## DELETED_COMMENT ##&#39;</span>  
+</span></span><span class="line"><span class="cl">      <span class="o">:</span> <span class="nx">isPrivate</span>  
+</span></span><span class="line"><span class="cl">      <span class="o">?</span> <span class="s1">&#39;## PRIVATE_COMMENT ##&#39;</span>  
+</span></span><span class="line"><span class="cl">      <span class="o">:</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">comment</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c1">// Date 타입의 컬럼에서 불필요한 밀리초 부분 제외  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">created_at</span>: <span class="kt">comment.created_at.substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span>  
+</span></span><span class="line"><span class="cl">    <span class="nx">updated_at</span>: <span class="kt">comment.updated_at.substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span>  
+</span></span><span class="line"><span class="cl">    <span class="nx">deleted_at</span>: <span class="kt">comment.deleted_at</span> <span class="o">?</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">deleted_at</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span> <span class="o">:</span> <span class="kc">null</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c1">// 대댓글 영역 --------------------------------    children: comment.children  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="o">?</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">children</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">child</span>: <span class="kt">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">formatComment</span><span class="p">(</span><span class="nx">child</span><span class="p">,</span> <span class="nx">userId</span><span class="p">))</span>  
+</span></span><span class="line"><span class="cl">      <span class="o">:</span> <span class="p">[],</span>  
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">formattedComment</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">};</span>  
+</span></span></code></pre></div><hr>
+<h4 id="이후-리팩토링을-하며-만들어진-최종-대댓글-api-결과">이후 리팩토링을 하며 만들어진 최종 대댓글 API 결과.</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 현재 로그인 유저의 id는 16번
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">95</span><span class="p">,</span>            <span class="c1">// &lt;- 원댓글
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="s2">&#34;2023-02-14 21:36:43&#34;</span><span class="p">,</span>  <span class="c1">// &lt;-- 짜잔!! 드디어 깔끔한 마무리!
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="s2">&#34;2023-02-14 21:36:43&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;deleted_at&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;user&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;nickname&#34;</span><span class="p">:</span> <span class="s2">&#34;103&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;serswell2@hc360.com&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;feed&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;vulputate luctus cum sociis&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;comment&#34;</span><span class="p">:</span> <span class="s2">&#34;nulla tellus in sagittis&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;is_private&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;children&#34;</span><span class="p">:</span> <span class="p">[</span>            <span class="c1">// &lt;- 1차 대댓글 배열
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">212</span><span class="p">,</span>            <span class="c1">// &lt;- 대댓글
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="s2">&#34;2023-02-14 21:36:43&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="s2">&#34;2023-02-14 21:36:43&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;deleted_at&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;user&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;nickname&#34;</span><span class="p">:</span> <span class="s2">&#34;test nickname6&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;test6@test.com&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;comment&#34;</span><span class="p">:</span> <span class="s2">&#34;댓글 수정 테스트&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;is_private&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;children&#34;</span><span class="p">:</span> <span class="p">[</span>            <span class="c1">// &lt;- 2차 대댓글 배열
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>          <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">220</span><span class="p">,</span>            <span class="c1">// &lt;- 대댓글에 대한 대댓글
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="s2">&#34;2023-02-16 20:04:19&#34;</span><span class="p">,</span>     <span class="c1">// &lt;-여기까지 재귀함수가
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="s2">&#34;2023-02-16 20:04:19&#34;</span><span class="p">,</span>     <span class="c1">// 잘 적용되고 있음을 확인!!
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nt">&#34;deleted_at&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;user&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="nt">&#34;nickname&#34;</span><span class="p">:</span> <span class="s2">&#34;test nickname6&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;test6@test.com&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">},</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;comment&#34;</span><span class="p">:</span> <span class="s2">&#34;레포지토리 커멘트 생성 테스트&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;is_private&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;children&#34;</span><span class="p">:</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">214</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="s2">&#34;2023-02-14 21:36:43&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="s2">&#34;2023-02-14 21:36:43&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;deleted_at&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;user&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>                               <span class="c1">// 다른 유저가 작성한 비공개 대댓글
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>          <span class="nt">&#34;nickname&#34;</span><span class="p">:</span> <span class="s2">&#34;test nickname5&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;test5@test.com&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;comment&#34;</span><span class="p">:</span> <span class="s2">&#34;## PRIVATE_COMMENT ##&#34;</span><span class="p">,</span>       <span class="c1">// &lt;- 여기서도 정상적 차단 확인
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nt">&#34;is_private&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;children&#34;</span><span class="p">:</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">215</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;created_at&#34;</span><span class="p">:</span> <span class="s2">&#34;2023-02-14 21:36:43&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;updated_at&#34;</span><span class="p">:</span> <span class="s2">&#34;2023-02-16 20:03:42&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;deleted_at&#34;</span><span class="p">:</span> <span class="s2">&#34;2023-02-16 20:03:42&#34;</span><span class="p">,</span>       <span class="c1">// &lt;- 본인의 삭제한 댓글
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nt">&#34;user&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;nickname&#34;</span><span class="p">:</span> <span class="s2">&#34;test nickname6&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;test6@test.com&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;comment&#34;</span><span class="p">:</span> <span class="s2">&#34;## DELETED_COMMENT ##&#34;</span><span class="p">,</span>       <span class="c1">// &lt;- 정상적 차단 확인
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nt">&#34;is_private&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;children&#34;</span><span class="p">:</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></div><p>아주 이쁘게 잘 나왔다.</p>
+<p>typeORM 관련하여 전체적으로 내가 원하는 샘플코드는 구체적으로 검색해보기가 힘들어, 대부분 <a href="https://typeorm.io/" target="_blank" rel="noopener noreffer ">typeORM 공식문서</a>를 참고하며 진행하였고, 생각보다 공식문서가 굉장히 잘되어 있어 놀랐다.<br>
+(공식문서 속에서 원하는 정보 찾는게 더 시간이 많이 걸렸;;)</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="entity">Entity</h3>
+<p>아! Entity에서 기본적으로 들어가는 id와 created_at, updated_at 등은 Base Entity로 따로 만들어 Entity 작업시 반복적으로 기입하지 않고 Embeded Entityes 방식으로 처리하였다.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// comment.entity.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">@Entity</span><span class="p">(</span><span class="s1">&#39;comments&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Comment</span> <span class="kr">extends</span> <span class="nx">Base</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="kd">@ManyToOne</span><span class="p">(</span><span class="kr">type</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">,</span> <span class="nx">users</span> <span class="o">=&gt;</span> <span class="nx">users</span><span class="p">.</span><span class="nx">comment</span><span class="p">,</span> <span class="p">{</span> <span class="nx">nullable</span>: <span class="kt">false</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="kd">@JoinColumn</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;userId&#39;</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">user</span>: <span class="kt">User</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="kd">@ManyToOne</span><span class="p">(</span><span class="kr">type</span> <span class="o">=&gt;</span> <span class="nx">Feed</span><span class="p">,</span> <span class="nx">feeds</span> <span class="o">=&gt;</span> <span class="nx">feeds</span><span class="p">.</span><span class="nx">comment</span><span class="p">,</span> <span class="p">{</span> <span class="nx">nullable</span>: <span class="kt">false</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="kd">@JoinColumn</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;feedId&#39;</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">feed</span>: <span class="kt">Feed</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="kd">@Column</span><span class="p">({</span> <span class="nx">length</span>: <span class="kt">1000</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">comment</span>: <span class="kt">string</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="kd">@Column</span><span class="p">(</span><span class="s1">&#39;boolean&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="k">default</span><span class="o">:</span> <span class="kc">false</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">is_private</span>: <span class="kt">boolean</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="kd">@ManyToOne</span><span class="p">(</span><span class="kr">type</span> <span class="o">=&gt;</span> <span class="nx">Comment</span><span class="p">,</span> <span class="nx">comment</span> <span class="o">=&gt;</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">children</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  <span class="kd">@JoinColumn</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;parentId&#39;</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">parent</span>: <span class="kt">Comment</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="kd">@OneToMany</span><span class="p">(</span><span class="kr">type</span> <span class="o">=&gt;</span> <span class="nx">Comment</span><span class="p">,</span> <span class="nx">comment</span> <span class="o">=&gt;</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">parent</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">children</span>: <span class="kt">Comment</span><span class="p">[];</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="service단">service단!!</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// comments.service.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 무한 대댓글의 경우, 재귀적으로 호출되는 함수  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">formatComment</span> <span class="o">=</span> <span class="p">(</span><span class="nx">comment</span>: <span class="kt">any</span><span class="p">,</span> <span class="nx">userId</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">any</span> <span class="o">=&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">isPrivate</span> <span class="o">=</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">is_private</span> <span class="o">===</span> <span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">userId</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">isDeleted</span> <span class="o">=</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">deleted_at</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">formattedComment</span> <span class="o">=</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">...</span><span class="nx">comment</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">    <span class="c1">// 로그인 사용자의 비밀덧글 조회시 유효성 확인 및 삭제된 덧글 필터링  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">comment</span>: <span class="kt">isDeleted</span>  
+</span></span><span class="line"><span class="cl">      <span class="o">?</span> <span class="s1">&#39;## DELETED_COMMENT ##&#39;</span>  
+</span></span><span class="line"><span class="cl">      <span class="o">:</span> <span class="nx">isPrivate</span>  
+</span></span><span class="line"><span class="cl">      <span class="o">?</span> <span class="s1">&#39;## PRIVATE_COMMENT ##&#39;</span>  
+</span></span><span class="line"><span class="cl">      <span class="o">:</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">comment</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c1">// Date 타입의 컬럼에서 불필요한 밀리초 부분 제외  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">created_at</span>: <span class="kt">comment.created_at.substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span>  
+</span></span><span class="line"><span class="cl">    <span class="nx">updated_at</span>: <span class="kt">comment.updated_at.substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span>  
+</span></span><span class="line"><span class="cl">    <span class="nx">deleted_at</span>: <span class="kt">comment.deleted_at</span> <span class="o">?</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">deleted_at</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span> <span class="o">:</span> <span class="kc">null</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c1">// 대댓글 영역 --------------------------------    children: comment.children  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="o">?</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">children</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">child</span>: <span class="kt">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">formatComment</span><span class="p">(</span><span class="nx">child</span><span class="p">,</span> <span class="nx">userId</span><span class="p">))</span>  
+</span></span><span class="line"><span class="cl">      <span class="o">:</span> <span class="p">[],</span>  
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">formattedComment</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">};</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">getCommentList</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">userId</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">CommentRepository</span><span class="p">.</span><span class="nx">getCommentList</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">formattedResult</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">result</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">comment</span>: <span class="kt">any</span><span class="p">)</span> <span class="o">=&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nx">formatComment</span><span class="p">(</span><span class="nx">comment</span><span class="p">,</span> <span class="nx">userId</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">formattedResult</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><h3 id="repository단">Repository단!!!</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// comment.repository.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">CommentRepository</span> <span class="o">=</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">getRepository</span><span class="p">(</span><span class="nx">Comment</span><span class="p">).</span><span class="nx">extend</span><span class="p">({</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">getCommentList</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">createQueryBuilder</span><span class="p">(</span><span class="s1">&#39;comment&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">withDeleted</span><span class="p">()</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">addSelect</span><span class="p">([</span><span class="s1">&#39;user.id&#39;</span><span class="p">,</span> <span class="s1">&#39;user.nickname&#39;</span><span class="p">,</span> <span class="s1">&#39;user.email&#39;</span><span class="p">])</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">addSelect</span><span class="p">([</span><span class="s1">&#39;feed.id&#39;</span><span class="p">,</span> <span class="s1">&#39;feed.title&#39;</span><span class="p">])</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">addSelect</span><span class="p">([</span>  
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;childrenUser.id&#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;childrenUser.nickname&#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;childrenUser.email&#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">])</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">addSelect</span><span class="p">([</span>  
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;childrenUser2.id&#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;childrenUser2.nickname&#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;childrenUser2.email&#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">])</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">leftJoin</span><span class="p">(</span><span class="s1">&#39;comment.user&#39;</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">leftJoin</span><span class="p">(</span><span class="s1">&#39;comment.feed&#39;</span><span class="p">,</span> <span class="s1">&#39;feed&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">leftJoinAndSelect</span><span class="p">(</span><span class="s1">&#39;comment.children&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">leftJoin</span><span class="p">(</span><span class="s1">&#39;children.user&#39;</span><span class="p">,</span> <span class="s1">&#39;childrenUser&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">leftJoinAndSelect</span><span class="p">(</span><span class="s1">&#39;children.children&#39;</span><span class="p">,</span> <span class="s1">&#39;children2&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">leftJoin</span><span class="p">(</span><span class="s1">&#39;children2.user&#39;</span><span class="p">,</span> <span class="s1">&#39;childrenUser2&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">where</span><span class="p">(</span><span class="s1">&#39;comment.feed = :id&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">andWhere</span><span class="p">(</span><span class="s1">&#39;comment.parentId IS NULL&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">orderBy</span><span class="p">(</span><span class="s1">&#39;comment.id&#39;</span><span class="p">,</span> <span class="s1">&#39;ASC&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">addOrderBy</span><span class="p">(</span><span class="s1">&#39;children.id&#39;</span><span class="p">,</span> <span class="s1">&#39;ASC&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">setParameter</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">getMany</span><span class="p">();</span>  
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.codject.dev/2022/12/221227-fastfive-4.html#%ea%b0%80%ec%9e%a5%eb%a7%8e%ec%9d%b4%ea%b3%a0%eb%af%bc%ed%95%9creplyapi" target="_blank" rel="noopener noreffer ">fastfive 기업과제에서 수행했던 자기참조방식의 대댓글 구현</a> 여기서 query runner방식은 이미 해봤기에 이번에는 특히나 typeORM의 queryBuilder 문법으로만 진행해보고 싶었다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://typeorm.io/" target="_blank" rel="noopener noreffer ">TypeORM - Amazing ORM for TypeScript and JavaScript (ES7, ES6, ES5). Supports MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server, Oracle, WebSQL databases. Works in NodeJS, Browser, Ionic, Cordova and Electron platforms.</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-02-16</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typescript/">TypeScript</a>,&nbsp;<a href="/tags/typeorm/">typeORM</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./" class="prev" rel="prev" title="chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다."><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.</a>
+            <a href="/posts/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" class="next" rel="next" title="typeORM transaction에서 repository 사용하기">typeORM transaction에서 repository 사용하기<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">cOdject</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"c0dject/blog-comments"}},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"codject","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-8M6THXHH8G', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-8M6THXHH8G" async></script></body>
+</html>

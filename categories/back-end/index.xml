@@ -1,0 +1,51 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Back-End - Category - cOdject</title>
+        <link>https://www.codject.dev/categories/back-end/</link>
+        <description>Back-End - Category - cOdject</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Wed, 28 Dec 2022 04:58:02 &#43;0900</lastBuildDate><atom:link href="https://www.codject.dev/categories/back-end/" rel="self" type="application/rss+xml" /><item>
+    <title>AWS 퍼블릭 IP와 탄력적 IP</title>
+    <link>https://www.codject.dev/posts/221228-aws-%ED%8D%BC%EB%B8%94%EB%A6%AD-ip%EC%99%80-%ED%83%84%EB%A0%A5%EC%A0%81-ip/</link>
+    <pubDate>Wed, 28 Dec 2022 04:58:02 &#43;0900</pubDate>
+    <author>cOdject</author>
+    <guid>https://www.codject.dev/posts/221228-aws-%ED%8D%BC%EB%B8%94%EB%A6%AD-ip%EC%99%80-%ED%83%84%EB%A0%A5%EC%A0%81-ip/</guid>
+    <description><![CDATA[tag : #aws
+related link
+[AWS] 📚 EIP(탄력적 IP) 개념 &amp; 사용 세팅 정리 AWS EC2에서 백엔드 서버와 프론트엔드 서버를 돌리는 와중, 백엔드 서버의 PM2 리스트 전체가 다운이 되면서 멈추는 일이 발생했다.
+이래저래 복구를 하다가, 프리티어 t2의 메모리 부족 현상때문이라는 결론에 다달았고
+ec2를 재부팅하였다.
+AWS 퍼블릭 IP 주소가 바뀌었다? EC2 재부팅 결과, 서버의 퍼블릭 IPv4 주소가 바뀌는 일이 발생했다.
+왜 그런가 찾아보니 AWS 기술문서에 다음과 같은 안내가 있었다.
+퍼블릭 IP 주소1 다음과 같은 경우 인스턴스의 퍼블릭 IP 주소가 변경됩니다.]]></description>
+</item>
+<item>
+    <title>status code 204</title>
+    <link>https://www.codject.dev/posts/221225-status-code-204/</link>
+    <pubDate>Sun, 25 Dec 2022 05:09:42 &#43;0900</pubDate>
+    <author>cOdject</author>
+    <guid>https://www.codject.dev/posts/221225-status-code-204/</guid>
+    <description><![CDATA[tag : #restAPI
+#restAPI
+덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실!
+statusCode 204는 response를 전송하지 않는다!! 다만 status code &ldquo;204&rdquo; 만 전달할 뿐.
+이걸 몰라서 코드의 오류인줄 알고 한참을 헤맸다. status code를 200으로 바꿨더니 다시 원래대로 response가 전송되었다.
+status code 문서의 개요만 어설프게 보고서는, 삭제니까 no content인 204가 맞겠지 하고 내 멋대로 이해한 실수였다. 204에서 다시 200으로 처리한 이유는, 삭제된 이후의 덧글 리스트와 페이지네이션 위치를 json으로 전달해야할 필요성이 있어서였다.]]></description>
+</item>
+<item>
+    <title>DBmate 사용법</title>
+    <link>https://www.codject.dev/posts/221018-dbmate-%EC%82%AC%EC%9A%A9%EB%B2%95/</link>
+    <pubDate>Tue, 18 Oct 2022 05:02:17 &#43;0900</pubDate>
+    <author>cOdject</author>
+    <guid>https://www.codject.dev/posts/221018-dbmate-%EC%82%AC%EC%9A%A9%EB%B2%95/</guid>
+    <description><![CDATA[mySQL을 사용하여 Database를 쌓아 나갈때,
+DBmate 를 사용하면
+초기 세팅값을 마치 git을 저장하듯 이력을 남겨 언제든 migration 할 수 있다.
+지금부터의 설명은 macOS 기준으로 기술한다. (windows가 없음 ;; )
+DBmate 설치 Homebrew 를 사용하여 설치한다. 1
+터미널 아무 위치에서나 무관하다. 2
+$brew install dbmate 이렇게 입력 후, 엔터키를 누르면 자동으로 설치가 된다.
+그리고, 하나의 파일이 필요하다. 바로 .env 파일. IDE 또는 터미널 vim으로 .env 파일을 생성한 후, 다음과 같이 입력한다. &quot; cat.]]></description>
+</item>
+</channel>
+</rss>

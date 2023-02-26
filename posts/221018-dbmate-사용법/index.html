@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>DBmate 사용법 - cOdject</title><meta name="Description" content="cOde proJECT"><meta property="og:title" content="DBmate 사용법" />
+<meta property="og:description" content="mySQL을 사용하여 Database를 쌓아 나갈때,
+DBmate 를 사용하면
+초기 세팅값을 마치 git을 저장하듯 이력을 남겨 언제든 migration 할 수 있다.
+지금부터의 설명은 macOS 기준으로 기술한다. (windows가 없음 ;; )
+DBmate 설치 Homebrew 를 사용하여 설치한다. 1
+터미널 아무 위치에서나 무관하다. 2
+$brew install dbmate 이렇게 입력 후, 엔터키를 누르면 자동으로 설치가 된다.
+그리고, 하나의 파일이 필요하다. 바로 .env 파일. IDE 또는 터미널 vim으로 .env 파일을 생성한 후, 다음과 같이 입력한다. &quot; cat." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.codject.dev/posts/221018-dbmate-%EC%82%AC%EC%9A%A9%EB%B2%95/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-18T05:02:17+09:00" />
+<meta property="article:modified_time" content="2022-10-18T05:02:17+09:00" /><meta property="og:site_name" content="cOdject" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DBmate 사용법"/>
+<meta name="twitter:description" content="mySQL을 사용하여 Database를 쌓아 나갈때,
+DBmate 를 사용하면
+초기 세팅값을 마치 git을 저장하듯 이력을 남겨 언제든 migration 할 수 있다.
+지금부터의 설명은 macOS 기준으로 기술한다. (windows가 없음 ;; )
+DBmate 설치 Homebrew 를 사용하여 설치한다. 1
+터미널 아무 위치에서나 무관하다. 2
+$brew install dbmate 이렇게 입력 후, 엔터키를 누르면 자동으로 설치가 된다.
+그리고, 하나의 파일이 필요하다. 바로 .env 파일. IDE 또는 터미널 vim으로 .env 파일을 생성한 후, 다음과 같이 입력한다. &quot; cat."/>
+<meta name="application-name" content="cOdject">
+<meta name="apple-mobile-web-app-title" content="cOdject"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.codject.dev/posts/221018-dbmate-%EC%82%AC%EC%9A%A9%EB%B2%95/" /><link rel="prev" href="https://www.codject.dev/posts/221013-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0-%EB%8B%A8%EC%B6%95%ED%82%A4-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0/" /><link rel="next" href="https://www.codject.dev/posts/221213-typescript-typeorm-%EC%97%B0%EA%B2%B0-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "DBmate 사용법",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.codject.dev\/posts\/221018-dbmate-%EC%82%AC%EC%9A%A9%EB%B2%95\/"
+        },"genre": "posts","keywords": "DBmate","wordcount":  397 ,
+        "url": "https:\/\/www.codject.dev\/posts\/221018-dbmate-%EC%82%AC%EC%9A%A9%EB%B2%95\/","datePublished": "2022-10-18T05:02:17+09:00","dateModified": "2022-10-18T05:02:17+09:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "cOdject"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="cOdject">cOdject</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="cOdject">cOdject</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">DBmate 사용법</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>cOdject</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-10-18">2022-10-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;397 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#dbmate-설치">DBmate 설치</a></li>
+        <li><a href="#dbmate-세팅">DBmate 세팅</a></li>
+        <li><a href="#dbmate-sql-문서-작성">DBmate sql 문서 작성</a></li>
+        <li><a href="#migration-실행">migration 실행</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>mySQL을 사용하여 Database를 쌓아 나갈때,<br>
+<a href="https://github.com/amacneil/dbmate" target="_blank" rel="noopener noreffer ">DBmate</a> 를 사용하면<br>
+초기 세팅값을 마치 git을 저장하듯 이력을 남겨 언제든 migration 할 수 있다.</p>
+<p>지금부터의 설명은 macOS 기준으로 기술한다. (windows가 없음 ;; )</p>
+<h3 id="dbmate-설치">DBmate 설치</h3>
+<p><a href="https://brew.sh/index_ko" target="_blank" rel="noopener noreffer ">Homebrew</a> 를 사용하여 설치한다. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>터미널 아무 위치에서나 무관하다. <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<pre tabindex="0"><code>$brew install dbmate
+</code></pre><p>이렇게 입력 후, 엔터키를 누르면 자동으로 설치가 된다.</p>
+<p>그리고, 하나의 파일이 필요하다. 바로 <code>.env</code> 파일.
+IDE 또는 터미널 vim으로 <code>.env</code> 파일을 생성한 후, 다음과 같이 입력한다.
+&quot; cat.env &quot; 이런식으로 해도 되고, 바로 확장자부터 시작하는 파일명도 된다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/exo1tj9.png"
+        data-srcset="https://i.imgur.com/exo1tj9.png, https://i.imgur.com/exo1tj9.png 1.5x, https://i.imgur.com/exo1tj9.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/exo1tj9.png"
+        title="https://i.imgur.com/exo1tj9.png" /></p>
+<p>작성해야할 코드는 단 한줄!</p>
+<p>아래와 같다.</p>
+<pre tabindex="0"><code>DATABASE URL=&#34;mysql://username: password@127.0.0.1:3306/database이름&#34;
+</code></pre><h4 id="주의사항">주의사항</h4>
+<ul>
+<li>username : mySQL 서버 실행시 설정했던 이름을 넣으면 되는데 보통 <code>root</code>이다.</li>
+<li><strong>database 위치</strong> 반드시 확인!! (localhost라면 <strong>127.0.0.1:3306</strong> 이 default 값이다.)<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
+<li>기존의 database가 있다면 database 이름을 똑같이 적어야 한다. (아니면 또다른 이름의 DB생성됨)</li>
+</ul>
+<p>주소 잘못 입력하면 아래 이미지와 같은 error 메세지를 무한히 받아볼 수 있다. ;;</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/7NzlX12.png"
+        data-srcset="https://i.imgur.com/7NzlX12.png, https://i.imgur.com/7NzlX12.png 1.5x, https://i.imgur.com/7NzlX12.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/7NzlX12.png"
+        title="https://i.imgur.com/7NzlX12.png" /></p>
+<h3 id="dbmate-세팅">DBmate 세팅</h3>
+<pre tabindex="0"><code>dbmate new create_users2_table
+</code></pre><p>위와 같이 이라고 터미널에서 입력하면</p>
+<p><code>migrations</code> 폴더가 자동 생성되면서  <code>users2</code>라는 테이블이 생성할 수 있는<code>sql</code> 파일이 생성된다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/4hwSNaI.png"
+        data-srcset="https://i.imgur.com/4hwSNaI.png, https://i.imgur.com/4hwSNaI.png 1.5x, https://i.imgur.com/4hwSNaI.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/4hwSNaI.png"
+        title="https://i.imgur.com/4hwSNaI.png" /></p>
+<p>그리고 <strong>IDE나 vim에서 해당 sql 파일에 테이블 생성 규칙을 작성해주면</strong> 된다.</p>
+<h3 id="dbmate-sql-문서-작성">DBmate sql 문서 작성</h3>
+<p>위와 같이 제대로 파일이 생성되면 파일 편집시 이런 양식이 들어가있음을 볼 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- migrate:up
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- migrate:down
+</span></span></span></code></pre></div><p><code>-- migrate:up</code> =&gt; table 생성시 넣고자 하는 코드</p>
+<p><code>-- migrate:down</code> =&gt; 보통 테이블 제거시 실행할 명령문</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- migrate:up
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">integer</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">email</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- migrate:down
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">users2</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><p>위와 같은 형식으로 작성된다.</p>
+<p>제대로 했다면, 이게 끝이다.</p>
+<h3 id="migration-실행">migration 실행</h3>
+<pre tabindex="0"><code>$dbmate up
+</code></pre><p>문서를 모두 작성 한 후, 터미널에서 명령어를 실행하면</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/pqsIXNe.png"
+        data-srcset="https://i.imgur.com/pqsIXNe.png, https://i.imgur.com/pqsIXNe.png 1.5x, https://i.imgur.com/pqsIXNe.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/pqsIXNe.png"
+        title="https://i.imgur.com/pqsIXNe.png" /></p>
+<p>이런 아름답고 꿈에 그리던 메세지를 받아볼 수 있다.</p>
+<p>그리고 mySQL 서버로 가서
+<code>show tables;</code> 를 입력해보자.<br>
+무사히 테이블이 생성되어 있음을 확인할 수 있다.</p>
+<pre tabindex="0"><code>dbmate down
+</code></pre><p>위 명령어도 실행해보며 DBmate가 어떻게 돌아가는지 알면 좋다.</p>
+<h4 id="추가-보완해야-할-사항">추가 보완해야 할 사항</h4>
+<p>위 문서에서는 하나의 테이블을 가지고 예를 들었는데, 명령어는 단순히 <code>dbmate up</code>이 끝이다.</p>
+<p>만약 여러 테이블을 생성한다면??<br>
+어떤 테이블을 <code>up</code> 하는 건지 table에 대한 지정이 없다.</p>
+<p>즉, 아마도 테이블의 생성 순서에 따라 순차적으로 실행되지 싶은데,<br>
+이부분은 mock table을 여러개 만들어 직접 실험을 해봐야겠다.</p>
+<hr>
+<p>참고문서</p>
+<ul>
+<li><a href="https://github.com/amacneil/dbmate" target="_blank" rel="noopener noreffer ">amacneil/dbmate: A lightweight, framework-agnostic database migration tool.</a></li>
+<li><a href="https://velog.io/@kisuk623/dbmate" target="_blank" rel="noopener noreffer ">dbmate 설치 / 사용 하기</a></li>
+<li><a href="https://m1lt0n.github.io/migrations/database/sql/db-mate-migrations/" target="_blank" rel="noopener noreffer ">Database migrations with Dbmate - M1lt0n on software</a></li>
+<li><a href="http://daplus.net/java-mysql-url-%ED%98%B8%EC%8A%A4%ED%8A%B8-%ED%8F%AC%ED%8A%B8-%EB%B0%8F-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%9D%B4%EB%A6%84%EC%9D%84-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%95%8C-%EC%88%98-%EC%9E%88%EC%8A%B5/" target="_blank" rel="noopener noreffer ">java MySQL URL, 호스트, 포트 및 사용자 이름을 어떻게 알 수 있습니까? - 리뷰나라</a></li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>참고로 맥에서 개발 관련 어플리케이션이나 cask 소프트웨어는 brew를 통해 설치 및 관리하는 것이 편하다&hellip; 라고 해서 그렇게 하고 있다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><code>$</code> 몰랐는데 이게 그런 뜻인듯.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>참고로 저 주소를 <code>localhost:3306</code>이라고 했다가 DBmate가 제대로 먹히질 않아서 1시간이나 헤맸다. 정확하게 써야 함!&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-10-18</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/dbmate/">DBmate</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/221013-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0-%EB%8B%A8%EC%B6%95%ED%82%A4-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0/" class="prev" rel="prev" title="터미널에서 &#39;바로가기&#39; 단축키 등록하기"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>터미널에서 '바로가기' 단축키 등록하기</a>
+            <a href="/posts/221213-typescript-typeorm-%EC%97%B0%EA%B2%B0-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0/" class="next" rel="next" title="typescript - typeorm 연결 오류 해결">typescript - typeorm 연결 오류 해결<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">cOdject</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"c0dject/blog-comments"}},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"codject","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-8M6THXHH8G', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-8M6THXHH8G" async></script></body>
+</html>
