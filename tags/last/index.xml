@@ -1,0 +1,28 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>last - Tag - cOdject</title>
+        <link>https://www.codject.dev/tags/last/</link>
+        <description>last - Tag - cOdject</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Mon, 27 Feb 2023 03:31:27 &#43;0900</lastBuildDate><atom:link href="https://www.codject.dev/tags/last/" rel="self" type="application/rss+xml" /><item>
+    <title>this is last last test file</title>
+    <link>https://www.codject.dev/posts/this-is-last-test-file/</link>
+    <pubDate>Mon, 27 Feb 2023 03:31:27 &#43;0900</pubDate>
+    <author>cOdject</author>
+    <guid>https://www.codject.dev/posts/this-is-last-test-file/</guid>
+    <description><![CDATA[##제목입니다. ###제목입니다. ####제목입니다. #####제목입니다. ######제목입니다. 본문입니다.
+인용구입니다.
+[!tip] 이건 obsidian의 callout tip입니다.
+Danger 이건 hugo- loveIt 테마의 admonition입니다.
+한줄 띄우고 쓰는중&hellip;
+&hellip; 이건 인라인코드 입니다.
+type = typescript const type: typescript = &#34;내멋대로type&#34; 위에껀 블락코드
+그리고 대망의 이미지 테스트
+두번째 이미지
+위에껀 한줄 긋는거 ---
+마지막 주석1
+끝.
+주석내용이다.&#160;&#x21a9;&#xfe0e;]]></description>
+</item>
+</channel>
+</rss>
