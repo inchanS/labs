@@ -1,0 +1,10 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>cOdject</title>
+        <link>https:c0dject.github.io/</link>
+        <description>Code Object proJECT</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
+            <webMaster>codject@icloud.com (cOdject)</webMaster>
+            <atom:link href="https:c0dject.github.io/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
+</rss>
