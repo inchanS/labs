@@ -1,25 +1,25 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>categorySample2 - Category - cOdject</title>
-        <link>https://www.codject.dev/categories/categorysample2/</link>
+        <link>https://c0dject.github.io/categories/categorysample2/</link>
         <description>categorySample2 - Category - cOdject</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sun, 26 Feb 2023 19:15:09 &#43;0900</lastBuildDate><atom:link href="https://www.codject.dev/categories/categorysample2/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sun, 26 Feb 2023 19:15:09 &#43;0900</lastBuildDate><atom:link href="https://c0dject.github.io/categories/categorysample2/" rel="self" type="application/rss+xml" /><item>
     <title>Test2</title>
-    <link>https://www.codject.dev/posts/test2/</link>
+    <link>https://c0dject.github.io/posts/test2/</link>
     <pubDate>Sun, 26 Feb 2023 19:15:09 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/test2/</guid>
+    <guid>https://c0dject.github.io/posts/test2/</guid>
     <description><![CDATA[category test 입니다.
 H2 타이틀 본문&hellip;
 Note When building the website, you can set a theme by using --theme option. However, we suggest you modify the configuration file (config.toml) and set the theme as the default. Warning When building the website, you can set a theme by using --theme option. However, we suggest you modify the configuration file (config.toml) and set the theme as the default. ]]></description>
 </item>
 <item>
     <title>Test3</title>
-    <link>https://www.codject.dev/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</link>
+    <link>https://c0dject.github.io/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</link>
     <pubDate>Sun, 26 Feb 2023 19:15:09 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</guid>
+    <guid>https://c0dject.github.io/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</guid>
     <description><![CDATA[aliases: date : 2023.02.02 Thu 17:03 PM
 tag : #devonthink source : Script: Replace link references with real links in Markdwon - DEVONthink / Tips - DEVONtechnologies Community
 코딩을 공부하면서 정말 많은 웹 문서들을 참고하며 정리하게 된다.
