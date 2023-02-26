@@ -1,23 +1,23 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Categories - Category - cOdject</title>
-        <link>https://c0dject.github.io/categories/</link>
+        <link>https://www.codject.dev/categories/</link>
         <description>Categories - Category - cOdject</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sun, 26 Feb 2023 19:15:09 &#43;0900</lastBuildDate><atom:link href="https://c0dject.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sun, 26 Feb 2023 19:15:09 &#43;0900</lastBuildDate><atom:link href="https://www.codject.dev/categories/" rel="self" type="application/rss+xml" /><item>
     <title>categorySample2</title>
-    <link>https://c0dject.github.io/categories/categorysample2/</link>
+    <link>https://www.codject.dev/categories/categorysample2/</link>
     <pubDate>Sun, 26 Feb 2023 19:15:09 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://c0dject.github.io/categories/categorysample2/</guid>
+    <guid>https://www.codject.dev/categories/categorysample2/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>categorySample</title>
-    <link>https://c0dject.github.io/categories/categorysample/</link>
+    <link>https://www.codject.dev/categories/categorysample/</link>
     <pubDate>Sun, 26 Feb 2023 18:14:39 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://c0dject.github.io/categories/categorysample/</guid>
+    <guid>https://www.codject.dev/categories/categorysample/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
