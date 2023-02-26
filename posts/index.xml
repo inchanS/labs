@@ -1,12 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>cOdject</title>
-        <link>https:c0dject.github.io/</link>
-        <description>Code Object proJECT</description>
+        <title>All Posts - cOdject</title>
+        <link>https:c0dject.github.io/posts/</link>
+        <description>All Posts | cOdject</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sun, 26 Feb 2023 18:14:39 &#43;0900</lastBuildDate>
-            <atom:link href="https:c0dject.github.io/index.xml" rel="self" type="application/rss+xml" />
-        <item>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sun, 26 Feb 2023 18:14:39 &#43;0900</lastBuildDate><atom:link href="https:c0dject.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Test</title>
     <link>https:c0dject.github.io/posts/test/</link>
     <pubDate>Sun, 26 Feb 2023 18:14:39 &#43;0900</pubDate>
