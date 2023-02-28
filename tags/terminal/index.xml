@@ -10,13 +10,15 @@
     <pubDate>Mon, 23 Jan 2023 04:29:44 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://www.inchan.dev/posts/230123-mac-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%ED%8F%B4%EB%8D%94%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8/</guid>
-    <description><![CDATA[tag : #terminal
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60" referrerpolicy="no-referrer">
+            </div>&lt;사진: unsplash&gt;
+tag : #terminal
 windows에서는 cmd에서 폴더트리가 바로 나오는것 같던데 macOS의 터미널에서는 따로 tree를 설치해야 볼 수 있다.
 아래 명령어로 brew를 통해 설치
 $ brew install tree 사용법 기본적인 사용법은 작업중인 폴더로 가서 tree 라고만 입력하면 된다.
 $ tree 폴더 제외 그런데 node project와 같이 node_module이라던가, dist 폴더가 있는 구조에서는 불필요하게 많은 폴더가 출력됨을 볼 수 있다.
-폴더를 제외하고 싶을 땐, tree -I &lt;diretory&gt;로 명령하면 해당 폴더를 제외하고 출력 가능하다.
-예시&gt; 하나의 폴더 제외]]></description>
+폴더를 제외하고 싶을 땐, tree -I &lt;diretory&gt;로 명령하면 해당 폴더를 제외하고 출력 가능하다.]]></description>
 </item>
 <item>
     <title>터미널에서 &#39;바로가기&#39; 단축키 등록하기</title>

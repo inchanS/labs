@@ -10,7 +10,10 @@
     <pubDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://www.inchan.dev/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
-    <description><![CDATA[tag : #webstorm
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
+            </div>&lt;사진: unsplash&gt;
+tag : #webstorm
 source : Live template variables | WebStorm Documentation
 JavaScript로 코딩을 하다보면 적잖이 console.log()를 사용하게 된다.
 보통 나는 간단하게 현재 흐름상 위치를 잡거나 객체를 확인할 때 자주 쓰는데,

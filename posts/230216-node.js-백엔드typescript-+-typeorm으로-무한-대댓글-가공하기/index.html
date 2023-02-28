@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기" />
-<meta property="og:description" content="#project_review
+<meta property="og:description" content="&lt;사진: unsplash&gt;
+#project_review
 기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker #typeORM createQueryBuilder 메소드로 출력시
 2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다.
 우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
@@ -16,15 +17,14 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에" />
 <meta property="article:modified_time" content="2023-02-16T04:17:07+09:00" /><meta property="og:site_name" content="inchan.dev" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기"/>
-<meta name="twitter:description" content="#project_review
+<meta name="twitter:description" content="&lt;사진: unsplash&gt;
+#project_review
 기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker #typeORM createQueryBuilder 메소드로 출력시
 2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다.
 우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
 mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
 <meta name="application-name" content="inchan.dev">
-<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.inchan.dev/posts/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-&#43;-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0/" /><link rel="prev" href="https://www.inchan.dev/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./" /><link rel="next" href="https://www.inchan.dev/posts/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="images/myfavicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.inchan.dev/posts/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-&#43;-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0/" /><link rel="prev" href="https://www.inchan.dev/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./" /><link rel="next" href="https://www.inchan.dev/posts/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -35,10 +35,10 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/www.inchan.dev\/posts\/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-\u002b-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0\/"
-        },"genre": "posts","keywords": "TypeScript, typeORM","wordcount":  1287 ,
+        },"genre": "posts","keywords": "TypeScript, typeORM","wordcount":  1289 ,
         "url": "https:\/\/www.inchan.dev\/posts\/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-\u002b-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0\/","datePublished": "2023-02-16T04:17:07+09:00","dateModified": "2023-02-16T04:17:07+09:00","publisher": {
             "@type": "Organization",
-            "name": ""},"author": {
+            "name": "inchan"},"author": {
                 "@type": "Person",
                 "name": "inchan"
             },"description": ""
@@ -109,9 +109,16 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Node.js 백엔드TypeScript + typeORM으로 무한 대댓글 가공하기</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/node.js/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Node.js</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-16">2023-02-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1287 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-16">2023-02-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1289 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
+        data-srcset="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300, https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300 1.5x, https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300 2x"
+        data-sizes="auto"
+        alt="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
+        title="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" /></div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
@@ -131,7 +138,8 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>#project_review</p>
+            </div><div class="content" id="content"><p>&lt;사진: <a href="http://unsplash.com" target="_blank" rel="noopener noreffer ">unsplash</a>&gt;</p>
+<p>#project_review</p>
 <hr>
 <h2 id="기능-구현-목표">기능 구현 목표</h2>
 <ol>

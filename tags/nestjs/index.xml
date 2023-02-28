@@ -10,7 +10,9 @@
     <pubDate>Mon, 09 Jan 2023 04:35:58 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://www.inchan.dev/posts/230109-nestjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
-    <description><![CDATA[tag : #nestjs #typescript #JavaScript
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Pasted%20image%2020230301063722.png" referrerpolicy="no-referrer">
+            </div>tag : #nestjs #typescript #JavaScript
 source : 따라하면서 배우는 NestJS - YouTube
 nestJS - cli 설치 사전 조건 : node lts버전 설치
 npm i @nestjs/cli 또는

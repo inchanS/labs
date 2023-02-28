@@ -24,9 +24,7 @@ npm i @nestjs/cli 또는
 npm i -g @nestjs/cli 이렇게 package.json 파일에서 정상적으로 설치되었음을 확인할 수 있다.
 nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 nest new nestjs-test 위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다. 만약 $ mkdir nestjs-test 로 폴더를 만들고 이 위치에서 진행중이라면,"/>
 <meta name="application-name" content="inchan.dev">
-<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.inchan.dev/posts/230109-nestjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/" /><link rel="prev" href="https://www.inchan.dev/posts/230102-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%EA%B0%80%EB%8F%84-%EC%8B%A4%ED%8C%A8%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-%ED%8A%B9%EC%A7%95/" /><link rel="next" href="https://www.inchan.dev/posts/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="images/myfavicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.inchan.dev/posts/230109-nestjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/" /><link rel="prev" href="https://www.inchan.dev/posts/230102-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%EA%B0%80%EB%8F%84-%EC%8B%A4%ED%8C%A8%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-%ED%8A%B9%EC%A7%95/" /><link rel="next" href="https://www.inchan.dev/posts/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -40,7 +38,7 @@ nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 ne
         },"genre": "posts","keywords": "NestJS","wordcount":  1774 ,
         "url": "https:\/\/www.inchan.dev\/posts\/230109-nestjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0\/","datePublished": "2023-01-09T04:35:58+09:00","dateModified": "2023-01-09T04:35:58+09:00","publisher": {
             "@type": "Organization",
-            "name": ""},"author": {
+            "name": "inchan"},"author": {
                 "@type": "Person",
                 "name": "inchan"
             },"description": ""
@@ -113,7 +111,14 @@ nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 ne
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/node.js/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Node.js</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-09">2023-01-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1774 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;9 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/Pasted%20image%2020230301063722.png"
+        data-srcset="/images/Pasted%20image%2020230301063722.png, /images/Pasted%20image%2020230301063722.png 1.5x, /images/Pasted%20image%2020230301063722.png 2x"
+        data-sizes="auto"
+        alt="/images/Pasted%20image%2020230301063722.png"
+        title="/images/Pasted%20image%2020230301063722.png" /></div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
