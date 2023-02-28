@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>webstorm - Tag - cOdject</title>
-        <link>/tags/webstorm/</link>
+        <link>https://www.inchan.dev/tags/webstorm/</link>
         <description>webstorm - Tag - cOdject</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</lastBuildDate><atom:link href="/tags/webstorm/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/webstorm/" rel="self" type="application/rss+xml" /><item>
     <title>WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기</title>
-    <link>/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+    <link>https://www.inchan.dev/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
     <pubDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+    <guid>https://www.inchan.dev/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
     <description><![CDATA[tag : #webstorm
 source : Live template variables | WebStorm Documentation
 JavaScript로 코딩을 하다보면 적잖이 console.log()를 사용하게 된다.

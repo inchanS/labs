@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>env - Category - cOdject</title>
-        <link>/categories/env/</link>
+        <link>https://www.inchan.dev/categories/env/</link>
         <description>env - Category - cOdject</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</lastBuildDate><atom:link href="/categories/env/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/categories/env/" rel="self" type="application/rss+xml" /><item>
     <title>chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.</title>
-    <link>/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./</link>
+    <link>https://www.inchan.dev/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./</link>
     <pubDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./</guid>
+    <guid>https://www.inchan.dev/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./</guid>
     <description><![CDATA[#chatGPT
 chatGPT에게 whereClauseBuilder 함수를 물어보았다. 원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 where절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다.
 질문은 한글로 했고, 영어로 답변이 오는데 속도는 꽤 빠르다.
@@ -18,10 +18,10 @@ whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided eno
 </item>
 <item>
     <title>devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제</title>
-    <link>/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</link>
+    <link>https://www.inchan.dev/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</link>
     <pubDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</guid>
+    <guid>https://www.inchan.dev/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</guid>
     <description><![CDATA[tag : #devonthink source : Script: Replace link references with real links in Markdwon - DEVONthink / Tips - DEVONtechnologies Community
 코딩을 공부하면서 정말 많은 웹 문서들을 참고하며 정리하게 된다.
 그 중, 보관하고자 하는 문서는 주로 웹클리핑을 통해 정보를 수집한다.
@@ -32,10 +32,10 @@ Obsidian(note taking app) DevonThink(note database) 이때, 웹클리핑은 Obsi
 </item>
 <item>
     <title>WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기</title>
-    <link>/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+    <link>https://www.inchan.dev/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
     <pubDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+    <guid>https://www.inchan.dev/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
     <description><![CDATA[tag : #webstorm
 source : Live template variables | WebStorm Documentation
 JavaScript로 코딩을 하다보면 적잖이 console.log()를 사용하게 된다.
@@ -48,10 +48,10 @@ console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 �
 </item>
 <item>
     <title>mac 터미널에서 폴더트리 구조 확인</title>
-    <link>/posts/230123-mac-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%ED%8F%B4%EB%8D%94%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8/</link>
+    <link>https://www.inchan.dev/posts/230123-mac-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%ED%8F%B4%EB%8D%94%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8/</link>
     <pubDate>Mon, 23 Jan 2023 04:29:44 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>/posts/230123-mac-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%ED%8F%B4%EB%8D%94%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8/</guid>
+    <guid>https://www.inchan.dev/posts/230123-mac-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%ED%8F%B4%EB%8D%94%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8/</guid>
     <description><![CDATA[tag : #terminal
 windows에서는 cmd에서 폴더트리가 바로 나오는것 같던데 macOS의 터미널에서는 따로 tree를 설치해야 볼 수 있다.
 아래 명령어로 brew를 통해 설치
@@ -62,10 +62,10 @@ $ tree 폴더 제외 그런데 node project와 같이 node_module이라던가, d
 </item>
 <item>
     <title>터미널에서 &#39;바로가기&#39; 단축키 등록하기</title>
-    <link>/posts/221013-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0-%EB%8B%A8%EC%B6%95%ED%82%A4-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0/</link>
+    <link>https://www.inchan.dev/posts/221013-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0-%EB%8B%A8%EC%B6%95%ED%82%A4-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0/</link>
     <pubDate>Thu, 13 Oct 2022 04:07:19 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>/posts/221013-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0-%EB%8B%A8%EC%B6%95%ED%82%A4-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0/</guid>
+    <guid>https://www.inchan.dev/posts/221013-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0-%EB%8B%A8%EC%B6%95%ED%82%A4-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0/</guid>
     <description><![CDATA[터미널을 처음 실행하면 꼭 사용자 폴더에서 시작한다.
 cd ...로 찾아가는게 너무 귀찮다.
 그렇다고 finder에서 폴더를 drag &amp; drop해서 직접경로를 떨어뜨리는 방법도 있지만,

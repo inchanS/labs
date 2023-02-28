@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>aws - Tag - cOdject</title>
-        <link>/tags/aws/</link>
+        <link>https://www.inchan.dev/tags/aws/</link>
         <description>aws - Tag - cOdject</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Wed, 28 Dec 2022 04:58:02 &#43;0900</lastBuildDate><atom:link href="/tags/aws/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Wed, 28 Dec 2022 04:58:02 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/aws/" rel="self" type="application/rss+xml" /><item>
     <title>AWS 퍼블릭 IP와 탄력적 IP</title>
-    <link>/posts/221228-aws-%ED%8D%BC%EB%B8%94%EB%A6%AD-ip%EC%99%80-%ED%83%84%EB%A0%A5%EC%A0%81-ip/</link>
+    <link>https://www.inchan.dev/posts/221228-aws-%ED%8D%BC%EB%B8%94%EB%A6%AD-ip%EC%99%80-%ED%83%84%EB%A0%A5%EC%A0%81-ip/</link>
     <pubDate>Wed, 28 Dec 2022 04:58:02 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>/posts/221228-aws-%ED%8D%BC%EB%B8%94%EB%A6%AD-ip%EC%99%80-%ED%83%84%EB%A0%A5%EC%A0%81-ip/</guid>
+    <guid>https://www.inchan.dev/posts/221228-aws-%ED%8D%BC%EB%B8%94%EB%A6%AD-ip%EC%99%80-%ED%83%84%EB%A0%A5%EC%A0%81-ip/</guid>
     <description><![CDATA[tag : #aws
 related link
 [AWS] 📚 EIP(탄력적 IP) 개념 &amp; 사용 세팅 정리 AWS EC2에서 백엔드 서버와 프론트엔드 서버를 돌리는 와중, 백엔드 서버의 PM2 리스트 전체가 다운이 되면서 멈추는 일이 발생했다.
