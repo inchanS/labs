@@ -52,7 +52,6 @@ toUpperCase에서는 only string타입이 들어와야 하는데 union type으�
     <author>inchan</author>
     <guid>https://www.inchan.dev/posts/230123-%EB%B0%B1%EC%97%94%EB%93%9C-typescript-express-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-jest-%EB%B0%8F-node-%ED%99%98%EA%B2%BD%EC%97%90-%EB%94%B0%EB%9D%BC-dotenv-%EC%84%A4%EC%A0%95-%EB%B6%84%EB%A6%AC/</guid>
     <description><![CDATA[tag : #typescript #express
-{{TOC}}
 문제상황 TDD 방법론을 따라 프로젝트를 진행하려는데 Jest를 이용하여 test 코드를 작성하던 중,
 한가지 문제를 마주한다.
 test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성상,

@@ -6,7 +6,6 @@
         <meta name="robots" content="noodp" />
         <title>백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리" />
 <meta property="og:description" content="tag : #typescript #express
-{{TOC}}
 문제상황 TDD 방법론을 따라 프로젝트를 진행하려는데 Jest를 이용하여 test 코드를 작성하던 중,
 한가지 문제를 마주한다.
 test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성상,
@@ -20,7 +19,6 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리"/>
 <meta name="twitter:description" content="tag : #typescript #express
-{{TOC}}
 문제상황 TDD 방법론을 따라 프로젝트를 진행하려는데 Jest를 이용하여 test 코드를 작성하던 중,
 한가지 문제를 마주한다.
 test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성상,
@@ -39,7 +37,7 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/www.inchan.dev\/posts\/230123-%EB%B0%B1%EC%97%94%EB%93%9C-typescript-express-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-jest-%EB%B0%8F-node-%ED%99%98%EA%B2%BD%EC%97%90-%EB%94%B0%EB%9D%BC-dotenv-%EC%84%A4%EC%A0%95-%EB%B6%84%EB%A6%AC\/"
-        },"genre": "posts","keywords": "TypeScript, Express","wordcount":  993 ,
+        },"genre": "posts","keywords": "TypeScript, Express","wordcount":  992 ,
         "url": "https:\/\/www.inchan.dev\/posts\/230123-%EB%B0%B1%EC%97%94%EB%93%9C-typescript-express-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-jest-%EB%B0%8F-node-%ED%99%98%EA%B2%BD%EC%97%90-%EB%94%B0%EB%9D%BC-dotenv-%EC%84%A4%EC%A0%95-%EB%B6%84%EB%A6%AC\/","datePublished": "2023-01-23T04:24:50+09:00","dateModified": "2023-01-23T04:24:50+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -113,7 +111,7 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/node.js/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Node.js</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-23">2023-01-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;993 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-23">2023-01-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;992 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -139,8 +137,6 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p><em>tag</em> :   #typescript #express</p>
-<hr>
-<p>{{TOC}}</p>
 <hr>
 <h2 id="문제상황">문제상황</h2>
 <p>TDD 방법론을 따라 프로젝트를 진행하려는데 Jest를 이용하여 test 코드를 작성하던 중,<br>
