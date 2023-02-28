@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>typescript - any와 unknown의 차이 - cOdject</title><meta name="Description" content="cOde proJECT"><meta property="og:title" content="typescript - any와 unknown의 차이" />
+        <title>typescript - any와 unknown의 차이 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="typescript - any와 unknown의 차이" />
 <meta property="og:description" content="tag : #typescript related link
 unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 내리기 힘든 상황에서 주로 any 를 사용한다.
 물론 typescript의 성격상 any는 지양하는 것이 좋다.
@@ -13,7 +13,7 @@ unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.inchan.dev/posts/230128-typescript-any%EC%99%80-unknown%EC%9D%98-%EC%B0%A8%EC%9D%B4/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-01-28T04:23:52+09:00" />
-<meta property="article:modified_time" content="2023-01-28T04:23:52+09:00" /><meta property="og:site_name" content="cOdject" />
+<meta property="article:modified_time" content="2023-01-28T04:23:52+09:00" /><meta property="og:site_name" content="inchan.dev" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="typescript - any와 unknown의 차이"/>
 <meta name="twitter:description" content="tag : #typescript related link
@@ -21,8 +21,8 @@ unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 
 물론 typescript의 성격상 any는 지양하는 것이 좋다.
 오류를 검증하고 확인하려는 특성으로 엄격한 타입을 지정하려는 typescript에서 어떤 타입이나 가능하다는 성격의 any는 어쩌면 존재 자체가 모순인 타입이기도 하다.
 하지만코딩을 하다보면 아직은 타입을 정하기 전인 상황이거나, 도저히 타입을 알 수 없거나 추론할 수 없을 때, (또는 typescript 초급자일 때 ;;) 가끔 사용하게 되는 것이 또 any 타입이다."/>
-<meta name="application-name" content="cOdject">
-<meta name="apple-mobile-web-app-title" content="cOdject"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="application-name" content="inchan.dev">
+<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.inchan.dev/posts/230128-typescript-any%EC%99%80-unknown%EC%9D%98-%EC%B0%A8%EC%9D%B4/" /><link rel="prev" href="https://www.inchan.dev/posts/230128-typescript-satisfies-operator/" /><link rel="next" href="https://www.inchan.dev/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -40,7 +40,7 @@ unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
-                "name": "cOdject"
+                "name": "inchan"
             },"description": ""
     }
     </script></head>
@@ -49,7 +49,7 @@ unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="cOdject">cOdject</a>
+            <a href="/" title="inchan.dev">inchan.dev</a>
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
@@ -72,7 +72,7 @@ unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="cOdject">cOdject</a>
+                <a href="/" title="inchan.dev">inchan.dev</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -108,7 +108,7 @@ unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">typescript - any와 unknown의 차이</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>cOdject</a></span>&nbsp;<span class="post-category">included in <a href="/categories/javascript/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>JavaScript</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/javascript/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>JavaScript</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-28">2023-01-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;239 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -176,7 +176,7 @@ unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">cOdject</a></span></div>
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
         </div>
     </footer></div>
 

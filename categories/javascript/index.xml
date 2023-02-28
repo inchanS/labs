@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>JavaScript - Category - cOdject</title>
+        <title>JavaScript - Category - inchan.dev</title>
         <link>https://www.inchan.dev/categories/javascript/</link>
-        <description>JavaScript - Category - cOdject</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/categories/javascript/" rel="self" type="application/rss+xml" /><item>
+        <description>JavaScript - Category - inchan.dev</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/categories/javascript/" rel="self" type="application/rss+xml" /><item>
     <title>typescript - any와 unknown의 차이</title>
     <link>https://www.inchan.dev/posts/230128-typescript-any%EC%99%80-unknown%EC%9D%98-%EC%B0%A8%EC%9D%B4/</link>
     <pubDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/posts/230128-typescript-any%EC%99%80-unknown%EC%9D%98-%EC%B0%A8%EC%9D%B4/</guid>
     <description><![CDATA[tag : #typescript related link
 unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 내리기 힘든 상황에서 주로 any 를 사용한다.
@@ -20,7 +20,7 @@ unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 
     <title>typescript - satisfies operator 탐구</title>
     <link>https://www.inchan.dev/posts/230128-typescript-satisfies-operator/</link>
     <pubDate>Sat, 28 Jan 2023 04:22:36 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/posts/230128-typescript-satisfies-operator/</guid>
     <description><![CDATA[tag : #typescript
 related link
@@ -34,7 +34,7 @@ toUpperCase에서는 only string타입이 들어와야 하는데 union type으�
     <title>JavaScript - basic 변수</title>
     <link>https://www.inchan.dev/posts/2022-09-12-javascript-basic-%EB%B3%80%EC%88%98/</link>
     <pubDate>Mon, 12 Sep 2022 05:23:04 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/posts/2022-09-12-javascript-basic-%EB%B3%80%EC%88%98/</guid>
     <description><![CDATA[JavaScript - Basic 변수 변수는 2단계로 이루어진다.
 변수의 선언 변수에 대한 값을 할당 let myNumber // myNumber라는 변수를 &#34;선언&#34; myNumber = 100 // 앞에서 선언한 변수에 값을 &#34;할당&#34; 용어 정리 - 변수 : 데이터를 담을 수 있는 대상 - 변수의 선언과 변수에 대한 값을 할당하는 것은 별개이다.

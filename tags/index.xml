@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Tags - Tag - cOdject</title>
+        <title>Tags - Tag - inchan.dev</title>
         <link>https://www.inchan.dev/tags/</link>
-        <description>Tags - Tag - cOdject</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/" rel="self" type="application/rss+xml" /><item>
+        <description>Tags - Tag - inchan.dev</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/" rel="self" type="application/rss+xml" /><item>
     <title>mySQL</title>
     <link>https://www.inchan.dev/tags/mysql/</link>
     <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/tags/mysql/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -16,7 +16,7 @@
     <title>typeORM</title>
     <link>https://www.inchan.dev/tags/typeorm/</link>
     <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/tags/typeorm/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -24,7 +24,7 @@
     <title>TypeScript</title>
     <link>https://www.inchan.dev/tags/typescript/</link>
     <pubDate>Thu, 16 Feb 2023 04:17:07 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/tags/typescript/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -32,7 +32,7 @@
     <title>chatGPT</title>
     <link>https://www.inchan.dev/tags/chatgpt/</link>
     <pubDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/tags/chatgpt/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -40,7 +40,7 @@
     <title>devonthink</title>
     <link>https://www.inchan.dev/tags/devonthink/</link>
     <pubDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/tags/devonthink/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -48,7 +48,7 @@
     <title>markdown</title>
     <link>https://www.inchan.dev/tags/markdown/</link>
     <pubDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/tags/markdown/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -56,7 +56,7 @@
     <title>webstorm</title>
     <link>https://www.inchan.dev/tags/webstorm/</link>
     <pubDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/tags/webstorm/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -64,7 +64,7 @@
     <title>terminal</title>
     <link>https://www.inchan.dev/tags/terminal/</link>
     <pubDate>Mon, 23 Jan 2023 04:29:44 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/tags/terminal/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -72,7 +72,7 @@
     <title>Express</title>
     <link>https://www.inchan.dev/tags/express/</link>
     <pubDate>Mon, 23 Jan 2023 04:24:50 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/tags/express/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -80,7 +80,7 @@
     <title>JavaScript</title>
     <link>https://www.inchan.dev/tags/javascript/</link>
     <pubDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/tags/javascript/</guid>
     <description><![CDATA[]]></description>
 </item>

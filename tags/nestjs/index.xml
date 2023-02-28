@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>NestJS - Tag - cOdject</title>
+        <title>NestJS - Tag - inchan.dev</title>
         <link>https://www.inchan.dev/tags/nestjs/</link>
-        <description>NestJS - Tag - cOdject</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Mon, 09 Jan 2023 04:35:58 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/nestjs/" rel="self" type="application/rss+xml" /><item>
+        <description>NestJS - Tag - inchan.dev</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 09 Jan 2023 04:35:58 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/nestjs/" rel="self" type="application/rss+xml" /><item>
     <title>nestJS 시작하기</title>
     <link>https://www.inchan.dev/posts/230109-nestjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
     <pubDate>Mon, 09 Jan 2023 04:35:58 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/posts/230109-nestjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
     <description><![CDATA[tag : #nestjs #typescript #JavaScript
 source : 따라하면서 배우는 NestJS - YouTube

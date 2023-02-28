@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>TypeScript - Tag - cOdject</title>
+        <title>TypeScript - Tag - inchan.dev</title>
         <link>https://www.inchan.dev/tags/typescript/</link>
-        <description>TypeScript - Tag - cOdject</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Thu, 16 Feb 2023 04:17:07 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/typescript/" rel="self" type="application/rss+xml" /><item>
+        <description>TypeScript - Tag - inchan.dev</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 16 Feb 2023 04:17:07 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/typescript/" rel="self" type="application/rss+xml" /><item>
     <title>Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기</title>
     <link>https://www.inchan.dev/posts/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-&#43;-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0/</link>
     <pubDate>Thu, 16 Feb 2023 04:17:07 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/posts/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-&#43;-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0/</guid>
     <description><![CDATA[#project_review
 기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker #typeORM createQueryBuilder 메소드로 출력시
@@ -20,7 +20,7 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에]]><
     <title>typescript - any와 unknown의 차이</title>
     <link>https://www.inchan.dev/posts/230128-typescript-any%EC%99%80-unknown%EC%9D%98-%EC%B0%A8%EC%9D%B4/</link>
     <pubDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/posts/230128-typescript-any%EC%99%80-unknown%EC%9D%98-%EC%B0%A8%EC%9D%B4/</guid>
     <description><![CDATA[tag : #typescript related link
 unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 내리기 힘든 상황에서 주로 any 를 사용한다.
@@ -32,7 +32,7 @@ unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 
     <title>typescript - satisfies operator 탐구</title>
     <link>https://www.inchan.dev/posts/230128-typescript-satisfies-operator/</link>
     <pubDate>Sat, 28 Jan 2023 04:22:36 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/posts/230128-typescript-satisfies-operator/</guid>
     <description><![CDATA[tag : #typescript
 related link
@@ -46,7 +46,7 @@ toUpperCase에서는 only string타입이 들어와야 하는데 union type으�
     <title>백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리</title>
     <link>https://www.inchan.dev/posts/230123-%EB%B0%B1%EC%97%94%EB%93%9C-typescript-express-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-jest-%EB%B0%8F-node-%ED%99%98%EA%B2%BD%EC%97%90-%EB%94%B0%EB%9D%BC-dotenv-%EC%84%A4%EC%A0%95-%EB%B6%84%EB%A6%AC/</link>
     <pubDate>Mon, 23 Jan 2023 04:24:50 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/posts/230123-%EB%B0%B1%EC%97%94%EB%93%9C-typescript-express-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-jest-%EB%B0%8F-node-%ED%99%98%EA%B2%BD%EC%97%90-%EB%94%B0%EB%9D%BC-dotenv-%EC%84%A4%EC%A0%95-%EB%B6%84%EB%A6%AC/</guid>
     <description><![CDATA[tag : #typescript #express
 {{TOC}}
@@ -61,7 +61,7 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
     <title>error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error</title>
     <link>https://www.inchan.dev/posts/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error/</link>
     <pubDate>Wed, 18 Jan 2023 04:28:04 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/posts/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error/</guid>
     <description><![CDATA[tag : #typeorm #typescript
 source : node.js - using process.env in TypeScript - Stack Overflow
@@ -74,7 +74,7 @@ TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &
     <title>typescript - typeorm 연결 오류 해결</title>
     <link>https://www.inchan.dev/posts/221213-typescript-typeorm-%EC%97%B0%EA%B2%B0-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0/</link>
     <pubDate>Tue, 13 Dec 2022 04:59:30 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/posts/221213-typescript-typeorm-%EC%97%B0%EA%B2%B0-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0/</guid>
     <description><![CDATA[tag : #typescript #typeorm #error
 source : 오류 해결1

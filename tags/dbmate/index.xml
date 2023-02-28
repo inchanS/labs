@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>DBmate - Tag - cOdject</title>
+        <title>DBmate - Tag - inchan.dev</title>
         <link>https://www.inchan.dev/tags/dbmate/</link>
-        <description>DBmate - Tag - cOdject</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Tue, 18 Oct 2022 05:02:17 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/dbmate/" rel="self" type="application/rss+xml" /><item>
+        <description>DBmate - Tag - inchan.dev</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Tue, 18 Oct 2022 05:02:17 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/dbmate/" rel="self" type="application/rss+xml" /><item>
     <title>DBmate 사용법</title>
     <link>https://www.inchan.dev/posts/221018-dbmate-%EC%82%AC%EC%9A%A9%EB%B2%95/</link>
     <pubDate>Tue, 18 Oct 2022 05:02:17 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/posts/221018-dbmate-%EC%82%AC%EC%9A%A9%EB%B2%95/</guid>
     <description><![CDATA[mySQL을 사용하여 Database를 쌓아 나갈때,
 DBmate 를 사용하면

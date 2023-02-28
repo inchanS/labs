@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Back-End - Category - cOdject</title>
+        <title>Back-End - Category - inchan.dev</title>
         <link>https://www.inchan.dev/categories/back-end/</link>
-        <description>Back-End - Category - cOdject</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Wed, 28 Dec 2022 04:58:02 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/categories/back-end/" rel="self" type="application/rss+xml" /><item>
+        <description>Back-End - Category - inchan.dev</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 28 Dec 2022 04:58:02 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/categories/back-end/" rel="self" type="application/rss+xml" /><item>
     <title>AWS 퍼블릭 IP와 탄력적 IP</title>
     <link>https://www.inchan.dev/posts/221228-aws-%ED%8D%BC%EB%B8%94%EB%A6%AD-ip%EC%99%80-%ED%83%84%EB%A0%A5%EC%A0%81-ip/</link>
     <pubDate>Wed, 28 Dec 2022 04:58:02 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/posts/221228-aws-%ED%8D%BC%EB%B8%94%EB%A6%AD-ip%EC%99%80-%ED%83%84%EB%A0%A5%EC%A0%81-ip/</guid>
     <description><![CDATA[tag : #aws
 related link
@@ -23,7 +23,7 @@ AWS 퍼블릭 IP 주소가 바뀌었다? EC2 재부팅 결과, 서버의 퍼블�
     <title>status code 204</title>
     <link>https://www.inchan.dev/posts/221225-status-code-204/</link>
     <pubDate>Sun, 25 Dec 2022 05:09:42 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/posts/221225-status-code-204/</guid>
     <description><![CDATA[tag : #restAPI
 #restAPI
@@ -36,7 +36,7 @@ status code 문서의 개요만 어설프게 보고서는, 삭제니까 no conte
     <title>DBmate 사용법</title>
     <link>https://www.inchan.dev/posts/221018-dbmate-%EC%82%AC%EC%9A%A9%EB%B2%95/</link>
     <pubDate>Tue, 18 Oct 2022 05:02:17 &#43;0900</pubDate>
-    <author>cOdject</author>
+    <author>inchan</author>
     <guid>https://www.inchan.dev/posts/221018-dbmate-%EC%82%AC%EC%9A%A9%EB%B2%95/</guid>
     <description><![CDATA[mySQL을 사용하여 Database를 쌓아 나갈때,
 DBmate 를 사용하면
