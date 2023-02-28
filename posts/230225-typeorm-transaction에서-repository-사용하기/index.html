@@ -7,18 +7,18 @@
         <title>typeORM transaction에서 repository 사용하기 - cOdject</title><meta name="Description" content="typeORM transaction시 버전차에 따른 방법 변화"><meta property="og:title" content="typeORM transaction에서 repository 사용하기" />
 <meta property="og:description" content="typeORM transaction시 버전차에 따른 방법 변화" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.codject.dev/posts/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" /><meta property="og:image" content="https://www.codject.dev/testimg.png" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" /><meta property="og:image" content="/testimg.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-25T04:14:31+09:00" />
 <meta property="article:modified_time" content="2023-02-25T04:14:31+09:00" /><meta property="og:site_name" content="cOdject" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://www.codject.dev/testimg.png"/>
+<meta name="twitter:image" content="/testimg.png"/>
 
 <meta name="twitter:title" content="typeORM transaction에서 repository 사용하기"/>
 <meta name="twitter:description" content="typeORM transaction시 버전차에 따른 방법 변화"/>
 <meta name="application-name" content="cOdject">
 <meta name="apple-mobile-web-app-title" content="cOdject"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.codject.dev/posts/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" /><link rel="prev" href="https://www.codject.dev/posts/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-&#43;-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" /><link rel="prev" href="/posts/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-&#43;-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -28,9 +28,9 @@
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/www.codject.dev\/posts\/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0\/"
+            "@id": "\/posts\/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0\/"
         },"genre": "posts","keywords": "typeORM, mySQL","wordcount":  346 ,
-        "url": "https:\/\/www.codject.dev\/posts\/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0\/","datePublished": "2023-02-25T04:14:31+09:00","dateModified": "2023-02-25T04:14:31+09:00","publisher": {
+        "url": "\/posts\/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0\/","datePublished": "2023-02-25T04:14:31+09:00","dateModified": "2023-02-25T04:14:31+09:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -252,8 +252,5 @@
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"c0dject/blog-comments"}},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-8M6THXHH8G', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-8M6THXHH8G" async></script></body>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"c0dject/blog-comments"}},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

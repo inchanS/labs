@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>devonthink - Tag - cOdject</title>
-        <link>https://www.codject.dev/tags/devonthink/</link>
+        <link>/tags/devonthink/</link>
         <description>devonthink - Tag - cOdject</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</lastBuildDate><atom:link href="https://www.codject.dev/tags/devonthink/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</lastBuildDate><atom:link href="/tags/devonthink/" rel="self" type="application/rss+xml" /><item>
     <title>devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제</title>
-    <link>https://www.codject.dev/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</link>
+    <link>/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</link>
     <pubDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</guid>
+    <guid>/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</guid>
     <description><![CDATA[tag : #devonthink source : Script: Replace link references with real links in Markdwon - DEVONthink / Tips - DEVONtechnologies Community
 코딩을 공부하면서 정말 많은 웹 문서들을 참고하며 정리하게 된다.
 그 중, 보관하고자 하는 문서는 주로 웹클리핑을 통해 정보를 수집한다.

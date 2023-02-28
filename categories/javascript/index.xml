@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>JavaScript - Category - cOdject</title>
-        <link>https://www.codject.dev/categories/javascript/</link>
+        <link>/categories/javascript/</link>
         <description>JavaScript - Category - cOdject</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</lastBuildDate><atom:link href="https://www.codject.dev/categories/javascript/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</lastBuildDate><atom:link href="/categories/javascript/" rel="self" type="application/rss+xml" /><item>
     <title>typescript - any와 unknown의 차이</title>
-    <link>https://www.codject.dev/posts/230128-typescript-any%EC%99%80-unknown%EC%9D%98-%EC%B0%A8%EC%9D%B4/</link>
+    <link>/posts/230128-typescript-any%EC%99%80-unknown%EC%9D%98-%EC%B0%A8%EC%9D%B4/</link>
     <pubDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230128-typescript-any%EC%99%80-unknown%EC%9D%98-%EC%B0%A8%EC%9D%B4/</guid>
+    <guid>/posts/230128-typescript-any%EC%99%80-unknown%EC%9D%98-%EC%B0%A8%EC%9D%B4/</guid>
     <description><![CDATA[tag : #typescript related link
 unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 내리기 힘든 상황에서 주로 any 를 사용한다.
 물론 typescript의 성격상 any는 지양하는 것이 좋다.
@@ -18,10 +18,10 @@ unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 
 </item>
 <item>
     <title>typescript - satisfies operator 탐구</title>
-    <link>https://www.codject.dev/posts/230128-typescript-satisfies-operator/</link>
+    <link>/posts/230128-typescript-satisfies-operator/</link>
     <pubDate>Sat, 28 Jan 2023 04:22:36 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230128-typescript-satisfies-operator/</guid>
+    <guid>/posts/230128-typescript-satisfies-operator/</guid>
     <description><![CDATA[tag : #typescript
 related link
 satisfies-operator / typescript typescript 4.9에서 새로 나온 기능으로 satisfies 라는 연산자가 있다.
@@ -32,10 +32,10 @@ toUpperCase에서는 only string타입이 들어와야 하는데 union type으�
 </item>
 <item>
     <title>JavaScript - basic 변수</title>
-    <link>https://www.codject.dev/posts/2022-09-12-javascript-basic-%EB%B3%80%EC%88%98/</link>
+    <link>/posts/2022-09-12-javascript-basic-%EB%B3%80%EC%88%98/</link>
     <pubDate>Mon, 12 Sep 2022 05:23:04 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/2022-09-12-javascript-basic-%EB%B3%80%EC%88%98/</guid>
+    <guid>/posts/2022-09-12-javascript-basic-%EB%B3%80%EC%88%98/</guid>
     <description><![CDATA[JavaScript - Basic 변수 변수는 2단계로 이루어진다.
 변수의 선언 변수에 대한 값을 할당 let myNumber // myNumber라는 변수를 &#34;선언&#34; myNumber = 100 // 앞에서 선언한 변수에 값을 &#34;할당&#34; 용어 정리 - 변수 : 데이터를 담을 수 있는 대상 - 변수의 선언과 변수에 대한 값을 할당하는 것은 별개이다.
 일반적으로 변수의 선언과 할당이 동시에 이루어진다. (아래 코드 참조)

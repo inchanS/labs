@@ -1,71 +1,71 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Categories - Category - cOdject</title>
-        <link>https://www.codject.dev/categories/</link>
+        <link>/categories/</link>
         <description>Categories - Category - cOdject</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</lastBuildDate><atom:link href="https://www.codject.dev/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</lastBuildDate><atom:link href="/categories/" rel="self" type="application/rss+xml" /><item>
     <title>Node.js</title>
-    <link>https://www.codject.dev/categories/node.js/</link>
+    <link>/categories/node.js/</link>
     <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/categories/node.js/</guid>
+    <guid>/categories/node.js/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>env</title>
-    <link>https://www.codject.dev/categories/env/</link>
+    <link>/categories/env/</link>
     <pubDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/categories/env/</guid>
+    <guid>/categories/env/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>JavaScript</title>
-    <link>https://www.codject.dev/categories/javascript/</link>
+    <link>/categories/javascript/</link>
     <pubDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/categories/javascript/</guid>
+    <guid>/categories/javascript/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Error Note</title>
-    <link>https://www.codject.dev/categories/error-note/</link>
+    <link>/categories/error-note/</link>
     <pubDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/categories/error-note/</guid>
+    <guid>/categories/error-note/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Miscellaneous</title>
-    <link>https://www.codject.dev/categories/miscellaneous/</link>
+    <link>/categories/miscellaneous/</link>
     <pubDate>Mon, 02 Jan 2023 04:41:37 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/categories/miscellaneous/</guid>
+    <guid>/categories/miscellaneous/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Back-End</title>
-    <link>https://www.codject.dev/categories/back-end/</link>
+    <link>/categories/back-end/</link>
     <pubDate>Wed, 28 Dec 2022 04:58:02 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/categories/back-end/</guid>
+    <guid>/categories/back-end/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>project</title>
-    <link>https://www.codject.dev/categories/project/</link>
+    <link>/categories/project/</link>
     <pubDate>Tue, 27 Dec 2022 04:48:11 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/categories/project/</guid>
+    <guid>/categories/project/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Front-End</title>
-    <link>https://www.codject.dev/categories/front-end/</link>
+    <link>/categories/front-end/</link>
     <pubDate>Tue, 04 Oct 2022 05:15:23 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/categories/front-end/</guid>
+    <guid>/categories/front-end/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

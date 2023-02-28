@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>fontAwesome - Tag - cOdject</title>
-        <link>https://www.codject.dev/tags/fontawesome/</link>
+        <link>/tags/fontawesome/</link>
         <description>fontAwesome - Tag - cOdject</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Tue, 06 Sep 2022 05:21:43 &#43;0900</lastBuildDate><atom:link href="https://www.codject.dev/tags/fontawesome/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Tue, 06 Sep 2022 05:21:43 &#43;0900</lastBuildDate><atom:link href="/tags/fontawesome/" rel="self" type="application/rss+xml" /><item>
     <title>font Awesome 사용하기</title>
-    <link>https://www.codject.dev/posts/2022-09-06-font-awesome-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
+    <link>/posts/2022-09-06-font-awesome-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
     <pubDate>Tue, 06 Sep 2022 05:21:43 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/2022-09-06-font-awesome-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
+    <guid>/posts/2022-09-06-font-awesome-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
     <description><![CDATA[font Awesome 사용하기 다양한 아이콘을 사용하게 될 때가 있다. 이때 유용한 사이트가 바로 font Awesome이다.
 주의할 점은, 간혹 아이콘이 작동하지 않을때가 있다. font Awesome의 HTML 태그는 아래 코드처럼 &lt;i&gt;로 시작한다. &lt;i class=&quot;fa-solid fa-heart&quot;&gt;&lt;/i&gt;
 이때 버전을 호환하지 않으면 간혹 이탤릭체로 인식하고 아이콘이 나타나지 않는다.

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Miscellaneous - Category - cOdject</title>
-        <link>https://www.codject.dev/categories/miscellaneous/</link>
+        <link>/categories/miscellaneous/</link>
         <description>Miscellaneous - Category - cOdject</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Mon, 02 Jan 2023 04:41:37 &#43;0900</lastBuildDate><atom:link href="https://www.codject.dev/categories/miscellaneous/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Mon, 02 Jan 2023 04:41:37 &#43;0900</lastBuildDate><atom:link href="/categories/miscellaneous/" rel="self" type="application/rss+xml" /><item>
     <title>부트캠프 가도 실패하는 사람 특징</title>
-    <link>https://www.codject.dev/posts/230102-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%EA%B0%80%EB%8F%84-%EC%8B%A4%ED%8C%A8%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-%ED%8A%B9%EC%A7%95/</link>
+    <link>/posts/230102-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%EA%B0%80%EB%8F%84-%EC%8B%A4%ED%8C%A8%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-%ED%8A%B9%EC%A7%95/</link>
     <pubDate>Mon, 02 Jan 2023 04:41:37 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230102-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%EA%B0%80%EB%8F%84-%EC%8B%A4%ED%8C%A8%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-%ED%8A%B9%EC%A7%95/</guid>
+    <guid>/posts/230102-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%EA%B0%80%EB%8F%84-%EC%8B%A4%ED%8C%A8%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-%ED%8A%B9%EC%A7%95/</guid>
     <description><![CDATA[tag : #coding #development
 source : 부트캠프 가셔도 실패하는 분 특징. 12년차 개발자가 말하는 프로그래머 롱런하는 방법 - YouTube
 youtube 서핑을 하다 우연히 보게 된 영상. &ldquo;부트캠프 가셔도 실패하는 분 특징&rdquo; 문구가 굉장히 도발적이었다.

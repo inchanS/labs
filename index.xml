@@ -1,17 +1,17 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>cOdject</title>
-        <link>https://www.codject.dev/</link>
+        <link>/</link>
         <description>cOde proJECT</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
             <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</lastBuildDate>
-            <atom:link href="https://www.codject.dev/index.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>typeORM transaction에서 repository 사용하기</title>
-    <link>https://www.codject.dev/posts/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
+    <link>/posts/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
     <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
+    <guid>/posts/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
     <description><![CDATA[#project_review #typeorm
 transaction 구성중 Entity가 아닌 Repository 사용시 typeORM에서 transaction을 사용하는 방법은 몇가지가 있지만,
 복잡한 service단의 처리에서는 아래의 queryRunner 방식이 더 적합할것 같아서
@@ -20,10 +20,10 @@ dataSource.createQueryRunner() 방식을 사용했다.1
 </item>
 <item>
     <title>Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기</title>
-    <link>https://www.codject.dev/posts/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-&#43;-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0/</link>
+    <link>/posts/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-&#43;-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0/</link>
     <pubDate>Thu, 16 Feb 2023 04:17:07 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-&#43;-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0/</guid>
+    <guid>/posts/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-&#43;-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0/</guid>
     <description><![CDATA[#project_review
 기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker #typeORM createQueryBuilder 메소드로 출력시
 2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다.
@@ -32,10 +32,10 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에]]><
 </item>
 <item>
     <title>chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.</title>
-    <link>https://www.codject.dev/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./</link>
+    <link>/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./</link>
     <pubDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./</guid>
+    <guid>/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./</guid>
     <description><![CDATA[#chatGPT
 chatGPT에게 whereClauseBuilder 함수를 물어보았다. 원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 where절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다.
 질문은 한글로 했고, 영어로 답변이 오는데 속도는 꽤 빠르다.
@@ -44,10 +44,10 @@ whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided eno
 </item>
 <item>
     <title>devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제</title>
-    <link>https://www.codject.dev/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</link>
+    <link>/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</link>
     <pubDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</guid>
+    <guid>/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</guid>
     <description><![CDATA[tag : #devonthink source : Script: Replace link references with real links in Markdwon - DEVONthink / Tips - DEVONtechnologies Community
 코딩을 공부하면서 정말 많은 웹 문서들을 참고하며 정리하게 된다.
 그 중, 보관하고자 하는 문서는 주로 웹클리핑을 통해 정보를 수집한다.
@@ -58,10 +58,10 @@ Obsidian(note taking app) DevonThink(note database) 이때, 웹클리핑은 Obsi
 </item>
 <item>
     <title>WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기</title>
-    <link>https://www.codject.dev/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+    <link>/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
     <pubDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+    <guid>/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
     <description><![CDATA[tag : #webstorm
 source : Live template variables | WebStorm Documentation
 JavaScript로 코딩을 하다보면 적잖이 console.log()를 사용하게 된다.
@@ -74,10 +74,10 @@ console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 �
 </item>
 <item>
     <title>typescript - any와 unknown의 차이</title>
-    <link>https://www.codject.dev/posts/230128-typescript-any%EC%99%80-unknown%EC%9D%98-%EC%B0%A8%EC%9D%B4/</link>
+    <link>/posts/230128-typescript-any%EC%99%80-unknown%EC%9D%98-%EC%B0%A8%EC%9D%B4/</link>
     <pubDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230128-typescript-any%EC%99%80-unknown%EC%9D%98-%EC%B0%A8%EC%9D%B4/</guid>
+    <guid>/posts/230128-typescript-any%EC%99%80-unknown%EC%9D%98-%EC%B0%A8%EC%9D%B4/</guid>
     <description><![CDATA[tag : #typescript related link
 unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 내리기 힘든 상황에서 주로 any 를 사용한다.
 물론 typescript의 성격상 any는 지양하는 것이 좋다.
@@ -86,10 +86,10 @@ unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 
 </item>
 <item>
     <title>typescript - satisfies operator 탐구</title>
-    <link>https://www.codject.dev/posts/230128-typescript-satisfies-operator/</link>
+    <link>/posts/230128-typescript-satisfies-operator/</link>
     <pubDate>Sat, 28 Jan 2023 04:22:36 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230128-typescript-satisfies-operator/</guid>
+    <guid>/posts/230128-typescript-satisfies-operator/</guid>
     <description><![CDATA[tag : #typescript
 related link
 satisfies-operator / typescript typescript 4.9에서 새로 나온 기능으로 satisfies 라는 연산자가 있다.
@@ -100,10 +100,10 @@ toUpperCase에서는 only string타입이 들어와야 하는데 union type으�
 </item>
 <item>
     <title>mac 터미널에서 폴더트리 구조 확인</title>
-    <link>https://www.codject.dev/posts/230123-mac-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%ED%8F%B4%EB%8D%94%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8/</link>
+    <link>/posts/230123-mac-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%ED%8F%B4%EB%8D%94%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8/</link>
     <pubDate>Mon, 23 Jan 2023 04:29:44 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230123-mac-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%ED%8F%B4%EB%8D%94%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8/</guid>
+    <guid>/posts/230123-mac-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%ED%8F%B4%EB%8D%94%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8/</guid>
     <description><![CDATA[tag : #terminal
 windows에서는 cmd에서 폴더트리가 바로 나오는것 같던데 macOS의 터미널에서는 따로 tree를 설치해야 볼 수 있다.
 아래 명령어로 brew를 통해 설치
@@ -114,10 +114,10 @@ $ tree 폴더 제외 그런데 node project와 같이 node_module이라던가, d
 </item>
 <item>
     <title>백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리</title>
-    <link>https://www.codject.dev/posts/230123-%EB%B0%B1%EC%97%94%EB%93%9C-typescript-express-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-jest-%EB%B0%8F-node-%ED%99%98%EA%B2%BD%EC%97%90-%EB%94%B0%EB%9D%BC-dotenv-%EC%84%A4%EC%A0%95-%EB%B6%84%EB%A6%AC/</link>
+    <link>/posts/230123-%EB%B0%B1%EC%97%94%EB%93%9C-typescript-express-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-jest-%EB%B0%8F-node-%ED%99%98%EA%B2%BD%EC%97%90-%EB%94%B0%EB%9D%BC-dotenv-%EC%84%A4%EC%A0%95-%EB%B6%84%EB%A6%AC/</link>
     <pubDate>Mon, 23 Jan 2023 04:24:50 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230123-%EB%B0%B1%EC%97%94%EB%93%9C-typescript-express-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-jest-%EB%B0%8F-node-%ED%99%98%EA%B2%BD%EC%97%90-%EB%94%B0%EB%9D%BC-dotenv-%EC%84%A4%EC%A0%95-%EB%B6%84%EB%A6%AC/</guid>
+    <guid>/posts/230123-%EB%B0%B1%EC%97%94%EB%93%9C-typescript-express-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-jest-%EB%B0%8F-node-%ED%99%98%EA%B2%BD%EC%97%90-%EB%94%B0%EB%9D%BC-dotenv-%EC%84%A4%EC%A0%95-%EB%B6%84%EB%A6%AC/</guid>
     <description><![CDATA[tag : #typescript #express
 {{TOC}}
 문제상황 TDD 방법론을 따라 프로젝트를 진행하려는데 Jest를 이용하여 test 코드를 작성하던 중,
@@ -129,10 +129,10 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
 </item>
 <item>
     <title>error note - throw와 return</title>
-    <link>https://www.codject.dev/posts/230118-error-note-throw%EC%99%80-return/</link>
+    <link>/posts/230118-error-note-throw%EC%99%80-return/</link>
     <pubDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/posts/230118-error-note-throw%EC%99%80-return/</guid>
+    <guid>/posts/230118-error-note-throw%EC%99%80-return/</guid>
     <description><![CDATA[tag : #JavaScript
 문제상황 Failure 에러핸들링 중, 에러메세지를 response로 보내려고 한다. 이에 return을 사용 에러가 나와야 할 상황에서 정상적으로 에러메세지를 response로 보낸다. 하지만 에러코드를 알려야 할 status code는 정상을 알리며 이후 모든 함수와 명령이 진행됨 해결 Success return이 아닌 throw를 사용하여야 한다. 특히 node.js에서 서버를 돌릴때,
 단순히 return만으로는 이후의 모든 과정, 즉 controller - service - dao 등에서 return을 한 함수 이외 모든 명령어가 진행 된다.

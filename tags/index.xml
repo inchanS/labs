@@ -1,87 +1,87 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - Tag - cOdject</title>
-        <link>https://www.codject.dev/tags/</link>
+        <link>/tags/</link>
         <description>Tags - Tag - cOdject</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>codject@icloud.com (cOdject)</managingEditor>
-            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</lastBuildDate><atom:link href="https://www.codject.dev/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>codject@icloud.com (cOdject)</webMaster><lastBuildDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
     <title>mySQL</title>
-    <link>https://www.codject.dev/tags/mysql/</link>
+    <link>/tags/mysql/</link>
     <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/tags/mysql/</guid>
+    <guid>/tags/mysql/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>typeORM</title>
-    <link>https://www.codject.dev/tags/typeorm/</link>
+    <link>/tags/typeorm/</link>
     <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/tags/typeorm/</guid>
+    <guid>/tags/typeorm/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>TypeScript</title>
-    <link>https://www.codject.dev/tags/typescript/</link>
+    <link>/tags/typescript/</link>
     <pubDate>Thu, 16 Feb 2023 04:17:07 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/tags/typescript/</guid>
+    <guid>/tags/typescript/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>chatGPT</title>
-    <link>https://www.codject.dev/tags/chatgpt/</link>
+    <link>/tags/chatgpt/</link>
     <pubDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/tags/chatgpt/</guid>
+    <guid>/tags/chatgpt/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>devonthink</title>
-    <link>https://www.codject.dev/tags/devonthink/</link>
+    <link>/tags/devonthink/</link>
     <pubDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/tags/devonthink/</guid>
+    <guid>/tags/devonthink/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>markdown</title>
-    <link>https://www.codject.dev/tags/markdown/</link>
+    <link>/tags/markdown/</link>
     <pubDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/tags/markdown/</guid>
+    <guid>/tags/markdown/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>webstorm</title>
-    <link>https://www.codject.dev/tags/webstorm/</link>
+    <link>/tags/webstorm/</link>
     <pubDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/tags/webstorm/</guid>
+    <guid>/tags/webstorm/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>terminal</title>
-    <link>https://www.codject.dev/tags/terminal/</link>
+    <link>/tags/terminal/</link>
     <pubDate>Mon, 23 Jan 2023 04:29:44 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/tags/terminal/</guid>
+    <guid>/tags/terminal/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Express</title>
-    <link>https://www.codject.dev/tags/express/</link>
+    <link>/tags/express/</link>
     <pubDate>Mon, 23 Jan 2023 04:24:50 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/tags/express/</guid>
+    <guid>/tags/express/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>JavaScript</title>
-    <link>https://www.codject.dev/tags/javascript/</link>
+    <link>/tags/javascript/</link>
     <pubDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</pubDate>
     <author>cOdject</author>
-    <guid>https://www.codject.dev/tags/javascript/</guid>
+    <guid>/tags/javascript/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
