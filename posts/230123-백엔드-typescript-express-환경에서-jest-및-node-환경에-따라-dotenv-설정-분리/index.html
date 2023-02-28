@@ -39,7 +39,7 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/www.inchan.dev\/posts\/230123-%EB%B0%B1%EC%97%94%EB%93%9C-typescript-express-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-jest-%EB%B0%8F-node-%ED%99%98%EA%B2%BD%EC%97%90-%EB%94%B0%EB%9D%BC-dotenv-%EC%84%A4%EC%A0%95-%EB%B6%84%EB%A6%AC\/"
-        },"genre": "posts","keywords": "TypeScript, Express","wordcount":  983 ,
+        },"genre": "posts","keywords": "TypeScript, Express","wordcount":  993 ,
         "url": "https:\/\/www.inchan.dev\/posts\/230123-%EB%B0%B1%EC%97%94%EB%93%9C-typescript-express-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-jest-%EB%B0%8F-node-%ED%99%98%EA%B2%BD%EC%97%90-%EB%94%B0%EB%9D%BC-dotenv-%EC%84%A4%EC%A0%95-%EB%B6%84%EB%A6%AC\/","datePublished": "2023-01-23T04:24:50+09:00","dateModified": "2023-01-23T04:24:50+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -113,7 +113,7 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/node.js/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Node.js</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-23">2023-01-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;983 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-23">2023-01-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;993 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -206,22 +206,46 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
 <p>우선 1번을 구현하기 위해 cross-env 패키지를 이용하여 조건을 할당한다.</p>
 <h3 id="cross-env--package-설치"><code>cross-env</code>  package 설치</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ npm i -D dotenv cross-env
-</span></span></code></pre></div><blockquote>
-<p>[!tip]
-npm 설치 명령 중 <code>i</code>는 install의 약어<br>
-<code>-D</code>는 <code>--dev</code> 의 약어<br>
-개발환경에서 사용할 예정이라 devDependency에 설치해준다.</p>
-</blockquote>
+</span></span></code></pre></div><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><code>dev</code>  [^2]</p>
+<ul>
+<li>개발용을 위해 response에 따라 색상이 입혀진 축약된 로그를 출력.</li>
+<li>status값이 빨간색이면 서버 에러코드, 노란색이면 클라이언트 에러 코드, 청록색은 리다이렉션 코드, 그외 코드는 컬러가 없다.
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/ou2hvTT.png"
+        data-srcset="https://i.imgur.com/ou2hvTT.png, https://i.imgur.com/ou2hvTT.png 1.5x, https://i.imgur.com/ou2hvTT.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/ou2hvTT.png"
+        title="https://i.imgur.com/ou2hvTT.png" /></li>
+</ul>
+<p><code>combined</code></p>
+<ul>
+<li>배포환경에서 사용</li>
+<li>불특정 다수가 접속하기 때문에 IP를 로그에 남겨줌</li>
+</ul>
+</div>
+        </div>
+    </div>
 <p>cli에서 명령어 입력시 정확한 입력에 주의한다.</p>
-<blockquote>
-<p>[!warning]
-<strong>crossenv 사건</strong>  <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><br>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Warning<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>crossenv 사건</strong>  [^1]<br>
 노드와 npm 생태계를 떠들썩하게 만든 사건이 있었다. <br>
 이름하여 ‘crossenv 사건’ 이다. <br>
 사람들이 cross-env를 설치할 때 실수로 cross-env 대신 crossenv를 설치해서 발생했는데, crossenv는 사용자의 .env 파일에 들어 있는 키들을 해커에게 전송하는 악성 패키지였던 것이었다.<br>
 다행히 문제를 발견한 즉시 패키지가 차단되어 피해가 크게 확산되지는 않았지만, 유명한 패키지를 설치하는 과정에 혼동을 야기해 해킹하려는 시도가 있었다는 점에서 충격적인 사건이었다. <br>
-따라서 패키지를 설치할 때는 항상 주의를 기울여야 한다.</p>
-</blockquote>
+따라서 패키지를 설치할 때는 항상 주의를 기울여야 한다.</div>
+        </div>
+    </div>
 <h3 id="node-setting">node setting</h3>
 <p>package.json 파일에서 명령어를 이용해 앞서 설치하였던 <code>cross-env</code> 패키지에서 사용할 NODE_ENV라는 이름으로 설정값을 세팅한다.  (이름은 다른걸로 해도 무방하다.)</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="c1">// package.json
@@ -273,7 +297,7 @@ TYPEORM_LOGGING의 경우 test환경에서는 필요가 없기에 false로 처�
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">TYPEORM_PORT</span><span class="o">=</span><span class="mi">3306</span>  
 </span></span><span class="line"><span class="cl"><span class="nx">TYPEORM_LOGGING</span><span class="o">=</span><span class="nx">FALSE</span>  <span class="c1">// &lt;- 여기
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">TYPEORM_SYNCHRONIZE</span><span class="o">=</span><span class="nx">TRUE</span>
-</span></span></code></pre></div><p>그리고 끝으로 이제 앞에서 특정한 값을 실행시킬 수 있도록 <code>express</code>를 실행하는 파일(대개 main.ts)에서 아래와 같이 세팅을 한다. <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+</span></span></code></pre></div><p>그리고 끝으로 이제 앞에서 특정한 값을 실행시킬 수 있도록 <code>express</code>를 실행하는 파일(대개 main.ts)에서 아래와 같이 세팅을 한다. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/main.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">dotenv</span> <span class="kr">from</span> <span class="s1">&#39;dotenv&#39;</span><span class="p">;</span>  
@@ -289,7 +313,7 @@ TYPEORM_LOGGING의 경우 test환경에서는 필요가 없기에 false로 처�
 </span></span><span class="line"><span class="cl">  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;process.env.NODE_ENV IS_NOT_SET!!&#39;</span><span class="p">);</span>  
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p><code>console.log('process.env.NODE_ENV is ', process.env.NODE_ENV);  </code><br>
-dev 설정시 따로 console.log를 찍어준 이유는 개발환경에서 dev설정이 제대로 먹히고 있는지 확인차 넣어줬다.   <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+dev 설정시 따로 console.log를 찍어준 이유는 개발환경에서 dev설정이 제대로 먹히고 있는지 확인차 넣어줬다.   <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <h3 id="jest-세팅">jest 세팅</h3>
 <p>exress를 돌릴때, 만약 app.ts와 main.ts(or index.ts)등으로 나누어 놓았다면, <code>process.env.NODE_ENV</code> 는 main.ts에 작성되기에 jest에서는 해당 설정이 적용되지 않는다.<br>
 때문에 test 파일 실행시 test용 dotenv가 작동될 수 있도록 따로 세팅을 해주어야 한다.(파일명 확인)</p>
@@ -346,9 +370,12 @@ dev 설정시 따로 console.log를 찍어준 이유는 개발환경에서 dev�
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">app</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></div><p>express에서 log를 남겨주는 morgan의 옵션중 <code>dev</code>와 <code>combined</code> 가 있는데 이를 상황에 맞게 나눌 수 있다.</p>
-<blockquote>
-<p>[!tip]
-<code>dev</code>  <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><code>dev</code>  [^2]</p>
 <ul>
 <li>개발용을 위해 response에 따라 색상이 입혀진 축약된 로그를 출력.</li>
 <li>status값이 빨간색이면 서버 에러코드, 노란색이면 클라이언트 에러 코드, 청록색은 리다이렉션 코드, 그외 코드는 컬러가 없다.
@@ -366,22 +393,18 @@ dev 설정시 따로 console.log를 찍어준 이유는 개발환경에서 dev�
 <li>배포환경에서 사용</li>
 <li>불특정 다수가 접속하기 때문에 IP를 로그에 남겨줌</li>
 </ul>
-</blockquote>
+</div>
+        </div>
+    </div>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
-<p><a href="https://inpa.tistory.com/entry/NODE-%F0%9F%93%9A-cross-env-%EB%AA%A8%EB%93%88-%EC%82%AC%EC%9A%A9%EB%B2%95" target="_blank" rel="noopener noreffer ">NODE 📚 cross-env 모듈 사용법</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://velog.io/@dinb1242/Nest.js-dotenv-%EC%99%80-cross-env-%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%ED%99%98%EA%B2%BD-%EB%B3%84-%ED%99%98%EA%B2%BD-%EB%B3%80%EC%88%98-%EC%A7%80%EC%A0%95%ED%95%98%EA%B8%B0" target="_blank" rel="noopener noreffer ">Nest.js - Deprecated -  dotenv 와 cross-env 를 활용한 환경 별 환경 변수 지정하기</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://velog.io/@dinb1242/Nest.js-dotenv-%EC%99%80-cross-env-%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%ED%99%98%EA%B2%BD-%EB%B3%84-%ED%99%98%EA%B2%BD-%EB%B3%80%EC%88%98-%EC%A7%80%EC%A0%95%ED%95%98%EA%B8%B0" target="_blank" rel="noopener noreffer ">Nest.js - Deprecated -  dotenv 와 cross-env 를 활용한 환경 별 환경 변수 지정하기</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:3">
 <p>그리고 끝까지 본문을 읽으면 알겠지만 test용 dotenv설정은 따로이 jest세팅에서 진행하기에 사실,
-<code>else if (process.env.NODE_ENV === 'test') { dotenv.config({ path: path.join(__dirname, '/../env/.env.test') });</code> 이 부분은 필요가 없다. 하지만 추후 다른 용도에서 응용을 위한 예시로써 남겨둔다.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:4">
-<p><a href="https://inpa.tistory.com/entry/EXPRESS-%F0%9F%93%9A-morgan-%EB%AF%B8%EB%93%A4%EC%9B%A8%EC%96%B4" target="_blank" rel="noopener noreffer ">EXPRESS morgan 미들웨어 사용법 정리</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<code>else if (process.env.NODE_ENV === 'test') { dotenv.config({ path: path.join(__dirname, '/../env/.env.test') });</code> 이 부분은 필요가 없다. 하지만 추후 다른 용도에서 응용을 위한 예시로써 남겨둔다.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
