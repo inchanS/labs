@@ -175,10 +175,10 @@ nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 ne
 <hr>
 <h2 id="nestjs---cli-설치">nestJS - cli 설치</h2>
 <p>사전 조건 : node lts버전 설치</p>
-<pre tabindex="0"><code>npm  i @nestjs/cli
-</code></pre><p>또는</p>
-<pre tabindex="0"><code>npm i -g @nestjs/cli
-</code></pre><p><img
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm  i @nestjs/cli
+</span></span></code></pre></div><p>또는</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm i -g @nestjs/cli
+</span></span></code></pre></div><p><img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="https://i.imgur.com/j8evD5H.png"
@@ -188,14 +188,14 @@ nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 ne
         title="https://i.imgur.com/j8evD5H.png" /></p>
 <p>이렇게 package.json 파일에서 정상적으로  설치되었음을 확인할 수 있다.</p>
 <h2 id="nestjs---new-project-시작하기">nestJS - new Project 시작하기</h2>
-<pre tabindex="0"><code>nest new &lt;new project name&gt;
-
-// 예시
-nest new nestjs-test
-</code></pre><p>위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest new &lt;new project name&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">// 예시
+</span></span><span class="line"><span class="cl">nest new nestjs-test
+</span></span></code></pre></div><p>위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다.
 만약 <code>$ mkdir nestjs-test</code> 로 폴더를 만들고 이 위치에서 진행중이라면,</p>
-<pre tabindex="0"><code>nest new ./
-</code></pre><p>위와 같이 입력시 현재 폴더명 그대로 새로운 프로젝트가 진행된다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest new ./
+</span></span></code></pre></div><p>위와 같이 입력시 현재 폴더명 그대로 새로운 프로젝트가 진행된다.</p>
 <p>계속해서 진행시 아래와 같은 선택을 묻는다.</p>
 <p><img
         class="lazyload"
@@ -220,8 +220,8 @@ nestJS 기본 세팅이 이루어진다.</p>
 <hr>
 <h2 id="모듈-생성">모듈 생성</h2>
 <p>nestJS에서는 nest 명령어로 모듈을 생성할 수 있다.</p>
-<pre tabindex="0"><code>nest g module boards
-</code></pre><p>설명</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest g module boards
+</span></span></code></pre></div><p>설명</p>
 <blockquote>
 <p>nest : nest cli 사용
 g : generate
@@ -229,9 +229,9 @@ module : schematic that I want to create
 boards : name of schematic</p>
 </blockquote>
 <h3 id="controller-service-생성하기">controller, service 생성하기</h3>
-<pre tabindex="0"><code>nest g controller boards --no-spec
-nest g service boards --no-spec
-</code></pre><p>한줄씩 차례로 입력하면 된다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest g controller boards --no-spec
+</span></span><span class="line"><span class="cl">nest g service boards --no-spec
+</span></span></code></pre></div><p>한줄씩 차례로 입력하면 된다.</p>
 <p>설명</p>
 <blockquote>
 <p>nest : using nest cli
