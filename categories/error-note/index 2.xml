@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Error Note - Category - inchan.dev</title>
+        <link>https://www.inchan.dev/categories/error-note/</link>
+        <description>Error Note - Category - inchan.dev</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/categories/error-note/" rel="self" type="application/rss+xml" /><item>
+    <title>error note - throw와 return</title>
+    <link>https://www.inchan.dev/posts/230118-error-note-throw%EC%99%80-return/</link>
+    <pubDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://www.inchan.dev/posts/230118-error-note-throw%EC%99%80-return/</guid>
+    <description><![CDATA[tag : #JavaScript
+문제상황 Failure 에러핸들링 중, 에러메세지를 response로 보내려고 한다. 이에 return을 사용 에러가 나와야 할 상황에서 정상적으로 에러메세지를 response로 보낸다. 하지만 에러코드를 알려야 할 status code는 정상을 알리며 이후 모든 함수와 명령이 진행됨 해결 Success return이 아닌 throw를 사용하여야 한다. 특히 node.js에서 서버를 돌릴때,
+단순히 return만으로는 이후의 모든 과정, 즉 controller - service - dao 등에서 return을 한 함수 이외 모든 명령어가 진행 된다.
+하지만 throw의 경우, 에러를 내보내는 것 뿐만 아니라 이후의 모든 명령어를 중지시킨다.]]></description>
+</item>
+<item>
+    <title>error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error</title>
+    <link>https://www.inchan.dev/posts/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error/</link>
+    <pubDate>Wed, 18 Jan 2023 04:28:04 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://www.inchan.dev/posts/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error/</guid>
+    <description><![CDATA[tag : #typeorm #typescript
+source : node.js - using process.env in TypeScript - Stack Overflow
+에러 상황 TypeScript로 typeORM을 세팅할때,
+dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼 수 있다.
+위 3개의 해당 error message를 살펴보면 차례로 다음과 같다.
+TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &#34;mariadb&#34; | &#34;postgres&#34; | &#34;cockroachdb&#34; | &#34;sqlite&#34; | &#34;mssql&#34; | &#34;sap&#34; | &#34;oracle&#34; | &#34;cordova&#34; | &#34;nativescript&#34; | &#34;react-native&#34; | &#34;sqljs&#34; | &#34;mongodb&#34; | &#34;aurora-mysql&#34; | .]]></description>
+</item>
+</channel>
+</rss>

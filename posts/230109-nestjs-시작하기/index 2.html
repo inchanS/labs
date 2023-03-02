@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>nestJS 시작하기 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="nestJS 시작하기" />
+<meta property="og:description" content="tag : #nestjs #typescript #JavaScript
+source : 따라하면서 배우는 NestJS - YouTube
+nestJS - cli 설치 사전 조건 : node lts버전 설치
+npm i @nestjs/cli 또는
+npm i -g @nestjs/cli 이렇게 package.json 파일에서 정상적으로 설치되었음을 확인할 수 있다.
+nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 nest new nestjs-test 위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다. 만약 $ mkdir nestjs-test 로 폴더를 만들고 이 위치에서 진행중이라면," />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.inchan.dev/posts/230109-nestjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-09T04:35:58+09:00" />
+<meta property="article:modified_time" content="2023-01-09T04:35:58+09:00" /><meta property="og:site_name" content="inchan.dev" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="nestJS 시작하기"/>
+<meta name="twitter:description" content="tag : #nestjs #typescript #JavaScript
+source : 따라하면서 배우는 NestJS - YouTube
+nestJS - cli 설치 사전 조건 : node lts버전 설치
+npm i @nestjs/cli 또는
+npm i -g @nestjs/cli 이렇게 package.json 파일에서 정상적으로 설치되었음을 확인할 수 있다.
+nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 nest new nestjs-test 위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다. 만약 $ mkdir nestjs-test 로 폴더를 만들고 이 위치에서 진행중이라면,"/>
+<meta name="application-name" content="inchan.dev">
+<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="images/myfavicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.inchan.dev/posts/230109-nestjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/" /><link rel="prev" href="https://www.inchan.dev/posts/230102-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%EA%B0%80%EB%8F%84-%EC%8B%A4%ED%8C%A8%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-%ED%8A%B9%EC%A7%95/" /><link rel="next" href="https://www.inchan.dev/posts/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "nestJS 시작하기",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.inchan.dev\/posts\/230109-nestjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0\/"
+        },"genre": "posts","keywords": "NestJS","wordcount":  1774 ,
+        "url": "https:\/\/www.inchan.dev\/posts\/230109-nestjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0\/","datePublished": "2023-01-09T04:35:58+09:00","dateModified": "2023-01-09T04:35:58+09:00","publisher": {
+            "@type": "Organization",
+            "name": "inchan"},"author": {
+                "@type": "Person",
+                "name": "inchan"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="inchan.dev">inchan.dev</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="inchan.dev">inchan.dev</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">nestJS 시작하기</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/node.js/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Node.js</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-09">2023-01-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1774 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;9 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/Pasted%20image%2020230301063722.png"
+        data-srcset="/images/Pasted%20image%2020230301063722.png, /images/Pasted%20image%2020230301063722.png 1.5x, /images/Pasted%20image%2020230301063722.png 2x"
+        data-sizes="auto"
+        alt="/images/Pasted%20image%2020230301063722.png"
+        title="/images/Pasted%20image%2020230301063722.png" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#nestjs---cli-설치">nestJS - cli 설치</a></li>
+    <li><a href="#nestjs---new-project-시작하기">nestJS - new Project 시작하기</a></li>
+    <li><a href="#모듈-생성">모듈 생성</a>
+      <ul>
+        <li><a href="#controller-service-생성하기">controller, service 생성하기</a></li>
+      </ul>
+    </li>
+    <li><a href="#nestjs에서-request의-body값은-어떻게-가져올까">NestJS에서 request의 body값은 어떻게 가져올까?</a>
+      <ul>
+        <li><a href="#nestjs에서-param은-어떻게-가져올까">NestJS에서 Param은 어떻게 가져올까?</a></li>
+      </ul>
+    </li>
+    <li><a href="#dto-data-transfer-object란">DTO (Data Transfer Object)란?</a>
+      <ul>
+        <li></li>
+        <li><a href="#pipe란">Pipe란??</a></li>
+        <li><a href="#파이프를-이용한-유효성-체크-검사">파이프를 이용한 유효성 체크 검사</a></li>
+        <li><a href="#에러를-표출해주기-위해서는">에러를 표출해주기 위해서는</a></li>
+        <li><a href="#커스텀-파이프-구현방법">커스텀 파이프 구현방법</a></li>
+      </ul>
+    </li>
+    <li><a href="#mysql-및-typeorm">mySQL 및 TypeORM</a>
+      <ul>
+        <li><a href="#설치">설치</a></li>
+        <li><a href="#설정">설정</a></li>
+        <li><a href="#게시물-삭제">게시물 삭제</a></li>
+      </ul>
+    </li>
+    <li><a href="#error-handling">Error Handling</a></li>
+    <li><a href="#인증-및-인가---bycriptjs">인증 및 인가 - bycriptjs</a>
+      <ul>
+        <li><a href="#hashedpassword-생성-및-검증">hashedPassword 생성 및 검증</a></li>
+        <li><a href="#jwt-token-생성">jwt token 생성</a></li>
+        <li><a href="#인증된-유저만-게시물을-사용할-수-있게-하기">인증된 유저만 게시물을 사용할 수 있게 하기</a></li>
+        <li><a href="#유저와-게시물-데이터의-관계-형성">유저와 게시물 데이터의 관계 형성</a></li>
+      </ul>
+    </li>
+    <li><a href="#log">Log</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#설정-1">설정</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><em>tag</em> : #nestjs #typescript #JavaScript<br>
+<em>source</em> :  <a href="https://www.youtube.com/watch?v=3JminDpCJNE&amp;t=15745s" target="_blank" rel="noopener noreffer ">따라하면서 배우는 NestJS - YouTube</a></p>
+<hr>
+<h2 id="nestjs---cli-설치">nestJS - cli 설치</h2>
+<p>사전 조건 : node lts버전 설치</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm  i @nestjs/cli
+</span></span></code></pre></div><p>또는</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm i -g @nestjs/cli
+</span></span></code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/j8evD5H.png"
+        data-srcset="https://i.imgur.com/j8evD5H.png, https://i.imgur.com/j8evD5H.png 1.5x, https://i.imgur.com/j8evD5H.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/j8evD5H.png"
+        title="https://i.imgur.com/j8evD5H.png" /></p>
+<p>이렇게 package.json 파일에서 정상적으로  설치되었음을 확인할 수 있다.</p>
+<h2 id="nestjs---new-project-시작하기">nestJS - new Project 시작하기</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest new &lt;new project name&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">// 예시
+</span></span><span class="line"><span class="cl">nest new nestjs-test
+</span></span></code></pre></div><p>위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다.
+만약 <code>$ mkdir nestjs-test</code> 로 폴더를 만들고 이 위치에서 진행중이라면,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest new ./
+</span></span></code></pre></div><p>위와 같이 입력시 현재 폴더명 그대로 새로운 프로젝트가 진행된다.</p>
+<p>계속해서 진행시 아래와 같은 선택을 묻는다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/bhFD5k1.png"
+        data-srcset="https://i.imgur.com/bhFD5k1.png, https://i.imgur.com/bhFD5k1.png 1.5x, https://i.imgur.com/bhFD5k1.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/bhFD5k1.png"
+        title="https://i.imgur.com/bhFD5k1.png" /></p>
+<p>npm 또는 yarn 등, 편한 패키지로 선택하면<br>
+nestJS 기본 세팅이 이루어진다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/vvzzzBK.png"
+        data-srcset="https://i.imgur.com/vvzzzBK.png, https://i.imgur.com/vvzzzBK.png 1.5x, https://i.imgur.com/vvzzzBK.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/vvzzzBK.png"
+        title="https://i.imgur.com/vvzzzBK.png" /></p>
+<p>위 이미지와 같이 prettier부터 controller-service-model, main.ts, jest 등 기본적인 구성이 모두 세팅된다.
+(시간이 조금 걸릴 수 있다.)</p>
+<hr>
+<h2 id="모듈-생성">모듈 생성</h2>
+<p>nestJS에서는 nest 명령어로 모듈을 생성할 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest g module boards
+</span></span></code></pre></div><p>설명</p>
+<blockquote>
+<p>nest : nest cli 사용
+g : generate
+module : schematic that I want to create
+boards : name of schematic</p>
+</blockquote>
+<h3 id="controller-service-생성하기">controller, service 생성하기</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest g controller boards --no-spec
+</span></span><span class="line"><span class="cl">nest g service boards --no-spec
+</span></span></code></pre></div><p>한줄씩 차례로 입력하면 된다.</p>
+<p>설명</p>
+<blockquote>
+<p>nest : using nest cli
+g : generate
+controller : controller schematic
+service : service schematic
+boards: name of the schematic
+&ndash;no-spec: 테스트를 위한 소스코드 생성을 하지 않겠다!</p>
+</blockquote>
+<blockquote>
+<p>[!tip]
+접근제한자를 이용해서 소스 간단하게하기
+접근제한자(public,protected,private)을 생성자(constructor) 파라미터에 선언하면 접근제한자가 사용된 생성자파라미터는 암묵적으로 클래스 프로퍼티로 선언된다.</p>
+</blockquote>
+<h2 id="nestjs에서-request의-body값은-어떻게-가져올까">NestJS에서 request의 body값은 어떻게 가져올까?</h2>
+<p>NodeJS에서는 <code>req.body</code>로 가져올 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="sb">`/`</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></div><p>하지만 NestJS에서는 <code>@Body body</code>를 이용해서 가져온다.
+이렇게 하면 모든 request에서 보내온 값을 가져올 수 있으며,
+만약, 하나씩 가져오려면
+<code>@Body('title') title</code>
+혹은
+<code>@Body('description') description</code>
+이런식으로 가져올 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kd">@Post</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nx">createBoard</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="nx">body</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">@Post</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nx">createBoard</span><span class="p">(</span><span class="kd">@Body</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span> <span class="nx">title</span>: <span class="kt">string</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		   <span class="kd">@Body</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">),</span> <span class="nx">description</span>: <span class="kt">string</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		   <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="nx">title</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="nx">description</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="nestjs에서-param은-어떻게-가져올까">NestJS에서 Param은 어떻게 가져올까?</h3>
+<p>localhost:3000/:id 와 같은 params 값의 경우, body와 유사하다.<br>
+위의 경우에는 <code>findOne(@Param('id') id: string)</code> 과 같이 가져오면 된다.<br>
+만약 여러개의 Param을 가져와야 한다면,
+<code>findOne(@Param() params: string[])</code> 으로 가져올 수 있다.</p>
+<p>\<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">@는 데코레이터라고 부른다.<br>
+타입스크립트의 데코레이터는 파이썬의 데코레이터나 자바의 어노테이션과 유사한 기능을 한다.<br>
+클래스, 메서드, 접근자, 프로퍼티, 매개변수에 적용 가능<br>
+참고 - <a href="https://wikidocs.net/158481" target="_blank" rel="noopener noreffer ">2.6 데코레이터 - NestJS로 배우는 백엔드 프로그래밍</a></div>
+        </div>
+    </div></p>
+<hr>
+<h2 id="dto-data-transfer-object란">DTO (Data Transfer Object)란?</h2>
+<p>계층간 데이터 교환을 위한 객체<br>
+DB에서 데이터를 얻어 Service나 Controller 등으로 보낼 때 사용하는 객체를 말한다.<br>
+DTO는 데이터가 네트워크를 통해 전송되는 방법을 정의하는 객체이다.</p>
+<p>NestJS 공식문서에서는 interface보다는 class를 이용해서 정의하는 것을 추천하고 있다.</p>
+<h4 id="dtodata-transfer-object를-쓰는-이유는">DTO(Data Transfer Object)를 쓰는 이유는?</h4>
+<ul>
+<li>데이터 유효성을 체크하는데 효율적</li>
+<li>더 안정적인 코드로 만들어준다. 타입스크립트의 타입으로도 사용된다.</li>
+</ul>
+<p>예시) controller, service에서 인자로 title, description이 있는 상황에서 만약 title을 다른 인자로 바꾼다면?</p>
+<ul>
+<li>인자가 하나인 경우에는 크게 문제가 없겠지만 이것들이 여러개라면 모든 파일에서 인자를 다 수정해줘야 한다.</li>
+<li>하지만 DTO를 이용한다면 이 모든 것을 하나의 class로 처리하고 해당 class만 수정하면 된다.</li>
+</ul>
+<h3 id="pipe란">Pipe란??</h3>
+<p>파이프는 @Injectable() 데코레이터로 주석이 달린 클래스이다.<br>
+파이프는 <strong>data transformation</strong> (데이터 변형)과 <strong>data validation</strong> (데이터 유효성)을 위해서 사용된다.<br>
+파이프는 컨트롤러 경로 처리기에 의해 처리되는 인수에 대해 작동한다.<br>
+Nest는 메소드가 호출되기 직전에 파이프를 삽입하고 파이트는 메소드로 향하는 인수를 수신하고 이에 대해 작동한다.</p>
+<h4 id="data-transformation">Data Transformation?</h4>
+<p>입력 데이터를 원하는 형식으로 변환 (예 : 문자열을 정수로)</p>
+<h4 id="pipe-사용하는-법-binding-pipes">PIPE 사용하는 법 (Binding Pipes)</h4>
+<ol>
+<li>Handler-level Pipes</li>
+<li>Parameter-level pipes</li>
+<li>Golbal-level Pipes</li>
+</ol>
+<h4 id="built-in-pipes">Built-in PIpes</h4>
+<p>NestJS에서 기본적으로 사용할 수 있는 6가지 파이프</p>
+<ul>
+<li>ValidationPipe</li>
+<li>ParseIntPipe</li>
+<li>ParseBoolPipe</li>
+<li>ParseArrayPipe</li>
+<li>ParseUUIDPipe</li>
+<li>DefaultValuesPipe</li>
+</ul>
+<h3 id="파이프를-이용한-유효성-체크-검사">파이프를 이용한 유효성 체크 검사</h3>
+<h4 id="필요한-모듈">필요한 모듈</h4>
+<ul>
+<li>class-validator, class-transformer</li>
+<li><code>npm install class-validator class-transformer --save</code></li>
+<li><a href="https://github.com/typestack/class-validator#manual-validation" target="_blank" rel="noopener noreffer ">Documentation page</a></li>
+</ul>
+<h5 id="예시">예시</h5>
+<p>create-board.dto.ts 파일에서</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"> <span class="kr">import</span> <span class="p">{</span> <span class="nx">IsNotEmpty</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;class-validator&#39;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">CreateBoardDto</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="kd">@IsNotEmpty</span><span class="p">()</span>  <span class="c1">// &lt;-- 이렇게
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">title</span>: <span class="kt">string</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  <span class="kd">@IsNotEmpty</span><span class="p">()</span>  <span class="c1">// &lt;-- 이렇게
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">description</span>: <span class="kt">string</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>먼저 위와 같이 각 인자별로 반드시 있어야 하는 곳에 <code>@IsNotEmpty</code>를 적용시킨다.</p>
+<p>controller 파일에서</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kd">@Post</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">@UsePipes</span><span class="p">(</span><span class="nx">ValidationPipe</span><span class="p">)</span>  <span class="c1">// &lt;-- 이렇게
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">createBoard</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span> <span class="nx">createBoardDto</span>: <span class="kt">CreateBoardDto</span><span class="p">)</span><span class="o">:</span> <span class="nx">Board</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">boardsService</span><span class="p">.</span><span class="nx">createBoard</span><span class="p">(</span><span class="nx">createBoardDto</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div><p>다음으로 위와 같이 해당 부분에 <code>@UsePipes(ValidationPipe)</code>를 적용시킨다.</p>
+<p>위 방법은 앞서 언급했던 3가지 Binding Pipes 중, <strong>Handler-level Pipes</strong>이다.</p>
+<p>@IsNotEmpty를 적용하지 않았을 경우 실제 Postman을 돌려보면 UsePipes에서 해당 함수를 찾을 수 없다는 오류가 뜨며, @UsePipes를 적용하지 않았을 경우에는 해당 유효성 검사 자체가 이루어지지 않는다.</p>
+<h3 id="에러를-표출해주기-위해서는">에러를 표출해주기 위해서는</h3>
+<p>예를 들어 찾는 게시물이 없는 경우, 예외 인스턴스를 생성해서 이용할 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="nx">getBoardById</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Board</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">found</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">boards</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">board</span> <span class="o">=&gt;</span> <span class="nx">board</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">found</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">throw</span> <span class="k">new</span> <span class="nx">NotFoundException</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">found</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><code>NotFoundException</code>은 nestjs에 있는 인스턴스이다. (import로 사용가능)
+사용시 다음과 같은 에러메세지를 볼 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;statusCode&#34;</span><span class="p">:</span> <span class="mi">404</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;Not Found&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>여기서 만약 에러메세지를 따로 넣어주고 싶다면,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="nx">getBoardById</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Board</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">found</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">boards</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">board</span> <span class="o">=&gt;</span> <span class="nx">board</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">found</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">throw</span> <span class="k">new</span> <span class="nx">NotFoundException</span><span class="p">(</span><span class="sb">`Can&#39;t find Board with id </span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">found</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>이렇게 하면, 아래와 같이 response 된다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;statusCode&#34;</span><span class="p">:</span> <span class="mi">404</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;Can&#39;t find Board with id wefewwefewf&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;error&#34;</span><span class="p">:</span> <span class="s2">&#34;Not Found&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="커스텀-파이프-구현방법">커스텀 파이프 구현방법</h3>
+<p>먼저 Pipe Transform이란 인터페이스를 새롭게 만들 커스텀 파이프에 구현해줘야 한다.<br>
+이 Pipe Transform 인터페이스는 모든 파이프에서 구현해줘야 하는 인터페이스이다.<br>
+그리고 이것과 함께 <strong>모든 파이프는 transform()메소드를 필요로</strong> 한다.<br>
+이 메소드는 NestJS가 인자(arjuments)를 처리하기 위해서 사용된다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ArgumentMetadata</span><span class="p">,</span> <span class="nx">PipeTransform</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/common&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">BoardStatusValidationPipe</span> <span class="kr">implements</span> <span class="nx">PipeTransform</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">transfomr</span><span class="p">(</span><span class="nx">value</span>: <span class="kt">any</span><span class="p">,</span> <span class="nx">metadata</span>: <span class="kt">ArgumentMetadata</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;metadata&#39;</span><span class="p">,</span> <span class="nx">metadata</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="transform-메소드">transform() 메소드</h4>
+<p>이 메소드는 2 개의 파라미터를 가진다.</p>
+<ol>
+<li>첫번째 파라미터는 처리가 된 인자의 값(value)이며,</li>
+<li>두번째 파라미터는 인자에 대한 메타 데이터를 포함한 객체이다.</li>
+</ol>
+<p>transform()메소드에서 return된 값은 Route 핸들러로 전해진다.<br>
+만약 예외(Exception)가 발생하면 클라이언트에 바로 전해진다.</p>
+<hr>
+<h2 id="mysql-및-typeorm">mySQL 및 TypeORM</h2>
+<h3 id="설치">설치</h3>
+<ul>
+<li>typeorm</li>
+<li>mysql</li>
+<li>@nestjs/typeorm</li>
+</ul>
+<p>이렇게 3가지 모듈을 설치한다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install --save @nestjs/typeorm typeorm mysql
+</span></span></code></pre></div><p>참고문서
+<a href="https://docs.nestjs.com/techniques/database" target="_blank" rel="noopener noreffer ">documentation</a></p>
+<h3 id="설정">설정</h3>
+<p>src 폴더 아래 configs 폴더 생성 후 그 안에 <code>typeorm.config.ts</code> 파일 생성</p>
+<h4 id="dao단-분리">DAO단 분리</h4>
+<p>기존 내가 알던 model폴더에서 <strong>000.dao.ts</strong> 라고 파일명을 붙였던 것과 달리,<br>
+소스 강의에서는 <strong>000.repository.ts</strong> 파일명을 사용하고 있다. 그 외에는 동일하다.</p>
+<h3 id="게시물-삭제">게시물 삭제</h3>
+<h4 id="remove-vs-delete">remove()? vs delete()?</h4>
+<ul>
+<li>remove
+<ul>
+<li>무조건 존재하는 아이템을 remove 메소드를 이용해서 지워야 한다. 그렇지 않으면 에러 발생(404 error)</li>
+</ul>
+</li>
+<li>delete
+<ul>
+<li>만약 아이템이 존재하면 지우고 존재하지 않으면 아무런 영향이 없다.</li>
+<li>이러한 차이로 remove를 이용하면 하나의 아이템을 지울 때 두번 데이터베이스를 이용해야 하기 때문에 (아이템 유무 + 지우기) 소스강의에서는 데이터베이스에 한번만 접근해도 되는 delete 메소드를 사용한다.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="error-handling">Error Handling</h2>
+<p>에러를 잡아내고 싶다면 우선,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="c1">// &lt;- 이건 사용하고자 하는 코드
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>를 이용하여 에러를 확인할 수 있다.<br>
+http에서 해당 API를 돌려보면, 아래와 같은 로그를 터미널에서 확인할 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> code: <span class="s1">&#39;ER_DUP_ENTRY&#39;</span>,
+</span></span><span class="line"><span class="cl">  errno: 1062,
+</span></span><span class="line"><span class="cl">  sqlMessage: <span class="s2">&#34;Duplicate entry &#39;test&#39; for key &#39;user.IDX_78a916df40e02a9deb1c4b75ed&#39;&#34;</span>,
+</span></span><span class="line"><span class="cl">  sqlState: <span class="s1">&#39;23000&#39;</span>,
+</span></span><span class="line"><span class="cl">  index: 0,
+</span></span><span class="line"><span class="cl">  sql: <span class="s2">&#34;INSERT INTO `user`(`id`, `username`, `password`) VALUES (DEFAULT, &#39;test&#39;, &#39;te171&#39;)&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>해당 error code 확인 후,<br>
+다시 아래와 같은 방식으로 수정하면 정상적으로 잡고자 하는 에러를 잡아낼 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">code</span> <span class="o">===</span> <span class="s1">&#39;ER_DUP_ENTRY&#39;</span><span class="p">)</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">throw</span> <span class="k">new</span> <span class="nx">ConflictException</span><span class="p">(</span><span class="s1">&#39;Existing username&#39;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">throw</span> <span class="k">new</span> <span class="nx">InternalServerErrorException</span><span class="p">();</span>  
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>코드 수정 후, http Request 실행시</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">HTTP/1.1 <span class="m">409</span> Conflict
+</span></span><span class="line"><span class="cl">X-Powered-By: Express
+</span></span><span class="line"><span class="cl">Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</span></span><span class="line"><span class="cl">Content-Length: <span class="m">67</span>
+</span></span><span class="line"><span class="cl">ETag: W/<span class="s2">&#34;43-bvU5hJ7vN5ptmGJpSCIhkVNclIU&#34;</span>
+</span></span><span class="line"><span class="cl">Date: Mon, <span class="m">16</span> Jan <span class="m">2023</span> 06:19:56 GMT
+</span></span><span class="line"><span class="cl">Connection: keep-alive
+</span></span><span class="line"><span class="cl">Keep-Alive: <span class="nv">timeout</span><span class="o">=</span><span class="m">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;statusCode&#34;</span>: 409,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;message&#34;</span>: <span class="s2">&#34;Existing username&#34;</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;error&#34;</span>: <span class="s2">&#34;Conflict&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>statusCode 409부터 정상적으로 송출하고자 하는 에러 메세지까지 모두 이상없음을 확인가능하다.</p>
+<hr>
+<h2 id="인증-및-인가---bycriptjs">인증 및 인가 - bycriptjs</h2>
+<h3 id="hashedpassword-생성-및-검증">hashedPassword 생성 및 검증</h3>
+<p>우선 인증 인가 부분에 필요한 bcrypt를 설치한다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install bcryptjs --save
+</span></span></code></pre></div><p><code>import</code>는 다음과 같다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">bcrypt</span> <span class="kr">from</span> <span class="s1">&#39;bcryptjs&#39;</span><span class="p">;</span>
+</span></span></code></pre></div><p>회원가입시, bcrypt로 hashedPassword 생성</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">//user.repository.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">@CustomRepository</span><span class="p">(</span><span class="nx">User</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserRepository</span> <span class="kr">extends</span> <span class="nx">Repository</span><span class="p">&lt;</span><span class="nt">User</span><span class="p">&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">createUser</span><span class="p">(</span><span class="nx">authCredentialsDto</span>: <span class="kt">AuthCredentialsDto</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">void</span><span class="p">&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">{</span> <span class="nx">username</span><span class="p">,</span> <span class="nx">password</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">authCredentialsDto</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">salt</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">bcrypt</span><span class="p">.</span><span class="nx">genSalt</span><span class="p">();</span>  <span class="c1">// bcrypt가 들어간 코드
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">hashedPassword</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">bcrypt</span><span class="p">.</span><span class="nx">hash</span><span class="p">(</span><span class="nx">password</span><span class="p">,</span> <span class="nx">salt</span><span class="p">);</span> <span class="c1">// bcrypt가 들어간 코드 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span> <span class="nx">username</span><span class="p">,</span> <span class="nx">password</span>: <span class="kt">hashedPassword</span> <span class="p">});</span>  <span class="c1">// bcrypt가 들어간 코드
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">      <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">code</span> <span class="o">===</span> <span class="s1">&#39;ER_DUP_ENTRY&#39;</span><span class="p">)</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="nx">ConflictException</span><span class="p">(</span><span class="s1">&#39;Existing username&#39;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="nx">InternalServerErrorException</span><span class="p">();</span>  
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>로그인시, hashedPassword를 비교하여 검증 ( <code>bcrypt.compare</code>)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// user.service.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">async</span> <span class="nx">signIn</span><span class="p">(</span><span class="nx">authCredentialsDto</span>: <span class="kt">AuthCredentialsDto</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">username</span><span class="p">,</span> <span class="nx">password</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">authCredentialsDto</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">findOneBy</span><span class="p">({</span> <span class="nx">username</span> <span class="p">});</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">user</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="k">await</span> <span class="nx">bcrypt</span><span class="p">.</span><span class="nx">compare</span><span class="p">(</span><span class="nx">password</span><span class="p">,</span> <span class="nx">user</span><span class="p">.</span><span class="nx">password</span><span class="p">)))</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;login success&#39;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">throw</span> <span class="k">new</span> <span class="nx">UnauthorizedException</span><span class="p">(</span><span class="s1">&#39;login failed&#39;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="jwt-token-생성">jwt token 생성</h3>
+<p>필요 모듈</p>
+<ul>
+<li>@nestjs/jwt : nestjs에서 jwt를 사용하기 위해 필요한 모듈</li>
+<li>@nestjs/passport : JWT를 이용하여 인증 처리하는 등의 과정을 훨씬 쉽게 만들어주는 모듈</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install @nestjs/jwt @nestjs/passport passport passport-jwt --save
+</span></span></code></pre></div><p>위 터미널 명령어와 같이 총 4개의 모듈을 설치한다.</p>
+<ul>
+<li>@nestjs/jwt</li>
+<li>@nestjs/passport</li>
+<li>passport</li>
+<li>passport-jwt</li>
+</ul>
+<h4 id="passport-사용">passport 사용</h4>
+<blockquote>
+<p>Passport 모듈이란?<br>
+토큰이 유효한 토큰인지 서버에서 secret text를 이용해서 알아내면 payload 안에 유저 이름을 이용해서,<br>
+데이터베이스 안에 있는 <strong>유저 이름에 해당하는 유저 정보를</strong> 모두 가져올 수 있다.<br>
+이러한 처리를 쉽게 해주는게 Passport 모듈이다.</p>
+</blockquote>
+<p>&ndash;&gt; 쉽게 말해 로그인 이후, 토큰 확인 과정을 말한다!!!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install @types/passport-jwt --save
+</span></span></code></pre></div><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><h5 id="nestjs의-미들웨어">nestJS의 미들웨어</h5>
+<ul>
+<li>Pipes : 파이프는 요청 유효성 검사 및 페이로드 변환을 위해 만들어진다. 데이터를 예상한 대로 직렬화 한다.</li>
+<li>Filters : 필터는 오류 처리 미들웨어이다. 특정 오류 처리기를 사용할 경로와 각 경로 주변의 복잡성을 관리하는 방법을 알 수 있다.</li>
+<li>Guards : 가드는 인증 미들웨어. 지정된 경로로 통과할 수 있는 사람과 허용되지 않는 사람을 서버에 알려준다.</li>
+<li>Interceptors : 인터셉터는 응답 매핑 및 캐시 관리와 함께 요청 로깅과 같은 전후 미들웨어. 각 요청 전후에 이를 실행하는 기능은 매우 강력하고 유용하다.</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>각각의 미들웨어가 불러지는(called) 순서</p>
+<pre tabindex="0"><code>middleware -&gt; guard -&gt; interceptor (before) -&gt; pipe -&gt; controller -&gt; service -&gt; controller -&gt; interceptor (after) -&gt; filter (if applicable) -&gt; client
+</code></pre></div>
+        </div>
+    </div>
+<h5 id="useguards">UseGuards</h5>
+<p>UseGuards 안에 @nestjs/passport에서 가져온 AuthGuard()를 이용하면 요청안에 유저 정보를 넣어준 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kd">@Post</span><span class="p">(</span><span class="s1">&#39;/authTest&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">@UseGuards</span><span class="p">(</span><span class="nx">AuthGuard</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nx">authTest</span><span class="p">(</span><span class="kd">@Req</span><span class="p">()</span> <span class="nx">req</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="useguards가-아닌-바로-객체에-접근하려면">UseGuards가 아닌 바로 객체에 접근하려면?</h4>
+<p>커스텀 데코레이터를 생성하여 접근할 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createParamDecorator</span><span class="p">,</span> <span class="nx">ExcutionContext</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/common&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">User</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./user.entity&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">GetUser</span> <span class="o">=</span> <span class="nx">createParamDecorator</span><span class="p">((</span><span class="nx">data</span><span class="p">,</span> <span class="nx">ctx</span>: <span class="kt">ExcutionContext</span><span class="p">)</span><span class="o">:</span> <span class="nx">User</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">req</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">switchToHttp</span><span class="p">().</span><span class="nx">getRequest</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">req</span><span class="p">.</span><span class="nx">user</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></div><p>위 예시는, UseGuards를 사용하고 그 안에 있는 정보를 사용하는 방법이기에 UseGuards가 필요하다.</p>
+<hr>
+<h3 id="인증된-유저만-게시물을-사용할-수-있게-하기">인증된 유저만 게시물을 사용할 수 있게 하기</h3>
+<p>우선 auth 모듈의 인증인가 부분을 boards 모듈에서도 사용할 수 있게 한다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// boards.module.ts 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">@Module</span><span class="p">({</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">	  <span class="nx">TypeOrmExModule</span><span class="p">.</span><span class="nx">forCustomRepository</span><span class="p">([</span><span class="nx">BoardRepository</span><span class="p">]),</span> 
+</span></span><span class="line"><span class="cl">	  <span class="nx">AuthModule</span>  <span class="c1">// &lt;- 추가
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	  <span class="p">],</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">controllers</span><span class="o">:</span> <span class="p">[</span><span class="nx">BoardsController</span><span class="p">],</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">providers</span><span class="o">:</span> <span class="p">[</span><span class="nx">BoardsService</span><span class="p">],</span>  
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//boards.controller.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">@Controller</span><span class="p">(</span><span class="s1">&#39;boards&#39;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="kd">@UseGuards</span><span class="p">(</span><span class="nx">AuthGuard</span><span class="p">())</span>  <span class="c1">// &lt;- 추가
+</span></span></span></code></pre></div><p>컨트롤러 boards 아래 넣게되면 미들웨어처럼 작동하여,<br>
+모든 boards API는 토큰을 필요로 하게 된다.</p>
+<hr>
+<h3 id="유저와-게시물-데이터의-관계-형성">유저와 게시물 데이터의 관계 형성</h3>
+<p>사용자 1명은 여러개의 게시물을 작성할 수 있다.<br>
+때문에 OneToMany Relationship, ManyToOne Relationship의 성격을 동시에 가지는데,<br>
+User Entity, Board Entity에서 각각 설정할 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">//user.entity.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">@OneToMany</span><span class="p">(</span><span class="kr">type</span> <span class="o">=&gt;</span> <span class="nx">Board</span><span class="p">,</span> <span class="nx">board</span> <span class="o">=&gt;</span> <span class="nx">board</span><span class="p">.</span><span class="nx">user</span><span class="p">,</span> <span class="p">{</span> <span class="nx">eager</span>: <span class="kt">true</span> <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">boards</span>: <span class="kt">Board</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//board.entity.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">@ManyToOne</span><span class="p">((</span><span class="kr">type</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">,</span> <span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">boards</span><span class="p">,</span> <span class="p">{</span> <span class="nx">eager</span>: <span class="kt">false</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl"><span class="nx">user</span>: <span class="kt">User</span><span class="p">;</span>
+</span></span></code></pre></div><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><h4 id="option-eager">option: eager</h4>
+<ul>
+<li>true 일때는 user정보를 가져올 때, board도 같이 가져옴</li>
+</ul>
+</div>
+        </div>
+    </div>
+<hr>
+<h2 id="log">Log</h2>
+<h4 id="로그의-종류">로그의 종류</h4>
+<ul>
+<li>Log - 중요한 정보의 범용 로깅</li>
+<li>Warning - 치명적이거나 파괴적이지 않은 처리되지 않은 문제</li>
+<li>Error - 치명적이거나 파괴적인 처리되지 않은 문제</li>
+<li>Debug - 개발자용  / 오류 발생시 로직을 디버그하는 데 도움이되는 유용한 정보입니다.</li>
+<li>Verbose - 응용자용 / 응용 프로그램의 동작에 대한 통찰력을 제공하는 정보입니다.</li>
+</ul>
+<h5 id="예시-1">예시</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// main.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NestFactory</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/core&#39;</span><span class="p">;</span>  <span class="c1">// &lt;- this
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">AppModule</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./app.module&#39;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Logger</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/common&#39;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">bootstrap() {</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">NestFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">AppModule</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mi">3000</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  <span class="k">await</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Application running on port </span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>  <span class="c1">// &lt;- this
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="nx">bootstrap</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// board.controller.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">@Get</span><span class="p">()</span>  
+</span></span><span class="line"><span class="cl"><span class="nx">getAllBoard</span><span class="p">(</span><span class="kd">@GetUser</span><span class="p">()</span> <span class="nx">user</span>: <span class="kt">User</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">Board</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">verbose</span><span class="p">(</span><span class="sb">`User </span><span class="si">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="si">}</span><span class="sb"> trying to get all boards`</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">boardsService</span><span class="p">.</span><span class="nx">getAllBoards</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><hr>
+<h2 id="설정-1">설정</h2>
+<p><code>.env</code> 파일 사용 관련</p>
+<p>필요 모듈 설치</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install config --save
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">// 또는 
+</span></span><span class="line"><span class="cl">npm install dotenv --save
+</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-01-09</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/nestjs/">NestJS</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/230102-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%EA%B0%80%EB%8F%84-%EC%8B%A4%ED%8C%A8%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-%ED%8A%B9%EC%A7%95/" class="prev" rel="prev" title="부트캠프 가도 실패하는 사람 특징"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>부트캠프 가도 실패하는 사람 특징</a>
+            <a href="/posts/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error/" class="next" rel="next" title="error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error">error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+</html>
