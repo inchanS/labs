@@ -4,7 +4,22 @@
         <link>https://www.inchan.dev/posts/</link>
         <description>All Posts | inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 02 Mar 2023 23:27:35 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>블로그 이전 공사 = github &#43; hugo </title>
+    <link>https://www.inchan.dev/posts/230302-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%9D%B4%EC%A0%84/</link>
+    <pubDate>Thu, 02 Mar 2023 23:27:35 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://www.inchan.dev/posts/230302-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%9D%B4%EC%A0%84/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
+            </div>&lt; 이미지 출처 = unsplash &gt;
+플랫폼 이전 move to github + hugo before: google blogger 현재 바로 이 블로그의 플랫폼이 google blogger이다.
+tistory나 naver 블로그에 비해 내가 원하는 문법의 허용범위가 더 커서 오랫동안 사용중이었다.
+(예를 들면 toc, 각주, MarkDown 문법과 HTML 문법으로의 글 작성 모두 지원 등…)
+기술 블로그에서 가장 유용한 부분은 toc(table of contents)라고 생각한다.
+header태그를 이용한 toc의 가장 큰 장점은 문서 하나의 크기가 클때, 해당 헤더 부분만의 링크를 가질 수 있다는 점, 이로써 참고 링크에서 다시한번 해당 부분을 찾는 번거로움을 줄일 수 있다.]]></description>
+</item>
+<item>
     <title>typeORM transaction에서 repository 사용하기</title>
     <link>https://www.inchan.dev/posts/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
     <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
@@ -137,17 +152,6 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
 실제 개발환경에서의 DB와 test DB를 분리하기 위해서 local DB는 2가지로 나누어 세팅을 해야한다.
 그런데 test를 실행할때마다 typeORM 세팅의 연결값을 매번 변경해줘야하는 문제가 상당히 번거로웠다.
 고민하던 와중, cross-env라는 npm package를 알게되었고 이를 이용하여 상황에 따라 dotenv 설정값을 유동적으로 활용할 수 있도록 세팅을 구상해보았다.]]></description>
-</item>
-<item>
-    <title>error note - throw와 return</title>
-    <link>https://www.inchan.dev/posts/230118-error-note-throw%EC%99%80-return/</link>
-    <pubDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/230118-error-note-throw%EC%99%80-return/</guid>
-    <description><![CDATA[tag : #JavaScript
-문제상황 Failure 에러핸들링 중, 에러메세지를 response로 보내려고 한다. 이에 return을 사용 에러가 나와야 할 상황에서 정상적으로 에러메세지를 response로 보낸다. 하지만 에러코드를 알려야 할 status code는 정상을 알리며 이후 모든 함수와 명령이 진행됨 해결 Success return이 아닌 throw를 사용하여야 한다. 특히 node.js에서 서버를 돌릴때,
-단순히 return만으로는 이후의 모든 과정, 즉 controller - service - dao 등에서 return을 한 함수 이외 모든 명령어가 진행 된다.
-하지만 throw의 경우, 에러를 내보내는 것 뿐만 아니라 이후의 모든 명령어를 중지시킨다.]]></description>
 </item>
 </channel>
 </rss>

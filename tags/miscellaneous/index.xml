@@ -4,7 +4,22 @@
         <link>https://www.inchan.dev/tags/miscellaneous/</link>
         <description>Miscellaneous - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 02 Jan 2023 04:41:37 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/miscellaneous/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 02 Mar 2023 23:27:35 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/miscellaneous/" rel="self" type="application/rss+xml" /><item>
+    <title>블로그 이전 공사 = github &#43; hugo </title>
+    <link>https://www.inchan.dev/posts/230302-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%9D%B4%EC%A0%84/</link>
+    <pubDate>Thu, 02 Mar 2023 23:27:35 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://www.inchan.dev/posts/230302-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%9D%B4%EC%A0%84/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
+            </div>&lt; 이미지 출처 = unsplash &gt;
+플랫폼 이전 move to github + hugo before: google blogger 현재 바로 이 블로그의 플랫폼이 google blogger이다.
+tistory나 naver 블로그에 비해 내가 원하는 문법의 허용범위가 더 커서 오랫동안 사용중이었다.
+(예를 들면 toc, 각주, MarkDown 문법과 HTML 문법으로의 글 작성 모두 지원 등…)
+기술 블로그에서 가장 유용한 부분은 toc(table of contents)라고 생각한다.
+header태그를 이용한 toc의 가장 큰 장점은 문서 하나의 크기가 클때, 해당 헤더 부분만의 링크를 가질 수 있다는 점, 이로써 참고 링크에서 다시한번 해당 부분을 찾는 번거로움을 줄일 수 있다.]]></description>
+</item>
+<item>
     <title>부트캠프 가도 실패하는 사람 특징</title>
     <link>https://www.inchan.dev/posts/230102-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%EA%B0%80%EB%8F%84-%EC%8B%A4%ED%8C%A8%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-%ED%8A%B9%EC%A7%95/</link>
     <pubDate>Mon, 02 Jan 2023 04:41:37 &#43;0900</pubDate>
