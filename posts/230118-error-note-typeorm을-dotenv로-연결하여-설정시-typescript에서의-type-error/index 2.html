@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error" />
+<meta property="og:description" content="tag : #typeorm #typescript
+source : node.js - using process.env in TypeScript - Stack Overflow
+에러 상황 TypeScript로 typeORM을 세팅할때,
+dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼 수 있다.
+위 3개의 해당 error message를 살펴보면 차례로 다음과 같다.
+TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &#34;mariadb&#34; | &#34;postgres&#34; | &#34;cockroachdb&#34; | &#34;sqlite&#34; | &#34;mssql&#34; | &#34;sap&#34; | &#34;oracle&#34; | &#34;cordova&#34; | &#34;nativescript&#34; | &#34;react-native&#34; | &#34;sqljs&#34; | &#34;mongodb&#34; | &#34;aurora-mysql&#34; | ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.inchan.dev/posts/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error/" /><meta property="og:image" content="https://www.inchan.dev/images/avatar.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-18T04:28:04+09:00" />
+<meta property="article:modified_time" content="2023-01-18T04:28:04+09:00" /><meta property="og:site_name" content="inchan.dev" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.inchan.dev/images/avatar.png"/>
+
+<meta name="twitter:title" content="error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error"/>
+<meta name="twitter:description" content="tag : #typeorm #typescript
+source : node.js - using process.env in TypeScript - Stack Overflow
+에러 상황 TypeScript로 typeORM을 세팅할때,
+dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼 수 있다.
+위 3개의 해당 error message를 살펴보면 차례로 다음과 같다.
+TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &#34;mariadb&#34; | &#34;postgres&#34; | &#34;cockroachdb&#34; | &#34;sqlite&#34; | &#34;mssql&#34; | &#34;sap&#34; | &#34;oracle&#34; | &#34;cordova&#34; | &#34;nativescript&#34; | &#34;react-native&#34; | &#34;sqljs&#34; | &#34;mongodb&#34; | &#34;aurora-mysql&#34; | ."/>
+<meta name="application-name" content="inchan.dev">
+<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.inchan.dev/posts/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error/" /><link rel="prev" href="https://www.inchan.dev/posts/230109-nestjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/" /><link rel="next" href="https://www.inchan.dev/posts/230118-error-note-throw%EC%99%80-return/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.inchan.dev\/posts\/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error\/"
+        },"genre": "posts","keywords": "TypeScript","wordcount":  230 ,
+        "url": "https:\/\/www.inchan.dev\/posts\/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error\/","datePublished": "2023-01-18T04:28:04+09:00","dateModified": "2023-01-18T04:28:04+09:00","publisher": {
+            "@type": "Organization",
+            "name": "inchan"},"author": {
+                "@type": "Person",
+                "name": "inchan"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="inchan.dev">inchan.dev</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="inchan.dev">inchan.dev</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/error-note/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Error Note</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-18">2023-01-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;230 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#에러-상황">에러 상황</a></li>
+    <li><a href="#해결">해결</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><em>tag</em> :   #typeorm #typescript<br>
+<em>source</em> :  <a href="https://stackoverflow.com/questions/45194598/using-process-env-in-typescript" target="_blank" rel="noopener noreffer ">node.js - using process.env in TypeScript - Stack Overflow</a></p>
+<hr>
+<h2 id="에러-상황">에러 상황</h2>
+<p>TypeScript로 typeORM을 세팅할때,<br>
+dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼 수 있다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/hyQSLSS.png"
+        data-srcset="https://i.imgur.com/hyQSLSS.png, https://i.imgur.com/hyQSLSS.png 1.5x, https://i.imgur.com/hyQSLSS.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/hyQSLSS.png"
+        title="https://i.imgur.com/hyQSLSS.png" /></p>
+<p>위 3개의 해당 error message를 살펴보면 차례로 다음과 같다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">TS2322: Type <span class="s1">&#39;string&#39;</span> is not assignable to <span class="nb">type</span> <span class="s1">&#39;&#34;mysql&#34; | &#34;mariadb&#34; | &#34;postgres&#34; | &#34;cockroachdb&#34; | &#34;sqlite&#34; | &#34;mssql&#34; | &#34;sap&#34; | &#34;oracle&#34; | &#34;cordova&#34; | &#34;nativescript&#34; | &#34;react-native&#34; | &#34;sqljs&#34; | &#34;mongodb&#34; | &#34;aurora-mysql&#34; | ... 4 more ... | &#34;spanner&#34;&#39;</span>.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">TS2322: Type <span class="s1">&#39;string&#39;</span> is not assignable to <span class="nb">type</span> <span class="s1">&#39;number&#39;</span>.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">TS2322: Type <span class="s1">&#39;string&#39;</span> is not assignable to <span class="nb">type</span> <span class="s1">&#39;LoggerOptions&#39;</span>.
+</span></span></code></pre></div><p>이는 typeORM의 설정 type이 정해져있어서 그렇다.</p>
+<p>첫번째, <code>type</code>의 경우 <code>mysql' | 'mariadb' | 'postgres'... </code>의 경우로 type이 정해져있음을 볼 수 있다.</p>
+<p>즉 이를 지정해주면 되는데, 조금 난해하다.</p>
+<h2 id="해결">해결</h2>
+<p><code>global.d.ts</code>라는 이름의 파일을 만들고 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><br>
+다음과 같이 세팅을 한다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">declare</span> <span class="kr">global</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">namespace</span> <span class="nx">NodeJS</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="kr">interface</span> <span class="nx">ProcessEnv</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">      <span class="nx">TYPEORM_CONNECTION</span><span class="o">:</span> <span class="s1">&#39;mysql&#39;</span> <span class="o">|</span> <span class="s1">&#39;mariadb&#39;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">      <span class="nx">TYPEORM_PORT</span>: <span class="kt">number</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">      <span class="nx">SECRET_KEY</span>: <span class="kt">string</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">      <span class="nx">TYPEORM_LOGGING</span>: <span class="kt">boolean</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="p">{}</span>   <span class="c1">// &lt;- 이거 꼭 넣어줘야 한다.
+</span></span></span></code></pre></div><p>global로 선언하고, NodeJS에서의 dotenv 명은 ProcessEnv인가보다.<br>
+문제는 이렇게 해도 타입에러가 해결되지 않는다.</p>
+<p>이는 밖으로 내보내기가 되지 않아서 생긴 문제로,<br>
+<strong>아무 의미 없는것 같지만  <code>export {}</code> 를 가장 아랫단에 꼭 넣어줘야 한다.</strong></p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">다른 파일에서 타입 정의시,<br>
+declare - namespace 후,<br>
+<code>export {}</code> 넣기!!</div>
+        </div>
+    </div>
+<p>그러면 정상적으로 에러가 해결됨을 볼 수 있다.</p>
+<p>중괄호 안에 아무것도 없지만 정확하게 어떻게 작동하는지는 조금 더 공부를 해봐야겠다.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>파일명은 상관없다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-01-18</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typescript/">TypeScript</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/230109-nestjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/" class="prev" rel="prev" title="nestJS 시작하기"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>nestJS 시작하기</a>
+            <a href="/posts/230118-error-note-throw%EC%99%80-return/" class="next" rel="next" title="error note - throw와 return">error note - throw와 return<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+</html>
