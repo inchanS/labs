@@ -2,12 +2,15 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://www.inchan.dev/categories/</loc><lastmod>2023-02-25T04:14:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://www.inchan.dev/</loc><lastmod>2023-02-25T04:14:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://www.inchan.dev/categories/</loc><lastmod>2023-03-05T03:18:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.inchan.dev/</loc><lastmod>2023-03-05T03:18:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.inchan.dev/tags/miscellaneous/</loc><lastmod>2023-03-05T03:18:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.inchan.dev/categories/miscellaneous/</loc><lastmod>2023-03-05T03:18:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.inchan.dev/posts/</loc><lastmod>2023-03-05T03:18:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.inchan.dev/tags/</loc><lastmod>2023-03-05T03:18:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.inchan.dev/posts/230302-blog-migration/</loc><lastmod>2023-03-05T03:18:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://www.inchan.dev/tags/mysql/</loc><lastmod>2023-02-25T04:14:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://www.inchan.dev/categories/node.js/</loc><lastmod>2023-02-25T04:14:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://www.inchan.dev/posts/</loc><lastmod>2023-02-25T04:14:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://www.inchan.dev/tags/</loc><lastmod>2023-02-25T04:14:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://www.inchan.dev/tags/typeorm/</loc><lastmod>2023-02-25T04:14:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://www.inchan.dev/posts/230225-typeorm-transaction%EC%97%90%EC%84%9C-repository-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</loc><lastmod>2023-02-25T04:14:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://www.inchan.dev/posts/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-&#43;-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0/</loc><lastmod>2023-02-16T04:17:07&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
@@ -33,8 +36,6 @@
             <loc>https://www.inchan.dev/posts/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error/</loc><lastmod>2023-01-18T04:28:04&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://www.inchan.dev/tags/nestjs/</loc><lastmod>2023-01-09T04:35:58&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://www.inchan.dev/posts/230109-nestjs-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</loc><lastmod>2023-01-09T04:35:58&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://www.inchan.dev/tags/miscellaneous/</loc><lastmod>2023-01-02T04:41:37&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://www.inchan.dev/categories/miscellaneous/</loc><lastmod>2023-01-02T04:41:37&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://www.inchan.dev/posts/230102-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%EA%B0%80%EB%8F%84-%EC%8B%A4%ED%8C%A8%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-%ED%8A%B9%EC%A7%95/</loc><lastmod>2023-01-02T04:41:37&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://www.inchan.dev/tags/aws/</loc><lastmod>2022-12-28T04:58:02&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://www.inchan.dev/posts/221228-aws-%ED%8D%BC%EB%B8%94%EB%A6%AD-ip%EC%99%80-%ED%83%84%EB%A0%A5%EC%A0%81-ip/</loc><lastmod>2022-12-28T04:58:02&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

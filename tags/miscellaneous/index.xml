@@ -4,7 +4,24 @@
         <link>https://www.inchan.dev/tags/miscellaneous/</link>
         <description>Miscellaneous - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 02 Jan 2023 04:41:37 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/miscellaneous/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sun, 05 Mar 2023 03:18:59 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/miscellaneous/" rel="self" type="application/rss+xml" /><item>
+    <title>블로깅 플랫폼 변경: Google Blogger에서 GitHub &#43; Hugo로</title>
+    <link>https://www.inchan.dev/posts/230302-blog-migration/</link>
+    <pubDate>Sun, 05 Mar 2023 03:18:59 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://www.inchan.dev/posts/230302-blog-migration/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
+            </div>&lt; 이미지 출처 = unsplash &gt;
+github + hugo로 이사! 이전: google blogger 이전에 사용했던 블로그의 플랫폼은 google blogger였다.
+tistory나 naver 블로그에 비해 내가 원하는 문법의 허용범위가 더 커서 오랫동안 사용중이었다.
+(예를 들면 toc, 각주, MarkDown 문법과 HTML 문법으로의 글 작성 모두 지원 등…)
+기술 블로그에서 하나의 문서 양이 스크롤을 필요로 한다면 특히나 필요한 것이,
+바로 TOC(table of contents) 라고 생각한다.
+h태그를 이용한 toc의 가장 큰 장점은
+전체적인 개요를 한 눈에 살펴볼 수 있고, 또한 해당 태그 부분만의 링크를 가질 수 있다는 점!]]></description>
+</item>
+<item>
     <title>부트캠프 가도 실패하는 사람 특징</title>
     <link>https://www.inchan.dev/posts/230102-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%EA%B0%80%EB%8F%84-%EC%8B%A4%ED%8C%A8%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-%ED%8A%B9%EC%A7%95/</link>
     <pubDate>Mon, 02 Jan 2023 04:41:37 &#43;0900</pubDate>
