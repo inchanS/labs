@@ -39,7 +39,7 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/www.inchan.dev\/posts\/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-\u002b-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0\/"
-        },"genre": "posts","keywords": "TypeScript, typeORM","wordcount":  1289 ,
+        },"genre": "posts","keywords": "TypeScript, typeORM","wordcount":  1292 ,
         "url": "https:\/\/www.inchan.dev\/posts\/230216-node.js-%EB%B0%B1%EC%97%94%EB%93%9Ctypescript-\u002b-typeorm%EC%9C%BC%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EB%8C%80%EB%8C%93%EA%B8%80-%EA%B0%80%EA%B3%B5%ED%95%98%EA%B8%B0\/","datePublished": "2023-02-16T04:17:07+09:00","dateModified": "2023-02-16T04:17:07+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -53,7 +53,7 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="inchan.dev">inchan.dev</a>
+            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
@@ -76,7 +76,7 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="inchan.dev">inchan.dev</a>
+                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -113,7 +113,7 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Node.js 백엔드TypeScript + typeORM으로 무한 대댓글 가공하기</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/node.js/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Node.js</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-16">2023-02-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1289 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-16">2023-02-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1292 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -135,8 +135,17 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
       <ul>
         <li><a href="#1-local-시간대-맞추기">1. local 시간대 맞추기</a></li>
         <li><a href="#2-시간-구분자-제거">2. 시간 구분자 제거</a></li>
-        <li><a href="#3-정밀-초단위는-제거하고-시분까지만-출력">3. 정밀 초단위는 제거하고 시,분까지만 출력</a></li>
-        <li><a href="#entity">Entity</a></li>
+        <li><a href="#3-정밀-초단위는-제거하고-시분까지만-출력">3. 정밀 초단위는 제거하고 시,분까지만 출력</a>
+          <ul>
+            <li></li>
+            <li><a href="#이후-리팩토링을-하며-만들어진-최종-대댓글-api-결과">이후 리팩토링을 하며 만들어진 최종 대댓글 API 결과.</a></li>
+          </ul>
+        </li>
+        <li><a href="#entity">Entity</a>
+          <ul>
+            <li><a href="#service단">service단!!</a></li>
+          </ul>
+        </li>
         <li><a href="#repository단">Repository단!!!</a></li>
       </ul>
     </li>
@@ -252,7 +261,7 @@ mySQL의 출력방식을 따르기때문에 SQL의 query문에 직접적인 수�
 즉, select 또는 addSelect로 <strong>Alias하거나 수정을 함과 동시에 출력이 되지 않고 되려 해당 컬럼이 사라진다.</strong></p>
 <p>이러한 상태로의 해결방법은 Entity에서 직접 Alias 해줘야 하는데, 또 이렇게 되면 CreateDateColumn의 데코레이션 default 옵션이 깨진다.(피나는 시도 결과 ;; ㅠ)</p>
 </blockquote>
-<!-- raw HTML omitted -->
+<br>
 <p>때문에 결국 양자택일을 하는 수밖에 없었다.</p>
 <ul>
 <li>getMany() 방식을 포기하거나,</li>
@@ -381,8 +390,9 @@ mySQL의 출력방식을 따르기때문에 SQL의 query문에 직접적인 수�
 </span></span></code></pre></div><p>아주 이쁘게 잘 나왔다.</p>
 <p>typeORM 관련하여 전체적으로 내가 원하는 샘플코드는 구체적으로 검색해보기가 힘들어, 대부분 <a href="https://typeorm.io/" target="_blank" rel="noopener noreffer ">typeORM 공식문서</a>를 참고하며 진행하였고, 생각보다 공식문서가 굉장히 잘되어 있어 놀랐다.<br>
 (공식문서 속에서 원하는 정보 찾는게 더 시간이 많이 걸렸;;)</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</br>
+<details>
+<summary>전체 코드 보기</summary>
 <h3 id="entity">Entity</h3>
 <p>아! Entity에서 기본적으로 들어가는 id와 created_at, updated_at 등은 Base Entity로 따로 만들어 Entity 작업시 반복적으로 기입하지 않고 Embeded Entityes 방식으로 처리하였다.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// comment.entity.ts
@@ -481,8 +491,8 @@ mySQL의 출력방식을 따르기때문에 SQL의 query문에 직접적인 수�
 </span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">getMany</span><span class="p">();</span>  
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</span></span></code></pre></div></details>
+</br>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -531,7 +541,7 @@ mySQL의 출력방식을 따르기때문에 SQL의 query문에 직접적인 수�
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
         </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>

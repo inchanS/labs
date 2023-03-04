@@ -53,7 +53,7 @@ nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 ne
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="inchan.dev">inchan.dev</a>
+            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
@@ -76,7 +76,7 @@ nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 ne
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="inchan.dev">inchan.dev</a>
+                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -143,32 +143,67 @@ nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 ne
     </li>
     <li><a href="#dto-data-transfer-object란">DTO (Data Transfer Object)란?</a>
       <ul>
-        <li></li>
-        <li><a href="#pipe란">Pipe란??</a></li>
-        <li><a href="#파이프를-이용한-유효성-체크-검사">파이프를 이용한 유효성 체크 검사</a></li>
+        <li>
+          <ul>
+            <li><a href="#dtodata-transfer-object를-쓰는-이유는">DTO(Data Transfer Object)를 쓰는 이유는?</a></li>
+          </ul>
+        </li>
+        <li><a href="#pipe란">Pipe란??</a>
+          <ul>
+            <li><a href="#data-transformation">Data Transformation?</a></li>
+            <li><a href="#pipe-사용하는-법-binding-pipes">PIPE 사용하는 법 (Binding Pipes)</a></li>
+            <li><a href="#built-in-pipes">Built-in PIpes</a></li>
+          </ul>
+        </li>
+        <li><a href="#파이프를-이용한-유효성-체크-검사">파이프를 이용한 유효성 체크 검사</a>
+          <ul>
+            <li><a href="#필요한-모듈">필요한 모듈</a></li>
+          </ul>
+        </li>
         <li><a href="#에러를-표출해주기-위해서는">에러를 표출해주기 위해서는</a></li>
-        <li><a href="#커스텀-파이프-구현방법">커스텀 파이프 구현방법</a></li>
+        <li><a href="#커스텀-파이프-구현방법">커스텀 파이프 구현방법</a>
+          <ul>
+            <li><a href="#transform-메소드">transform() 메소드</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#mysql-및-typeorm">mySQL 및 TypeORM</a>
       <ul>
         <li><a href="#설치">설치</a></li>
-        <li><a href="#설정">설정</a></li>
-        <li><a href="#게시물-삭제">게시물 삭제</a></li>
+        <li><a href="#설정">설정</a>
+          <ul>
+            <li><a href="#dao단-분리">DAO단 분리</a></li>
+          </ul>
+        </li>
+        <li><a href="#게시물-삭제">게시물 삭제</a>
+          <ul>
+            <li><a href="#remove-vs-delete">remove()? vs delete()?</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#error-handling">Error Handling</a></li>
     <li><a href="#인증-및-인가---bycriptjs">인증 및 인가 - bycriptjs</a>
       <ul>
         <li><a href="#hashedpassword-생성-및-검증">hashedPassword 생성 및 검증</a></li>
-        <li><a href="#jwt-token-생성">jwt token 생성</a></li>
+        <li><a href="#jwt-token-생성">jwt token 생성</a>
+          <ul>
+            <li><a href="#passport-사용">passport 사용</a></li>
+            <li><a href="#useguards가-아닌-바로-객체에-접근하려면">UseGuards가 아닌 바로 객체에 접근하려면?</a></li>
+          </ul>
+        </li>
         <li><a href="#인증된-유저만-게시물을-사용할-수-있게-하기">인증된 유저만 게시물을 사용할 수 있게 하기</a></li>
         <li><a href="#유저와-게시물-데이터의-관계-형성">유저와 게시물 데이터의 관계 형성</a></li>
       </ul>
     </li>
     <li><a href="#log">Log</a>
       <ul>
-        <li></li>
+        <li>
+          <ul>
+            <li><a href="#로그의-종류">로그의 종류</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#설정-1">설정</a></li>
@@ -716,7 +751,7 @@ User Entity, Board Entity에서 각각 설정할 수 있다.</p>
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
         </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
