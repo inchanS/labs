@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/categories/env/" rel="self" type="application/rss+xml" /><item>
     <title>chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.</title>
-    <link>https://www.inchan.dev/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./</link>
+    <link>https://www.inchan.dev/posts/202302100411/</link>
     <pubDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./</guid>
+    <guid>https://www.inchan.dev/posts/202302100411/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1675557009483-e6cf3867976b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2hhdGdwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>#chatGPT
@@ -20,10 +20,10 @@ whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided eno
 </item>
 <item>
     <title>devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제</title>
-    <link>https://www.inchan.dev/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</link>
+    <link>https://www.inchan.dev/posts/202302020410/</link>
     <pubDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/230202-devonthink%EC%97%90%EC%84%9C-markdown%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%B4%EB%A6%AC%ED%95%91%EC%8B%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A3%BC%EC%86%8C-%EB%AC%B8%EC%A0%9C/</guid>
+    <guid>https://www.inchan.dev/posts/202302020410/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png" referrerpolicy="no-referrer">
             </div>&lt;사진: DEVONtechnologies | DEVONthink, professional document and information management for the Mac and iOS&gt;
@@ -35,10 +35,10 @@ PDF에서 짤린채로 수집되는 문제가 있어 MarkDown 포맷으로 클�
 </item>
 <item>
     <title>WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기</title>
-    <link>https://www.inchan.dev/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+    <link>https://www.inchan.dev/posts/202302020409/</link>
     <pubDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/230202-webstorm-console.log%EB%B3%80%EC%88%98-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+    <guid>https://www.inchan.dev/posts/202302020409/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;
@@ -54,10 +54,10 @@ console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 �
 </item>
 <item>
     <title>mac 터미널에서 폴더트리 구조 확인</title>
-    <link>https://www.inchan.dev/posts/230123-mac-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%ED%8F%B4%EB%8D%94%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8/</link>
+    <link>https://www.inchan.dev/posts/202301230429/</link>
     <pubDate>Mon, 23 Jan 2023 04:29:44 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/230123-mac-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%ED%8F%B4%EB%8D%94%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0-%ED%99%95%EC%9D%B8/</guid>
+    <guid>https://www.inchan.dev/posts/202301230429/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;
@@ -70,10 +70,10 @@ $ tree 폴더 제외 그런데 node project와 같이 node_module이라던가, d
 </item>
 <item>
     <title>터미널에서 &#39;바로가기&#39; 단축키 등록하기</title>
-    <link>https://www.inchan.dev/posts/221013-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0-%EB%8B%A8%EC%B6%95%ED%82%A4-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0/</link>
+    <link>https://www.inchan.dev/posts/202210130407/</link>
     <pubDate>Thu, 13 Oct 2022 04:07:19 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/221013-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0-%EB%8B%A8%EC%B6%95%ED%82%A4-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0/</guid>
+    <guid>https://www.inchan.dev/posts/202210130407/</guid>
     <description><![CDATA[터미널을 처음 실행하면 꼭 사용자 폴더에서 시작한다.
 cd ...로 찾아가는게 너무 귀찮다.
 그렇다고 finder에서 폴더를 drag &amp; drop해서 직접경로를 떨어뜨리는 방법도 있지만,

@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/chatgpt/" rel="self" type="application/rss+xml" /><item>
     <title>chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.</title>
-    <link>https://www.inchan.dev/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./</link>
+    <link>https://www.inchan.dev/posts/202302100411/</link>
     <pubDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/230210-chatgpt-%EC%82%AC%EC%9A%A9%EA%B8%B0-whereclausebuilder-%ED%95%A8%EC%88%98%EB%A5%BC-%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%95%98%EB%8B%A4./</guid>
+    <guid>https://www.inchan.dev/posts/202302100411/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1675557009483-e6cf3867976b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2hhdGdwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>#chatGPT

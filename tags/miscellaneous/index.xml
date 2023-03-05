@@ -4,12 +4,12 @@
         <link>https://www.inchan.dev/tags/miscellaneous/</link>
         <description>Miscellaneous - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sun, 05 Mar 2023 03:18:59 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/miscellaneous/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/miscellaneous/" rel="self" type="application/rss+xml" /><item>
     <title>블로깅 플랫폼 변경: Google Blogger에서 GitHub &#43; Hugo로</title>
-    <link>https://www.inchan.dev/posts/230302-blog-migration/</link>
-    <pubDate>Sun, 05 Mar 2023 03:18:59 &#43;0900</pubDate>
+    <link>https://www.inchan.dev/posts/202303022327/</link>
+    <pubDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/230302-blog-migration/</guid>
+    <guid>https://www.inchan.dev/posts/202303022327/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt; 이미지 출처 = unsplash &gt;
@@ -23,10 +23,10 @@ h태그를 이용한 toc의 가장 큰 장점은
 </item>
 <item>
     <title>부트캠프 가도 실패하는 사람 특징</title>
-    <link>https://www.inchan.dev/posts/230102-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%EA%B0%80%EB%8F%84-%EC%8B%A4%ED%8C%A8%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-%ED%8A%B9%EC%A7%95/</link>
+    <link>https://www.inchan.dev/posts/202301020441/</link>
     <pubDate>Mon, 02 Jan 2023 04:41:37 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/230102-%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84-%EA%B0%80%EB%8F%84-%EC%8B%A4%ED%8C%A8%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C-%ED%8A%B9%EC%A7%95/</guid>
+    <guid>https://www.inchan.dev/posts/202301020441/</guid>
     <description><![CDATA[tag : #coding #development
 source : 부트캠프 가셔도 실패하는 분 특징. 12년차 개발자가 말하는 프로그래머 롱런하는 방법 - YouTube
 youtube 서핑을 하다 우연히 보게 된 영상. &ldquo;부트캠프 가셔도 실패하는 분 특징&rdquo; 문구가 굉장히 도발적이었다.

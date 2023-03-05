@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 23 Jan 2023 04:24:50 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/express/" rel="self" type="application/rss+xml" /><item>
     <title>백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리</title>
-    <link>https://www.inchan.dev/posts/230123-%EB%B0%B1%EC%97%94%EB%93%9C-typescript-express-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-jest-%EB%B0%8F-node-%ED%99%98%EA%B2%BD%EC%97%90-%EB%94%B0%EB%9D%BC-dotenv-%EC%84%A4%EC%A0%95-%EB%B6%84%EB%A6%AC/</link>
+    <link>https://www.inchan.dev/posts/202301230424/</link>
     <pubDate>Mon, 23 Jan 2023 04:24:50 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/230123-%EB%B0%B1%EC%97%94%EB%93%9C-typescript-express-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-jest-%EB%B0%8F-node-%ED%99%98%EA%B2%BD%EC%97%90-%EB%94%B0%EB%9D%BC-dotenv-%EC%84%A4%EC%A0%95-%EB%B6%84%EB%A6%AC/</guid>
+    <guid>https://www.inchan.dev/posts/202301230424/</guid>
     <description><![CDATA[tag : #typescript #express
 문제상황 TDD 방법론을 따라 프로젝트를 진행하려는데 Jest를 이용하여 test 코드를 작성하던 중,
 한가지 문제를 마주한다.

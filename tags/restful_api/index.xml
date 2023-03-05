@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sun, 25 Dec 2022 05:09:42 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/restful_api/" rel="self" type="application/rss+xml" /><item>
     <title>status code 204</title>
-    <link>https://www.inchan.dev/posts/221225-status-code-204/</link>
+    <link>https://www.inchan.dev/posts/202212250509/</link>
     <pubDate>Sun, 25 Dec 2022 05:09:42 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/221225-status-code-204/</guid>
+    <guid>https://www.inchan.dev/posts/202212250509/</guid>
     <description><![CDATA[tag : #restAPI
 #restAPI
 덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실!

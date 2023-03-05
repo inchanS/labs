@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/categories/error-note/" rel="self" type="application/rss+xml" /><item>
     <title>error note - throw와 return</title>
-    <link>https://www.inchan.dev/posts/230118-error-note-throw%EC%99%80-return/</link>
+    <link>https://www.inchan.dev/posts/202301180430/</link>
     <pubDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/230118-error-note-throw%EC%99%80-return/</guid>
+    <guid>https://www.inchan.dev/posts/202301180430/</guid>
     <description><![CDATA[tag : #JavaScript
 문제상황 Failure 에러핸들링 중, 에러메세지를 response로 보내려고 한다. 이에 return을 사용 에러가 나와야 할 상황에서 정상적으로 에러메세지를 response로 보낸다. 하지만 에러코드를 알려야 할 status code는 정상을 알리며 이후 모든 함수와 명령이 진행됨 해결 Success return이 아닌 throw를 사용하여야 한다. 특히 node.js에서 서버를 돌릴때,
 단순히 return만으로는 이후의 모든 과정, 즉 controller - service - dao 등에서 return을 한 함수 이외 모든 명령어가 진행 된다.
@@ -17,10 +17,10 @@
 </item>
 <item>
     <title>error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error</title>
-    <link>https://www.inchan.dev/posts/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error/</link>
+    <link>https://www.inchan.dev/posts/202301180428/</link>
     <pubDate>Wed, 18 Jan 2023 04:28:04 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/230118-error-note-typeorm%EC%9D%84-dotenv%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EC%97%AC-%EC%84%A4%EC%A0%95%EC%8B%9C-typescript%EC%97%90%EC%84%9C%EC%9D%98-type-error/</guid>
+    <guid>https://www.inchan.dev/posts/202301180428/</guid>
     <description><![CDATA[tag : #typeorm #typescript
 source : node.js - using process.env in TypeScript - Stack Overflow
 에러 상황 TypeScript로 typeORM을 세팅할때,

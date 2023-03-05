@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제" />
+<meta property="og:description" content="&lt;사진: DEVONtechnologies | DEVONthink, professional document and information management for the Mac and iOS&gt;
+tag : #devonthink source : Script: Replace link references with real links in Markdwon - DEVONthink / Tips - DEVONtechnologies Community
+코딩을 공부하면서 정말 많은 웹 문서들을 참고하며 정리하게 된다.
+그 중, 보관하고자 하는 문서는 주로 웹클리핑을 통해 정보를 수집한다.
+이때, 클리핑 포맷은 보통 PDF로 하지만 가끔 code block내 스크롤이 있는 경우에는
+PDF에서 짤린채로 수집되는 문제가 있어 MarkDown 포맷으로 클리핑을 한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.inchan.dev/posts/202302020410/" /><meta property="og:image" content="https://www.inchan.dev/images/avatar.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-02T04:10:40+09:00" />
+<meta property="article:modified_time" content="2023-02-02T04:10:40+09:00" /><meta property="og:site_name" content="inchan.dev" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.inchan.dev/images/avatar.png"/>
+
+<meta name="twitter:title" content="devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제"/>
+<meta name="twitter:description" content="&lt;사진: DEVONtechnologies | DEVONthink, professional document and information management for the Mac and iOS&gt;
+tag : #devonthink source : Script: Replace link references with real links in Markdwon - DEVONthink / Tips - DEVONtechnologies Community
+코딩을 공부하면서 정말 많은 웹 문서들을 참고하며 정리하게 된다.
+그 중, 보관하고자 하는 문서는 주로 웹클리핑을 통해 정보를 수집한다.
+이때, 클리핑 포맷은 보통 PDF로 하지만 가끔 code block내 스크롤이 있는 경우에는
+PDF에서 짤린채로 수집되는 문제가 있어 MarkDown 포맷으로 클리핑을 한다."/>
+<meta name="application-name" content="inchan.dev">
+<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.inchan.dev/posts/202302020410/" /><link rel="prev" href="https://www.inchan.dev/posts/202302020409/" /><link rel="next" href="https://www.inchan.dev/posts/202302100411/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.inchan.dev\/posts\/202302020410\/"
+        },"genre": "posts","keywords": "devonthink, markdown","wordcount":  481 ,
+        "url": "https:\/\/www.inchan.dev\/posts\/202302020410\/","datePublished": "2023-02-02T04:10:40+09:00","dateModified": "2023-02-02T04:10:40+09:00","publisher": {
+            "@type": "Organization",
+            "name": "inchan"},"author": {
+                "@type": "Person",
+                "name": "inchan"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/env/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>env</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-02">2023-02-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;481 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png"
+        data-srcset="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png, https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png 1.5x, https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png 2x"
+        data-sizes="auto"
+        alt="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png"
+        title="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#그런데-devonthink의-markdown-웹클리핑-조금-이상한-부분이-있다">그런데 DevonThink의 MarkDown 웹클리핑 조금 이상한 부분이 있다.</a></li>
+      </ul>
+    </li>
+    <li><a href="#devonthink의-상단-툴바에-스크립트-넣기">DevonThink의 상단 툴바에 스크립트 넣기</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>&lt;사진: <a href="https://www.devontechnologies.com/apps/devonthink" target="_blank" rel="noopener noreffer ">DEVONtechnologies | DEVONthink, professional document and information management for the Mac and iOS</a>&gt;</p>
+<p><em>tag</em> :   #devonthink
+<em>source</em> :  <a href="https://discourse.devontechnologies.com/t/script-replace-link-references-with-real-links-in-markdwon/74221" target="_blank" rel="noopener noreffer ">Script: Replace link references with real links in Markdwon - DEVONthink / Tips - DEVONtechnologies Community</a></p>
+<hr>
+<p>코딩을 공부하면서 정말 많은 웹 문서들을 참고하며 정리하게 된다.</p>
+<p>그 중, 보관하고자 하는 문서는 주로 웹클리핑을 통해 정보를 수집한다.<br>
+이때, 클리핑 포맷은 보통 PDF로 하지만 가끔 <strong>code block내 스크롤이 있는 경우에는</strong><br>
+PDF에서 짤린채로 수집되는 문제가 있어 MarkDown 포맷으로 클리핑을 한다.</p>
+<p>나는 주로 아래 두 도구를 사용하여 자료를 정리한다.</p>
+<ul>
+<li>Obsidian(note taking app)</li>
+<li>DevonThink(note database)</li>
+</ul>
+<p>이때, 웹클리핑은 Obsidian 노트내로 바로 삽입할 수 있는 방법도 있지만 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><br>
+파일자체에 Tag 및 Annotation 관리를 위해 DevonThink의 웹클리핑 tool을 사용한다.<br>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/VvMWMd0.png"
+        data-srcset="https://i.imgur.com/VvMWMd0.png, https://i.imgur.com/VvMWMd0.png 1.5x, https://i.imgur.com/VvMWMd0.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/VvMWMd0.png"
+        title="https://i.imgur.com/VvMWMd0.png" /></p>
+<h3 id="그런데-devonthink의-markdown-웹클리핑-조금-이상한-부분이-있다">그런데 DevonThink의 MarkDown 웹클리핑 조금 이상한 부분이 있다.</h3>
+<p>일반적인 MarkDown 문법에서의 이미지 삽입 문법은 다음과 같다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">![image 설명](image 주소)
+</span></span></code></pre></div><p>그런데 DevonThink의 웹클리퍼는 클리핑시 모든 부가적인 <strong>웹링크의 주소를 주석처리하는</strong> 경향이 보인다.<br>
+그래서 실제로 웹클리핑을 해보면 다음과 같이 MarkDown 변환 처리가 되어있음을 볼 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">![][1] 
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- [1]은 주석번호 --&gt;</span> 
+</span></span></code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/9IzI6zU.png"
+        data-srcset="https://i.imgur.com/9IzI6zU.png, https://i.imgur.com/9IzI6zU.png 1.5x, https://i.imgur.com/9IzI6zU.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/9IzI6zU.png"
+        title="https://i.imgur.com/9IzI6zU.png" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/QgSfrxh.png"
+        data-srcset="https://i.imgur.com/QgSfrxh.png, https://i.imgur.com/QgSfrxh.png 1.5x, https://i.imgur.com/QgSfrxh.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/QgSfrxh.png"
+        title="https://i.imgur.com/QgSfrxh.png" /></p>
+<p>사실 이는 standard markdown 문법에서도 문제가 없기때문에 일반적인 다른 markdown 편집기에서도 이상없이 출력은 된다.</p>
+<p>하지만&hellip;
+Obsidian 노트앱을 사용중이라면 Obsidian만의 변형 markdown 문법에서<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 다른 문제를 야기한다.</p>
+<p>Obsidian에서는 이미지를 넣을때 이미지의 사이즈를 편하게 조절할 수 있는 문법이 있다.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">![image 설명 |500](image 주소)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- |숫자 는 이미지의 width를 설정해준다. |500x400 이렇게 넣으면 마크업 시, width 500, height 400을 설정해준다 --&gt;</span> 
+</span></span></code></pre></div><p>이 때, 이미지의 주소가 주석으로 입력되면 위 문법이 먹히지 않게 된다.  (변형문법의 단점 ;; ㅠ )</p>
+<p>이를 위해 이미지 주소 자리에 있는 주석번호를, 주석에 있는 원래의 이미지 링크로 바꿔주는 스크립트를 만들어 해당 파일에 스크립트를 적용하면 편하게 변환할 수 있다.</p>
+<p>우선 스크립트는 다음과 같다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">(</span><span class="s2">&#34;DEVONthink 3&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">app</span><span class="p">.</span><span class="nx">includeStandardAdditions</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">records</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">selectedRecords</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">records</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">r</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">links</span> <span class="o">=</span> <span class="nx">getReferenceLinks</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">plainText</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">r</span><span class="p">.</span><span class="nx">plainText</span> <span class="o">=</span> <span class="nx">replaceLinks</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">plainText</span><span class="p">(),</span> <span class="nx">links</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">})()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getReferenceLinks</span><span class="p">(</span><span class="nx">txt</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">allLinks</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">txt</span><span class="p">.</span><span class="nx">matchAll</span><span class="p">(</span><span class="sr">/^\[(\d+)\]:\s+(.*)$/gm</span><span class="p">)];</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">linkArray</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">allLinks</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">l</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">l</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">URL</span> <span class="o">=</span> <span class="nx">l</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">linkArray</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">=</span> <span class="nx">URL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">linkArray</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">replaceLinks</span><span class="p">(</span><span class="nx">txt</span><span class="p">,</span> <span class="nx">links</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">links</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">links</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">k</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">URL</span> <span class="o">=</span> <span class="nx">links</span><span class="p">[</span><span class="nx">k</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">regEx</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="sb">`]\\[</span><span class="si">${</span><span class="nx">k</span><span class="si">}</span><span class="sb">\\]`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">txt</span> <span class="o">=</span> <span class="nx">txt</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">regEx</span><span class="p">,</span> <span class="sb">`](</span><span class="si">${</span><span class="nx">URL</span><span class="si">}</span><span class="sb">)`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">txt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>이를 적용하면 다음과 같이 주석으로 처리되었던 이미지 주소가 원 링크로 대체된다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/D19zMkY.png"
+        data-srcset="https://i.imgur.com/D19zMkY.png, https://i.imgur.com/D19zMkY.png 1.5x, https://i.imgur.com/D19zMkY.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/D19zMkY.png"
+        title="https://i.imgur.com/D19zMkY.png" /></p>
+<h2 id="devonthink의-상단-툴바에-스크립트-넣기">DevonThink의 상단 툴바에 스크립트 넣기</h2>
+<p>macOS에 기본으로 설치되어 있는 <strong>스크립트 편집기</strong>를 열어서 위 코드를 넣는다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/FUzIhty.png"
+        data-srcset="https://i.imgur.com/FUzIhty.png, https://i.imgur.com/FUzIhty.png 1.5x, https://i.imgur.com/FUzIhty.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/FUzIhty.png"
+        title="https://i.imgur.com/FUzIhty.png" />
+<br>
+<br></p>
+<p>이때 옵션에서 applescript가 아닌, <strong>javascript</strong>로 설정해줘야 한다.</p>
+<p>그리고 devonthink에서 이 스크립트를 상단 툴바에 넣고 싶다면,</p>
+<ol>
+<li>devonthink의 상단 메뉴 중 script(아이콘) - open scripts folder 를 눌러 아래와 같이 파인더로 진입한다.</li>
+<li>Toolbar 폴더 내에 방금 만든 스크립트를 넣는다.</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/FmbY7Dw.png"
+        data-srcset="https://i.imgur.com/FmbY7Dw.png, https://i.imgur.com/FmbY7Dw.png 1.5x, https://i.imgur.com/FmbY7Dw.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/FmbY7Dw.png"
+        title="https://i.imgur.com/FmbY7Dw.png" /></p>
+<p>그럼 이제 toolbar 커스터마이징을 통해 아래와 같이 상단에 위치 시킬 수 있다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/9KtJq9p.png"
+        data-srcset="https://i.imgur.com/9KtJq9p.png, https://i.imgur.com/9KtJq9p.png 1.5x, https://i.imgur.com/9KtJq9p.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/9KtJq9p.png"
+        title="https://i.imgur.com/9KtJq9p.png" /></p>
+<p>물론 이 스크립트는 DevonThink의 smart rules에 등록시켜 자동으로 파일을 감지하여 사용하게끔 할 수도 있다.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://gist.github.com/kepano/90c05f162c37cf730abb8ff027987ca3" target="_blank" rel="noopener noreffer ">Obsidian Web Clipper Bookmarklet to save articles and pages from the web (for Safari, Chrome, Firefox, and mobile browsers)</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>나의 경우 변형 markdown 문법의 경우 웬만해서는 기피한다. 왜냐하면 MD파일이 해당 어플리케이션에 종속되는 문제가 생기기 때문이다.  하지만 그 사용이 너무나도 편해서 종종 상황에 따라 사용하기도 한다.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://github.com/zoni/obsidian-export/issues/2" target="_blank" rel="noopener noreffer ">Support image resize · Issue #2 · zoni/obsidian-export</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-02-02</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/devonthink/">devonthink</a>,&nbsp;<a href="/tags/markdown/">markdown</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/202302020409/" class="prev" rel="prev" title="WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기</a>
+            <a href="/posts/202302100411/" class="next" rel="next" title="chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.">chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+</html>
