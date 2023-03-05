@@ -130,8 +130,7 @@ h태그를 이용한 toc의 가장 큰 장점은
         title="typeORM transaction시 버전차에 따른 방법 변화" /></a>
         </div><h1 class="single-title" itemprop="name headline">
         <a href="/posts/202302250414/">typeORM transaction에서 repository 사용하기</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-25">2023-02-25</time></span>&nbsp;<span class="post-category">included in <a href="/categories/node.js/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Node.js</a></span></div><div class="content">&lt;사진: unsplash&gt;
-#project_review #typeorm
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-25">2023-02-25</time></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div><div class="content">&lt;사진: unsplash&gt;
 transaction 구성중 Entity가 아닌 Repository 사용시 typeORM에서 transaction을 사용하는 방법은 몇가지가 있지만,
 복잡한 service단의 처리에서는 아래의 queryRunner 방식이 더 적합할것 같아서
 dataSource.createQueryRunner() 방식을 사용했다.1
@@ -149,9 +148,9 @@ dataSource.createQueryRunner() 방식을 사용했다.1
         title="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" /></a>
         </div><h1 class="single-title" itemprop="name headline">
         <a href="/posts/202302160417/">Node.js 백엔드TypeScript + typeORM으로 무한 대댓글 가공하기</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-16">2023-02-16</time></span>&nbsp;<span class="post-category">included in <a href="/categories/node.js/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Node.js</a></span></div><div class="content">&lt;사진: unsplash&gt;
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-16">2023-02-16</time></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div><div class="content">&lt;사진: unsplash&gt;
 #project_review
-기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker #typeORM createQueryBuilder 메소드로 출력시
+기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker typeORM createQueryBuilder 메소드로 출력시
 2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다.
 우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
 mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에</div><div class="post-footer">
@@ -168,13 +167,13 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에</di
         title="https://images.unsplash.com/photo-1675557009483-e6cf3867976b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2hhdGdwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" /></a>
         </div><h1 class="single-title" itemprop="name headline">
         <a href="/posts/202302100411/">chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-10">2023-02-10</time></span>&nbsp;<span class="post-category">included in <a href="/categories/env/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>env</a></span></div><div class="content">#chatGPT
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-10">2023-02-10</time></span>&nbsp;<span class="post-category">included in <a href="/categories/miscellaneous/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Miscellaneous</a></span></div><div class="content">#chatGPT
 chatGPT에게 whereClauseBuilder 함수를 물어보았다. 원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 where절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다.
 질문은 한글로 했고, 영어로 답변이 오는데 속도는 꽤 빠르다.
 하지만 답변을 한글로 받고자 하면 꽤 오랜 지연이 발생한다.
 whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided enough context for me to understand what you&rsquo;re asking about. Could you please provide more information or specify what you&rsquo;re looking to learn about &ldquo;whereClauseBuilder&rdquo;?</div><div class="post-footer">
         <a href="/posts/202302100411/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/chatgpt/">chatGPT</a></div></div>
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/miscellaneous/">Miscellaneous</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/posts/202302020410/"><img
         class="lazyload"

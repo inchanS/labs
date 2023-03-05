@@ -13,7 +13,6 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYW5zYWN0aW9ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;
-#project_review #typeorm
 transaction 구성중 Entity가 아닌 Repository 사용시 typeORM에서 transaction을 사용하는 방법은 몇가지가 있지만,
 복잡한 service단의 처리에서는 아래의 queryRunner 방식이 더 적합할것 같아서
 dataSource.createQueryRunner() 방식을 사용했다.1

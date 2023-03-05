@@ -30,7 +30,6 @@ h태그를 이용한 toc의 가장 큰 장점은
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYW5zYWN0aW9ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;
-#project_review #typeorm
 transaction 구성중 Entity가 아닌 Repository 사용시 typeORM에서 transaction을 사용하는 방법은 몇가지가 있지만,
 복잡한 service단의 처리에서는 아래의 queryRunner 방식이 더 적합할것 같아서
 dataSource.createQueryRunner() 방식을 사용했다.1
@@ -46,7 +45,7 @@ dataSource.createQueryRunner() 방식을 사용했다.1
                 <img src="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;
 #project_review
-기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker #typeORM createQueryBuilder 메소드로 출력시
+기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker typeORM createQueryBuilder 메소드로 출력시
 2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다.
 우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
 mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에]]></description>

@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>JavaScript - Category - inchan.dev</title>
-        <link>https://www.inchan.dev/categories/javascript/</link>
-        <description>JavaScript - Category - inchan.dev</description>
+        <title>Programming - Category - inchan.dev</title>
+        <link>https://www.inchan.dev/categories/programming/</link>
+        <description>Programming - Category - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/categories/javascript/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/categories/programming/" rel="self" type="application/rss+xml" /><item>
     <title>typescript - any와 unknown의 차이</title>
     <link>https://www.inchan.dev/posts/202301280423/</link>
     <pubDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</pubDate>

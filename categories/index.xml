@@ -13,47 +13,39 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>Node.js</title>
-    <link>https://www.inchan.dev/categories/node.js/</link>
-    <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://www.inchan.dev/categories/node.js/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>env</title>
-    <link>https://www.inchan.dev/categories/env/</link>
-    <pubDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://www.inchan.dev/categories/env/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>JavaScript</title>
-    <link>https://www.inchan.dev/categories/javascript/</link>
-    <pubDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://www.inchan.dev/categories/javascript/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Error Note</title>
-    <link>https://www.inchan.dev/categories/error-note/</link>
-    <pubDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://www.inchan.dev/categories/error-note/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
     <title>Back-End</title>
     <link>https://www.inchan.dev/categories/back-end/</link>
-    <pubDate>Wed, 28 Dec 2022 04:58:02 &#43;0900</pubDate>
+    <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://www.inchan.dev/categories/back-end/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>project</title>
+    <title>env</title>
+    <link>https://www.inchan.dev/categories/env/</link>
+    <pubDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://www.inchan.dev/categories/env/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Programming</title>
+    <link>https://www.inchan.dev/categories/programming/</link>
+    <pubDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://www.inchan.dev/categories/programming/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Debugging</title>
+    <link>https://www.inchan.dev/categories/debugging/</link>
+    <pubDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://www.inchan.dev/categories/debugging/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Project</title>
     <link>https://www.inchan.dev/categories/project/</link>
     <pubDate>Tue, 27 Dec 2022 04:48:11 &#43;0900</pubDate>
     <author>inchan</author>
