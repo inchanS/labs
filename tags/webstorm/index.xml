@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>webstorm - Tag - inchan.dev</title>
-        <link>https://www.inchan.dev/tags/webstorm/</link>
+        <link>https://inchan.dev/tags/webstorm/</link>
         <description>webstorm - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/webstorm/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/webstorm/" rel="self" type="application/rss+xml" /><item>
     <title>WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기</title>
-    <link>https://www.inchan.dev/posts/202302020409/</link>
+    <link>https://inchan.dev/posts/202302020409/</link>
     <pubDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202302020409/</guid>
+    <guid>https://inchan.dev/posts/202302020409/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;

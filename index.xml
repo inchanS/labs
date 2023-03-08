@@ -1,17 +1,17 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>inchan.dev</title>
-        <link>https://www.inchan.dev/</link>
+        <link>https://inchan.dev/</link>
         <description>Coding Projects: From Ideas to Execution</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</lastBuildDate>
-            <atom:link href="https://www.inchan.dev/index.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="https://inchan.dev/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Swagger를 이용한 백엔드의 효과적인 API명세 전달</title>
-    <link>https://www.inchan.dev/posts/202303080503/</link>
+    <link>https://inchan.dev/posts/202303080503/</link>
     <pubDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202303080503/</guid>
+    <guid>https://inchan.dev/posts/202303080503/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2670&amp;q=80" referrerpolicy="no-referrer">
             </div>사진출처: unsplash
@@ -21,10 +21,10 @@
 </item>
 <item>
     <title>블로깅 플랫폼 변경: Google Blogger에서 GitHub &#43; Hugo로</title>
-    <link>https://www.inchan.dev/posts/202303022327/</link>
+    <link>https://inchan.dev/posts/202303022327/</link>
     <pubDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202303022327/</guid>
+    <guid>https://inchan.dev/posts/202303022327/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt; 이미지 출처 = unsplash &gt;
@@ -38,10 +38,10 @@ h태그를 이용한 toc의 가장 큰 장점은
 </item>
 <item>
     <title>typeORM transaction에서 repository 사용하기</title>
-    <link>https://www.inchan.dev/posts/202302250414/</link>
+    <link>https://inchan.dev/posts/202302250414/</link>
     <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202302250414/</guid>
+    <guid>https://inchan.dev/posts/202302250414/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYW5zYWN0aW9ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;
@@ -52,10 +52,10 @@ dataSource.createQueryRunner() 방식을 사용했다.1
 </item>
 <item>
     <title>Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기</title>
-    <link>https://www.inchan.dev/posts/202302160417/</link>
+    <link>https://inchan.dev/posts/202302160417/</link>
     <pubDate>Thu, 16 Feb 2023 04:17:07 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202302160417/</guid>
+    <guid>https://inchan.dev/posts/202302160417/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;
@@ -67,10 +67,10 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에]]><
 </item>
 <item>
     <title>chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.</title>
-    <link>https://www.inchan.dev/posts/202302100411/</link>
+    <link>https://inchan.dev/posts/202302100411/</link>
     <pubDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202302100411/</guid>
+    <guid>https://inchan.dev/posts/202302100411/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1675557009483-e6cf3867976b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2hhdGdwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>#chatGPT
@@ -81,10 +81,10 @@ whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided eno
 </item>
 <item>
     <title>devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제</title>
-    <link>https://www.inchan.dev/posts/202302020410/</link>
+    <link>https://inchan.dev/posts/202302020410/</link>
     <pubDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202302020410/</guid>
+    <guid>https://inchan.dev/posts/202302020410/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png" referrerpolicy="no-referrer">
             </div>&lt;사진: DEVONtechnologies | DEVONthink, professional document and information management for the Mac and iOS&gt;
@@ -96,10 +96,10 @@ PDF에서 짤린채로 수집되는 문제가 있어 MarkDown 포맷으로 클�
 </item>
 <item>
     <title>WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기</title>
-    <link>https://www.inchan.dev/posts/202302020409/</link>
+    <link>https://inchan.dev/posts/202302020409/</link>
     <pubDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202302020409/</guid>
+    <guid>https://inchan.dev/posts/202302020409/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;
@@ -115,10 +115,10 @@ console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 �
 </item>
 <item>
     <title>typescript - any와 unknown의 차이</title>
-    <link>https://www.inchan.dev/posts/202301280423/</link>
+    <link>https://inchan.dev/posts/202301280423/</link>
     <pubDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301280423/</guid>
+    <guid>https://inchan.dev/posts/202301280423/</guid>
     <description><![CDATA[tag : #typescript related link
 unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 내리기 힘든 상황에서 주로 any 를 사용한다.
 물론 typescript의 성격상 any는 지양하는 것이 좋다.
@@ -127,10 +127,10 @@ unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 
 </item>
 <item>
     <title>typescript - satisfies operator 탐구</title>
-    <link>https://www.inchan.dev/posts/202301280422/</link>
+    <link>https://inchan.dev/posts/202301280422/</link>
     <pubDate>Sat, 28 Jan 2023 04:22:36 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301280422/</guid>
+    <guid>https://inchan.dev/posts/202301280422/</guid>
     <description><![CDATA[tag : #typescript
 related link
 satisfies-operator / typescript typescript 4.9에서 새로 나온 기능으로 satisfies 라는 연산자가 있다.
@@ -141,10 +141,10 @@ toUpperCase에서는 only string타입이 들어와야 하는데 union type으�
 </item>
 <item>
     <title>mac 터미널에서 폴더트리 구조 확인</title>
-    <link>https://www.inchan.dev/posts/202301230429/</link>
+    <link>https://inchan.dev/posts/202301230429/</link>
     <pubDate>Mon, 23 Jan 2023 04:29:44 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301230429/</guid>
+    <guid>https://inchan.dev/posts/202301230429/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;

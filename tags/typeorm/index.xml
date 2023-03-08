@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>typeORM - Tag - inchan.dev</title>
-        <link>https://www.inchan.dev/tags/typeorm/</link>
+        <link>https://inchan.dev/tags/typeorm/</link>
         <description>typeORM - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/typeorm/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/typeorm/" rel="self" type="application/rss+xml" /><item>
     <title>typeORM transaction에서 repository 사용하기</title>
-    <link>https://www.inchan.dev/posts/202302250414/</link>
+    <link>https://inchan.dev/posts/202302250414/</link>
     <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202302250414/</guid>
+    <guid>https://inchan.dev/posts/202302250414/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYW5zYWN0aW9ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;
@@ -20,10 +20,10 @@ dataSource.createQueryRunner() 방식을 사용했다.1
 </item>
 <item>
     <title>Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기</title>
-    <link>https://www.inchan.dev/posts/202302160417/</link>
+    <link>https://inchan.dev/posts/202302160417/</link>
     <pubDate>Thu, 16 Feb 2023 04:17:07 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202302160417/</guid>
+    <guid>https://inchan.dev/posts/202302160417/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;
@@ -35,10 +35,10 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에]]><
 </item>
 <item>
     <title>typescript - typeorm 연결 오류 해결</title>
-    <link>https://www.inchan.dev/posts/202212130459/</link>
+    <link>https://inchan.dev/posts/202212130459/</link>
     <pubDate>Tue, 13 Dec 2022 04:59:30 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202212130459/</guid>
+    <guid>https://inchan.dev/posts/202212130459/</guid>
     <description><![CDATA[tag : #typescript #typeorm #error
 source : 오류 해결1
 related link typescript에서의 typeorm 연결 오류 대략 14시부터 22시까지 무려 8시간을 끼니도 거른채 뚫어져라 모니터만 쳐다보며 찾았다.

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Express - Tag - inchan.dev</title>
-        <link>https://www.inchan.dev/tags/express/</link>
+        <link>https://inchan.dev/tags/express/</link>
         <description>Express - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 23 Jan 2023 04:24:50 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/express/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 23 Jan 2023 04:24:50 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/express/" rel="self" type="application/rss+xml" /><item>
     <title>백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리</title>
-    <link>https://www.inchan.dev/posts/202301230424/</link>
+    <link>https://inchan.dev/posts/202301230424/</link>
     <pubDate>Mon, 23 Jan 2023 04:24:50 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301230424/</guid>
+    <guid>https://inchan.dev/posts/202301230424/</guid>
     <description><![CDATA[tag : #typescript #express
 문제상황 TDD 방법론을 따라 프로젝트를 진행하려는데 Jest를 이용하여 test 코드를 작성하던 중,
 한가지 문제를 마주한다.

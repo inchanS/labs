@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>html - Tag - inchan.dev</title>
-        <link>https://www.inchan.dev/tags/html/</link>
+        <link>https://inchan.dev/tags/html/</link>
         <description>html - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Tue, 04 Oct 2022 05:15:23 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/html/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Tue, 04 Oct 2022 05:15:23 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/html/" rel="self" type="application/rss+xml" /><item>
     <title>인스타그램 로그인 화면 구성</title>
-    <link>https://www.inchan.dev/posts/202210040515/</link>
+    <link>https://inchan.dev/posts/202210040515/</link>
     <pubDate>Tue, 04 Oct 2022 05:15:23 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202210040515/</guid>
+    <guid>https://inchan.dev/posts/202210040515/</guid>
     <description><![CDATA[tag : #JavaScript
 justgram - UI 만들기 Mission 1 - 로그인 페이지 레이아웃 처음 HTML 파일을 작성할때, display : flex; 를 쓰지 않았다. 결과는 원하는대로 나왔지만 나의 첫 코드는 쓸데없이 수많은 &lt;div&gt;와 &lt;p&gt;태그로 범벅이 됐다.
 HTML 초기버전 &lt;div class=&#34;wrapLoginBox&#34;&gt; &lt;div class=&#34;loginBox&#34;&gt; &lt;p id=&#34;title&#34;&gt;justgram&lt;/p&gt; &lt;div class=&#34;inputBox&#34;&gt; &lt;p&gt; &lt;input id=&#34;userInput&#34; type=&#34;text&#34; placeholder=&#34;전화번호, 사용자 이름 또는 이메일&#34;/&gt; &lt;/p&gt; &lt;p&gt; &lt;input id=&#34;pwInput&#34; type=&#34;password&#34; placeholder=&#34;비밀번호&#34; /&gt; &lt;/p&gt; &lt;p&gt;&lt;button class=&#34;loginBtn&#34; disabled&gt;로그인&lt;/button&gt;&lt;/p&gt; &lt;/div&gt; &lt;div class=&#34;foot&#34;&gt; &lt;a href=&#34;https://www.instagram.com/accounts/password/reset/&#34;&gt;비밀번호를 잊으셨나요?]]></description>

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>env - Category - inchan.dev</title>
-        <link>https://www.inchan.dev/categories/env/</link>
+        <link>https://inchan.dev/categories/env/</link>
         <description>env - Category - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/categories/env/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/categories/env/" rel="self" type="application/rss+xml" /><item>
     <title>devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제</title>
-    <link>https://www.inchan.dev/posts/202302020410/</link>
+    <link>https://inchan.dev/posts/202302020410/</link>
     <pubDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202302020410/</guid>
+    <guid>https://inchan.dev/posts/202302020410/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png" referrerpolicy="no-referrer">
             </div>&lt;사진: DEVONtechnologies | DEVONthink, professional document and information management for the Mac and iOS&gt;
@@ -21,10 +21,10 @@ PDF에서 짤린채로 수집되는 문제가 있어 MarkDown 포맷으로 클�
 </item>
 <item>
     <title>WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기</title>
-    <link>https://www.inchan.dev/posts/202302020409/</link>
+    <link>https://inchan.dev/posts/202302020409/</link>
     <pubDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202302020409/</guid>
+    <guid>https://inchan.dev/posts/202302020409/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;
@@ -40,10 +40,10 @@ console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 �
 </item>
 <item>
     <title>mac 터미널에서 폴더트리 구조 확인</title>
-    <link>https://www.inchan.dev/posts/202301230429/</link>
+    <link>https://inchan.dev/posts/202301230429/</link>
     <pubDate>Mon, 23 Jan 2023 04:29:44 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301230429/</guid>
+    <guid>https://inchan.dev/posts/202301230429/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;
@@ -56,10 +56,10 @@ $ tree 폴더 제외 그런데 node project와 같이 node_module이라던가, d
 </item>
 <item>
     <title>터미널에서 &#39;바로가기&#39; 단축키 등록하기</title>
-    <link>https://www.inchan.dev/posts/202210130407/</link>
+    <link>https://inchan.dev/posts/202210130407/</link>
     <pubDate>Thu, 13 Oct 2022 04:07:19 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202210130407/</guid>
+    <guid>https://inchan.dev/posts/202210130407/</guid>
     <description><![CDATA[터미널을 처음 실행하면 꼭 사용자 폴더에서 시작한다.
 cd ...로 찾아가는게 너무 귀찮다.
 그렇다고 finder에서 폴더를 drag &amp; drop해서 직접경로를 떨어뜨리는 방법도 있지만,

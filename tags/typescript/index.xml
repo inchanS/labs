@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>TypeScript - Tag - inchan.dev</title>
-        <link>https://www.inchan.dev/tags/typescript/</link>
+        <link>https://inchan.dev/tags/typescript/</link>
         <description>TypeScript - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 16 Feb 2023 04:17:07 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/typescript/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 16 Feb 2023 04:17:07 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/typescript/" rel="self" type="application/rss+xml" /><item>
     <title>Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기</title>
-    <link>https://www.inchan.dev/posts/202302160417/</link>
+    <link>https://inchan.dev/posts/202302160417/</link>
     <pubDate>Thu, 16 Feb 2023 04:17:07 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202302160417/</guid>
+    <guid>https://inchan.dev/posts/202302160417/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;
@@ -21,10 +21,10 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에]]><
 </item>
 <item>
     <title>typescript - any와 unknown의 차이</title>
-    <link>https://www.inchan.dev/posts/202301280423/</link>
+    <link>https://inchan.dev/posts/202301280423/</link>
     <pubDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301280423/</guid>
+    <guid>https://inchan.dev/posts/202301280423/</guid>
     <description><![CDATA[tag : #typescript related link
 unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 내리기 힘든 상황에서 주로 any 를 사용한다.
 물론 typescript의 성격상 any는 지양하는 것이 좋다.
@@ -33,10 +33,10 @@ unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 
 </item>
 <item>
     <title>typescript - satisfies operator 탐구</title>
-    <link>https://www.inchan.dev/posts/202301280422/</link>
+    <link>https://inchan.dev/posts/202301280422/</link>
     <pubDate>Sat, 28 Jan 2023 04:22:36 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301280422/</guid>
+    <guid>https://inchan.dev/posts/202301280422/</guid>
     <description><![CDATA[tag : #typescript
 related link
 satisfies-operator / typescript typescript 4.9에서 새로 나온 기능으로 satisfies 라는 연산자가 있다.
@@ -47,10 +47,10 @@ toUpperCase에서는 only string타입이 들어와야 하는데 union type으�
 </item>
 <item>
     <title>백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리</title>
-    <link>https://www.inchan.dev/posts/202301230424/</link>
+    <link>https://inchan.dev/posts/202301230424/</link>
     <pubDate>Mon, 23 Jan 2023 04:24:50 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301230424/</guid>
+    <guid>https://inchan.dev/posts/202301230424/</guid>
     <description><![CDATA[tag : #typescript #express
 문제상황 TDD 방법론을 따라 프로젝트를 진행하려는데 Jest를 이용하여 test 코드를 작성하던 중,
 한가지 문제를 마주한다.
@@ -61,10 +61,10 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
 </item>
 <item>
     <title>error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error</title>
-    <link>https://www.inchan.dev/posts/202301180428/</link>
+    <link>https://inchan.dev/posts/202301180428/</link>
     <pubDate>Wed, 18 Jan 2023 04:28:04 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301180428/</guid>
+    <guid>https://inchan.dev/posts/202301180428/</guid>
     <description><![CDATA[tag : #typeorm #typescript
 source : node.js - using process.env in TypeScript - Stack Overflow
 에러 상황 TypeScript로 typeORM을 세팅할때,
@@ -74,10 +74,10 @@ TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &
 </item>
 <item>
     <title>typescript - typeorm 연결 오류 해결</title>
-    <link>https://www.inchan.dev/posts/202212130459/</link>
+    <link>https://inchan.dev/posts/202212130459/</link>
     <pubDate>Tue, 13 Dec 2022 04:59:30 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202212130459/</guid>
+    <guid>https://inchan.dev/posts/202212130459/</guid>
     <description><![CDATA[tag : #typescript #typeorm #error
 source : 오류 해결1
 related link typescript에서의 typeorm 연결 오류 대략 14시부터 22시까지 무려 8시간을 끼니도 거른채 뚫어져라 모니터만 쳐다보며 찾았다.

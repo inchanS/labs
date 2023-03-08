@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>NestJS - Tag - inchan.dev</title>
-        <link>https://www.inchan.dev/tags/nestjs/</link>
+        <link>https://inchan.dev/tags/nestjs/</link>
         <description>NestJS - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 09 Jan 2023 04:35:58 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/nestjs/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 09 Jan 2023 04:35:58 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/nestjs/" rel="self" type="application/rss+xml" /><item>
     <title>nestJS 시작하기</title>
-    <link>https://www.inchan.dev/posts/202301090435/</link>
+    <link>https://inchan.dev/posts/202301090435/</link>
     <pubDate>Mon, 09 Jan 2023 04:35:58 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301090435/</guid>
+    <guid>https://inchan.dev/posts/202301090435/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/Pasted%20image%2020230301063722.png" referrerpolicy="no-referrer">
             </div>tag : #nestjs #typescript #JavaScript

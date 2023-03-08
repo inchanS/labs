@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Debugging - Category - inchan.dev</title>
-        <link>https://www.inchan.dev/categories/debugging/</link>
+        <link>https://inchan.dev/categories/debugging/</link>
         <description>Debugging - Category - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/categories/debugging/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/categories/debugging/" rel="self" type="application/rss+xml" /><item>
     <title>error note - throw와 return</title>
-    <link>https://www.inchan.dev/posts/202301180430/</link>
+    <link>https://inchan.dev/posts/202301180430/</link>
     <pubDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301180430/</guid>
+    <guid>https://inchan.dev/posts/202301180430/</guid>
     <description><![CDATA[tag : #JavaScript
 문제상황 Failure 에러핸들링 중, 에러메세지를 response로 보내려고 한다. 이에 return을 사용 에러가 나와야 할 상황에서 정상적으로 에러메세지를 response로 보낸다. 하지만 에러코드를 알려야 할 status code는 정상을 알리며 이후 모든 함수와 명령이 진행됨 해결 Success return이 아닌 throw를 사용하여야 한다. 특히 node.js에서 서버를 돌릴때,
 단순히 return만으로는 이후의 모든 과정, 즉 controller - service - dao 등에서 return을 한 함수 이외 모든 명령어가 진행 된다.
@@ -17,10 +17,10 @@
 </item>
 <item>
     <title>error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error</title>
-    <link>https://www.inchan.dev/posts/202301180428/</link>
+    <link>https://inchan.dev/posts/202301180428/</link>
     <pubDate>Wed, 18 Jan 2023 04:28:04 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301180428/</guid>
+    <guid>https://inchan.dev/posts/202301180428/</guid>
     <description><![CDATA[tag : #typeorm #typescript
 source : node.js - using process.env in TypeScript - Stack Overflow
 에러 상황 TypeScript로 typeORM을 세팅할때,
@@ -30,10 +30,10 @@ TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &
 </item>
 <item>
     <title>typescript - typeorm 연결 오류 해결</title>
-    <link>https://www.inchan.dev/posts/202212130459/</link>
+    <link>https://inchan.dev/posts/202212130459/</link>
     <pubDate>Tue, 13 Dec 2022 04:59:30 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202212130459/</guid>
+    <guid>https://inchan.dev/posts/202212130459/</guid>
     <description><![CDATA[tag : #typescript #typeorm #error
 source : 오류 해결1
 related link typescript에서의 typeorm 연결 오류 대략 14시부터 22시까지 무려 8시간을 끼니도 거른채 뚫어져라 모니터만 쳐다보며 찾았다.

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>aws - Tag - inchan.dev</title>
-        <link>https://www.inchan.dev/tags/aws/</link>
+        <link>https://inchan.dev/tags/aws/</link>
         <description>aws - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 28 Dec 2022 04:58:02 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/aws/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 28 Dec 2022 04:58:02 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/aws/" rel="self" type="application/rss+xml" /><item>
     <title>AWS 퍼블릭 IP와 탄력적 IP</title>
-    <link>https://www.inchan.dev/posts/202212280458/</link>
+    <link>https://inchan.dev/posts/202212280458/</link>
     <pubDate>Wed, 28 Dec 2022 04:58:02 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202212280458/</guid>
+    <guid>https://inchan.dev/posts/202212280458/</guid>
     <description><![CDATA[tag : #aws
 related link
 [AWS] 📚 EIP(탄력적 IP) 개념 &amp; 사용 세팅 정리 AWS EC2에서 백엔드 서버와 프론트엔드 서버를 돌리는 와중, 백엔드 서버의 PM2 리스트 전체가 다운이 되면서 멈추는 일이 발생했다.

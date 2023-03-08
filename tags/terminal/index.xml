@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>terminal - Tag - inchan.dev</title>
-        <link>https://www.inchan.dev/tags/terminal/</link>
+        <link>https://inchan.dev/tags/terminal/</link>
         <description>terminal - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 23 Jan 2023 04:29:44 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/terminal/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 23 Jan 2023 04:29:44 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/terminal/" rel="self" type="application/rss+xml" /><item>
     <title>mac 터미널에서 폴더트리 구조 확인</title>
-    <link>https://www.inchan.dev/posts/202301230429/</link>
+    <link>https://inchan.dev/posts/202301230429/</link>
     <pubDate>Mon, 23 Jan 2023 04:29:44 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301230429/</guid>
+    <guid>https://inchan.dev/posts/202301230429/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60" referrerpolicy="no-referrer">
             </div>&lt;사진: unsplash&gt;
@@ -22,10 +22,10 @@ $ tree 폴더 제외 그런데 node project와 같이 node_module이라던가, d
 </item>
 <item>
     <title>터미널에서 &#39;바로가기&#39; 단축키 등록하기</title>
-    <link>https://www.inchan.dev/posts/202210130407/</link>
+    <link>https://inchan.dev/posts/202210130407/</link>
     <pubDate>Thu, 13 Oct 2022 04:07:19 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202210130407/</guid>
+    <guid>https://inchan.dev/posts/202210130407/</guid>
     <description><![CDATA[터미널을 처음 실행하면 꼭 사용자 폴더에서 시작한다.
 cd ...로 찾아가는게 너무 귀찮다.
 그렇다고 finder에서 폴더를 drag &amp; drop해서 직접경로를 떨어뜨리는 방법도 있지만,

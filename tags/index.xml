@@ -1,87 +1,87 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - Tag - inchan.dev</title>
-        <link>https://www.inchan.dev/tags/</link>
+        <link>https://inchan.dev/tags/</link>
         <description>Tags - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/" rel="self" type="application/rss+xml" /><item>
     <title>RESTful_API</title>
-    <link>https://www.inchan.dev/tags/restful_api/</link>
+    <link>https://inchan.dev/tags/restful_api/</link>
     <pubDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/tags/restful_api/</guid>
+    <guid>https://inchan.dev/tags/restful_api/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Miscellaneous</title>
-    <link>https://www.inchan.dev/tags/miscellaneous/</link>
+    <link>https://inchan.dev/tags/miscellaneous/</link>
     <pubDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/tags/miscellaneous/</guid>
+    <guid>https://inchan.dev/tags/miscellaneous/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>mySQL</title>
-    <link>https://www.inchan.dev/tags/mysql/</link>
+    <link>https://inchan.dev/tags/mysql/</link>
     <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/tags/mysql/</guid>
+    <guid>https://inchan.dev/tags/mysql/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>typeORM</title>
-    <link>https://www.inchan.dev/tags/typeorm/</link>
+    <link>https://inchan.dev/tags/typeorm/</link>
     <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/tags/typeorm/</guid>
+    <guid>https://inchan.dev/tags/typeorm/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>TypeScript</title>
-    <link>https://www.inchan.dev/tags/typescript/</link>
+    <link>https://inchan.dev/tags/typescript/</link>
     <pubDate>Thu, 16 Feb 2023 04:17:07 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/tags/typescript/</guid>
+    <guid>https://inchan.dev/tags/typescript/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>devonthink</title>
-    <link>https://www.inchan.dev/tags/devonthink/</link>
+    <link>https://inchan.dev/tags/devonthink/</link>
     <pubDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/tags/devonthink/</guid>
+    <guid>https://inchan.dev/tags/devonthink/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>markdown</title>
-    <link>https://www.inchan.dev/tags/markdown/</link>
+    <link>https://inchan.dev/tags/markdown/</link>
     <pubDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/tags/markdown/</guid>
+    <guid>https://inchan.dev/tags/markdown/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>webstorm</title>
-    <link>https://www.inchan.dev/tags/webstorm/</link>
+    <link>https://inchan.dev/tags/webstorm/</link>
     <pubDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/tags/webstorm/</guid>
+    <guid>https://inchan.dev/tags/webstorm/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>terminal</title>
-    <link>https://www.inchan.dev/tags/terminal/</link>
+    <link>https://inchan.dev/tags/terminal/</link>
     <pubDate>Mon, 23 Jan 2023 04:29:44 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/tags/terminal/</guid>
+    <guid>https://inchan.dev/tags/terminal/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Express</title>
-    <link>https://www.inchan.dev/tags/express/</link>
+    <link>https://inchan.dev/tags/express/</link>
     <pubDate>Mon, 23 Jan 2023 04:24:50 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/tags/express/</guid>
+    <guid>https://inchan.dev/tags/express/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Miscellaneous - Tag - inchan.dev</title>
-        <link>https://www.inchan.dev/tags/miscellaneous/</link>
+        <link>https://inchan.dev/tags/miscellaneous/</link>
         <description>Miscellaneous - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/miscellaneous/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/miscellaneous/" rel="self" type="application/rss+xml" /><item>
     <title>블로깅 플랫폼 변경: Google Blogger에서 GitHub &#43; Hugo로</title>
-    <link>https://www.inchan.dev/posts/202303022327/</link>
+    <link>https://inchan.dev/posts/202303022327/</link>
     <pubDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202303022327/</guid>
+    <guid>https://inchan.dev/posts/202303022327/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>&lt; 이미지 출처 = unsplash &gt;
@@ -23,10 +23,10 @@ h태그를 이용한 toc의 가장 큰 장점은
 </item>
 <item>
     <title>chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.</title>
-    <link>https://www.inchan.dev/posts/202302100411/</link>
+    <link>https://inchan.dev/posts/202302100411/</link>
     <pubDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202302100411/</guid>
+    <guid>https://inchan.dev/posts/202302100411/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1675557009483-e6cf3867976b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2hhdGdwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
             </div>#chatGPT
@@ -37,10 +37,10 @@ whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided eno
 </item>
 <item>
     <title>부트캠프 가도 실패하는 사람 특징</title>
-    <link>https://www.inchan.dev/posts/202301020441/</link>
+    <link>https://inchan.dev/posts/202301020441/</link>
     <pubDate>Mon, 02 Jan 2023 04:41:37 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301020441/</guid>
+    <guid>https://inchan.dev/posts/202301020441/</guid>
     <description><![CDATA[tag : #coding #development
 source : 부트캠프 가셔도 실패하는 분 특징. 12년차 개발자가 말하는 프로그래머 롱런하는 방법 - YouTube
 youtube 서핑을 하다 우연히 보게 된 영상. &ldquo;부트캠프 가셔도 실패하는 분 특징&rdquo; 문구가 굉장히 도발적이었다.

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>RESTful_API - Tag - inchan.dev</title>
-        <link>https://www.inchan.dev/tags/restful_api/</link>
+        <link>https://inchan.dev/tags/restful_api/</link>
         <description>RESTful_API - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/restful_api/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/restful_api/" rel="self" type="application/rss+xml" /><item>
     <title>Swagger를 이용한 백엔드의 효과적인 API명세 전달</title>
-    <link>https://www.inchan.dev/posts/202303080503/</link>
+    <link>https://inchan.dev/posts/202303080503/</link>
     <pubDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202303080503/</guid>
+    <guid>https://inchan.dev/posts/202303080503/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2670&amp;q=80" referrerpolicy="no-referrer">
             </div>사진출처: unsplash
@@ -19,10 +19,10 @@
 </item>
 <item>
     <title>status code 204</title>
-    <link>https://www.inchan.dev/posts/202212250509/</link>
+    <link>https://inchan.dev/posts/202212250509/</link>
     <pubDate>Sun, 25 Dec 2022 05:09:42 &#43;0900</pubDate>
     <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202212250509/</guid>
+    <guid>https://inchan.dev/posts/202212250509/</guid>
     <description><![CDATA[tag : #restAPI
 #restAPI
 덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실!
