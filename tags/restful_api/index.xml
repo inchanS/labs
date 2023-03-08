@@ -5,7 +5,7 @@
         <description>RESTful_API - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/tags/restful_api/" rel="self" type="application/rss+xml" /><item>
-    <title>Swagger를 이용한 백엔드의 효과적인 명세 전달</title>
+    <title>Swagger를 이용한 백엔드의 효과적인 API명세 전달</title>
     <link>https://www.inchan.dev/posts/202303080503/</link>
     <pubDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</pubDate>
     <author>inchan</author>
