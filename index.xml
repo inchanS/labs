@@ -13,8 +13,9 @@
     <author>inchan</author>
     <guid>https://www.inchan.dev/posts/202303080503/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/images/Pasted%20image%2020230308123839.png" referrerpolicy="no-referrer">
-            </div>백엔드가 효과적인 명세 전달 고민 Failure 그동안 진행했던 프로젝트에서 제대로 된 API 명세를 적시에 프론트측에 전달하지 못했고,
+                <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2670&amp;q=80" referrerpolicy="no-referrer">
+            </div>사진출처: unsplash
+백엔드가 효과적인 명세 전달 고민 Failure 그동안 진행했던 프로젝트에서 제대로 된 API 명세를 적시에 프론트측에 전달하지 못했고,
 때문에 최종 출시를 앞두고 서로간의 코드 오류를 잡느라 시간적 비용이 꽤나 낭비됐다. 간단하게는 Request Body 값의 TYPE과 관련된 소통 혼선으로 겪었던 헤프닝도 더러 있었다. 어떻게 하면 좋을까? 우선은 백엔드의 입장에서 생각해본다.
 명세는 코드가 만들어지면서 늘 수정될 수 있다. 때문에 명세는 코드와 함께 작업되어야 하고, API 테스트를 위해 즉각적으로 수정되어야 한다. 같은 백엔드 팀의 경우에는 직접 코드를 보기에 명세의 부족함을 보완할 수는 있다.]]></description>
 </item>
