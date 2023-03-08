@@ -4,9 +4,21 @@
         <link>https://www.inchan.dev/</link>
         <description>Coding Projects: From Ideas to Execution</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</lastBuildDate>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</lastBuildDate>
             <atom:link href="https://www.inchan.dev/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Swagger를 이용한 백엔드의 효과적인 명세 전달</title>
+    <link>https://www.inchan.dev/posts/202303080503/</link>
+    <pubDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://www.inchan.dev/posts/202303080503/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Pasted%20image%2020230308123839.png" referrerpolicy="no-referrer">
+            </div>백엔드가 효과적인 명세 전달 고민 Failure 그동안 진행했던 프로젝트에서 제대로 된 API 명세를 적시에 프론트측에 전달하지 못했고,
+때문에 최종 출시를 앞두고 서로간의 코드 오류를 잡느라 시간적 비용이 꽤나 낭비됐다. 간단하게는 Request Body 값의 TYPE과 관련된 소통 혼선으로 겪었던 헤프닝도 더러 있었다. 어떻게 하면 좋을까? 우선은 백엔드의 입장에서 생각해본다.
+명세는 코드가 만들어지면서 늘 수정될 수 있다. 때문에 명세는 코드와 함께 작업되어야 하고, API 테스트를 위해 즉각적으로 수정되어야 한다. 같은 백엔드 팀의 경우에는 직접 코드를 보기에 명세의 부족함을 보완할 수는 있다.]]></description>
+</item>
+<item>
     <title>블로깅 플랫폼 변경: Google Blogger에서 GitHub &#43; Hugo로</title>
     <link>https://www.inchan.dev/posts/202303022327/</link>
     <pubDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</pubDate>
@@ -141,20 +153,6 @@ windows에서는 cmd에서 폴더트리가 바로 나오는것 같던데 macOS�
 $ brew install tree 사용법 기본적인 사용법은 작업중인 폴더로 가서 tree 라고만 입력하면 된다.
 $ tree 폴더 제외 그런데 node project와 같이 node_module이라던가, dist 폴더가 있는 구조에서는 불필요하게 많은 폴더가 출력됨을 볼 수 있다.
 폴더를 제외하고 싶을 땐, tree -I &lt;diretory&gt;로 명령하면 해당 폴더를 제외하고 출력 가능하다.]]></description>
-</item>
-<item>
-    <title>백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리</title>
-    <link>https://www.inchan.dev/posts/202301230424/</link>
-    <pubDate>Mon, 23 Jan 2023 04:24:50 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://www.inchan.dev/posts/202301230424/</guid>
-    <description><![CDATA[tag : #typescript #express
-문제상황 TDD 방법론을 따라 프로젝트를 진행하려는데 Jest를 이용하여 test 코드를 작성하던 중,
-한가지 문제를 마주한다.
-test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성상,
-실제 개발환경에서의 DB와 test DB를 분리하기 위해서 local DB는 2가지로 나누어 세팅을 해야한다.
-그런데 test를 실행할때마다 typeORM 세팅의 연결값을 매번 변경해줘야하는 문제가 상당히 번거로웠다.
-고민하던 와중, cross-env라는 npm package를 알게되었고 이를 이용하여 상황에 따라 dotenv 설정값을 유동적으로 활용할 수 있도록 세팅을 구상해보았다.]]></description>
 </item>
 </channel>
 </rss>

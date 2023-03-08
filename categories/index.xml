@@ -4,20 +4,20 @@
         <link>https://www.inchan.dev/categories/</link>
         <description>Categories - Category - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</lastBuildDate><atom:link href="https://www.inchan.dev/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Back-End</title>
+    <link>https://www.inchan.dev/categories/back-end/</link>
+    <pubDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://www.inchan.dev/categories/back-end/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Miscellaneous</title>
     <link>https://www.inchan.dev/categories/miscellaneous/</link>
     <pubDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://www.inchan.dev/categories/miscellaneous/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Back-End</title>
-    <link>https://www.inchan.dev/categories/back-end/</link>
-    <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://www.inchan.dev/categories/back-end/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
