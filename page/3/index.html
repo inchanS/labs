@@ -98,7 +98,18 @@
         data-sizes="auto"
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/202301280422/">typescript - satisfies operator 탐구</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-28">2023-01-28</time></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Programming</a></span></div><div class="content">tag : #typescript
+related link
+satisfies-operator / typescript typescript 4.9에서 새로 나온 기능으로 satisfies 라는 연산자가 있다.
+공식문서를 정말 한참을 봤는데도 잘 이해가 가지 않았는데 직접 코드를 가지고 만져보니 조금 이해가 되었다.
+satisfies 적용 전 Record라는 객체의 key, value를 지정해주는 연산자를 사용하여 객체의 타입을 지정할 때,
+아래 코드를 보면 value의 타입으로 string | RGB2 라는 union type으로 인해 속성에 대한 오류가 잡힌다.
+toUpperCase에서는 only string타입이 들어와야 하는데 union type으로 할당되어 생긴 에러로서 당연한 결과이다.</div><div class="post-footer">
+        <a href="/posts/202301280422/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typescript/">TypeScript</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/posts/202301230429/"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -166,15 +177,6 @@ npm i -g @nestjs/cli 이렇게 package.json 파일에서 정상적으로 설치�
 nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 nest new nestjs-test 위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다. 만약 $ mkdir nestjs-test 로 폴더를 만들고 이 위치에서 진행중이라면,</div><div class="post-footer">
         <a href="/posts/202301090435/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/nestjs/">NestJS</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202301020441/">부트캠프 가도 실패하는 사람 특징</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span>&nbsp;<span class="post-category">included in <a href="/categories/miscellaneous/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Miscellaneous</a></span></div><div class="content">tag : #coding #development
-source : 부트캠프 가셔도 실패하는 분 특징. 12년차 개발자가 말하는 프로그래머 롱런하는 방법 - YouTube
-youtube 서핑을 하다 우연히 보게 된 영상. &ldquo;부트캠프 가셔도 실패하는 분 특징&rdquo; 문구가 굉장히 도발적이었다.
-마침 부트캠프를 막 수료한지라 더욱 내 시선을 끌었었다.
-youtube 내용 요약 - 펼치기 youtube 내용 요약 글쓰기를 잘하는 사람이 개발자로서도 잘한다. 본인의 메세지를 글에 녹일 수 있어야 한다. 컴퓨터가 이해할 수 있는 코드는 어느 바보라도 작성할 수 있다.</div><div class="post-footer">
-        <a href="/posts/202301020441/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/miscellaneous/">Miscellaneous</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>

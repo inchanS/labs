@@ -4,20 +4,20 @@
         <link>https://inchan.dev/categories/</link>
         <description>Categories - Category - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 31 Mar 2023 10:43:08 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Debugging</title>
+    <link>https://inchan.dev/categories/debugging/</link>
+    <pubDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/categories/debugging/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Programming</title>
     <link>https://inchan.dev/categories/programming/</link>
     <pubDate>Fri, 31 Mar 2023 10:43:08 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://inchan.dev/categories/programming/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Debugging</title>
-    <link>https://inchan.dev/categories/debugging/</link>
-    <pubDate>Fri, 17 Mar 2023 00:17:31 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/categories/debugging/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>

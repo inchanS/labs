@@ -4,7 +4,20 @@
         <link>https://inchan.dev/posts/</link>
         <description>All Posts | inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 31 Mar 2023 10:43:08 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>error note - TypeORM migration 할 때 cross ENV 설정 문제</title>
+    <link>https://inchan.dev/posts/202304010529/</link>
+    <pubDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202304010529/</guid>
+    <description><![CDATA[TypeORM migration TypeORM migration:create typeorm migration을 시도해보면서 준비한건 몇가지 되지 않았다.
+우선, 터미널에서 typeorm migration 파일을 생성하는 명령어.
+$ npx typeorm migration:create &lt;path/file_name&gt; 예를 들면 npx typeorm migration:create ./src/migrations/default-tables
+이런 식으로 사용할 수 있다.
+그리고 마이그레이션 실행시 마이그레이션 파일들의 위치를 알려줄 수 있도록 datasource config 부분에 다음과 같이 설정을 추가한다.
+import { DataSource } from &#39;typeorm&#39;; const dataSource = new DataSource({ type: process.env.TYPEORM_CONNECTION, host: process.env.TYPEORM_HOST, port: process.env.TYPEORM_PORT, username: process.env.TYPEORM_USERNAME, password: process.]]></description>
+</item>
+<item>
     <title>Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점</title>
     <link>https://inchan.dev/posts/202303311059/</link>
     <pubDate>Fri, 31 Mar 2023 10:43:08 &#43;0900</pubDate>
@@ -132,25 +145,6 @@ tag : #devonthink source : Script: Replace link references with real links in Ma
 그 중, 보관하고자 하는 문서는 주로 웹클리핑을 통해 정보를 수집한다.
 이때, 클리핑 포맷은 보통 PDF로 하지만 가끔 code block내 스크롤이 있는 경우에는
 PDF에서 짤린채로 수집되는 문제가 있어 MarkDown 포맷으로 클리핑을 한다.]]></description>
-</item>
-<item>
-    <title>WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기</title>
-    <link>https://inchan.dev/posts/202302020409/</link>
-    <pubDate>Thu, 02 Feb 2023 04:09:55 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202302020409/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
-            </div>&lt;사진: unsplash&gt;
-tag : #webstorm
-source : Live template variables | WebStorm Documentation
-JavaScript로 코딩을 하다보면 적잖이 console.log()를 사용하게 된다.
-보통 나는 간단하게 현재 흐름상 위치를 잡거나 객체를 확인할 때 자주 쓰는데,
-많은 글자는 아니지만 그래도 같은걸 계속해서 타이핑하는게 귀찮아서 만들었다.
-축약어는 console.log의 앞글자를 따서 cl로 단축 명령어를 만들었고,
-cl 단축어 입력 후 tab을 누르면 해당 WebStorm의 live template이 실행된다.
-간단하게 다음과 같은 역할을 수행된다.
-console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 커서 위치 이동 변수명을 쓰면 따옴표 안에 동일한 변수가 들어가도록 설정 즉 console.]]></description>
 </item>
 </channel>
 </rss>
