@@ -4,7 +4,19 @@
         <link>https://inchan.dev/posts/</link>
         <description>All Posts | inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 17 Mar 2023 00:17:31 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 31 Mar 2023 10:43:08 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점</title>
+    <link>https://inchan.dev/posts/202303311059/</link>
+    <pubDate>Fri, 31 Mar 2023 10:43:08 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202303311059/</guid>
+    <description><![CDATA[Introduction Jest는 페이스북에서 개발한 JavaScript 테스트 프레임워크로, 간편한 사용법과 빠른 실행 속도로 인기가 있다.
+Jest를 이용하여 테스트 코드를 작성하던 중, 수 많은 함수나 루트를 mocking하게 되는데 지저분해진 테스트 코드를 리팩토링 하다가 mock함수의 초기화에 대한 고찰을 하게 되었다.
+Jest의 모의 함수(mock functions)를 사용할 때 중요한 두 가지 함수인 jest.clearAllMocks()와 jest.resetAllMocks()의 차이에 대해 기술한다.
+jest.clearAllMocks() jest.clearAllMocks() 함수는 모든 모의 함수의 호출 정보를 초기화하는 데 사용한다.
+이를 통해 테스트 간 독립성을 보장하며, 다양한 테스트 시나리오에서 중요한 역할을 한다.]]></description>
+</item>
+<item>
     <title>error note - AWS EC2의 SSH 접속이 안될 때</title>
     <link>https://inchan.dev/posts/202303170023/</link>
     <pubDate>Fri, 17 Mar 2023 00:17:31 &#43;0900</pubDate>
@@ -139,18 +151,6 @@ JavaScript로 코딩을 하다보면 적잖이 console.log()를 사용하게 된
 cl 단축어 입력 후 tab을 누르면 해당 WebStorm의 live template이 실행된다.
 간단하게 다음과 같은 역할을 수행된다.
 console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 커서 위치 이동 변수명을 쓰면 따옴표 안에 동일한 변수가 들어가도록 설정 즉 console.]]></description>
-</item>
-<item>
-    <title>typescript - any와 unknown의 차이</title>
-    <link>https://inchan.dev/posts/202301280423/</link>
-    <pubDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202301280423/</guid>
-    <description><![CDATA[tag : #typescript related link
-unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 내리기 힘든 상황에서 주로 any 를 사용한다.
-물론 typescript의 성격상 any는 지양하는 것이 좋다.
-오류를 검증하고 확인하려는 특성으로 엄격한 타입을 지정하려는 typescript에서 어떤 타입이나 가능하다는 성격의 any는 어쩌면 존재 자체가 모순인 타입이기도 하다.
-하지만코딩을 하다보면 아직은 타입을 정하기 전인 상황이거나, 도저히 타입을 알 수 없거나 추론할 수 없을 때, (또는 typescript 초급자일 때 ;;) 가끔 사용하게 되는 것이 또 any 타입이다.]]></description>
 </item>
 </channel>
 </rss>

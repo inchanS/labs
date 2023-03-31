@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점 - inchan.dev</title><meta name="Description" content="jest에서 mock 함수를 초기화하는 2가지 메소드에 대한 기술"><meta property="og:title" content="Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점" />
+<meta property="og:description" content="jest에서 mock 함수를 초기화하는 2가지 메소드에 대한 기술" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://inchan.dev/posts/202303311059/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-31T10:43:08+09:00" />
+<meta property="article:modified_time" content="2023-03-31T10:43:08+09:00" /><meta property="og:site_name" content="inchan.dev" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://inchan.dev/images/avatar.png"/>
+
+<meta name="twitter:title" content="Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점"/>
+<meta name="twitter:description" content="jest에서 mock 함수를 초기화하는 2가지 메소드에 대한 기술"/>
+<meta name="application-name" content="inchan.dev">
+<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202303311059/" /><link rel="prev" href="https://inchan.dev/posts/202303170023/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/inchan.dev\/posts\/202303311059\/"
+        },"genre": "posts","keywords": "Jest","wordcount":  466 ,
+        "url": "https:\/\/inchan.dev\/posts\/202303311059\/","datePublished": "2023-03-31T10:43:08+09:00","dateModified": "2023-03-31T10:43:08+09:00","publisher": {
+            "@type": "Organization",
+            "name": "inchan"},"author": {
+                "@type": "Person",
+                "name": "inchan"
+            },"description": "jest에서 mock 함수를 초기화하는 2가지 메소드에 대한 기술"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Programming</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-31">2023-03-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;466 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#jestclearallmocks">jest.clearAllMocks()</a></li>
+    <li><a href="#jestresetallmocks">jest.resetAllMocks()</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="introduction">Introduction</h2>
+<p>Jest는 페이스북에서 개발한 JavaScript 테스트 프레임워크로, 간편한 사용법과 빠른 실행 속도로 인기가 있다.</p>
+<p>Jest를 이용하여 테스트 코드를 작성하던 중, 수 많은 함수나 루트를 mocking하게 되는데 지저분해진 테스트 코드를 리팩토링 하다가 <strong>mock함수의 초기화</strong>에 대한 고찰을 하게 되었다.<br>
+Jest의 모의 함수(mock functions)를 사용할 때 중요한 두 가지 함수인 <code>jest.clearAllMocks()</code>와 <code>jest.resetAllMocks()</code>의 차이에 대해 기술한다.</p>
+<p> </p>
+<h2 id="jestclearallmocks">jest.clearAllMocks()</h2>
+<p><code>jest.clearAllMocks()</code>  함수는 모든 모의 함수의 호출 정보를 초기화하는 데 사용한다.<br>
+이를 통해 테스트 간 독립성을 보장하며, 다양한 테스트 시나리오에서 중요한 역할을 한다.</p>
+<p>다음은 해당 메소드를 테스트해볼 수 있는 예시 코드이다.<br>
+ </p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;jest.clearAllMocks test&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">mockFn</span> <span class="o">=</span> <span class="nx">jest</span><span class="p">.</span><span class="nx">fn</span><span class="p">().</span><span class="nx">mockImplementation</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="s1">&#39;Default return value&#39;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">	<span class="nx">mockFn</span><span class="p">.</span><span class="nx">mockImplementation</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="s1">&#39;New return value&#39;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">	<span class="nx">mockFn</span><span class="p">(</span><span class="s1">&#39;args1&#39;</span><span class="p">);</span> <span class="c1">// 1st call  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">mockFn</span><span class="p">(</span><span class="s1">&#39;args2&#39;</span><span class="p">);</span> <span class="c1">// 2nd call  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	  
+</span></span><span class="line"><span class="cl">	<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;before jest.clearAllMocks&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>  
+</span></span><span class="line"><span class="cl">		<span class="s1">&#39;clearAllMocks 전, mockFn 호출 횟수 = &#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">		<span class="nx">mockFn</span><span class="p">.</span><span class="nx">mock</span><span class="p">.</span><span class="nx">calls</span><span class="p">.</span><span class="nx">length</span>  
+</span></span><span class="line"><span class="cl">		<span class="p">);</span> <span class="c1">// 2  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;clearAllMocks 전, mockFn 호출 인자 = &#39;</span><span class="p">,</span> <span class="nx">mockFn</span><span class="p">.</span><span class="nx">mock</span><span class="p">.</span><span class="nx">calls</span><span class="p">);</span> <span class="c1">// [ [ &#39;args1&#39; ], [ &#39;args2&#39; ] ]  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">expect</span><span class="p">(</span><span class="nx">mockFn</span><span class="p">.</span><span class="nx">mock</span><span class="p">.</span><span class="nx">calls</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">		<span class="nx">expect</span><span class="p">(</span><span class="nx">mockFn</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">&#39;New return value&#39;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">	<span class="p">});</span>  
+</span></span><span class="line"><span class="cl">	  
+</span></span><span class="line"><span class="cl">	<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;after jest.clearAllMocks&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">		<span class="nx">jest</span><span class="p">.</span><span class="nx">clearAllMocks</span><span class="p">();</span>  
+</span></span><span class="line"><span class="cl">		  
+</span></span><span class="line"><span class="cl">		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>  
+</span></span><span class="line"><span class="cl">		<span class="s1">&#39;clearAllMocks 후, mockFn 호출 횟수 = &#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">		<span class="nx">mockFn</span><span class="p">.</span><span class="nx">mock</span><span class="p">.</span><span class="nx">calls</span><span class="p">.</span><span class="nx">length</span>  
+</span></span><span class="line"><span class="cl">		<span class="p">);</span> <span class="c1">// 0  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;mockFn 호출 인자 = &#39;</span><span class="p">,</span> <span class="nx">mockFn</span><span class="p">.</span><span class="nx">mock</span><span class="p">.</span><span class="nx">calls</span><span class="p">);</span> <span class="c1">// []  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">expect</span><span class="p">(</span><span class="nx">mockFn</span><span class="p">.</span><span class="nx">mock</span><span class="p">.</span><span class="nx">calls</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">		<span class="nx">expect</span><span class="p">(</span><span class="nx">mockFn</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">&#39;New return value&#39;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">	<span class="p">});</span>  
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></div><p> <br>
+위 코드를 풀어쓰자면 다음과 같다.<br>
+<code>jest.clearAllMocks()</code> 실행 이후,</p>
+<ol>
+<li>이전에 mock함수를 2번 <strong>호출한 횟수는 초기화</strong> 되었다.</li>
+<li>mock함수의 인스턴스 &lsquo;args1&rsquo;, &lsquo;args2&rsquo; 역시 초기화 되었다.</li>
+<li>mock함수의 반환값은, 최종 반환값으로 설정된 &lsquo;New return value&rsquo; 그대로 남아있으며 아무런 영향이 없다.
+ </li>
+</ol>
+<p>코드의 설명과 마찬가지로,<br>
+<code>clearAllMocks</code>는 mock함수의 호출 횟수, 인스턴스 등을 초기화 한다.<br>
+하지만 mock함수의 반환값은 초기화하지 않는다.</p>
+<p> </p>
+<p>주요 사용 시나리오:</p>
+<ul>
+<li>테스트 전/후 초기화 단계에서 호출 정보를 초기화하고 싶을 때</li>
+</ul>
+<p> </p>
+<h2 id="jestresetallmocks">jest.resetAllMocks()</h2>
+<p>jest.resetAllMocks() 함수는 모든 모의 함수의 호출 정보뿐만 아니라 구현 및 반환 값 설정도 초기화하는 데 사용된다.<br>
+이를 통해 각 테스트가 완전히 독립적으로 실행되도록 보장하며, 다양한 테스트 시나리오에서 유용하게 사용할 수 있다.
+ </p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;jest.resetAllMocks test&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">mockFn2</span> <span class="o">=</span> <span class="nx">jest</span><span class="p">.</span><span class="nx">fn</span><span class="p">().</span><span class="nx">mockImplementation</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="s1">&#39;Default return value&#39;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">	<span class="nx">mockFn2</span><span class="p">.</span><span class="nx">mockImplementation</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="s1">&#39;New return value&#39;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">	<span class="nx">mockFn2</span><span class="p">(</span><span class="s1">&#39;args1&#39;</span><span class="p">);</span> <span class="c1">// 1st call  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">mockFn2</span><span class="p">(</span><span class="s1">&#39;args2&#39;</span><span class="p">);</span> <span class="c1">// 2nd call  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	  
+</span></span><span class="line"><span class="cl">	<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;before jest.resetAllMocks&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>  
+</span></span><span class="line"><span class="cl">		<span class="s1">&#39;resetAllMocks 전, mockFn 호출 횟수 = &#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">		<span class="nx">mockFn2</span><span class="p">.</span><span class="nx">mock</span><span class="p">.</span><span class="nx">calls</span><span class="p">.</span><span class="nx">length</span>  
+</span></span><span class="line"><span class="cl">		<span class="p">);</span> <span class="c1">// 2  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;resetAllMocks 전, mockFn 호출 인자 = &#39;</span><span class="p">,</span> <span class="nx">mockFn2</span><span class="p">.</span><span class="nx">mock</span><span class="p">.</span><span class="nx">calls</span><span class="p">);</span> <span class="c1">// [ [ &#39;args1&#39; ], [ &#39;args2&#39; ] ]  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">expect</span><span class="p">(</span><span class="nx">mockFn2</span><span class="p">.</span><span class="nx">mock</span><span class="p">.</span><span class="nx">calls</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">		<span class="nx">expect</span><span class="p">(</span><span class="nx">mockFn2</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">&#39;New return value&#39;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">	<span class="p">});</span>  
+</span></span><span class="line"><span class="cl">	  
+</span></span><span class="line"><span class="cl">	<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;after jest.resetAllMocks&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">		<span class="nx">jest</span><span class="p">.</span><span class="nx">resetAllMocks</span><span class="p">();</span>  
+</span></span><span class="line"><span class="cl">		  
+</span></span><span class="line"><span class="cl">		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>  
+</span></span><span class="line"><span class="cl">		<span class="s1">&#39;resetAllMocks 후, mockFn 호출 횟수 = &#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">		<span class="nx">mockFn2</span><span class="p">.</span><span class="nx">mock</span><span class="p">.</span><span class="nx">calls</span><span class="p">.</span><span class="nx">length</span>  
+</span></span><span class="line"><span class="cl">		<span class="p">);</span> <span class="c1">// 0  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;mockFn 호출 인자 = &#39;</span><span class="p">,</span> <span class="nx">mockFn2</span><span class="p">.</span><span class="nx">mock</span><span class="p">.</span><span class="nx">calls</span><span class="p">);</span> <span class="c1">// []  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">expect</span><span class="p">(</span><span class="nx">mockFn2</span><span class="p">.</span><span class="nx">mock</span><span class="p">.</span><span class="nx">calls</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">		<span class="nx">expect</span><span class="p">(</span><span class="nx">mockFn2</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">	<span class="p">});</span>  
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div><p> </p>
+<p>위 코드를 풀어쓰자면 다음과 같다.</p>
+<p><code>jest.resetAllMocks()</code> 실행 이후,</p>
+<ol>
+<li>이전에 mock함수를 2번 호출한 횟수는 초기화 되었다.</li>
+<li>mock함수의 인스턴스 &lsquo;args1&rsquo;, &lsquo;args2&rsquo; 역시 초기화 되었다.</li>
+<li>mock함수의 <strong>반환값은 초기화되어</strong> <code>undefined</code>가 되었다.</li>
+</ol>
+<p> </p>
+<p><code>resetAllMocks</code>는 <code>clearAllMocks</code>의 모든 기능에 더해서 <strong>반환값 역시 초기화</strong> 시킨다.<br>
+즉, 완벽한 새로운 mock함수로 되돌린다.<br>
+ </p>
+<p>주요 사용 시나리오:</p>
+<ul>
+<li>테스트 전/후 초기화 단계에서 호출 정보와 구현, 반환 값 설정을 모두 초기화하고 싶을 때</li>
+<li>모의 함수의 구현을 변경하는 테스트 사이에서 각 테스트의 독립성을 보장하고 싶을 때</li>
+</ul>
+<p> </p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Differences between jest.clearAllMocks() and jest.resetAllMocks()<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><code>jest.clearAllMocks()</code> : 모든 모의 함수의 <strong>호출 정보 초기화</strong></li>
+<li><code>jest.resetAllMocks()</code>: 모든 모의 함수의 <strong>호출 정보뿐만 아니라 구현 및 반환 값 설정도 초기화</strong></li>
+</ul>
+</div>
+        </div>
+    </div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-03-31</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/jest/">Jest</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/202303170023/" class="prev" rel="prev" title="error note - AWS EC2의 SSH 접속이 안될 때"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>error note - AWS EC2의 SSH 접속이 안될 때</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+</html>
