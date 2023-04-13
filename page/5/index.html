@@ -99,18 +99,6 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202210180502/">DBmate 사용법</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-10-18">2022-10-18</time></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div><div class="content">mySQL을 사용하여 Database를 쌓아 나갈때,
-DBmate 를 사용하면
-초기 세팅값을 마치 git을 저장하듯 이력을 남겨 언제든 migration 할 수 있다.
-지금부터의 설명은 macOS 기준으로 기술한다. (windows가 없음 ;; )
-DBmate 설치 Homebrew 를 사용하여 설치한다. 1
-터미널 아무 위치에서나 무관하다. 2
-$brew install dbmate 이렇게 입력 후, 엔터키를 누르면 자동으로 설치가 된다.
-그리고, 하나의 파일이 필요하다. 바로 .env 파일. IDE 또는 터미널 vim으로 .env 파일을 생성한 후, 다음과 같이 입력한다. &quot; cat.</div><div class="post-footer">
-        <a href="/posts/202210180502/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/dbmate/">DBmate</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/202210130407/">터미널에서 '바로가기' 단축키 등록하기</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-10-13">2022-10-13</time></span>&nbsp;<span class="post-category">included in <a href="/categories/env/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>env</a></span></div><div class="content">터미널을 처음 실행하면 꼭 사용자 폴더에서 시작한다.
 cd ...로 찾아가는게 너무 귀찮다.
@@ -151,6 +139,15 @@ CSS 선택자 상속(Inheritance) 부모 자식관계의 태그나 요소에서 
 let myNumber = 100 변수를 선언하는 명령어 var, let, const 각각의 차이는?? 종류 선언 재선언 재할당 var O O O let O X O const O X X 위 표와 같이 즉, let이나 const는 이미 선언했던 변수를 다시 선언할 수 없다.</div><div class="post-footer">
         <a href="/posts/202209120523/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/javascript/">JavaScript</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/202209060521/">font Awesome 사용하기</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-09-06">2022-09-06</time></span>&nbsp;<span class="post-category">included in <a href="/categories/front-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Front-End</a></span></div><div class="content">font Awesome 사용하기 다양한 아이콘을 사용하게 될 때가 있다. 이때 유용한 사이트가 바로 font Awesome이다.
+주의할 점은, 간혹 아이콘이 작동하지 않을때가 있다. font Awesome의 HTML 태그는 아래 코드처럼 &lt;i&gt;로 시작한다.
+&lt;i class=&#34;fa-solid fa-heart&#34;&gt;&lt;/i&gt; 이때 버전을 호환하지 않으면 간혹 이탤릭체로 인식하고 아이콘이 나타나지 않는다.
+이것은 font Awesome의 버전이 호환되지 않아 생기는 문제로서, 아래 코드를 HTML에 입력해두면 해결된다.
+&lt;script src=&#34;https://use.fontawesome.com/releases/v5.2.0/js/all.js&#34;&gt;&lt;/script&gt; 저기서 v5.2.0부분을 해당 버전으로 고쳐 입력하면 된다. 1 즉 호환되는 버전을 살펴보며 아이콘을 골라야지 무턱대고 골랐다가는 HTML에서 꼬이는 경우가 생길 수 있다.</div><div class="post-footer">
+        <a href="/posts/202209060521/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/fontawesome/">fontAwesome</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -168,10 +165,6 @@ let myNumber = 100 변수를 선언하는 명령어 var, let, const 각각의 �
                 </li><li class="page-item active">
                     <span class="page-link">
                         <a href="/page/5/">5</a>
-                    </span>
-                </li><li class="page-item ">
-                    <span class="page-link">
-                        <a href="/page/6/">6</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">

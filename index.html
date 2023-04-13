@@ -99,14 +99,6 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/230412-aws-ec2%EC%97%90-%EC%98%AC%EB%A6%B0-pm2-%EC%84%9C%EB%B2%84%EC%9D%98-%EB%A1%9C%EA%B7%B8/">test posting</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-04-13">2023-04-13</time></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div><div class="content">aws ec2에 올린 pm2 서버의 로그를 보려면? 먼저 EC2 인스턴스에 SSH로 로그인합니다. PM2 로그 디렉토리로 이동합니다. 이 디렉토리는 일반적으로 다음과 같은 경로에 있습니다. ~/.pm2/logs/
-이 디렉토리에서 PM2 서버의 로그 파일을 확인합니다. 로그 파일 이름은 PM2 앱의 이름과 일치합니다. 예를 들어, PM2 앱의 이름이 myapp 인 경우 다음 명령을 사용하여 로그를 확인할 수 있습니다.
-tail -f ~/.pm2/logs/myapp-out.log
-위 명령은 myapp 앱의 표준 출력 로그를 실시간으로 보여줍니다. 마찬가지로, 표준 오류 로그를 보려면 다음 명령을 사용할 수 있습니다.</div><div class="post-footer">
-        <a href="/posts/230412-aws-ec2%EC%97%90-%EC%98%AC%EB%A6%B0-pm2-%EC%84%9C%EB%B2%84%EC%9D%98-%EB%A1%9C%EA%B7%B8/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/javascript/">JavaScript</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/202304010529/">error note - TypeORM migration 할 때 cross ENV 설정 문제</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-04-01">2023-04-01</time></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div><div class="content">TypeORM migration TypeORM migration:create typeorm migration을 시도해보면서 준비한건 몇가지 되지 않았다.
 우선, 터미널에서 typeorm migration 파일을 생성하는 명령어.
@@ -179,6 +171,27 @@ main.ts 파일 코드 예시 if (process.env.NODE_ENV === &#39;production&#39;) 
 명세는 코드가 만들어지면서 늘 수정될 수 있다. 때문에 명세는 코드와 함께 작업되어야 하고, API 테스트를 위해 즉각적으로 수정되어야 한다. 같은 백엔드 팀의 경우에는 직접 코드를 보기에 명세의 부족함을 보완할 수는 있다.</div><div class="post-footer">
         <a href="/posts/202303080503/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/restful_api/">RESTful_API</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/posts/202303022327/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
+        data-srcset="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300, https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300 1.5x, https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300 2x"
+        data-sizes="auto"
+        alt="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
+        title="github hugo 시스템으로 블로그 이전에 대한 장단점과 관련 정보 기술" /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/202303022327/">블로깅 플랫폼 변경: Google Blogger에서 GitHub + Hugo로</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-03-02">2023-03-02</time></span>&nbsp;<span class="post-category">included in <a href="/categories/miscellaneous/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Miscellaneous</a></span></div><div class="content">&lt; 이미지 출처 = unsplash &gt;
+github + hugo로 이사! 이전: google blogger 이전에 사용했던 블로그의 플랫폼은 google blogger였다.
+tistory나 naver 블로그에 비해 내가 원하는 문법의 허용범위가 더 커서 오랫동안 사용중이었다.
+(예를 들면 toc, 각주, MarkDown 문법과 HTML 문법으로의 글 작성 모두 지원 등…)
+기술 블로그에서 하나의 문서 양이 스크롤을 필요로 한다면 특히나 필요한 것이,
+바로 TOC(table of contents) 라고 생각한다.
+h태그를 이용한 toc의 가장 큰 장점은
+전체적인 개요를 한 눈에 살펴볼 수 있고, 또한 해당 태그 부분만의 링크를 가질 수 있다는 점!</div><div class="post-footer">
+        <a href="/posts/202303022327/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/miscellaneous/">Miscellaneous</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -195,7 +208,7 @@ main.ts 파일 코드 예시 if (process.env.NODE_ENV === &#39;production&#39;) 
                     <span class="page-link" aria-hidden="true">&hellip;</span>
                 </li><li class="page-item ">
                     <span class="page-link">
-                        <a href="/page/6/">6</a>
+                        <a href="/page/5/">5</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
