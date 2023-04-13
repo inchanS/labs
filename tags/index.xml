@@ -4,7 +4,15 @@
         <link>https://inchan.dev/tags/</link>
         <description>Tags - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 13 Apr 2023 17:26:03 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>JavaScript</title>
+    <link>https://inchan.dev/tags/javascript/</link>
+    <pubDate>Thu, 13 Apr 2023 17:26:03 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/tags/javascript/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>typeORM</title>
     <link>https://inchan.dev/tags/typeorm/</link>
     <pubDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</pubDate>
@@ -26,14 +34,6 @@
     <pubDate>Fri, 17 Mar 2023 00:17:31 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://inchan.dev/tags/aws/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>JavaScript</title>
-    <link>https://inchan.dev/tags/javascript/</link>
-    <pubDate>Thu, 16 Mar 2023 23:56:16 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/tags/javascript/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>

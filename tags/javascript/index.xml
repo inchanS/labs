@@ -4,7 +4,18 @@
         <link>https://inchan.dev/tags/javascript/</link>
         <description>JavaScript - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 16 Mar 2023 23:56:16 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 13 Apr 2023 17:26:03 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+    <title>test posting</title>
+    <link>https://inchan.dev/posts/230412-aws-ec2%EC%97%90-%EC%98%AC%EB%A6%B0-pm2-%EC%84%9C%EB%B2%84%EC%9D%98-%EB%A1%9C%EA%B7%B8/</link>
+    <pubDate>Thu, 13 Apr 2023 17:26:03 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/230412-aws-ec2%EC%97%90-%EC%98%AC%EB%A6%B0-pm2-%EC%84%9C%EB%B2%84%EC%9D%98-%EB%A1%9C%EA%B7%B8/</guid>
+    <description><![CDATA[aws ec2에 올린 pm2 서버의 로그를 보려면? 먼저 EC2 인스턴스에 SSH로 로그인합니다. PM2 로그 디렉토리로 이동합니다. 이 디렉토리는 일반적으로 다음과 같은 경로에 있습니다. ~/.pm2/logs/
+이 디렉토리에서 PM2 서버의 로그 파일을 확인합니다. 로그 파일 이름은 PM2 앱의 이름과 일치합니다. 예를 들어, PM2 앱의 이름이 myapp 인 경우 다음 명령을 사용하여 로그를 확인할 수 있습니다.
+tail -f ~/.pm2/logs/myapp-out.log
+위 명령은 myapp 앱의 표준 출력 로그를 실시간으로 보여줍니다. 마찬가지로, 표준 오류 로그를 보려면 다음 명령을 사용할 수 있습니다.]]></description>
+</item>
+<item>
     <title>error note - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</title>
     <link>https://inchan.dev/posts/202303162353/</link>
     <pubDate>Thu, 16 Mar 2023 23:56:16 &#43;0900</pubDate>
