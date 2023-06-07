@@ -5,7 +5,7 @@
         <description>mySQL - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 07 Jun 2023 02:08:24 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/mysql/" rel="self" type="application/rss+xml" /><item>
-    <title>MySQL에서 이메일 재사용 가능하게 하기: Soft Delete와 Unique를 함께 활용하다.</title>
+    <title>MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</title>
     <link>https://inchan.dev/posts/202306070208/</link>
     <pubDate>Wed, 07 Jun 2023 02:08:24 &#43;0900</pubDate>
     <author>inchan</author>
