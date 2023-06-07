@@ -4,10 +4,18 @@
         <link>https://inchan.dev/tags/</link>
         <description>Tags - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 07 Jun 2023 02:08:24 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>mySQL</title>
+    <link>https://inchan.dev/tags/mysql/</link>
+    <pubDate>Wed, 07 Jun 2023 02:08:24 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/tags/mysql/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>typeORM</title>
     <link>https://inchan.dev/tags/typeorm/</link>
-    <pubDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</pubDate>
+    <pubDate>Wed, 07 Jun 2023 02:08:24 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://inchan.dev/tags/typeorm/</guid>
     <description><![CDATA[]]></description>
@@ -50,14 +58,6 @@
     <pubDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://inchan.dev/tags/miscellaneous/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>mySQL</title>
-    <link>https://inchan.dev/tags/mysql/</link>
-    <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/tags/mysql/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>

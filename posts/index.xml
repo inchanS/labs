@@ -4,7 +4,16 @@
         <link>https://inchan.dev/posts/</link>
         <description>All Posts | inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 07 Jun 2023 02:08:24 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</title>
+    <link>https://inchan.dev/posts/202306070208/</link>
+    <pubDate>Wed, 07 Jun 2023 02:08:24 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202306070208/</guid>
+    <description><![CDATA[개발환경 Javascript 런타임 플랫폼: Node.js 언어: TypeScript 프레임워크: Express DB: MySQL ORM: TypeORM 현재 조건 상황 회원가입시, 이메일과 패스워드가 필수 입력입력인데, 이메일의 경우 mySQL에서 unique 처리 회원가입 과정에서 이메일 중복 여부를 확인하고 통과했을 경우에만 회원가입 가능 회원 삭제시, 실제 회원정보를 DB에서 지우지 않고 TypeORM의softDelete 방식으로 deleted_at 컬럼에 삭제일시가 기록되는 방식 (일정기간 이후 삭제할 요량으로 단기간 데이터 보존) Question 이미 회원 삭제된 정보의 이메일로 재가입하려는 경우,
+해당 이메일은 이미 mySQL에서 unique로 입력되어있는 이메일이기 때문에 이메일 중복확인에서 통과되지 않는다.]]></description>
+</item>
+<item>
     <title>error note - TypeORM migration 할 때 cross ENV 설정 문제</title>
     <link>https://inchan.dev/posts/202304010529/</link>
     <pubDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</pubDate>
@@ -122,22 +131,6 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에]]><
             </div>chatGPT에게 whereClauseBuilder 함수를 물어보았다. 원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 where절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다. 질문은 한글로 했고, 영어로 답변이 오는데 속도는 꽤 빠르다.
 하지만 답변을 한글로 받고자 하면 꽤 오랜 지연이 발생한다.
 whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided enough context for me to understand what you&rsquo;re asking about. Could you please provide more information or specify what you&rsquo;re looking to learn about &ldquo;whereClauseBuilder&rdquo;?]]></description>
-</item>
-<item>
-    <title>devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제</title>
-    <link>https://inchan.dev/posts/202302020410/</link>
-    <pubDate>Thu, 02 Feb 2023 04:10:40 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202302020410/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png" referrerpolicy="no-referrer">
-            </div>&lt;사진: DEVONtechnologies | DEVONthink, professional document and information management for the Mac and iOS&gt;
-코딩을 공부하면서 정말 많은 웹 문서들을 참고하며 정리하게 된다.
-그 중, 보관하고자 하는 문서는 주로 웹클리핑을 통해 정보를 수집한다.
-이때, 클리핑 포맷은 보통 PDF로 하지만 가끔 code block내 스크롤이 있는 경우에는
-PDF에서 짤린채로 수집되는 문제가 있어 MarkDown 포맷으로 클리핑을 한다.
-나는 주로 아래 두 도구를 사용하여 자료를 정리한다.
-Obsidian(note taking app) DevonThink(note database) 이때, 웹클리핑은 Obsidian 노트내로 바로 삽입할 수 있는 방법도 있지만 1]]></description>
 </item>
 </channel>
 </rss>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다. - inchan.dev</title><meta name="Description" content="MySQL에서 회원탈퇴시 탈퇴한 회원 정보를 DB에서 완전히 삭제하지 않고 softDelete 처리했을 때, 해당 이메일을 중복확인에서 통과시키고 재사용할 수 있게한 고민들"><meta property="og:title" content="MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다." />
+<meta property="og:description" content="MySQL에서 회원탈퇴시 탈퇴한 회원 정보를 DB에서 완전히 삭제하지 않고 softDelete 처리했을 때, 해당 이메일을 중복확인에서 통과시키고 재사용할 수 있게한 고민들" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://inchan.dev/posts/202306070208/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-07T22:47:43+09:00" />
+<meta property="article:modified_time" content="2023-06-07T02:08:24+09:00" /><meta property="og:site_name" content="inchan.dev" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://inchan.dev/images/avatar.png"/>
+
+<meta name="twitter:title" content="MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다."/>
+<meta name="twitter:description" content="MySQL에서 회원탈퇴시 탈퇴한 회원 정보를 DB에서 완전히 삭제하지 않고 softDelete 처리했을 때, 해당 이메일을 중복확인에서 통과시키고 재사용할 수 있게한 고민들"/>
+<meta name="application-name" content="inchan.dev">
+<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202306070208/" /><link rel="prev" href="https://inchan.dev/posts/202304010529/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/inchan.dev\/posts\/202306070208\/"
+        },"genre": "posts","keywords": "typeORM, mySQL","wordcount":  548 ,
+        "url": "https:\/\/inchan.dev\/posts\/202306070208\/","datePublished": "2023-06-07T22:47:43+09:00","dateModified": "2023-06-07T02:08:24+09:00","publisher": {
+            "@type": "Organization",
+            "name": "inchan"},"author": {
+                "@type": "Person",
+                "name": "inchan"
+            },"description": "MySQL에서 회원탈퇴시 탈퇴한 회원 정보를 DB에서 완전히 삭제하지 않고 softDelete 처리했을 때, 해당 이메일을 중복확인에서 통과시키고 재사용할 수 있게한 고민들"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-06-07">2023-06-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;548 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#개발환경">개발환경</a></li>
+    <li><a href="#현재-조건-상황">현재 조건 상황</a></li>
+    <li><a href="#3가지-방안들">3가지 방안들</a>
+      <ul>
+        <li><a href="#1번의-경우">1번의 경우</a></li>
+        <li><a href="#2번의-경우">2번의 경우</a></li>
+        <li><a href="#3번의-경우">3번의 경우</a></li>
+      </ul>
+    </li>
+    <li><a href="#고려사항">고려사항</a>
+      <ul>
+        <li><a href="#변경-전">변경 전</a></li>
+        <li><a href="#변경-후">변경 후</a>
+          <ul>
+            <li><a href="#변경-후-실행결과-출력">변경 후, 실행결과 출력</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p> <br>
+ </p>
+<h2 id="개발환경">개발환경</h2>
+<ul>
+<li>Javascript 런타임 플랫폼: Node.js</li>
+<li>언어: TypeScript</li>
+<li>프레임워크: Express</li>
+<li>DB: MySQL</li>
+<li>ORM: TypeORM
+ </li>
+</ul>
+<h2 id="현재-조건-상황">현재 조건 상황</h2>
+<ul>
+<li>회원가입시, 이메일과 패스워드가 필수 입력입력인데, 이메일의 경우 mySQL에서 unique 처리</li>
+<li>회원가입 과정에서 이메일 중복 여부를 확인하고 통과했을 경우에만 회원가입 가능</li>
+<li>회원 삭제시, 실제 회원정보를 DB에서 지우지 않고 TypeORM의softDelete 방식으로 deleted_at 컬럼에 삭제일시가 기록되는 방식 (일정기간 이후 삭제할 요량으로 단기간 데이터 보존)
+ <br>
+ </li>
+</ul>
+<div class="details admonition question open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Question<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">이미 회원 삭제된 정보의 이메일로 <strong>재가입하려는 경우</strong>,<br>
+해당 이메일은 이미 mySQL에서 unique로 입력되어있는 이메일이기 때문에 이메일 중복확인에서 통과되지 않는다.<br>
+해당 이메일을 재사용하려면?</div>
+        </div>
+    </div>
+<p> <br>
+ </p>
+<h2 id="3가지-방안들">3가지 방안들</h2>
+<ol>
+<li>mySQL - entity - email column 에서 unique 조건을 제거하고, 중복여부를 필터링하는 코드를 추가하는 방법으로 진행한다.</li>
+<li>DB에서의 unique 조건을 유지시키기 위해 삭제 로직 중, email을 변경하여 저장한다.</li>
+<li>삭제된 email로 회원가입이 들어올 경우, 복구 과정을 추가한다.
+ <br>
+ </li>
+</ol>
+<h3 id="1번의-경우">1번의 경우</h3>
+<p>mySQL의 unique 제약 조건을 제거하면 이메일 중복 확인 로직을 코드에서 추가적으로 수정하여 처리해야 한다.<br>
+즉, <code>deleted_at</code> 컬럼이 <code>null</code>인지 아닌지에 대한 확인이 필요하기에 <code>Users</code> DB에서의 조건이 실행되어야 한다.<br>
+이 경우, 데이터베이스에서의 조회 로직에 <strong>Indexing이 들어간 Unique 컬럼 조회와 더불어 전체스캔을 필요로 하는</strong> MySQL의 <code>Is Null</code>절을 추가적으로 사용해야하며 , 이로 인해 성능에 약간의 영향을 미칠 것으로 예상된다.<br>
+또한 개발 도중의 문제로 <code>deleted_at</code> 컬럼의 데이터에 문제가 생긴다면 걷잡을 수 없는 혼란을 야기할 수도 있다.<br>
+ </p>
+<p>그러나 이 방법은 <strong>프로그래밍적으로 더 유연하게 사용할 수</strong> 있고, 사용자의 이메일을 변경하지 않아도 되기에 <strong>데이터의 원형을 유지</strong>하면서도 새 사용자가 이전에 사용되었던 이메일을 재사용할 수 있다는 이점이 있다.<br>
+ <br>
+ </p>
+<h3 id="2번의-경우">2번의 경우</h3>
+<p>예를 들어, 사용자가 삭제되면 해당 사용자의 이메일을 <code>&quot;email@example.com.deleted.20210601&quot;</code>와 같이 변경하여 <strong>mySQL에서의 unique 조건을 그대로 유지할 수 있다.</strong><br>
+이 방법은 <strong>데이터베이스의 무결성을 유지</strong>하면서도 이메일 재사용 문제를 해결할 수 있다.<br>
+ <br>
+하지만 이 경우 사용자의 원래 이메일을 변경해야 하므로 데이터의 원형을 유지하는 데 어려움이 있을 수 있다.
+ <br>
+ </p>
+<h3 id="3번의-경우">3번의 경우</h3>
+<p>복구과정을 추가할 시, 애초에 이메일을 오타로 입력하여 등록이 되어버리면 이미 이 이메일은 이전 회원의 소유로 귀속되기에 사실상 원래 이메일의 소유자가 회원가입을 하려고 할 때 불가능해진다.<br>
+따라서 이 방법은 패스!<br>
+ <br>
+ </p>
+<hr>
+<h2 id="고려사항">고려사항</h2>
+<p>1번과 2번의 방안을 두고 저울질을 해봤을 때,</p>
+<ul>
+<li>1번 : unique 조건을 해제하고 코드를 추가하여 개발 유연성을 확보하면 상시적으로 시스템의 성능에 영향이 간다.</li>
+<li>2번 : unique 조건을 유지시키고, 회원 삭제시 데이터 원형을 변형시키는 방법을 하였을 때에는 추후 복구시 다시 데이터 원형을 살릴 수 있는 코드가 추가되어야 한다.<br>
+ </li>
+</ul>
+<p>즉, 추가코드는 필수적이지만 상시적으로 해당 코드를 운용할 것인가? 간헐적인 사용시 해당 코드를 운용할 것인가의 문제로 귀결되면서 2번의 방법을 사용하기로 결정하였다.<br>
+그리고 롤백시 데이터 원형을 살릴 수 있으면서 알아보기 쉽도록  <code>deleted.현재시간</code> 이라는 규칙을 가진 <code>string</code>을 추가하여 변형된 email 주소를 업데이트 하기로 했다.<br>
+또한 이 방법은 추후 <code>deleted_at</code> 컬럼의 내용에 대한 백업 역할을 기대해볼 수도 있다.<br>
+ </p>
+<p>이렇게 하면 추후에 <code>.deleted</code> 이후의 문자를 모두 날려버리는 간단한 아래 코드만으로 복구가 가능해진다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">recoveredEmail</span> <span class="o">=</span> <span class="nx">email</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\.deleted\.\d+/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span></code></pre></div><p> </p>
+<p>이리하여 변경된 프로젝트의 코드는 다음과 같다.<br>
+ </p>
+<h3 id="변경-전">변경 전</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl">  <span class="c1">// user.service.ts의 userDelete 함수 중, 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// ... 이전 코드
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  
+</span></span><span class="line"><span class="cl">  <span class="c1">// 사용자 정보의 유효성 검사 함수를 불러온다.  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">await</span> <span class="nx">findUserInfoByUserId</span><span class="p">(</span><span class="nx">userId</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// transaction을 시작한다.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">queryRunner</span> <span class="o">=</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">createQueryRunner</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">connect</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">startTransaction</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 사용자의 User entity를 삭제한다.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">softDelete</span><span class="p">(</span><span class="nx">User</span><span class="p">,</span> <span class="nx">userId</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// ... 이후 코드
+</span></span></span></code></pre></div><p> </p>
+<h3 id="변경-후">변경 후</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl">  <span class="c1">// user.service.ts의 userDelete 함수 중, 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// ... 이전 코드
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  
+</span></span><span class="line"><span class="cl">  <span class="c1">// 사용자 정보의 유효성 검사 함수를 불러온다.  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">userInfo</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">findUserInfoByUserId</span><span class="p">(</span><span class="nx">userId</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// transaction을 시작한다.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">queryRunner</span> <span class="o">=</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">createQueryRunner</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">connect</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">startTransaction</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 사용자의 email을 변경한다. 추후 해당 email의 재사용을 위한 고민중 230607 추가
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">email</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="nx">userInfo</span><span class="p">.</span><span class="nx">email</span><span class="si">}</span><span class="sb">.deleted.</span><span class="si">${</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 객체 리터럴 단축구문으로 email의 변경내용을 간략하게 표현한다. 230607 추가
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">User</span><span class="p">,</span> <span class="nx">userId</span><span class="p">,</span> <span class="p">{</span> <span class="nx">email</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 사용자의 User entity를 삭제한다.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">softDelete</span><span class="p">(</span><span class="nx">User</span><span class="p">,</span> <span class="nx">userId</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// ... 이후 코드
+</span></span></span></code></pre></div><p> </p>
+<h4 id="변경-후-실행결과-출력">변경 후, 실행결과 출력</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/Pasted%20image%2020230607050924.png"
+        data-srcset="/images/Pasted%20image%2020230607050924.png, /images/Pasted%20image%2020230607050924.png 1.5x, /images/Pasted%20image%2020230607050924.png 2x"
+        data-sizes="auto"
+        alt="/images/Pasted%20image%2020230607050924.png"
+        title="/images/Pasted%20image%2020230607050924.png" />
+ </p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-06-07</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typeorm/">typeORM</a>,&nbsp;<a href="/tags/mysql/">mySQL</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/202304010529/" class="prev" rel="prev" title="error note - TypeORM migration 할 때 cross ENV 설정 문제"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>error note - TypeORM migration 할 때 cross ENV 설정 문제</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+</html>
