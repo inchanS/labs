@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.111.3">
+	<meta name="generator" content="Hugo 0.113.0">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
@@ -99,6 +99,15 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/202301280423/">typescript - any와 unknown의 차이</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-28">2023-01-28</time></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Programming</a></span></div><div class="content">tag : #typescript related link
+unknown-typescript typescript로 코딩을 하다가 어떤 타입인지 정의 내리기 힘든 상황에서 주로 any 를 사용한다.
+물론 typescript의 성격상 any는 지양하는 것이 좋다.
+오류를 검증하고 확인하려는 특성으로 엄격한 타입을 지정하려는 typescript에서 어떤 타입이나 가능하다는 성격의 any는 어쩌면 존재 자체가 모순인 타입이기도 하다.
+하지만코딩을 하다보면 아직은 타입을 정하기 전인 상황이거나, 도저히 타입을 알 수 없거나 추론할 수 없을 때, (또는 typescript 초급자일 때 ;;) 가끔 사용하게 되는 것이 또 any 타입이다.</div><div class="post-footer">
+        <a href="/posts/202301280423/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typescript/">TypeScript</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/202301280422/">typescript - satisfies operator 탐구</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-28">2023-01-28</time></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Programming</a></span></div><div class="content">tag : #typescript
 related link
@@ -158,25 +167,6 @@ dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼
 TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &#34;mariadb&#34; | &#34;postgres&#34; | &#34;cockroachdb&#34; | &#34;sqlite&#34; | &#34;mssql&#34; | &#34;sap&#34; | &#34;oracle&#34; | &#34;cordova&#34; | &#34;nativescript&#34; | &#34;react-native&#34; | &#34;sqljs&#34; | &#34;mongodb&#34; | &#34;aurora-mysql&#34; | .</div><div class="post-footer">
         <a href="/posts/202301180428/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typescript/">TypeScript</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
-            <a href="/posts/202301090435/"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/Pasted%20image%2020230301063722.png"
-        data-srcset="/images/Pasted%20image%2020230301063722.png, /images/Pasted%20image%2020230301063722.png 1.5x, /images/Pasted%20image%2020230301063722.png 2x"
-        data-sizes="auto"
-        alt="/images/Pasted%20image%2020230301063722.png"
-        title="/images/Pasted%20image%2020230301063722.png" /></a>
-        </div><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202301090435/">nestJS 시작하기</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-09">2023-01-09</time></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div><div class="content">tag : #nestjs #typescript #JavaScript
-source : 따라하면서 배우는 NestJS - YouTube
-nestJS - cli 설치 사전 조건 : node lts버전 설치
-npm i @nestjs/cli 또는
-npm i -g @nestjs/cli 이렇게 package.json 파일에서 정상적으로 설치되었음을 확인할 수 있다.
-nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 nest new nestjs-test 위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다. 만약 $ mkdir nestjs-test 로 폴더를 만들고 이 위치에서 진행중이라면,</div><div class="post-footer">
-        <a href="/posts/202301090435/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/nestjs/">NestJS</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -196,6 +186,10 @@ nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 ne
                 </li><li class="page-item ">
                     <span class="page-link">
                         <a href="/page/5/">5</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/page/6/">6</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
