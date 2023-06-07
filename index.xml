@@ -16,15 +16,6 @@
 해당 이메일은 이미 mySQL에서 unique로 입력되어있는 이메일이기 때문에 이메일 중복확인에서 통과되지 않는다.]]></description>
 </item>
 <item>
-    <title>MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</title>
-    <link>https://inchan.dev/posts/202306080754/</link>
-    <pubDate>Wed, 07 Jun 2023 02:08:24 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202306080754/</guid>
-    <description><![CDATA[개발환경 Javascript 런타임 플랫폼: Node.js 언어: TypeScript 프레임워크: Express DB: MySQL ORM: TypeORM 현재 조건 상황 회원가입시, 이메일과 패스워드가 필수 입력입력인데, 이메일의 경우 mySQL에서 unique 처리 회원가입 과정에서 이메일 중복 여부를 확인하고 통과했을 경우에만 회원가입 가능 회원 삭제시, 실제 회원정보를 DB에서 지우지 않고 TypeORM의softDelete 방식으로 deleted_at 컬럼에 삭제일시가 기록되는 방식 (일정기간 이후 삭제할 요량으로 단기간 데이터 보존) Question 이미 회원 삭제된 정보의 이메일로 재가입하려는 경우,
-해당 이메일은 이미 mySQL에서 unique로 입력되어있는 이메일이기 때문에 이메일 중복확인에서 통과되지 않는다.]]></description>
-</item>
-<item>
     <title>error note - TypeORM migration 할 때 cross ENV 설정 문제</title>
     <link>https://inchan.dev/posts/202304010529/</link>
     <pubDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</pubDate>
@@ -130,6 +121,18 @@ dataSource.createQueryRunner() 방식을 사용했다.1
             </div>&lt;사진: unsplash&gt;
 기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker typeORM createQueryBuilder 메소드로 출력시 2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다. 우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
 mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에]]></description>
+</item>
+<item>
+    <title>chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.</title>
+    <link>https://inchan.dev/posts/202302100411/</link>
+    <pubDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202302100411/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1675557009483-e6cf3867976b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2hhdGdwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
+            </div>chatGPT에게 whereClauseBuilder 함수를 물어보았다. 원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 where절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다. 질문은 한글로 했고, 영어로 답변이 오는데 속도는 꽤 빠르다.
+하지만 답변을 한글로 받고자 하면 꽤 오랜 지연이 발생한다.
+whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided enough context for me to understand what you&rsquo;re asking about. Could you please provide more information or specify what you&rsquo;re looking to learn about &ldquo;whereClauseBuilder&rdquo;?]]></description>
 </item>
 </channel>
 </rss>
