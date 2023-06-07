@@ -132,11 +132,11 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>&lt;사진: <a href="http://unsplash.com" target="_blank" rel="noopener noreffer ">unsplash</a>&gt;</p>
-<hr>
 <h2 id="transaction-구성중-entity가-아닌-repository-사용시">transaction 구성중 Entity가 아닌 Repository 사용시</h2>
 <p>typeORM에서 transaction을 사용하는 방법은 몇가지가 있지만,<br>
 복잡한 service단의 처리에서는 아래의 queryRunner 방식이 더 적합할것 같아서<br>
-<code>dataSource.createQueryRunner()</code> 방식을 사용했다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<code>dataSource.createQueryRunner()</code> 방식을 사용했다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><br>
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// transaction으로 묶어주기  
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">queryRunner</span> <span class="o">=</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">createQueryRunner</span><span class="p">();</span>  
 </span></span><span class="line"><span class="cl"><span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">connect</span><span class="p">();</span>  
@@ -153,20 +153,25 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">  <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">release</span><span class="p">();</span>  
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 id="문제---commit-중복으로-rollbacktransaction-실패">문제 - commit 중복으로 rollbackTransaction 실패</h3>
+</span></span></code></pre></div><p> </p>
+<h3 id="문제---commit-중복으로-rollbacktransaction-실패">문제 - commit 중복으로 rollbackTransaction 실패</h3>
 <p><code>FeedRepository</code>는 이미 그 자체로 코드 실행시 transaction이 따로이 실행된다.<br>
-즉, 여기서 이미 commit이 이루어진다는 뜻!</p>
-<p>따라서 <code>rollbackTransaction</code>을 하는데 있어 <code>FeedRepository.createFeed</code> 코드는 이미 <code>commit</code>이 되었기에 rollback 해당 대상에서 벗어나게 된다.</p>
-<p><img
+즉, 여기서 이미 commit이 이루어진다는 뜻!<br>
+ </p>
+<p>따라서 <code>rollbackTransaction</code>을 하는데 있어 <code>FeedRepository.createFeed</code> 코드는 이미 <code>commit</code>이 되었기에 rollback 해당 대상에서 벗어나게 된다.<br>
+ <br>
+<img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="https://i.imgur.com/5WtPMAr.png"
         data-srcset="https://i.imgur.com/5WtPMAr.png, https://i.imgur.com/5WtPMAr.png 1.5x, https://i.imgur.com/5WtPMAr.png 2x"
         data-sizes="auto"
         alt="https://i.imgur.com/5WtPMAr.png"
-        title="img | 500 " /></p>
+        title="img | 500 " />
+ </p>
 <p>위와 같이 <code>FeedRepository</code>에서 <code>START TRANSACTION</code>이 따로이 한번 더 일어나고,<br>
-<strong>아직 실행중이지만 도중에 COMMIT이 되어버림을 확인할 수 있다.</strong></p>
+<strong>아직 실행중이지만 도중에 COMMIT이 되어버림을 확인할 수 있다.</strong><br>
+ </p>
 <h3 id="해결---withrepository-메소드">해결 - <code>withRepository</code> 메소드</h3>
 <p>고민을 해보자!</p>
 <ol>
@@ -174,50 +179,66 @@
 <li>즉, 곰곰히 생각해보면 <code>FeedRepository</code> 단독실행이 아닌 아닌 저 transaction단에서 동작하는 범주 안에서 코딩이 이루어져야 한다.</li>
 <li>2가지 방안이 떠올랐다. 첫번째는 <code>FeedRepository</code>안에 만들어놓은 메소드를 포기하고 따로이 다시금 transaction의 try문단 안에 코딩을 하는 것이고, 다른 하나는 저 <code>FeedRepository</code>를 어떻게든 transaction 동작 범주 안으로 우겨넣는 방법일 것이다.</li>
 </ol>
+<p> </p>
 <p>다시금 코딩을 하자니 상당히 비효율적이고, 이건 도저히 아니라는 판단이 들었다.<br>
-그럼 우겨넣는 방법인데&hellip;</p>
-<p>구글링을 해봐도 typeORM의 버전 업그레이드로 관련문서의 수도 적었고, 있다하더라도 대개 nestJS의 customRepository 관련 문서였다.</p>
+그럼 우겨넣는 방법인데&hellip;<br>
+ </p>
+<p>구글링을 해봐도 typeORM의 버전 업그레이드로 관련문서의 수도 적었고, 있다하더라도 대개 nestJS의 customRepository 관련 문서였다.<br>
+ </p>
 <p>최후의 수단으로 IDE에서 사용가능한 메소드를 쭉 하나하나 살펴봤다.<br>
-그러다가 찾은 메소드 <strong><code>withRepository</code></strong></p>
-<p><img
+그러다가 찾은 메소드 <strong><code>withRepository</code></strong>
+ <br>
+<img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="https://i.imgur.com/Smjr9j8.png"
         data-srcset="https://i.imgur.com/Smjr9j8.png, https://i.imgur.com/Smjr9j8.png 1.5x, https://i.imgur.com/Smjr9j8.png 2x"
         data-sizes="auto"
         alt="https://i.imgur.com/Smjr9j8.png"
-        title="https://i.imgur.com/Smjr9j8.png" /></p>
-<div class="details admonition note open">
+        title="https://i.imgur.com/Smjr9j8.png" />
+ </p>
+<p><div class="details admonition note open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><h4 id="managerwithrepository">manager.withRepository</h4>
-<p>지정된 리포지토리에서 새 리포지토리 인스턴스를 생성하고 현재 EntityManager 인스턴스를 해당 리포지토리로 설정합니다. 트랜잭션에서 사용자 지정 리포지토리로 작업하는 데 사용됩니다.</div>
+            <div class="admonition-content"><strong>manager.withRepository</strong><br>
+지정된 리포지토리에서 새 리포지토리 인스턴스를 생성하고 현재 EntityManager 인스턴스를 해당 리포지토리로 설정합니다. 트랜잭션에서 사용자 지정 리포지토리로 작업하는 데 사용됩니다.</div>
         </div>
     </div>
-<p>아~주 적절하다!</p>
-<p>이렇게까지 복잡했던 이유는, 만약 해당 코드가 단순히 기본 Entity라면</p>
+ </p>
+<p>아~주 적절하다!
+ </p>
+<p>이렇게까지 복잡했던 이유는, 만약 해당 코드가 단순히 기본 Entity라면<br>
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">tempFeed</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">Feed</span><span class="p">,</span> <span class="nx">newTempFeed</span><span class="p">);</span>
-</span></span></code></pre></div><p>간단하게 뭐 이렇게 나가면 된다.</p>
+</span></span></code></pre></div><p> </p>
+<p>간단하게 뭐 이렇게 나가면 된다.<br>
+ </p>
 <p>하지만 단순한 Entity가 아닌, 이미 일련의 실행과정을 코딩해놓은 Repository이기에 아래와 같이
-<code>withRepository</code> 메소드를 사용한다.</p>
-<p>그러면 해당 레포에서 static으로 박아놓은 <code>.createFeed</code>라는 하위 메소드도 연결해서 사용가능하다.</p>
+<code>withRepository</code> 메소드를 사용한다.<br>
+ </p>
+<p>그러면 해당 레포에서 static으로 박아놓은 <code>.createFeed</code>라는 하위 메소드도 연결해서 사용가능하다.<br>
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">tempFeed</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span>  
 </span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">withRepository</span><span class="p">(</span><span class="nx">FeedRepository</span><span class="p">)</span>  
 </span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">createFeed</span><span class="p">(</span><span class="nx">newTempFeed</span><span class="p">);</span>
-</span></span></code></pre></div><h4 id="테스트-결과">테스트 결과</h4>
-<p>빠르게 나머지 코드들을 세팅하고 테스트를 해본다.</p>
-<p><img
+</span></span></code></pre></div><p> </p>
+<h4 id="테스트-결과">테스트 결과</h4>
+<p>빠르게 나머지 코드들을 세팅하고 테스트를 해본다.<br>
+ <br>
+<img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="https://i.imgur.com/Juosa9E.png"
         data-srcset="https://i.imgur.com/Juosa9E.png, https://i.imgur.com/Juosa9E.png 1.5x, https://i.imgur.com/Juosa9E.png 2x"
         data-sizes="auto"
         alt="https://i.imgur.com/Juosa9E.png"
-        title="https://i.imgur.com/Juosa9E.png" /></p>
+        title="https://i.imgur.com/Juosa9E.png" />
+ </p>
 <p>이제 정상적으로 START TRANSACTION이 한번 일어나고,<br>
-의도적인 에러를 터트려 롤백하게 했더니 마지막으로 무사히 ROLLBACK이 이루어진다.</p>
+의도적인 에러를 터트려 롤백하게 했더니 마지막으로 무사히 ROLLBACK이 이루어진다.<br>
+ </p>
 <p>transaction안에 AWS S3 objectCommand까지 있어 코드가 좀 어지러웠지만 그래도 예상되는 모든 Transaction-Rollback 테스트가 모두 통과되어 되어 한시름 놓았다.</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>

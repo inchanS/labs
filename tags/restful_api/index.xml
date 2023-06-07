@@ -23,12 +23,7 @@
     <pubDate>Sun, 25 Dec 2022 05:09:42 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://inchan.dev/posts/202212250509/</guid>
-    <description><![CDATA[tag : #restAPI
-#restAPI
-덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실!
-statusCode 204는 response를 전송하지 않는다!! 다만 status code &ldquo;204&rdquo; 만 전달할 뿐.
-이걸 몰라서 코드의 오류인줄 알고 한참을 헤맸다. status code를 200으로 바꿨더니 다시 원래대로 response가 전송되었다.
-status code 문서의 개요만 어설프게 보고서는, 삭제니까 no content인 204가 맞겠지 하고 내 멋대로 이해한 실수였다. 204에서 다시 200으로 처리한 이유는, 삭제된 이후의 덧글 리스트와 페이지네이션 위치를 json으로 전달해야할 필요성이 있어서였다.]]></description>
+    <description><![CDATA[덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실! statusCode 204는 response를 전송하지 않는다!! 다만 status code &ldquo;204&rdquo; 만 전달할 뿐. 이걸 몰라서 코드의 오류인줄 알고 한참을 헤맸다. status code를 200으로 바꿨더니 다시 원래대로 response가 전송되었다. status code 문서의 개요만 어설프게 보고서는, 삭제니까 no content인 204가 맞겠지 하고 내 멋대로 이해한 실수였다. 204에서 다시 200으로 처리한 이유는, 삭제된 이후의 덧글 리스트와 페이지네이션 위치를 json으로 전달해야할 필요성이 있어서였다.]]></description>
 </item>
 </channel>
 </rss>

@@ -110,14 +110,18 @@
         data-sizes="auto"
         alt="https://images.unsplash.com/photo-1599153066743-08810dc8a419?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXdzfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
         title="EC2에서 PM2 실행시 NODE_ENV 설정 명령을 어떻게 하는가에 대한 에러 노트" /></div><div class="content" id="content"><p><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p> <br>
+ </p>
 <p>AWS EC2에 배포를 하려하는데, 조그만 문제가 하나 생겼다.<br>
-아래 예시와 같이 <strong><code>.env</code>파일을 개발, 배포 등의 목적으로 각각 나누어</strong> 코드를 작성했는데,</p>
-<div class="details admonition example open">
+아래 예시와 같이 <strong><code>.env</code>파일을 개발, 배포 등의 목적으로 각각 나누어</strong> 코드를 작성했는데,<br>
+ </p>
+<p><div class="details admonition example open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-list-ol fa-fw" aria-hidden="true"></i>main.ts 파일 코드 예시<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s1">&#39;production&#39;</span><span class="p">)</span> <span class="p">{</span>  
+            <div class="admonition-content"><p> </p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s1">&#39;production&#39;</span><span class="p">)</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">dotenv</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span> <span class="nx">path</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;/../env/.env.production&#39;</span><span class="p">)</span> <span class="p">});</span>  
 </span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s1">&#39;develop&#39;</span><span class="p">)</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">dotenv</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span> <span class="nx">path</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;/../env/.env.dev&#39;</span><span class="p">)</span> <span class="p">});</span>  
@@ -127,14 +131,16 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">  <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;process.env.NODE_ENV IS_NOT_SET!!&#39;</span><span class="p">);</span>  
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div></div>
+</span></span></code></pre></div><p> </p>
+</div>
         </div>
     </div>
-<p>이걸 EC2에서 pm2로 프로세스를 돌릴 때 어떻게 명령을 내려야 하는가 였다.</p>
-<p> <br>
-<code>cross-env</code> 설명을 보면 script의 가장 서두에 설정하고자 하는 값을 두면 된다고 한다.<br>
  </p>
-<div class="details admonition bug open">
+<p>이걸 EC2에서 pm2로 프로세스를 돌릴 때 어떻게 명령을 내려야 하는가 였다.<br>
+ </p>
+<p><code>cross-env</code> 설명을 보면 script의 가장 서두에 설정하고자 하는 값을 두면 된다고 한다.<br>
+ </p>
+<p><div class="details admonition bug open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-bug fa-fw" aria-hidden="true"></i>Bug<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
@@ -152,23 +158,26 @@
 </span></span></code></pre></div></div>
         </div>
     </div>
-<p> </p>
-<p>끝끝내 찾아낸 건 아주 간단하고도 허무했다.</p>
-<p> </p>
-<div class="details admonition success open">
+ </p>
+<p>끝끝내 찾아낸 건 아주 간단하고도 허무했다.<br>
+ </p>
+<p><div class="details admonition success open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-check-circle fa-fw" aria-hidden="true"></i>Success<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p><code>NODE_ENV=production</code>을 <code>pm2</code> 바로 앞에 두면 되는 것이었다.</p>
+            <div class="admonition-content"><p><code>NODE_ENV=production</code>을 <code>pm2</code> 바로 앞에 두면 되는 것이었다.<br>
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;scripts&#34;</span><span class="err">:</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;distribute&#34;</span><span class="p">:</span> <span class="s2">&#34;npm i &amp;&amp; NODE_ENV=production pm2 start dist/main.js --name review -i max&#34;</span>  
 </span></span><span class="line"><span class="cl"><span class="p">}</span><span class="err">,</span>
-</span></span></code></pre></div><p>&amp;&amp;는 명령을 순차적으로 하겠다는 것이며,<br>
+</span></span></code></pre></div><p> </p>
+<p>&amp;&amp;는 명령을 순차적으로 하겠다는 것이며,<br>
 npm과 pm2는 다른 성격임에 해당 명령을 따로 주어야 하는데 이런 기본을 간과하고 엉뚱한 곳에서 답을 찾고 있었다.</p>
 </div>
         </div>
     </div>
+ </p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

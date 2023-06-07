@@ -5,12 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>status code 204 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="status code 204" />
-<meta property="og:description" content="tag : #restAPI
-#restAPI
-덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실!
-statusCode 204는 response를 전송하지 않는다!! 다만 status code &ldquo;204&rdquo; 만 전달할 뿐.
-이걸 몰라서 코드의 오류인줄 알고 한참을 헤맸다. status code를 200으로 바꿨더니 다시 원래대로 response가 전송되었다.
-status code 문서의 개요만 어설프게 보고서는, 삭제니까 no content인 204가 맞겠지 하고 내 멋대로 이해한 실수였다. 204에서 다시 200으로 처리한 이유는, 삭제된 이후의 덧글 리스트와 페이지네이션 위치를 json으로 전달해야할 필요성이 있어서였다." />
+<meta property="og:description" content="덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실! statusCode 204는 response를 전송하지 않는다!! 다만 status code &ldquo;204&rdquo; 만 전달할 뿐. 이걸 몰라서 코드의 오류인줄 알고 한참을 헤맸다. status code를 200으로 바꿨더니 다시 원래대로 response가 전송되었다. status code 문서의 개요만 어설프게 보고서는, 삭제니까 no content인 204가 맞겠지 하고 내 멋대로 이해한 실수였다. 204에서 다시 200으로 처리한 이유는, 삭제된 이후의 덧글 리스트와 페이지네이션 위치를 json으로 전달해야할 필요성이 있어서였다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://inchan.dev/posts/202212250509/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-12-25T05:09:42+09:00" />
@@ -19,12 +14,7 @@ status code 문서의 개요만 어설프게 보고서는, 삭제니까 no conte
 <meta name="twitter:image" content="https://inchan.dev/images/avatar.png"/>
 
 <meta name="twitter:title" content="status code 204"/>
-<meta name="twitter:description" content="tag : #restAPI
-#restAPI
-덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실!
-statusCode 204는 response를 전송하지 않는다!! 다만 status code &ldquo;204&rdquo; 만 전달할 뿐.
-이걸 몰라서 코드의 오류인줄 알고 한참을 헤맸다. status code를 200으로 바꿨더니 다시 원래대로 response가 전송되었다.
-status code 문서의 개요만 어설프게 보고서는, 삭제니까 no content인 204가 맞겠지 하고 내 멋대로 이해한 실수였다. 204에서 다시 200으로 처리한 이유는, 삭제된 이후의 덧글 리스트와 페이지네이션 위치를 json으로 전달해야할 필요성이 있어서였다."/>
+<meta name="twitter:description" content="덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실! statusCode 204는 response를 전송하지 않는다!! 다만 status code &ldquo;204&rdquo; 만 전달할 뿐. 이걸 몰라서 코드의 오류인줄 알고 한참을 헤맸다. status code를 200으로 바꿨더니 다시 원래대로 response가 전송되었다. status code 문서의 개요만 어설프게 보고서는, 삭제니까 no content인 204가 맞겠지 하고 내 멋대로 이해한 실수였다. 204에서 다시 200으로 처리한 이유는, 삭제된 이후의 덧글 리스트와 페이지네이션 위치를 json으로 전달해야할 필요성이 있어서였다."/>
 <meta name="application-name" content="inchan.dev">
 <meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -39,7 +29,7 @@ status code 문서의 개요만 어설프게 보고서는, 삭제니까 no conte
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202212250509\/"
-        },"genre": "posts","keywords": "RESTful_API","wordcount":  151 ,
+        },"genre": "posts","keywords": "RESTful_API","wordcount":  147 ,
         "url": "https:\/\/inchan.dev\/posts\/202212250509\/","datePublished": "2022-12-25T05:09:42+09:00","dateModified": "2022-12-25T05:09:42+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -113,7 +103,7 @@ status code 문서의 개요만 어설프게 보고서는, 삭제니까 no conte
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">status code 204</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-12-25">2022-12-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;151 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-12-25">2022-12-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;147 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -129,20 +119,23 @@ status code 문서의 개요만 어설프게 보고서는, 삭제니까 no conte
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p><em>tag</em> : #restAPI</p>
-<hr>
-<p>#restAPI</p>
+            </div><div class="content" id="content"><p> </p>
 <p>덧글 삭제 API 관련 코드 리팩토링 중,
-status code를 맞추다가 알게 된 사실!</p>
+status code를 맞추다가 알게 된 사실!
+ </p>
 <p>statusCode 204는
 response를 전송하지 않는다!!
-다만 <strong>status code &ldquo;204&rdquo;</strong> 만 전달할 뿐.</p>
+다만 <strong>status code &ldquo;204&rdquo;</strong> 만 전달할 뿐.
+ </p>
 <p>이걸 몰라서 코드의 오류인줄 알고 한참을 헤맸다.
-status code를 200으로 바꿨더니 다시 원래대로 response가 전송되었다.</p>
+status code를 200으로 바꿨더니 다시 원래대로 response가 전송되었다.
+ </p>
 <p>status code 문서의 개요만 어설프게 보고서는, 삭제니까 no content인 204가 맞겠지 하고 내 멋대로 이해한 실수였다.
 204에서 다시 200으로 처리한 이유는,
-삭제된 이후의 덧글 리스트와 페이지네이션 위치를 json으로 전달해야할 필요성이 있어서였다.</p>
+삭제된 이후의 덧글 리스트와 페이지네이션 위치를 json으로 전달해야할 필요성이 있어서였다.
+ </p>
 <hr>
+<p> </p>
 <h3 id="204-no-content-1">204 No Content <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></h3>
 <blockquote>
 <p>HTTP <strong><code>204 No Content</code></strong> 성공 상태 응답 코드는 요청이 성공했으나 클라이언트가 현재 페이지에서 벗어나지 않아도 된다는 것을 나타냅니다. 기본값에서 204 응답은 캐시에 저장할 수 있습니다. 캐시에서 가져온 응답인 경우 <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/ETag" target="_blank" rel="noopener noreffer "><code>ETag</code></a> 헤더를 포함합니다.</p>

@@ -12,12 +12,12 @@
     <guid>https://inchan.dev/posts/202301090435/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/Pasted%20image%2020230301063722.png" referrerpolicy="no-referrer">
-            </div>tag : #nestjs #typescript #JavaScript
-source : 따라하면서 배우는 NestJS - YouTube
-nestJS - cli 설치 사전 조건 : node lts버전 설치
+            </div>nestJS - cli 설치 사전 조건 : node lts버전 설치
 npm i @nestjs/cli 또는
 npm i -g @nestjs/cli 이렇게 package.json 파일에서 정상적으로 설치되었음을 확인할 수 있다.
-nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 nest new nestjs-test 위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다. 만약 $ mkdir nestjs-test 로 폴더를 만들고 이 위치에서 진행중이라면,]]></description>
+nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 nest new nestjs-test 위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다.
+만약 $ mkdir nestjs-test 로 폴더를 만들고 이 위치에서 진행중이라면,
+nest new ./ 위와 같이 입력시 현재 폴더명 그대로 새로운 프로젝트가 진행된다.]]></description>
 </item>
 </channel>
 </rss>

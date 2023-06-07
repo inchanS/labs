@@ -5,14 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>AWS 퍼블릭 IP와 탄력적 IP - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="AWS 퍼블릭 IP와 탄력적 IP" />
-<meta property="og:description" content="tag : #aws
-related link
-[AWS] 📚 EIP(탄력적 IP) 개념 &amp; 사용 세팅 정리 AWS EC2에서 백엔드 서버와 프론트엔드 서버를 돌리는 와중, 백엔드 서버의 PM2 리스트 전체가 다운이 되면서 멈추는 일이 발생했다.
+<meta property="og:description" content="AWS EC2에서 백엔드 서버와 프론트엔드 서버를 돌리는 와중, 백엔드 서버의 PM2 리스트 전체가 다운이 되면서 멈추는 일이 발생했다.
 이래저래 복구를 하다가, 프리티어 t2의 메모리 부족 현상때문이라는 결론에 다달았고
 ec2를 재부팅하였다.
 AWS 퍼블릭 IP 주소가 바뀌었다? EC2 재부팅 결과, 서버의 퍼블릭 IPv4 주소가 바뀌는 일이 발생했다.
 왜 그런가 찾아보니 AWS 기술문서에 다음과 같은 안내가 있었다.
-퍼블릭 IP 주소1 다음과 같은 경우 인스턴스의 퍼블릭 IP 주소가 변경됩니다." />
+퍼블릭 IP 주소1 다음과 같은 경우 인스턴스의 퍼블릭 IP 주소가 변경됩니다.
+중지되었거나 최대 절전 모드로 전환된 인스턴스는 다시 시작될 때 새 퍼블릭 IP 주소를 받습니다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://inchan.dev/posts/202212280458/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-12-28T04:58:02+09:00" />
@@ -21,14 +20,13 @@ AWS 퍼블릭 IP 주소가 바뀌었다? EC2 재부팅 결과, 서버의 퍼블�
 <meta name="twitter:image" content="https://inchan.dev/images/avatar.png"/>
 
 <meta name="twitter:title" content="AWS 퍼블릭 IP와 탄력적 IP"/>
-<meta name="twitter:description" content="tag : #aws
-related link
-[AWS] 📚 EIP(탄력적 IP) 개념 &amp; 사용 세팅 정리 AWS EC2에서 백엔드 서버와 프론트엔드 서버를 돌리는 와중, 백엔드 서버의 PM2 리스트 전체가 다운이 되면서 멈추는 일이 발생했다.
+<meta name="twitter:description" content="AWS EC2에서 백엔드 서버와 프론트엔드 서버를 돌리는 와중, 백엔드 서버의 PM2 리스트 전체가 다운이 되면서 멈추는 일이 발생했다.
 이래저래 복구를 하다가, 프리티어 t2의 메모리 부족 현상때문이라는 결론에 다달았고
 ec2를 재부팅하였다.
 AWS 퍼블릭 IP 주소가 바뀌었다? EC2 재부팅 결과, 서버의 퍼블릭 IPv4 주소가 바뀌는 일이 발생했다.
 왜 그런가 찾아보니 AWS 기술문서에 다음과 같은 안내가 있었다.
-퍼블릭 IP 주소1 다음과 같은 경우 인스턴스의 퍼블릭 IP 주소가 변경됩니다."/>
+퍼블릭 IP 주소1 다음과 같은 경우 인스턴스의 퍼블릭 IP 주소가 변경됩니다.
+중지되었거나 최대 절전 모드로 전환된 인스턴스는 다시 시작될 때 새 퍼블릭 IP 주소를 받습니다."/>
 <meta name="application-name" content="inchan.dev">
 <meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -43,7 +41,7 @@ AWS 퍼블릭 IP 주소가 바뀌었다? EC2 재부팅 결과, 서버의 퍼블�
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202212280458\/"
-        },"genre": "posts","keywords": "aws","wordcount":  412 ,
+        },"genre": "posts","keywords": "aws","wordcount":  398 ,
         "url": "https:\/\/inchan.dev\/posts\/202212280458\/","datePublished": "2022-12-28T04:58:02+09:00","dateModified": "2022-12-28T04:58:02+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -117,7 +115,7 @@ AWS 퍼블릭 IP 주소가 바뀌었다? EC2 재부팅 결과, 서버의 퍼블�
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">AWS 퍼블릭 IP와 탄력적 IP</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-12-28">2022-12-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;412 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-12-28">2022-12-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;398 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -143,19 +141,16 @@ AWS 퍼블릭 IP 주소가 바뀌었다? EC2 재부팅 결과, 서버의 퍼블�
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p><em>tag</em> : #aws<br>
-<em>related link</em></p>
-<ul>
-<li><a href="https://inpa.tistory.com/entry/AWS-%F0%9F%93%9A-%ED%83%84%EB%A0%A5%EC%A0%81-IP-Elastic-IP-EIP-%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80" target="_blank" rel="noopener noreffer ">[AWS] 📚 EIP(탄력적 IP) 개념 &amp; 사용 세팅 정리</a></li>
-</ul>
-<hr>
+            </div><div class="content" id="content"><p> </p>
 <p>AWS EC2에서 백엔드 서버와 프론트엔드 서버를 돌리는 와중,
 백엔드 서버의 PM2 리스트 전체가 다운이 되면서 멈추는 일이 발생했다.<br>
 이래저래 복구를 하다가, 프리티어 t2의 메모리 부족 현상때문이라는 결론에 다달았고<br>
-ec2를 재부팅하였다.</p>
+ec2를 재부팅하였다.<br>
+ </p>
 <h2 id="aws-퍼블릭-ip-주소가-바뀌었다">AWS 퍼블릭 IP 주소가 바뀌었다?</h2>
 <p>EC2 재부팅 결과,
-서버의 퍼블릭 IPv4 주소가 바뀌는 일이 발생했다.</p>
+서버의 퍼블릭 IPv4 주소가 바뀌는 일이 발생했다.<br>
+ </p>
 <p>왜 그런가 찾아보니 AWS 기술문서에 다음과 같은 안내가 있었다.</p>
 <blockquote>
 <h3 id="퍼블릭-ip-주소1">퍼블릭 IP 주소<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></h3>
@@ -166,9 +161,12 @@ ec2를 재부팅하였다.</p>
 </ul>
 <p>퍼블릭 IP 주소가 더 이상 인스턴스와 연결되지 않으면 해당 주소는 퍼블릭 IP 풀로 돌아갑니다. 중지된 인스턴스에 대해 동일한 퍼블릭 IP 주소를 복구할 수 없습니다.</p>
 </blockquote>
+<p> </p>
 <p>문제는 바뀐 주소를 프론트엔드 코드에서 다시 설정 해줘야 한다는 부분이었다.<br>
 다행히 프론트엔드 코드에서 백엔드 서버 주소는 .env 또는 config 파일로 변수처리를 해줬기때문에 간단한 작업만으로 가능했지만,<br>
-절대주소처럼 돌아가야 할 서버 주소가 앞으로도 언제든 바뀔 수 있다는 점은 그 때마다 프론트의 코드를 만져줘야 한다는 부분에서 큰 불편요소로 다가왔다.</p>
+절대주소처럼 돌아가야 할 서버 주소가 앞으로도 언제든 바뀔 수 있다는 점은 그 때마다 프론트의 코드를 만져줘야 한다는 부분에서 큰 불편요소로 다가왔다.<br>
+ <br>
+ </p>
 <h2 id="aws-퍼블릭-ip주소를-고정값으로-쓰려면">AWS 퍼블릭 IP주소를 고정값으로 쓰려면?!</h2>
 <h3 id="탄력적-ip-주소1">탄력적 IP 주소<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></h3>
 <blockquote>
@@ -178,6 +176,7 @@ ec2를 재부팅하였다.</p>
 <p>모든 인스턴스는 중지될 때 연결된 탄력적 IP 주소를 유지합니다. AWS는 <a href="https://aws.amazon.com/premiumsupport/knowledge-center/elastic-ip-charges/" target="_blank" rel="noopener noreffer ">중지된 인스턴스와 연결된 탄력적 IP 주소에 대한 요금을 계속 청구</a>합니다.</p>
 <p><strong>참고:</strong> 자동 할당된 동적 퍼블릭 IP 주소를 탄력적 IP 주소로 변환할 수 없습니다.</p>
 </blockquote>
+<p> </p>
 <h2 id="탄력적-ip의-비용은-어떻게-될까">탄력적 IP의 비용은 어떻게 될까?</h2>
 <h3 id="탄력적-ip-주소--요금-부과-2">탄력적 IP 주소  요금 부과 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></h3>
 <blockquote>
@@ -186,10 +185,12 @@ ec2를 재부팅하였다.</p>
 추가 EIP는 Amazon VPC에서만 사용할 수 있습니다.</p>
 <p>탄력적 IP 주소의 효율적인 사용을 보장하기 위해 IP 주소가 실행 중인 인스턴스와 연결되어 있지 않거나, 중지된 인스턴스 또는 분리된 네트워크 인터페이스와 연결되어 있는 경우 소액의 시간당 요금이 부과됩니다. <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html" target="_blank" rel="noopener noreffer ">Bring Your Own IP</a>를 사용하여 AWS로 가져온 IP 주소 접두사에서 생성하는 탄력적 IP 주소에 대해서는 요금이 부과되지 않습니다.</p>
 </blockquote>
+<p> </p>
 <p>AWS를 사용중이라면 <strong>1개까지는 무료로 사용가능하지만,</strong><br>
 주의할 점은<br>
 탄력적 IP 주소를 생성 후, **사용하지 않는다면!! 요금이 부과된다는 점이다. **<br>
-(AWS 문서를 찾아보면 ip주소 점유 방지를 위함이라고 한다.)</p>
+(AWS 문서를 찾아보면 ip주소 점유 방지를 위함이라고 한다.)<br>
+ </p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -197,7 +198,8 @@ ec2를 재부팅하였다.</p>
         data-srcset="https://i.imgur.com/cXvGFvE.png, https://i.imgur.com/cXvGFvE.png 1.5x, https://i.imgur.com/cXvGFvE.png 2x"
         data-sizes="auto"
         alt="https://i.imgur.com/cXvGFvE.png"
-        title="https://i.imgur.com/cXvGFvE.png" /></p>
+        title="https://i.imgur.com/cXvGFvE.png" />
+ </p>
 <p>탄력적 IP 생성과 사용 적용 및 삭제는 아래 블로그에서 아주 잘 설명되어있다.</p>
 <p><a href="https://inpa.tistory.com/entry/AWS-%F0%9F%93%9A-%ED%83%84%EB%A0%A5%EC%A0%81-IP-Elastic-IP-EIP-%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80" target="_blank" rel="noopener noreffer ">AWS - EIP(탄력적 IP) 개념 &amp; 사용 세팅 정리</a></p>
 <div class="footnotes" role="doc-endnotes">

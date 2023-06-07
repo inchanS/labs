@@ -130,7 +130,7 @@ CSS 선택자 상속(Inheritance) 부모 자식관계의 태그나 요소에서 
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="css-선택자---조합-그룹-가상">CSS 선택자 - 조합, 그룹, 가상</h2>
-<div class="details admonition quote open">
+<p><div class="details admonition quote open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-quote-right fa-fw" aria-hidden="true"></i>Quote<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
@@ -141,27 +141,40 @@ CSS 선택자 상속(Inheritance) 부모 자식관계의 태그나 요소에서 
 </div>
         </div>
     </div>
+ <br>
+ </p>
 <h2 id="css-선택자">CSS 선택자</h2>
 <h3 id="상속inheritance">상속(Inheritance)</h3>
 <p>부모 자식관계의 태그나 요소에서 상위에서 설정된 스타일이 상속된다.
-이를테면 <code>body</code>태그에 스타일을 지정하면, 해당 태그내의 모든 태그는 영향을 받아 스타일이 적용된다.</p>
+이를테면 <code>body</code>태그에 스타일을 지정하면, 해당 태그내의 모든 태그는 영향을 받아 스타일이 적용된다.
+ <br>
+ </p>
 <h3 id="그룹grouping">그룹(Grouping)</h3>
-<p>다중 요소의 스타일을 한번에 처리하고자 할때, 해당 요소 사이에 <code>, </code>로 구분하여 처리한다.</p>
+<p>다중 요소의 스타일을 한번에 처리하고자 할때, 해당 요소 사이에 <code>, </code>로 구분하여 처리한다.
+ <br>
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* 예시 코드 */</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">name</span><span class="o">,</span> <span class="nt">span</span><span class="o">,</span> <span class="p">#</span><span class="nn">hero</span><span class="o">,</span> <span class="nt">p</span>
 </span></span><span class="line"><span class="cl">	<span class="nt">color</span><span class="o">:</span> <span class="nt">green</span><span class="o">;</span>
-</span></span></code></pre></div><p>일관성이 필요한 스타일의 경우 유용하게 쓸 수 있으며, 한번에 유지보수가 가능한 이점이 있다.</p>
+</span></span></code></pre></div><p> </p>
+<p>일관성이 필요한 스타일의 경우 유용하게 쓸 수 있으며, 한번에 유지보수가 가능한 이점이 있다.
+ <br>
+ </p>
 <h3 id="조합">조합</h3>
-<p>부모-자식간의 관계는 <strong>한칸 띄워쓰기</strong>로 표현한다.</p>
+<p>부모-자식간의 관계는 <strong>한칸 띄워쓰기</strong>로 표현한다.
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* class=&#34;pre&#34; 안에 있는 모든 span태그를 지칭 */</span>
 </span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">pre</span> <span class="nt">span</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="k">background-color</span><span class="p">:</span> <span class="kc">yellow</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>하나의 요소에서 클래스,ID로 조합될 경우에는 <strong>붙여쓰기</strong>로 표현한다.</p>
+</span></span></code></pre></div><p> </p>
+<p>하나의 요소에서 클래스,ID로 조합될 경우에는 <strong>붙여쓰기</strong>로 표현한다.
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>빨간색으로 표현됨<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;hero&#34;</span><span class="p">&gt;</span>빨간색에다가 밑줄 적용이 추가됨<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* p태그의 컬러는 상속되고, hero아이디의 속성이 개별적으로 적용된다.*/</span>
+</span></span></code></pre></div><p> </p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* p태그의 컬러는 상속되고, hero아이디의 속성이 개별적으로 적용된다.*/</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nt">p</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span> 
@@ -170,7 +183,9 @@ CSS 선택자 상속(Inheritance) 부모 자식관계의 태그나 요소에서 
 </span></span><span class="line"><span class="cl"><span class="nt">p</span><span class="p">#</span><span class="nn">hero</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="k">text-decoration</span><span class="p">:</span> <span class="kc">underline</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 id="css-적용-우선순위">CSS 적용 우선순위</h3>
+</span></span></code></pre></div><p> <br>
+ </p>
+<h3 id="css-적용-우선순위">CSS 적용 우선순위</h3>
 <ol>
 <li>inline styling (ex. <code>&lt;p style=&quot;font-size: 30px;&quot;&gt;인라인스타일 적용&lt;/p&gt;</code>)</li>
 <li>id</li>

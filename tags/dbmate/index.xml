@@ -13,11 +13,8 @@
     <description><![CDATA[mySQL을 사용하여 Database를 쌓아 나갈때,
 DBmate 를 사용하면
 초기 세팅값을 마치 git을 저장하듯 이력을 남겨 언제든 migration 할 수 있다.
-지금부터의 설명은 macOS 기준으로 기술한다. (windows가 없음 ;; )
-DBmate 설치 Homebrew 를 사용하여 설치한다. 1
-터미널 아무 위치에서나 무관하다. 2
-$brew install dbmate 이렇게 입력 후, 엔터키를 누르면 자동으로 설치가 된다.
-그리고, 하나의 파일이 필요하다. 바로 .env 파일. IDE 또는 터미널 vim으로 .env 파일을 생성한 후, 다음과 같이 입력한다. &quot; cat.]]></description>
+지금부터의 설명은 macOS 기준으로 기술한다. (windows가 없음 ;; ) DBmate 설치 Homebrew 를 사용하여 설치한다. 1 터미널 아무 위치에서나 무관하다. 2 $brew install dbmate 이렇게 입력 후, 엔터키를 누르면 자동으로 설치가 된다.
+그리고, 하나의 파일이 필요하다. 바로 .env 파일. IDE 또는 터미널 vim으로 .env 파일을 생성한 후, 다음과 같이 입력한다.]]></description>
 </item>
 </channel>
 </rss>

@@ -118,13 +118,16 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="introduction">Introduction</h2>
-<p>Jest는 페이스북에서 개발한 JavaScript 테스트 프레임워크로, 간편한 사용법과 빠른 실행 속도로 인기가 있다.</p>
+<p>Jest는 페이스북에서 개발한 JavaScript 테스트 프레임워크로, 간편한 사용법과 빠른 실행 속도로 인기가 있다.<br>
+ </p>
 <p>Jest를 이용하여 테스트 코드를 작성하던 중, 수 많은 함수나 루트를 mocking하게 되는데 지저분해진 테스트 코드를 리팩토링 하다가 <strong>mock함수의 초기화</strong>에 대한 고찰을 하게 되었다.<br>
-Jest의 모의 함수(mock functions)를 사용할 때 중요한 두 가지 함수인 <code>jest.clearAllMocks()</code>와 <code>jest.resetAllMocks()</code>의 차이에 대해 기술한다.</p>
+ </p>
+<p>Jest의 모의 함수(mock functions)를 사용할 때 중요한 두 가지 함수인 <code>jest.clearAllMocks()</code>와 <code>jest.resetAllMocks()</code>의 차이에 대해 기술한다.</p>
 <p> </p>
 <h2 id="jestclearallmocks">jest.clearAllMocks()</h2>
 <p><code>jest.clearAllMocks()</code>  함수는 모든 모의 함수의 호출 정보를 초기화하는 데 사용한다.<br>
-이를 통해 테스트 간 독립성을 보장하며, 다양한 테스트 시나리오에서 중요한 역할을 한다.</p>
+이를 통해 테스트 간 독립성을 보장하며, 다양한 테스트 시나리오에서 중요한 역할을 한다.<br>
+ </p>
 <p>다음은 해당 메소드를 테스트해볼 수 있는 예시 코드이다.<br>
  </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;jest.clearAllMocks test&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>  
@@ -155,9 +158,10 @@ Jest의 모의 함수(mock functions)를 사용할 때 중요한 두 가지 함�
 </span></span><span class="line"><span class="cl">		<span class="nx">expect</span><span class="p">(</span><span class="nx">mockFn</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">&#39;New return value&#39;</span><span class="p">);</span>  
 </span></span><span class="line"><span class="cl">	<span class="p">});</span>  
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
-</span></span></code></pre></div><p> <br>
-위 코드를 풀어쓰자면 다음과 같다.<br>
-<code>jest.clearAllMocks()</code> 실행 이후,</p>
+</span></span></code></pre></div><p> </p>
+<p>위 코드를 풀어쓰자면 다음과 같다.<br>
+ </p>
+<p><code>jest.clearAllMocks()</code> 실행 이후,</p>
 <ol>
 <li>이전에 mock함수를 2번 <strong>호출한 횟수는 초기화</strong> 되었다.</li>
 <li>mock함수의 인스턴스 &lsquo;args1&rsquo;, &lsquo;args2&rsquo; 역시 초기화 되었다.</li>
@@ -206,7 +210,8 @@ Jest의 모의 함수(mock functions)를 사용할 때 중요한 두 가지 함�
 </span></span><span class="line"><span class="cl">	<span class="p">});</span>  
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
 </span></span></code></pre></div><p> </p>
-<p>위 코드를 풀어쓰자면 다음과 같다.</p>
+<p>위 코드를 풀어쓰자면 다음과 같다.<br>
+ </p>
 <p><code>jest.resetAllMocks()</code> 실행 이후,</p>
 <ol>
 <li>이전에 mock함수를 2번 호출한 횟수는 초기화 되었다.</li>

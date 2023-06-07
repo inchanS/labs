@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202303022327\/"
-        },"genre": "posts","keywords": "Miscellaneous","wordcount":  853 ,
+        },"genre": "posts","keywords": "Miscellaneous","wordcount":  854 ,
         "url": "https:\/\/inchan.dev\/posts\/202303022327\/","datePublished": "2023-03-02T23:27:35+09:00","dateModified": "2023-03-06T01:35:56+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -103,7 +103,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">블로깅 플랫폼 변경: Google Blogger에서 GitHub + Hugo로</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/miscellaneous/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Miscellaneous</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-02">2023-03-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;853 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-02">2023-03-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;854 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -149,17 +149,23 @@
             </div><div class="content" id="content"><p>&lt; 이미지 출처 = <a href="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60" target="_blank" rel="noopener noreffer ">unsplash</a> &gt;</p>
 <h2 id="github--hugo로-이사">github + hugo로 이사!</h2>
 <h3 id="이전-google-blogger">이전: google blogger</h3>
-<p>이전에 사용했던 블로그의 플랫폼은 google blogger였다.</p>
+<p>이전에 사용했던 블로그의 플랫폼은 google blogger였다.<br>
+ </p>
 <p>tistory나 naver 블로그에 비해 내가 원하는 문법의 허용범위가 더 커서 오랫동안 사용중이었다.<br>
-(예를 들면 toc, 각주, MarkDown 문법과 HTML 문법으로의 글 작성 모두 지원 등…)</p>
+(예를 들면 toc, 각주, MarkDown 문법과 HTML 문법으로의 글 작성 모두 지원 등…)<br>
+ </p>
 <p>기술 블로그에서 하나의 문서 양이 스크롤을 필요로 한다면 특히나 필요한 것이,<br>
-바로 <strong>TOC(table of contents)</strong> 라고 생각한다.</p>
+바로 <strong>TOC(table of contents)</strong> 라고 생각한다.<br>
+ </p>
 <p>h태그를 이용한 toc의 가장 큰 장점은<br>
 전체적인 개요를 한 눈에 살펴볼 수 있고, 또한  <strong>해당 태그 부분만의 링크를 가질 수 있다는</strong> 점!!<br>
-이로써 참고 링크를 추가할 때 문서의 스크롤 위치까지 지정할 수 있는 이점이 있다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+이로써 참고 링크를 추가할 때 문서의 스크롤 위치까지 지정할 수 있는 이점이 있다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><br>
+ </p>
 <p>문제는 바로 이 toc를, google blogger에서 문서 상단에 고정된 방식이 아니라,<br>
-<strong>스크롤 중에도 상시 표현되는 사이드 바로 빼고 싶었는데</strong>  그러자니 xml을 건드리는 수고가 여간 큰게 아니었다.</p>
-<p>게다가 google blogger의 xml 방식 때문인지는 모르겠지만 website 최적화 체감지수가 미묘하게 불쾌하달까?   반응이 반템포 느리다.</p>
+<strong>스크롤 중에도 상시 표현되는 사이드 바로 빼고 싶었는데</strong>  그러자니 xml을 건드리는 수고가 여간 큰게 아니었다.
+ </p>
+<p>게다가 google blogger의 xml 방식 때문인지는 모르겠지만 website 최적화 체감지수가 미묘하게 불쾌하달까?   반응이 반템포 느리다.
+ </p>
 <p>체험해본바 주관적인 최적화 속도는 다음 순서였다.</p>
 <blockquote>
 <p>github.io = velog   &gt;   tistory   &gt;&gt;   naver blog   &gt;   google blogger</p>
@@ -221,6 +227,7 @@ Go 기반<br>
 <li>단점일지 조금 애매하긴 한데, hugo에서는 파일명이 곧 url 주소가 된다. 때문에 한글보다는 영어로 파일명을 관리하는 것이 seo에서 유리하다.</li>
 <li>이는 하나의 게시글당 2번의 commit과 push가 필요하다는 뜻</li>
 </ul>
+<p> </p>
 <div class="details admonition tip">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>하지만, 쉘스크립트를 이용해 한번에 해결할 수 있다!! (Click!)<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
@@ -338,7 +345,8 @@ inchan.dev 도메인은 작년 justcode 부트캠프와 함께 코딩을 시작�
 <p>참고문서 <a href="https://www.algolia.com/doc" target="_blank" rel="noopener noreffer ">https://www.algolia.com/doc</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6">
-<p><a href="https://www.algolia.com/doc/guides/getting-started/what-is-algolia/" target="_blank" rel="noopener noreffer ">https://www.algolia.com/doc/guides/getting-started/what-is-algolia/</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://www.algolia.com/doc/guides/getting-started/what-is-algolia/" target="_blank" rel="noopener noreffer ">https://www.algolia.com/doc/guides/getting-started/what-is-algolia/</a>
+ &#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7">
 <p>그러나 이 역시 쉘스크립트를 이용해 새 문서 발행시마다 algolia index 과정을 자동화시킴으로써 누락과 과정의 번거로움을 간소화하였다.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>

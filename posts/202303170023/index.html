@@ -110,37 +110,43 @@
         data-sizes="auto"
         alt="https://images.unsplash.com/photo-1633078654544-61b3455b9161?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGVycm9yfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
         title="macOS 터미널에서 AWS EC2 ssh 접속불가를 해결한 설명" /></div><div class="content" id="content"><p><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p> <br>
+ </p>
 <p><div class="details admonition bug open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-bug fa-fw" aria-hidden="true"></i>Bug<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>갑자기 macOS terminal에서 AWS EC2에 ssh접속이 안된다.</p>
-<p>접속해보면 즉각적인 반응이 아닌, 오랜 시간 후 다음과 같은 메세지를 뱉었다.</p>
+            <div class="admonition-content"><p>갑자기 macOS terminal에서 AWS EC2에 ssh접속이 안된다.
+ </p>
+<p>접속해보면 즉각적인 반응이 아닌, 오랜 시간 후 다음과 같은 메세지를 뱉었다.<br>
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> $ ssh -i my_key.pem ec2-user@11.111.11.111
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">ssh: connect to host 11.111.11.111 port 22: Operation timed out
-</span></span></code></pre></div></div>
+</span></span></code></pre></div><p> </p>
+</div>
         </div>
     </div>
- <br>
-<strong><code>Operation timed out</code> 이라니&hellip;</strong><br>
- <br>
-찾아보니 여러 이유가 있을 수 있었다.</p>
+ </p>
+<p><strong><code>Operation timed out</code> 이라니&hellip;</strong><br>
+ </p>
+<p>찾아보니 여러 이유가 있을 수 있었다.</p>
 <ul>
 <li>보안규칙에 22포트에 대한 설정이 누락되었거나,</li>
 <li>명령어가 잘못 입력되었거나,</li>
-<li>방화벽 설정에서 막혔다거나&hellip;</li>
+<li>방화벽 설정에서 막혔다거나&hellip;
+ </li>
 </ul>
 <p>대개 구글링했을때 나오는건 <code>Connetion timed out</code> 이었는데 이건 너무 포괄적인 답변들이라 난감했다.<br>
- <br>
-여튼 현재상황에서, 설정은 잘못된게 없었고 다른 ssh(github)로 테스트 해보니 모두 정상이었다.<br>
+ </p>
+<p>여튼 현재상황에서, 설정은 잘못된게 없었고 다른 ssh(github)로 테스트 해보니 모두 정상이었다.<br>
 심지어 기존 PM2 서버도 잘돌아가고 있었다.<br>
 그렇다면 분명 보안그룹과 관련되어있을 것 같아서 다시 살펴보기 시작했고,<br>
 이상한 주소 하나를 찾았다.<br>
 바로 <strong>인바운드 규칙에 보이는 IP주소</strong> 하나&hellip;<br>
- <br>
-<img
+ </p>
+<p><img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="/images/Pasted%20image%2020230316182649.png"
@@ -148,14 +154,14 @@
         data-sizes="auto"
         alt="/images/Pasted%20image%2020230316182649.png"
         title="/images/Pasted%20image%2020230316182649.png" />
- <br>
-유형 : SSH<br>
+ </p>
+<p>유형 : SSH<br>
 소스 : IP주소
- <br>
-아무리 봐도 일반 공인IP 주소 같았다.<br>
+ </p>
+<p>아무리 봐도 일반 공인IP 주소 같았다.<br>
 아마도 EC2를 처음 세팅하면서 넣었거나 또는 간과했던 설정같은데 이전 내 IP 주소로 보였다.<br>
- <br>
-역시나 문제가 된건 <strong>최근 인터넷 업체를 교체하면서 생긴 IP 주소 변화</strong>.
+ </p>
+<p>역시나 문제가 된건 <strong>최근 인터넷 업체를 교체하면서 생긴 IP 주소 변화</strong>.
  </p>
 <div class="details admonition success open">
         <div class="details-summary admonition-title">
@@ -163,7 +169,8 @@
         </div>
         <div class="details-content">
             <div class="admonition-content"><p>아래 이미지와 같이 <code>EC2 - 보안그룹 - &lt;해당 인스턴스&gt; - 인바운드 규칙 편집</code> 으로 가서 살펴보면<br>
-<code>내 IP</code>가 있는데 이를 선택하고 수정된 규칙을 저장한다.</p>
+<code>내 IP</code>가 있는데 이를 선택하고 수정된 규칙을 저장한다.<br>
+ </p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -171,11 +178,13 @@
         data-srcset="/images/Pasted%20image%2020230316181801.png, /images/Pasted%20image%2020230316181801.png 1.5x, /images/Pasted%20image%2020230316181801.png 2x"
         data-sizes="auto"
         alt="/images/Pasted%20image%2020230316181801.png"
-        title="/images/Pasted%20image%2020230316181801.png" /></p>
+        title="/images/Pasted%20image%2020230316181801.png" />
+ </p>
 <p>그리고 다시 ssh 접속을 해보면 이제 정상적으로 접속됨을 볼 수 있었다.</p>
 </div>
         </div>
     </div>
+<p> </p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

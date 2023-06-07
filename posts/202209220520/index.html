@@ -147,12 +147,15 @@
 <ul>
 <li>디자이너와 소통이 필요함</li>
 <li>이미지가 하나만 수정되어도 파일이 변경되어야 함</li>
-<li>각 이미지의 위치(좌표)를 정확히 관리해야 함</li>
+<li>각 이미지의 위치(좌표)를 정확히 관리해야 함
+ <br>
+ </li>
 </ul>
 </li>
 </ul>
 <h2 id="image-sprite-기법">Image sprite 기법</h2>
 <p>다음은 <a href="https://www.naver.com/" target="_blank" rel="noopener noreffer ">NAVER</a> 메인페이지의 메뉴아이콘이 할당되어있는 배경이미지 파일이다.
+ <br>
 <img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -161,9 +164,13 @@
         data-sizes="auto"
         alt="https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png"
         title="Naver main background image file" />
-&lt;위 이미지는 실제 Naver 메인화면에서 따온 파일이다.&gt;</p>
+ </p>
+<p>&lt;위 이미지는 실제 Naver 메인화면에서 따온 파일이다.&gt;
+ <br>
+ </p>
 <p>저 파일에서 하나의 이미지를 불러오고자 한다면,
-좌상단을 기준으로하여 불러오고자 하는만큼의 <code>px</code>값으로 처리한다.</p>
+좌상단을 기준으로하여 불러오고자 하는만큼의 <code>px</code>값으로 처리한다.
+ </p>
 <p>이때, 좌표의 수치 규칙은 다음과 같다.</p>
 <ul>
 <li>가로는 오른쪽 방향으로 <code>+</code> 수치 증가</li>
@@ -176,16 +183,20 @@
         data-srcset="https://i.imgur.com/L6cmDfl.jpg, https://i.imgur.com/L6cmDfl.jpg 1.5x, https://i.imgur.com/L6cmDfl.jpg 2x"
         data-sizes="auto"
         alt="https://i.imgur.com/L6cmDfl.jpg"
-        title="https://i.imgur.com/L6cmDfl.jpg" /></p>
+        title="https://i.imgur.com/L6cmDfl.jpg" />
+ </p>
 <p>예제코드</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;empty-profile&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">empty-profile</span> <span class="p">{</span>
+</span></span></code></pre></div><p> </p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">empty-profile</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">314</span><span class="kt">px</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">314</span><span class="kt">px</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s2">&#34;https://s.pstatic.net/static/www/img/uit/sp_main_dba1af.png&#34;</span><span class="p">)</span> <span class="kc">no-repeat</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h4 id="중간에-있는-이미지를-골라쓰려면">중간에 있는 이미지를 골라쓰려면?</h4>
+</span></span></code></pre></div><p> <br>
+ </p>
+<h4 id="중간에-있는-이미지를-골라쓰려면">중간에 있는 이미지를 골라쓰려면?</h4>
 <p>앞서 좌상단 <code>0, 0</code> 좌표를 기준으로 한 뒤, 이미지의 폭과 너비의 값으로 불러온다고 했다.
 그럼 중간에 있는 것들은 어떻게 불러올까?
 기준값 <code>0, 0</code>을 <code>background-position</code>  값으로 조정하여 옮겨준다.</p>
@@ -197,7 +208,9 @@
         data-sizes="auto"
         alt="https://i.imgur.com/OIUNMnO.jpg"
         title="https://i.imgur.com/OIUNMnO.jpg" />
-코드를 살펴보자</p>
+ </p>
+<p>코드를 살펴보자
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;input-tool&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">input-tool</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">130</span><span class="kt">px</span><span class="p">;</span>
@@ -206,18 +219,24 @@
 </span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s2">&#34;https://s.pstatic.net/static/www/img/uit/sp_main_dba1af.png&#34;</span><span class="p">)</span> <span class="kc">no-repeat</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">background-position</span><span class="p">:</span> <span class="mi">-315</span><span class="kt">px</span> <span class="mi">-225</span><span class="kt">px</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p><code>background-position: -315px -225px;</code> 바로 이 부분이다.</p>
+</span></span></code></pre></div><p> <br>
+ </p>
+<p><code>background-position: -315px -225px;</code> 바로 이 부분이다.
+ </p>
 <p>여기서 주의할 점은,
 가로, 세로 좌표에서의 <code>-</code> 기호이다.
 기준점 변경에 대한 기준이 바로 기준점 그 자체이기 때문인데,</p>
 <ol>
 <li>쉽게 생각하자면 배경이미지에서 기준점이 옮겨진다면 저 기호는 <code>+</code>가 되어야 하겠지만,</li>
 <li>반대로 기준점을 그대로 두고 그 뒤에서 배경이미지가 역으로 움직인다고 생각해보자.
-그럼 쉽게 이해할 수 있다.</li>
+그럼 쉽게 이해할 수 있다.
+ <br>
+ </li>
 </ol>
 <h4 id="근데-대체-왜-이런-좌표기준-방식을-썼을까">근데 대체 왜 이런 좌표기준 방식을 썼을까?</h4>
 <p>혼자 상상해본다.
-만약 1번의 상황으로 간다면 위 코드는 다음과 같이 바뀔것이다.</p>
+만약 1번의 상황으로 간다면 위 코드는 다음과 같이 바뀔것이다.
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">input-tool</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">415</span><span class="kt">px</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">305</span><span class="kt">px</span><span class="p">;</span>
@@ -225,7 +244,8 @@
 </span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s2">&#34;https://s.pstatic.net/static/www/img/uit/sp_main_dba1af.png&#34;</span><span class="p">)</span> <span class="kc">no-repeat</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">background-position</span><span class="p">:</span> <span class="mi">315</span><span class="kt">px</span> <span class="mi">225</span><span class="kt">px</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>이 방식은 코드만으로 이미지의 크기를 직관적으로 알기가 힘들다.
+</span></span></code></pre></div><p> </p>
+<p>이 방식은 코드만으로 이미지의 크기를 직관적으로 알기가 힘들다.
 아마 이런 문제 때문에 2번의 방식을 쓴걸까?</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">

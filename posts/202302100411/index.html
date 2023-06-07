@@ -5,9 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다. - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다." />
-<meta property="og:description" content="#chatGPT
-chatGPT에게 whereClauseBuilder 함수를 물어보았다. 원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 where절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다.
-질문은 한글로 했고, 영어로 답변이 오는데 속도는 꽤 빠르다.
+<meta property="og:description" content="chatGPT에게 whereClauseBuilder 함수를 물어보았다. 원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 where절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다. 질문은 한글로 했고, 영어로 답변이 오는데 속도는 꽤 빠르다.
 하지만 답변을 한글로 받고자 하면 꽤 오랜 지연이 발생한다.
 whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided enough context for me to understand what you&rsquo;re asking about. Could you please provide more information or specify what you&rsquo;re looking to learn about &ldquo;whereClauseBuilder&rdquo;?" />
 <meta property="og:type" content="article" />
@@ -18,9 +16,7 @@ whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided eno
 <meta name="twitter:image" content="https://inchan.dev/images/avatar.png"/>
 
 <meta name="twitter:title" content="chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다."/>
-<meta name="twitter:description" content="#chatGPT
-chatGPT에게 whereClauseBuilder 함수를 물어보았다. 원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 where절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다.
-질문은 한글로 했고, 영어로 답변이 오는데 속도는 꽤 빠르다.
+<meta name="twitter:description" content="chatGPT에게 whereClauseBuilder 함수를 물어보았다. 원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 where절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다. 질문은 한글로 했고, 영어로 답변이 오는데 속도는 꽤 빠르다.
 하지만 답변을 한글로 받고자 하면 꽤 오랜 지연이 발생한다.
 whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided enough context for me to understand what you&rsquo;re asking about. Could you please provide more information or specify what you&rsquo;re looking to learn about &ldquo;whereClauseBuilder&rdquo;?"/>
 <meta name="application-name" content="inchan.dev">
@@ -37,7 +33,7 @@ whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided eno
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202302100411\/"
-        },"genre": "posts","keywords": "Miscellaneous","wordcount":  1536 ,
+        },"genre": "posts","keywords": "Miscellaneous","wordcount":  1535 ,
         "url": "https:\/\/inchan.dev\/posts\/202302100411\/","datePublished": "2023-02-10T04:11:51+09:00","dateModified": "2023-02-10T04:11:51+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -111,7 +107,7 @@ whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided eno
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/miscellaneous/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Miscellaneous</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-10">2023-02-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1536 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-10">2023-02-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1535 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -145,33 +141,39 @@ whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided eno
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>#chatGPT</p>
-<h3 id="chatgpt에게--whereclausebuilder-함수를-물어보았다">chatGPT에게  whereClauseBuilder 함수를 물어보았다.</h3>
-<p>원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 <code>where</code>절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다.</p>
+            </div><div class="content" id="content"><h3 id="chatgpt에게--whereclausebuilder-함수를-물어보았다">chatGPT에게  whereClauseBuilder 함수를 물어보았다.</h3>
+<p>원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 <code>where</code>절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다.
+ </p>
 <p>질문은 한글로 했고, 영어로 답변이 오는데 속도는 꽤 빠르다.<br>
-하지만 답변을 한글로 받고자 하면 꽤 오랜 지연이 발생한다.</p>
+하지만 답변을 한글로 받고자 하면 꽤 오랜 지연이 발생한다.<br>
+ </p>
 <h4 id="whereclausebuilder함수란">whereClauseBuilder함수란?</h4>
 <blockquote>
 <p>I&rsquo;m sorry, but you haven&rsquo;t provided enough context for me to understand what you&rsquo;re asking about. Could you please provide more information or specify what you&rsquo;re looking to learn about &ldquo;whereClauseBuilder&rdquo;?</p>
 </blockquote>
+<p> </p>
 <ul>
 <li>앞뒤 맥락 다 생략하고 바로 물었더니 잘 못알아듣는다.</li>
 <li>추가 설명을 덧붙여 다시 물어보았다.</li>
 </ul>
+<p> </p>
 <h4 id="javascript에서-mysql을-사용하는데-whereclausebuilder-라는-방법이-있다고-한다-이게-뭐야">javascript에서 mysql을 사용하는데 whereClauseBuilder 라는 방법이 있다고 한다. 이게 뭐야?</h4>
 <blockquote>
 <p>It seems like you&rsquo;re referring to a custom function named &ldquo;whereClauseBuilder&rdquo; in JavaScript that is used to build a WHERE clause for a SQL query to be used with a MySQL database.</p>
 <p>A WHERE clause is used in a SQL query to specify a condition for filtering the data that is returned by the query. The &ldquo;whereClauseBuilder&rdquo; function would be used to dynamically generate the WHERE clause based on some input parameters.</p>
 <p>It&rsquo;s important to note that this function is likely a custom implementation and may not be a part of any official MySQL library or API. It is always a good practice to make sure that the custom code used in your applications is secure and does not leave any vulnerabilities that can be exploited.</p>
 </blockquote>
+<p> </p>
 <ul>
 <li>상황과 맥락을 짚어주니 알아듣기 시작했다.</li>
 <li>이제 추가적인 질문이 들어간다.</li>
 </ul>
+<p> </p>
 <h4 id="javascript-코드-중-mysql의-where-절을-종종-사용한다-이-때-이-where-절을-만들어내는-함수의-예시를-보여줘">javascript 코드 중 mysql의 where 절을 종종 사용한다. 이 때, 이 where 절을 만들어내는 함수의 예시를 보여줘</h4>
 <blockquote>
 <p>Sure! Here&rsquo;s an example of a &ldquo;whereClauseBuilder&rdquo; function in JavaScript that can be used to dynamically generate a WHERE clause for a SQL query to be used with a MySQL database:</p>
 </blockquote>
+<p> </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">whereClauseBuilder</span><span class="p">(</span><span class="nx">filters</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">whereClause</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -189,9 +191,11 @@ whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided eno
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">whereClause</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><blockquote>
+</span></span></code></pre></div><p> </p>
+<blockquote>
 <p>This function takes in an object &ldquo;filters&rdquo; that represents the conditions for the WHERE clause. It then generates a WHERE clause by concatenating the key-value pairs in the &ldquo;filters&rdquo; object. The conditions are joined with the &ldquo;AND&rdquo; operator.</p>
-<p>Here&rsquo;s an example usage of the function:</p>
+<p>Here&rsquo;s an example usage of the function:
+ </p>
 </blockquote>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="o">&gt;</span><span class="kr">const</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">column1</span><span class="o">:</span> <span class="s2">&#34;value1&#34;</span><span class="p">,</span> <span class="nx">column2</span><span class="o">:</span> <span class="s2">&#34;value2&#34;</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">whereClause</span> <span class="o">=</span> <span class="nx">whereClauseBuilder</span><span class="p">(</span><span class="nx">filters</span><span class="p">);</span>
@@ -199,7 +203,8 @@ whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided eno
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Output: WHERE column1 = &#39;value1&#39; AND column2 = &#39;value2&#39;
 </span></span></span></code></pre></div><blockquote>
-<p>Please note that this is just one example of how a &ldquo;whereClauseBuilder&rdquo; function could be implemented. The specific implementation will depend on the needs of your application and the way that you want to handle the input parameters.</p>
+<p> <br>
+Please note that this is just one example of how a &ldquo;whereClauseBuilder&rdquo; function could be implemented. The specific implementation will depend on the needs of your application and the way that you want to handle the input parameters.</p>
 </blockquote>
 <ul>
 <li>기본적인 whereClauseBuilder 함수 코드를 보여주고 이어서 자세한 설명을 덧붙여준다.</li>
@@ -229,23 +234,28 @@ whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided eno
 </span></span></code></pre></div><blockquote>
 <p>In this implementation, the function signature includes type information for the input parameters and the returned value. This makes the code easier to understand and less prone to bugs caused by incorrect data types.</p>
 </blockquote>
+<p> </p>
 <h4 id="좋아-여기서-objectkeys의-예를-보여줘">좋아, 여기서 Object.keys의 예를 보여줘</h4>
 <blockquote>
 <p>Sure! <code>Object.keys()</code> is a method in JavaScript that returns an array of the enumerable property names of an object. Here&rsquo;s an example usage of <code>Object.keys()</code>:</p>
 </blockquote>
+<p> </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;John&#34;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span> <span class="nx">city</span><span class="o">:</span> <span class="s2">&#34;New York&#34;</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">keys</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">keys</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Output: [ &#34;name&#34;, &#34;age&#34;, &#34;city&#34; ]
-</span></span></span></code></pre></div><blockquote>
+</span></span></span></code></pre></div><p> </p>
+<blockquote>
 <p>In the example, we have an object <code>obj</code> with three properties, <code>name</code>, <code>age</code>, and <code>city</code>. By calling <code>Object.keys(obj)</code>, we get an array of strings containing the property names of the object.</p>
 <p>In the <code>whereClauseBuilder</code> function, we use <code>Object.keys(filters)</code> to get an array of the property names in the <code>filters</code> object, which we then use to dynamically generate the WHERE clause.</p>
 </blockquote>
+<p> </p>
 <h4 id="좋아-아까-보여줬던-whereclausebuilder-코드를-객체지향-프로그래밍으로-바꿔줘">좋아, 아까 보여줬던 whereClauseBuilder 코드를 객체지향 프로그래밍으로 바꿔줘</h4>
 <blockquote>
 <p>Sure! Here&rsquo;s an example of how the &ldquo;whereClauseBuilder&rdquo; function can be refactored to use object-oriented programming (OOP) in TypeScript:</p>
 </blockquote>
+<p> </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">WhereClauseBuilder</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">filters</span>: <span class="kt">object</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -271,21 +281,26 @@ whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided eno
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">whereClause</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><blockquote>
+</span></span></code></pre></div><p> </p>
+<blockquote>
 <p>In this implementation, the <code>whereClauseBuilder</code> function has been refactored into a class called <code>WhereClauseBuilder</code>. The filters are stored as a property of the class, and the logic for building the WHERE clause has been moved into a method called <code>build()</code>.
 Here&rsquo;s an example usage of the class:</p>
 </blockquote>
+<p> </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">column1</span><span class="o">:</span> <span class="s2">&#34;value1&#34;</span><span class="p">,</span> <span class="nx">column2</span><span class="o">:</span> <span class="s2">&#34;value2&#34;</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">whereClauseBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WhereClauseBuilder</span><span class="p">(</span><span class="nx">filters</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">whereClause</span> <span class="o">=</span> <span class="nx">whereClauseBuilder</span><span class="p">.</span><span class="nx">build</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">whereClause</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Output: WHERE column1 = &#39;value1&#39; AND column2 = &#39;value2&#39;
-</span></span></span></code></pre></div><blockquote>
+</span></span></span></code></pre></div><p> </p>
+<blockquote>
 <p>This implementation follows the principles of OOP by encapsulating the data and behavior into a single, reusable class. It makes the code easier to maintain and reuse, and can make it easier to add new features or make changes in the future.</p>
 </blockquote>
+<p> </p>
 <ul>
-<li>여기서 좀 놀라웠다. 우선 자연스런 한영 번역이 매우 매끄럽게 이루어져 AI가 잘 알아듣고 있다는 점이었고, 이를 그대로 수렴하여 결과물을 도출해 보여줬다.</li>
+<li>여기서 좀 놀라웠다. 우선 자연스런 한영 번역이 매우 매끄럽게 이루어져 AI가 잘 알아듣고 있다는 점이었고, 이를 그대로 수렴하여 결과물을 도출해 보여줬다.<br>
+ </li>
 </ul>
 <h4 id="위에서-oop-형식이-유지-보수에-더-좋은-예를-들자면-어떤게-있을까">위에서 OOP 형식이 유지 보수에 더 좋은 예를 들자면 어떤게 있을까?</h4>
 <blockquote>
@@ -293,6 +308,7 @@ Here&rsquo;s an example usage of the class:</p>
 Suppose you&rsquo;re building a system that handles data from multiple sources, such as a database and an API. In this system, you want to perform some data processing on the incoming data before storing it in the database.</p>
 <p>Using a procedural approach, you might write separate functions for each step of the processing. For example, you might have a function for fetching the data from the API, a function for transforming the data, and a function for storing the data in the database.</p>
 </blockquote>
+<p> </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">fetchDataFromAPI</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// Code to fetch data from the API
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
@@ -308,10 +324,12 @@ Suppose you&rsquo;re building a system that handles data from multiple sources, 
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">fetchDataFromAPI</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">transformedData</span> <span class="o">=</span> <span class="nx">transformData</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nx">storeDataInDatabase</span><span class="p">(</span><span class="nx">transformedData</span><span class="p">);</span>
-</span></span></code></pre></div><blockquote>
+</span></span></code></pre></div><p> </p>
+<blockquote>
 <p>However, this approach can become difficult to manage as the number of sources and processing steps increases. It&rsquo;s also difficult to reuse the processing steps for different sources.</p>
 <p>Using OOP, you can encapsulate each step of the processing into its own class. For example:</p>
 </blockquote>
+<p> </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">DataSource</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">fetchData</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// Code to fetch data from the source
@@ -343,28 +361,37 @@ Suppose you&rsquo;re building a system that handles data from multiple sources, 
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">apiDataSource</span><span class="p">.</span><span class="nx">fetchData</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">transformedData</span> <span class="o">=</span> <span class="nx">dataTransformer</span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nx">database</span><span class="p">.</span><span class="nx">store</span><span class="p">(</span><span class="nx">transformedData</span><span class="p">);</span>
-</span></span></code></pre></div><blockquote>
+</span></span></code></pre></div><p> </p>
+<blockquote>
 <p>In this example, each step of the processing is encapsulated in its own class, making the code more maintainable and reusable. For example, if you wanted to add a new data source, you could create a new class that extends the <code>DataSource</code> class and overrides the <code>fetchData</code> method. Similarly, if you wanted to change the way data is transformed, you could create a new class that implements the <code>DataTransformer</code> interface and provides a new implementation of the <code>transform</code> method. This makes it easier to modify and extend the code without having to make changes in multiple places.</p>
 </blockquote>
 <ul>
 <li>객체지향 프로그래밍의 적절한 예시와 개략적인 설명을 함께 알려준다.</li>
 <li>정말 놀라웠던건 질문을 보면 알겠지만 코딩의 형식이 아닌, 간단한 문장으로 던졌음에도 마치 사람간의 대화에서 이전 맥락을 유추 및 반영하여 현재 질문의 의도를 파악하듯이 꽤나 정확하고 적절하게 설명을 해주고 있다.</li>
 </ul>
+<p> </p>
 <hr>
 <h3 id="정말-흥미롭지-않은가">정말 흥미롭지 않은가?</h3>
-<p>이렇게 내가 원했던 부분들을 잘 짚어주다니, 정말 검색에 있어 새로운 패러다임이 만들어진게 아닐까 하는 생각이 든다.</p>
-<p>혹자는 chatGPT가 기존의 구글링과 같은 검색방식을 대체할 수 있을거라고 하는데, 현재의 이 chatGPT버전을 두고 보자면 나는 조금 다르게 생각한다.</p>
+<p>이렇게 내가 원했던 부분들을 잘 짚어주다니, 정말 검색에 있어 새로운 패러다임이 만들어진게 아닐까 하는 생각이 든다.<br>
+ </p>
+<p>혹자는 chatGPT가 기존의 구글링과 같은 검색방식을 대체할 수 있을거라고 하는데, 현재의 이 chatGPT버전을 두고 보자면 나는 조금 다르게 생각한다.<br>
+ </p>
 <p>기존 구글링의 단점은 너무 많은 정보가 검색됨으로 인해,<br>
-그 중 내가 정말로 원하는 정보를 찾기 위해 하나하나 링크를 들여다봐야 하는 수고로움과 시간소요가 생기는 반면 여기서 생각하지 못했던 다른 방법이나 아이디어를 찾곤 할수 있다.</p>
+그 중 내가 정말로 원하는 정보를 찾기 위해 하나하나 링크를 들여다봐야 하는 수고로움과 시간소요가 생기는 반면 여기서 생각하지 못했던 다른 방법이나 아이디어를 찾곤 할수 있다.<br>
+ </p>
 <p>하지만 현재의 chatGPT는 이 부분이 빠진다.  즉, 내가 원하는 정보를 AI가 추려내고 콕집어 주기때문에 그것 말고는 다른 정보를 접해볼수 있는 기회가 없다.<br>
 즉, 완벽한 주입식 교육(?)이 되며, 또한 현재 버전에서는 제안해주는 정보의 신뢰성과 근거를 찾기가 애매하다.<br>
-뿐만 아니라 이러한 검색방식에 익숙해진다면, 자료의 교차검증이나 수많은 자료로부터 스스로 분석하고 결과를 도출해내는 사고가 사라진다.</p>
-<p>물론, 사용하기에 따라 더 창의적이고 생산적으로 사용될 수 있겠지만 그 외의 수많은 이들은 <strong>편리함에만</strong>  익숙해질 것이다.</p>
+뿐만 아니라 이러한 검색방식에 익숙해진다면, 자료의 교차검증이나 수많은 자료로부터 스스로 분석하고 결과를 도출해내는 사고가 사라진다.<br>
+ </p>
+<p>물론, 사용하기에 따라 더 창의적이고 생산적으로 사용될 수 있겠지만 그 외의 수많은 이들은 <strong>편리함에만</strong>  익숙해질 것이다.<br>
+ </p>
 <p>아마 개선? 추가되었으면 하는 부분을 말해본다면,<br>
 chatGPT의 제안과 함께 현재 자료의 근거, 그리고 &ldquo;함께 읽어볼만한 링크&quot;와 같은 추천 컨텐츠가 추가되면 어떨까 하는 생각을 해본다.<br>
-이 알고리즘 자체가 쉽진 않겠지만 (정치적, 경제적 이해관계를 비롯해서 다양한 이슈를 일으킬 수 있으니&hellip;)</p>
+이 알고리즘 자체가 쉽진 않겠지만 (정치적, 경제적 이해관계를 비롯해서 다양한 이슈를 일으킬 수 있으니&hellip;)
+ </p>
 <p>본의 아니게 chatGPT의 단점이나 아쉬운 우려를 위주로 글이 쓰였는데, 사실 정말 엄청난 기술이다.<br>
-장점이야 워낙 많은 이들이 입이 닳도록 말하고 있고, 누구나 그저 한번만 질문을 해보면 알수 있을테니&hellip;</p>
+장점이야 워낙 많은 이들이 입이 닳도록 말하고 있고, 누구나 그저 한번만 질문을 해보면 알수 있을테니&hellip;
+ </p>
 <p>사용 팁이라면,<br>
 단순질문보다는 능동적이며 구체적인 연결된 질문이 본인이 원했던 답을 빠르게 찾을 수 있도록 도와준다.</p>
 </div><div class="post-footer" id="post-footer">

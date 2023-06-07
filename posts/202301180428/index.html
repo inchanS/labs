@@ -5,12 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error" />
-<meta property="og:description" content="tag : #typeorm #typescript
-source : node.js - using process.env in TypeScript - Stack Overflow
-에러 상황 TypeScript로 typeORM을 세팅할때,
+<meta property="og:description" content="에러 상황 TypeScript로 typeORM을 세팅할때,
 dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼 수 있다.
 위 3개의 해당 error message를 살펴보면 차례로 다음과 같다.
-TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &#34;mariadb&#34; | &#34;postgres&#34; | &#34;cockroachdb&#34; | &#34;sqlite&#34; | &#34;mssql&#34; | &#34;sap&#34; | &#34;oracle&#34; | &#34;cordova&#34; | &#34;nativescript&#34; | &#34;react-native&#34; | &#34;sqljs&#34; | &#34;mongodb&#34; | &#34;aurora-mysql&#34; | ." />
+TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &#34;mariadb&#34; | &#34;postgres&#34; | &#34;cockroachdb&#34; | &#34;sqlite&#34; | &#34;mssql&#34; | &#34;sap&#34; | &#34;oracle&#34; | &#34;cordova&#34; | &#34;nativescript&#34; | &#34;react-native&#34; | &#34;sqljs&#34; | &#34;mongodb&#34; | &#34;aurora-mysql&#34; | ... 4 more ... | &#34;spanner&#34;&#39;. TS2322: Type &#39;string&#39; is not assignable to type &#39;number&#39;." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://inchan.dev/posts/202301180428/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-01-18T04:28:04+09:00" />
@@ -19,12 +17,10 @@ TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &
 <meta name="twitter:image" content="https://inchan.dev/images/avatar.png"/>
 
 <meta name="twitter:title" content="error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error"/>
-<meta name="twitter:description" content="tag : #typeorm #typescript
-source : node.js - using process.env in TypeScript - Stack Overflow
-에러 상황 TypeScript로 typeORM을 세팅할때,
+<meta name="twitter:description" content="에러 상황 TypeScript로 typeORM을 세팅할때,
 dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼 수 있다.
 위 3개의 해당 error message를 살펴보면 차례로 다음과 같다.
-TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &#34;mariadb&#34; | &#34;postgres&#34; | &#34;cockroachdb&#34; | &#34;sqlite&#34; | &#34;mssql&#34; | &#34;sap&#34; | &#34;oracle&#34; | &#34;cordova&#34; | &#34;nativescript&#34; | &#34;react-native&#34; | &#34;sqljs&#34; | &#34;mongodb&#34; | &#34;aurora-mysql&#34; | ."/>
+TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &#34;mariadb&#34; | &#34;postgres&#34; | &#34;cockroachdb&#34; | &#34;sqlite&#34; | &#34;mssql&#34; | &#34;sap&#34; | &#34;oracle&#34; | &#34;cordova&#34; | &#34;nativescript&#34; | &#34;react-native&#34; | &#34;sqljs&#34; | &#34;mongodb&#34; | &#34;aurora-mysql&#34; | ... 4 more ... | &#34;spanner&#34;&#39;. TS2322: Type &#39;string&#39; is not assignable to type &#39;number&#39;."/>
 <meta name="application-name" content="inchan.dev">
 <meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -39,7 +35,7 @@ TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202301180428\/"
-        },"genre": "posts","keywords": "TypeScript","wordcount":  230 ,
+        },"genre": "posts","keywords": "TypeScript","wordcount":  215 ,
         "url": "https:\/\/inchan.dev\/posts\/202301180428\/","datePublished": "2023-01-18T04:28:04+09:00","dateModified": "2023-01-18T04:28:04+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -113,7 +109,7 @@ TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-18">2023-01-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;230 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-18">2023-01-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;215 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -126,12 +122,10 @@ TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &
     <li><a href="#해결">해결</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p><em>tag</em> :   #typeorm #typescript<br>
-<em>source</em> :  <a href="https://stackoverflow.com/questions/45194598/using-process-env-in-typescript" target="_blank" rel="noopener noreffer ">node.js - using process.env in TypeScript - Stack Overflow</a></p>
-<hr>
-<h2 id="에러-상황">에러 상황</h2>
+            </div><div class="content" id="content"><h2 id="에러-상황">에러 상황</h2>
 <p>TypeScript로 typeORM을 세팅할때,<br>
-dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼 수 있다.</p>
+dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼 수 있다.<br>
+ </p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -139,19 +133,26 @@ dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼
         data-srcset="https://i.imgur.com/hyQSLSS.png, https://i.imgur.com/hyQSLSS.png 1.5x, https://i.imgur.com/hyQSLSS.png 2x"
         data-sizes="auto"
         alt="https://i.imgur.com/hyQSLSS.png"
-        title="https://i.imgur.com/hyQSLSS.png" /></p>
+        title="https://i.imgur.com/hyQSLSS.png" />
+ <br>
+ </p>
 <p>위 3개의 해당 error message를 살펴보면 차례로 다음과 같다.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">TS2322: Type <span class="s1">&#39;string&#39;</span> is not assignable to <span class="nb">type</span> <span class="s1">&#39;&#34;mysql&#34; | &#34;mariadb&#34; | &#34;postgres&#34; | &#34;cockroachdb&#34; | &#34;sqlite&#34; | &#34;mssql&#34; | &#34;sap&#34; | &#34;oracle&#34; | &#34;cordova&#34; | &#34;nativescript&#34; | &#34;react-native&#34; | &#34;sqljs&#34; | &#34;mongodb&#34; | &#34;aurora-mysql&#34; | ... 4 more ... | &#34;spanner&#34;&#39;</span>.
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">TS2322: Type <span class="s1">&#39;string&#39;</span> is not assignable to <span class="nb">type</span> <span class="s1">&#39;number&#39;</span>.
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">TS2322: Type <span class="s1">&#39;string&#39;</span> is not assignable to <span class="nb">type</span> <span class="s1">&#39;LoggerOptions&#39;</span>.
-</span></span></code></pre></div><p>이는 typeORM의 설정 type이 정해져있어서 그렇다.</p>
+</span></span></code></pre></div><p> </p>
+<p>이는 typeORM의 설정 type이 정해져있어서 그렇다.<br>
+ </p>
 <p>첫번째, <code>type</code>의 경우 <code>mysql' | 'mariadb' | 'postgres'... </code>의 경우로 type이 정해져있음을 볼 수 있다.</p>
-<p>즉 이를 지정해주면 되는데, 조금 난해하다.</p>
+<p>즉 이를 지정해주면 되는데, 조금 난해하다.<br>
+ <br>
+ </p>
 <h2 id="해결">해결</h2>
 <p><code>global.d.ts</code>라는 이름의 파일을 만들고 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><br>
-다음과 같이 세팅을 한다.</p>
+다음과 같이 세팅을 한다.<br>
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">declare</span> <span class="kr">global</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">  <span class="kr">namespace</span> <span class="nx">NodeJS</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">    <span class="kr">interface</span> <span class="nx">ProcessEnv</span> <span class="p">{</span>  
@@ -164,11 +165,14 @@ dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="p">{}</span>   <span class="c1">// &lt;- 이거 꼭 넣어줘야 한다.
-</span></span></span></code></pre></div><p>global로 선언하고, NodeJS에서의 dotenv 명은 ProcessEnv인가보다.<br>
-문제는 이렇게 해도 타입에러가 해결되지 않는다.</p>
+</span></span></span></code></pre></div><p> </p>
+<p>global로 선언하고, NodeJS에서의 dotenv 명은 ProcessEnv인가보다.<br>
+문제는 이렇게 해도 타입에러가 해결되지 않는다.<br>
+ </p>
 <p>이는 밖으로 내보내기가 되지 않아서 생긴 문제로,<br>
-<strong>아무 의미 없는것 같지만  <code>export {}</code> 를 가장 아랫단에 꼭 넣어줘야 한다.</strong></p>
-<div class="details admonition note open">
+<strong>아무 의미 없는것 같지만  <code>export {}</code> 를 가장 아랫단에 꼭 넣어줘야 한다.</strong><br>
+ </p>
+<p><div class="details admonition note open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
@@ -178,7 +182,9 @@ declare - namespace 후,<br>
 <code>export {}</code> 넣기!!</div>
         </div>
     </div>
-<p>그러면 정상적으로 에러가 해결됨을 볼 수 있다.</p>
+ </p>
+<p>그러면 정상적으로 에러가 해결됨을 볼 수 있다.<br>
+ </p>
 <p>중괄호 안에 아무것도 없지만 정확하게 어떻게 작동하는지는 조금 더 공부를 해봐야겠다.</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>

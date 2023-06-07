@@ -29,9 +29,7 @@ h태그를 이용한 toc의 가장 큰 장점은
     <guid>https://inchan.dev/posts/202302100411/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1675557009483-e6cf3867976b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2hhdGdwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
-            </div>#chatGPT
-chatGPT에게 whereClauseBuilder 함수를 물어보았다. 원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 where절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다.
-질문은 한글로 했고, 영어로 답변이 오는데 속도는 꽤 빠르다.
+            </div>chatGPT에게 whereClauseBuilder 함수를 물어보았다. 원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 where절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다. 질문은 한글로 했고, 영어로 답변이 오는데 속도는 꽤 빠르다.
 하지만 답변을 한글로 받고자 하면 꽤 오랜 지연이 발생한다.
 whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided enough context for me to understand what you&rsquo;re asking about. Could you please provide more information or specify what you&rsquo;re looking to learn about &ldquo;whereClauseBuilder&rdquo;?]]></description>
 </item>
@@ -41,11 +39,10 @@ whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided eno
     <pubDate>Mon, 02 Jan 2023 04:41:37 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://inchan.dev/posts/202301020441/</guid>
-    <description><![CDATA[tag : #coding #development
-source : 부트캠프 가셔도 실패하는 분 특징. 12년차 개발자가 말하는 프로그래머 롱런하는 방법 - YouTube
-youtube 서핑을 하다 우연히 보게 된 영상. &ldquo;부트캠프 가셔도 실패하는 분 특징&rdquo; 문구가 굉장히 도발적이었다.
+    <description><![CDATA[youtube 서핑을 하다 우연히 보게 된 영상. &ldquo;부트캠프 가셔도 실패하는 분 특징&rdquo; 문구가 굉장히 도발적이었다.
 마침 부트캠프를 막 수료한지라 더욱 내 시선을 끌었었다.
-youtube 내용 요약 - 펼치기 youtube 내용 요약 글쓰기를 잘하는 사람이 개발자로서도 잘한다. 본인의 메세지를 글에 녹일 수 있어야 한다. 컴퓨터가 이해할 수 있는 코드는 어느 바보라도 작성할 수 있다.]]></description>
+&nbsp; youtube 내용 요약 - 펼치기 youtube 내용 요약 글쓰기를 잘하는 사람이 개발자로서도 잘한다. 본인의 메세지를 글에 녹일 수 있어야 한다. 컴퓨터가 이해할 수 있는 코드는 어느 바보라도 작성할 수 있다. 좋은 프로그래머는 사람이 이해할 수 있는 코드를 작성한다.
+마틴 파울러, 리팩토링의 저자 코딩 자체가 문서를 정리하는 것이다.]]></description>
 </item>
 </channel>
 </rss>

@@ -8,12 +8,8 @@
 <meta property="og:description" content="터미널을 처음 실행하면 꼭 사용자 폴더에서 시작한다.
 cd ...로 찾아가는게 너무 귀찮다.
 그렇다고 finder에서 폴더를 drag &amp; drop해서 직접경로를 떨어뜨리는 방법도 있지만,
-굳이 키보드에서 또 마우스나 트랙패드로 손을 움직이고 싶지 않다.
-때문에 알게 된 것이 바로 alias를 활용한 터미널 단축키 방법!
-우선 zsh라는 쉘 을 한번 가볍게 알아본다.
-힘들면 Pass하고, 바로 적용할 수 있는 방법으로 가자!
-1. zshrc 편집 터미널에서 다음을 실행
-vim ~/.zshrc 이미 파일이 존재할수도 있고, 없으면 파일이 생성되며 바로 편집모드로 들어가게 된다." />
+굳이 키보드에서 또 마우스나 트랙패드로 손을 움직이고 싶지 않다. 때문에 알게 된 것이 바로 alias를 활용한 터미널 단축키 방법!
+우선 zsh라는 쉘 을 한번 가볍게 알아본다. 힘들면 Pass하고, 바로 적용할 수 있는 방법으로 가자! 1. zshrc 편집 터미널에서 다음을 실행 vim ~/.zshrc 이미 파일이 존재할수도 있고, 없으면 파일이 생성되며 바로 편집모드로 들어가게 된다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://inchan.dev/posts/202210130407/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-13T04:07:19+09:00" />
@@ -25,12 +21,8 @@ vim ~/.zshrc 이미 파일이 존재할수도 있고, 없으면 파일이 생성
 <meta name="twitter:description" content="터미널을 처음 실행하면 꼭 사용자 폴더에서 시작한다.
 cd ...로 찾아가는게 너무 귀찮다.
 그렇다고 finder에서 폴더를 drag &amp; drop해서 직접경로를 떨어뜨리는 방법도 있지만,
-굳이 키보드에서 또 마우스나 트랙패드로 손을 움직이고 싶지 않다.
-때문에 알게 된 것이 바로 alias를 활용한 터미널 단축키 방법!
-우선 zsh라는 쉘 을 한번 가볍게 알아본다.
-힘들면 Pass하고, 바로 적용할 수 있는 방법으로 가자!
-1. zshrc 편집 터미널에서 다음을 실행
-vim ~/.zshrc 이미 파일이 존재할수도 있고, 없으면 파일이 생성되며 바로 편집모드로 들어가게 된다."/>
+굳이 키보드에서 또 마우스나 트랙패드로 손을 움직이고 싶지 않다. 때문에 알게 된 것이 바로 alias를 활용한 터미널 단축키 방법!
+우선 zsh라는 쉘 을 한번 가볍게 알아본다. 힘들면 Pass하고, 바로 적용할 수 있는 방법으로 가자! 1. zshrc 편집 터미널에서 다음을 실행 vim ~/.zshrc 이미 파일이 존재할수도 있고, 없으면 파일이 생성되며 바로 편집모드로 들어가게 된다."/>
 <meta name="application-name" content="inchan.dev">
 <meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -137,21 +129,31 @@ vim ~/.zshrc 이미 파일이 존재할수도 있고, 없으면 파일이 생성
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>터미널을 처음 실행하면 꼭 사용자 폴더에서 시작한다.<br>
+            </div><div class="content" id="content"><p> <br>
+ </p>
+<p>터미널을 처음 실행하면 꼭 사용자 폴더에서 시작한다.<br>
 <code>cd ...</code>로 찾아가는게 <strong>너무 귀찮다.</strong><br>
 그렇다고 finder에서 폴더를 drag &amp; drop해서 직접경로를 떨어뜨리는 방법도 있지만,<br>
-굳이 키보드에서 또 마우스나 트랙패드로 <strong>손을 움직이고 싶지 않다.</strong></p>
+굳이 키보드에서 또 마우스나 트랙패드로 <strong>손을 움직이고 싶지 않다.</strong>
+ </p>
 <p>때문에 알게 된 것이 바로 <strong>alias</strong>를 활용한 터미널 단축키 방법!</p>
 <hr>
-<p>우선 zsh라는 <a href="https://jhnyang.tistory.com/57" target="_blank" rel="noopener noreffer ">쉘</a> 을 한번 가볍게 알아본다.</p>
-<p>힘들면 Pass하고, 바로 적용할 수 있는 방법으로 가자!</p>
+<p>우선 zsh라는 <a href="https://jhnyang.tistory.com/57" target="_blank" rel="noopener noreffer ">쉘</a> 을 한번 가볍게 알아본다.
+ </p>
+<p>힘들면 Pass하고, 바로 적용할 수 있는 방법으로 가자!
+ <br>
+ </p>
 <h3 id="1-zshrc-편집">1. zshrc 편집</h3>
-<p>터미널에서 다음을 실행</p>
+<p>터미널에서 다음을 실행
+ </p>
 <pre tabindex="0"><code>vim ~/.zshrc
-</code></pre><ul>
+</code></pre><p> </p>
+<ul>
 <li>이미 파일이 존재할수도 있고, 없으면 파일이 생성되며 바로 편집모드로 들어가게 된다.</li>
 <li>파일 위치는 <code>~/</code></li>
 </ul>
+<p> <br>
+ </p>
 <h3 id="2-단축키-입력">2. 단축키 입력</h3>
 <p>vim 모드에서 작성하기에 가장 기본적인 vim 사용법 2개만 알면 된다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <ul>
@@ -159,20 +161,31 @@ vim ~/.zshrc 이미 파일이 존재할수도 있고, 없으면 파일이 생성
 <li>편집</li>
 <li>편집이 끝나면 esc키를 눌러 명령어 모드 진입후, <code>:wq</code> 누르고 엔터!</li>
 </ul>
-<p>이것이 기본적인 방법이고, 편집시 단축키 등록은 아래와 같이 입력하면 된다.</p>
+<p>이것이 기본적인 방법이고, 편집시 단축키 등록은 아래와 같이 입력하면 된다.
+ </p>
 <pre tabindex="0"><code>alias 단축키=&#34;실행명령어&#34;
-</code></pre><p>예를 들면,</p>
+</code></pre><p> </p>
+<p>예를 들면,
+ </p>
 <pre tabindex="0"><code>alias gocode=&#34;cd Users/codject/Documents/Code&#34;
-</code></pre><p>예와 같이 등록했을 때,<br>
-터미널에서 gocode만 치면 바로 저 위치로 이동한다.</p>
-<p>입력이 끝나면 <code>:wq</code>로 무사히 빠져나와 주면 된다.</p>
+</code></pre><p> </p>
+<p>예와 같이 등록했을 때,<br>
+터미널에서 gocode만 치면 바로 저 위치로 이동한다.
+ </p>
+<p>입력이 끝나면 <code>:wq</code>로 무사히 빠져나와 주면 된다.
+ <br>
+ </p>
 <h3 id="3-단축키-등록">3. 단축키 등록</h3>
 <p>입력만 한다고 끝이 아니다.
-입력한 zshrc를 터미널에 등록해줘야 한다.</p>
+입력한 zshrc를 터미널에 등록해줘야 한다.
+ </p>
 <pre tabindex="0"><code>source ~/.zshrc
-</code></pre><p>터미널에서 위와 같이 입력후 엔터를 치면,
-단축키가 등록되었다며 리스트로 바로 뜬다.</p>
-<p>이후 잘 쓰면 끝.</p>
+</code></pre><p> </p>
+<p>터미널에서 위와 같이 입력후 엔터를 치면,
+단축키가 등록되었다며 리스트로 바로 뜬다.
+ </p>
+<p>이후 잘 쓰면 끝.
+ </p>
 <p>만약 단축키가 바로 동작하지 않는다면, 터미널을 완전종료 후, 재실행해주면 된다.</p>
 <hr>
 <p>전체적인 참고 사이트

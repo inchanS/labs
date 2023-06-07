@@ -6,10 +6,7 @@
         <meta name="robots" content="noodp" />
         <title>Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기" />
 <meta property="og:description" content="&lt;사진: unsplash&gt;
-#project_review
-기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker typeORM createQueryBuilder 메소드로 출력시
-2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다.
-우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
+기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker typeORM createQueryBuilder 메소드로 출력시 2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다. 우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
 mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://inchan.dev/posts/202302160417/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png"/><meta property="article:section" content="posts" />
@@ -20,10 +17,7 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에" />
 
 <meta name="twitter:title" content="Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기"/>
 <meta name="twitter:description" content="&lt;사진: unsplash&gt;
-#project_review
-기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker typeORM createQueryBuilder 메소드로 출력시
-2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다.
-우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
+기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker typeORM createQueryBuilder 메소드로 출력시 2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다. 우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
 mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
 <meta name="application-name" content="inchan.dev">
 <meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -39,7 +33,7 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202302160417\/"
-        },"genre": "posts","keywords": "TypeScript, typeORM","wordcount":  1292 ,
+        },"genre": "posts","keywords": "TypeScript, typeORM","wordcount":  1291 ,
         "url": "https:\/\/inchan.dev\/posts\/202302160417\/","datePublished": "2023-02-16T04:17:07+09:00","dateModified": "2023-02-16T04:17:07+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -113,7 +107,7 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Node.js 백엔드TypeScript + typeORM으로 무한 대댓글 가공하기</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-16">2023-02-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1292 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-16">2023-02-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1291 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -152,8 +146,7 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>&lt;사진: <a href="http://unsplash.com" target="_blank" rel="noopener noreffer ">unsplash</a>&gt;</p>
-<p>#project_review</p>
-<hr>
+<p> </p>
 <h2 id="기능-구현-목표">기능 구현 목표</h2>
 <ol>
 <li>댓글, 대댓글&hellip; 대댓글 등의 <strong>무한대댓글</strong> 구조</li>
@@ -161,25 +154,34 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
 <li>삭제 및 비공개 댓글 가림</li>
 <li>json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! )</li>
 </ol>
+<p> </p>
 <h2 id="가장-오랜시간을-지연시켰던-blocker">가장 오랜시간을 지연시켰던 Blocker</h2>
-<p>typeORM createQueryBuilder 메소드로 출력시</p>
+<p>typeORM createQueryBuilder 메소드로 출력시
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="nx">14T08</span>:<span class="kt">55</span><span class="o">:</span><span class="mf">24.090</span><span class="nx">Z</span>
 </span></span><span class="line"><span class="cl"><span class="c1">//        ^         ^^^^     &lt;- 거추장스럽다.
-</span></span></span></code></pre></div><p>이런 식으로 나오는 문제가 있는데 꽤나 씨름했다.</p>
+</span></span></span></code></pre></div><p> </p>
+<p>이런 식으로 나오는 문제가 있는데 꽤나 씨름했다.
+ </p>
 <p>우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.<br>
 <strong>mySQL에서의 출력은</strong> DB가 설치된 서버의 시간대를 따르기에<br>
-아래와 같이 문제가 없다.</p>
+아래와 같이 문제가 없다.
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mySQL" data-lang="mySQL"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">comments</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">feedId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
-</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mySQL" data-lang="mySQL"><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">14</span><span class="w"> </span><span class="mi">17</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">24</span><span class="p">.</span><span class="mi">106558</span><span class="w">  
+</span></span></span></code></pre></div><p> </p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mySQL" data-lang="mySQL"><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">14</span><span class="w"> </span><span class="mi">17</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">24</span><span class="p">.</span><span class="mi">106558</span><span class="w">  
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 이게 실제 한국 시간
-</span></span></span></code></pre></div><p>문제는,<br>
+</span></span></span></code></pre></div><p> </p>
+<p>문제는,<br>
 typeORM에서의 repository + createQueryBuilder를 이용한 직접 출력이다.<br>
 typeORM의 <code>.find</code>나 <code>createQueryBuilder</code> 메소드를 통해 출력을 하게 되면 ISO 8601 형식으로 내보내지기 때문에 먼저 보여줬던 예와 같이 문제가 생기는데 다시 정리하면 아래와 같다.</p>
 <ol>
 <li><strong>시간대 안맞음 (실제 시간은 17:55:24)</strong></li>
-<li>시간대 앞 뒤로 <strong>T, 090Z와 같은 부가요소가 함께 출력</strong></li>
+<li>시간대 앞 뒤로 <strong>T, 090Z와 같은 부가요소가 함께 출력</strong>
+ </li>
 </ol>
-<p>현재 데이터를 출력하려는 query는 다음과 같다.</p>
+<p>현재 데이터를 출력하려는 query는 다음과 같다.
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">CommentRepository</span> <span class="o">=</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">getRepository</span><span class="p">(</span><span class="nx">Comment</span><span class="p">).</span><span class="nx">extend</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">getCommentList</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">createQueryBuilder</span><span class="p">(</span><span class="s1">&#39;comment&#39;</span><span class="p">)</span>
@@ -196,10 +198,12 @@ typeORM의 <code>.find</code>나 <code>createQueryBuilder</code> 메소드를 �
 </span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">getMany</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 id="해결방안">해결방안</h2>
+</span></span></code></pre></div><p> </p>
+<h2 id="해결방안">해결방안</h2>
 <h3 id="1-local-시간대-맞추기">1. local 시간대 맞추기</h3>
 <p>우선, 이를 local의 시간대로 맞추기 위해
-아래와 같이 DataSource 설정에 <code>timezone: 'Z'</code> 를 추가하여 local 시간대로 출력되게끔 한다.</p>
+아래와 같이 DataSource 설정에 <code>timezone: 'Z'</code> 를 추가하여 local 시간대로 출력되게끔 한다.<br>
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DataSource</span><span class="p">({</span>  
 </span></span><span class="line"><span class="cl">  <span class="kr">type</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_CONNECTION</span><span class="p">,</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">host</span>: <span class="kt">process.env.TYPEORM_HOST</span><span class="p">,</span>  
@@ -213,13 +217,19 @@ typeORM의 <code>.find</code>나 <code>createQueryBuilder</code> 메소드를 �
 </span></span><span class="line"><span class="cl">  <span class="nx">synchronize</span>: <span class="kt">Boolean</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_SYNCHRONIZE</span><span class="p">),</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">charset</span><span class="o">:</span> <span class="s1">&#39;utf8mb4&#39;</span><span class="p">,</span>  
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 출력시,
+</span></span></code></pre></div><p> </p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 출력시,
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="nx">14T17</span>:<span class="kt">55</span><span class="o">:</span><span class="mf">24.106</span><span class="nx">Z</span>
-</span></span></code></pre></div><p>자 이제 시간대는 맞춰졌다.</p>
+</span></span></code></pre></div><p> </p>
+<p>자 이제 시간대는 맞춰졌다.<br>
+ </p>
 <h3 id="2-시간-구분자-제거">2. 시간 구분자 제거</h3>
-<p>다음은 문제의 저 <code>T</code>와 <code>Z</code>를 날려보자.</p>
+<p>다음은 문제의 저 <code>T</code>와 <code>Z</code>를 날려보자.<br>
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="nx">dateStrings</span>: <span class="kt">true</span><span class="p">,</span>
-</span></span></code></pre></div><p>DataSouce 연결 설정에 이걸 넣어준다.</p>
+</span></span></code></pre></div><p> <br>
+DataSouce 연결 설정에 이걸 넣어준다.
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DataSource</span><span class="p">({</span>  
 </span></span><span class="line"><span class="cl">  <span class="kr">type</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_CONNECTION</span><span class="p">,</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">host</span>: <span class="kt">process.env.TYPEORM_HOST</span><span class="p">,</span>  
@@ -234,27 +244,36 @@ typeORM의 <code>.find</code>나 <code>createQueryBuilder</code> 메소드를 �
 </span></span><span class="line"><span class="cl">  <span class="nx">synchronize</span>: <span class="kt">Boolean</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_SYNCHRONIZE</span><span class="p">),</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">charset</span><span class="o">:</span> <span class="s1">&#39;utf8mb4&#39;</span><span class="p">,</span>  
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
-</span></span></code></pre></div><p>그리고 다시 출력을 해보면</p>
+</span></span></code></pre></div><p> </p>
+<p>그리고 다시 출력을 해보면
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">14</span> <span class="nx">17</span>:<span class="kt">55</span><span class="o">:</span><span class="mf">24.106558</span>
-</span></span></code></pre></div><p>드디어 불필요한 알파벳은 사라졌다&hellip;라기보단,
+</span></span></code></pre></div><p> </p>
+<p>드디어 불필요한 알파벳은 사라졌다&hellip;라기보단,
 <strong>그런데 더 거추장스럽게도 밀리초(?)로 바뀌었다.</strong><br>
-이제 이걸 제거해보자!</p>
+이제 이걸 제거해보자!<br>
+ </p>
 <h3 id="3-정밀-초단위는-제거하고-시분까지만-출력">3. 정밀 초단위는 제거하고 시,분까지만 출력</h3>
 <p>여기서 정말 많이 찾아보고 공부했다.<br>
 typeORM의 queryRunner를 사용하거나,<br>
 createQueryBuilder에서 getRawMany()를 사용해 자료를 뽑아낸다면,<br>
 mySQL의 출력방식을 따르기때문에 SQL의 query문에 직접적인 수정을 가하여 컬럼값을 조정할 수가 있다.<br>
-(또는 toISOString()과 같은 메소드를 사용하여도 된다.)</p>
+(또는 toISOString()과 같은 메소드를 사용하여도 된다.)<br>
+ </p>
 <p>예시)</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> 
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nf">SUBSTRING</span><span class="p">(</span><span class="n">created_at</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">created_at</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">comments</span><span class="w">
-</span></span></span></code></pre></div><p>결과</p>
+</span></span></span></code></pre></div><p> </p>
+<p>결과
+ </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mySQL" data-lang="mySQL"><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">14</span><span class="w"> </span><span class="mi">17</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">24</span><span class="w">
-</span></span></span></code></pre></div><p>하지만, 위에서 쓰고 있는 <strong>Entity에서 그대로 가져오는 getMany() 메소드를 이용해 자료를 가져오게 되면,<br>
+</span></span></span></code></pre></div><p> </p>
+<p>하지만, 위에서 쓰고 있는 <strong>Entity에서 그대로 가져오는 getMany() 메소드를 이용해 자료를 가져오게 되면,<br>
 이런 방법이 불가하다.</strong><br>
-이것도 확실한지는 모르겠는데 며칠을 찾아보고 시도해본 결과,</p>
+이것도 확실한지는 모르겠는데 며칠을 찾아보고 시도해본 결과,<br>
+ </p>
 <blockquote>
 <p>TypeORM의 <code>getRawMany()</code> 메서드는 쿼리 결과를 직접적으로 반환하는 반면, <code>getMany()</code> 메서드는 Entity 객체를 반환한다.
 때문에 <code>select &lt;column&gt;</code>에 바로 수정을 가하게 되면 Entity의 type을 그대로 가져다 쓰는 특성상, 이 컬럼의 <strong>type error</strong>가 난다.
