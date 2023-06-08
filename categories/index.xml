@@ -4,7 +4,15 @@
         <link>https://inchan.dev/categories/</link>
         <description>Categories - Category - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 07 Jun 2023 02:08:24 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 08 Jun 2023 09:00:31 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Miscellaneous</title>
+    <link>https://inchan.dev/categories/miscellaneous/</link>
+    <pubDate>Thu, 08 Jun 2023 09:00:31 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/categories/miscellaneous/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Back-End</title>
     <link>https://inchan.dev/categories/back-end/</link>
     <pubDate>Wed, 07 Jun 2023 02:08:24 &#43;0900</pubDate>
@@ -26,14 +34,6 @@
     <pubDate>Fri, 31 Mar 2023 10:43:08 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://inchan.dev/categories/programming/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Miscellaneous</title>
-    <link>https://inchan.dev/categories/miscellaneous/</link>
-    <pubDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/categories/miscellaneous/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
