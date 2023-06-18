@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Git commit message 컨벤션 설정 - inchan.dev</title><meta name="Description" content="git commit message 작성시 일관된 규칙의 제목줄을 통해 가시성을 높일 수 있는 방법 고찰 중 컨벤션 설정"><meta property="og:title" content="Git commit message 컨벤션 설정" />
+<meta property="og:description" content="git commit message 작성시 일관된 규칙의 제목줄을 통해 가시성을 높일 수 있는 방법 고찰 중 컨벤션 설정" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://inchan.dev/posts/202306171531/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-17T15:31:26+09:00" />
+<meta property="article:modified_time" content="2023-06-17T15:31:26+09:00" /><meta property="og:site_name" content="inchan.dev" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://inchan.dev/images/avatar.png"/>
+
+<meta name="twitter:title" content="Git commit message 컨벤션 설정"/>
+<meta name="twitter:description" content="git commit message 작성시 일관된 규칙의 제목줄을 통해 가시성을 높일 수 있는 방법 고찰 중 컨벤션 설정"/>
+<meta name="application-name" content="inchan.dev">
+<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202306171531/" /><link rel="prev" href="https://inchan.dev/posts/202306070208/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Git commit message 컨벤션 설정",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/inchan.dev\/posts\/202306171531\/"
+        },"genre": "posts","keywords": "git","wordcount":  569 ,
+        "url": "https:\/\/inchan.dev\/posts\/202306171531\/","datePublished": "2023-06-17T15:31:26+09:00","dateModified": "2023-06-17T15:31:26+09:00","publisher": {
+            "@type": "Organization",
+            "name": "inchan"},"author": {
+                "@type": "Person",
+                "name": "inchan"
+            },"description": "git commit message 작성시 일관된 규칙의 제목줄을 통해 가시성을 높일 수 있는 방법 고찰 중 컨벤션 설정"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Git commit message 컨벤션 설정</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Programming</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-06-17">2023-06-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;569 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#문제-발견">문제 발견</a></li>
+    <li><a href="#정보-인용">정보 인용</a></li>
+    <li><a href="#적용전-고민">적용전 고민</a></li>
+    <li><a href="#정리">정리</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p> <br>
+ </p>
+<h2 id="문제-발견">문제 발견</h2>
+<p>git commit message 작성시 보통 첫줄에 위치한 제목줄에 들어가는 가이드로서,<br>
+이전에 내가 사용하던 규칙은 다음과 같았다.</p>
+<ul>
+<li><strong>Add</strong> - 레이아웃 / 기능 추가</li>
+<li><strong>Remove</strong> - 내용 삭제 (폴더 / 파일 삭제)</li>
+<li><strong>Modify</strong> - 수정 (JSON 데이터 포맷 변경 / 버튼 색깔 변경 / 폰트 변경)</li>
+<li><strong>Fix</strong> - 버그/오류 해결</li>
+<li><strong>Refactor</strong> - 코드 리팩토링 (멘토 리뷰 반영 / 스스로 리팩토링 / 중복 코드 제거 / 불필요 코드 제거 / 성능 개선)<br>
+ </li>
+</ul>
+<p>작은 프로젝트에서는 보통 위 5가지의 규칙만으로도 충분했었는데,<br>
+팀으로 개발을 하고 프로젝트의 크기가 커지다면서, <strong>위 규칙만으로는 부족함을 느끼게</strong> 되었다.</p>
+<p> </p>
+<h2 id="정보-인용">정보 인용</h2>
+<p>그러다 며칠 전, <a href="https://insight.infograb.net/blog/2023/05/25/git-commit-automation/" target="_blank" rel="noopener noreffer ">Git 커밋 메시지 자동화 가이드 | DevSecOps 구축 컨설팅, 교육, 기술지원 서비스 제공</a> 이란 아주 유용한 글을 보게 되었다.</p>
+<p>그 중, git commit 메세지 작성시 <strong>제목줄의 컨벤션 부분</strong>을 정리하며 앞으로의 개인 개발시 사용해보고자 한다.</p>
+<blockquote>
+<p>✨ Feat(페이지 경로 또는 컴포넌트): 새로운 기능 추가 또는 기능 업데이트<br>
+🔨 Fix(페이지 경로 또는 컴포넌트): 버그 또는 에러 수정<br>
+⭐️ Style(페이지 경로 또는 컴포넌트): 코드 포맷팅, 코드 오타, 함수명 수정 등 스타일 수정<br>
+🧠 Refactor(페이지 경로 또는 컴포넌트): 코드 리팩토링(똑같은 기능인데 코드만 개선)<br>
+📁 File(페이지 경로 또는 컴포넌트): 파일 이동 또는 제거, 파일명 변경<br>
+🎨 Design(페이지 경로 또는 컴포넌트): 디자인, 문장 수정<br>
+🏷 Comment(페이지 경로 또는 컴포넌트): 주석 수정 및 삭제<br>
+🍎 Chore: 빌드 수정, 패키지 추가, 환경변수 설정<br>
+📝 Docs: 문서 수정, 블로그 포스트 추가<br>
+🔥 Hotfix: 핫픽스 수정</p>
+</blockquote>
+<p>그리고 여기에 더해 따로이 추가할까 <strong>고민중인 메세지</strong></p>
+<blockquote>
+<p>🔧 Modify(페이지 경로 또는 컴포넌트): 기능 변경 또는 기능 업데이트</p>
+</blockquote>
+<p> <br>
+ </p>
+<h2 id="적용전-고민">적용전 고민</h2>
+<p>Modify라는 타이틀은 사실 위에서 정의한 Feat의 <strong>&lsquo;기능 업데이트&rsquo;</strong> 라는 부분에서 성격이 겹친다.<br>
+이 부분을 고민하는 이유는 <strong>기능 업데이트</strong> 라는 부분의 제목 분류를 따로 할 것인가 <strong>Feat</strong>에 포함시킬 것인가라는 의문에서 나왔다.</p>
+<p>실제로 지금까지 개발을 하며 git을 다루어본 경험으로,<br>
+<strong>Pull Request</strong>에서는 기능 소개나 버그 수정이 주가 될 수 있지만,<br>
+일반적인 <strong>Commit</strong> message에서는 기능개선, 수정 등이 주가 되었다.<br>
+즉, Modify가 가장 많단 말이 된다.</p>
+<p>이 때, 이 모든 것을 <strong>Feat</strong>으로 처리하면 실제로 커밋 메세지를 쭉 훑어나가면서 하나의 기능이 언제 처음 추가가 되었고, 어떻게 변경되어 나가는가를 살피기에 <strong>Modify</strong>라는 제목 분류가 훨씬 더 보기 편하였다.<br>
+ <br>
+ </p>
+<h2 id="정리">정리</h2>
+<p>때문에 끝으로 결정하였던 나의 Commit Message 규칙은 다음과 같이 정리되었다.</p>
+<p><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">&lt;<strong>추가 계열</strong>&gt;<br>
+✨ <strong>Feat</strong>(페이지 경로 또는 컴포넌트): 새로운 <strong>기능 추가</strong><br>
+🍎 <strong>Chore</strong>: 빌드 수정, 패키지 추가, <strong>환경변수 설정</strong><br>
+📝 <strong>Docs</strong>: <strong>&lsquo;문서&rsquo; 추가 및 수정</strong><br>
+ <br>
+&lt;<strong>기능관련 수정 계열</strong>&gt;<br>
+🔧 <strong>Modify</strong>(페이지 경로 또는 컴포넌트): 기능 변경, <strong>기능 업데이트 또는 기능 삭제</strong><br>
+🎨 <strong>Design</strong>(페이지 경로 또는 컴포넌트): <strong>디자인 수정</strong><br>
+🔨 <strong>Fix</strong>(페이지 경로 또는 컴포넌트): 버그 또는 <strong>에러 수정</strong><br>
+🔥 <strong>Hotfix</strong>: 핫픽스 수정<br>
+ <br>
+&lt;<strong>코드관련 수정 계열</strong>&gt;<br>
+⭐️ <strong>Style</strong>(페이지 경로 또는 컴포넌트): 코드 포맷팅, 코드 오타, 함수명 수정 등 <strong>스타일 수정</strong><br>
+🧠 <strong>Refactor</strong>(페이지 경로 또는 컴포넌트): 코드 리팩토링(<strong>똑같은 기능인데 코드만 개선</strong>)<br>
+ <br>
+&lt;<strong>기타</strong>&gt;<br>
+🏷 <strong>Comment</strong>(페이지 경로 또는 컴포넌트): <strong>주석 수정 및 삭제</strong><br>
+📁 <strong>File</strong>(페이지 경로 또는 컴포넌트): <strong>파일 이동 또는 제거, 파일명 변경</strong></div>
+        </div>
+    </div>
+ <br>
+ </p>
+<p>정작 위 방식을 쓰려고 하면 매번 git commit message를 작성할 때마다 해당 컨벤션을 기억해내야하고 또 해당 이모지를 찾아서 입력을 해야하는 <strong>수고로움이 생길 수 있다.</strong></p>
+<p>물론 메모장 같은 곳에 따로 메모를 해놓고 그때그때 살펴보며 복사-붙여넣기를 할수도 있겠지만,<br>
+<a href="https://treasurebear.tistory.com/70" target="_blank" rel="noopener noreffer ">Gitmoji</a>라고 해서 링크의 글을 가보면 IntelliJ에 Plugins로 추가설치하여 사용할 수도 있다.</p>
+<p>하지만 플러그인 방식은 다른 IDE를 사용하거나 일반적인 터미널에서는 사용하기가 애매해서 나는 이를 <a href="https://www.alfredapp.com/" target="_blank" rel="noopener noreffer ">Alfred</a> app의 <a href="https://www.alfredapp.com/help/features/snippets/" target="_blank" rel="noopener noreffer ">Snippets 기능</a>을 활용한 상용구 방식으로 입력할 수 있도록 세팅하였다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/git%20convention.gif"
+        data-srcset="/images/git%20convention.gif, /images/git%20convention.gif 1.5x, /images/git%20convention.gif 2x"
+        data-sizes="auto"
+        alt="/images/git%20convention.gif"
+        title="/images/git%20convention.gif" /><br>
+ </p>
+<p>git commit은 한번에 뭉쳐서 하기보다 성격에 따라 세세하게 나눠 기록하는 것이 추후 유지보수에 더 좋다는 글을 여러 번 봤는데, <strong>실제로 뭉쳐진 commit은 나중에 추적하기 여간 불편</strong>한게 아니었다.</p>
+<p>될 수 있으면 간단하면서도 알아보기 쉬운 설명으로 메세지를 기록하고,<br>
+이 때 머릿글이 되는 제목줄의 위와 같은 컨벤션이 앞으로의 개발 과정에 더 큰 도움이 되리라 기대된다.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-06-17</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/git/">git</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/202306070208/" class="prev" rel="prev" title="MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다."><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+</html>
