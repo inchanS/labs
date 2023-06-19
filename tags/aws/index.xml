@@ -1,10 +1,20 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>aws - Tag - inchan.dev</title>
+        <title>AWS - Tag - inchan.dev</title>
         <link>https://inchan.dev/tags/aws/</link>
-        <description>aws - Tag - inchan.dev</description>
+        <description>AWS - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 17 Mar 2023 00:17:31 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/aws/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 19 Jun 2023 15:07:40 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/aws/" rel="self" type="application/rss+xml" /><item>
+    <title>AWS RDS 데이터 이전</title>
+    <link>https://inchan.dev/posts/202306191507/</link>
+    <pubDate>Mon, 19 Jun 2023 15:07:40 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202306191507/</guid>
+    <description><![CDATA[서로 다른 AWS의 계정간 RDS의 데이터를 이전하는 방법에 대해 소개한다.
+AWS RDS 계정간 이동 우선 간략히 설명하자면 순서는 다음과 같다.
+Info 구 계정에서 스냅샷 생성 생성이 완전히 완료되면 &lsquo;스냅샷 공유&rsquo; 탭이 활성화된다. 스냅샷 공유에서 private 선택후, 계정에 이전할 계정ID 입력 이전할 새 계정으로 로그인 후, RDS에서 좌측 사이드바의 스냅샷 메뉴 - 상단 &lsquo;나와 공유된 스냅샷&rsquo; 탭 클릭 마이그레이션 선택! (RDS 세팅시 프리티어라고 따로 설정하는 안내가 없으니 잘 보고 세팅) 끝!]]></description>
+</item>
+<item>
     <title>error note - AWS EC2의 SSH 접속이 안될 때</title>
     <link>https://inchan.dev/posts/202303170023/</link>
     <pubDate>Fri, 17 Mar 2023 00:17:31 &#43;0900</pubDate>

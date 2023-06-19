@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>AWS RDS 데이터 이전 - inchan.dev</title><meta name="Description" content="AWS RDS의 데이터를 서로 다른 계정의 RDS로 이동 또는 복사하는 방법"><meta property="og:title" content="AWS RDS 데이터 이전" />
+<meta property="og:description" content="AWS RDS의 데이터를 서로 다른 계정의 RDS로 이동 또는 복사하는 방법" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://inchan.dev/posts/202306191507/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-19T15:07:40+09:00" />
+<meta property="article:modified_time" content="2023-06-19T15:07:40+09:00" /><meta property="og:site_name" content="inchan.dev" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://inchan.dev/images/avatar.png"/>
+
+<meta name="twitter:title" content="AWS RDS 데이터 이전"/>
+<meta name="twitter:description" content="AWS RDS의 데이터를 서로 다른 계정의 RDS로 이동 또는 복사하는 방법"/>
+<meta name="application-name" content="inchan.dev">
+<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202306191507/" /><link rel="prev" href="https://inchan.dev/posts/202306171531/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "AWS RDS 데이터 이전",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/inchan.dev\/posts\/202306191507\/"
+        },"genre": "posts","keywords": "AWS","wordcount":  268 ,
+        "url": "https:\/\/inchan.dev\/posts\/202306191507\/","datePublished": "2023-06-19T15:07:40+09:00","dateModified": "2023-06-19T15:07:40+09:00","publisher": {
+            "@type": "Organization",
+            "name": "inchan"},"author": {
+                "@type": "Person",
+                "name": "inchan"
+            },"description": "AWS RDS의 데이터를 서로 다른 계정의 RDS로 이동 또는 복사하는 방법"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">AWS RDS 데이터 이전</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-06-19">2023-06-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;268 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#aws-rds-계정간-이동">AWS RDS 계정간 이동</a>
+      <ul>
+        <li><a href="#1-스냅샷-생성">1. 스냅샷 생성</a></li>
+        <li><a href="#2-스냅샷-공유">2. 스냅샷 공유</a></li>
+        <li><a href="#3-스냅샷-마이그레이션">3. 스냅샷 마이그레이션</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p> <br>
+ </p>
+<p>서로 다른 AWS의 계정간 RDS의 데이터를 이전하는 방법에 대해 소개한다.</p>
+<h2 id="aws-rds-계정간-이동">AWS RDS 계정간 이동</h2>
+<p>우선 간략히 설명하자면 순서는 다음과 같다.</p>
+<p><div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li>구 계정에서 스냅샷 생성</li>
+<li>생성이 완전히 완료되면 &lsquo;스냅샷 공유&rsquo; 탭이 활성화된다.</li>
+<li>스냅샷 공유에서 private 선택후, 계정에 이전할 계정ID 입력</li>
+<li>이전할 새 계정으로 로그인 후, RDS에서 좌측 사이드바의 스냅샷 메뉴 - 상단 &lsquo;나와 공유된 스냅샷&rsquo; 탭 클릭</li>
+<li>마이그레이션 선택! (RDS 세팅시 프리티어라고 따로 설정하는 안내가 없으니 잘 보고 세팅)</li>
+<li>끝!</li>
+</ol>
+</div>
+        </div>
+    </div>
+ </p>
+<p>RDS 이전은 이렇게 쉬워도 되나?! 싶을 정도로 몹시 간단하다.<br>
+ </p>
+<h3 id="1-스냅샷-생성">1. 스냅샷 생성</h3>
+<p>우선 원래의 데이터가 있는 계정으로 로그인 하고, RDS 서비스를 불러온다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20230619-nmqf.png"
+        data-srcset="/images/SCR-20230619-nmqf.png, /images/SCR-20230619-nmqf.png 1.5x, /images/SCR-20230619-nmqf.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20230619-nmqf.png"
+        title="/images/SCR-20230619-nmqf.png" /></p>
+<p>그리고 이전하고자 하는 데이터베이스를 선택한 후, 위 이미지와 같이 <code>스냅샷 생성</code> 버튼을 클릭한다.<br>
+ </p>
+<h3 id="2-스냅샷-공유">2. 스냅샷 공유</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20230619-nnqc.png"
+        data-srcset="/images/SCR-20230619-nnqc.png, /images/SCR-20230619-nnqc.png 1.5x, /images/SCR-20230619-nnqc.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20230619-nnqc.png"
+        title="/images/SCR-20230619-nnqc.png" /></p>
+<p>다음은 좌측 사이드바의 스냅샷으로 들어가 정상적으로 스냅샷이 생성되었는지 확인하고, <code>스냅샷 공유</code> 버튼을 누른다.<br>
+이 때 주의할 점은,<br>
+스냅샷이 완전히 생성될때까지는 <code>스냅샷 공유</code> 버튼은 <strong>비활성화</strong> 되어있다.<br>
+데이터베이스의 크기에 따라 스냅샷이 생성되기까지 몇 분 정도 시간이 걸리기에 완전히 생성이 완료되면 공유 버튼은 활성화 된다.</p>
+<p> </p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20230619-nofq.png"
+        data-srcset="/images/SCR-20230619-nofq.png, /images/SCR-20230619-nofq.png 1.5x, /images/SCR-20230619-nofq.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20230619-nofq.png"
+        title="/images/SCR-20230619-nofq.png" /><br>
+스냅샷 공유 버튼을 누르고 권한 설정을 해준다.<br>
+<code>Private</code> 와 함께 이 데이터베이스를 이전할 새로운 계정의 ID를 입력 후, <code>추가</code> 버튼을 누른다.<br>
+(참고로 계정 ID는 숫자로 되어있다.  )<br>
+ </p>
+<h3 id="3-스냅샷-마이그레이션">3. 스냅샷 마이그레이션</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20230619-nomr.png"
+        data-srcset="/images/SCR-20230619-nomr.png, /images/SCR-20230619-nomr.png 1.5x, /images/SCR-20230619-nomr.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20230619-nomr.png"
+        title="/images/SCR-20230619-nomr.png" /></p>
+<ol>
+<li>이전할 새 계정으로 로그인 후,</li>
+<li>RDS에서 좌측 사이드바의 스냅샷 메뉴 - 상단 &lsquo;나와 공유된 스냅샷&rsquo; 탭 클릭</li>
+</ol>
+<p> </p>
+<p>이제 방금 공유했던 스냅샷이 잘 들어와있음을 확인할 수 있다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20230619-ntlg.png"
+        data-srcset="/images/SCR-20230619-ntlg.png, /images/SCR-20230619-ntlg.png 1.5x, /images/SCR-20230619-ntlg.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20230619-ntlg.png"
+        title="/images/SCR-20230619-ntlg.png" /></p>
+<ol>
+<li>해당 스냅샷을 <strong>체크</strong>하고 <strong>마이그레이션</strong> 선택</li>
+</ol>
+<p> </p>
+<p><strong>마이그레이션</strong> 버튼을 누르고 난 이후의 진행과정은<br>
+일반적인 AWS - 데이터베이스 생성 과정과 동일하다.<br>
+ </p>
+<p>다만,</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20230619-nyou.png"
+        data-srcset="/images/SCR-20230619-nyou.png, /images/SCR-20230619-nyou.png 1.5x, /images/SCR-20230619-nyou.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20230619-nyou.png"
+        title="/images/SCR-20230619-nyou.png" /><br>
+ </p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20230619-nyxa.png"
+        data-srcset="/images/SCR-20230619-nyxa.png, /images/SCR-20230619-nyxa.png 1.5x, /images/SCR-20230619-nyxa.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20230619-nyxa.png"
+        title="/images/SCR-20230619-nyxa.png" /></p>
+<p>템플릿 선택창과 인스턴스 구성시 <strong>프리티어</strong> 라는 안내가 따로 나타나지 않을 수 있으니,<br>
+혹여 프리티어로 구성한다면 잘 보고 선택해야 한다.</p>
+<p> </p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>주의할 사항은,<br>
+스냅샷으로 데이터베이스를 이전할 때<br>
+원래 데이터베이스의 <strong>데이터베이스 이름과 사용자명, 패스워드까지</strong> 그대로 마이그레이션 된다.</p>
+<p>따라서 원래의 데이터베이스에 패스워드가 있다면 따로이 기록해둬야 한다.</p>
+</div>
+        </div>
+    </div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-06-19</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/aws/">AWS</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/202306171531/" class="prev" rel="prev" title="Git commit message 컨벤션 설정"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Git commit message 컨벤션 설정</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+</html>
