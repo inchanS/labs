@@ -4,7 +4,20 @@
         <link>https://inchan.dev/categories/back-end/</link>
         <description>Back-End - Category - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 19 Jun 2023 15:07:40 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/categories/back-end/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 19 Jun 2023 16:59:51 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/categories/back-end/" rel="self" type="application/rss+xml" /><item>
+    <title>AWS EC2에서 product 서버와 개발용 서버 같이 사용하기</title>
+    <link>https://inchan.dev/posts/202306191659/</link>
+    <pubDate>Mon, 19 Jun 2023 16:59:51 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202306191659/</guid>
+    <description><![CDATA[프로젝트를 진행하다보면 필연적으로 프론트엔드와의 통신교류가 필요하고,
+이 때마다 local server로 열기보단 상시 열려있는 server가 있는 것이 훨씬 편하다.
+때문에 이러한 개발과정상 필요한 back-end의 통신교류용 API 서버를 AWS EC2에서 간편하게 열어 사용하는 방법에 대해 기술하려 한다.
+초기 처음 통신교류를 위한 서버는 VScode의 Live Share Extension을 이용하였다.
+방법은 다음과 같다.
+extensions에서 Live Share 설치 좌측 사이드 메뉴에서 Live Share 아이콘 클릭 Share 버튼을 클릭하면 실시간 공유가 시작된다. 여기서 Shared Servers를 클릭하고 상단 검색창에 포트 번호를 입력후, enter를 누르면 해당 포트로 서버가 공유된다.]]></description>
+</item>
+<item>
     <title>AWS RDS 데이터 - 다른 계정으로 이전하기</title>
     <link>https://inchan.dev/posts/202306191507/</link>
     <pubDate>Mon, 19 Jun 2023 15:07:40 &#43;0900</pubDate>
@@ -112,18 +125,6 @@ AWS 퍼블릭 IP 주소가 바뀌었다? EC2 재부팅 결과, 서버의 퍼블�
     <author>inchan</author>
     <guid>https://inchan.dev/posts/202212250509/</guid>
     <description><![CDATA[덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실! statusCode 204는 response를 전송하지 않는다!! 다만 status code &ldquo;204&rdquo; 만 전달할 뿐. 이걸 몰라서 코드의 오류인줄 알고 한참을 헤맸다. status code를 200으로 바꿨더니 다시 원래대로 response가 전송되었다. status code 문서의 개요만 어설프게 보고서는, 삭제니까 no content인 204가 맞겠지 하고 내 멋대로 이해한 실수였다. 204에서 다시 200으로 처리한 이유는, 삭제된 이후의 덧글 리스트와 페이지네이션 위치를 json으로 전달해야할 필요성이 있어서였다.]]></description>
-</item>
-<item>
-    <title>DBmate 사용법</title>
-    <link>https://inchan.dev/posts/202210180502/</link>
-    <pubDate>Tue, 18 Oct 2022 05:02:17 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202210180502/</guid>
-    <description><![CDATA[mySQL을 사용하여 Database를 쌓아 나갈때,
-DBmate 를 사용하면
-초기 세팅값을 마치 git을 저장하듯 이력을 남겨 언제든 migration 할 수 있다.
-지금부터의 설명은 macOS 기준으로 기술한다. (windows가 없음 ;; ) DBmate 설치 Homebrew 를 사용하여 설치한다. 1 터미널 아무 위치에서나 무관하다. 2 $brew install dbmate 이렇게 입력 후, 엔터키를 누르면 자동으로 설치가 된다.
-그리고, 하나의 파일이 필요하다. 바로 .env 파일. IDE 또는 터미널 vim으로 .env 파일을 생성한 후, 다음과 같이 입력한다.]]></description>
 </item>
 </channel>
 </rss>

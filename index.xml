@@ -4,9 +4,22 @@
         <link>https://inchan.dev/</link>
         <description>Coding Projects: From Ideas to Execution</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 19 Jun 2023 15:07:40 &#43;0900</lastBuildDate>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 19 Jun 2023 16:59:51 &#43;0900</lastBuildDate>
             <atom:link href="https://inchan.dev/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>AWS EC2에서 product 서버와 개발용 서버 같이 사용하기</title>
+    <link>https://inchan.dev/posts/202306191659/</link>
+    <pubDate>Mon, 19 Jun 2023 16:59:51 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202306191659/</guid>
+    <description><![CDATA[프로젝트를 진행하다보면 필연적으로 프론트엔드와의 통신교류가 필요하고,
+이 때마다 local server로 열기보단 상시 열려있는 server가 있는 것이 훨씬 편하다.
+때문에 이러한 개발과정상 필요한 back-end의 통신교류용 API 서버를 AWS EC2에서 간편하게 열어 사용하는 방법에 대해 기술하려 한다.
+초기 처음 통신교류를 위한 서버는 VScode의 Live Share Extension을 이용하였다.
+방법은 다음과 같다.
+extensions에서 Live Share 설치 좌측 사이드 메뉴에서 Live Share 아이콘 클릭 Share 버튼을 클릭하면 실시간 공유가 시작된다. 여기서 Shared Servers를 클릭하고 상단 검색창에 포트 번호를 입력후, enter를 누르면 해당 포트로 서버가 공유된다.]]></description>
+</item>
+<item>
     <title>AWS RDS 데이터 - 다른 계정으로 이전하기</title>
     <link>https://inchan.dev/posts/202306191507/</link>
     <pubDate>Mon, 19 Jun 2023 15:07:40 &#43;0900</pubDate>
@@ -115,20 +128,6 @@ tistory나 naver 블로그에 비해 내가 원하는 문법의 허용범위가 
 바로 TOC(table of contents) 라고 생각한다.
 h태그를 이용한 toc의 가장 큰 장점은
 전체적인 개요를 한 눈에 살펴볼 수 있고, 또한 해당 태그 부분만의 링크를 가질 수 있다는 점!]]></description>
-</item>
-<item>
-    <title>typeORM transaction에서 repository 사용하기</title>
-    <link>https://inchan.dev/posts/202302250414/</link>
-    <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202302250414/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYW5zYWN0aW9ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
-            </div>&lt;사진: unsplash&gt;
-transaction 구성중 Entity가 아닌 Repository 사용시 typeORM에서 transaction을 사용하는 방법은 몇가지가 있지만,
-복잡한 service단의 처리에서는 아래의 queryRunner 방식이 더 적합할것 같아서
-dataSource.createQueryRunner() 방식을 사용했다.1
-// transaction으로 묶어주기 const queryRunner = dataSource.createQueryRunner(); await queryRunner.connect(); await queryRunner.startTransaction(); try { // feed 저장 let newTempFeed: Feed = plainToInstance(FeedDto, feedInfo); const tempFeed = await FeedRepository.createFeed(newTempFeed); //&lt;- 문제!! // ... 추가 코드들 } catch (err) { await queryRunner.rollbackTransaction(); throw new Error(`createTempFeed TRANSACTION error: ${err}`); } finally { await queryRunner.]]></description>
 </item>
 </channel>
 </rss>
