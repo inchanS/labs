@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202306191507\/"
-        },"genre": "posts","keywords": "AWS","wordcount":  268 ,
+        },"genre": "posts","keywords": "AWS","wordcount":  278 ,
         "url": "https:\/\/inchan.dev\/posts\/202306191507\/","datePublished": "2023-06-19T15:07:40+09:00","dateModified": "2023-06-19T15:07:40+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -103,7 +103,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">AWS RDS 데이터 - 다른 계정으로 이전하기</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-06-19">2023-06-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;268 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-06-19">2023-06-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;278 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -132,11 +132,11 @@
         </div>
         <div class="details-content">
             <div class="admonition-content"><ol>
-<li>구 계정에서 스냅샷 생성</li>
-<li>생성이 완전히 완료되면 &lsquo;스냅샷 공유&rsquo; 탭이 활성화된다.</li>
-<li>스냅샷 공유에서 private 선택후, 계정에 이전할 계정ID 입력</li>
-<li>이전할 새 계정으로 로그인 후, RDS에서 좌측 사이드바의 스냅샷 메뉴 - 상단 &lsquo;나와 공유된 스냅샷&rsquo; 탭 클릭</li>
-<li>마이그레이션 선택! (RDS 세팅시 프리티어라고 따로 설정하는 안내가 없으니 잘 보고 세팅)</li>
+<li>구 계정에서 <code>스냅샷 생성</code></li>
+<li>생성이 완전히 완료되면 <code>스냅샷 공유</code> 탭이 활성화된다.</li>
+<li><code>스냅샷 공유</code>에서 <code>private</code> 선택후, 계정란에 이전할 새로운 계정의 ID 입력</li>
+<li>이전할 <strong>새 계정</strong>으로 로그인 후, RDS에서 좌측 사이드바의 스냅샷 메뉴 - 상단 <code>나와 공유된 스냅샷</code> 탭 클릭</li>
+<li><code>마이그레이션</code> 선택! (RDS 세팅시 프리티어라고 따로 설정하는 안내가 없으니 잘 보고 세팅)</li>
 <li>끝!</li>
 </ol>
 </div>
@@ -179,7 +179,8 @@
         data-sizes="auto"
         alt="/images/SCR-20230619-nofq.png"
         title="/images/SCR-20230619-nofq.png" /><br>
-스냅샷 공유 버튼을 누르고 권한 설정을 해준다.<br>
+스냅샷 공유 버튼을 누르고 권한 설정을 해준다.</p>
+<p>특별한 상황이 아니라면 보통 다음과 같이 설정해주면 된다.<br>
 <code>Private</code> 와 함께 이 데이터베이스를 이전할 새로운 계정의 ID를 입력 후, <code>추가</code> 버튼을 누른다.<br>
 (참고로 계정 ID는 숫자로 되어있다.  )<br>
  </p>
@@ -194,7 +195,7 @@
         title="/images/SCR-20230619-nomr.png" /></p>
 <ol>
 <li>이전할 새 계정으로 로그인 후,</li>
-<li>RDS에서 좌측 사이드바의 스냅샷 메뉴 - 상단 &lsquo;나와 공유된 스냅샷&rsquo; 탭 클릭</li>
+<li>RDS에서 좌측 사이드바의 스냅샷 메뉴 - 상단 <code>나와 공유된 스냅샷</code> 탭 클릭</li>
 </ol>
 <p> </p>
 <p>이제 방금 공유했던 스냅샷이 잘 들어와있음을 확인할 수 있다.</p>
