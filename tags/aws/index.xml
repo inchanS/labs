@@ -5,7 +5,7 @@
         <description>AWS - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 19 Jun 2023 15:07:40 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/aws/" rel="self" type="application/rss+xml" /><item>
-    <title>AWS RDS 데이터 이전</title>
+    <title>AWS RDS 데이터 - 다른 계정으로 이전하기</title>
     <link>https://inchan.dev/posts/202306191507/</link>
     <pubDate>Mon, 19 Jun 2023 15:07:40 &#43;0900</pubDate>
     <author>inchan</author>
