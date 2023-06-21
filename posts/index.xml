@@ -4,7 +4,20 @@
         <link>https://inchan.dev/posts/</link>
         <description>All Posts | inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 19 Jun 2023 16:59:51 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 21 Jun 2023 11:31:43 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Webina 참여 회고 - 원티드 주최 &#39;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&#39;</title>
+    <link>https://inchan.dev/posts/202306211131/</link>
+    <pubDate>Wed, 21 Jun 2023 11:31:43 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202306211131/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1679083216051-aa510a1a2c0e?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2664&amp;q=80" referrerpolicy="no-referrer">
+            </div>&lt;표지 사진출처: Unsplash&gt; 지난 월요일 저녁 &ldquo;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&rdquo; 라는 아주 흥미로운 주제의 웨비나가 있어 참여하였다. 비단 HR 관계자가 아니더라도 각 팀의 리더 또는 구성원이라면, 또는 조직에 속해있다면, 그리고 발빠르게 변화하는 현시대적 흐름에서 자기 스스로를 육성하는 방면에서도 몹시 듣고 싶은 주제였다.
+현재 Chat GPT를 필두로 한 AI가 대다수의 업계에 미치는 파급효과는 어마어마하다.
+OpenAI로 인한 영향, 방법 등에 관한 콘텐츠가 마구잡이로 쏟아져나오고 있는 현재이다.
+이러한 시대적 상황에서 OpenAI가 조금이라도 나의 업무에 미치는 영향이 있다면 이번 웨비나는 쉽게 지나치기 힘든 주제였다.]]></description>
+</item>
+<item>
     <title>AWS EC2에서 product 서버와 개발용 서버 같이 사용하기</title>
     <link>https://inchan.dev/posts/202306191659/</link>
     <pubDate>Mon, 19 Jun 2023 16:59:51 &#43;0900</pubDate>
@@ -109,23 +122,6 @@ main.ts 파일 코드 예시 if (process.env.NODE_ENV === &#39;production&#39;) 
 백엔드가 효과적인 명세 전달 고민 Failure 그동안 진행했던 프로젝트에서 제대로 된 API 명세를 적시에 프론트측에 전달하지 못했고,
 때문에 최종 출시를 앞두고 서로간의 코드 오류를 잡느라 시간적 비용이 꽤나 낭비됐다. 간단하게는 Request Body 값의 TYPE과 관련된 소통 혼선으로 겪었던 헤프닝도 더러 있었다. 어떻게 하면 좋을까? 우선은 백엔드의 입장에서 생각해본다.
 명세는 코드가 만들어지면서 늘 수정될 수 있다. 때문에 명세는 코드와 함께 작업되어야 하고, API 테스트를 위해 즉각적으로 수정되어야 한다. 같은 백엔드 팀의 경우에는 직접 코드를 보기에 명세의 부족함을 보완할 수는 있다.]]></description>
-</item>
-<item>
-    <title>블로깅 플랫폼 변경: Google Blogger에서 GitHub &#43; Hugo로</title>
-    <link>https://inchan.dev/posts/202303022327/</link>
-    <pubDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202303022327/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
-            </div>&lt; 이미지 출처 = unsplash &gt;
-github + hugo로 이사! 이전: google blogger 이전에 사용했던 블로그의 플랫폼은 google blogger였다.
-tistory나 naver 블로그에 비해 내가 원하는 문법의 허용범위가 더 커서 오랫동안 사용중이었다.
-(예를 들면 toc, 각주, MarkDown 문법과 HTML 문법으로의 글 작성 모두 지원 등…)
-기술 블로그에서 하나의 문서 양이 스크롤을 필요로 한다면 특히나 필요한 것이,
-바로 TOC(table of contents) 라고 생각한다.
-h태그를 이용한 toc의 가장 큰 장점은
-전체적인 개요를 한 눈에 살펴볼 수 있고, 또한 해당 태그 부분만의 링크를 가질 수 있다는 점!]]></description>
 </item>
 </channel>
 </rss>

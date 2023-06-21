@@ -98,7 +98,16 @@
         data-sizes="auto"
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/202303311059/">Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-03-31">2023-03-31</time></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Programming</a></span></div><div class="content">Introduction Jest는 페이스북에서 개발한 JavaScript 테스트 프레임워크로, 간편한 사용법과 빠른 실행 속도로 인기가 있다.
+Jest를 이용하여 테스트 코드를 작성하던 중, 수 많은 함수나 루트를 mocking하게 되는데 지저분해진 테스트 코드를 리팩토링 하다가 mock함수의 초기화에 대한 고찰을 하게 되었다.
+Jest의 모의 함수(mock functions)를 사용할 때 중요한 두 가지 함수인 jest.clearAllMocks()와 jest.resetAllMocks()의 차이에 대해 기술한다.
+jest.clearAllMocks() jest.clearAllMocks() 함수는 모든 모의 함수의 호출 정보를 초기화하는 데 사용한다.
+이를 통해 테스트 간 독립성을 보장하며, 다양한 테스트 시나리오에서 중요한 역할을 한다.</div><div class="post-footer">
+        <a href="/posts/202303311059/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/jest/">Jest</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/posts/202303170023/"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -190,22 +199,6 @@ dataSource.createQueryRunner() 방식을 사용했다.1
 // transaction으로 묶어주기 const queryRunner = dataSource.createQueryRunner(); await queryRunner.connect(); await queryRunner.startTransaction(); try { // feed 저장 let newTempFeed: Feed = plainToInstance(FeedDto, feedInfo); const tempFeed = await FeedRepository.createFeed(newTempFeed); //&lt;- 문제!! // ... 추가 코드들 } catch (err) { await queryRunner.rollbackTransaction(); throw new Error(`createTempFeed TRANSACTION error: ${err}`); } finally { await queryRunner.</div><div class="post-footer">
         <a href="/posts/202302250414/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typeorm/">typeORM</a>,&nbsp;<a href="/tags/mysql/">mySQL</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
-            <a href="/posts/202302160417/"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
-        data-srcset="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300, https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300 1.5x, https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300 2x"
-        data-sizes="auto"
-        alt="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
-        title="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" /></a>
-        </div><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202302160417/">Node.js 백엔드TypeScript + typeORM으로 무한 대댓글 가공하기</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-16">2023-02-16</time></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div><div class="content">&lt;사진: unsplash&gt;
-기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker typeORM createQueryBuilder 메소드로 출력시 2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다. 우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
-mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에</div><div class="post-footer">
-        <a href="/posts/202302160417/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typescript/">TypeScript</a>,&nbsp;<a href="/tags/typeorm/">typeORM</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
