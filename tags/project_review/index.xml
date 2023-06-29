@@ -1,33 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>inchan.dev</title>
-        <link>https://inchan.dev/</link>
-        <description>Coding Projects: From Ideas to Execution</description>
+        <title>project_review - Tag - inchan.dev</title>
+        <link>https://inchan.dev/tags/project_review/</link>
+        <description>project_review - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 29 Jun 2023 12:58:27 &#43;0900</lastBuildDate>
-            <atom:link href="https://inchan.dev/index.xml" rel="self" type="application/rss+xml" />
-        <item>
-    <title></title>
-    <link>https://inchan.dev/posts/202306291258/</link>
-    <pubDate>Thu, 29 Jun 2023 12:58:27 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202306291258/</guid>
-    <description><![CDATA[ ]]></description>
-</item>
-<item>
-    <title>Webina 참여 회고 - 원티드 주최 &#39;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&#39;</title>
-    <link>https://inchan.dev/posts/202306211131/</link>
-    <pubDate>Wed, 21 Jun 2023 11:31:43 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202306211131/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1679083216051-aa510a1a2c0e?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2664&amp;q=80" referrerpolicy="no-referrer">
-            </div>&lt;표지 사진출처: Unsplash&gt; 지난 월요일 저녁 &ldquo;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&rdquo; 라는 아주 흥미로운 주제의 웨비나가 있어 참여하였다. 비단 HR 관계자가 아니더라도 각 팀의 리더 또는 구성원이라면, 또는 조직에 속해있다면, 그리고 발빠르게 변화하는 현시대적 흐름에서 자기 스스로를 육성하는 방면에서도 몹시 듣고 싶은 주제였다.
-현재 Chat GPT를 필두로 한 AI가 대다수의 업계에 미치는 파급효과는 어마어마하다.
-OpenAI로 인한 영향, 방법 등에 관한 콘텐츠가 마구잡이로 쏟아져나오고 있는 현재이다.
-이러한 시대적 상황에서 OpenAI가 조금이라도 나의 업무에 미치는 영향이 있다면 이번 웨비나는 쉽게 지나치기 힘든 주제였다.]]></description>
-</item>
-<item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 19 Jun 2023 16:59:51 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/project_review/" rel="self" type="application/rss+xml" /><item>
     <title>AWS EC2에서 product 서버와 개발용 서버 같이 사용하기</title>
     <link>https://inchan.dev/posts/202306191659/</link>
     <pubDate>Mon, 19 Jun 2023 16:59:51 &#43;0900</pubDate>
@@ -81,33 +58,6 @@ Add - 레이아웃 / 기능 추가 Remove - 내용 삭제 (폴더 / 파일 삭�
 import { DataSource } from &#39;typeorm&#39;; const dataSource = new DataSource({ type: process.env.TYPEORM_CONNECTION, host: process.env.TYPEORM_HOST, port: process.env.TYPEORM_PORT, username: process.env.TYPEORM_USERNAME, password: process.]]></description>
 </item>
 <item>
-    <title>Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점</title>
-    <link>https://inchan.dev/posts/202303311059/</link>
-    <pubDate>Fri, 31 Mar 2023 10:43:08 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202303311059/</guid>
-    <description><![CDATA[Introduction Jest는 페이스북에서 개발한 JavaScript 테스트 프레임워크로, 간편한 사용법과 빠른 실행 속도로 인기가 있다.
-Jest를 이용하여 테스트 코드를 작성하던 중, 수 많은 함수나 루트를 mocking하게 되는데 지저분해진 테스트 코드를 리팩토링 하다가 mock함수의 초기화에 대한 고찰을 하게 되었다.
-Jest의 모의 함수(mock functions)를 사용할 때 중요한 두 가지 함수인 jest.clearAllMocks()와 jest.resetAllMocks()의 차이에 대해 기술한다.
-jest.clearAllMocks() jest.clearAllMocks() 함수는 모든 모의 함수의 호출 정보를 초기화하는 데 사용한다.
-이를 통해 테스트 간 독립성을 보장하며, 다양한 테스트 시나리오에서 중요한 역할을 한다.]]></description>
-</item>
-<item>
-    <title>error note - AWS EC2의 SSH 접속이 안될 때</title>
-    <link>https://inchan.dev/posts/202303170023/</link>
-    <pubDate>Fri, 17 Mar 2023 00:17:31 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202303170023/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1633078654544-61b3455b9161?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGVycm9yfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
-            </div>1
-Bug 갑자기 macOS terminal에서 AWS EC2에 ssh접속이 안된다. 접속해보면 즉각적인 반응이 아닌, 오랜 시간 후 다음과 같은 메세지를 뱉었다.
-$ ssh -i my_key.pem ec2-user@11.111.11.111 ssh: connect to host 11.111.11.111 port 22: Operation timed out Operation timed out 이라니&hellip;
-찾아보니 여러 이유가 있을 수 있었다.
-보안규칙에 22포트에 대한 설정이 누락되었거나, 명령어가 잘못 입력되었거나, 방화벽 설정에서 막혔다거나&hellip; 대개 구글링했을때 나오는건 Connetion timed out 이었는데 이건 너무 포괄적인 답변들이라 난감했다.
-여튼 현재상황에서, 설정은 잘못된게 없었고 다른 ssh(github)로 테스트 해보니 모두 정상이었다.]]></description>
-</item>
-<item>
     <title>error note - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</title>
     <link>https://inchan.dev/posts/202303162353/</link>
     <pubDate>Thu, 16 Mar 2023 23:56:16 &#43;0900</pubDate>
@@ -119,6 +69,45 @@ $ ssh -i my_key.pem ec2-user@11.111.11.111 ssh: connect to host 11.111.11.111 po
 AWS EC2에 배포를 하려하는데, 조그만 문제가 하나 생겼다.
 아래 예시와 같이 .env파일을 개발, 배포 등의 목적으로 각각 나누어 코드를 작성했는데,
 main.ts 파일 코드 예시 if (process.env.NODE_ENV === &#39;production&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.production&#39;) }); } else if (process.env.NODE_ENV === &#39;develop&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.dev&#39;) }); console.log(&#39;process.env.NODE_ENV is &#39;, process.env.NODE_ENV); } else if (process.env.NODE_ENV === &#39;test&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.test&#39;) }); } else { throw new Error(&#39;process.env.NODE_ENV IS_NOT_SET!!&#39;); } 이걸 EC2에서 pm2로 프로세스를 돌릴 때 어떻게 명령을 내려야 하는가 였다.]]></description>
+</item>
+<item>
+    <title>Swagger를 이용한 백엔드의 효과적인 API명세 전달</title>
+    <link>https://inchan.dev/posts/202303080503/</link>
+    <pubDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202303080503/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2670&amp;q=80" referrerpolicy="no-referrer">
+            </div>사진출처: unsplash
+백엔드가 효과적인 명세 전달 고민 Failure 그동안 진행했던 프로젝트에서 제대로 된 API 명세를 적시에 프론트측에 전달하지 못했고,
+때문에 최종 출시를 앞두고 서로간의 코드 오류를 잡느라 시간적 비용이 꽤나 낭비됐다. 간단하게는 Request Body 값의 TYPE과 관련된 소통 혼선으로 겪었던 헤프닝도 더러 있었다. 어떻게 하면 좋을까? 우선은 백엔드의 입장에서 생각해본다.
+명세는 코드가 만들어지면서 늘 수정될 수 있다. 때문에 명세는 코드와 함께 작업되어야 하고, API 테스트를 위해 즉각적으로 수정되어야 한다. 같은 백엔드 팀의 경우에는 직접 코드를 보기에 명세의 부족함을 보완할 수는 있다.]]></description>
+</item>
+<item>
+    <title>typeORM transaction에서 repository 사용하기</title>
+    <link>https://inchan.dev/posts/202302250414/</link>
+    <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202302250414/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYW5zYWN0aW9ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
+            </div>&lt;사진: unsplash&gt;
+transaction 구성중 Entity가 아닌 Repository 사용시 typeORM에서 transaction을 사용하는 방법은 몇가지가 있지만,
+복잡한 service단의 처리에서는 아래의 queryRunner 방식이 더 적합할것 같아서
+dataSource.createQueryRunner() 방식을 사용했다.1
+// transaction으로 묶어주기 const queryRunner = dataSource.createQueryRunner(); await queryRunner.connect(); await queryRunner.startTransaction(); try { // feed 저장 let newTempFeed: Feed = plainToInstance(FeedDto, feedInfo); const tempFeed = await FeedRepository.createFeed(newTempFeed); //&lt;- 문제!! // ... 추가 코드들 } catch (err) { await queryRunner.rollbackTransaction(); throw new Error(`createTempFeed TRANSACTION error: ${err}`); } finally { await queryRunner.]]></description>
+</item>
+<item>
+    <title>Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기</title>
+    <link>https://inchan.dev/posts/202302160417/</link>
+    <pubDate>Thu, 16 Feb 2023 04:17:07 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202302160417/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
+            </div>&lt;사진: unsplash&gt;
+기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker typeORM createQueryBuilder 메소드로 출력시 2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다. 우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
+mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에]]></description>
 </item>
 </channel>
 </rss>

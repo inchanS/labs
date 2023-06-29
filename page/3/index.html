@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.114.0">
+	<meta name="generator" content="Hugo 0.114.1">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
@@ -99,6 +99,24 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/posts/202302250414/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYW5zYWN0aW9ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
+        data-srcset="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYW5zYWN0aW9ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300, https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYW5zYWN0aW9ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300 1.5x, https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYW5zYWN0aW9ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300 2x"
+        data-sizes="auto"
+        alt="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYW5zYWN0aW9ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
+        title="typeORM transaction시 버전차에 따른 방법 변화" /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/202302250414/">typeORM transaction에서 repository 사용하기</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-25">2023-02-25</time></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div><div class="content">&lt;사진: unsplash&gt;
+transaction 구성중 Entity가 아닌 Repository 사용시 typeORM에서 transaction을 사용하는 방법은 몇가지가 있지만,
+복잡한 service단의 처리에서는 아래의 queryRunner 방식이 더 적합할것 같아서
+dataSource.createQueryRunner() 방식을 사용했다.1
+// transaction으로 묶어주기 const queryRunner = dataSource.createQueryRunner(); await queryRunner.connect(); await queryRunner.startTransaction(); try { // feed 저장 let newTempFeed: Feed = plainToInstance(FeedDto, feedInfo); const tempFeed = await FeedRepository.createFeed(newTempFeed); //&lt;- 문제!! // ... 추가 코드들 } catch (err) { await queryRunner.rollbackTransaction(); throw new Error(`createTempFeed TRANSACTION error: ${err}`); } finally { await queryRunner.</div><div class="post-footer">
+        <a href="/posts/202302250414/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typeorm/">typeORM</a>,&nbsp;<a href="/tags/mysql/">mySQL</a>,&nbsp;<a href="/tags/project_review/">project_review</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/posts/202302160417/"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -113,7 +131,7 @@
 기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker typeORM createQueryBuilder 메소드로 출력시 2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다. 우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
 mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에</div><div class="post-footer">
         <a href="/posts/202302160417/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typescript/">TypeScript</a>,&nbsp;<a href="/tags/typeorm/">typeORM</a></div></div>
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typescript/">TypeScript</a>,&nbsp;<a href="/tags/typeorm/">typeORM</a>,&nbsp;<a href="/tags/project_review/">project_review</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/posts/202302100411/"><img
         class="lazyload"
@@ -178,16 +196,6 @@ console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 �
 하지만코딩을 하다보면 아직은 타입을 정하기 전인 상황이거나, 도저히 타입을 알 수 없거나 추론할 수 없을 때, (또는 typescript 초급자일 때 ;;) 가끔 사용하게 되는 것이 또 any 타입이다.
 하지만 이제부터 이럴때 any보다는 unknown을 사용하자.</div><div class="post-footer">
         <a href="/posts/202301280423/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typescript/">TypeScript</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202301280422/">typescript - satisfies operator 탐구</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-28">2023-01-28</time></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Programming</a></span></div><div class="content">typescript 4.9에서 새로 나온 기능으로 satisfies 라는 연산자가 있다.
-공식문서를 정말 한참을 봤는데도 잘 이해가 가지 않았는데 직접 코드를 가지고 만져보니 조금 이해가 되었다.
-satisfies 적용 전 Record라는 객체의 key, value를 지정해주는 연산자를 사용하여 객체의 타입을 지정할 때,
-아래 코드를 보면 value의 타입으로 string | RGB2 라는 union type으로 인해 속성에 대한 오류가 잡힌다.
-toUpperCase에서는 only string타입이 들어와야 하는데 union type으로 할당되어 생긴 에러로서 당연한 결과이다.
-type Colors = &#39;red&#39; | &#39;green&#39; | &#39;blue&#39;; type RGB = [red: number, green: number, blue: number]; const palette: Record&lt;Colors, string | RGB2&gt; = { red: [255, 0, 0], green: &#39;#00ff00&#39;, blue: [0, 0, 255], }; const redComponent = palette.</div><div class="post-footer">
-        <a href="/posts/202301280422/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typescript/">TypeScript</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">

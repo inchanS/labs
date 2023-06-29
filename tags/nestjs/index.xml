@@ -4,7 +4,15 @@
         <link>https://inchan.dev/tags/nestjs/</link>
         <description>NestJS - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 09 Jan 2023 04:35:58 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/nestjs/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 29 Jun 2023 12:58:27 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/nestjs/" rel="self" type="application/rss+xml" /><item>
+    <title></title>
+    <link>https://inchan.dev/posts/202306291258/</link>
+    <pubDate>Thu, 29 Jun 2023 12:58:27 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202306291258/</guid>
+    <description><![CDATA[ ]]></description>
+</item>
+<item>
     <title>nestJS 시작하기</title>
     <link>https://inchan.dev/posts/202301090435/</link>
     <pubDate>Mon, 09 Jan 2023 04:35:58 &#43;0900</pubDate>
