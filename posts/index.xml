@@ -5,12 +5,20 @@
         <description>All Posts | inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 29 Jun 2023 12:58:27 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
-    <title></title>
+    <title>error note - jest.spyOn()에서 재사용함수에 대한 모의 불가</title>
     <link>https://inchan.dev/posts/202306291258/</link>
     <pubDate>Thu, 29 Jun 2023 12:58:27 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://inchan.dev/posts/202306291258/</guid>
-    <description><![CDATA[ ]]></description>
+    <description><![CDATA[사용환경 : Node.Js, Express
+언어 : typeScript
+테스트 프레임워크 : Jest
+상황 Abstract 같은 파일 (모듈) 내에 있는 함수의 재사용시,
+테스트 코드를 작성하는데 모의하기가 상당히 까다롭고 불편함.
+특히 테스트 코드가 지나치게 지저분해짐 user.service.ts 파일 내부 다음은 user.service.ts 파일의 내부 코드 요약이다.
+초점을 맞춰 볼 곳은,
+updateUserInfo 함수 내부에서 checkDuplicateEmail 함수와 checkDuplicateNickname 함수가 재사용되고 있다.
+// ... const checkDuplicateEmail = async ( email: string ) =&gt; { ... } const checkDuplicateNickname = async ( nickname: string ) =&gt; { .]]></description>
 </item>
 <item>
     <title>Webina 참여 회고 - 원티드 주최 &#39;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&#39;</title>
