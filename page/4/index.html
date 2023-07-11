@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.114.1">
+	<meta name="generator" content="Hugo 0.115.1">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
@@ -140,14 +140,14 @@ JEST의 test파일 실행시 기존 DB를 사용함으로 인한 DB내부 데이
         <a href="/posts/202301230424/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typescript/">TypeScript</a>,&nbsp;<a href="/tags/express/">Express</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202301180430/">error note - throw와 return</a>
+        <a href="/posts/202301180430/">error log - throw와 return</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-18">2023-01-18</time></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div><div class="content">문제상황 Failure 에러핸들링 중, 에러메세지를 response로 보내려고 한다. 이에 return을 사용 에러가 나와야 할 상황에서 정상적으로 에러메세지를 response로 보낸다. 하지만 에러코드를 알려야 할 status code는 정상을 알리며 이후 모든 함수와 명령이 진행됨 해결 Success return이 아닌 throw를 사용하여야 한다. 특히 node.js에서 서버를 돌릴때,
 단순히 return만으로는 이후의 모든 과정, 즉 controller - service - dao 등에서 return을 한 함수 이외 모든 명령어가 진행 된다.
 하지만 throw의 경우, 에러를 내보내는 것 뿐만 아니라 이후의 모든 명령어를 중지시킨다.</div><div class="post-footer">
         <a href="/posts/202301180430/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/javascript/">JavaScript</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202301180428/">error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error</a>
+        <a href="/posts/202301180428/">error log - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-18">2023-01-18</time></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div><div class="content">에러 상황 TypeScript로 typeORM을 세팅할때,
 dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼 수 있다.
 위 3개의 해당 error message를 살펴보면 차례로 다음과 같다.

@@ -5,7 +5,7 @@
         <description>Jest - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 29 Jun 2023 12:58:27 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/jest/" rel="self" type="application/rss+xml" /><item>
-    <title>error note - jest.spyOn()에서 재사용함수에 대한 모의 불가</title>
+    <title>error log - jest.spyOn()에서 재사용함수에 대한 모의 불가</title>
     <link>https://inchan.dev/posts/202306291258/</link>
     <pubDate>Thu, 29 Jun 2023 12:58:27 &#43;0900</pubDate>
     <author>inchan</author>

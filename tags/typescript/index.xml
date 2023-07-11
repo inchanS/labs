@@ -56,7 +56,7 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
 JEST의 test파일 실행시 기존 DB를 사용함으로 인한 DB내부 데이터 오염문제 test용 DB 분리로 해결 test용 DB 분리 이후, npm run 실행 환경(dev, test, production)에 따른 DB 설정문제 개발간 서버를 돌릴때, test코드를 돌릴때마다 dev.]]></description>
 </item>
 <item>
-    <title>error note - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error</title>
+    <title>error log - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error</title>
     <link>https://inchan.dev/posts/202301180428/</link>
     <pubDate>Wed, 18 Jan 2023 04:28:04 &#43;0900</pubDate>
     <author>inchan</author>

@@ -7,7 +7,7 @@
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 29 Jun 2023 12:58:27 &#43;0900</lastBuildDate>
             <atom:link href="https://inchan.dev/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>error note - jest.spyOn()에서 재사용함수에 대한 모의 불가</title>
+    <title>error log - jest.spyOn()에서 재사용함수에 대한 모의 불가</title>
     <link>https://inchan.dev/posts/202306291258/</link>
     <pubDate>Thu, 29 Jun 2023 12:58:27 &#43;0900</pubDate>
     <author>inchan</author>
@@ -78,7 +78,7 @@ Add - 레이아웃 / 기능 추가 Remove - 내용 삭제 (폴더 / 파일 삭�
 해당 이메일은 이미 mySQL에서 unique로 입력되어있는 이메일이기 때문에 이메일 중복확인에서 통과되지 않는다.]]></description>
 </item>
 <item>
-    <title>error note - TypeORM migration 할 때 cross ENV 설정 문제</title>
+    <title>error log - TypeORM migration 할 때 cross ENV 설정 문제</title>
     <link>https://inchan.dev/posts/202304010529/</link>
     <pubDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</pubDate>
     <author>inchan</author>
@@ -101,7 +101,7 @@ jest.clearAllMocks() jest.clearAllMocks() 함수는 모든 모의 함수의 호�
 이를 통해 테스트 간 독립성을 보장하며, 다양한 테스트 시나리오에서 중요한 역할을 한다.]]></description>
 </item>
 <item>
-    <title>error note - AWS EC2의 SSH 접속이 안될 때</title>
+    <title>error log - AWS EC2의 SSH 접속이 안될 때</title>
     <link>https://inchan.dev/posts/202303170023/</link>
     <pubDate>Fri, 17 Mar 2023 00:17:31 &#43;0900</pubDate>
     <author>inchan</author>
@@ -116,7 +116,7 @@ $ ssh -i my_key.pem ec2-user@11.111.11.111 ssh: connect to host 11.111.11.111 po
 여튼 현재상황에서, 설정은 잘못된게 없었고 다른 ssh(github)로 테스트 해보니 모두 정상이었다.]]></description>
 </item>
 <item>
-    <title>error note - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</title>
+    <title>error log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</title>
     <link>https://inchan.dev/posts/202303162353/</link>
     <pubDate>Thu, 16 Mar 2023 23:56:16 &#43;0900</pubDate>
     <author>inchan</author>

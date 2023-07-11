@@ -14,7 +14,7 @@
 해당 이메일은 이미 mySQL에서 unique로 입력되어있는 이메일이기 때문에 이메일 중복확인에서 통과되지 않는다.]]></description>
 </item>
 <item>
-    <title>error note - TypeORM migration 할 때 cross ENV 설정 문제</title>
+    <title>error log - TypeORM migration 할 때 cross ENV 설정 문제</title>
     <link>https://inchan.dev/posts/202304010529/</link>
     <pubDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</pubDate>
     <author>inchan</author>

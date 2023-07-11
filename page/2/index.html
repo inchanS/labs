@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.114.1">
+	<meta name="generator" content="Hugo 0.115.1">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
@@ -99,7 +99,7 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202304010529/">error note - TypeORM migration 할 때 cross ENV 설정 문제</a>
+        <a href="/posts/202304010529/">error log - TypeORM migration 할 때 cross ENV 설정 문제</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-04-01">2023-04-01</time></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div><div class="content">TypeORM migration TypeORM migration:create typeorm migration을 시도해보면서 준비한건 몇가지 되지 않았다. 우선, 터미널에서 typeorm migration 파일을 생성하는 명령어. $ npx typeorm migration:create &lt;path/file_name&gt; 예를 들면 npx typeorm migration:create ./src/migrations/default-tables
 이런 식으로 사용할 수 있다.
 그리고 마이그레이션 실행시 마이그레이션 파일들의 위치를 알려줄 수 있도록 datasource config 부분에 다음과 같이 설정을 추가한다.
@@ -125,7 +125,7 @@ jest.clearAllMocks() jest.clearAllMocks() 함수는 모든 모의 함수의 호�
         alt="https://images.unsplash.com/photo-1633078654544-61b3455b9161?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGVycm9yfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
         title="macOS 터미널에서 AWS EC2 ssh 접속불가를 해결한 설명" /></a>
         </div><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202303170023/">error note - AWS EC2의 SSH 접속이 안될 때</a>
+        <a href="/posts/202303170023/">error log - AWS EC2의 SSH 접속이 안될 때</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-03-17">2023-03-17</time></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div><div class="content">1
 Bug 갑자기 macOS terminal에서 AWS EC2에 ssh접속이 안된다. 접속해보면 즉각적인 반응이 아닌, 오랜 시간 후 다음과 같은 메세지를 뱉었다.
 $ ssh -i my_key.pem ec2-user@11.111.11.111 ssh: connect to host 11.111.11.111 port 22: Operation timed out Operation timed out 이라니&hellip;
@@ -144,7 +144,7 @@ $ ssh -i my_key.pem ec2-user@11.111.11.111 ssh: connect to host 11.111.11.111 po
         alt="https://images.unsplash.com/photo-1599153066743-08810dc8a419?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXdzfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
         title="EC2에서 PM2 실행시 NODE_ENV 설정 명령을 어떻게 하는가에 대한 에러 노트" /></a>
         </div><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202303162353/">error note - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</a>
+        <a href="/posts/202303162353/">error log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-03-16">2023-03-16</time></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div><div class="content">1
 AWS EC2에 배포를 하려하는데, 조그만 문제가 하나 생겼다.
 아래 예시와 같이 .env파일을 개발, 배포 등의 목적으로 각각 나누어 코드를 작성했는데,

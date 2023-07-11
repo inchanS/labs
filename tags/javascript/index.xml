@@ -5,7 +5,7 @@
         <description>JavaScript - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 16 Mar 2023 23:56:16 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/javascript/" rel="self" type="application/rss+xml" /><item>
-    <title>error note - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</title>
+    <title>error log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</title>
     <link>https://inchan.dev/posts/202303162353/</link>
     <pubDate>Thu, 16 Mar 2023 23:56:16 &#43;0900</pubDate>
     <author>inchan</author>
@@ -18,7 +18,7 @@ AWS EC2에 배포를 하려하는데, 조그만 문제가 하나 생겼다.
 main.ts 파일 코드 예시 if (process.env.NODE_ENV === &#39;production&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.production&#39;) }); } else if (process.env.NODE_ENV === &#39;develop&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.dev&#39;) }); console.log(&#39;process.env.NODE_ENV is &#39;, process.env.NODE_ENV); } else if (process.env.NODE_ENV === &#39;test&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.test&#39;) }); } else { throw new Error(&#39;process.env.NODE_ENV IS_NOT_SET!!&#39;); } 이걸 EC2에서 pm2로 프로세스를 돌릴 때 어떻게 명령을 내려야 하는가 였다.]]></description>
 </item>
 <item>
-    <title>error note - throw와 return</title>
+    <title>error log - throw와 return</title>
     <link>https://inchan.dev/posts/202301180430/</link>
     <pubDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</pubDate>
     <author>inchan</author>
