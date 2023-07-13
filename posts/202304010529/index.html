@@ -179,7 +179,7 @@
 <strong>dotenv 값이 텅텅 빈채 data-source.ts파일이 실행되었다.</strong><br>
 즉, TypeORM 설정이 전혀 먹히질 않아 dataSource 실행이 되지 않는다.</div>
         </div>
-    </div>
+    </div><br>
  </p>
 <p>error.log를 살펴보자니 아무래도 migration 실행시 <code>ts-node</code>가 돌긴 하지만 정작 <strong>작동은 명령어에 지정된 단일파일로만 움직이는 듯</strong> 하다.<br>
 때문에 app.ts 또는 main.ts에서 import 하고 있는 <code>dotenv.config()</code> 를 가져오지 못하는 문제!</p>

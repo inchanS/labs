@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202303080503\/"
-        },"genre": "posts","keywords": "RESTful_API, project_review","wordcount":  1995 ,
+        },"genre": "posts","keywords": "RESTful_API, project_review","wordcount":  1996 ,
         "url": "https:\/\/inchan.dev\/posts\/202303080503\/","datePublished": "2023-03-08T05:14:43+09:00","dateModified": "2023-03-08T05:14:43+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -103,7 +103,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Swagger를 이용한 백엔드의 효과적인 API명세 전달</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-08">2023-03-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1995 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-08">2023-03-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1996 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;10 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -162,7 +162,7 @@
 때문에 최종 출시를 앞두고 서로간의 코드 오류를 잡느라 시간적 비용이 꽤나 낭비됐다.
 간단하게는 Request Body 값의 TYPE과 관련된 소통 혼선으로 겪었던 헤프닝도 더러 있었다.</div>
         </div>
-    </div>
+    </div><br>
  </p>
 <p><strong>어떻게 하면 좋을까?</strong> <br>
  </p>
@@ -199,7 +199,7 @@
 <p>이전에는 Swagger로부터 비롯되었다하여 현재의 국제표준인 openAPI도 Swagger의 특징으로 볼 수 있는데,  현재 시점에서는 그다지 차이가 없는 듯 보인다.</p>
 </div>
         </div>
-    </div>
+    </div><br>
  </p>
 <h3 id="postman-vs-swagger-사용-후기">Postman vs Swagger 사용 후기</h3>
 <h4 id="postman">Postman</h4>
@@ -389,7 +389,7 @@ NodeJS의 경우 보통 route단에서 주석+데코레이터 형태로 사용�
             <div class="admonition-content">나는 project 내 <code>api-docs</code>라는 폴더를 만들고 그 안에 <strong>SwaggerUI의 <code>dist</code> 폴더안 파일들</strong>을 위치시켰다.<br>
 그리고 <code>swagger</code>라는 폴더를 따로이 생성한 뒤 그 안에 <code>index.yaml</code>파일을 세팅하는데 그 이유는 앞서 언급한 파일 분기 때문이다.</div>
         </div>
-    </div>
+    </div><br>
  </p>
 <p>그리고 다음과 같이 <code>index.yaml</code>을 작성해준다.<br>
  </p>
@@ -425,10 +425,13 @@ NodeJS의 경우 보통 route단에서 주석+데코레이터 형태로 사용�
     </div>
  </p>
 <p>API 명세의 자세한 내용은 다음과 같은 형식으로 작성하였다.<br>
- <br>
-(코드가 길어 토글 처리: click)<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># api-docs/swagger/user/signin.yaml</span><span class="w">
+<p><div class="details admonition note">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>API 명세 yaml 파일 보기 (클릭)<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># api-docs/swagger/user/signin.yaml</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">post</span><span class="p">:</span><span class="w">  
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w">  
@@ -493,6 +496,10 @@ NodeJS의 경우 보통 route단에서 주석+데코레이터 형태로 사용�
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">로그인 실패시 메세지  </span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">example</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;(THIS_EMAIL)_IS_NOT_FOUND&#39;</span><span class="w">
 </span></span></span></code></pre></div><p> </p>
+</div>
+        </div>
+    </div><br>
+ </p>
 <p><div class="details admonition tip open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
@@ -567,7 +574,7 @@ paths의 값으로 `$ref <path>를 넣으면 swagger가 처리를 못하는 것 
 </ol>
 </div>
         </div>
-    </div>
+    </div><br>
  </p>
 <h4 id="swaggerjs파일-적용">Swagger.js파일 적용</h4>
 <p>이제 방금 세팅한 SwaggerUI에서 사용할 yaml 명세를 <strong>Node 서버 안에서도 돌아갈 수 있도록 세팅</strong>을 한다.<br>
@@ -647,7 +654,7 @@ paths의 값으로 `$ref <path>를 넣으면 swagger가 처리를 못하는 것 
 </span></span></code></pre></div><p>이렇게 하면 첫번째 배열의 파일을 읽고, 두번째 배열의 파일을 참조하게 된다.</p>
 </div>
         </div>
-    </div>
+    </div><br>
  </p>
 <p><div class="details admonition bug">
         <div class="details-summary admonition-title">
@@ -668,7 +675,7 @@ paths의 값으로 `$ref <path>를 넣으면 swagger가 처리를 못하는 것 
 </ul>
 </div>
         </div>
-    </div>
+    </div><br>
  </p>
 <p>이제 <code>app.ts</code>를 수정한다.<br>
  </p>
