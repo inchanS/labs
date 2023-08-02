@@ -2,14 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://inchan.dev/categories/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://inchan.dev/categories/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://inchan.dev/categories/debugging/</loc><lastmod>2023-06-29T12:58:27&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://inchan.dev/posts/202306291258/</loc><lastmod>2023-06-29T12:58:27&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://inchan.dev/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://inchan.dev/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://inchan.dev/tags/jest/</loc><lastmod>2023-06-29T12:58:27&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://inchan.dev/posts/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://inchan.dev/posts/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://inchan.dev/tags/project_review/</loc><lastmod>2023-06-29T12:58:27&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://inchan.dev/tags/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://inchan.dev/tags/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://inchan.dev/tags/miscellaneous/</loc><lastmod>2023-06-21T11:31:43&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://inchan.dev/categories/miscellaneous/</loc><lastmod>2023-06-21T11:31:43&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://inchan.dev/posts/202306211131/</loc><lastmod>2023-06-21T11:31:43&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -19,7 +19,7 @@
             <loc>https://inchan.dev/posts/202306191507/</loc><lastmod>2023-06-19T15:07:40&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://inchan.dev/tags/git/</loc><lastmod>2023-06-21T15:10:10&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://inchan.dev/posts/202306171531/</loc><lastmod>2023-06-21T15:10:10&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://inchan.dev/categories/programming/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://inchan.dev/categories/programming/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://inchan.dev/tags/mysql/</loc><lastmod>2023-06-07T22:47:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://inchan.dev/posts/202306070208/</loc><lastmod>2023-06-07T22:47:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://inchan.dev/tags/typeorm/</loc><lastmod>2023-06-07T22:47:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -33,7 +33,7 @@
             <loc>https://inchan.dev/posts/202303022327/</loc><lastmod>2023-03-06T01:35:56&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://inchan.dev/posts/202302250414/</loc><lastmod>2023-02-25T04:14:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://inchan.dev/posts/202302160417/</loc><lastmod>2023-02-16T04:17:07&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://inchan.dev/tags/typescript/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://inchan.dev/tags/typescript/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://inchan.dev/posts/202302100411/</loc><lastmod>2023-02-10T04:11:51&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://inchan.dev/tags/devonthink/</loc><lastmod>2023-02-02T04:10:40&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://inchan.dev/posts/202302020410/</loc><lastmod>2023-02-02T04:10:40&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -41,7 +41,7 @@
             <loc>https://inchan.dev/tags/markdown/</loc><lastmod>2023-02-02T04:10:40&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://inchan.dev/tags/webstorm/</loc><lastmod>2023-02-02T04:09:55&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://inchan.dev/posts/202302020409/</loc><lastmod>2023-02-02T04:09:55&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://inchan.dev/posts/202301280423/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://inchan.dev/posts/202301280423/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://inchan.dev/posts/202301280422/</loc><lastmod>2023-01-28T04:22:36&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://inchan.dev/posts/202301230429/</loc><lastmod>2023-01-23T04:29:44&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://inchan.dev/tags/terminal/</loc><lastmod>2023-01-23T04:29:44&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
