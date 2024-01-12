@@ -131,10 +131,10 @@
 <h2 id="문제상황">문제상황</h2>
 <p>구글이 도메인 사업을 매각한 후, 도메인 이전을 차일피일 미루다 최근에서야 Cloudflare로 도메인을 이전하였다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><br>
 모든 DNS 역시 정상적으로 이전하였고, 메일서비스를 비롯한 다른 서비스들도 정상작동함을 확인하였다.<br>
-그런데 갑자기 해당 도메인의 주소가 정상적으로 작동하지 않는 문제가 생겼다.</p>
-<p><strong>브라우저에서 20회 이상의 리다이렉션으로 페이지 불러오기 실패</strong><br>
- <br>
-<img src="/images/SCR-20240112-uaxh.png" width=70%></p>
+그런데 갑자기 해당 도메인의 주소가 정상적으로 작동하지 않는 문제가 생겼다.<br>
+ </p>
+ <img src="/images/SCR-20240112-uaxh.png" width=70%>  
+<p><strong>브라우저에서 20회 이상의 리다이렉션으로 페이지 불러오기 실패</strong></p>
 <h2 id="해결방법">해결방법</h2>
 <p>Cloudflare side menu - SSL/TLS - 개요 : SSL/TLS 암호화 모드를<br>
 <strong>가변</strong>에서 <strong>전체</strong>로 변경했더니 문제 해결!<br>
