@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>AWS EC2 서버에 HTTPS 적용하기 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="AWS EC2 서버에 HTTPS 적용하기" />
+<meta property="og:description" content="팀 프로젝트로 백엔드 서버를 EC2에서 배포하여 사용중인데 여기에 HTTPS를 적용하여 보았다.
+겁먹지 말기 AWS내에서 각 서비스를 이리저리 다니며
+무언가를 자꾸 생성하고 또 세팅하다보니 자칫 어렵다고 지레 겁먹기 쉬운데
+실제로 해보면 생각보다 간단하고 쉽다. 구글링을 하다보면 여러 관련 글이 있는데 아래 참고한 2개의 웹페이지가 가장 잘 설명되어있다.
+EC2 HTTPS로 연결하기 EC2에 HTTPS 적용하기 미리 말해두기 해당 참고 사이트의 글을 보다보면 친절하게 잘 설명되어있음에도 살짝씩 어리둥절할 때가 있다.
+왜냐면 AWS 웹 UI가 생각보다 자주 바뀌는듯 해서 설명에 참고된 스크린샷과 현재 시점의 AWS 화면이 다르기 때문이다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://inchan.dev/posts/202401122216/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-12T22:17:59+09:00" />
+<meta property="article:modified_time" content="2024-01-12T22:17:59+09:00" /><meta property="og:site_name" content="inchan.dev" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="AWS EC2 서버에 HTTPS 적용하기"/>
+<meta name="twitter:description" content="팀 프로젝트로 백엔드 서버를 EC2에서 배포하여 사용중인데 여기에 HTTPS를 적용하여 보았다.
+겁먹지 말기 AWS내에서 각 서비스를 이리저리 다니며
+무언가를 자꾸 생성하고 또 세팅하다보니 자칫 어렵다고 지레 겁먹기 쉬운데
+실제로 해보면 생각보다 간단하고 쉽다. 구글링을 하다보면 여러 관련 글이 있는데 아래 참고한 2개의 웹페이지가 가장 잘 설명되어있다.
+EC2 HTTPS로 연결하기 EC2에 HTTPS 적용하기 미리 말해두기 해당 참고 사이트의 글을 보다보면 친절하게 잘 설명되어있음에도 살짝씩 어리둥절할 때가 있다.
+왜냐면 AWS 웹 UI가 생각보다 자주 바뀌는듯 해서 설명에 참고된 스크린샷과 현재 시점의 AWS 화면이 다르기 때문이다."/>
+<meta name="twitter:site" content="@codject"/>
+<meta name="application-name" content="inchan.dev">
+<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202401122216/" /><link rel="prev" href="https://inchan.dev/posts/202306291258/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "AWS EC2 서버에 HTTPS 적용하기",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/inchan.dev\/posts\/202401122216\/"
+        },"genre": "posts","keywords": "AWS","wordcount":  471 ,
+        "url": "https:\/\/inchan.dev\/posts\/202401122216\/","datePublished": "2024-01-12T22:17:59+09:00","dateModified": "2024-01-12T22:17:59+09:00","publisher": {
+            "@type": "Organization",
+            "name": "inchan"},"author": {
+                "@type": "Person",
+                "name": "inchan"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">AWS EC2 서버에 HTTPS 적용하기</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-12">2024-01-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;471 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-도메인-준비">1. 도메인 준비</a></li>
+    <li><a href="#2-aws---route-53-서비스">2. AWS - Route 53 서비스</a></li>
+    <li><a href="#3-aws---acm-aws-certivicate-manager">3. AWS - ACM (AWS Certivicate Manager)</a></li>
+    <li><a href="#4-aws---ec2-서비스">4. AWS - EC2 서비스</a></li>
+    <li><a href="#5-마지막---도메인-설정은-다시-route-53-서비스에서">5. 마지막 - 도메인 설정은 다시 <strong>Route 53 서비스에서</strong></a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p> </p>
+<p>팀 프로젝트로 백엔드 서버를 EC2에서 배포하여 사용중인데 여기에 <strong>HTTPS</strong>를 적용하여 보았다.</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>겁먹지 말기<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">AWS내에서 각 서비스를 이리저리 다니며<br>
+무언가를 자꾸 생성하고 또 세팅하다보니 자칫 어렵다고 지레 겁먹기 쉬운데<br>
+실제로 해보면 생각보다 간단하고 쉽다.</div>
+        </div>
+    </div>
+<p>구글링을 하다보면 여러 관련 글이 있는데 아래 참고한 2개의 웹페이지가 가장 잘 설명되어있다.</p>
+<ul>
+<li><a href="https://velog.io/@server30sopt/EC2-HTTPS%EB%A1%9C-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0" target="_blank" rel="noopener noreffer ">EC2 HTTPS로 연결하기</a></li>
+<li><a href="https://velog.io/@gmlstjq123/EC2%EC%97%90-HTTPS-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0" target="_blank" rel="noopener noreffer ">EC2에 HTTPS 적용하기</a></li>
+</ul>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>미리 말해두기<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>해당 참고 사이트의 글을 보다보면 친절하게 잘 설명되어있음에도 살짝씩 어리둥절할 때가 있다.<br>
+왜냐면 AWS 웹 UI가 생각보다 자주 바뀌는듯 해서 설명에 참고된 스크린샷과 <strong>현재 시점의  AWS 화면</strong>이 다르기 때문이다.</p>
+<p>이에 스크린 샷 없이 <strong>AWS 서비스의 흐름에 따라 outline 형식으로 설명</strong>을 한다.</p>
+</div>
+        </div>
+    </div>
+<h2 id="1-도메인-준비">1. 도메인 준비</h2>
+<p>우선 사전 작업으로 도메인이 반드시 필요하다.<br>
+도메인 구입에 관해서는 워낙 많은 글들이 있기에 설명은 생략한다.</p>
+<h2 id="2-aws---route-53-서비스">2. AWS - Route 53 서비스</h2>
+<ul>
+<li>
+<p>호스팅 영역 생성</p>
+</li>
+<li>
+<p>생성한 호스팅 영역의 레코드 추가</p>
+<ul>
+<li>유형 : A-IPv4 주소 및 AWS 리소스로 트래픽 라우팅</li>
+<li>값 : EC2 Public IP</li>
+</ul>
+</li>
+<li>
+<p>추가 이후, NS 유형의 값 4개가 있는 레코드가 더불어 생성됨을 확인</p>
+</li>
+<li>
+<p>🚀 <strong>중요</strong> - 이 값을 <strong>1번에서 준비한 도메인 서비스에서</strong> DNS 레코드로 추가</p>
+</li>
+</ul>
+<h2 id="3-aws---acm-aws-certivicate-manager">3. AWS - ACM (AWS Certivicate Manager)</h2>
+<ul>
+<li>퍼블릭 인증서 요청</li>
+<li>도메인 입력후 검증 (검증 대기는 보통 10분 이내 완료된다.)</li>
+<li>&lsquo;Route 53에서 레코드 생성&rsquo; 버튼을 클릭</li>
+<li>AWS-Route 53 서비스로 가서 CNAME 레코드가 대상에 등록되어 완료됨을 확인</li>
+</ul>
+<h2 id="4-aws---ec2-서비스">4. AWS - EC2 서비스</h2>
+<ul>
+<li>
+<p>좌측 사이드메뉴에서 로드 밸런싱 - 대상그룹 - 대상그룹 생성</p>
+<ul>
+<li>대상유형 : 인스턴스</li>
+<li>프로토콜 : HTTP</li>
+</ul>
+</li>
+<li>
+<p>대상그룹 메뉴에서 &lsquo;편집&rsquo; 클릭</p>
+<ul>
+<li>본인의 EC2 인스턴스를 선택하고 &lsquo;등록된 항목에 추가&rsquo; 버튼을 클릭한 후, &lsquo;저장&rsquo;</li>
+</ul>
+</li>
+<li>
+<p>사이드메뉴 - 로드 밸런싱 - 로드밸런서 - 로드밸런서 생성</p>
+<ul>
+<li>Load Balancer 생성
+<ul>
+<li>ALB(Application Load Balancer) 선택</li>
+</ul>
+</li>
+<li>기본 구성
+<ul>
+<li>매핑 - 가용영역 2개 이상 선택</li>
+<li>🚀 <strong>가용영역에는 사용중인 EC2가 위치한 영역이 반드시 포함되어야 한다.</strong></li>
+</ul>
+</li>
+<li>보안 그룹
+<ul>
+<li>EC2에서 사용중인 보안그룹 또는 새로 생성하여 선택</li>
+<li>🚀 <strong>중요</strong> - 해당 보안그룹의 <strong>인바운드 규칙에는 HTTPS 유형의 규칙</strong>이 추가되어있어야 한다.</li>
+</ul>
+</li>
+<li>리스너 및 라우팅
+<ul>
+<li>🚀 <strong>HTTPS 프로토콜</strong>을 리스너 추가<br>
+(포트는 자동으로 443에 맞춰지는데 특별한 상황이 아니라면 그대로 둔다.)
+<ul>
+<li><strong>주의</strong> - &lsquo;리스너 태그 추가&rsquo;가 아닌 <strong>&lsquo;리스너 추가&rsquo; 버튼</strong>으로 진행</li>
+<li>🚀 <strong>중요</strong> -  로드 밸런싱에서 만든 &lsquo;대상그룹&rsquo;을 선택!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>보안 리스너 설정 (이 메뉴는 위에서 HTTPS 리스너를 추가해야만 나타난다.)
+<ul>
+<li>기본 SSL/TLS 서버 인증서 - 인증서 소스는 <strong>&lsquo;ACM에서&rsquo;</strong> 선택</li>
+<li>방금 발급받은 인증서 선택</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-마지막---도메인-설정은-다시-route-53-서비스에서">5. 마지막 - 도메인 설정은 다시 <strong>Route 53 서비스에서</strong></h2>
+<ul>
+<li>
+<p>Route 53 - 호스팅 영역 - 아까 생성한 도메인 클릭</p>
+</li>
+<li>
+<p>레코드 생성</p>
+<ul>
+<li>하위 도메인으로 설정하고 싶다면 레코드 이름을 기입한다.
+<ul>
+<li>예를 들어 등록한 도메인이 <code>abc.com</code> 이라면, HTTPS로 연결할 해당 서버에만 유효한 하위 도메인을 추가할 수 있다.</li>
+<li>즉 하위도메인으로 &lsquo;api&rsquo;를 기입하면, 실제 AWS에서 사용하게 될 해당 주소는 <code>https://api.abc.com/API주소들</code> 이렇게 된다. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+</ul>
+</li>
+<li>레코드 유형 : A-IPv4 주소 및 AWS 리소스로 트래픽 라우팅</li>
+<li>트래픽 라우팅 대상에서 아까 생성한 로드밸런서 선택</li>
+</ul>
+</li>
+<li>
+<p>API 툴을 이용해  새로 만든 HTTPS 주소로 API test가 잘 되는지 확인하면 <strong>끝!</strong></p>
+</li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>이 방법을 사용하면 이미 소유하여 사용중인 루트 도메인을 AWS에 등록하여도 별도의 하위도메인으로써 따로이 AWS에서만 사용할 수 있다.  예를 들어 현재 본 사이트에서 사용중인 <code>inchan.dev</code>의 도메인에 <code>api.inchan.dev</code> 의 하위도메인을 뽑아내 연결하여 사용할 수도 있다. 일종의 RESTful API 방법처럼&hellip;&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-01-12</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/aws/">AWS</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/202306291258/" class="prev" rel="prev" title="error log - jest.spyOn()에서 재사용함수에 대한 모의 불가"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>error log - jest.spyOn()에서 재사용함수에 대한 모의 불가</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+</html>

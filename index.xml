@@ -4,9 +4,22 @@
         <link>https://inchan.dev/</link>
         <description>Coding Projects: From Ideas to Execution</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Thu, 29 Jun 2023 12:58:27 &#43;0900</lastBuildDate>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 10 Jan 2024 22:17:59 &#43;0900</lastBuildDate>
             <atom:link href="https://inchan.dev/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>AWS EC2 서버에 HTTPS 적용하기</title>
+    <link>https://inchan.dev/posts/202401122216/</link>
+    <pubDate>Wed, 10 Jan 2024 22:17:59 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202401122216/</guid>
+    <description><![CDATA[팀 프로젝트로 백엔드 서버를 EC2에서 배포하여 사용중인데 여기에 HTTPS를 적용하여 보았다.
+겁먹지 말기 AWS내에서 각 서비스를 이리저리 다니며
+무언가를 자꾸 생성하고 또 세팅하다보니 자칫 어렵다고 지레 겁먹기 쉬운데
+실제로 해보면 생각보다 간단하고 쉽다. 구글링을 하다보면 여러 관련 글이 있는데 아래 참고한 2개의 웹페이지가 가장 잘 설명되어있다.
+EC2 HTTPS로 연결하기 EC2에 HTTPS 적용하기 미리 말해두기 해당 참고 사이트의 글을 보다보면 친절하게 잘 설명되어있음에도 살짝씩 어리둥절할 때가 있다.
+왜냐면 AWS 웹 UI가 생각보다 자주 바뀌는듯 해서 설명에 참고된 스크린샷과 현재 시점의 AWS 화면이 다르기 때문이다.]]></description>
+</item>
+<item>
     <title>error log - jest.spyOn()에서 재사용함수에 대한 모의 불가</title>
     <link>https://inchan.dev/posts/202306291258/</link>
     <pubDate>Thu, 29 Jun 2023 12:58:27 &#43;0900</pubDate>
@@ -114,19 +127,6 @@ $ ssh -i my_key.pem ec2-user@11.111.11.111 ssh: connect to host 11.111.11.111 po
 찾아보니 여러 이유가 있을 수 있었다.
 보안규칙에 22포트에 대한 설정이 누락되었거나, 명령어가 잘못 입력되었거나, 방화벽 설정에서 막혔다거나&hellip; 대개 구글링했을때 나오는건 Connetion timed out 이었는데 이건 너무 포괄적인 답변들이라 난감했다.
 여튼 현재상황에서, 설정은 잘못된게 없었고 다른 ssh(github)로 테스트 해보니 모두 정상이었다.]]></description>
-</item>
-<item>
-    <title>error log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</title>
-    <link>https://inchan.dev/posts/202303162353/</link>
-    <pubDate>Thu, 16 Mar 2023 23:56:16 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202303162353/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1599153066743-08810dc8a419?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXdzfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
-            </div>1
-AWS EC2에 배포를 하려하는데, 조그만 문제가 하나 생겼다.
-아래 예시와 같이 .env파일을 개발, 배포 등의 목적으로 각각 나누어 코드를 작성했는데,
-main.ts 파일 코드 예시 if (process.env.NODE_ENV === &#39;production&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.production&#39;) }); } else if (process.env.NODE_ENV === &#39;develop&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.dev&#39;) }); console.log(&#39;process.env.NODE_ENV is &#39;, process.env.NODE_ENV); } else if (process.env.NODE_ENV === &#39;test&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.test&#39;) }); } else { throw new Error(&#39;process.env.NODE_ENV IS_NOT_SET!!&#39;); } 이걸 EC2에서 pm2로 프로세스를 돌릴 때 어떻게 명령을 내려야 하는가 였다.]]></description>
 </item>
 </channel>
 </rss>

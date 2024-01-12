@@ -4,7 +4,20 @@
         <link>https://inchan.dev/categories/back-end/</link>
         <description>Back-End - Category - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 19 Jun 2023 16:59:51 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/categories/back-end/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 10 Jan 2024 22:17:59 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/categories/back-end/" rel="self" type="application/rss+xml" /><item>
+    <title>AWS EC2 서버에 HTTPS 적용하기</title>
+    <link>https://inchan.dev/posts/202401122216/</link>
+    <pubDate>Wed, 10 Jan 2024 22:17:59 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202401122216/</guid>
+    <description><![CDATA[팀 프로젝트로 백엔드 서버를 EC2에서 배포하여 사용중인데 여기에 HTTPS를 적용하여 보았다.
+겁먹지 말기 AWS내에서 각 서비스를 이리저리 다니며
+무언가를 자꾸 생성하고 또 세팅하다보니 자칫 어렵다고 지레 겁먹기 쉬운데
+실제로 해보면 생각보다 간단하고 쉽다. 구글링을 하다보면 여러 관련 글이 있는데 아래 참고한 2개의 웹페이지가 가장 잘 설명되어있다.
+EC2 HTTPS로 연결하기 EC2에 HTTPS 적용하기 미리 말해두기 해당 참고 사이트의 글을 보다보면 친절하게 잘 설명되어있음에도 살짝씩 어리둥절할 때가 있다.
+왜냐면 AWS 웹 UI가 생각보다 자주 바뀌는듯 해서 설명에 참고된 스크린샷과 현재 시점의 AWS 화면이 다르기 때문이다.]]></description>
+</item>
+<item>
     <title>AWS EC2에서 product 서버와 개발용 서버 같이 사용하기</title>
     <link>https://inchan.dev/posts/202306191659/</link>
     <pubDate>Mon, 19 Jun 2023 16:59:51 &#43;0900</pubDate>
@@ -117,14 +130,6 @@ AWS 퍼블릭 IP 주소가 바뀌었다? EC2 재부팅 결과, 서버의 퍼블�
 왜 그런가 찾아보니 AWS 기술문서에 다음과 같은 안내가 있었다.
 퍼블릭 IP 주소1 다음과 같은 경우 인스턴스의 퍼블릭 IP 주소가 변경됩니다.
 중지되었거나 최대 절전 모드로 전환된 인스턴스는 다시 시작될 때 새 퍼블릭 IP 주소를 받습니다.]]></description>
-</item>
-<item>
-    <title>status code 204</title>
-    <link>https://inchan.dev/posts/202212250509/</link>
-    <pubDate>Sun, 25 Dec 2022 05:09:42 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202212250509/</guid>
-    <description><![CDATA[덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실! statusCode 204는 response를 전송하지 않는다!! 다만 status code &ldquo;204&rdquo; 만 전달할 뿐. 이걸 몰라서 코드의 오류인줄 알고 한참을 헤맸다. status code를 200으로 바꿨더니 다시 원래대로 response가 전송되었다. status code 문서의 개요만 어설프게 보고서는, 삭제니까 no content인 204가 맞겠지 하고 내 멋대로 이해한 실수였다. 204에서 다시 200으로 처리한 이유는, 삭제된 이후의 덧글 리스트와 페이지네이션 위치를 json으로 전달해야할 필요성이 있어서였다.]]></description>
 </item>
 </channel>
 </rss>

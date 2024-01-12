@@ -99,48 +99,12 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202210180502/">DBmate 사용법</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-10-18">2022-10-18</time></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div><div class="content">mySQL을 사용하여 Database를 쌓아 나갈때,
-DBmate 를 사용하면
-초기 세팅값을 마치 git을 저장하듯 이력을 남겨 언제든 migration 할 수 있다.
-지금부터의 설명은 macOS 기준으로 기술한다. (windows가 없음 ;; ) DBmate 설치 Homebrew 를 사용하여 설치한다. 1 터미널 아무 위치에서나 무관하다. 2 $brew install dbmate 이렇게 입력 후, 엔터키를 누르면 자동으로 설치가 된다.
-그리고, 하나의 파일이 필요하다. 바로 .env 파일. IDE 또는 터미널 vim으로 .env 파일을 생성한 후, 다음과 같이 입력한다.</div><div class="post-footer">
-        <a href="/posts/202210180502/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/dbmate/">DBmate</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202210130407/">터미널에서 '바로가기' 단축키 등록하기</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-10-13">2022-10-13</time></span>&nbsp;<span class="post-category">included in <a href="/categories/env/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>env</a></span></div><div class="content">터미널을 처음 실행하면 꼭 사용자 폴더에서 시작한다.
-cd ...로 찾아가는게 너무 귀찮다.
-그렇다고 finder에서 폴더를 drag &amp; drop해서 직접경로를 떨어뜨리는 방법도 있지만,
-굳이 키보드에서 또 마우스나 트랙패드로 손을 움직이고 싶지 않다. 때문에 알게 된 것이 바로 alias를 활용한 터미널 단축키 방법!
-우선 zsh라는 쉘 을 한번 가볍게 알아본다. 힘들면 Pass하고, 바로 적용할 수 있는 방법으로 가자! 1. zshrc 편집 터미널에서 다음을 실행 vim ~/.zshrc 이미 파일이 존재할수도 있고, 없으면 파일이 생성되며 바로 편집모드로 들어가게 된다.</div><div class="post-footer">
-        <a href="/posts/202210130407/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/terminal/">terminal</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202210040515/">인스타그램 로그인 화면 구성</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-10-04">2022-10-04</time></span>&nbsp;<span class="post-category">included in <a href="/categories/front-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Front-End</a></span></div><div class="content">justgram - UI 만들기 Mission 1 - 로그인 페이지 레이아웃 처음 HTML 파일을 작성할때, display : flex; 를 쓰지 않았다. 결과는 원하는대로 나왔지만 나의 첫 코드는 쓸데없이 수많은 &lt;div&gt;와 &lt;p&gt;태그로 범벅이 됐다. HTML 초기버전 &lt;div class=&#34;wrapLoginBox&#34;&gt; &lt;div class=&#34;loginBox&#34;&gt; &lt;p id=&#34;title&#34;&gt;justgram&lt;/p&gt; &lt;div class=&#34;inputBox&#34;&gt; &lt;p&gt; &lt;input id=&#34;userInput&#34; type=&#34;text&#34; placeholder=&#34;전화번호, 사용자 이름 또는 이메일&#34;/&gt; &lt;/p&gt; &lt;p&gt; &lt;input id=&#34;pwInput&#34; type=&#34;password&#34; placeholder=&#34;비밀번호&#34; /&gt; &lt;/p&gt; &lt;p&gt;&lt;button class=&#34;loginBtn&#34; disabled&gt;로그인&lt;/button&gt;&lt;/p&gt; &lt;/div&gt; &lt;div class=&#34;foot&#34;&gt; &lt;a href=&#34;https://www.instagram.com/accounts/password/reset/&#34;&gt;비밀번호를 잊으셨나요?&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; 위 코드가 처음 아무 생각없이 짠 HTML이다.</div><div class="post-footer">
-        <a href="/posts/202210040515/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/html/">html</a>,&nbsp;<a href="/tags/css/">css</a>,&nbsp;<a href="/tags/javascript/">JavaScript</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202209230519/">CSS 선택자 - 조합, 그룹, 가상</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-09-23">2022-09-23</time></span>&nbsp;<span class="post-category">included in <a href="/categories/front-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Front-End</a></span></div><div class="content">CSS 선택자 - 조합, 그룹, 가상 Quote HTML, CSS 실력을 단숨에 수직상승 시킬 수 있는 팁! 바로 ‘클론 코딩’ 입니다.
-단순 반복의 목록형 페이지 - 쇼핑몰이 클론코딩을 하기에 실용적이고, 어렵지 않으면서도 자주 쓰이는 기술이 많이 들어갑니다.
-여러분들이 자주 접속하는 쇼핑몰 중에 심플하고 세련된 사이트를 선정하여, 똑.같.이! 한 페이지만 만들어보세요. 개발자도구를 보면 HTML, CSS 힌트를 얻으실 수 있습니다.
-CSS 선택자 상속(Inheritance) 부모 자식관계의 태그나 요소에서 상위에서 설정된 스타일이 상속된다. 이를테면 body태그에 스타일을 지정하면, 해당 태그내의 모든 태그는 영향을 받아 스타일이 적용된다.</div><div class="post-footer">
-        <a href="/posts/202209230519/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/css/">css</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202209220520/">CSS - Image Sprite</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-09-22">2022-09-22</time></span>&nbsp;<span class="post-category">included in <a href="/categories/front-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Front-End</a></span></div><div class="content">CSS - Image Sprite Image Sprite란? 화면에 필요한 이미지 하나하나가 파일이고, 네트워크 요청을 하기 때문에 비용이 든다. 하나의 이미지 파일에 모든 이미지를 담은 후, 위치를 조정하며 골라 사용하는 방법 장점 10개의 아이콘이 10개의 파일로 존재한다면 10번을 요청하게 되지만, 1번의 요청으로 줄어들어 웹 성능의 향상을 기대할 수 있다. 이미지를 불러올 때마다 화면에 표현하기 위해 잠깐의 깜빡임이 생기는데, 하나의 이미지파일을 사용하면 이미 브라우저에서 불러온 파일이라 이 깜빡임이 없다. 단점 디자이너와 소통이 필요함 이미지가 하나만 수정되어도 파일이 변경되어야 함 각 이미지의 위치(좌표)를 정확히 관리해야 함 Image sprite 기법 다음은 NAVER 메인페이지의 메뉴아이콘이 할당되어있는 배경이미지 파일이다.</div><div class="post-footer">
-        <a href="/posts/202209220520/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/css/">css</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202209120523/">JavaScript - basic 변수</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-09-12">2022-09-12</time></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Programming</a></span></div><div class="content">JavaScript - Basic 변수 변수는 2단계로 이루어진다.
-변수의 선언 변수에 대한 값을 할당 let myNumber // myNumber라는 변수를 &#34;선언&#34; myNumber = 100 // 앞에서 선언한 변수에 값을 &#34;할당&#34; 용어 정리 - 변수 : 데이터를 담을 수 있는 대상 - 변수의 선언과 변수에 대한 값을 할당하는 것은 별개이다. 일반적으로 변수의 선언과 할당이 동시에 이루어진다. (아래 코드 참조)
-let myNumber = 100 변수를 선언하는 명령어 var, let, const 각각의 차이는?? 종류 선언 재선언 재할당 var O O O let O X O const O X X 위 표와 같이 즉, let이나 const는 이미 선언했던 변수를 다시 선언할 수 없다.</div><div class="post-footer">
-        <a href="/posts/202209120523/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/javascript/">JavaScript</a></div></div>
+        <a href="/posts/202209060521/">font Awesome 사용하기</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-09-06">2022-09-06</time></span>&nbsp;<span class="post-category">included in <a href="/categories/front-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Front-End</a></span></div><div class="content">font Awesome 사용하기 다양한 아이콘을 사용하게 될 때가 있다. 이때 유용한 사이트가 바로 font Awesome이다. 주의할 점은, 간혹 아이콘이 작동하지 않을때가 있다. font Awesome의 HTML 태그는 아래 코드처럼 &lt;i&gt;로 시작한다.
+&lt;i class=&#34;fa-solid fa-heart&#34;&gt;&lt;/i&gt; 이때 버전을 호환하지 않으면 간혹 이탤릭체로 인식하고 아이콘이 나타나지 않는다. 이것은 font Awesome의 버전이 호환되지 않아 생기는 문제로서, 아래 코드를 HTML에 입력해두면 해결된다.
+&lt;script src=&#34;https://use.fontawesome.com/releases/v5.2.0/js/all.js&#34;&gt;&lt;/script&gt; 저기서 v5.2.0부분을 해당 버전으로 고쳐 입력하면 된다. 1 즉 호환되는 버전을 살펴보며 아이콘을 골라야지 무턱대고 골랐다가는 HTML에서 꼬이는 경우가 생길 수 있다.</div><div class="post-footer">
+        <a href="/posts/202209060521/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/fontawesome/">fontAwesome</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -149,17 +113,13 @@ let myNumber = 100 변수를 선언하는 명령어 var, let, const 각각의 �
                     <span class="page-link" aria-hidden="true">&hellip;</span>
                 </li><li class="page-item ">
                     <span class="page-link">
-                        <a href="/page/4/">4</a>
-                    </span>
-                </li><li class="page-item ">
-                    <span class="page-link">
                         <a href="/page/5/">5</a>
                     </span>
-                </li><li class="page-item active">
+                </li><li class="page-item ">
                     <span class="page-link">
                         <a href="/page/6/">6</a>
                     </span>
-                </li><li class="page-item ">
+                </li><li class="page-item active">
                     <span class="page-link">
                         <a href="/page/7/">7</a>
                     </span>
