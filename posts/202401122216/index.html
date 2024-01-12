@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202401122216\/"
-        },"genre": "posts","keywords": "AWS","wordcount":  471 ,
+        },"genre": "posts","keywords": "AWS","wordcount":  473 ,
         "url": "https:\/\/inchan.dev\/posts\/202401122216\/","datePublished": "2024-01-12T22:17:59+09:00","dateModified": "2024-01-12T22:17:59+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -103,7 +103,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">AWS EC2 서버에 HTTPS 적용하기</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-12">2024-01-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;471 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-12">2024-01-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;473 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -114,7 +114,7 @@
   <ul>
     <li><a href="#1-도메인-준비">1. 도메인 준비</a></li>
     <li><a href="#2-aws---route-53-서비스">2. AWS - Route 53 서비스</a></li>
-    <li><a href="#3-aws---acm-aws-certivicate-manager">3. AWS - ACM (AWS Certivicate Manager)</a></li>
+    <li><a href="#3-aws---acm-aws-certivicate-manager-서비스">3. AWS - ACM (AWS Certivicate Manager) 서비스</a></li>
     <li><a href="#4-aws---ec2-서비스">4. AWS - EC2 서비스</a></li>
     <li><a href="#5-마지막---도메인-설정은-다시-route-53-서비스에서">5. 마지막 - 도메인 설정은 다시 <strong>Route 53 서비스에서</strong></a></li>
   </ul>
@@ -164,12 +164,12 @@
 </li>
 <li>
 <p>추가 이후, NS 유형의 값 4개가 있는 레코드가 더불어 생성됨을 확인</p>
-</li>
-<li>
-<p>🚀 <strong>중요</strong> - 이 값을 <strong>1번에서 준비한 도메인 서비스에서</strong> DNS 레코드로 추가</p>
+<ul>
+<li>🚀 <strong>중요</strong> - 이 NS유형의 값을 <strong>1번에서 준비한 도메인 서비스에서</strong> DNS 레코드로 추가한다.</li>
+</ul>
 </li>
 </ul>
-<h2 id="3-aws---acm-aws-certivicate-manager">3. AWS - ACM (AWS Certivicate Manager)</h2>
+<h2 id="3-aws---acm-aws-certivicate-manager-서비스">3. AWS - ACM (AWS Certivicate Manager) 서비스</h2>
 <ul>
 <li>퍼블릭 인증서 요청</li>
 <li>도메인 입력후 검증 (검증 대기는 보통 10분 이내 완료된다.)</li>
