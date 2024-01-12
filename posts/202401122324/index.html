@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면 - inchan.dev</title><meta name="Description" content="github Pages를 이용한 블로그에 Cloudflare에서 관리중인 도메인 연결 중, 리다이렉션 문제로 해당 웹페이지가 정상적으로 나타나지 않을 때의 문제 기술"><meta property="og:title" content="Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면" />
+<meta property="og:description" content="github Pages를 이용한 블로그에 Cloudflare에서 관리중인 도메인 연결 중, 리다이렉션 문제로 해당 웹페이지가 정상적으로 나타나지 않을 때의 문제 기술" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://inchan.dev/posts/202401122324/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-12T23:24:58+09:00" />
+<meta property="article:modified_time" content="2024-01-12T23:24:58+09:00" /><meta property="og:site_name" content="inchan.dev" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면"/>
+<meta name="twitter:description" content="github Pages를 이용한 블로그에 Cloudflare에서 관리중인 도메인 연결 중, 리다이렉션 문제로 해당 웹페이지가 정상적으로 나타나지 않을 때의 문제 기술"/>
+<meta name="twitter:site" content="@codject"/>
+<meta name="application-name" content="inchan.dev">
+<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202401122324/" /><link rel="prev" href="https://inchan.dev/posts/202401122216/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/inchan.dev\/posts\/202401122324\/"
+        },"genre": "posts","keywords": "Miscellaneous","wordcount":  215 ,
+        "url": "https:\/\/inchan.dev\/posts\/202401122324\/","datePublished": "2024-01-12T23:24:58+09:00","dateModified": "2024-01-12T23:24:58+09:00","publisher": {
+            "@type": "Organization",
+            "name": "inchan"},"author": {
+                "@type": "Person",
+                "name": "inchan"
+            },"description": "github Pages를 이용한 블로그에 Cloudflare에서 관리중인 도메인 연결 중, 리다이렉션 문제로 해당 웹페이지가 정상적으로 나타나지 않을 때의 문제 기술"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/miscellaneous/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Miscellaneous</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-12">2024-01-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;215 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#문제상황">문제상황</a></li>
+    <li><a href="#해결방법">해결방법</a></li>
+    <li><a href="#그런데-왜">그런데 왜??</a>
+      <ul>
+        <li><a href="#이유-발견">이유 발견</a>
+          <ul>
+            <li><a href="#깃허브에서-enforce-https에-체크가-되어있다면">깃허브에서 Enforce HTTPS에 체크가 되어있다면,</a></li>
+            <li><a href="#만약-깃허브의-enforce-https에-체크하지-않았다면">만약 깃허브의 Enforce HTTPS에 체크하지 않았다면</a></li>
+          </ul>
+        </li>
+        <li><a href="#요약">요약</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p> </p>
+<h2 id="문제상황">문제상황</h2>
+<p>구글이 도메인 사업을 매각한 후, 도메인 이전을 차일피일 미루다 최근에서야 Cloudflare로 도메인을 이전하였다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><br>
+모든 DNS 역시 정상적으로 이전하였고, 메일서비스를 비롯한 다른 서비스들도 정상작동함을 확인하였다.<br>
+그런데 갑자기 해당 도메인의 주소가 정상적으로 작동하지 않는 문제가 생겼다.</p>
+<p><strong>브라우저에서 20회 이상의 리다이렉션으로 페이지 불러오기 실패</strong><br>
+ <br>
+<img src="/images/SCR-20240112-uaxh.png" width=70%></p>
+<h2 id="해결방법">해결방법</h2>
+<p>Cloudflare side menu - SSL/TLS - 개요 : SSL/TLS 암호화 모드를<br>
+<strong>가변</strong>에서 <strong>전체</strong>로 변경했더니 문제 해결!<br>
+ </p>
+ <img src="/images/image_1704948468058_0.png" width="90%">
+<h2 id="그런데-왜">그런데 왜??</h2>
+<p>현재 다른 설정은 <strong>항상 HTTPS 사용</strong>이 체크되어있는데 이 설정과 충돌해서일까??</p>
+<p><em>github Setting - pages</em>에서는 다음과 같이 설정해놓았다.</p>
+<blockquote>
+<p>HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.<br>
+<strong>When HTTPS is enforced, your site will only be served over HTTPS.</strong></p>
+</blockquote>
+<h3 id="이유-발견">이유 발견</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20240112-ubvq.png"
+        data-srcset="/images/SCR-20240112-ubvq.png, /images/SCR-20240112-ubvq.png 1.5x, /images/SCR-20240112-ubvq.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20240112-ubvq.png"
+        title="참고 이미지" /></p>
+<p>도메인 서비스는 위 이미지와 같은 흐름을 가지고 있다.<br>
+ </p>
+<h4 id="깃허브에서-enforce-https에-체크가-되어있다면">깃허브에서 Enforce HTTPS에 체크가 되어있다면,</h4>
+<p>아래와 같이 <strong>도메인 서버는 깃허브에게 HTTPS로만 보내야</strong> 응답을 받을 수 있다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20240112-uchh.png"
+        data-srcset="/images/SCR-20240112-uchh.png, /images/SCR-20240112-uchh.png 1.5x, /images/SCR-20240112-uchh.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20240112-uchh.png"
+        title="/images/SCR-20240112-uchh.png" /></p>
+<p>즉, 클라우드플레어의 SSL/TLS 암호화 모드에서 원본서버로 가는 길 역시 암호화를 해줘야함으로,<br>
+<strong>전체</strong>모드로 설정해야한다.<br>
+ </p>
+<h4 id="만약-깃허브의-enforce-https에-체크하지-않았다면">만약 깃허브의 Enforce HTTPS에 체크하지 않았다면</h4>
+<p>반대로 클라우드 플레어의 SSL/TLS 암호화 모드에서는 아래와 같이 <strong>가변</strong>으로 설정해도 무방하다.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20240112-ucez.png"
+        data-srcset="/images/SCR-20240112-ucez.png, /images/SCR-20240112-ucez.png 1.5x, /images/SCR-20240112-ucez.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20240112-ucez.png"
+        title="/images/SCR-20240112-ucez.png" /><br>
+ </p>
+<p><div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Warning<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>github pages와 연결시, SSL/TLS 암호화모드를 <strong>없음</strong>으로 설정하면 웹페이지는 무조건 처음의 문제가 발생한다.<br>
+이는 깃허브에서 custom domain으로 redirect 시킬 때 <strong>무조건 https로</strong> 보내기때문이다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20240112-udgz.png"
+        data-srcset="/images/SCR-20240112-udgz.png, /images/SCR-20240112-udgz.png 1.5x, /images/SCR-20240112-udgz.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20240112-udgz.png"
+        title="/images/SCR-20240112-udgz.png" /></p>
+</div>
+        </div>
+    </div><br>
+ </p>
+<h3 id="요약">요약</h3>
+<p>즉, 브라우저에서는 <strong>무조건 https로</strong> 시작하여 클라우드플레어로 들어가야하고<br>
+클라우드플레어에서 깃허브 서버로 가는 길은 <strong>Enforce HTTPS 여부에 따라</strong> 설정을 맞춰줘야 한다.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>참고로 구글도메인보다 더 싸다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>&lsquo;전체&rsquo;로 설정해도 상관없음&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-01-12</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/miscellaneous/">Miscellaneous</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/202401122216/" class="prev" rel="prev" title="AWS EC2 서버에 HTTPS 적용하기"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>AWS EC2 서버에 HTTPS 적용하기</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+</html>

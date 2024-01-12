@@ -4,9 +4,23 @@
         <link>https://inchan.dev/</link>
         <description>Coding Projects: From Ideas to Execution</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 10 Jan 2024 22:17:59 &#43;0900</lastBuildDate>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 12 Jan 2024 23:24:58 &#43;0900</lastBuildDate>
             <atom:link href="https://inchan.dev/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면</title>
+    <link>https://inchan.dev/posts/202401122324/</link>
+    <pubDate>Fri, 12 Jan 2024 23:24:58 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202401122324/</guid>
+    <description><![CDATA[문제상황 구글이 도메인 사업을 매각한 후, 도메인 이전을 차일피일 미루다 최근에서야 Cloudflare로 도메인을 이전하였다.1
+모든 DNS 역시 정상적으로 이전하였고, 메일서비스를 비롯한 다른 서비스들도 정상작동함을 확인하였다.
+그런데 갑자기 해당 도메인의 주소가 정상적으로 작동하지 않는 문제가 생겼다.
+브라우저에서 20회 이상의 리다이렉션으로 페이지 불러오기 실패
+해결방법 Cloudflare side menu - SSL/TLS - 개요 : SSL/TLS 암호화 모드를
+가변에서 전체로 변경했더니 문제 해결!
+그런데 왜?? 현재 다른 설정은 항상 HTTPS 사용이 체크되어있는데 이 설정과 충돌해서일까?]]></description>
+</item>
+<item>
     <title>AWS EC2 서버에 HTTPS 적용하기</title>
     <link>https://inchan.dev/posts/202401122216/</link>
     <pubDate>Wed, 10 Jan 2024 22:17:59 &#43;0900</pubDate>
@@ -112,21 +126,6 @@ Jest를 이용하여 테스트 코드를 작성하던 중, 수 많은 함수나 
 Jest의 모의 함수(mock functions)를 사용할 때 중요한 두 가지 함수인 jest.clearAllMocks()와 jest.resetAllMocks()의 차이에 대해 기술한다.
 jest.clearAllMocks() jest.clearAllMocks() 함수는 모든 모의 함수의 호출 정보를 초기화하는 데 사용한다.
 이를 통해 테스트 간 독립성을 보장하며, 다양한 테스트 시나리오에서 중요한 역할을 한다.]]></description>
-</item>
-<item>
-    <title>error log - AWS EC2의 SSH 접속이 안될 때</title>
-    <link>https://inchan.dev/posts/202303170023/</link>
-    <pubDate>Fri, 17 Mar 2023 00:17:31 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202303170023/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1633078654544-61b3455b9161?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGVycm9yfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
-            </div>1
-Bug 갑자기 macOS terminal에서 AWS EC2에 ssh접속이 안된다. 접속해보면 즉각적인 반응이 아닌, 오랜 시간 후 다음과 같은 메세지를 뱉었다.
-$ ssh -i my_key.pem ec2-user@11.111.11.111 ssh: connect to host 11.111.11.111 port 22: Operation timed out Operation timed out 이라니&hellip;
-찾아보니 여러 이유가 있을 수 있었다.
-보안규칙에 22포트에 대한 설정이 누락되었거나, 명령어가 잘못 입력되었거나, 방화벽 설정에서 막혔다거나&hellip; 대개 구글링했을때 나오는건 Connetion timed out 이었는데 이건 너무 포괄적인 답변들이라 난감했다.
-여튼 현재상황에서, 설정은 잘못된게 없었고 다른 ssh(github)로 테스트 해보니 모두 정상이었다.]]></description>
 </item>
 </channel>
 </rss>
