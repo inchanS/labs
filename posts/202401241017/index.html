@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202401241017\/"
-        },"genre": "posts","keywords": "typeORM, mySQL, project_review","wordcount":  819 ,
+        },"genre": "posts","keywords": "typeORM, mySQL, project_review","wordcount":  954 ,
         "url": "https:\/\/inchan.dev\/posts\/202401241017\/","datePublished": "2024-01-24T10:19:14+09:00","dateModified": "2024-01-24T21:38:19+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -103,8 +103,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-24">2024-01-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;819 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-24">2024-01-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;954 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -115,17 +115,17 @@
     <li><a href="#문제-상황">문제 상황</a>
       <ul>
         <li><a href="#문제상황의-서비스-코드">문제상황의 서비스 코드</a></li>
-        <li><a href="#수정-이전의-메소드-코드">수정 이전의 메소드 코드</a></li>
+        <li><a href="#수정-이전의-메서드-코드">수정 이전의 메서드 코드</a></li>
       </ul>
     </li>
     <li><a href="#트랜잭션-중첩-문제">트랜잭션 중첩 문제</a>
       <ul>
-        <li><a href="#1차-수정된-메소드-코드">1차 수정된 메소드 코드</a></li>
+        <li><a href="#1차-수정된-메서드-코드">1차 수정된 메서드 코드</a></li>
       </ul>
     </li>
     <li><a href="#isolation-level의-중요성">Isolation Level의 중요성</a>
       <ul>
-        <li><a href="#2차-수정된-메소드-코드">2차 수정된 메소드 코드</a></li>
+        <li><a href="#2차-수정된-메서드-코드">2차 수정된 메서드 코드</a></li>
       </ul>
     </li>
     <li><a href="#롤백되지-않는-mysql의-auto_increment-필드">롤백되지 않는 MySQL의 AUTO_INCREMENT 필드</a></li>
@@ -202,7 +202,7 @@
 </span></span><span class="line"><span class="cl">  	<span class="kr">const</span> <span class="nx">newFeed</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span>
 </span></span><span class="line"><span class="cl">  	  <span class="p">.</span><span class="nx">withRepository</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">feedRepository</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  	  <span class="p">.</span><span class="nx">createFeed</span><span class="p">(</span><span class="nx">newFeedInstance</span><span class="p">);</span> 
-</span></span><span class="line"><span class="cl">  	<span class="c1">// ^^^^^^^^^^^  이 메소드가 롤백되지 않고 그대로 커밋되어버리는 문제 발생
+</span></span><span class="line"><span class="cl">  	<span class="c1">// ^^^^^^^^^^^  이 메서드가 롤백되지 않고 그대로 커밋되어버리는 문제 발생
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  	
 </span></span><span class="line"><span class="cl">  	  <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">uploadFileService</span><span class="p">.</span><span class="nx">updateFileLinks</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">  		<span class="nx">queryRunner</span><span class="p">,</span>
@@ -219,7 +219,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span></code></pre></div><p> </p>
-<h3 id="수정-이전의-메소드-코드">수정 이전의 메소드 코드</h3>
+<h3 id="수정-이전의-메서드-코드">수정 이전의 메서드 코드</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 위 문제상황의 서비스코드에서 문제되고 있는 createFeed 메소드의 코드를 살펴본다.
 </span></span></span><span class="line"><span class="cl"><span class="c1">// await queryRunner.manager
 </span></span></span><span class="line"><span class="cl"><span class="c1">//     .withRepository(this.feedRepository)
@@ -236,10 +236,18 @@
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span></code></pre></div><p> </p>
 <h2 id="트랜잭션-중첩-문제">트랜잭션 중첩 문제</h2>
-<p>트랜잭션을 관리하는 해당 서비스를 요청하고 터미널에서 mySQL의 흐름을 살펴보니, <code>START TRANSACTION</code>이 <strong>두번 연속으로</strong> 호출되고 있었다.<br>
- <br>
-TypeORM의 <code>save</code> 및 <code>update</code> 메서드는 내부적으로 자체 트랜잭션을 생성하고 커밋한다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>  이는 별도의 트랜잭션 관리 없이 사용될 때는 문제가 되지 않지만, 명시적인 트랜잭션 관리가 필요한 경우 문제를 일으킬 수 있다. 특히, <code>createQueryRunner</code>를 사용하여 시작된 트랜잭션 내에서 <code>save</code> 메서드를 호출하면 <strong>트랜잭션이 중첩되어</strong>, 기대했던 롤백 동작이 정상적으로 이루어지지 않게 된다.</p>
-<h3 id="1차-수정된-메소드-코드">1차 수정된 메소드 코드</h3>
+<p>트랜잭션을 관리하는 해당 서비스를 요청하고 터미널에서 mySQL의 흐름을 살펴보니, <code>START TRANSACTION</code>이 <strong>두번 연속으로</strong> 호출되고 있었다. 그리고 문제의 메서드 코드부분은 트랜잭션 과정이 끝나기 전에 먼저 커밋해버리고 이후 따로이 트랜잭션 롤백이 일어나고 있었다. <code>START TRANSACTION</code> 이후 트랜잭션 내부 로직에서는 커밋과 롤백, 둘 중 하나만 이루어져야 한다. 그런데 이상하게도 커밋과 롤백이 연이어 발생하고 있었다.<br>
+ </p>
+<p>문제가 되고있는 typeORM의 <code>save</code> 메서드 문서를 찾아보았다.</p>
+<blockquote>
+<p><strong>save</strong> - Saves a given entity or array of entities. If the entity already exist in the database, it is updated. If the entity does not exist in the database, it is inserted. <code>It saves all given entities in a single transaction</code> (in the case of entity, manager is not transactional). Also supports partial updating since all undefined properties are skipped. Returns the saved entity/entities.</p>
+<ul>
+<li><a href="https://orkhan.gitbook.io/typeorm/docs/repository-api" target="_blank" rel="noopener noreffer ">typeorm gitbook</a> 문서 중</li>
+</ul>
+</blockquote>
+<p>TypeORM의 <code>save</code> 및 <code>update</code> 메서드는 내부적으로 자체 트랜잭션을 생성하고 커밋한다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 이는 별도의 트랜잭션 관리 없이 사용될 때는 문제가 되지 않지만, 따로이 트랜잭션을 관리하는 경우 문제를 일으킬 수 있다.<br>
+특히, <code>createQueryRunner</code>를 사용하여 시작된 트랜잭션 내에서 <code>save</code> 메서드를 호출하면 <strong>트랜잭션이 중첩되어</strong>, 기대했던 롤백 동작이 정상적으로 이루어지지 않게 된다.</p>
+<h3 id="1차-수정된-메서드-코드">1차 수정된 메서드 코드</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">createFeed</span><span class="p">(</span><span class="nx">feedInfo</span>: <span class="kt">Feed</span><span class="p">,</span> <span class="nx">queryRunner</span>: <span class="kt">QueryRunner</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">feed</span> <span class="o">=</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Feed</span><span class="p">,</span> <span class="nx">feedInfo</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">feed</span><span class="p">);</span> <span class="c1">// &lt;= parameter에 queryRunner를 추가하고 함께 수정한 코드
@@ -254,9 +262,10 @@ TypeORM의 <code>save</code> 및 <code>update</code> 메서드는 내부적으�
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span></code></pre></div><p> </p>
 <h2 id="isolation-level의-중요성">Isolation Level의 중요성</h2>
-<p>1차 수정 이후 <strong>새로운 문제가 생겼다.</strong> 해당 함수는 새로이 생성된 게시글 데이터의 정보를 반환해야하는데, <strong>새로 생긴 데이터가 아닌 그 이전의 데이터를 반환</strong>하는 문제가 발생된 것이다.<br>
+<p>1차 수정 이후 <strong>새로운 문제가 생겼다.</strong> 해당 함수는 <strong>새로이 생성된 게시글 데이터의 정보를 반환해야하는데,</strong> 새로 생긴 데이터가 아닌 그 <strong>이전의 데이터를 반환하는 문제</strong>가 발생된 것이다.<br>
  <br>
-트랜잭션의 고립 수준(Isolation Level)은 다수의 트랜잭션이 동시에 실행될 때 각각의 트랜잭션이 서로에게 미치는 영향을 정의한다. TypeORM에서는 이 고립 수준을 설정하여, 트랜잭션 간의 간섭을 최소화하고, 데이터의 일관성과 무결성을 유지할 수 있다. 이번 문제에서는 <strong><code>findOne</code> 메서드가 트랜잭션 외부의 데이터에 접근하려 했기 때문에, 트랜잭션 내에서 생성된 데이터를 올바르게 찾지 못한 것</strong>이 원인 중 하나였다.</p>
+트랜잭션의 고립 수준(Isolation Level)은 다수의 트랜잭션이 동시에 실행될 때 각각의 트랜잭션이 서로에게 미치는 영향을 정의한다. TypeORM에서는 이 고립 수준을 설정하여, 트랜잭션 간의 간섭을 최소화하고, 데이터의 일관성과 무결성을 유지할 수 있다.<br>
+이번 문제에서는 <strong><code>findOne</code> 메서드가 트랜잭션 외부의 데이터에 접근하고 있었기에, 트랜잭션 내에서 생성된 데이터를 올바르게 찾지 못한 것</strong>이었다.</p>
 <div class="details admonition note open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>데이터 트랜잭션의 ACID<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
@@ -271,7 +280,7 @@ TypeORM의 <code>save</code> 및 <code>update</code> 메서드는 내부적으�
 <p>참조링크 - <a href="https://ko.wikipedia.org/wiki/ACID" target="_blank" rel="noopener noreffer ">ACID - 위키백과, 우리 모두의 백과사전</a></p></div>
         </div>
     </div>
-<h3 id="2차-수정된-메소드-코드">2차 수정된 메소드 코드</h3>
+<h3 id="2차-수정된-메서드-코드">2차 수정된 메서드 코드</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl">	<span class="kr">async</span> <span class="nx">createFeed</span><span class="p">(</span><span class="nx">feedInfo</span>: <span class="kt">Feed</span><span class="p">,</span> <span class="nx">queryRunner</span>: <span class="kt">QueryRunner</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	  <span class="kr">const</span> <span class="nx">feed</span> <span class="o">=</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Feed</span><span class="p">,</span> <span class="nx">feedInfo</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	  <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">feed</span><span class="p">);</span>
@@ -285,29 +294,40 @@ TypeORM의 <code>save</code> 및 <code>update</code> 메서드는 내부적으�
 </span></span><span class="line"><span class="cl">	  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span></code></pre></div><p> </p>
-<p>수정된 코드에서는 <code>queryRunner.manager.save</code>와 <code>queryRunner.manager.findOne</code>을 사용하여 트랜잭션을 명시적으로 제어하고 있다. 이를 통해, 트랜잭션 중첩 문제를 해결하고, 트랜잭션의 고립성을 보장하고 있다.</p>
+<p>수정된 코드에서는 <code>queryRunner.manager.save</code>와 <code>queryRunner.manager.findOne</code>을 사용하여 해당 기능을 트랜잭션 내부에서 동작할 수 있도록 확실히 제어한다. 이를 통해, 트랜잭션 중첩 문제를 해결하고, 트랜잭션의 고립성을 보장하고 있다.</p>
 <h2 id="롤백되지-않는-mysql의-auto_increment-필드">롤백되지 않는 MySQL의 AUTO_INCREMENT 필드</h2>
-<p>특이점을 발견했다.  <strong>트랜잭션 롤백 후에도</strong> MySQL의 <code>AUTO_INCREMENT</code> 필드(특히 <strong>PK ID)는 증가된 상태를 유지하고 있다</strong>는 사실이다.<br>
- <br>
+<p>특이점을 발견했다.<br>
+<strong>트랜잭션 롤백 후에도</strong> MySQL의 <code>AUTO_INCREMENT</code> 필드(특히 <strong>PK ID)는 증가된 상태를 유지하고 있다</strong>는 사실이다.<br>
 예를 들자면,</p>
 <ol>
 <li>현재 가장 최근 데이터의 ID는 10번이다.</li>
 <li>트랜잭션 로직 내부에서 데이터가 <strong>생성되었다가(11번 ID 부여)</strong> 에러발생으로 인해 <strong>롤백</strong>하며 데이터베이스는 <strong>새로운 데이터 생성 이전의 상태로 되돌아갔다.</strong></li>
-<li>그런데 이후 정상적으로 생성된 데이터의 ID는 11번이 아닌 <strong>12번이</strong> 된다.<br>
+<li>그런데 이후 정상적으로 생성된 데이터의 ID는 11번이 아닌 <strong>12번이</strong> 되었다.<br>
  </li>
 </ol>
 <p>이는 <strong>동시성 제어 및 성능 최적화를 위한 설계 특성</strong>인듯 싶다.<br>
-예를 들어, 여러 사용자가 동시에 데이터 생성 로직을 요청하고 있을 때, 트랜잭션이 롤백된 후에 <strong><code>AUTO_INCREMENT</code> 필드가 이전 값으로 되돌아간다면, ID 충돌의 위험이 발생</strong>할 것이다.<br>
-즉, 여러 트랜잭션이 동시에 실행되고 있을 때 한 트랜잭션의 롤백이 다른 트랜잭션에 영향을 주면서 다른 여러 트랜잭션에서의 ID 할당에 혼란이 야기되는 상황이 그려진다. 이에 <code>AUTO_INCREMENT</code> 값의 연속성을 유지함으로써, <strong>트랜잭션 간의 독립성을 보장하고, 데이터베이스의 일관성 및 무결성을 유지</strong>할 수 있다.<br>
- <br>
-github 해당 커밋 보기 - <a href="https://github.com/inchanS/project-review-ts/releases/tag/v2.0.8" rel="noopener noreffer" target="_blank"><img
+대규모 웹서비스의 상황으로 예를 넓혀보자면,</p>
+<ul>
+<li>(상황) <strong>여러 사용자가 동시에</strong> 데이터 생성 로직을 요청하고 있을 때,</li>
+<li>(조건) 그 중 한 트랜잭션이 롤백된 후,<code>AUTO_INCREMENT</code> 필드가 이전 값으로 되돌아간다면,</li>
+<li>(결과) 동시 실행중인 다른 로직에서는 <strong>ID 충돌의 위험</strong>이 발생할 것이다.</li>
+</ul>
+<p>즉, 여러 트랜잭션이 동시에 실행되고 있을 때 한 트랜잭션의 롤백이 다른 트랜잭션에 영향을 주면서 <strong>다른 여러 트랜잭션에서의 ID 할당에 혼란이 야기</strong>되는 상황이 그려진다. 이에 <code>AUTO_INCREMENT</code> 값의 연속성을 유지함으로써, <strong>트랜잭션 간의 독립성을 보장하고, 데이터베이스의 일관성 및 무결성을 유지</strong>할 수 있음을 알 수 있다.<br>
+ </p>
+<p>github 해당 커밋 보기 - <a href="https://github.com/inchanS/project-review-ts/releases/tag/v2.0.8" rel="noopener noreffer" target="_blank"><img
         class="lazyload version"
         src="/svg/loading.min.svg"
         data-src="/svg/version/2.0.8-changed.min.svg"
         data-srcset="/svg/version/2.0.8-changed.min.svg, /svg/version/2.0.8-changed.min.svg 1.5x, /svg/version/2.0.8-changed.min.svg 2x"
         data-sizes="auto"
         alt="github-inchan code CHANGED | 2.0.8"
-        title="github-inchan code CHANGED | 2.0.8" /></a></p>
+        title="github-inchan code CHANGED | 2.0.8" /></a><br>
+ </p>
+<p>참고문서</p>
+<ul>
+<li><a href="https://orkhan.gitbook.io/typeorm/docs/transactions#using-queryrunner-to-create-and-control-state-of-single-database-connection" target="_blank" rel="noopener noreffer ">Transactions - typeorm</a></li>
+<li><a href="https://orkhan.gitbook.io/typeorm/docs/repository-api" target="_blank" rel="noopener noreffer ">Repository APIs - typeorm</a></li>
+</ul>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
