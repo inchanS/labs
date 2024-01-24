@@ -99,22 +99,6 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202401241017/">Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-01-24">2024-01-24</time></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div><div class="content">Project Tech Stack Overview Language: TypeScript
-Platform: Node.js
-Web Framework: Express.js
-Database: MySQL
-ORM: TypeORM
-Cloud Storage: AWS S3
-Server: AWS EC2
-Development Tool: WebStorm
-Collaboration Tool: Slack
-Version Control and Issue Tracking: GitHub Issue
-문제 상황 프로젝트에서 발견된 주요 문제는 TypeORM을 사용하는 Node.js 환경에서 트랜잭션 관리와 롤백이 제대로 이루어지지 않는 것이었다. 이는 게시글을 등록하는 로직에서 발견되었으며, 예기치 않은 오류가 발생했을 경우 데이터베이스에 불필요한 데이터가 잔존하는 결과를 초래했다.
-좀 더 자세히 풀어보자면, 현재 게시글을 등록하는 로직은 다음과 같다.</div><div class="post-footer">
-        <a href="/posts/202401241017/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typeorm/">typeORM</a>,&nbsp;<a href="/tags/mysql/">mySQL</a>,&nbsp;<a href="/tags/project_review/">project_review</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/202401122324/">Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-01-12">2024-01-12</time></span>&nbsp;<span class="post-category">included in <a href="/categories/miscellaneous/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Miscellaneous</a></span></div><div class="content">문제상황 구글이 도메인 사업을 매각한 후, 도메인 이전을 차일피일 미루다 최근에서야 Cloudflare로 도메인을 이전하였다.1
 모든 DNS 역시 정상적으로 이전하였고, 메일서비스를 비롯한 다른 서비스들도 정상작동함을 확인하였다.
@@ -174,6 +158,13 @@ OpenAI로 인한 영향, 방법 등에 관한 콘텐츠가 마구잡이로 쏟�
 방법은 다음과 같다.
 extensions에서 Live Share 설치 좌측 사이드 메뉴에서 Live Share 아이콘 클릭 Share 버튼을 클릭하면 실시간 공유가 시작된다. 여기서 Shared Servers를 클릭하고 상단 검색창에 포트 번호를 입력후, enter를 누르면 해당 포트로 서버가 공유된다.</div><div class="post-footer">
         <a href="/posts/202306191659/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/aws/">AWS</a>,&nbsp;<a href="/tags/project_review/">project_review</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/202306191507/">AWS RDS 데이터 - 다른 계정으로 이전하기</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-06-19">2023-06-19</time></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div><div class="content">서로 다른 AWS의 계정간 RDS의 데이터를 이전하는 방법에 대해 소개한다.
+AWS RDS 계정간 이동 우선 간략히 설명하자면 순서는 다음과 같다.
+Info 구 계정에서 스냅샷 생성 생성이 완전히 완료되면 스냅샷 공유 탭이 활성화된다. 스냅샷 공유에서 private 선택후, 계정란에 이전할 새로운 계정의 ID 입력 이전할 새 계정으로 로그인 후, RDS에서 좌측 사이드바의 스냅샷 메뉴 - 상단 나와 공유된 스냅샷 탭 클릭 마이그레이션 선택! (RDS 세팅시 프리티어라고 따로 설정하는 안내가 없으니 잘 보고 세팅) 끝!</div><div class="post-footer">
+        <a href="/posts/202306191507/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/aws/">AWS</a>,&nbsp;<a href="/tags/project_review/">project_review</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
