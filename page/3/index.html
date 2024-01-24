@@ -99,6 +99,23 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/posts/202303162353/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://images.unsplash.com/photo-1599153066743-08810dc8a419?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXdzfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
+        data-srcset="https://images.unsplash.com/photo-1599153066743-08810dc8a419?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXdzfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300, https://images.unsplash.com/photo-1599153066743-08810dc8a419?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXdzfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300 1.5x, https://images.unsplash.com/photo-1599153066743-08810dc8a419?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXdzfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300 2x"
+        data-sizes="auto"
+        alt="https://images.unsplash.com/photo-1599153066743-08810dc8a419?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXdzfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
+        title="EC2에서 PM2 실행시 NODE_ENV 설정 명령을 어떻게 하는가에 대한 에러 노트" /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/202303162353/">error log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-03-16">2023-03-16</time></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div><div class="content">1
+AWS EC2에 배포를 하려하는데, 조그만 문제가 하나 생겼다.
+아래 예시와 같이 .env파일을 개발, 배포 등의 목적으로 각각 나누어 코드를 작성했는데,
+main.ts 파일 코드 예시 if (process.env.NODE_ENV === &#39;production&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.production&#39;) }); } else if (process.env.NODE_ENV === &#39;develop&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.dev&#39;) }); console.log(&#39;process.env.NODE_ENV is &#39;, process.env.NODE_ENV); } else if (process.env.NODE_ENV === &#39;test&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.test&#39;) }); } else { throw new Error(&#39;process.env.NODE_ENV IS_NOT_SET!!&#39;); } 이걸 EC2에서 pm2로 프로세스를 돌릴 때 어떻게 명령을 내려야 하는가 였다.</div><div class="post-footer">
+        <a href="/posts/202303162353/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/aws/">AWS</a>,&nbsp;<a href="/tags/javascript/">JavaScript</a>,&nbsp;<a href="/tags/project_review/">project_review</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/posts/202303080503/"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -186,26 +203,6 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에</di
 whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided enough context for me to understand what you&rsquo;re asking about. Could you please provide more information or specify what you&rsquo;re looking to learn about &ldquo;whereClauseBuilder&rdquo;?</div><div class="post-footer">
         <a href="/posts/202302100411/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/miscellaneous/">Miscellaneous</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
-            <a href="/posts/202302020410/"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png"
-        data-srcset="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png, https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png 1.5x, https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png 2x"
-        data-sizes="auto"
-        alt="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png"
-        title="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png" /></a>
-        </div><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202302020410/">devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-02">2023-02-02</time></span>&nbsp;<span class="post-category">included in <a href="/categories/env/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>env</a></span></div><div class="content">&lt;사진: DEVONtechnologies | DEVONthink, professional document and information management for the Mac and iOS&gt;
-코딩을 공부하면서 정말 많은 웹 문서들을 참고하며 정리하게 된다.
-그 중, 보관하고자 하는 문서는 주로 웹클리핑을 통해 정보를 수집한다.
-이때, 클리핑 포맷은 보통 PDF로 하지만 가끔 code block내 스크롤이 있는 경우에는
-PDF에서 짤린채로 수집되는 문제가 있어 MarkDown 포맷으로 클리핑을 한다.
-나는 주로 아래 두 도구를 사용하여 자료를 정리한다.
-Obsidian(note taking app) DevonThink(note database) 이때, 웹클리핑은 Obsidian 노트내로 바로 삽입할 수 있는 방법도 있지만 1</div><div class="post-footer">
-        <a href="/posts/202302020410/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/devonthink/">devonthink</a>,&nbsp;<a href="/tags/markdown/">markdown</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
