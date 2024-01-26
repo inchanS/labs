@@ -4,7 +4,25 @@
         <link>https://inchan.dev/tags/project_review/</link>
         <description>project_review - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 24 Jan 2024 10:19:14 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/project_review/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/project_review/" rel="self" type="application/rss+xml" /><item>
+    <title>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 패턴</title>
+    <link>https://inchan.dev/posts/202401261149/</link>
+    <pubDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202401261149/</guid>
+    <description><![CDATA[Project Tech Stack Overview Language: TypeScript
+Platform: Node.js
+Web Framework: Express.js
+Database: MySQL
+ORM: TypeORM
+Cloud Storage: AWS S3
+Development Tool: WebStorm
+Version Control and Issue Tracking: GitHub Issue
+얼마 전, 모든 코드를 OOP로 리팩토링한 뒤, 한 문제를 발견했다.
+리포지토리 역시 클래스 기반으로 내보내고 있었는데 때문에 각각의 서비스 로직에서는 이를 new Class() 형태로 불러오면서 단일 인스턴스가 아닌 여러 인스턴스의 생성 위험이 있었다.
+OOP 리팩토링 전, 함수기반에서는 최초 호출된 datasource 인스턴스 하나를 계속해서 사용하기에 문제가 없었는데 이 부분을 간과했다.]]></description>
+</item>
+<item>
     <title>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</title>
     <link>https://inchan.dev/posts/202401241017/</link>
     <pubDate>Wed, 24 Jan 2024 10:19:14 &#43;0900</pubDate>
@@ -117,20 +135,6 @@ main.ts 파일 코드 예시 if (process.env.NODE_ENV === &#39;production&#39;) 
 백엔드가 효과적인 명세 전달 고민 Failure 그동안 진행했던 프로젝트에서 제대로 된 API 명세를 적시에 프론트측에 전달하지 못했고,
 때문에 최종 출시를 앞두고 서로간의 코드 오류를 잡느라 시간적 비용이 꽤나 낭비됐다. 간단하게는 Request Body 값의 TYPE과 관련된 소통 혼선으로 겪었던 헤프닝도 더러 있었다. 어떻게 하면 좋을까? 우선은 백엔드의 입장에서 생각해본다.
 명세는 코드가 만들어지면서 늘 수정될 수 있다. 때문에 명세는 코드와 함께 작업되어야 하고, API 테스트를 위해 즉각적으로 수정되어야 한다. 같은 백엔드 팀의 경우에는 직접 코드를 보기에 명세의 부족함을 보완할 수는 있다.]]></description>
-</item>
-<item>
-    <title>typeORM transaction에서 repository 사용하기</title>
-    <link>https://inchan.dev/posts/202302250414/</link>
-    <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202302250414/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYW5zYWN0aW9ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
-            </div>&lt;사진: unsplash&gt;
-transaction 구성중 Entity가 아닌 Repository 사용시 typeORM에서 transaction을 사용하는 방법은 몇가지가 있지만,
-복잡한 service단의 처리에서는 아래의 queryRunner 방식이 더 적합할것 같아서
-dataSource.createQueryRunner() 방식을 사용했다.1
-// transaction으로 묶어주기 const queryRunner = dataSource.createQueryRunner(); await queryRunner.connect(); await queryRunner.startTransaction(); try { // feed 저장 let newTempFeed: Feed = plainToInstance(FeedDto, feedInfo); const tempFeed = await FeedRepository.createFeed(newTempFeed); //&lt;- 문제!! // ... 추가 코드들 } catch (err) { await queryRunner.rollbackTransaction(); throw new Error(`createTempFeed TRANSACTION error: ${err}`); } finally { await queryRunner.]]></description>
 </item>
 </channel>
 </rss>

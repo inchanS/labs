@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 패턴 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 패턴" />
+<meta property="og:description" content="Project Tech Stack Overview Language: TypeScript
+Platform: Node.js
+Web Framework: Express.js
+Database: MySQL
+ORM: TypeORM
+Cloud Storage: AWS S3
+Development Tool: WebStorm
+Version Control and Issue Tracking: GitHub Issue
+얼마 전, 모든 코드를 OOP로 리팩토링한 뒤, 한 문제를 발견했다.
+리포지토리 역시 클래스 기반으로 내보내고 있었는데 때문에 각각의 서비스 로직에서는 이를 new Class() 형태로 불러오면서 단일 인스턴스가 아닌 여러 인스턴스의 생성 위험이 있었다.
+OOP 리팩토링 전, 함수기반에서는 최초 호출된 datasource 인스턴스 하나를 계속해서 사용하기에 문제가 없었는데 이 부분을 간과했다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://inchan.dev/posts/202401261149/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-26T11:49:52+09:00" />
+<meta property="article:modified_time" content="2024-01-26T11:49:52+09:00" /><meta property="og:site_name" content="inchan.dev" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 패턴"/>
+<meta name="twitter:description" content="Project Tech Stack Overview Language: TypeScript
+Platform: Node.js
+Web Framework: Express.js
+Database: MySQL
+ORM: TypeORM
+Cloud Storage: AWS S3
+Development Tool: WebStorm
+Version Control and Issue Tracking: GitHub Issue
+얼마 전, 모든 코드를 OOP로 리팩토링한 뒤, 한 문제를 발견했다.
+리포지토리 역시 클래스 기반으로 내보내고 있었는데 때문에 각각의 서비스 로직에서는 이를 new Class() 형태로 불러오면서 단일 인스턴스가 아닌 여러 인스턴스의 생성 위험이 있었다.
+OOP 리팩토링 전, 함수기반에서는 최초 호출된 datasource 인스턴스 하나를 계속해서 사용하기에 문제가 없었는데 이 부분을 간과했다."/>
+<meta name="twitter:site" content="@codject"/>
+<meta name="application-name" content="inchan.dev">
+<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202401261149/" /><link rel="prev" href="https://inchan.dev/posts/202401241017/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 패턴",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/inchan.dev\/posts\/202401261149\/"
+        },"genre": "posts","keywords": "project_review, NodeJS","wordcount":  773 ,
+        "url": "https:\/\/inchan.dev\/posts\/202401261149\/","datePublished": "2024-01-26T11:49:52+09:00","dateModified": "2024-01-26T11:49:52+09:00","publisher": {
+            "@type": "Organization",
+            "name": "inchan"},"author": {
+                "@type": "Person",
+                "name": "inchan"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 패턴</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-26">2024-01-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;773 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#싱글톤-디자인-패턴-적용">싱글톤 디자인 패턴 적용</a>
+      <ul>
+        <li><a href="#싱글톤-디자인-패턴의-장점">싱글톤 디자인 패턴의 장점</a></li>
+        <li><a href="#처음-시도한-코드">처음 시도한 코드</a></li>
+        <li><a href="#싱글톤-패턴-확인">싱글톤 패턴 확인</a></li>
+      </ul>
+    </li>
+    <li><a href="#리팩토링-시도">리팩토링 시도</a>
+      <ul>
+        <li><a href="#1-singletonfactory-함수-도전">1. singletonFactory() 함수 도전</a></li>
+        <li><a href="#2-상속을-통한-팩토리-클래스">2. 상속을 통한 팩토리 클래스</a></li>
+        <li><a href="#3-export-default-new-repository-방식은">3. <code>export default new Repository()</code> 방식은?</a></li>
+        <li><a href="#최종-확정-코드">최종 확정 코드</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p> </p>
+<div class="details admonition abstract">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ul fa-fw" aria-hidden="true"></i>Project Tech Stack Overview<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>
+<p>Language: <strong>TypeScript</strong></p>
+</li>
+<li>
+<p>Platform: <strong>Node.js</strong></p>
+</li>
+<li>
+<p>Web Framework: <strong>Express.js</strong></p>
+</li>
+<li>
+<p>Database: <strong>MySQL</strong></p>
+</li>
+<li>
+<p>ORM: <strong>TypeORM</strong></p>
+</li>
+<li>
+<p>Cloud Storage: <strong>AWS S3</strong></p>
+</li>
+<li>
+<p>Development Tool: <strong>WebStorm</strong></p>
+</li>
+<li>
+<p>Version Control and Issue Tracking: <strong>GitHub Issue</strong></p>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+<p> </p>
+<p>얼마 전, 모든 코드를 OOP로 리팩토링한 뒤, 한 문제를 발견했다.<br>
+리포지토리 역시 클래스 기반으로 내보내고 있었는데 때문에 각각의 서비스 로직에서는 이를 <code>new Class()</code> 형태로 불러오면서 단일 인스턴스가 아닌 여러 인스턴스의 생성 위험이 있었다.<br>
+ </p>
+<p>OOP 리팩토링 전, 함수기반에서는 최초 호출된 <code>datasource</code> 인스턴스 하나를 계속해서 사용하기에 문제가 없었는데 이 부분을 간과했다.</p>
+<h2 id="싱글톤-디자인-패턴-적용">싱글톤 디자인 패턴 적용</h2>
+<h3 id="싱글톤-디자인-패턴의-장점">싱글톤 디자인 패턴의 장점</h3>
+<p>일단 Node.js는 싱글스레드 방식이라 단일 인스턴스가 가지는 멀티스레드에서의 동시성 문제 걱정이 없다.<br>
+OOP로 작성된 클래스의 리포지토리를 서비스 로직에서 각각 <code>new RepositoryClass()</code> 방식으로 불러오는건 <strong>메모리 낭비</strong>이며 <strong>각 인스턴스간의 상태 동기화 문제</strong> 발생 가능성이 있다.<br>
+ </p>
+<h3 id="처음-시도한-코드">처음 시도한 코드</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">EntityRepository</span> <span class="kr">extends</span> <span class="nx">Repository</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kr">private</span> <span class="kr">static</span> <span class="nx">instance</span>: <span class="kt">EntityRepository</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kr">private</span> <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kr">super</span><span class="p">(</span><span class="nx">Entity</span><span class="p">,</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">createEntityManager</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kr">public</span> <span class="kr">static</span> <span class="nx">getInstance</span><span class="p">()</span><span class="o">:</span> <span class="nx">EntityRepository</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">EntityRepository</span><span class="p">.</span><span class="nx">instance</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">EntityRepository</span><span class="p">.</span><span class="nx">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Repository</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">Repository</span><span class="p">.</span><span class="nx">instance</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// ... 이후 로직
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p> </p>
+<p>현재 프로젝트에서는 총 5개의 리포지토리가 사용되고 있었고, 최초 코드를 각 리포지토리에 적용하였다.</p>
+<h3 id="싱글톤-패턴-확인">싱글톤 패턴 확인</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 단일 인스턴스 확인 함수
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">isSingleton</span><span class="p">(</span><span class="nx">repository</span><span class="o">:</span> <span class="p">{</span> <span class="nx">getInstance</span><span class="p">()</span><span class="o">:</span> <span class="nx">T</span> <span class="p">})</span><span class="o">:</span> <span class="kt">string</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">instance1</span>: <span class="kt">T</span> <span class="o">=</span> <span class="nx">repository</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">instance2</span>: <span class="kt">T</span> <span class="o">=</span> <span class="nx">repository</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">isInstanceEquel</span>: <span class="kt">boolean</span> <span class="o">=</span> <span class="nx">instance1</span> <span class="o">===</span> <span class="nx">instance2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">message</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s1">&#39;only instance is &#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">result</span>: <span class="kt">string</span> <span class="o">=</span> <span class="nx">message</span> <span class="o">+</span> <span class="nx">isInstanceEquel</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 적용
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="kr">get</span><span class="p">(</span><span class="s1">&#39;/singletons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span>: <span class="kt">Request</span><span class="p">,</span> <span class="nx">res</span>: <span class="kt">Response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">testUserRepository</span> <span class="o">=</span> <span class="nx">isSingleton</span><span class="p">(</span><span class="nx">UserRepository</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">testFeedRepository</span> <span class="o">=</span> <span class="nx">isSingleton</span><span class="p">(</span><span class="nx">FeedRepository</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">testFeedListRepository</span> <span class="o">=</span> <span class="nx">isSingleton</span><span class="p">(</span><span class="nx">FeedListRepository</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">testCommentRepository</span> <span class="o">=</span> <span class="nx">isSingleton</span><span class="p">(</span><span class="nx">CommentRepository</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">testFeedsymbolRepository</span> <span class="o">=</span> <span class="nx">isSingleton</span><span class="p">(</span><span class="nx">FeedSymbolRepository</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl"><span class="nx">testUserRepository</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="nx">testFeedRepository</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="nx">testFeedListRepository</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="nx">testCommentRepository</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="nx">testFeedsymbolRepository</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></div><p>간단하게 위와 같이 함수를 만들고 테스트용 API 주소를 하나 만들고, 라우터에서 적용해보았다.
+ </p>
+<p>결과는 다음과 같이 확인할 수 있다.</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+
+Res:
+{
+&#34;testUserRepository&#34;: &#34;only instance is true&#34;,
+&#34;testFeedRepository&#34;: &#34;only instance is true&#34;,
+&#34;testFeedListRepository&#34;: &#34;only instance is true&#34;,
+&#34;testCommentRepository&#34;: &#34;only instance is true&#34;,
+&#34;testFeedsymbolRepository&#34;: &#34;only instance is true&#34;
+}
+</code></pre><p> </p>
+<h2 id="리팩토링-시도">리팩토링 시도</h2>
+<p>여러개의 리포지토리 클래스의 상단에 꽤 여러 줄이 들어가다보니 이를 줄이고 싶었고, 다음 3가지 방법을 시도해보았다.</p>
+<ol>
+<li>singletonFactory() - 단일 인스턴스를 관리하는 함수를 만들어 사용</li>
+<li>싱글톤 디자인패턴으로 만드는 factory Class를 만들고 각 리포지토리를 <code>extends</code> 를 이용하여 확장</li>
+<li>OOP에서의 컨트롤러를 내보내는 방식처럼 애초에 클래스 생성 후, 단일 인스턴스로 내보내는 방법</li>
+</ol>
+<h3 id="1-singletonfactory-함수-도전">1. singletonFactory() 함수 도전</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 함수 생성
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kd">function</span> <span class="nx">singletonFactory</span><span class="p">&lt;</span><span class="nt">T</span> <span class="na">extends</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="na">instance</span><span class="err">:</span> <span class="na">T</span> <span class="err">|</span> <span class="na">null</span><span class="err">;</span>
+</span></span><span class="line"><span class="cl">	<span class="na">new</span> <span class="err">():</span> <span class="na">T</span><span class="err">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}&gt;</span> <span class="p">(</span><span class="nx">Class</span>: <span class="kt">T</span><span class="p">)</span><span class="o">:</span> <span class="nx">T</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">Class</span><span class="p">.</span><span class="nx">instance</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Class</span><span class="p">.</span><span class="nx">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Class</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">instance</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 적용
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">entityRepository</span> <span class="o">=</span> <span class="nx">singletonFactory</span><span class="p">(</span><span class="nx">EntityRepository</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">anotherRepository</span> <span class="o">=</span> <span class="nx">singletonFactory</span><span class="p">(</span><span class="nx">AnotherRepository</span><span class="p">);</span>
+</span></span></code></pre></div><p> </p>
+<p><strong>실패!</strong><br>
+우선, 함수에서는 적용하려는 클래스에서 <code>static instance</code> 생성할 수가 없었다.<br>
+<strong>즉, 리포지토리 클래스에서 결국 하나하나 <code>static instance</code>를 넣어줘야 했다.</strong><br>
+이렇게 되면 코드작성에도 신경써야하면서 굳이 함수로 불러와 써야하다보니 혹떼려다 혹 하나 더 붙인 꼴이 되었다.<br>
+ </p>
+<p>생각해보니 만약 함수를 성공적으로 만들었다 하더라도 <code>export</code>하고 다른 서비스로직에서 <code>import</code>할 때 역시 꽤 번거롭다. 서비스 로직에서 리포지토리를 불러올 때 일반적인 code convention상의 문제로써, 리포지토리 클래스가 대문자가 아닌 소문자 형태의 함수로 불러와지다 보니 코드 가독성은 차치하더라도 새로운 서비스 로직에서 사용할 때, 이 함수를 간과하고 그대로 리포지토리를 불러와 작성할 혼동 역시 예상되었다.<br>
+코드 작성시 이렇게 고려해야할 요소들이 늘어나는건 좋지 않다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 현재 불러오는 형태
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">entityRepository</span> <span class="o">=</span> <span class="nx">EntityRepository</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 함수형에서 불러오는 형태
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">entityRepository</span> <span class="o">=</span> <span class="nx">singletonFactory</span><span class="p">(</span><span class="nx">EntityRepository</span><span class="p">);</span>
+</span></span></code></pre></div><p> </p>
+<h3 id="2-상속을-통한-팩토리-클래스">2. 상속을 통한 팩토리 클래스</h3>
+<p><strong>실패</strong><br>
+두번째 <code>extends factory Class</code> 방식을 시도해보았는데, 리포지토리는 factory 클래스와 Repository를 모두 상속해야하는 터라 메서드 상속이 도저히 되지 않았다.<br>
+찾아보니 <strong>JavaScript에서는 다중상속이 불가능</strong>하다고 한다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<h3 id="3-export-default-new-repository-방식은">3. <code>export default new Repository()</code> 방식은?</h3>
+<p>repository class를 생성한 후, <code>export default new EntityRepository</code>로 내보내는건 어떨까?<br>
+ <br>
+<strong>결과는 성공</strong><br>
+테스트를 해보니 단일 인스턴스는 보장되었다. 또한 전역 접근도 가능하다.<br>
+하지만, 모듈이 로드될 때 인스턴스가 생성됨으로 테스트 코드 작성시 모의하기가 굉장히 까다로워졌다.<br>
+ </p>
+<p>반면, 최초의 코드인 정적메서드 <code>Repository.getInstance()</code>를 사용하는 싱글톤 패턴에서는 메서드가 호출될 때 생성되는 <strong>지연 초기화(Laze Initialization)</strong> 방식이기에 테스트 용이성이 확실히 좋다.
+ </p>
+<h3 id="최종-확정-코드">최종 확정 코드</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">EntityRepository</span> <span class="kr">extends</span> <span class="nx">Repository</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="kr">private</span> <span class="kr">static</span> <span class="nx">instance</span>: <span class="kt">EntityRepository</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">private</span> <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="kr">super</span><span class="p">(</span><span class="nx">Entity</span><span class="p">,</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">createEntityManager</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">public</span> <span class="kr">static</span> <span class="nx">getInstance</span><span class="p">()</span><span class="o">:</span> <span class="nx">EntityRepository</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">instance</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="k">this</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">instance</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// ... 이후 로직
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p> </p>
+<p>결국 위와 같이 최초 코드에서 <code>this</code>를 사용하는 정도로 타협(?)하고 이를 Webstorm의 Live Template로 만들어 사용하기로 하였다.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// WebStorm - Live Template Code
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">$1$</span> <span class="kr">extends</span> <span class="nx">Repository</span><span class="o">&lt;</span><span class="nx">$2$</span><span class="o">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">private</span> <span class="kr">static</span> <span class="nx">instance</span>: <span class="kt">$1$</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">private</span> <span class="kr">constructor</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">super</span><span class="p">(</span><span class="nx">$2$</span><span class="p">,</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">createEntityManager</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">public</span> <span class="kr">static</span> <span class="nx">getInstance</span><span class="p">()</span><span class="o">:</span> <span class="nx">$1$</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">instance</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="p">.</span><span class="nx">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="k">this</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">instance</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div><p> </p>
+<p>그런데 <code>this</code>는 실행 컨텍스트를 따지는 까다로운 키워드라 혹시 서비스로직에서 사용되다 다른 객체를 참조하진 않을까 우려되었다.<br>
+몇가지 테스트를 해보고 문서를 찾아보니 다행히 <code>static</code> 메소드 안에서의 <code>this</code>는 해당 클래스에 바인딩 되듯이 작동하였고 전혀 문제 없었다.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<br>
+<br>
+<p>github 해당 커밋 보기 - <a href="https://github.com/inchanS/project-review-ts/releases/tag/v3.0.1" rel="noopener noreffer" target="_blank"><img
+        class="lazyload version"
+        src="/svg/loading.min.svg"
+        data-src="/svg/version/3.0.1-changed.min.svg"
+        data-srcset="/svg/version/3.0.1-changed.min.svg, /svg/version/3.0.1-changed.min.svg 1.5x, /svg/version/3.0.1-changed.min.svg 2x"
+        data-sizes="auto"
+        alt="github-inchan code CHANGED | 3.0.1"
+        title="github-inchan code CHANGED | 3.0.1" /></a></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>참고문서 <br>-  <a href="https://ko.javascript.info/mixins" target="_blank" rel="noopener noreffer ">믹스인</a> <br>- <a href="https://velog.io/@hustle-dev/JavaScript-%EB%8B%A4%EC%A4%91%EC%83%81%EC%86%8D" target="_blank" rel="noopener noreffer ">[JavaScript] - 다중상속</a>
+ &#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>같이 볼만한 글 <br> - <a href="https://inchan.dev/posts/202302020409/" target="_blank" rel="noopener noreffer ">WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기 - inchan.dev</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>참고문서 <br> -  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static" target="_blank" rel="noopener noreffer ">static - JavaScript | MDN</a> <br> - 위 사이트에서 한글 번역본을 보면 해당 설명이 누락되어있다. 영문판으로 참조하기를 추천.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-01-26</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/project_review/">project_review</a>,&nbsp;<a href="/tags/nodejs/">NodeJS</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/202401241017/" class="prev" rel="prev" title="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+</html>

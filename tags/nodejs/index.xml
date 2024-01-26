@@ -1,0 +1,26 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>NodeJS - Tag - inchan.dev</title>
+        <link>https://inchan.dev/tags/nodejs/</link>
+        <description>NodeJS - Tag - inchan.dev</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/nodejs/" rel="self" type="application/rss+xml" /><item>
+    <title>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 패턴</title>
+    <link>https://inchan.dev/posts/202401261149/</link>
+    <pubDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202401261149/</guid>
+    <description><![CDATA[Project Tech Stack Overview Language: TypeScript
+Platform: Node.js
+Web Framework: Express.js
+Database: MySQL
+ORM: TypeORM
+Cloud Storage: AWS S3
+Development Tool: WebStorm
+Version Control and Issue Tracking: GitHub Issue
+얼마 전, 모든 코드를 OOP로 리팩토링한 뒤, 한 문제를 발견했다.
+리포지토리 역시 클래스 기반으로 내보내고 있었는데 때문에 각각의 서비스 로직에서는 이를 new Class() 형태로 불러오면서 단일 인스턴스가 아닌 여러 인스턴스의 생성 위험이 있었다.
+OOP 리팩토링 전, 함수기반에서는 최초 호출된 datasource 인스턴스 하나를 계속해서 사용하기에 문제가 없었는데 이 부분을 간과했다.]]></description>
+</item>
+</channel>
+</rss>

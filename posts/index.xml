@@ -4,7 +4,25 @@
         <link>https://inchan.dev/posts/</link>
         <description>All Posts | inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 24 Jan 2024 10:19:14 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 패턴</title>
+    <link>https://inchan.dev/posts/202401261149/</link>
+    <pubDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202401261149/</guid>
+    <description><![CDATA[Project Tech Stack Overview Language: TypeScript
+Platform: Node.js
+Web Framework: Express.js
+Database: MySQL
+ORM: TypeORM
+Cloud Storage: AWS S3
+Development Tool: WebStorm
+Version Control and Issue Tracking: GitHub Issue
+얼마 전, 모든 코드를 OOP로 리팩토링한 뒤, 한 문제를 발견했다.
+리포지토리 역시 클래스 기반으로 내보내고 있었는데 때문에 각각의 서비스 로직에서는 이를 new Class() 형태로 불러오면서 단일 인스턴스가 아닌 여러 인스턴스의 생성 위험이 있었다.
+OOP 리팩토링 전, 함수기반에서는 최초 호출된 datasource 인스턴스 하나를 계속해서 사용하기에 문제가 없었는데 이 부분을 간과했다.]]></description>
+</item>
+<item>
     <title>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</title>
     <link>https://inchan.dev/posts/202401241017/</link>
     <pubDate>Wed, 24 Jan 2024 10:19:14 &#43;0900</pubDate>
@@ -120,17 +138,6 @@ Add - 레이아웃 / 기능 추가 Remove - 내용 삭제 (폴더 / 파일 삭�
     <guid>https://inchan.dev/posts/202306070208/</guid>
     <description><![CDATA[개발환경 Javascript 런타임 플랫폼: Node.js 언어: TypeScript 프레임워크: Express DB: MySQL ORM: TypeORM 현재 조건 상황 회원가입시, 이메일과 패스워드가 필수 입력입력인데, 이메일의 경우 mySQL에서 unique 처리 회원가입 과정에서 이메일 중복 여부를 확인하고 통과했을 경우에만 회원가입 가능 회원 삭제시, 실제 회원정보를 DB에서 지우지 않고 TypeORM의softDelete 방식으로 deleted_at 컬럼에 삭제일시가 기록되는 방식 (일정기간 이후 삭제할 요량으로 단기간 데이터 보존) Question 이미 회원 삭제된 정보의 이메일로 재가입하려는 경우,
 해당 이메일은 이미 mySQL에서 unique로 입력되어있는 이메일이기 때문에 이메일 중복확인에서 통과되지 않는다.]]></description>
-</item>
-<item>
-    <title>error log - TypeORM migration 할 때 cross ENV 설정 문제</title>
-    <link>https://inchan.dev/posts/202304010529/</link>
-    <pubDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202304010529/</guid>
-    <description><![CDATA[TypeORM migration TypeORM migration:create typeorm migration을 시도해보면서 준비한건 몇가지 되지 않았다. 우선, 터미널에서 typeorm migration 파일을 생성하는 명령어. $ npx typeorm migration:create &lt;path/file_name&gt; 예를 들면 npx typeorm migration:create ./src/migrations/default-tables
-이런 식으로 사용할 수 있다.
-그리고 마이그레이션 실행시 마이그레이션 파일들의 위치를 알려줄 수 있도록 datasource config 부분에 다음과 같이 설정을 추가한다.
-import { DataSource } from &#39;typeorm&#39;; const dataSource = new DataSource({ type: process.env.TYPEORM_CONNECTION, host: process.env.TYPEORM_HOST, port: process.env.TYPEORM_PORT, username: process.env.TYPEORM_USERNAME, password: process.]]></description>
 </item>
 </channel>
 </rss>
