@@ -4,36 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 패턴 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 패턴" />
-<meta property="og:description" content="Project Tech Stack Overview Language: TypeScript
-Platform: Node.js
-Web Framework: Express.js
-Database: MySQL
-ORM: TypeORM
-Cloud Storage: AWS S3
-Development Tool: WebStorm
-Version Control and Issue Tracking: GitHub Issue
-얼마 전, 모든 코드를 OOP로 리팩토링한 뒤, 한 문제를 발견했다.
-리포지토리 역시 클래스 기반으로 내보내고 있었는데 때문에 각각의 서비스 로직에서는 이를 new Class() 형태로 불러오면서 단일 인스턴스가 아닌 여러 인스턴스의 생성 위험이 있었다.
-OOP 리팩토링 전, 함수기반에서는 최초 호출된 datasource 인스턴스 하나를 계속해서 사용하기에 문제가 없었는데 이 부분을 간과했다." />
+        <title>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 패턴 - inchan.dev</title><meta name="Description" content="OOP로 작성된 NodeJS 백엔드 코드에서 리포지토리의 단일 인스턴스 생성을 위한 리팩토링 과정 설명"><meta property="og:title" content="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 패턴" />
+<meta property="og:description" content="OOP로 작성된 NodeJS 백엔드 코드에서 리포지토리의 단일 인스턴스 생성을 위한 리팩토링 과정 설명" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://inchan.dev/posts/202401261149/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-01-26T11:49:52+09:00" />
-<meta property="article:modified_time" content="2024-01-26T11:49:52+09:00" /><meta property="og:site_name" content="inchan.dev" />
+<meta property="article:modified_time" content="2024-01-28T12:55:05+09:00" /><meta property="og:site_name" content="inchan.dev" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 패턴"/>
-<meta name="twitter:description" content="Project Tech Stack Overview Language: TypeScript
-Platform: Node.js
-Web Framework: Express.js
-Database: MySQL
-ORM: TypeORM
-Cloud Storage: AWS S3
-Development Tool: WebStorm
-Version Control and Issue Tracking: GitHub Issue
-얼마 전, 모든 코드를 OOP로 리팩토링한 뒤, 한 문제를 발견했다.
-리포지토리 역시 클래스 기반으로 내보내고 있었는데 때문에 각각의 서비스 로직에서는 이를 new Class() 형태로 불러오면서 단일 인스턴스가 아닌 여러 인스턴스의 생성 위험이 있었다.
-OOP 리팩토링 전, 함수기반에서는 최초 호출된 datasource 인스턴스 하나를 계속해서 사용하기에 문제가 없었는데 이 부분을 간과했다."/>
+<meta name="twitter:description" content="OOP로 작성된 NodeJS 백엔드 코드에서 리포지토리의 단일 인스턴스 생성을 위한 리팩토링 과정 설명"/>
 <meta name="twitter:site" content="@codject"/>
 <meta name="application-name" content="inchan.dev">
 <meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -49,13 +29,13 @@ OOP 리팩토링 전, 함수기반에서는 최초 호출된 datasource 인스�
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202401261149\/"
-        },"genre": "posts","keywords": "project_review, NodeJS","wordcount":  773 ,
-        "url": "https:\/\/inchan.dev\/posts\/202401261149\/","datePublished": "2024-01-26T11:49:52+09:00","dateModified": "2024-01-26T11:49:52+09:00","publisher": {
+        },"genre": "posts","keywords": "project_review, NodeJS","wordcount":  973 ,
+        "url": "https:\/\/inchan.dev\/posts\/202401261149\/","datePublished": "2024-01-26T11:49:52+09:00","dateModified": "2024-01-28T12:55:05+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
                 "@type": "Person",
                 "name": "inchan"
-            },"description": ""
+            },"description": "OOP로 작성된 NodeJS 백엔드 코드에서 리포지토리의 단일 인스턴스 생성을 위한 리팩토링 과정 설명"
     }
     </script></head>
     <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -120,11 +100,11 @@ OOP 리팩토링 전, 함수기반에서는 최초 호출된 datasource 인스�
     </div><main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 패턴</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-26">2024-01-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;773 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-26">2024-01-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;973 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -147,6 +127,7 @@ OOP 리팩토링 전, 함수기반에서는 최초 호출된 datasource 인스�
         <li><a href="#최종-확정-코드">최종 확정 코드</a></li>
       </ul>
     </li>
+    <li><a href="#적용-후-차이점-확인">적용 후, 차이점 확인</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p> </p>
@@ -253,6 +234,8 @@ Res:
 &#34;testFeedsymbolRepository&#34;: &#34;only instance is true&#34;
 }
 </code></pre><p> </p>
+<p>리팩토링 완성 후, 이 단일 인스턴스 확인 함수를 테스트코드에서 사용할 수 있다.
+ </p>
 <h2 id="리팩토링-시도">리팩토링 시도</h2>
 <p>여러개의 리포지토리 클래스의 상단에 꽤 여러 줄이 들어가다보니 이를 줄이고 싶었고, 다음 3가지 방법을 시도해보았다.</p>
 <ol>
@@ -277,9 +260,8 @@ Res:
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">anotherRepository</span> <span class="o">=</span> <span class="nx">singletonFactory</span><span class="p">(</span><span class="nx">AnotherRepository</span><span class="p">);</span>
 </span></span></code></pre></div><p> </p>
 <p><strong>실패!</strong><br>
-우선, 함수에서는 적용하려는 클래스에서 <code>static instance</code> 생성할 수가 없었다.<br>
-<strong>즉, 리포지토리 클래스에서 결국 하나하나 <code>static instance</code>를 넣어줘야 했다.</strong><br>
-이렇게 되면 코드작성에도 신경써야하면서 굳이 함수로 불러와 써야하다보니 혹떼려다 혹 하나 더 붙인 꼴이 되었다.<br>
+우선, 함수에서는 적용하려는 클래스에서 <code>static instance를 생성할 수가 없다.    **즉, 리포지토리 클래스에서 결국 하나하나 </code>static instance`를 넣어줘야 했다.**<br>
+이렇게 되면 리포지토리 클래스 코드작성에도 신경써야하면서 굳이 함수로 불러와 써야하다보니 혹떼려다 혹 하나 더 붙인 꼴이 되었다.<br>
  </p>
 <p>생각해보니 만약 함수를 성공적으로 만들었다 하더라도 <code>export</code>하고 다른 서비스로직에서 <code>import</code>할 때 역시 꽤 번거롭다. 서비스 로직에서 리포지토리를 불러올 때 일반적인 code convention상의 문제로써, 리포지토리 클래스가 대문자가 아닌 소문자 형태의 함수로 불러와지다 보니 코드 가독성은 차치하더라도 새로운 서비스 로직에서 사용할 때, 이 함수를 간과하고 그대로 리포지토리를 불러와 작성할 혼동 역시 예상되었다.<br>
 코드 작성시 이렇게 고려해야할 요소들이 늘어나는건 좋지 않다.</p>
@@ -334,9 +316,55 @@ Res:
 </span></span></code></pre></div><p> </p>
 <p>그런데 <code>this</code>는 실행 컨텍스트를 따지는 까다로운 키워드라 혹시 서비스로직에서 사용되다 다른 객체를 참조하진 않을까 우려되었다.<br>
 몇가지 테스트를 해보고 문서를 찾아보니 다행히 <code>static</code> 메소드 안에서의 <code>this</code>는 해당 클래스에 바인딩 되듯이 작동하였고 전혀 문제 없었다.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
-<br>
-<br>
-<p>github 해당 커밋 보기 - <a href="https://github.com/inchanS/project-review-ts/releases/tag/v3.0.1" rel="noopener noreffer" target="_blank"><img
+<h2 id="적용-후-차이점-확인">적용 후, 차이점 확인</h2>
+<p>싱글톤 디자인패턴의 장점 중 하나인 메모리효율은 적용 전과 비교하여 과연 얼마나 차이가 날까?<br>
+<code>Node --inspect</code><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> 와 Chrome DevTools<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> 를 이용해 적용 전후의 수치를 확인해보았다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/20240128%20%ec%8b%b1%ea%b8%80%ed%86%a4%20%ec%a0%84%ed%99%98%20%ed%9b%84%20%eb%a9%94%eb%aa%a8%eb%a6%ac%ec%b0%a8%ec%9d%b4.png"
+        data-srcset="/images/20240128%20%ec%8b%b1%ea%b8%80%ed%86%a4%20%ec%a0%84%ed%99%98%20%ed%9b%84%20%eb%a9%94%eb%aa%a8%eb%a6%ac%ec%b0%a8%ec%9d%b4.png, /images/20240128%20%ec%8b%b1%ea%b8%80%ed%86%a4%20%ec%a0%84%ed%99%98%20%ed%9b%84%20%eb%a9%94%eb%aa%a8%eb%a6%ac%ec%b0%a8%ec%9d%b4.png 1.5x, /images/20240128%20%ec%8b%b1%ea%b8%80%ed%86%a4%20%ec%a0%84%ed%99%98%20%ed%9b%84%20%eb%a9%94%eb%aa%a8%eb%a6%ac%ec%b0%a8%ec%9d%b4.png 2x"
+        data-sizes="auto"
+        alt="/images/20240128%20싱글톤%20전환%20후%20메모리차이.png"
+        title="/images/20240128%20싱글톤%20전환%20후%20메모리차이.png" />
+<div class="details admonition info">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>DevTools-Comparison view에서의 컬럼 설명 보기 (click)<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><strong>Size Delta (크기 차이)</strong>:
+<ul>
+<li>이 값은 두 스냅샷 간의 총 메모리 사용량의 차이를 나타낸다.</li>
+<li>양수 값은 메모리 사용량이 증가했음을, 음수 값은 감소했음을 의미하며 메모리 사용량의 변화를 직접적으로 보여준다.</li>
+</ul>
+</li>
+<li><strong>New (새로 생성됨) 및 Deleted (삭제됨)</strong>:
+<ul>
+<li>새로 생성된 객체와 삭제된 객체의 수를 비교한다.</li>
+<li>많은 수의 객체가 생성되었지만 삭제되지 않는 경우, 메모리 누수나 비효율적인 메모리 사용이 발생했을 가능성이 있다.</li>
+</ul>
+</li>
+<li><strong>Delta (차이)</strong>:
+<ul>
+<li>객체 유형별로 얼마나 많은 객체가 추가되거나 제거되었는지를 보여준다.</li>
+<li>특정 유형의 객체가 지속적으로 증가하는 경향을 보이는 경우, 이는 메모리 누수의 신호일 수 있다.</li>
+</ul>
+</li>
+<li><strong>Alloc. Size (할당 크기) 및 Freed Size (해제 크기)</strong>:
+<ul>
+<li>할당된 메모리와 해제된 메모리의 양을 비교한다.</li>
+<li>메모리 할당과 해제가 균형을 이루고 있는지 확인할 수 있다.</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div></p>
+<p>SnapShot의 Comparison view에서 보이는 바와 같이 싱글톤 코드 작업 전과 비교했을 때, 일단 <strong>전체적으로 메모리 사용율이 확연히 줄었다.</strong><br>
+그리고 객체 수에서도 Repository(파란 동그라미 부분)를 살펴보면 <strong>확실하게 하나의 객체만을</strong> 보여주고 있다.</p>
+<br>  
+<p>github 관련 커밋 보기 - <a href="https://github.com/inchanS/project-review-ts/releases/tag/v3.0.1" rel="noopener noreffer" target="_blank"><img
         class="lazyload version"
         src="/svg/loading.min.svg"
         data-src="/svg/version/3.0.1-changed.min.svg"
@@ -355,7 +383,13 @@ Res:
 <p>같이 볼만한 글 <br> - <a href="https://inchan.dev/posts/202302020409/" target="_blank" rel="noopener noreffer ">WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기 - inchan.dev</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p>참고문서 <br> -  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static" target="_blank" rel="noopener noreffer ">static - JavaScript | MDN</a> <br> - 위 사이트에서 한글 번역본을 보면 해당 설명이 누락되어있다. 영문판으로 참조하기를 추천.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static" target="_blank" rel="noopener noreffer ">static - JavaScript | MDN</a> <br> - 위 사이트에서 한글 번역본을 보면 해당 설명이 누락되어있다. 영문판으로 참조하기를 추천.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://nodejs.org/en/guides/debugging-getting-started" target="_blank" rel="noopener noreffer ">Node.js — Debugging - Getting Started</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://developer.chrome.com/docs/devtools?hl=ko" target="_blank" rel="noopener noreffer ">Chrome DevTools  |  Chrome for Developers</a> <br> <a href="https://developer.chrome.com/docs/devtools/memory-problems/get-started?hl=ko" target="_blank" rel="noopener noreffer ">메모리 용어  |  DevTools  |  Chrome for Developers</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
@@ -363,7 +397,7 @@ Res:
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2024-01-26</span>
+                <span>Updated on 2024-01-28</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
