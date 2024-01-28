@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202401261149\/"
-        },"genre": "posts","keywords": "project_review, NodeJS","wordcount":  973 ,
+        },"genre": "posts","keywords": "project_review, NodeJS","wordcount":  990 ,
         "url": "https:\/\/inchan.dev\/posts\/202401261149\/","datePublished": "2024-01-26T11:49:52+09:00","dateModified": "2024-01-28T12:55:05+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -103,7 +103,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-26">2024-01-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;973 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-26">2024-01-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;990 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -361,6 +361,16 @@ Res:
 </div>
         </div>
     </div></p>
+<ul>
+<li>총 메모리 사용율
+<ul>
+<li>before: 57.179 MB</li>
+<li>after: 54.386 MB</li>
+</ul>
+</li>
+<li>차이 : 2.793 MB</li>
+<li><strong>메모리 감소율 약 -4.8%</strong></li>
+</ul>
 <p>SnapShot의 Comparison view에서 보이는 바와 같이 싱글톤 코드 작업 전과 비교했을 때, 일단 <strong>전체적으로 메모리 사용율이 확연히 줄었다.</strong><br>
 그리고 객체 수에서도 Repository(파란 동그라미 부분)를 살펴보면 <strong>확실하게 하나의 객체만을</strong> 보여주고 있다.</p>
 <br>  
