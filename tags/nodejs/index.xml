@@ -10,7 +10,9 @@
     <pubDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://inchan.dev/posts/202401261149/</guid>
-    <description><![CDATA[Project Tech Stack Overview Language: TypeScript
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1642624466789-9e0649ba4e31?q=80&amp;w=2832&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer">
+            </div>&lt;표지 사진출처: Unsplash)&gt; Project Tech Stack Overview Language: TypeScript
 Platform: Node.js
 Web Framework: Express.js
 Database: MySQL

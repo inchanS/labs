@@ -10,7 +10,9 @@
     <pubDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://inchan.dev/posts/202401261149/</guid>
-    <description><![CDATA[Project Tech Stack Overview Language: TypeScript
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1642624466789-9e0649ba4e31?q=80&amp;w=2832&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer">
+            </div>&lt;표지 사진출처: Unsplash)&gt; Project Tech Stack Overview Language: TypeScript
 Platform: Node.js
 Web Framework: Express.js
 Database: MySQL
@@ -28,7 +30,10 @@ OOP 리팩토링 전, 함수기반에서는 최초 호출된 datasource 인스�
     <pubDate>Wed, 24 Jan 2024 10:19:14 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://inchan.dev/posts/202401241017/</guid>
-    <description><![CDATA[Project Tech Stack Overview Language: TypeScript
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer">
+            </div>&lt;표지 사진출처: Unsplash&gt;
+Project Tech Stack Overview Language: TypeScript
 Platform: Node.js
 Web Framework: Express.js
 Database: MySQL
@@ -38,8 +43,7 @@ Server: AWS EC2
 Development Tool: WebStorm
 Collaboration Tool: Slack
 Version Control and Issue Tracking: GitHub Issue
-문제 상황 프로젝트에서 발견된 주요 문제는 TypeORM을 사용하는 Node.js 환경에서 트랜잭션 관리와 롤백이 제대로 이루어지지 않는 것이었다. 이는 게시글을 등록하는 로직에서 발견되었으며, 예기치 않은 오류가 발생했을 경우 데이터베이스에 불필요한 데이터가 잔존하는 결과를 초래했다.
-좀 더 자세히 풀어보자면, 현재 게시글을 등록하는 로직은 다음과 같다.]]></description>
+문제 상황 프로젝트에서 발견된 주요 문제는 TypeORM을 사용하는 Node.js 환경에서 트랜잭션 관리와 롤백이 제대로 이루어지지 않는 것이었다. 이는 게시글을 등록하는 로직에서 발견되었으며, 예기치 않은 오류가 발생했을 경우 데이터베이스에 불필요한 데이터가 잔존하는 결과를 초래했다.]]></description>
 </item>
 <item>
     <title>error log - jest.spyOn()에서 재사용함수에 대한 모의 불가</title>

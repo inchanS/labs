@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202401241017\/"
-        },"genre": "posts","keywords": "typeORM, mySQL, project_review","wordcount":  1124 ,
+        },"genre": "posts","keywords": "typeORM, mySQL, project_review","wordcount":  1127 ,
         "url": "https:\/\/inchan.dev\/posts\/202401241017\/","datePublished": "2024-01-24T10:19:14+09:00","dateModified": "2024-01-25T04:40:04+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -103,9 +103,16 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-24">2024-01-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1124 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-24">2024-01-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1127 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        data-srcset="https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D, https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1.5x, https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 2x"
+        data-sizes="auto"
+        alt="https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        title="Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술" /></div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
@@ -131,7 +138,9 @@
     <li><a href="#롤백되지-않는-mysql의-auto_increment-필드">롤백되지 않는 MySQL의 AUTO_INCREMENT 필드</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><div class="details admonition abstract">
+            </div><div class="content" id="content"><p>&lt;표지 사진출처: <a href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EC%B2%9C%EC%9E%A5%EC%9D%98-%EB%B2%8C%EB%A0%88%EC%9D%98-%EC%8B%9C%EC%84%A0-%EC%82%AC%EC%A7%84-LqKhnDzSF-8" target="_blank" rel="noopener noreffer ">Unsplash</a>&gt;</p>
+<p> </p>
+<div class="details admonition abstract">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-list-ul fa-fw" aria-hidden="true"></i>Project Tech Stack Overview<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
