@@ -4,9 +4,22 @@
         <link>https://inchan.dev/</link>
         <description>Coding Projects: From Ideas to Execution</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</lastBuildDate>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 31 Jan 2024 14:13:39 &#43;0900</lastBuildDate>
             <atom:link href="https://inchan.dev/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기</title>
+    <link>https://inchan.dev/posts/202401311413/</link>
+    <pubDate>Wed, 31 Jan 2024 14:13:39 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202401311413/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2880px-Node.js_logo.svg.png" referrerpolicy="no-referrer">
+            </div>source : nvm-sh/nvm: Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions 새로운 프로젝트는 Node 버전 중 현재 최신 LTS 버전인 20 버전으로 진행하려는데, 기존 진행중인 프로젝트가 AWS-ec2에서 node@16으로 세팅되어있던 터라, macOS에서 2개 버전을 설치해 사용해야하는 상황이 왔다.1
+때문에 여러 node 버전을 사용할 수 있는 nvm(Node version Manager)을 설치
+설치는 brew를 통해 설치했고 이후 과정은 brew에서 자세하게 설명해준다.
+장점 OS에 하나 이상의, 여러 version별 node를 설치하고 프로젝트별로 각각 다른 버전의 node를 사용할 수 있다.]]></description>
+</item>
+<item>
     <title>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴</title>
     <link>https://inchan.dev/posts/202401261149/</link>
     <pubDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</pubDate>
@@ -135,15 +148,6 @@ Info 구 계정에서 스냅샷 생성 생성이 완전히 완료되면 스냅�
     <description><![CDATA[문제 발견 git commit message 작성시 보통 첫줄에 위치한 제목줄에 들어가는 가이드로서,
 이전에 내가 사용하던 규칙은 다음과 같았다.
 Add - 레이아웃 / 기능 추가 Remove - 내용 삭제 (폴더 / 파일 삭제) Modify - 수정 (JSON 데이터 포맷 변경 / 버튼 색깔 변경 / 폰트 변경) Fix - 버그/오류 해결 Refactor - 코드 리팩토링 (멘토 리뷰 반영 / 스스로 리팩토링 / 중복 코드 제거 / 불필요 코드 제거 / 성능 개선)]]></description>
-</item>
-<item>
-    <title>MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</title>
-    <link>https://inchan.dev/posts/202306070208/</link>
-    <pubDate>Wed, 07 Jun 2023 02:08:24 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202306070208/</guid>
-    <description><![CDATA[개발환경 Javascript 런타임 플랫폼: Node.js 언어: TypeScript 프레임워크: Express DB: MySQL ORM: TypeORM 현재 조건 상황 회원가입시, 이메일과 패스워드가 필수 입력입력인데, 이메일의 경우 mySQL에서 unique 처리 회원가입 과정에서 이메일 중복 여부를 확인하고 통과했을 경우에만 회원가입 가능 회원 삭제시, 실제 회원정보를 DB에서 지우지 않고 TypeORM의softDelete 방식으로 deleted_at 컬럼에 삭제일시가 기록되는 방식 (일정기간 이후 삭제할 요량으로 단기간 데이터 보존) Question 이미 회원 삭제된 정보의 이메일로 재가입하려는 경우,
-해당 이메일은 이미 mySQL에서 unique로 입력되어있는 이메일이기 때문에 이메일 중복확인에서 통과되지 않는다.]]></description>
 </item>
 </channel>
 </rss>

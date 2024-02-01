@@ -4,7 +4,15 @@
         <link>https://inchan.dev/tags/</link>
         <description>Tags - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 31 Jan 2024 14:13:39 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>terminal</title>
+    <link>https://inchan.dev/tags/terminal/</link>
+    <pubDate>Wed, 31 Jan 2024 14:13:39 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/tags/terminal/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>NodeJS</title>
     <link>https://inchan.dev/tags/nodejs/</link>
     <pubDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</pubDate>
@@ -74,14 +82,6 @@
     <pubDate>Thu, 16 Mar 2023 23:56:16 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://inchan.dev/tags/javascript/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>RESTful_API</title>
-    <link>https://inchan.dev/tags/restful_api/</link>
-    <pubDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/tags/restful_api/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

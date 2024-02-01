@@ -99,6 +99,17 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/202212280458/">AWS 퍼블릭 IP와 탄력적 IP</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-12-28">2022-12-28</time></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div><div class="content">AWS EC2에서 백엔드 서버와 프론트엔드 서버를 돌리는 와중, 백엔드 서버의 PM2 리스트 전체가 다운이 되면서 멈추는 일이 발생했다.
+이래저래 복구를 하다가, 프리티어 t2의 메모리 부족 현상때문이라는 결론에 다달았고
+ec2를 재부팅하였다.
+AWS 퍼블릭 IP 주소가 바뀌었다? EC2 재부팅 결과, 서버의 퍼블릭 IPv4 주소가 바뀌는 일이 발생했다.
+왜 그런가 찾아보니 AWS 기술문서에 다음과 같은 안내가 있었다.
+퍼블릭 IP 주소1 다음과 같은 경우 인스턴스의 퍼블릭 IP 주소가 변경됩니다.
+중지되었거나 최대 절전 모드로 전환된 인스턴스는 다시 시작될 때 새 퍼블릭 IP 주소를 받습니다.</div><div class="post-footer">
+        <a href="/posts/202212280458/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/aws/">AWS</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/202212270448/">패스트파이브 기업과제 회고록</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-12-27">2022-12-27</time></span>&nbsp;<span class="post-category">included in <a href="/categories/project/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Project</a></span></div><div class="content">FastFive 프리온보딩 기업과제 과제 진행간 개요 기간 프로젝트 수행 기간 : 2022.12.12. Mon ~ 2022. 12.22. Thu (11일간)
 최초 정식 코드 배포일 : 2022.12.22. Thu
@@ -138,11 +149,6 @@ cd ...로 찾아가는게 너무 귀찮다.
 우선 zsh라는 쉘 을 한번 가볍게 알아본다. 힘들면 Pass하고, 바로 적용할 수 있는 방법으로 가자! 1. zshrc 편집 터미널에서 다음을 실행 vim ~/.zshrc 이미 파일이 존재할수도 있고, 없으면 파일이 생성되며 바로 편집모드로 들어가게 된다.</div><div class="post-footer">
         <a href="/posts/202210130407/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/terminal/">terminal</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202210040515/">인스타그램 로그인 화면 구성</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-10-04">2022-10-04</time></span>&nbsp;<span class="post-category">included in <a href="/categories/front-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Front-End</a></span></div><div class="content">justgram - UI 만들기 Mission 1 - 로그인 페이지 레이아웃 처음 HTML 파일을 작성할때, display : flex; 를 쓰지 않았다. 결과는 원하는대로 나왔지만 나의 첫 코드는 쓸데없이 수많은 &lt;div&gt;와 &lt;p&gt;태그로 범벅이 됐다. HTML 초기버전 &lt;div class=&#34;wrapLoginBox&#34;&gt; &lt;div class=&#34;loginBox&#34;&gt; &lt;p id=&#34;title&#34;&gt;justgram&lt;/p&gt; &lt;div class=&#34;inputBox&#34;&gt; &lt;p&gt; &lt;input id=&#34;userInput&#34; type=&#34;text&#34; placeholder=&#34;전화번호, 사용자 이름 또는 이메일&#34;/&gt; &lt;/p&gt; &lt;p&gt; &lt;input id=&#34;pwInput&#34; type=&#34;password&#34; placeholder=&#34;비밀번호&#34; /&gt; &lt;/p&gt; &lt;p&gt;&lt;button class=&#34;loginBtn&#34; disabled&gt;로그인&lt;/button&gt;&lt;/p&gt; &lt;/div&gt; &lt;div class=&#34;foot&#34;&gt; &lt;a href=&#34;https://www.instagram.com/accounts/password/reset/&#34;&gt;비밀번호를 잊으셨나요?&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; 위 코드가 처음 아무 생각없이 짠 HTML이다.</div><div class="post-footer">
-        <a href="/posts/202210040515/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/html/">html</a>,&nbsp;<a href="/tags/css/">css</a>,&nbsp;<a href="/tags/javascript/">JavaScript</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>

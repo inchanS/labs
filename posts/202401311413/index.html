@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기 - inchan.dev</title><meta name="Description" content="프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법"><meta property="og:title" content="프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기" />
+<meta property="og:description" content="프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://inchan.dev/posts/202401311413/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-31T14:13:39+09:00" />
+<meta property="article:modified_time" content="2024-01-31T14:13:39+09:00" /><meta property="og:site_name" content="inchan.dev" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기"/>
+<meta name="twitter:description" content="프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법"/>
+<meta name="twitter:site" content="@codject"/>
+<meta name="application-name" content="inchan.dev">
+<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202401311413/" /><link rel="prev" href="https://inchan.dev/posts/202401261149/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/inchan.dev\/posts\/202401311413\/"
+        },"genre": "posts","keywords": "terminal","wordcount":  680 ,
+        "url": "https:\/\/inchan.dev\/posts\/202401311413\/","datePublished": "2024-01-31T14:13:39+09:00","dateModified": "2024-01-31T14:13:39+09:00","publisher": {
+            "@type": "Organization",
+            "name": "inchan"},"author": {
+                "@type": "Person",
+                "name": "inchan"
+            },"description": "프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/env/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>env</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-31">2024-01-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;680 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2880px-Node.js_logo.svg.png"
+        data-srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2880px-Node.js_logo.svg.png, https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2880px-Node.js_logo.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2880px-Node.js_logo.svg.png 2x"
+        data-sizes="auto"
+        alt="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2880px-Node.js_logo.svg.png"
+        title="프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#장점">장점</a></li>
+    <li><a href="#단점">단점</a></li>
+    <li><a href="#보완">보완</a>
+      <ul>
+        <li><a href="#1-ide-사용하기">1. IDE 사용하기</a></li>
+        <li><a href="#2-nvmrc-사용하기">2. <code>.nvmrc</code> 사용하기</a>
+          <ul>
+            <li><a href="#프로젝트별-node-버전을-자동으로-적용하기">프로젝트별 node 버전을 자동으로 적용하기</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p> </p>
+<ul>
+<li>source : <a href="https://github.com/nvm-sh/nvm?tab=readme-ov-file#nvmrc" target="_blank" rel="noopener noreffer ">nvm-sh/nvm: Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions</a></li>
+</ul>
+<hr>
+<p>새로운 프로젝트는 Node 버전 중 현재 최신 LTS 버전인 20 버전으로 진행하려는데, 기존 진행중인 프로젝트가 AWS-ec2에서 node@16으로 세팅되어있던 터라, macOS에서 2개 버전을 설치해 사용해야하는 상황이 왔다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>때문에 여러 node 버전을 사용할 수 있는 <strong>nvm</strong>(Node version Manager)을 설치<br>
+설치는 brew를 통해 설치했고 이후 과정은 brew에서 자세하게 설명해준다.</p>
+<h2 id="장점">장점</h2>
+<ol>
+<li>OS에 하나 이상의, 여러 version별 node를 설치하고</li>
+<li>프로젝트별로 각각 다른 버전의 node를 사용할 수 있다.</li>
+</ol>
+<h2 id="단점">단점</h2>
+<p>node 프로젝트 진행시 터미널에서 해당 프로젝트를 적정 버전으로 실행시키기 위해서는 다음 명령어로 node의 버전을 사용할 때마다 <strong>항상</strong> 지정해줘야 한다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># node 특정 버전 설치 (아래 3가지 명령어중 택일)</span>
+</span></span><span class="line"><span class="cl">nvm install --lts // 가장 최신 LTS 버전을 설치
+</span></span><span class="line"><span class="cl">nvm install 18.10.2 // 특정 버전 설치
+</span></span><span class="line"><span class="cl">nvm install <span class="m">20</span>  // 20.x.x에서 가장 최신버전을 설치
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># nvm default 버전 설정 방법</span>
+</span></span><span class="line"><span class="cl">nvm <span class="nb">alias</span> default 14.17.0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 설치된 node version들 확인</span>
+</span></span><span class="line"><span class="cl">nvm list  
+</span></span><span class="line"><span class="cl"><span class="c1"># 또는 아래 명령어를 사용해도 된다. </span>
+</span></span><span class="line"><span class="cl">nvm ls 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 특정 버전 사용을 명령 (버전 번호만 적어주면 된다.)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 예시</span>
+</span></span><span class="line"><span class="cl">nvm use <span class="m">18</span>  // 설치된 18.x.x에서 가장 최신버전을 사용
+</span></span><span class="line"><span class="cl">nvm use 16.12.5 // 16.12.5 버전을 사용
+</span></span></code></pre></div><h2 id="보완">보완</h2>
+<h3 id="1-ide-사용하기">1. IDE 사용하기</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/Pasted%20image%2020240201223157.png"
+        data-srcset="/images/Pasted%20image%2020240201223157.png, /images/Pasted%20image%2020240201223157.png 1.5x, /images/Pasted%20image%2020240201223157.png 2x"
+        data-sizes="auto"
+        alt="/images/Pasted%20image%2020240201223157.png"
+        title="/images/Pasted%20image%2020240201223157.png" /></p>
+<p>IntelliJ 또는 WebStorm과 같은 IDE에서는 따로 실행 환경을 설정해줄 수가 있다.</p>
+<h3 id="2-nvmrc-사용하기">2. <code>.nvmrc</code> 사용하기</h3>
+<p><a href="https://github.com/nvm-sh/nvm?tab=readme-ov-file#nvmrc" target="_blank" rel="noopener noreffer ">.nvmrc 관련 문서</a>
+프로젝트별 root 폴더에 <code>.nvmrc</code> 파일을 만들고 아래와 같이 버전만 딱 한줄 넣어주면 된다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">16.20.2
+</span></span></code></pre></div><p>또는 16버전의 최신 버전 사용시 <code>16</code>이라고만 입력해도 된다.<br>
+ </p>
+<p>그리고 터미널에서 해당프로젝트에 위치해있을 때, 버전을 입력할 필요없이 <code>nvm use</code> 명령어만 입력해줘도 <code>.nvmrc</code>파일에서 버전을 읽어와 해당 node버전을 적용한다.<br>
+ </p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">이제 프로젝트별로 nvm에서 노드 버전을 지정할 때, 그동안 타이핑하기 힘들었던 3단어(nvm, use, &lt;version&gt;)에서 무려 1단어를 줄이고 단 2단어만(nvm, use) 입력하면 된다.<br>
+별거 아닌것 같지만 프로젝트별 각각의 노드 버전을 사용할때마다 찾아보는 것도 일이다.</div>
+        </div>
+    </div>
+<p> <br>
+ </p>
+<h4 id="프로젝트별-node-버전을-자동으로-적용하기">프로젝트별 node 버전을 자동으로 적용하기</h4>
+<p>위 방법도 편리하지만 여전히 사용할 때마다 명령어를 입력해줘야 하기는 마찬가지다.<br>
+이제 이 명령어조차 생략하는 방법을 소개한다.<br>
+ </p>
+<p>이 방법은 바로 위 <code>.nvmrc</code> 사용하기에서 더 나아가 <code>nvm use</code> 명령까지 자동화하는 방법으로서 다음의 과정을 따른다.</p>
+<ol>
+<li><code>.nvmrc</code>파일이 존재할 경우,</li>
+<li>자동으로 <code>nvm use</code> 명령을 내리고 해당 버전을 적용한다.</li>
+<li>해당 파일이 없는 root 폴더로 진입했을 땐, <code>default</code> 버전으로 되돌린다.</li>
+</ol>
+<p> </p>
+<p><code>zshrc</code>를 사용하고 있다면 다음 문서의 내용대로 진행할 수 있다.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p> </p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="c1"># place this after nvm initialization!</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># nvm을 설치하면서 추가했던 스크립트 바로 다음에 위치시키면 정상 작동한다. </span>
+</span></span><span class="line"><span class="cl">autoload -U add-zsh-hook
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">load-nvmrc<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl"><span class="nb">local</span> nvmrc_path
+</span></span><span class="line"><span class="cl"><span class="nv">nvmrc_path</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>nvm_find_nvmrc<span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$nvmrc_path</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl"><span class="nb">local</span> nvmrc_node_version
+</span></span><span class="line"><span class="cl"><span class="nv">nvmrc_node_version</span><span class="o">=</span><span class="k">$(</span>nvm version <span class="s2">&#34;</span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="si">${</span><span class="nv">nvmrc_path</span><span class="si">}</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$nvmrc_node_version</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;N/A&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">nvm install
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$nvmrc_node_version</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;</span><span class="k">$(</span>nvm version<span class="k">)</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">nvm use
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="k">$(</span><span class="nv">PWD</span><span class="o">=</span><span class="nv">$OLDPWD</span> nvm_find_nvmrc<span class="k">)</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="k">$(</span>nvm version<span class="k">)</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;</span><span class="k">$(</span>nvm version default<span class="k">)</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Reverting to nvm default version&#34;</span>
+</span></span><span class="line"><span class="cl">nvm use default
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">add-zsh-hook chpwd load-nvmrc
+</span></span><span class="line"><span class="cl">load-nvmrc
+</span></span></code></pre></div><p> <br>
+ <br>
+ </p>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>터미널 테마 powerlevel10k 사용자는 주의 - 클릭해서 살펴보기 <i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>zsh에서 혹시 <a href="https://github.com/romkatv/powerlevel10k" target="_blank" rel="noopener noreffer ">Powerlevel10k</a>를 사용하고 있다면 기본 터미널 앱 또는 IDE의 터미널 등에서 다음과 같은 <strong>경고 메세지</strong>를 볼 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>WARNING<span class="o">]</span>: Console output during zsh initialization detected.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">When using Powerlevel10k with instant prompt, console output during zsh
+</span></span><span class="line"><span class="cl">initialization may indicate issues.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">You can:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Recommended: Change ~/.zshrc so that it does not perform console I/O
+</span></span><span class="line"><span class="cl">after the instant prompt preamble. See the link below <span class="k">for</span> details.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">* You will not see this error message again.
+</span></span><span class="line"><span class="cl">* Zsh will start quickly and prompt will update smoothly.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Suppress this warning either by running p10k configure or by manually
+</span></span><span class="line"><span class="cl">defining the following parameter:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">typeset</span> -g <span class="nv">POWERLEVEL9K_INSTANT_PROMPT</span><span class="o">=</span>quiet
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">* You will not see this error message again.
+</span></span><span class="line"><span class="cl">* Zsh will start quickly but prompt will jump down after initialization.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Disable instant prompt either by running p10k configure or by manually
+</span></span><span class="line"><span class="cl">defining the following parameter:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">typeset</span> -g <span class="nv">POWERLEVEL9K_INSTANT_PROMPT</span><span class="o">=</span>off
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">* You will not see this error message again.
+</span></span><span class="line"><span class="cl">* Zsh will start slowly.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Do nothing.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">* You will see this error message every <span class="nb">time</span> you start zsh.
+</span></span><span class="line"><span class="cl">* Zsh will start quickly but prompt will jump down after initialization.
+</span></span></code></pre></div><p>위 경고 메세지에서 친절하게 제시한 권장 해결방법대로 nvm 자동 스크립트를 Powerlevel10k 스크립트보다 더 윗부분으로 올리면 된다.<br>
+대개 Powerlever10k 스크립트는 <code>~/.zshrc</code> 파일의 가장 상단에 위치하고 있다.<br>
+ </p>
+<p><strong>단점은 IDE에서 터미널을 실행시켰을 때, 이전에 비해 조금 더 늦게 프롬프트가 나타난다.</strong></p>
+</div>
+        </div>
+    </div>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>EC2에서 node 버전 업 호환을 위해서는 최초 인스턴스 세팅시 진행하는 Linux 버전을 최신버전으로 바꾸면 가능하다. 하지만 그 과정이 꽤나 번거롭다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://github.com/nvm-sh/nvm?tab=readme-ov-file#zsh" target="_blank" rel="noopener noreffer ">zshrc에서 명령 스크립트 공식문서</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-01-31</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/terminal/">terminal</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/202401261149/" class="prev" rel="prev" title="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+</html>
