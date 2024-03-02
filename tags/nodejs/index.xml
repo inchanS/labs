@@ -4,7 +4,20 @@
         <link>https://inchan.dev/tags/nodejs/</link>
         <description>NodeJS - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/nodejs/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 05 Feb 2024 08:22:58 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/nodejs/" rel="self" type="application/rss+xml" /><item>
+    <title>typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란</title>
+    <link>https://inchan.dev/posts/202403010802/</link>
+    <pubDate>Mon, 05 Feb 2024 08:22:58 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202403010802/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1525562929550-63ef340cfe1d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer">
+            </div>먼저 알아두기 mySQL - Date 필드의 타입 종류 mySQL에서 Date 필드의 타입 종류는 다음과 같다.
+DATE - 날짜만 TIME - 시간만 DATETIME - 시간대가 반영되지 않은 현재 서버 시간대의 날짜와 시간 데이터 TIMESTAMP - 시간대가 반영된 날짜와 시간 데이터 여기서 주의할 점은 TIMESTAMP 이다.
+이 데이터는 해당 서버의 시간대를 반영하기에 DB에 저장될 때에는 UTC(+00:00) 시간대로 변환되어 저장된다.
+단, 조회시 세션 설정에 따른 시간대를 반영하여 해당 시간대로 변환된 데이터로 조회된다.]]></description>
+</item>
+<item>
     <title>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴</title>
     <link>https://inchan.dev/posts/202401261149/</link>
     <pubDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</pubDate>

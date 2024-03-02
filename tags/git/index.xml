@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>git - Tag - inchan.dev</title>
+        <title>Git - Tag - inchan.dev</title>
         <link>https://inchan.dev/tags/git/</link>
-        <description>git - Tag - inchan.dev</description>
+        <description>Git - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 17 Jun 2023 15:31:26 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/git/" rel="self" type="application/rss+xml" /><item>
     <title>Git commit message 컨벤션 설정</title>

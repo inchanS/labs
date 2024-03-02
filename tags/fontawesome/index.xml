@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>fontAwesome - Tag - inchan.dev</title>
+        <title>FontAwesome - Tag - inchan.dev</title>
         <link>https://inchan.dev/tags/fontawesome/</link>
-        <description>fontAwesome - Tag - inchan.dev</description>
+        <description>FontAwesome - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
             <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Tue, 06 Sep 2022 05:21:43 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/fontawesome/" rel="self" type="application/rss+xml" /><item>
     <title>font Awesome 사용하기</title>

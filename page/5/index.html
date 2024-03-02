@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.122.0">
+	<meta name="generator" content="Hugo 0.123.3">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
@@ -98,7 +98,17 @@
         data-sizes="auto"
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/202301280422/">typescript - satisfies operator 탐구</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-28">2023-01-28</time></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Programming</a></span></div><div class="content">typescript 4.9에서 새로 나온 기능으로 satisfies 라는 연산자가 있다.
+공식문서를 정말 한참을 봤는데도 잘 이해가 가지 않았는데 직접 코드를 가지고 만져보니 조금 이해가 되었다.
+satisfies 적용 전 Record라는 객체의 key, value를 지정해주는 연산자를 사용하여 객체의 타입을 지정할 때,
+아래 코드를 보면 value의 타입으로 string | RGB2 라는 union type으로 인해 속성에 대한 오류가 잡힌다.
+toUpperCase에서는 only string타입이 들어와야 하는데 union type으로 할당되어 생긴 에러로서 당연한 결과이다.
+type Colors = &#39;red&#39; | &#39;green&#39; | &#39;blue&#39;; type RGB = [red: number, green: number, blue: number]; const palette: Record&lt;Colors, string | RGB2&gt; = { red: [255, 0, 0], green: &#39;#00ff00&#39;, blue: [0, 0, 255], }; const redComponent = palette.</div><div class="post-footer">
+        <a href="/posts/202301280422/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typescript/">TypeScript</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/posts/202301230429/"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -109,7 +119,7 @@
         title="https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60" /></a>
         </div><h1 class="single-title" itemprop="name headline">
         <a href="/posts/202301230429/">mac 터미널에서 폴더트리 구조 확인</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-23">2023-01-23</time></span>&nbsp;<span class="post-category">included in <a href="/categories/env/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>env</a></span></div><div class="content">&lt;사진: unsplash&gt;
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-23">2023-01-23</time></span>&nbsp;<span class="post-category">included in <a href="/categories/env/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Env</a></span></div><div class="content">&lt;사진: unsplash&gt;
 windows에서는 cmd에서 폴더트리가 바로 나오는것 같던데 macOS의 터미널에서는 따로 tree를 설치해야 볼 수 있다.
 아래 명령어로 brew를 통해 설치
 $ brew install tree 사용법 기본적인 사용법은 작업중인 폴더로 가서 tree 라고만 입력하면 된다.
@@ -117,7 +127,7 @@ $ tree 폴더 제외 그런데 node project와 같이 node_module이라던가, d
 폴더를 제외하고 싶을 땐, tree -I &lt;diretory&gt;로 명령하면 해당 폴더를 제외하고 출력 가능하다.
 예시&gt; 하나의 폴더 제외</div><div class="post-footer">
         <a href="/posts/202301230429/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/terminal/">terminal</a></div></div>
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/terminal/">Terminal</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/202301230424/">백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-23">2023-01-23</time></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div><div class="content">문제상황 TDD 방법론을 따라 프로젝트를 진행하려는데 Jest를 이용하여 test 코드를 작성하던 중,
@@ -163,14 +173,6 @@ nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 ne
 nest new ./ 위와 같이 입력시 현재 폴더명 그대로 새로운 프로젝트가 진행된다.</div><div class="post-footer">
         <a href="/posts/202301090435/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/nestjs/">NestJS</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202301020441/">부트캠프 가도 실패하는 사람 특징</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span>&nbsp;<span class="post-category">included in <a href="/categories/miscellaneous/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Miscellaneous</a></span></div><div class="content">youtube 서핑을 하다 우연히 보게 된 영상. &ldquo;부트캠프 가셔도 실패하는 분 특징&rdquo; 문구가 굉장히 도발적이었다.
-마침 부트캠프를 막 수료한지라 더욱 내 시선을 끌었었다.
-&nbsp; youtube 내용 요약 - 펼치기 youtube 내용 요약 글쓰기를 잘하는 사람이 개발자로서도 잘한다. 본인의 메세지를 글에 녹일 수 있어야 한다. 컴퓨터가 이해할 수 있는 코드는 어느 바보라도 작성할 수 있다. 좋은 프로그래머는 사람이 이해할 수 있는 코드를 작성한다.
-마틴 파울러, 리팩토링의 저자 코딩 자체가 문서를 정리하는 것이다.</div><div class="post-footer">
-        <a href="/posts/202301020441/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/miscellaneous/">Miscellaneous</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>

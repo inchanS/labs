@@ -4,7 +4,20 @@
         <link>https://inchan.dev/categories/back-end/</link>
         <description>Back-End - Category - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/categories/back-end/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 05 Feb 2024 08:22:58 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/categories/back-end/" rel="self" type="application/rss+xml" /><item>
+    <title>typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란</title>
+    <link>https://inchan.dev/posts/202403010802/</link>
+    <pubDate>Mon, 05 Feb 2024 08:22:58 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202403010802/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1525562929550-63ef340cfe1d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer">
+            </div>먼저 알아두기 mySQL - Date 필드의 타입 종류 mySQL에서 Date 필드의 타입 종류는 다음과 같다.
+DATE - 날짜만 TIME - 시간만 DATETIME - 시간대가 반영되지 않은 현재 서버 시간대의 날짜와 시간 데이터 TIMESTAMP - 시간대가 반영된 날짜와 시간 데이터 여기서 주의할 점은 TIMESTAMP 이다.
+이 데이터는 해당 서버의 시간대를 반영하기에 DB에 저장될 때에는 UTC(+00:00) 시간대로 변환되어 저장된다.
+단, 조회시 세션 설정에 따른 시간대를 반영하여 해당 시간대로 변환된 데이터로 조회된다.]]></description>
+</item>
+<item>
     <title>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴</title>
     <link>https://inchan.dev/posts/202401261149/</link>
     <pubDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</pubDate>
@@ -121,21 +134,6 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
 그런데 test를 실행할때마다 typeORM 세팅의 연결값을 매번 변경해줘야하는 문제가 상당히 번거로웠다. 고민하던 와중, cross-env라는 npm package를 알게되었고 이를 이용하여 상황에 따라 dotenv 설정값을 유동적으로 활용할 수 있도록 세팅을 구상해보았다.
 요약.
 JEST의 test파일 실행시 기존 DB를 사용함으로 인한 DB내부 데이터 오염문제 test용 DB 분리로 해결 test용 DB 분리 이후, npm run 실행 환경(dev, test, production)에 따른 DB 설정문제 개발간 서버를 돌릴때, test코드를 돌릴때마다 dev.]]></description>
-</item>
-<item>
-    <title>nestJS 시작하기</title>
-    <link>https://inchan.dev/posts/202301090435/</link>
-    <pubDate>Mon, 09 Jan 2023 04:35:58 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202301090435/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/images/Pasted%20image%2020230301063722.png" referrerpolicy="no-referrer">
-            </div>nestJS - cli 설치 사전 조건 : node lts버전 설치
-npm i @nestjs/cli 또는
-npm i -g @nestjs/cli 이렇게 package.json 파일에서 정상적으로 설치되었음을 확인할 수 있다.
-nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 nest new nestjs-test 위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다.
-만약 $ mkdir nestjs-test 로 폴더를 만들고 이 위치에서 진행중이라면,
-nest new ./ 위와 같이 입력시 현재 폴더명 그대로 새로운 프로젝트가 진행된다.]]></description>
 </item>
 </channel>
 </rss>

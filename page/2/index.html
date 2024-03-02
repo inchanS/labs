@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.122.0">
+	<meta name="generator" content="Hugo 0.123.3">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
@@ -98,7 +98,20 @@
         data-sizes="auto"
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/202306291258/">error log - jest.spyOn()에서 재사용함수에 대한 모의 불가</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-06-29">2023-06-29</time></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div><div class="content">사용환경 : Node.Js, Express
+언어 : typeScript
+테스트 프레임워크 : Jest
+상황 Abstract 같은 파일 (모듈) 내에 있는 함수의 재사용시,
+테스트 코드를 작성하는데 모의하기가 상당히 까다롭고 불편함.
+특히 테스트 코드가 지나치게 지저분해짐 user.service.ts 파일 내부 다음은 user.service.ts 파일의 내부 코드 요약이다.
+초점을 맞춰 볼 곳은,
+updateUserInfo 함수 내부에서 checkDuplicateEmail 함수와 checkDuplicateNickname 함수가 재사용되고 있다.
+// ... const checkDuplicateEmail = async ( email: string ) =&gt; { ... } const checkDuplicateNickname = async ( nickname: string ) =&gt; { .</div><div class="post-footer">
+        <a href="/posts/202306291258/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/project_review/">Project_review</a>,&nbsp;<a href="/tags/jest/">Jest</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/posts/202306211131/"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -124,35 +137,27 @@ OpenAI로 인한 영향, 방법 등에 관한 콘텐츠가 마구잡이로 쏟�
 방법은 다음과 같다.
 extensions에서 Live Share 설치 좌측 사이드 메뉴에서 Live Share 아이콘 클릭 Share 버튼을 클릭하면 실시간 공유가 시작된다. 여기서 Shared Servers를 클릭하고 상단 검색창에 포트 번호를 입력후, enter를 누르면 해당 포트로 서버가 공유된다.</div><div class="post-footer">
         <a href="/posts/202306191659/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/aws/">AWS</a>,&nbsp;<a href="/tags/project_review/">project_review</a></div></div>
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/aws/">AWS</a>,&nbsp;<a href="/tags/project_review/">Project_review</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/202306191507/">AWS RDS 데이터 - 다른 계정으로 이전하기</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-06-19">2023-06-19</time></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div><div class="content">서로 다른 AWS의 계정간 RDS의 데이터를 이전하는 방법에 대해 소개한다.
 AWS RDS 계정간 이동 우선 간략히 설명하자면 순서는 다음과 같다.
 Info 구 계정에서 스냅샷 생성 생성이 완전히 완료되면 스냅샷 공유 탭이 활성화된다. 스냅샷 공유에서 private 선택후, 계정란에 이전할 새로운 계정의 ID 입력 이전할 새 계정으로 로그인 후, RDS에서 좌측 사이드바의 스냅샷 메뉴 - 상단 나와 공유된 스냅샷 탭 클릭 마이그레이션 선택! (RDS 세팅시 프리티어라고 따로 설정하는 안내가 없으니 잘 보고 세팅) 끝!</div><div class="post-footer">
         <a href="/posts/202306191507/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/aws/">AWS</a>,&nbsp;<a href="/tags/project_review/">project_review</a></div></div>
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/aws/">AWS</a>,&nbsp;<a href="/tags/project_review/">Project_review</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/202306171531/">Git commit message 컨벤션 설정</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-06-17">2023-06-17</time></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Programming</a></span></div><div class="content">문제 발견 git commit message 작성시 보통 첫줄에 위치한 제목줄에 들어가는 가이드로서,
 이전에 내가 사용하던 규칙은 다음과 같았다.
 Add - 레이아웃 / 기능 추가 Remove - 내용 삭제 (폴더 / 파일 삭제) Modify - 수정 (JSON 데이터 포맷 변경 / 버튼 색깔 변경 / 폰트 변경) Fix - 버그/오류 해결 Refactor - 코드 리팩토링 (멘토 리뷰 반영 / 스스로 리팩토링 / 중복 코드 제거 / 불필요 코드 제거 / 성능 개선)</div><div class="post-footer">
         <a href="/posts/202306171531/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/git/">git</a>,&nbsp;<a href="/tags/project_review/">project_review</a></div></div>
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/git/">Git</a>,&nbsp;<a href="/tags/project_review/">Project_review</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/202306070208/">MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-06-07">2023-06-07</time></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div><div class="content">개발환경 Javascript 런타임 플랫폼: Node.js 언어: TypeScript 프레임워크: Express DB: MySQL ORM: TypeORM 현재 조건 상황 회원가입시, 이메일과 패스워드가 필수 입력입력인데, 이메일의 경우 mySQL에서 unique 처리 회원가입 과정에서 이메일 중복 여부를 확인하고 통과했을 경우에만 회원가입 가능 회원 삭제시, 실제 회원정보를 DB에서 지우지 않고 TypeORM의softDelete 방식으로 deleted_at 컬럼에 삭제일시가 기록되는 방식 (일정기간 이후 삭제할 요량으로 단기간 데이터 보존) Question 이미 회원 삭제된 정보의 이메일로 재가입하려는 경우,
 해당 이메일은 이미 mySQL에서 unique로 입력되어있는 이메일이기 때문에 이메일 중복확인에서 통과되지 않는다.</div><div class="post-footer">
         <a href="/posts/202306070208/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typeorm/">typeORM</a>,&nbsp;<a href="/tags/mysql/">mySQL</a>,&nbsp;<a href="/tags/project_review/">project_review</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202304010529/">error log - TypeORM migration 할 때 cross ENV 설정 문제</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-04-01">2023-04-01</time></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div><div class="content">TypeORM migration TypeORM migration:create typeorm migration을 시도해보면서 준비한건 몇가지 되지 않았다. 우선, 터미널에서 typeorm migration 파일을 생성하는 명령어. $ npx typeorm migration:create &lt;path/file_name&gt; 예를 들면 npx typeorm migration:create ./src/migrations/default-tables
-이런 식으로 사용할 수 있다.
-그리고 마이그레이션 실행시 마이그레이션 파일들의 위치를 알려줄 수 있도록 datasource config 부분에 다음과 같이 설정을 추가한다.
-import { DataSource } from &#39;typeorm&#39;; const dataSource = new DataSource({ type: process.env.TYPEORM_CONNECTION, host: process.env.TYPEORM_HOST, port: process.env.TYPEORM_PORT, username: process.env.TYPEORM_USERNAME, password: process.</div><div class="post-footer">
-        <a href="/posts/202304010529/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typeorm/">typeORM</a>,&nbsp;<a href="/tags/project_review/">project_review</a></div></div>
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typeorm/">TypeORM</a>,&nbsp;<a href="/tags/mysql/">MySQL</a>,&nbsp;<a href="/tags/project_review/">Project_review</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>

@@ -4,8 +4,40 @@
         <link>https://inchan.dev/tags/</link>
         <description>Tags - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 31 Jan 2024 14:13:39 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>terminal</title>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 05 Feb 2024 08:22:58 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>JavaScript</title>
+    <link>https://inchan.dev/tags/javascript/</link>
+    <pubDate>Mon, 05 Feb 2024 08:22:58 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/tags/javascript/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>MySQL</title>
+    <link>https://inchan.dev/tags/mysql/</link>
+    <pubDate>Mon, 05 Feb 2024 08:22:58 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/tags/mysql/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>NodeJS</title>
+    <link>https://inchan.dev/tags/nodejs/</link>
+    <pubDate>Mon, 05 Feb 2024 08:22:58 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/tags/nodejs/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>TypeORM</title>
+    <link>https://inchan.dev/tags/typeorm/</link>
+    <pubDate>Mon, 05 Feb 2024 08:22:58 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/tags/typeorm/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Terminal</title>
     <link>https://inchan.dev/tags/terminal/</link>
     <pubDate>Wed, 31 Jan 2024 14:13:39 &#43;0900</pubDate>
     <author>inchan</author>
@@ -13,35 +45,11 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>NodeJS</title>
-    <link>https://inchan.dev/tags/nodejs/</link>
-    <pubDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/tags/nodejs/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>project_review</title>
+    <title>Project_review</title>
     <link>https://inchan.dev/tags/project_review/</link>
     <pubDate>Fri, 26 Jan 2024 11:49:52 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://inchan.dev/tags/project_review/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>mySQL</title>
-    <link>https://inchan.dev/tags/mysql/</link>
-    <pubDate>Wed, 24 Jan 2024 10:19:14 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/tags/mysql/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>typeORM</title>
-    <link>https://inchan.dev/tags/typeorm/</link>
-    <pubDate>Wed, 24 Jan 2024 10:19:14 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/tags/typeorm/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
@@ -69,19 +77,11 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>git</title>
+    <title>Git</title>
     <link>https://inchan.dev/tags/git/</link>
     <pubDate>Sat, 17 Jun 2023 15:31:26 &#43;0900</pubDate>
     <author>inchan</author>
     <guid>https://inchan.dev/tags/git/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>JavaScript</title>
-    <link>https://inchan.dev/tags/javascript/</link>
-    <pubDate>Thu, 16 Mar 2023 23:56:16 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/tags/javascript/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
