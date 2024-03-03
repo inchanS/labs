@@ -35,7 +35,7 @@ DATE - 날짜만 TIME - 시간만 DATETIME - 시간대가 반영되지 않은 �
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202403010802\/"
-        },"genre": "posts","keywords": "JavaScript, typeORM, mySQL, NodeJS","wordcount":  1262 ,
+        },"genre": "posts","keywords": "JavaScript, typeORM, mySQL, NodeJS","wordcount":  1552 ,
         "url": "https:\/\/inchan.dev\/posts\/202403010802\/","datePublished": "2024-03-01T08:02:58+09:00","dateModified": "2024-03-03T07:57:11+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -109,8 +109,8 @@ DATE - 날짜만 TIME - 시간만 DATETIME - 시간대가 반영되지 않은 �
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-01">2024-03-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1262 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-01">2024-03-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1552 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -143,6 +143,7 @@ DATE - 날짜만 TIME - 시간만 DATETIME - 시간대가 반영되지 않은 �
           <ul>
             <li><a href="#조건">조건</a></li>
             <li><a href="#코드">코드</a></li>
+            <li><a href="#코드-적용">코드 적용</a></li>
             <li><a href="#장점">장점</a></li>
           </ul>
         </li>
@@ -193,14 +194,14 @@ Date 타입을 js 객체 형태로 가지고 있으며 시스템의 Local TimeZo
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>mySQL 세션 시간대 설정과의 관계<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>아래와 같이 mySQL 서버의 시간대 설정과 typeORM의 <code>timezone</code>을 통한 시간대 설정은 서로 무관하다.
-아래의 설정은 mySQL의 세션 실행시 적용할 시간대를 설정해주는 건데,<br>
-바로 이 부분을 typeORM의 <code>timezone</code> 설정이 따로이 설정해주는 개념이라고 이해하면 편하다.<br>
-즉, typeORM을 사용하는 서버에서의 mySQL 세션 실행시 적용 시간대는 바로 이 <code>timezone</code>이 따로이 담당하고 있는 셈이다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">TIME_ZONE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;+00:00&#39;</span><span class="w"> </span><span class="c1">-- 시간대 설정
+            <div class="admonition-content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">TIME_ZONE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;+00:00&#39;</span><span class="w"> </span><span class="c1">-- 시간대 설정
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SHOW</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">VARIABLES</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;TIME_ZONE&#39;</span><span class="w"> </span><span class="c1">-- 시간대 확인
 </span></span></span><span class="line"><span class="cl"><span class="c1">-- 시간대 변환 후, mySQL의 세션(typeORM)을 종료후 다시 연결 하여야 반영된다.
-</span></span></span></code></pre></div></div>
+</span></span></span></code></pre></div><p> </p>
+<p>위와 같은 mySQL 서버의 시간대 설정과 typeORM의 <code>timezone</code>을 통한 시간대 설정은 서로 무관하다.
+위 설정은 mySQL의 세션 실행시 적용할 시간대를 설정해주는 건데,<br>
+바로 이 부분을 typeORM의 세션에서는 <code>timezone</code> 설정이 이를 따로이 대신 설정해주는 개념이라고 이해하면 편하다.</p>
+</div>
         </div>
     </div>
 <h5 id="timezone-z"><code>timezone: 'Z'</code></h5>
@@ -284,18 +285,103 @@ Date 타입을 js 객체 형태로 가지고 있으며 시스템의 Local TimeZo
 </span></span><span class="line"><span class="cl">    			  
 </span></span><span class="line"><span class="cl">    			      <span class="k">return</span> <span class="nx">localDateTime</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">().</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">19</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    			    <span class="p">}</span>
-</span></span></code></pre></div><h4 id="장점">장점</h4>
+</span></span></code></pre></div><h4 id="코드-적용">코드 적용</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">DateUtils</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">public</span> <span class="kr">static</span> <span class="nx">formatDate</span><span class="p">(</span><span class="nx">date</span>: <span class="kt">Date</span><span class="p">)</span><span class="o">:</span> <span class="kt">string</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">localDateTime</span>: <span class="kt">Date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span>  
+</span></span><span class="line"><span class="cl">      <span class="nx">date</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getTimezoneOffset</span><span class="p">()</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">localDateTime</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">().</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">19</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">UserService</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">getUser</span><span class="p">(</span><span class="nx">targetId</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">ExtendedUser</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">UserRepository</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span> <span class="p">{</span><span class="nx">where</span><span class="o">:</span> <span class="p">{</span><span class="nx">id</span>: <span class="kt">targetId</span><span class="p">}</span> <span class="p">}</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">// 사용자를 찾을 수 없는 경우
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="p">...</span><span class="nx">result</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">created_at</span>: <span class="kt">DateUtils.formatDate</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">created_at</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">updated_at</span>: <span class="kt">DateUtils.formatDate</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">updated_at</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// deleted_at은 선택적 필드이므로, 존재할 때만 변환
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">deleted_at</span>: <span class="kt">user.deleted_at</span> <span class="o">?</span> <span class="nx">DateUtils</span><span class="p">.</span><span class="nx">formatDate</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">deleted_at</span><span class="p">)</span> <span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">getUsers</span><span class="p">(</span><span class="nx">condition</span>: <span class="kt">any</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">ExtendedUser</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">SomeRepository</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">condition</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">result</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">data</span>: <span class="kt">User</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+</span></span><span class="line"><span class="cl">	 <span class="p">...</span><span class="nx">data</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">	 <span class="nx">created_at</span>: <span class="kt">DateUtils.formatDate</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">created_at</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">	 <span class="nx">updated_at</span>: <span class="kt">DateUtils.formatDate</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">updated_at</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">	 <span class="nx">deleted_at</span>: <span class="kt">data.deleted_at</span> <span class="o">?</span> <span class="nx">DateUtils</span><span class="p">.</span><span class="nx">formatDate</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">deleted_at</span><span class="p">)</span> <span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="p">}));</span>  
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p> </p>
+<p>위와 같이 <strong>필요한 컬럼에 위 함수를 적용</strong>하여 시간대와 형태를 바꿀 수 있다.<br>
+ </p>
+<p>단점은 이로 인해 <strong>해당 entity의 반환 타입이 깨진다는 문제</strong>가 생긴다.<br>
+예를들어 원래 <code>User entity</code>에서 <code>created_at</code> 컬럼의 타입은 <code>Date</code>타입이다. 그런데 해당 함수로 인해 반환되는 값의 타입은 <code>string</code>이기에 타입 에러가 나타나고 따라서 추가적인 작업을 해줘야 한다.</p>
+<div class="details admonition example open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw" aria-hidden="true"></i>entity의 타입 확장하기<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>위에서 나타나는 타입 에러를 해결하는 방법은 2가지가 있다.<br>
+먼저 간단하게 반환 타입을 <code>Promise&lt;any&gt;</code>로 처리하는 방법이 있다.<br>
+무적의 <code>any</code>이다.<br>
+ </p>
+<p>두번째는 아래와 같이 <strong>확장된 타입 또는 인터페이스를 만들어주어 반환 타입으로 적용</strong>해주는 것이다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 원래의 User 엔티티 타입, Date 관련 컬럼의 타입은 `Date`이다.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">class</span> <span class="nx">User</span> <span class="kr">extends</span> <span class="nx">BaseEntity</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="kd">@PrimaryGeneratedColumn</span><span class="p">()</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">id</span><span class="o">!:</span> <span class="kt">number</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="kd">@CreateDateColumn</span><span class="p">({</span> <span class="kr">type</span><span class="o">:</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="nx">transformer</span>: <span class="kt">dateTransformer</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">created_at</span><span class="o">!:</span> <span class="nb">Date</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="kd">@UpdateDateColumn</span><span class="p">({</span> <span class="kr">type</span><span class="o">:</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="nx">transformer</span>: <span class="kt">dateTransformer</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">updated_at</span><span class="o">!:</span> <span class="nb">Date</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="kd">@DeleteDateColumn</span><span class="p">({</span> <span class="kr">type</span><span class="o">:</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="nx">transformer</span>: <span class="kt">dateTransformer</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">deleted_at?</span>: <span class="kt">Date</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">@Column</span><span class="p">({</span> <span class="kt">unique</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">nickname</span>: <span class="kt">string</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="kd">@Column</span><span class="p">({</span> <span class="nx">select</span>: <span class="kt">false</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">password</span>: <span class="kt">string</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="kd">@Column</span><span class="p">({</span> <span class="kt">unique</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">email</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// User 타입에서 Date관련 컬럼의 타입을 string으로 바꾼 인터페이스를 생성한다.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">interface</span> <span class="nx">ExtendedUser</span>  
+</span></span><span class="line"><span class="cl">  <span class="kr">extends</span> <span class="nx">Omit</span><span class="p">&lt;</span><span class="nt">User</span><span class="err">,</span> <span class="err">&#39;</span><span class="na">created_at</span><span class="err">&#39;</span> <span class="err">|</span> <span class="err">&#39;</span><span class="na">updated_at</span><span class="err">&#39;</span> <span class="err">|</span> <span class="err">&#39;</span><span class="na">deleted_at</span><span class="err">&#39;</span><span class="p">&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">created_at</span>: <span class="kt">string</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">updated_at</span>: <span class="kt">string</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  <span class="nx">deleted_at</span>: <span class="kt">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></div>
+        </div>
+    </div>
+<h4 id="장점">장점</h4>
 <p>DB 서버의 시간대는 <strong>DB 담당자</strong> 편한 시간대로 바꾸어도 필드는 <code>timestamp</code>이기에 앱서버에서는 균일하게 UTC 시간대로 받아온다. 따라서 애플리케이션 <strong>서버 담당자</strong>는 서버의 시간대만 신경쓰면 된다.<br>
 만약, 클라이언트에서 브라우저별 시간대를 고려하겠다면 <code>localDateTime</code> 변수대신 <code>date</code> 인자를 그대로 반환하면 된다.</p>
-<p>그리고 그 저 함수를 클라이언트에서 그대로 다시 사용할 수 있다.</p>
+<p>그리고 그 저 함수를 클라이언트에서 그대로 다시 사용할 수도 있다.</p>
 <h3 id="추가-업데이트-1---formatdate함수를-entity에-바로-적용하기">추가 업데이트 1 - formatDate함수를 Entity에 바로 적용하기</h3>
 <p>위 함수를 서비스 로직에서 적용하고자 하는 해당 Date 필드에 따로이 사용할 수도 있지만 애시당초 typeORM에서 모든 Date 필드에 한번에 적용하게끔 하는 방법도 있다.<br>
-바로 typeORM의 <code>transformer</code> 옵션을 사용하면 된다.</p>
+무엇보다 이 방법은 위에서 언급한 추가적인 <code>interface</code>를 사용하지 않고 entity 본래의 타입 그대로 반환 타입에서 사용할 수 있다는 장점이 있다.<br>
+ </p>
+<p>바로 typeORM의 <code>transformer</code> 옵션을 사용하면 된다.</p>
 <p>현재 프로젝트의 entities에서 <code>id</code>, <code>created_at</code>, <code>updated_at</code>, <code>deleted_at</code>과 같은 기본 필드는 base entity라는 추상화 클래스로 따로이 만들어놓고 여기에서 확장하여 각각의 entity를 작성하였다.<br>
 즉 base entity에서 해당 컬럼에 다음과 같이 적용하면 이제 모든 Date 필드는 자동으로 위 함수가 적용된 채로 조회할 수 있다.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">DateUtils</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;../utils/dateUtils&#39;</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">transformer</span>: <span class="kt">ValueTransformer</span> <span class="o">=</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">dateTransformer</span>: <span class="kt">ValueTransformer</span> <span class="o">=</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">  <span class="kr">from</span><span class="o">:</span> <span class="p">(</span><span class="nx">value</span>: <span class="kt">Date</span><span class="p">)</span> <span class="o">=&gt;</span>  
 </span></span><span class="line"><span class="cl">    <span class="nx">value</span> <span class="k">instanceof</span> <span class="nb">Date</span> <span class="o">?</span> <span class="nx">DateUtils</span><span class="p">.</span><span class="nx">formatDate</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">:</span> <span class="nx">value</span><span class="p">,</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">to</span><span class="o">:</span> <span class="p">(</span><span class="nx">value</span>: <span class="kt">Date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">value</span><span class="p">,</span>  
@@ -305,13 +391,13 @@ Date 타입을 js 객체 형태로 가지고 있으며 시스템의 Local TimeZo
 </span></span><span class="line"><span class="cl">  <span class="kd">@PrimaryGeneratedColumn</span><span class="p">()</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">id</span><span class="o">!:</span> <span class="kt">number</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="kd">@CreateDateColumn</span><span class="p">({</span> <span class="kr">type</span><span class="o">:</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="nx">transformer</span>: <span class="kt">transformer</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="kd">@CreateDateColumn</span><span class="p">({</span> <span class="kr">type</span><span class="o">:</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="nx">transformer</span>: <span class="kt">dateTransformer</span> <span class="p">})</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">created_at</span><span class="o">!:</span> <span class="nb">Date</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="kd">@UpdateDateColumn</span><span class="p">({</span> <span class="kr">type</span><span class="o">:</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="nx">transformer</span>: <span class="kt">transformer</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="kd">@UpdateDateColumn</span><span class="p">({</span> <span class="kr">type</span><span class="o">:</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="nx">transformer</span>: <span class="kt">dateTransformer</span> <span class="p">})</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">updated_at</span><span class="o">!:</span> <span class="nb">Date</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="kd">@DeleteDateColumn</span><span class="p">({</span> <span class="kr">type</span><span class="o">:</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="nx">transformer</span>: <span class="kt">transformer</span> <span class="p">})</span>  
+</span></span><span class="line"><span class="cl">  <span class="kd">@DeleteDateColumn</span><span class="p">({</span> <span class="kr">type</span><span class="o">:</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="nx">transformer</span>: <span class="kt">dateTransformer</span> <span class="p">})</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">deleted_at?</span>: <span class="kt">Date</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>이 방법은 일일이 서비스로직에서 해당 필드에 함수를 적용했을 때보다 훨씬 더 코드가 깔끔해지고 단일게 공통적으로 적용할 수 있다는 장점이 있다.</p>
