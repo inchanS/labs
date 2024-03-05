@@ -240,11 +240,11 @@ typeORM의 <code>.find</code>나 <code>createQueryBuilder</code> 메소드를 �
 <p><del>자 이제 시간대는 맞춰졌다.</del>
  </p>
 <h3 id="2-시간-구분자-제거">2. <del>시간 구분자 제거</del></h3>
-<p>다음은 문제의 저 <code>T</code>와 <code>Z</code>를 날려보자.<br>
+<p><del>다음은 문제의 저 <code>T</code>와 <code>Z</code>를 날려보자.</del><br>
  </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="nx">dateStrings</span>: <span class="kt">true</span><span class="p">,</span>
 </span></span></code></pre></div><p> <br>
-DataSouce 연결 설정에 이걸 넣어준다.
+<del>DataSouce 연결 설정에 이걸 넣어준다.</del>
  </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DataSource</span><span class="p">({</span>  
 </span></span><span class="line"><span class="cl">  <span class="kr">type</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_CONNECTION</span><span class="p">,</span>  
@@ -261,13 +261,13 @@ DataSouce 연결 설정에 이걸 넣어준다.
 </span></span><span class="line"><span class="cl">  <span class="nx">charset</span><span class="o">:</span> <span class="s1">&#39;utf8mb4&#39;</span><span class="p">,</span>  
 </span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span></code></pre></div><p> </p>
-<p>그리고 다시 출력을 해보면
+<p><del>그리고 다시 출력을 해보면</del>
  </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">14</span> <span class="nx">17</span>:<span class="kt">55</span><span class="o">:</span><span class="mf">24.106558</span>
 </span></span></code></pre></div><p> </p>
-<p>드디어 불필요한 알파벳은 사라졌다&hellip;라기보단,
-<strong>그런데 더 거추장스럽게도 밀리초(?)로 바뀌었다.</strong><br>
-이제 이걸 제거해보자!<br>
+<p><del>드디어 불필요한 알파벳은 사라졌다&hellip;라기보단,</del>
+<del><strong>그런데 더 거추장스럽게도 밀리초(?)로 바뀌었다.</strong></del><br>
+<del>이제 이걸 제거해보자!</del><br>
  </p>
 <h3 id="3-정밀-초단위는-제거하고-시분까지만-출력">3. 정밀 초단위는 제거하고 시,분까지만 출력</h3>
 <p>여기서 정말 많이 찾아보고 공부했다.<br>
