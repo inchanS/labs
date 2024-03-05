@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>AWS EC2 서버에 HTTPS 적용하기 - inchan.dev</title><meta name="Description" content="AWS EC2 서버의 퍼블릭 주소에 인증서를 받고 HTTPS 보안 설정을 하는 방법"><meta property="og:title" content="AWS EC2 서버에 HTTPS 적용하기" />
+        <title>AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 - inchan.dev</title><meta name="Description" content="AWS EC2 서버의 퍼블릭 주소에 인증서를 받고 HTTPS 보안 설정을 하는 방법"><meta property="og:title" content="AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용" />
 <meta property="og:description" content="AWS EC2 서버의 퍼블릭 주소에 인증서를 받고 HTTPS 보안 설정을 하는 방법" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://inchan.dev/posts/202401122216/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
@@ -12,7 +12,7 @@
 <meta property="article:modified_time" content="2024-01-12T22:17:59+09:00" /><meta property="og:site_name" content="inchan.dev" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="AWS EC2 서버에 HTTPS 적용하기"/>
+<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용"/>
 <meta name="twitter:description" content="AWS EC2 서버의 퍼블릭 주소에 인증서를 받고 HTTPS 보안 설정을 하는 방법"/>
 <meta name="twitter:site" content="@codject"/>
 <meta name="application-name" content="inchan.dev">
@@ -24,12 +24,12 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "AWS EC2 서버에 HTTPS 적용하기",
+        "headline": "AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202401122216\/"
-        },"genre": "posts","keywords": "AWS","wordcount":  473 ,
+        },"genre": "posts","keywords": "AWS","wordcount":  504 ,
         "url": "https:\/\/inchan.dev\/posts\/202401122216\/","datePublished": "2024-01-12T22:17:59+09:00","dateModified": "2024-01-12T22:17:59+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -101,9 +101,9 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">AWS EC2 서버에 HTTPS 적용하기</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-12">2024-01-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;473 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-12">2024-01-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;504 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -119,8 +119,14 @@
     <li><a href="#5-마지막---도메인-설정은-다시-route-53-서비스에서">5. 마지막 - 도메인 설정은 다시 <strong>Route 53 서비스에서</strong></a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p> </p>
+            </div><div class="content" id="content"><p>관련 글</p>
+<ul>
+<li><a href="https://inchan.dev/posts/202403051214/" target="_blank" rel="noopener noreffer ">AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</a></li>
+</ul>
+<p> </p>
 <p>팀 프로젝트로 백엔드 서버를 EC2에서 배포하여 사용중인데 여기에 <strong>HTTPS</strong>를 적용하여 보았다.</p>
+<p>적용방법은 몇가지가 있지만 크게 AWS의 Route53을 이용하는 방법과 도메인서비스의 프록싱을 이용한 방법 등이 있다.</p>
+<p>그 중 첫번째 방법에 대해 기술한다.</p>
 <div class="details admonition tip open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>겁먹지 말기<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
@@ -142,7 +148,7 @@
         </div>
         <div class="details-content">
             <div class="admonition-content"><p>해당 참고 사이트의 글을 보다보면 친절하게 잘 설명되어있음에도 살짝씩 어리둥절할 때가 있다.<br>
-왜냐면 AWS 웹 UI가 생각보다 자주 바뀌는듯 해서 설명에 참고된 스크린샷과 <strong>현재 시점의  AWS 화면</strong>이 다르기 때문이다.</p>
+왜냐면 <strong>AWS 웹 UI가 생각보다 자주 바뀌는듯 해서</strong> 설명에 참고된 스크린샷과 <strong>현재 시점의  AWS 화면</strong>이 다르기 때문이다.</p>
 <p>이에 스크린 샷 없이 <strong>AWS 서비스의 흐름에 따라 outline 형식으로 설명</strong>을 한다.</p>
 </div>
         </div>
