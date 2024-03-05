@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기" />
-<meta property="og:description" content="미루고 미루다 이제서야 글을 쓴다.
-작년 말인가 AWS로부터 메일을 한통 받았고, AWS의 public IP에 대한 요금 부과에 관한 내용이었다.
+<meta property="og:description" content="작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.
 공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그
 AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. 2024년 2월 1일부터 서비스 연결 여부에 관계없이 모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다." />
 <meta property="og:type" content="article" />
@@ -16,8 +15,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기"/>
-<meta name="twitter:description" content="미루고 미루다 이제서야 글을 쓴다.
-작년 말인가 AWS로부터 메일을 한통 받았고, AWS의 public IP에 대한 요금 부과에 관한 내용이었다.
+<meta name="twitter:description" content="작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.
 공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그
 AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. 2024년 2월 1일부터 서비스 연결 여부에 관계없이 모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다."/>
 <meta name="twitter:site" content="@codject"/>
@@ -35,7 +33,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202403051335\/"
-        },"genre": "posts","keywords": "AWS","wordcount":  640 ,
+        },"genre": "posts","keywords": "AWS","wordcount":  741 ,
         "url": "https:\/\/inchan.dev\/posts\/202403051335\/","datePublished": "2024-03-05T13:35:51+09:00","dateModified": "2024-03-05T13:35:51+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -109,7 +107,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a>&nbsp;<a href="/categories/project/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Project</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-05">2024-03-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;640 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-05">2024-03-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;741 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -129,21 +127,21 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p> </p>
-<p>미루고 미루다 이제서야 글을 쓴다.</p>
-<p>작년 말인가 AWS로부터 메일을 한통 받았고, AWS의 public IP에 대한 요금 부과에 관한 내용이었다.</p>
+<p>작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.</p>
 <p><a href="https://aws.amazon.com/ko/blogs/korea/new-aws-public-ipv4-address-charge-public-ip-insights/?_encoding=UTF8&amp;tag=clien0a-20&amp;linkCode=ur2&amp;linkId=4ef926e41eaa57b3dcfc48b2660f5024&amp;camp=1789&amp;creative=9325" target="_blank" rel="noopener noreffer ">공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그</a></p>
 <blockquote>
 <p>AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. <strong>2024년 2월 1일부터</strong> 서비스 연결 여부에 관계없이 <strong>모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과</strong>됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다.</p>
 </blockquote>
 <p>당시 AWS 크레딧이 꽤 여유가 있었기에 차일 피일 미루다 2월 중순쯤 작업(?)을 시작하였다.</p>
-<p>백엔드 서버로서 AWS를 이용하고 있던 나는 현재 총 4개의 public IP를 사용하고 있었고, 이 중 프리티어 EC2에 부여된 하나의 주소를 제외한 나머지 3개 주소에 대한 요금이 2월부터 청구되고 있었다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>AWS에서 백엔드 서버와 DB를 이용하고 있던 나는 현재 총 4개의 public IP를 사용하고 있었고, 이 중 프리티어 EC2에 부여된 하나의 주소를 제외한 나머지 3개 주소에 대한 요금이 2월부터 청구되고 있었다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <h2 id="ipv6-전환">IPv6 전환</h2>
 <p>일단 AWS에서 준 문서대로 보안그룹과 VPC 서브넷을 이리 저리 만져보며 <strong>IPv6로 세팅을 끝냈다.</strong><br>
 그런데 아무리 해도 SSH 접속이 안되었다.<br>
 한참을 살펴보다 <strong>현재 이용중인 인터넷 서비스업체 (KT 또는 LGT)가 IPv6를 제대로 지원하지 않는다</strong>는 사실을 알게 되었다.</p>
-<p><strong>만약 IPv6를 지원한다면 여기서 모든게 해결된다!!</strong></p>
-<p><a href="https://test-ipv6.com/" target="_blank" rel="noopener noreffer ">IPv6을 테스트합니다.</a> 여기에서 현재 네트워크가 IPv6를 지원하는지 테스트해볼 수 있으며 구글링하면 이외에도 더 있다.<br>
-<img
+<p>(<strong>만약 이 글을 보는 이의 환경이 IPv6를 지원한다면 여기서 모든게 해결된다!!</strong>)</p>
+<p><a href="https://test-ipv6.com/" target="_blank" rel="noopener noreffer ">IPv6을 테스트합니다.</a><br>
+여기에서 현재 네트워크가 IPv6를 지원하는지 테스트해볼 수 있으며 구글링하면 이외에도 더 있다.</p>
+<p><img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="/images/SCR-20240305-mhek.png"
@@ -154,30 +152,41 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
 <p>허탈했고 이대로라면 AWS에서 프리티어를 이용하더라도 소액의 금액을 지불하지 않을 수 없는 상황이었다.</p>
 <p>현재 이용중인 public IPv4 IP는 다음과 같았다.</p>
 <ul>
-<li><strong>EC2 public 주소</strong> - 서버 배포용으로 탄력적 IP를 이용중 (이는 프리티어 플랜에서 월 750시간은 무료이다. 즉 하나의 EC2에서 하나의 주소로만 사용한다면 그냥 무료라는 이야기)</li>
+<li><strong>EC2 public 주소</strong> - 서버 배포용으로 탄력적 IP를 이용중<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
 <li><strong>RDS public 주소</strong> - DB 클라이언트와 IDE에서 연결하기 위해 사용</li>
-<li><strong>Load Balancer</strong> - HTTPS와 HTTP를 따로이 연결하며 2개의 public IPv4주소 사용중<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
+<li><strong>Load Balancer</strong> - HTTPS와 HTTP를 따로이 연결하며 2개의 public IPv4주소 사용중<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
 </ul>
 <h2 id="issue">issue</h2>
 <p>즉 현재 상황에서 비용지출을 줄이기 위한 당면과제는 다음과 같았다.</p>
 <ol>
 <li>EC2의 경우 다행히 하나의 public 주소는 무료이다.</li>
-<li>RDS의 경우 public 주소가 없으면 개발툴에서 연결하기가 힘들다.</li>
-<li>HTTPS 연결을 위해 세팅했던 Load Balancer의 public 주소는 다른 방법을 강구해야한다.<br>
+<li>HTTPS 연결을 위해 세팅했던 Load Balancer의 public 주소는 다른 방법을 강구해야한다.</li>
+<li>RDS의 경우 public 주소가 없으면 외부 개발도구에서 연결하기가 힘들다.<br>
  </li>
 </ol>
 <p>1번은 프리티어 플랜으로서 자연스레 <strong>해결</strong>되었고<br>
-3번의 경우는 Route53과 Load Balancer를 이용한 방법에서, 도메인 서비스의 프록싱을 이용한 직접 연결 방법으로 <strong>해결</strong>하였다.<br>
+2번의 경우는 Route53과 Load Balancer를 이용한 방법에서, 도메인 서비스의 프록싱을 이용한 직접 연결 방법으로 <strong>해결</strong>하였다.<br>
 (관련 글 - <a href="https://inchan.dev/posts/202403051214/" target="_blank" rel="noopener noreffer ">AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법 - inchan.dev</a>)<br>
  </p>
-<p>그리고 2번에 관한 해결안은 이제 아래에서 다룬다.<br>
+<p>그리고 3번 RDS에 관한 해결안은 이제 아래에서 다룬다.<br>
  </p>
 <h2 id="public-엑세스-없이-rds를-외부에서-연결하기">public 엑세스 없이 RDS를 외부에서 연결하기</h2>
 <p>AWS의 RDS 이용시 SQL 클라이언트로 연결할 수 없다면 정말로 불편한게 이만저만이 아니었다.<br>
-한참을 AWS의 여러 공식문서들을 살펴보다가 AWS의 네트워킹 시스템에서 힌트를 얻었다.<br>
-(참고문서 - <a href="https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/UserGuide/ec2-rds-connect.html" target="_blank" rel="noopener noreffer ">EC2 인스턴스와 DB 인스턴스를 자동으로 연결 - Amazon Relational Database Service</a>)</p>
+오랜시간 끙끙대며 여러 문서들을 살펴보고 이것저것 세팅을 바꿔가며 테스트해보고 고민했다.<br>
+ </p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/Pasted%20image%2020240306070849.png"
+        data-srcset="/images/Pasted%20image%2020240306070849.png, /images/Pasted%20image%2020240306070849.png 1.5x, /images/Pasted%20image%2020240306070849.png 2x"
+        data-sizes="auto"
+        alt="/images/Pasted%20image%2020240306070849.png"
+        title="/images/Pasted%20image%2020240306070849.png" /></p>
+<p>그렇게 AWS의 여러 공식문서들을 살펴보다가 AWS의 네트워킹 시스템에서 방법을 찾았다.</p>
+<p>위 이미지와 같이 외부에서는 <strong>EC2의 Public subnet</strong>으로 연결할 수 있고, 이 Public subnet은 또다시 <strong>RDS의  Private subnet</strong>으로 연결할 수 있다. 마치 모니터 연결시 bridge 방식으로 연결하는 <a href="http://kb.supremainc.com/knowledge/doku.php?id=ko:daisy_chain" target="_blank" rel="noopener noreffer ">데이지 체인</a>과 같은 원리로 연결을 할 수 있었다.</p>
+<p>(참고문서 - <a href="https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/UserGuide/ec2-rds-connect.html" target="_blank" rel="noopener noreffer ">EC2 인스턴스와 DB 인스턴스를 자동으로 연결 - Amazon Relational Database Service</a>)</p>
 <h3 id="aws-ec2와-rds-연결">AWS EC2와 RDS 연결</h3>
-<p><strong>AWS의 RDS는 EC2에 연결해둘 수가 있다.</strong><br>
+<p><strong>AWS의 RDS는 EC2에 연결해둘 수가 있다.</strong><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> <br>
  </p>
 <p>즉, EC2의 public IPv4주소를 이용하여 외부에서 AWS EC2 내부 넷망으로 들어갈 수 있고 이때, RDS가 연결되어있다면 내부 넷망을 통해 RDS 역시 접속 가능하다는 것이다.<br>
  </p>
@@ -256,7 +265,13 @@ UI나 일부 메뉴 이름이 다르더라도 이해하는데 큰 지장은 없�
 <p>대략 보름 정도 사용했을 때 $5.63 정도 청구되었다. 즉 한달이면 약 $10정도가 청구된다는 뜻이었다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://inchan.dev/posts/202401122216/" target="_blank" rel="noopener noreffer ">AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 - inchan.dev</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>EC2용 <a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreffer ">AWS 프리 티어</a>에는 2024년 2월 1일부터 처음 12개월 동안 매월 750시간의 퍼블릭 IPv4 주소 사용이 포함됩니다. - <a href="https://aws.amazon.com/ko/blogs/korea/new-aws-public-ipv4-address-charge-public-ip-insights/?_encoding=UTF8&amp;tag=clien0a-20&amp;linkCode=ur2&amp;linkId=4ef926e41eaa57b3dcfc48b2660f5024&amp;camp=1789&amp;creative=9325" target="_blank" rel="noopener noreffer ">공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그</a> =&gt; 즉 하나의 EC2에서 하나의 IP 주소만 사용한다면 무료이기에 신경쓸 필요가 없다.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://inchan.dev/posts/202401122216/" target="_blank" rel="noopener noreffer ">AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 - inchan.dev</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>참고문서 : <a href="https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/tutorial-connect-ec2-instance-to-rds-database.html" target="_blank" rel="noopener noreffer ">자습서: Amazon RDS 데이터베이스에 Amazon EC2 인스턴스 연결 - Amazon Elastic Compute Cloud</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
