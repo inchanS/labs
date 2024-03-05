@@ -33,7 +33,7 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202302160417\/"
-        },"genre": "posts","keywords": "TypeScript, typeORM, project_review","wordcount":  1336 ,
+        },"genre": "posts","keywords": "TypeScript, typeORM, project_review","wordcount":  1357 ,
         "url": "https:\/\/inchan.dev\/posts\/202302160417\/","datePublished": "2023-02-16T04:17:07+09:00","dateModified": "2024-03-03T08:06:05+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -107,7 +107,7 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Node.js 백엔드TypeScript + typeORM으로 무한 대댓글 가공하기</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-16">2023-02-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1336 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-16">2023-02-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1357 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -205,14 +205,20 @@ typeORM의 <code>.find</code>나 <code>createQueryBuilder</code> 메소드를 �
             <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>2024.03.03 시간대 관련 수정글 추가<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">이 글을 작성할 당시에 DB와 시간대에 관한 개념이 확실하게 잡혀있지 않았다.<br>
+            <div class="admonition-content"><p>이 글을 작성할 당시에 DB와 시간대에 관한 개념이 확실하게 잡혀있지 않았다.<br>
 따라서 시간대와 관련된 최신 글의 링크를 아래와 같이 남기지만, 해당 원글은 그대로 보존하도록 한다.<br>
-<a href="https://inchan.dev/posts/202403010802/" target="_blank" rel="noopener noreffer ">typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란 - inchan.dev</a></div>
+<a href="https://inchan.dev/posts/202403010802/" target="_blank" rel="noopener noreffer ">typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란 - inchan.dev</a></p>
+<p>아래 글 중 잘못된 내용은  아래와 같다.</p>
+<ol>
+<li>local 시간대 맞추기 - timezone 옵션 내용</li>
+<li>시간 구분자 제거 - datastrings 옵션 내용</li>
+</ol>
+</div>
         </div>
     </div>
-<h3 id="1-local-시간대-맞추기">1. local 시간대 맞추기</h3>
+<h3 id="1-local-시간대-맞추기">1. <del>local 시간대 맞추기</del></h3>
 <p>우선, 이를 local의 시간대로 맞추기 위해
-아래와 같이 DataSource 설정에 <code>timezone: 'Z'</code> 를 추가하여 local 시간대로 출력되게끔 한다.<br>
+<del>아래와 같이 DataSource 설정에 <code>timezone: 'Z'</code> 를 추가하여 local 시간대로 출력되게끔 한다.</del><br>
  </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DataSource</span><span class="p">({</span>  
 </span></span><span class="line"><span class="cl">  <span class="kr">type</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_CONNECTION</span><span class="p">,</span>  
@@ -231,9 +237,9 @@ typeORM의 <code>.find</code>나 <code>createQueryBuilder</code> 메소드를 �
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 출력시,
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="nx">14T17</span>:<span class="kt">55</span><span class="o">:</span><span class="mf">24.106</span><span class="nx">Z</span>
 </span></span></code></pre></div><p> </p>
-<p>자 이제 시간대는 맞춰졌다.<br>
+<p><del>자 이제 시간대는 맞춰졌다.</del>
  </p>
-<h3 id="2-시간-구분자-제거">2. 시간 구분자 제거</h3>
+<h3 id="2-시간-구분자-제거">2. <del>시간 구분자 제거</del></h3>
 <p>다음은 문제의 저 <code>T</code>와 <code>Z</code>를 날려보자.<br>
  </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="nx">dateStrings</span>: <span class="kt">true</span><span class="p">,</span>
