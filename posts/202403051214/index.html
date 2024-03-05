@@ -157,9 +157,9 @@ AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS 
         title="/images/SCR-20240305-lceq.png" /><br>
  </p>
 <ol>
-<li>이름에는 하위도메인을 입력한다.</li>
+<li>이름에는 <strong>하위도메인을 입력</strong>한다.</li>
 <li>예를 들어 도메인 주소가 abc.com이라고 한다면,  EC2에 연결할 하위도메인으로 &lsquo;api&rsquo;이라고 입력하면 이제부터 EC2의 주소는 api.abc.com으로 사용할 수 있다.</li>
-<li>그리고 콘텐츠 부분에 EC2에 연결되어있는 Public IPv4 주소를 입력하면 된다.<br>
+<li>그리고 <strong>콘텐츠 부분에</strong> EC2에 연결되어있는 Public IPv4 주소를 입력하면 된다.<br>
  </li>
 </ol>
 <p>이렇게 하면 일단 EC2주소는 바로 소유하고 있는 도메인으로 연결된다.<br>
@@ -188,12 +188,12 @@ AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS 
         title="/images/SCR-20240305-ljre-2.png" /></p>
 <p>Cloudflare의 해당 도메인에서 좌측 사이드메뉴의 <strong>규칙 / Origin Rules</strong>를 선택한다.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <ol>
-<li>규칙 이름 : 적당한 규칙이름을 적는다. (아무거나 적어도 상관없다.)</li>
-<li>필드 : 전체 URI</li>
-<li>연산자 : 다음으로 시작</li>
-<li>값 : 아까 DNS에서 설정한 하위도메인의 풀 주소를 적는다. (https로 시작한다.)</li>
-<li>대상 포트 : EC2 서버를 가동시킬때 적용한 port번호를 적어준다.</li>
-<li>그리고 화면 우측 아래에 있는 &lsquo;배포&rsquo; 버튼을 누르면 끝.
+<li><strong>규칙 이름</strong> : 적당한 규칙이름을 적는다. (아무거나 적어도 상관없다.)</li>
+<li><strong>필드</strong> : 전체 URI</li>
+<li><strong>연산자</strong> : 다음으로 시작</li>
+<li><strong>값</strong> : 아까 DNS에서 설정한 하위도메인의 풀 주소를 적는다. (https로 시작한다.)</li>
+<li><strong>대상 포트</strong> : EC2 서버를 가동시킬때 적용한 port번호를 적어준다.</li>
+<li>그리고 화면 우측 아래에 있는 <strong>&lsquo;배포&rsquo; 버튼</strong>을 누르면 끝.
  </li>
 </ol>
 <p>보통 1~2분 내에 적용되며 매우 간단하고 쉽다.</p>
