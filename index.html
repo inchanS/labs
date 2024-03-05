@@ -99,6 +99,14 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/202403051335/">AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-03-05">2024-03-05</time></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a>&nbsp;<a href="/categories/project/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Project</a></span></div><div class="content">미루고 미루다 이제서야 글을 쓴다.
+작년 말인가 AWS로부터 메일을 한통 받았고, AWS의 public IP에 대한 요금 부과에 관한 내용이었다.
+공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그
+AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. 2024년 2월 1일부터 서비스 연결 여부에 관계없이 모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다.</div><div class="post-footer">
+        <a href="/posts/202403051335/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/aws/">AWS</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/202403051214/">AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-03-05">2024-03-05</time></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div><div class="content">관련 글
 AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS EC2에 HTTPS를 연결하는 방법은 몇가지가 있는데
@@ -193,17 +201,6 @@ Version Control and Issue Tracking: GitHub Issue
 문제 상황 프로젝트에서 발견된 주요 문제는 TypeORM을 사용하는 Node.js 환경에서 트랜잭션 관리와 롤백이 제대로 이루어지지 않는 것이었다. 이는 게시글을 등록하는 로직에서 발견되었으며, 예기치 않은 오류가 발생했을 경우 데이터베이스에 불필요한 데이터가 잔존하는 결과를 초래했다.</div><div class="post-footer">
         <a href="/posts/202401241017/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typeorm/">TypeORM</a>,&nbsp;<a href="/tags/mysql/">MySQL</a>,&nbsp;<a href="/tags/project_review/">Project_review</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202401122324/">Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-01-12">2024-01-12</time></span>&nbsp;<span class="post-category">included in <a href="/categories/miscellaneous/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Miscellaneous</a></span></div><div class="content">문제상황 구글이 도메인 사업을 매각한 후, 도메인 이전을 차일피일 미루다 최근에서야 Cloudflare로 도메인을 이전하였다.1
-모든 DNS 역시 정상적으로 이전하였고, 메일서비스를 비롯한 다른 서비스들도 정상작동함을 확인하였다.
-그런데 갑자기 해당 도메인의 주소가 정상적으로 작동하지 않는 문제가 생겼다.
-브라우저에서 20회 이상의 리다이렉션으로 페이지 불러오기 실패
-해결방법 Cloudflare side menu - SSL/TLS - 개요 : SSL/TLS 암호화 모드를
-가변에서 전체로 변경했더니 문제 해결!
-그런데 왜?? 현재 다른 설정은 항상 HTTPS 사용이 체크되어있는데 이 설정과 충돌해서일까?</div><div class="post-footer">
-        <a href="/posts/202401122324/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/miscellaneous/">Miscellaneous</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>

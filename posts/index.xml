@@ -4,7 +4,18 @@
         <link>https://inchan.dev/posts/</link>
         <description>All Posts | inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sun, 18 Feb 2024 12:14:30 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sun, 18 Feb 2024 13:35:51 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</title>
+    <link>https://inchan.dev/posts/202403051335/</link>
+    <pubDate>Sun, 18 Feb 2024 13:35:51 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202403051335/</guid>
+    <description><![CDATA[미루고 미루다 이제서야 글을 쓴다.
+작년 말인가 AWS로부터 메일을 한통 받았고, AWS의 public IP에 대한 요금 부과에 관한 내용이었다.
+공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그
+AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. 2024년 2월 1일부터 서비스 연결 여부에 관계없이 모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다.]]></description>
+</item>
+<item>
     <title>AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</title>
     <link>https://inchan.dev/posts/202403051214/</link>
     <pubDate>Sun, 18 Feb 2024 12:14:30 &#43;0900</pubDate>
@@ -142,19 +153,6 @@ updateUserInfo 함수 내부에서 checkDuplicateEmail 함수와 checkDuplicateN
 현재 Chat GPT를 필두로 한 AI가 대다수의 업계에 미치는 파급효과는 어마어마하다.
 OpenAI로 인한 영향, 방법 등에 관한 콘텐츠가 마구잡이로 쏟아져나오고 있는 현재이다.
 이러한 시대적 상황에서 OpenAI가 조금이라도 나의 업무에 미치는 영향이 있다면 이번 웨비나는 쉽게 지나치기 힘든 주제였다.]]></description>
-</item>
-<item>
-    <title>AWS EC2에서 product 서버와 개발용 서버 같이 사용하기</title>
-    <link>https://inchan.dev/posts/202306191659/</link>
-    <pubDate>Mon, 19 Jun 2023 16:59:51 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202306191659/</guid>
-    <description><![CDATA[프로젝트를 진행하다보면 필연적으로 프론트엔드와의 통신교류가 필요하고,
-이 때마다 local server로 열기보단 상시 열려있는 server가 있는 것이 훨씬 편하다.
-때문에 이러한 개발과정상 필요한 back-end의 통신교류용 API 서버를 AWS EC2에서 간편하게 열어 사용하는 방법에 대해 기술하려 한다.
-초기 처음 통신교류를 위한 서버는 VScode의 Live Share Extension을 이용하였다.
-방법은 다음과 같다.
-extensions에서 Live Share 설치 좌측 사이드 메뉴에서 Live Share 아이콘 클릭 Share 버튼을 클릭하면 실시간 공유가 시작된다. 여기서 Shared Servers를 클릭하고 상단 검색창에 포트 번호를 입력후, enter를 누르면 해당 포트로 서버가 공유된다.]]></description>
 </item>
 </channel>
 </rss>
