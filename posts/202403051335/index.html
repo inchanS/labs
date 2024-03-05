@@ -35,7 +35,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202403051335\/"
-        },"genre": "posts","keywords": "AWS","wordcount":  603 ,
+        },"genre": "posts","keywords": "AWS","wordcount":  640 ,
         "url": "https:\/\/inchan.dev\/posts\/202403051335\/","datePublished": "2024-03-05T13:35:51+09:00","dateModified": "2024-03-05T13:35:51+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -109,8 +109,8 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a>&nbsp;<a href="/categories/project/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Project</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-05">2024-03-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;603 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-05">2024-03-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;640 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -187,9 +187,14 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
 스냅샷 마이그레이션을 통해 현재 EC2와 동일한 가용영역 내에서 새로운 RDS 인스턴스를 생성했다.<br>
 그리고 EC2를 연결해주면 일단 외부에서도 접속할 수 있는 길은 트이게 된다.<br>
  </p>
-<p>이 때 주의할 점은 새로운 RDS 인스턴스 생성 및 마이그레이션시,<br>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>새로운 RDS 인스턴스 생성시 주의사항<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>주의할 점은 새로운 RDS 인스턴스 생성 및 마이그레이션시,<br>
 설정에서 <strong>public 액세스</strong>는 반드시 &ldquo;아니오&quot;를 택해야 한다.<br>
-만약 &ldquo;예&quot;를 택할 경우 public IPv4 주소가 할당되며 곧 비용청구로 이어진다.</p>
+만약 &ldquo;예&quot;를 택할 경우 새로운 RDS의 인스턴스에는 자동으로 public IPv4 주소가 할당되며 곧 비용청구로 이어진다.</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -197,9 +202,11 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
         data-srcset="/images/Pasted%20image%2020240305140846.png, /images/Pasted%20image%2020240305140846.png 1.5x, /images/Pasted%20image%2020240305140846.png 2x"
         data-sizes="auto"
         alt="/images/Pasted%20image%2020240305140846.png"
-        title="/images/Pasted%20image%2020240305140846.png" /><br>
- </p>
-<p>그리고 이제 EC2와 연결해준다.</p>
+        title="/images/Pasted%20image%2020240305140846.png" /></p>
+</div>
+        </div>
+    </div>
+<p>새로운 RDS를 생성하고 세팅중이라면 아래와 같이 EC2와 연결해준다.</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -209,7 +216,10 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
         alt="/images/Pasted%20image%2020240305141043.png"
         title="/images/Pasted%20image%2020240305141043.png" /><br>
  </p>
-<p>위와 같이 진행하면 EC2와 같은 가용영역으로 확인하며 설치 진행할 수 있으며 이후의 세팅은 용도에 맞춰 진행하면 된다.</p>
+<p>위와 같이 진행하면 EC2와 같은 가용영역으로 확인하며 설치 진행할 수 있으며 이후의 세팅은 용도에 맞춰 진행하면 된다.<br>
+ </p>
+<p>만약 이미 이용중인 RDS를 연결하고자 한다면 해당 RDS의 인스턴스 메뉴 중 &ldquo;작업&rdquo; 섹션에서 &ldquo;EC2 연결하기&quot;와 같은 메뉴를 볼 수 있다. 가용영역이 같다면 손쉽게 연결할 수 있다.<br>
+ </p>
 <h3 id="sql-클라이언트에-연결하기">SQL 클라이언트에 연결하기</h3>
 <p>현재 DBeaver, DataGrip 등의 SQL 클라이언트를 사용중인데 연결 방법은 모두 대동소이했다.</p>
 <p>아래에서는 DataGrip의 예시로 설명을 한다.<br>
