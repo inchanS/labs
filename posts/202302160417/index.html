@@ -33,7 +33,7 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202302160417\/"
-        },"genre": "posts","keywords": "TypeScript, typeORM, project_review","wordcount":  1357 ,
+        },"genre": "posts","keywords": "TypeScript, typeORM, project_review","wordcount":  1365 ,
         "url": "https:\/\/inchan.dev\/posts\/202302160417\/","datePublished": "2023-02-16T04:17:07+09:00","dateModified": "2024-03-03T08:06:05+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -107,7 +107,7 @@ mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에"/>
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Node.js 백엔드TypeScript + typeORM으로 무한 대댓글 가공하기</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-16">2023-02-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1357 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-16">2023-02-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1365 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -217,8 +217,9 @@ typeORM의 <code>.find</code>나 <code>createQueryBuilder</code> 메소드를 �
         </div>
     </div>
 <h3 id="1-local-시간대-맞추기">1. <del>local 시간대 맞추기</del></h3>
-<p>우선, 이를 local의 시간대로 맞추기 위해
-<del>아래와 같이 DataSource 설정에 <code>timezone: 'Z'</code> 를 추가하여 local 시간대로 출력되게끔 한다.</del><br>
+<details>
+<summary>수정 전 내용 보기</summary>
+<p><del>우선, 이를 local의 시간대로 맞추기 위해 아래와 같이 DataSource 설정에 <code>timezone: 'Z'</code> 를 추가하여 local 시간대로 출력되게끔 한다.</del><br>
  </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DataSource</span><span class="p">({</span>  
 </span></span><span class="line"><span class="cl">  <span class="kr">type</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_CONNECTION</span><span class="p">,</span>  
@@ -228,7 +229,7 @@ typeORM의 <code>.find</code>나 <code>createQueryBuilder</code> 메소드를 �
 </span></span><span class="line"><span class="cl">  <span class="nx">password</span>: <span class="kt">process.env.TYPEORM_PASSWORD</span><span class="p">,</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">database</span>: <span class="kt">process.env.TYPEORM_DATABASE</span><span class="p">,</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">entities</span><span class="o">:</span> <span class="p">[</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">&#39;/../**/*.entity.{js,ts}&#39;</span><span class="p">],</span>  
-</span></span><span class="line"><span class="cl">  <span class="nx">timezone</span><span class="o">:</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span>  <span class="c1">// &lt;-- 이렇게 추가
+</span></span><span class="line hl"><span class="cl">  <span class="nx">timezone</span><span class="o">:</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span>  <span class="c1">// &lt;-- 이렇게 추가
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">logging</span>: <span class="kt">Boolean</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_LOGGING</span><span class="p">),</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">synchronize</span>: <span class="kt">Boolean</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_SYNCHRONIZE</span><span class="p">),</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">charset</span><span class="o">:</span> <span class="s1">&#39;utf8mb4&#39;</span><span class="p">,</span>  
@@ -239,7 +240,11 @@ typeORM의 <code>.find</code>나 <code>createQueryBuilder</code> 메소드를 �
 </span></span></code></pre></div><p> </p>
 <p><del>자 이제 시간대는 맞춰졌다.</del>
  </p>
+</details>
+<br>
 <h3 id="2-시간-구분자-제거">2. <del>시간 구분자 제거</del></h3>
+<details>
+<summary>수정 전 내용 보기</summary>
 <p><del>다음은 문제의 저 <code>T</code>와 <code>Z</code>를 날려보자.</del><br>
  </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="nx">dateStrings</span>: <span class="kt">true</span><span class="p">,</span>
@@ -255,7 +260,7 @@ typeORM의 <code>.find</code>나 <code>createQueryBuilder</code> 메소드를 �
 </span></span><span class="line"><span class="cl">  <span class="nx">database</span>: <span class="kt">process.env.TYPEORM_DATABASE</span><span class="p">,</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">entities</span><span class="o">:</span> <span class="p">[</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">&#39;/../**/*.entity.{js,ts}&#39;</span><span class="p">],</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">timezone</span><span class="o">:</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span>  
-</span></span><span class="line"><span class="cl">  <span class="nx">dateStrings</span>: <span class="kt">true</span><span class="p">,</span>  <span class="c1">// &lt;-- 이렇게 추가
+</span></span><span class="line hl"><span class="cl">  <span class="nx">dateStrings</span>: <span class="kt">true</span><span class="p">,</span>  <span class="c1">// &lt;-- 이렇게 추가
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">logging</span>: <span class="kt">Boolean</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_LOGGING</span><span class="p">),</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">synchronize</span>: <span class="kt">Boolean</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TYPEORM_SYNCHRONIZE</span><span class="p">),</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">charset</span><span class="o">:</span> <span class="s1">&#39;utf8mb4&#39;</span><span class="p">,</span>  
@@ -269,6 +274,7 @@ typeORM의 <code>.find</code>나 <code>createQueryBuilder</code> 메소드를 �
 <del><strong>그런데 더 거추장스럽게도 밀리초(?)로 바뀌었다.</strong></del><br>
 <del>이제 이걸 제거해보자!</del><br>
  </p>
+</details> 
 <h3 id="3-정밀-초단위는-제거하고-시분까지만-출력">3. 정밀 초단위는 제거하고 시,분까지만 출력</h3>
 <p>여기서 정말 많이 찾아보고 공부했다.<br>
 typeORM의 queryRunner를 사용하거나,<br>
