@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://inchan.dev/posts/202401241017/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-01-24T10:19:14+09:00" />
-<meta property="article:modified_time" content="2024-03-07T07:22:50+09:00" /><meta property="og:site_name" content="inchan.dev" />
+<meta property="article:modified_time" content="2024-03-08T20:39:02+09:00" /><meta property="og:site_name" content="inchan.dev" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법"/>
@@ -29,8 +29,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202401241017\/"
-        },"genre": "posts","keywords": "typeORM, mySQL, project_review","wordcount":  1127 ,
-        "url": "https:\/\/inchan.dev\/posts\/202401241017\/","datePublished": "2024-01-24T10:19:14+09:00","dateModified": "2024-03-07T07:22:50+09:00","publisher": {
+        },"genre": "posts","keywords": "typeORM, mySQL, project_review","wordcount":  1125 ,
+        "url": "https:\/\/inchan.dev\/posts\/202401241017\/","datePublished": "2024-01-24T10:19:14+09:00","dateModified": "2024-03-08T20:39:02+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
                 "@type": "Person",
@@ -103,7 +103,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-24">2024-01-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1127 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-24">2024-01-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1125 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -299,7 +299,7 @@
         </div>
         <div class="details-content">
             <div class="admonition-content"><ul>
-<li><strong>Data Integrity</strong>(데이터 무결성): 트랜잭션의 모든 단계가 완료되지 않으면 트랜잭션이 끝나지 않는다. 이는 데이터가 항상 올바른 상태를 유지하도록 돕는다. 예를 들어, 계좌 이체의 경우 돈을 보내는 계좌에서 돈을 빼기만 하고 받는 계좌에 돈을 더하지 않으면 데이터 무결성이 깨진다.</li>
+<li><strong>Atomicity</strong>(원자성): 트랜잭션의 모든 단계가 완료되지 않으면 트랜잭션이 끝나지 않는다. 이는 데이터가 항상 올바른 상태를 유지하도록 돕는다. 예를 들어, 계좌 이체의 경우 돈을 보내는 계좌에서 돈을 빼기만 하고 받는 계좌에 돈을 더하지 않으면 데이터 무결성이 깨진다.</li>
 <li><strong>Consistency</strong>(일관성): 트랜잭션은 데이터베이스의 상태를 일관된 상태에서 다른 일관된 상태로 이동하도록 한다. 만약 트랜잭션 중간에 문제가 발생하면 트랜잭션은 롤백되어 데이터베이스를 이전 일관된 상태로 되돌린다.</li>
 <li><strong>Isolation</strong>(고립성 또는 독립성): 동시에 여러 트랜잭션이 수행되더라도 각 트랜잭션은 서로에게 영향을 주지 않는다. 이는 각 트랜잭션이 독립적으로 수행되도록 보장하며, 이는 병렬 처리를 가능하게 한다.</li>
 <li><strong>Durability</strong>(내구성 또는 지속성): 트랜잭션이 성공적으로 완료되면 그 결과는 영구적으로 데이터베이스에 저장된다. 시스템이 중단되더라도 트랜잭션으로 인한 변경사항은 손실되지 않는다.</li>
@@ -368,7 +368,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2024-03-07</span>
+                <span>Updated on 2024-03-08</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
