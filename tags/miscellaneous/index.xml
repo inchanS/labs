@@ -4,7 +4,22 @@
         <link>https://inchan.dev/tags/miscellaneous/</link>
         <description>Miscellaneous - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 12 Jan 2024 23:24:58 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/miscellaneous/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 09 Mar 2024 07:24:37 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/miscellaneous/" rel="self" type="application/rss+xml" /><item>
+    <title>브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법</title>
+    <link>https://inchan.dev/posts/202403090724/</link>
+    <pubDate>Sat, 09 Mar 2024 07:24:37 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202403090724/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1677696797025-e6a40f6c714d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer">
+            </div>문제상황 브라우저에서 chatGPT 프롬프트의 입력창에 글을 쓰고 아무리 &ldquo;엔터&quot;를 눌러도 반응이 가질 않는 상황이 생겼다.
+일단 의심되는 변화는 macOS를 sonoma 14.4로 업그레이드 한 정황뿐인데 이래저래 만져보다 문제를 찾았다.
+문제는 바로 chatGPT의 local language 지원(Alpha) 기능이었다.
+(chatGPT 웹사이트의 왼쪽 아래, 자신의 아이디를 클릭하고 나오는 설정에서 확인 가능)
+일단 이 기능은 &lsquo;Auto-detect&lsquo;가 default로 설정되어있는데, 만약 이 값을 &lsquo;한국어&rsquo; 등으로 바꾸었다면 먹통 문제가 발현되었다.
+게다가 한번 바꾸면 이 설정에서 아무리 다른 값을 선택해도 먹히질 않는다.]]></description>
+</item>
+<item>
     <title>Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면</title>
     <link>https://inchan.dev/posts/202401122324/</link>
     <pubDate>Fri, 12 Jan 2024 23:24:58 &#43;0900</pubDate>

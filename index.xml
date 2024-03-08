@@ -4,9 +4,24 @@
         <link>https://inchan.dev/</link>
         <description>Coding Projects: From Ideas to Execution</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sun, 18 Feb 2024 13:35:51 &#43;0900</lastBuildDate>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 09 Mar 2024 07:24:37 &#43;0900</lastBuildDate>
             <atom:link href="https://inchan.dev/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법</title>
+    <link>https://inchan.dev/posts/202403090724/</link>
+    <pubDate>Sat, 09 Mar 2024 07:24:37 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202403090724/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1677696797025-e6a40f6c714d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer">
+            </div>문제상황 브라우저에서 chatGPT 프롬프트의 입력창에 글을 쓰고 아무리 &ldquo;엔터&quot;를 눌러도 반응이 가질 않는 상황이 생겼다.
+일단 의심되는 변화는 macOS를 sonoma 14.4로 업그레이드 한 정황뿐인데 이래저래 만져보다 문제를 찾았다.
+문제는 바로 chatGPT의 local language 지원(Alpha) 기능이었다.
+(chatGPT 웹사이트의 왼쪽 아래, 자신의 아이디를 클릭하고 나오는 설정에서 확인 가능)
+일단 이 기능은 &lsquo;Auto-detect&lsquo;가 default로 설정되어있는데, 만약 이 값을 &lsquo;한국어&rsquo; 등으로 바꾸었다면 먹통 문제가 발현되었다.
+게다가 한번 바꾸면 이 설정에서 아무리 다른 값을 선택해도 먹히질 않는다.]]></description>
+</item>
+<item>
     <title>AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</title>
     <link>https://inchan.dev/posts/202403051335/</link>
     <pubDate>Sun, 18 Feb 2024 13:35:51 &#43;0900</pubDate>
@@ -141,19 +156,6 @@ AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법 팀 프로젝
 초점을 맞춰 볼 곳은,
 updateUserInfo 함수 내부에서 checkDuplicateEmail 함수와 checkDuplicateNickname 함수가 재사용되고 있다.
 // ... const checkDuplicateEmail = async ( email: string ) =&gt; { ... } const checkDuplicateNickname = async ( nickname: string ) =&gt; { .]]></description>
-</item>
-<item>
-    <title>Webina 참여 회고 - 원티드 주최 &#39;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&#39;</title>
-    <link>https://inchan.dev/posts/202306211131/</link>
-    <pubDate>Wed, 21 Jun 2023 11:31:43 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202306211131/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1679083216051-aa510a1a2c0e?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2664&amp;q=80" referrerpolicy="no-referrer">
-            </div>&lt;표지 사진출처: Unsplash&gt; 지난 월요일 저녁 &ldquo;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&rdquo; 라는 아주 흥미로운 주제의 웨비나가 있어 참여하였다. 비단 HR 관계자가 아니더라도 각 팀의 리더 또는 구성원이라면, 또는 조직에 속해있다면, 그리고 발빠르게 변화하는 현시대적 흐름에서 자기 스스로를 육성하는 방면에서도 몹시 듣고 싶은 주제였다.
-현재 Chat GPT를 필두로 한 AI가 대다수의 업계에 미치는 파급효과는 어마어마하다.
-OpenAI로 인한 영향, 방법 등에 관한 콘텐츠가 마구잡이로 쏟아져나오고 있는 현재이다.
-이러한 시대적 상황에서 OpenAI가 조금이라도 나의 업무에 미치는 영향이 있다면 이번 웨비나는 쉽게 지나치기 힘든 주제였다.]]></description>
 </item>
 </channel>
 </rss>

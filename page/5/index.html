@@ -99,6 +99,26 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/inchanS" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/codject" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="mailto:song@inchan.dev" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/posts/202302020410/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png"
+        data-srcset="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png, https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png 1.5x, https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png 2x"
+        data-sizes="auto"
+        alt="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png"
+        title="https://www.devontechnologies.com/media/pages/apps/devonthink/2706592775-1612970307/packshot-devonthink-light.png" /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/202302020410/">devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-02">2023-02-02</time></span>&nbsp;<span class="post-category">included in <a href="/categories/env/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Env</a></span></div><div class="content">&lt;사진: DEVONtechnologies | DEVONthink, professional document and information management for the Mac and iOS&gt;
+코딩을 공부하면서 정말 많은 웹 문서들을 참고하며 정리하게 된다.
+그 중, 보관하고자 하는 문서는 주로 웹클리핑을 통해 정보를 수집한다.
+이때, 클리핑 포맷은 보통 PDF로 하지만 가끔 code block내 스크롤이 있는 경우에는
+PDF에서 짤린채로 수집되는 문제가 있어 MarkDown 포맷으로 클리핑을 한다.
+나는 주로 아래 두 도구를 사용하여 자료를 정리한다.
+Obsidian(note taking app) DevonThink(note database) 이때, 웹클리핑은 Obsidian 노트내로 바로 삽입할 수 있는 방법도 있지만 1</div><div class="post-footer">
+        <a href="/posts/202302020410/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/devonthink/">Devonthink</a>,&nbsp;<a href="/tags/markdown/">Markdown</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/posts/202302020409/"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -168,13 +188,6 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
 JEST의 test파일 실행시 기존 DB를 사용함으로 인한 DB내부 데이터 오염문제 test용 DB 분리로 해결 test용 DB 분리 이후, npm run 실행 환경(dev, test, production)에 따른 DB 설정문제 개발간 서버를 돌릴때, test코드를 돌릴때마다 dev.</div><div class="post-footer">
         <a href="/posts/202301230424/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typescript/">TypeScript</a>,&nbsp;<a href="/tags/express/">Express</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/202301180430/">error log - throw와 return</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-18">2023-01-18</time></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div><div class="content">문제상황 Failure 에러핸들링 중, 에러메세지를 response로 보내려고 한다. 이에 return을 사용 에러가 나와야 할 상황에서 정상적으로 에러메세지를 response로 보낸다. 하지만 에러코드를 알려야 할 status code는 정상을 알리며 이후 모든 함수와 명령이 진행됨 해결 Success return이 아닌 throw를 사용하여야 한다. 특히 node.js에서 서버를 돌릴때,
-단순히 return만으로는 이후의 모든 과정, 즉 controller - service - dao 등에서 return을 한 함수 이외 모든 명령어가 진행 된다.
-하지만 throw의 경우, 에러를 내보내는 것 뿐만 아니라 이후의 모든 명령어를 중지시킨다.</div><div class="post-footer">
-        <a href="/posts/202301180430/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/javascript/">JavaScript</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
