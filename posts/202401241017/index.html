@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202401241017\/"
-        },"genre": "posts","keywords": "typeORM, mySQL, project_review","wordcount":  1125 ,
+        },"genre": "posts","keywords": "typeORM, mySQL, project_review","wordcount":  1143 ,
         "url": "https:\/\/inchan.dev\/posts\/202401241017\/","datePublished": "2024-01-24T10:19:14+09:00","dateModified": "2024-03-08T20:39:02+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -103,7 +103,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-24">2024-01-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1125 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-24">2024-01-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1143 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -312,12 +312,13 @@
 </span></span><span class="line"><span class="cl">	  <span class="kr">const</span> <span class="nx">feed</span> <span class="o">=</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Feed</span><span class="p">,</span> <span class="nx">feedInfo</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	  <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">feed</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">	  <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">Feed</span><span class="p">,</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">loadRelationIds</span>: <span class="kt">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">where</span><span class="o">:</span> <span class="p">{</span> <span class="nx">user</span><span class="o">:</span> <span class="p">{</span> <span class="nx">id</span>: <span class="kt">feedInfo.user.id</span> <span class="p">}</span> <span class="p">},</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">order</span><span class="o">:</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;DESC&#39;</span> <span class="p">},</span>
-</span></span><span class="line"><span class="cl">	  <span class="p">});</span>
-</span></span><span class="line"><span class="cl">  
+</span></span><span class="line hl"><span class="cl">	  <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">Feed</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line hl"><span class="cl">		<span class="nx">loadRelationIds</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line hl"><span class="cl">		<span class="nx">where</span><span class="o">:</span> <span class="p">{</span> <span class="nx">user</span><span class="o">:</span> <span class="p">{</span> <span class="nx">id</span>: <span class="kt">feedInfo.user.id</span> <span class="p">}</span> <span class="p">},</span>
+</span></span><span class="line hl"><span class="cl">		<span class="nx">order</span><span class="o">:</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;DESC&#39;</span> <span class="p">},</span>
+</span></span><span class="line hl"><span class="cl">	  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// findOne 메소드 역시 dataSource 레포지토리에 직접 연결이 아닌 queryRunner를 끌어와 해당 트랜잭션 내에서 수행될 수 있도록 한다. 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  
 </span></span><span class="line"><span class="cl">	  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span></code></pre></div><p> </p>
