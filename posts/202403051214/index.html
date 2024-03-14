@@ -8,24 +8,22 @@
 <meta property="og:description" content="관련 글
 AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS EC2에 HTTPS를 연결하는 방법은 몇가지가 있는데
 그 중 하나는 Route53을 이용하는 것이고,
-다른 하나는 도메인 서비스의 프록시 서비스를 통해 바로 연결하는 방법이다.
+다른 하나는 도메인 서비스의 프록싱을 통해 바로 연결하는 방법이다.
 전자의 경우 위 관련 글의 링크에서 참고할 수 있으며 이 글은 후자에 관한 글이다.
-참고로 현재 이 방법이 가장 간단하고 편하며 경제적이다.1
 우선 EC2 인스턴스에는 public IPv4 주소를 하나 부여할 수 있다.
 이는 인스턴스 생성시 설정에서 &lsquo;자동으로 부여하기&rsquo;를 통해 부여할 수도 있고, 따로이 탄력적 IP를 하나 생성하여 부여할 수도 있다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://inchan.dev/posts/202403051214/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-03-05T12:14:30+09:00" />
-<meta property="article:modified_time" content="2024-03-05T12:14:30+09:00" /><meta property="og:site_name" content="inchan.dev" />
+<meta property="article:modified_time" content="2024-03-14T22:50:52+09:00" /><meta property="og:site_name" content="inchan.dev" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법"/>
 <meta name="twitter:description" content="관련 글
 AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS EC2에 HTTPS를 연결하는 방법은 몇가지가 있는데
 그 중 하나는 Route53을 이용하는 것이고,
-다른 하나는 도메인 서비스의 프록시 서비스를 통해 바로 연결하는 방법이다.
+다른 하나는 도메인 서비스의 프록싱을 통해 바로 연결하는 방법이다.
 전자의 경우 위 관련 글의 링크에서 참고할 수 있으며 이 글은 후자에 관한 글이다.
-참고로 현재 이 방법이 가장 간단하고 편하며 경제적이다.1
 우선 EC2 인스턴스에는 public IPv4 주소를 하나 부여할 수 있다.
 이는 인스턴스 생성시 설정에서 &lsquo;자동으로 부여하기&rsquo;를 통해 부여할 수도 있고, 따로이 탄력적 IP를 하나 생성하여 부여할 수도 있다."/>
 <meta name="twitter:site" content="@codject"/>
@@ -43,8 +41,8 @@ AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS 
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202403051214\/"
-        },"genre": "posts","keywords": "AWS","wordcount":  342 ,
-        "url": "https:\/\/inchan.dev\/posts\/202403051214\/","datePublished": "2024-03-05T12:14:30+09:00","dateModified": "2024-03-05T12:14:30+09:00","publisher": {
+        },"genre": "posts","keywords": "AWS","wordcount":  381 ,
+        "url": "https:\/\/inchan.dev\/posts\/202403051214\/","datePublished": "2024-03-05T12:14:30+09:00","dateModified": "2024-03-14T22:50:52+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
                 "@type": "Person",
@@ -117,7 +115,7 @@ AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS 
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-05">2024-03-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;342 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-05">2024-03-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;381 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -137,11 +135,10 @@ AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS 
 <p> </p>
 <p>AWS EC2에 HTTPS를 연결하는 방법은 몇가지가 있는데<br>
 그 중 하나는 <strong>Route53을 이용하는 것</strong>이고,<br>
-다른 하나는 <strong>도메인 서비스의 프록시 서비스를 통해 바로 연결하는 방법</strong>이다.<br>
+다른 하나는 <strong>도메인 서비스의 프록싱을 통해 바로 연결하는 방법</strong>이다.<br>
  </p>
-<p>전자의 경우 위 관련 글의 링크에서 참고할 수 있으며 이 글은 후자에 관한 글이다.</p>
-<p>참고로 현재 이 방법이 가장 <strong>간단하고</strong> 편하며 경제적이다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<p> </p>
+<p>전자의 경우 위 관련 글의 링크에서 참고할 수 있으며 이 글은 후자에 관한 글이다.<br>
+ </p>
 <p>우선 EC2 인스턴스에는 public IPv4 주소를 하나 부여할 수 있다.<br>
 이는 인스턴스 생성시 설정에서 &lsquo;자동으로 부여하기&rsquo;를 통해 부여할 수도 있고, 따로이 탄력적 IP를 하나 생성하여 부여할 수도 있다.<br>
  </p>
@@ -186,7 +183,7 @@ AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS 
         data-sizes="auto"
         alt="/images/SCR-20240305-ljre-2.png"
         title="/images/SCR-20240305-ljre-2.png" /></p>
-<p>Cloudflare의 해당 도메인에서 좌측 사이드메뉴의 <strong>규칙 / Origin Rules</strong>를 선택한다.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>Cloudflare의 해당 도메인에서 좌측 사이드메뉴의 <strong>규칙 / Origin Rules</strong>를 선택한다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <ol>
 <li><strong>규칙 이름</strong> : 적당한 규칙이름을 적는다. (아무거나 적어도 상관없다.)</li>
 <li><strong>필드</strong> : 전체 URI</li>
@@ -196,15 +193,62 @@ AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS 
 <li>그리고 화면 우측 아래에 있는 <strong>&lsquo;배포&rsquo; 버튼</strong>을 누르면 끝.
  </li>
 </ol>
-<p>보통 1~2분 내에 적용되며 매우 간단하고 쉽다.</p>
+<p>보통 1~2분 내에 적용되며 매우 간단하고 쉽다.<br>
+ </p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>프록싱을 통한 HTTPS 적용의 단점<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>현재 내가 알기로 이 방법이 가장 <strong>간단하고</strong> 편하며 경제적이다.[^1]</p>
+<p><strong>단, 치명적인(?) 단점이 있다.</strong><br>
+바로 프록싱 우회로 인한 <strong>속도 저하</strong>이다.</p>
+<ol>
+<li>다음은 현재 Cloudflare의 무료 플랜에서 이용중인 <strong>HTTPS 프록싱 우회시</strong> 최고 속도와 최저속도이다.</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20240314-trus.png"
+        data-srcset="/images/SCR-20240314-trus.png, /images/SCR-20240314-trus.png 1.5x, /images/SCR-20240314-trus.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20240314-trus.png"
+        title="/images/SCR-20240314-trus.png" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20240314-tryk.png"
+        data-srcset="/images/SCR-20240314-tryk.png, /images/SCR-20240314-tryk.png 1.5x, /images/SCR-20240314-tryk.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20240314-tryk.png"
+        title="/images/SCR-20240314-tryk.png" /><br>
+ </p>
+<p>빨라도 <strong>812ms 정도이고 느릴땐 무려 1초가 넘을 때도</strong> 있었다.<br>
+이 정도의 속도는 프록트에서 아무리 최적화를 하더라도 실제 최종사용자는 화면 전환시 &lsquo;깜.빡&rsquo;하는 딜레이를 느끼며 1초가 넘는 지연시 답답함을 느낄 수 있는 속도이다.<br>
+ </p>
+<ol start="2">
+<li>다음은 AWS의 <strong>Route53과 로드밸런서를 이용한 HTTPS 적용시</strong> 속도이다.</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20240314-tsbl.png"
+        data-srcset="/images/SCR-20240314-tsbl.png, /images/SCR-20240314-tsbl.png 1.5x, /images/SCR-20240314-tsbl.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20240314-tsbl.png"
+        title="/images/SCR-20240314-tsbl.png" /><br>
+ </p>
+<p><strong>16ms는 거의 클릭과 동시</strong>라는 표현이 맞을 정도로 빠른 속도이다.<br>
+앞서 언급한 HTTPS를 적용하는 두가지 방법간 속도 비교에 있어 충분한 고민이 필요하다고 생각된다.</p>
+</div>
+        </div>
+    </div>
+<p> </p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
-<p>현재 AWS의 Public IPv4 정책 변경으로 인해(2024.2월) 모든 IPv4 주소에는 비용이 과금되고 있다.  특히 Route53과 로드 밸런서를 통한 HTTPS 방법에는 추가적인 Public IPv4 주소가 부여되기에 추가적인 비용지출을 피하기가 까다로워졌다. 반면 프리티어 플랜의 경우 하나의 EC2에 부여되는 Public IPv4 주소는 1년간 무료이기에 이 하나의 주소를 다양하게 이용하는 방법이 가장 경제적이다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2">
-<p>Cloudflare의 Origin Rules는 무료 플랜에서 10개를 사용할 수 있다.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Cloudflare의 Origin Rules는 무료 플랜에서 10개를 사용할 수 있다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
@@ -212,7 +256,7 @@ AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS 
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2024-03-05</span>
+                <span>Updated on 2024-03-14</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
