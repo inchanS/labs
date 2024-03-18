@@ -4,7 +4,19 @@
         <link>https://inchan.dev/tags/miscellaneous/</link>
         <description>Miscellaneous - Tag - inchan.dev</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 09 Mar 2024 07:24:37 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/miscellaneous/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 15 Mar 2024 22:02:39 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/miscellaneous/" rel="self" type="application/rss+xml" /><item>
+    <title>Alfred workflow - 네이버 검색 워크플로우에서 지도 검색이 안된다?</title>
+    <link>https://inchan.dev/posts/202403171602/</link>
+    <pubDate>Fri, 15 Mar 2024 22:02:39 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202403171602/</guid>
+    <description><![CDATA[macOS의 가장 많이 사용하는 앱 중 하나가 Alfred이고,
+이 앱에서도 가장 높은 빈도로 사용하는 워크플로우 중 하나가 네이버 검색 워크플로우다.
+이 워크플로우는 Kuniz/alfnaversearch: Naver Search Workflow for Alfred (알프레드 네이버 검색/사전/지도 자동완성 워크플로우) 여기에서 살펴보고 사용할 수 있는데 정말 잘 만든 워크플로우다.
+대략적인 기능은 다음과 같다.
+네이버 검색 : 네이버 웹페이지에서의 기본 검색창에 검색어 입력시 자동완성 목록이 아래로 나타나는데 그 데이터를 Alfred 호출창에서 그대로, 그리고 매우 빠른 속도로 보여준다. 네이버 사전 검색 : 네이버 사전에 있는 거의 모든 언어에 대해 위와 같은 방식으로 보여준다.]]></description>
+</item>
+<item>
     <title>브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법</title>
     <link>https://inchan.dev/posts/202403090724/</link>
     <pubDate>Sat, 09 Mar 2024 07:24:37 &#43;0900</pubDate>
