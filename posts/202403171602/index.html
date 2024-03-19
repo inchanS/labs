@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202403171602\/"
-        },"genre": "posts","keywords": "Miscellaneous","wordcount":  828 ,
+        },"genre": "posts","keywords": "Miscellaneous","wordcount":  844 ,
         "url": "https:\/\/inchan.dev\/posts\/202403171602\/","datePublished": "2024-03-17T16:02:39+09:00","dateModified": "2024-03-19T04:21:50+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -103,7 +103,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Alfred workflow - 네이버 검색 워크플로우에서 지도 검색이 안된다?</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/env/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Env</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-17">2024-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;828 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-17">2024-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;844 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -112,6 +112,7 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
+    <li><a href="#workflow-소개">Workflow 소개</a></li>
     <li><a href="#변경내역-파악">변경내역 파악</a></li>
     <li><a href="#문제-수정">문제 수정</a>
       <ul>
@@ -132,9 +133,10 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p> </p>
-<p>macOS의 가장 많이 사용하는 앱 중 하나가 <a href="https://www.alfredapp.com" target="_blank" rel="noopener noreffer ">Alfred</a>이고,<br>
-이 앱에서도 가장 높은 빈도로 사용하는 워크플로우 중 하나가 <strong>네이버 검색 워크플로우</strong>다.<br>
-이 워크플로우는 <a href="https://github.com/Kuniz/alfnaversearch" target="_blank" rel="noopener noreffer ">Kuniz/alfnaversearch: Naver Search Workflow for Alfred (알프레드 네이버 검색/사전/지도 자동완성 워크플로우)</a> 여기에서 살펴보고 사용할 수 있는데 정말 잘 만든 워크플로우다.</p>
+<h2 id="workflow-소개">Workflow 소개</h2>
+<p>macOS에서 가장 많이 사용하는 앱 중 하나가 <a href="https://www.alfredapp.com" target="_blank" rel="noopener noreffer ">Alfred</a>이다.<br>
+그리고 이 앱에서도 가장 높은 빈도로 사용하는 워크플로우 중 하나가 바로 <strong>네이버 검색</strong>이다.<br>
+이 워크플로우는 <a href="https://github.com/Kuniz/alfnaversearch" target="_blank" rel="noopener noreffer ">Kuniz/alfnaversearch: Naver Search Workflow for Alfred (알프레드 네이버 검색/사전/지도 자동완성 워크플로우)</a> 여기에서 살펴보고 다운로드할 수 있는데 정말 잘 만든 워크플로우다.</p>
 <p>대략적인 기능은 다음과 같다.</p>
 <ul>
 <li><strong>네이버 검색</strong> : 네이버 웹페이지에서의 기본 검색창에 검색어 입력시 자동완성 목록이 아래로 나타나는데 그 데이터를 Alfred 호출창에서 그대로, 그리고 매우 빠른 속도로 보여준다.</li>
@@ -144,7 +146,7 @@
 </ul>
 <p> </p>
 <p>그런데 얼마전부터 갑자기 <strong>&lsquo;네이버 지도&rsquo; 검색이 정상적으로 작동하지 않았다.</strong></p>
-<p>Safari 브라우저의 개발자 도구 중 웹 인스펙터를 열어 살펴본다.</p>
+<p>Safari 브라우저의 개발자 도구 중 웹 인스펙터를 열어 살펴봤다.</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -159,15 +161,15 @@
 <h2 id="변경내역-파악">변경내역 파악</h2>
 <p>우선 위 API로부터 json 파일을 받아 데이터를 살펴보고 기존과 바뀐 부분을 찾아봤더니,</p>
 <ol>
-<li>API 주소가 바뀌었다. (map.naver.com/p/api/search -&gt; map.naver.com/p/api/search/instant-search)</li>
-<li>위 API로부터 받은 자료의 배열 역시 기존의 코드와 비교해봤을 때 달라진 것으로 보인다.</li>
-<li>화면에서 보이는 4번의 coords, 즉 사용자의 현재 위치(위도, 경도)가 필수 제공값이 된듯 하다.</li>
+<li><strong>API 주소</strong>가 바뀌었다. (map.naver.com/p/api/search -&gt; map.naver.com/p/api/search/instant-search)</li>
+<li>위 API로부터 받은 <strong>자료의 배열</strong> 역시 기존의 코드와 비교해봤을 때 달라진 것으로 보인다.</li>
+<li>화면에서 보이는 4번의 coords, 즉 사용자의 현재 <strong>위치(위도, 경도)가 필수 제공값</strong>이 된듯 하다.</li>
 </ol>
 <h2 id="문제-수정">문제 수정</h2>
 <h3 id="오류-해결">오류 해결</h3>
 <p>이에 따라 해당 워크플로우의 git을 fork해서 수정하기 시작했다.<br>
-관련 스크립트는 파이썬으로 작성되어 있었고, 파이썬은 처음이었지만 조건문이나 반복문의 기본 개념이나 틀은 JS와 크게 다르지 않아 큰 어려움은 없었다.</p>
-<p>우선 변경내역의 1번과 2번을 적용하여 코드를 수정하였다.</p>
+관련 기능의 스크립트는 파이썬으로 작성되어 있었고, 파이썬은 처음만져보는 언어였지만 조건문이나 반복문의 기본 개념이나 틀은 JS와 크게 다르지 않아 별다른 어려움은 없었다.</p>
+<p>우선 변경내역을 차례로 고쳐나가며 코드를 수정하였다.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
 </span></span><span class="line hl"><span class="cl">     <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://map.naver.com/v5/api/search/instant-search&#39;</span>
 </span></span><span class="line"><span class="cl">     <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="n">word</span><span class="p">,</span>
@@ -176,10 +178,11 @@
 </span></span><span class="line"><span class="cl">                   <span class="n">lang</span><span class="o">=</span><span class="s2">&#34;ko&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">                   <span class="n">caller</span><span class="o">=</span><span class="s2">&#34;pcweb&#34;</span>
 </span></span><span class="line"><span class="cl">                   <span class="p">)</span>
-</span></span><span class="line"><span class="cl"> <span class="o">@@</span> <span class="o">-</span><span class="mi">52</span><span class="p">,</span><span class="mi">62</span> <span class="o">+</span><span class="mi">52</span><span class="p">,</span><span class="mi">56</span> <span class="o">@@</span> <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">	 <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">         <span class="k">return</span> <span class="n">get_data</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">     <span class="n">res_json</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">cached_data</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;navmap_</span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">wrapper</span><span class="p">,</span> <span class="n">max_age</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="o">...</span>
 </span></span></code></pre></div><p> </p>
 <p>1번과 3번의 문제는 위와 같이 간단하게 수정함으로써 정상적으로 워크플로우가 작동함을 확인하였다.<br>
 그리고 2번 문제 역시 자료의 배열을 분석하여 그에 맞춰 다시 코드를 수정함으로써 일단 워크플로우는 정상적으로 결과를 내뱉게 되었다.</p>
@@ -188,7 +191,7 @@
 <h3 id="개선-1---ip-address로부터-위치정보-활용">개선 1 - IP address로부터 위치정보 활용</h3>
 <p>여기서 하나의 고민이 생긴다.<br>
 <strong>사용자의 위치를 제공하는 <code>coords</code>값을 어떻게 유동적으로 만들 수 있을까?</strong><br>
-우선 macOS의 위치정보를 가져와 활용하는 방법인데 이건 앱의 권한 부여 문제부터 꽤 복잡했다.</p>
+macOS의 위치정보를 가져와 활용하는 방법이 가장 먼저 떠올랐지만 이건 앱의 시스템 권한 부여 문제를 우선 해결해야하기에 다른 방법을 강구했다.</p>
 <p>그래서 일단 간단하게 적용한 것이 <strong>IP address로부터 위치를 가져와 적용하는 것이었다.</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">기본</span> <span class="n">위치</span> <span class="n">정보</span><span class="p">:</span> <span class="n">서울</span> <span class="n">시청의</span> <span class="n">좌표</span>
 </span></span><span class="line hl"><span class="cl"> <span class="n">default_latitude</span> <span class="o">=</span> <span class="mf">37.5665</span>
@@ -222,10 +225,10 @@
 </span></span><span class="line"><span class="cl">     <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </span></span></code></pre></div><p> </p>
 <p>위와 같이 IP로부터 위치 정보를 가져오는 API 함수를 하나 더 추가하여 정보를 가져오고 그로부터 원래의 기능 함수를 작동시키는 방향으로 진행을 했다.</p>
-<p><strong>그런데&hellip; 조금 느리다.</strong></p>
-<p>이유는 IP address로부터 <strong>위치정보를 가져오는 API에서 조금씩 지연이 생기는데,</strong><br>
-워크플로우의 자동완성 스크립트는 검색창에서 검색어를 입력할 때마다 즉, 자음과 모음을 키보드로 누를때마다 작동한다.<br>
-바로 이 때 IP주소를 가져오는 함수까지 빈번하게 실행되다 보니 지연이 누적되어 사용자 입장에서는 검색어 입력후 결과를 보기까지 꽤나 잦은 딜레이를 경험하게 되었다.</p>
+<p><strong>그런데&hellip; 뭔가 반응이 굼뜨고 느리다.</strong></p>
+<p>이유는 IP address로부터 <strong>위치정보를 가져오는 API의 속도가 즉각적이지 않다보니 조금씩 지연이 생기는데,</strong><br>
+워크플로우의 자동완성 스크립트는 검색창에서 검색어를 입력할 때마다 즉, 자음과 모음 등 키 스트로크가 발생할 때마다 작동한다.<br>
+문제는 바로 이 때, IP주소를 가져오는 함수까지 빈번하게 실행되다 보니 <strong>지연이 누적되어</strong> 사용자 입장에서는 검색어 입력후 결과를 보기까지 꽤나 잦은 딜레이를 경험하게 되었다.</p>
 <h3 id="개선-2---ip-address-api의-지연-체감-제거">개선 2 - IP address API의 지연 체감 제거</h3>
 <p>어떻게 하면 좋을까 고민을 했다.<br>
 일단 IP address로부터 위치 정보를 가져오는 것은 검색어 입력시 계속해서 실행될 필요가 없었다.<br>
