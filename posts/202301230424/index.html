@@ -16,7 +16,6 @@ JEST의 test파일 실행시 기존 DB를 사용함으로 인한 DB내부 데이
 <meta property="og:url" content="https://inchan.dev/posts/202301230424/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-01-23T04:24:50+09:00" />
 <meta property="article:modified_time" content="2024-03-07T07:14:54+09:00" /><meta property="og:site_name" content="inchan.dev" />
-
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리"/>
 <meta name="twitter:description" content="문제상황 TDD 방법론을 따라 프로젝트를 진행하려는데 Jest를 이용하여 test 코드를 작성하던 중,
@@ -26,7 +25,7 @@ test를 위한 DB는 그 조건에 따라 생성되고 삭제되어지는 특성
 그런데 test를 실행할때마다 typeORM 세팅의 연결값을 매번 변경해줘야하는 문제가 상당히 번거로웠다. 고민하던 와중, cross-env라는 npm package를 알게되었고 이를 이용하여 상황에 따라 dotenv 설정값을 유동적으로 활용할 수 있도록 세팅을 구상해보았다.
 요약.
 JEST의 test파일 실행시 기존 DB를 사용함으로 인한 DB내부 데이터 오염문제 test용 DB 분리로 해결 test용 DB 분리 이후, npm run 실행 환경(dev, test, production)에 따른 DB 설정문제 개발간 서버를 돌릴때, test코드를 돌릴때마다 dev."/>
-<meta name="twitter:site" content="@codject"/>
+      <meta name="twitter:site" content="@codject"/>
 <meta name="application-name" content="inchan.dev">
 <meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
