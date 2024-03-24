@@ -4,21 +4,9 @@
         <link>https://inchan.dev/</link>
         <description>Coding Projects: From Ideas to Execution</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Fri, 15 Mar 2024 22:02:39 &#43;0900</lastBuildDate>
+            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sun, 10 Mar 2024 18:07:15 &#43;0900</lastBuildDate>
             <atom:link href="https://inchan.dev/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Alfred workflow - 네이버 검색 워크플로우에서 지도 검색이 안된다?</title>
-    <link>https://inchan.dev/posts/202403171602/</link>
-    <pubDate>Fri, 15 Mar 2024 22:02:39 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202403171602/</guid>
-    <description><![CDATA[Workflow 소개 macOS에서 가장 많이 사용하는 앱 중 하나가 Alfred이다.
-그리고 이 앱에서도 가장 높은 빈도로 사용하는 워크플로우 중 하나가 바로 네이버 검색이다.
-이 워크플로우는 Kuniz/alfnaversearch: Naver Search Workflow for Alfred (알프레드 네이버 검색/사전/지도 자동완성 워크플로우) 여기에서 살펴보고 다운로드할 수 있는데 정말 잘 만든 워크플로우다.
-대략적인 기능은 다음과 같다.
-네이버 검색 : 네이버 웹페이지에서의 기본 검색창에 검색어 입력시 자동완성 목록이 아래로 나타나는데 그 데이터를 Alfred 호출창에서 그대로, 그리고 매우 빠른 속도로 보여준다.]]></description>
-</item>
-<item>
     <title>브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법</title>
     <link>https://inchan.dev/posts/202403090724/</link>
     <pubDate>Sat, 09 Mar 2024 07:24:37 &#43;0900</pubDate>
@@ -151,6 +139,22 @@ AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법 팀 프로젝
 겁먹지 말기 AWS내에서 각 서비스를 이리저리 다니며
 무언가를 자꾸 생성하고 또 세팅하다보니 자칫 어렵다고 지레 겁먹기 쉬운데
 실제로 해보면 생각보다 간단하고 쉽다. 구글링을 하다보면 여러 관련 글이 있는데 아래 참고한 2개의 웹페이지가 가장 잘 설명되어있다.]]></description>
+</item>
+<item>
+    <title>error log - jest.spyOn()에서 재사용함수에 대한 모의 불가</title>
+    <link>https://inchan.dev/posts/202306291258/</link>
+    <pubDate>Thu, 29 Jun 2023 12:58:27 &#43;0900</pubDate>
+    <author>inchan</author>
+    <guid>https://inchan.dev/posts/202306291258/</guid>
+    <description><![CDATA[사용환경 : Node.Js, Express
+언어 : typeScript
+테스트 프레임워크 : Jest
+상황 Abstract 같은 파일 (모듈) 내에 있는 함수의 재사용시,
+테스트 코드를 작성하는데 모의하기가 상당히 까다롭고 불편함.
+특히 테스트 코드가 지나치게 지저분해짐 user.service.ts 파일 내부 다음은 user.service.ts 파일의 내부 코드 요약이다.
+초점을 맞춰 볼 곳은,
+updateUserInfo 함수 내부에서 checkDuplicateEmail 함수와 checkDuplicateNickname 함수가 재사용되고 있다.
+// ... const checkDuplicateEmail = async ( email: string ) =&gt; { ... } const checkDuplicateNickname = async ( nickname: string ) =&gt; { .]]></description>
 </item>
 </channel>
 </rss>
