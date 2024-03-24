@@ -4,37 +4,37 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title> - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="" />
-<meta property="og:description" content="" />
+        <title>Alfred workflow - 네이버 검색 워크플로우 지도 검색 개선 - inchan.dev</title><meta name="Description" content="알프레드 워크플로우 중, 네이버 검색 워크플로우의 지도 검색 기능 문제에 따른 해결 및 개선된 워크플로우 파일 제공"><meta property="og:title" content="Alfred workflow - 네이버 검색 워크플로우 지도 검색 개선" />
+<meta property="og:description" content="알프레드 워크플로우 중, 네이버 검색 워크플로우의 지도 검색 기능 문제에 따른 해결 및 개선된 워크플로우 파일 제공" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://inchan.dev/posts/202403171602/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
-
-<meta property="og:site_name" content="inchan.dev" />
+<meta property="article:published_time" content="2024-03-17T16:02:39+09:00" />
+<meta property="article:modified_time" content="2024-03-25T06:24:11+09:00" /><meta property="og:site_name" content="inchan.dev" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content=""/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="Alfred workflow - 네이버 검색 워크플로우 지도 검색 개선"/>
+<meta name="twitter:description" content="알프레드 워크플로우 중, 네이버 검색 워크플로우의 지도 검색 기능 문제에 따른 해결 및 개선된 워크플로우 파일 제공"/>
       <meta name="twitter:site" content="@codject"/>
 <meta name="application-name" content="inchan.dev">
 <meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202403171602/" /><link rel="next" href="https://inchan.dev/posts/202209060521/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202403171602/" /><link rel="prev" href="https://inchan.dev/posts/202403090724/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "",
+        "headline": "Alfred workflow - 네이버 검색 워크플로우 지도 검색 개선",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202403171602\/"
-        },"genre": "posts","wordcount":  0 ,
-        "url": "https:\/\/inchan.dev\/posts\/202403171602\/","publisher": {
+        },"genre": "posts","wordcount":  1108 ,
+        "url": "https:\/\/inchan.dev\/posts\/202403171602\/","datePublished": "2024-03-17T16:02:39+09:00","dateModified": "2024-03-25T06:24:11+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
                 "@type": "Person",
                 "name": "inchan"
-            },"description": ""
+            },"description": "알프레드 워크플로우 중, 네이버 검색 워크플로우의 지도 검색 기능 문제에 따른 해결 및 개선된 워크플로우 파일 제공"
     }
     </script></head>
     <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -100,21 +100,218 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX"></h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;0 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;0 minutes&nbsp;</div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Alfred workflow - 네이버 검색 워크플로우 지도 검색 개선</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Categories</a>&nbsp;<a href="/categories/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Categories</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-17">2024-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1108 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"></div><div class="post-footer" id="post-footer">
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#workflow-소개">Workflow 소개</a></li>
+    <li><a href="#변경내역-파악">변경내역 파악</a></li>
+    <li><a href="#문제-수정">문제 수정</a>
+      <ul>
+        <li><a href="#오류-해결">오류 해결</a></li>
+        <li><a href="#개선-1---ip-address로부터-위치정보-활용">개선 1 - IP address로부터 위치정보 활용</a></li>
+        <li><a href="#개선-2---ip-address-api의-지연-체감-제거">개선 2 - IP address API의 지연 체감 제거</a></li>
+        <li><a href="#개선-3---기본-naver-map-검색시-위치-정보값을-설정할-수-있도록-개선">개선 3 - 기본 Naver Map 검색시 위치 정보값을 설정할 수 있도록 개선</a></li>
+        <li><a href="#개선-4---위치-정보를-가져오는-api-변경과-캐시-사용">개선 4 - 위치 정보를 가져오는 API 변경과 캐시 사용</a></li>
+      </ul>
+    </li>
+    <li><a href="#최종-개선-워크플로우">최종 개선 워크플로우</a>
+      <ul>
+        <li><a href="#configure-workflow-위치정보-설정">Configure Workflow&hellip; 위치정보 설정</a></li>
+        <li><a href="#네이버-지도-검색-1---설정한-위치정보-이용">네이버 지도 검색 1 - 설정한 위치정보 이용</a></li>
+        <li><a href="#네이버-지도-검색-2---ip-address의-위치정보-이용">네이버 지도 검색 2 - IP address의 위치정보 이용</a></li>
+        <li><a href="#워크플로우-다운로드">워크플로우 다운로드</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p> </p>
+<h2 id="workflow-소개">Workflow 소개</h2>
+<p>macOS에서 가장 많이 사용하는 앱 중 하나가 <a href="https://www.alfredapp.com" target="_blank" rel="noopener noreffer ">Alfred</a>이다. <br>
+그리고 이 앱에서도 가장 높은 빈도로 사용하는 워크플로우 중 하나가 바로 <strong>네이버 검색</strong>이다. <br>
+이 워크플로우는 <a href="https://github.com/Kuniz/alfnaversearch" target="_blank" rel="noopener noreffer ">Kuniz/alfnaversearch: Naver Search Workflow for Alfred (알프레드 네이버 검색/사전/지도 자동완성 워크플로우)</a> 여기에서 살펴보고 다운로드할 수 있는데 정말 잘 만든 워크플로우다.</p>
+<p>대략적인 기능은 다음과 같다.</p>
+<ul>
+<li><strong>네이버 검색</strong> : 네이버 웹페이지에서의 기본 검색창에 검색어 입력시 자동완성 목록이 아래로 나타나는데 그 데이터를 Alfred 호출창에서 그대로, 그리고 매우 빠른 속도로 보여준다.</li>
+<li><strong>네이버 사전 검색</strong> : 네이버 사전에 있는 거의 모든 언어에 대해 위와 같은 방식으로 보여준다.</li>
+<li><strong>네이버 쇼핑 검색</strong></li>
+<li><strong>네이버 지도 검색</strong></li>
+</ul>
+<p> </p>
+<p>그런데 얼마전부터 갑자기 <strong>&lsquo;네이버 지도&rsquo; 검색이 정상적으로 작동하지 않았다.</strong> <br>
+ </p>
+<p>Safari 브라우저의 개발자 도구 중 웹 인스펙터를 열어 살펴봤다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20240317-onwz.png"
+        data-srcset="/images/SCR-20240317-onwz.png, /images/SCR-20240317-onwz.png 1.5x, /images/SCR-20240317-onwz.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20240317-onwz.png"
+        title="/images/SCR-20240317-onwz.png" /></p>
+<p>위와 같은 화면을 볼 수 있는데 검색창에 검색값을 입력할 때마다 화면상 1번의 Instant-search가 추가됨을 볼 수 있다.</p>
+<p>2번이 아마도 Naver map 검색에서의 자동완성 API 주소로 보인다. <br>
+그리고 자동완성시 입력어에 해당하는 3번의 query와 4번의 coords라는게 추가적으로 보이는데 이건 위치정보를 담고 있는 위도와 경도 정보이다.</p>
+<h2 id="변경내역-파악">변경내역 파악</h2>
+<p>우선 위 API로부터 json 파일을 받아 데이터를 살펴보고 기존과 바뀐 부분을 찾아봤더니,</p>
+<ol>
+<li><strong>API 주소</strong>가 바뀌었다. (map.naver.com/p/api/search -&gt; map.naver.com/p/api/search/instant-search)</li>
+<li>위 API로부터 받은 <strong>자료의 배열</strong> 역시 기존의 코드와 비교해봤을 때 달라진 것으로 보인다.</li>
+<li>화면에서 보이는 4번의 coords, 즉 사용자의 현재 <strong>위치(위도, 경도)가 필수 제공값</strong>이 된듯 하다.</li>
+</ol>
+<h2 id="문제-수정">문제 수정</h2>
+<h3 id="오류-해결">오류 해결</h3>
+<p>이에 따라 해당 워크플로우의 git을 fork해서 수정하기 시작했다. <br>
+관련 기능의 스크립트는 파이썬으로 작성되어 있었고, 파이썬은 처음만져보는 언어였지만 조건문이나 반복문의 기본 개념이나 틀은 JS와 크게 다르지 않아 별다른 어려움은 없었다.</p>
+<p>우선 변경내역을 차례로 고쳐나가며 코드를 수정하였다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>  
+</span></span><span class="line hl"><span class="cl">     <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://map.naver.com/v5/api/search/instant-search&#39;</span>     <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="n">word</span><span class="p">,</span>                   <span class="nb">type</span><span class="o">=</span><span class="s2">&#34;all&#34;</span><span class="p">,</span>                   <span class="n">coords</span><span class="o">=</span> <span class="s1">&#39;37.1234,126.1234&#39;</span><span class="p">,</span>                   <span class="n">lang</span><span class="o">=</span><span class="s2">&#34;ko&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                   <span class="n">caller</span><span class="o">=</span><span class="s2">&#34;pcweb&#34;</span>                   <span class="p">)</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>         <span class="k">return</span> <span class="n">get_data</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">     <span class="n">res_json</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">cached_data</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;navmap_</span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">wrapper</span><span class="p">,</span> <span class="n">max_age</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>     <span class="o">...</span>  
+</span></span></code></pre></div><p> </p>
+<p>1번과 3번의 문제는 위와 같이 간단하게 수정함으로써 정상적으로 워크플로우가 작동함을 확인하였다. <br>
+그리고 2번 문제 역시 자료의 배열을 분석하여 그에 맞춰 다시 코드를 수정함으로써 일단 워크플로우는 정상적으로 결과를 내뱉게 되었다.</p>
+<p>여기까지의 자세한 코드 수정 내역은 다음에서 확인할 수 있다. <br>
+<a href="https://github.com/inchanS/alfnaversearch/commit/79c441e282f679dd6630c1d93650fce327dded46" target="_blank" rel="noopener noreffer ">https://github.com/inchanS/alfnaversearch/commit/79c441e282f679dd6630c1d93650fce327dded46</a></p>
+<h3 id="개선-1---ip-address로부터-위치정보-활용">개선 1 - IP address로부터 위치정보 활용</h3>
+<p>여기서 하나의 고민이 생긴다. <br>
+<strong>사용자의 위치를 제공하는 <code>coords</code>값을 어떻게 유동적으로 만들 수 있을까?</strong>  macOS의 위치정보를 가져와 활용하는 방법이 가장 먼저 떠올랐지만 이건 앱의 시스템 권한 부여 문제를 우선 해결해야하기에 다른 방법을 강구했다.</p>
+<p>그래서 일단 간단하게 적용한 것이 <strong>IP address로부터 위치를 가져와 적용하는 것이었다.</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">기본</span> <span class="n">위치</span> <span class="n">정보</span><span class="p">:</span> <span class="n">서울</span> <span class="n">시청의</span> <span class="n">좌표</span>  
+</span></span><span class="line hl"><span class="cl"> <span class="n">default_latitude</span> <span class="o">=</span> <span class="mf">37.5665</span> <span class="n">default_longitude</span> <span class="o">=</span> <span class="mf">126.9780</span>  
+</span></span><span class="line hl"><span class="cl"> <span class="k">def</span> <span class="nf">get_ip_location</span><span class="p">():</span>     <span class="k">try</span><span class="p">:</span>         <span class="n">r</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://ip-api.com/json/&#39;</span><span class="p">)</span>         <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>         <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;lat&#34;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;lon&#34;</span><span class="p">]</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>         <span class="c1"># 위치 정보를 가져오는 데 실패할 경우 기본값 반환  </span>
+</span></span><span class="line"><span class="cl">         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;위치 정보를 가져오는 데 실패했습니다: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">         <span class="k">return</span> <span class="n">default_latitude</span><span class="p">,</span> <span class="n">default_longitude</span>  
+</span></span><span class="line"><span class="cl"> <span class="c1"># # 위치 정보를 가져오고, 실패할 경우 기본값 사용  </span>
+</span></span><span class="line"><span class="cl"> <span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span> <span class="o">=</span> <span class="n">get_ip_location</span><span class="p">()</span>  
+</span></span><span class="line"><span class="cl"><span class="n">f</span> <span class="n">get_data</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">     <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://map.naver.com/v5/api/search/instant-search&#39;</span>     <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="n">word</span><span class="p">,</span>                   <span class="nb">type</span><span class="o">=</span><span class="s2">&#34;all&#34;</span><span class="p">,</span>                   <span class="n">coords</span><span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">latitude</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">longitude</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>                   <span class="n">lang</span><span class="o">=</span><span class="s2">&#34;ko&#34;</span><span class="p">,</span>                   <span class="n">caller</span><span class="o">=</span><span class="s2">&#34;pcweb&#34;</span>                   <span class="p">)</span>     <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;user-agent&#34;</span><span class="p">:</span> <span class="s2">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 12_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15&#34;</span><span class="p">}</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>     <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>     <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>  
+</span></span></code></pre></div><p> </p>
+<p>위와 같이 IP로부터 위치 정보를 가져오는 API 함수를 하나 더 추가하여 정보를 가져오고 그로부터 원래의 기능 함수를 작동시키는 방향으로 진행을 했다. <br>
+ </p>
+<p><strong>그런데&hellip; 뭔가 반응이 굼뜨고 느리다.</strong> <br>
+ </p>
+<p>이유는 IP address로부터 <strong>위치정보를 가져오는 API의 속도가 즉각적이지 않다보니 조금씩 지연이 생기는데,</strong>  워크플로우의 자동완성 스크립트는 검색창에서 검색어를 입력할 때마다 즉, 자음과 모음 등 키 스트로크가 발생할 때마다 작동한다. <br>
+문제는 바로 이 때, IP주소를 가져오는 함수까지 빈번하게 실행되다 보니 <strong>지연이 누적되어</strong> 사용자 입장에서는 검색어 입력후 결과를 보기까지 꽤나 잦은 딜레이를 경험하게 되었다.</p>
+<h3 id="개선-2---ip-address-api의-지연-체감-제거">개선 2 - IP address API의 지연 체감 제거</h3>
+<p>어떻게 하면 좋을까 고민을 했다. <br>
+일단 IP address로부터 위치 정보를 가져오는 것은 검색어 입력시 계속해서 실행될 필요가 없었다. <br>
+그렇다면 최초의 검색창을 열었을 때 한번만 수행하고 이후 그 값을 계속해서 사용하는 방향으로 진행을 하면 될 것이다.</p>
+<p>이에 IP address 관련 함수를 다른 스크립트로 분리하였다. <br>
+그리고 IP주소를 활용한 네이버 지도 검색시 방금 분리한 스크립트로부터 받아온 위치 정보를 활용하게끔 수정하였다.</p>
+<p>이제 IP주소를 활용한 네이버 지도 검색시 최초의 호출 키워드를 입력할 때만 IP address API 함수가 작동하고 이후, 호출키워드 다음의 검색어를 입력하는동안 워크플로우는 충분히 느긋하게 위치정보를 가져와 사용하기에 사용자는 미처 API 지연을 체감하지 못한다.</p>
+<p>꽤나 <strong>훌륭한 Fake 설계인듯</strong> 생각된다.</p>
+<h3 id="개선-3---기본-naver-map-검색시-위치-정보값을-설정할-수-있도록-개선">개선 3 - 기본 Naver Map 검색시 위치 정보값을 설정할 수 있도록 개선</h3>
+<p>지금까지의 코드에서 위치정보는 스크립트안에서 입력하여 사용하도록 하였는데, <br>
+기반 위치가 바뀔 때마다 스크립트를 수정한다는 것은 꽤나 피곤한 일이다. <br>
+때문에 Alfred의 <strong>Configure Workflow&hellip; 에서 간단하게 위도와 경도값을 넣을 수 있도록 변수를 따로이 빼놓았다.</strong></p>
+<h3 id="개선-4---위치-정보를-가져오는-api-변경과-캐시-사용">개선 4 - 위치 정보를 가져오는 API 변경과 캐시 사용</h3>
+<p>IP address로부터 위치 정보를 가져오는 더 빠른 API를 찾았다. <br>
+답은 역시 네이버 지도 검색 화면의 개발자도구에 있었다. <br>
+이전에는 해외 사이트를 사용해서인지 모르겠지만 응답시간이 꽤 있어 나름 <strong>Fake 설계</strong>(?)까지 하며 그 지연시간을 줄이려 했었는데 이젠 그럴 필요가 없어졌다. <br>
+네이버 역시 자체적으로 IP를 통해 위치정보를 찾는 API를 사용하고 있었고 그 주소를 사용했더니 <strong>응답시간 뿐만 아니라 위치 정확도까지 더 향상</strong>되었다. <br>
+(하지만 역시 정확한 주소를 기대하기에는 직접 위치정보를 넣어 사용하는것만 못하다.)</p>
+<p>때문에 이전의 이중 스크립트 실행(<strong>위치정보를 가져오는</strong> 스크립트와 <strong>검색</strong> 스크립트)이 아닌, <br>
+검색 스크립트에서 바로 위치정보를 가져오고 이를 <strong>캐싱하여 사용</strong>하도록 했다. <br>
+맥북을 가지고 초고속 열차를 타고 업무를 보는게 아닌 이상 위치 정보라는게 매순간 갱신할 필요가 없다.  그래서 캐싱 유효시간을 설정해두고 적절한 시간마다 갱신하도록 하면 사용자 경험상 지연체감은 더욱 더 최소화될 것이다. <br>
+그리고 캐싱 유효시간은 Configure Workflow에서 사용자가 따로이 설정가능하도록 외부에서도 조작가능하게 열어두었다.</p>
+<h2 id="최종-개선-워크플로우">최종 개선 워크플로우</h2>
+<h3 id="configure-workflow-위치정보-설정">Configure Workflow&hellip; 위치정보 설정</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/SCR-20240319-dvzc.png"
+        data-srcset="/images/SCR-20240319-dvzc.png, /images/SCR-20240319-dvzc.png 1.5x, /images/SCR-20240319-dvzc.png 2x"
+        data-sizes="auto"
+        alt="/images/SCR-20240319-dvzc.png"
+        title="/images/SCR-20240319-dvzc.png" /></p>
+<p>위 이미지와 같이 워크플로우의 Configure 화면에서 사용자 위치를 직접 입력할 수 있도록 개선  만약 미입력시에는 &lsquo;서울 시청&rsquo; 위치를 기본값으로 사용하도록 세팅하였다.</p>
+<p>Naver Map에서 주소 검색시 알고리즘은 사용자의 현재 위치를 기반으로 가까운 곳을 우선하여 보여주는데 이로 인해 사용자의 근처 주소 정보를 더 정확히 제공하기에 설정하고 사용하면 더욱 요긴하다.</p>
+<p>위도 경도 정보는 <a href="https://www.findlatlng.org" target="_blank" rel="noopener noreffer ">https://www.findlatlng.org</a> 사이트에서 쉽게 확인할 수 있다.</p>
+<h3 id="네이버-지도-검색-1---설정한-위치정보-이용">네이버 지도 검색 1 - 설정한 위치정보 이용</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/searchNaverMap.gif"
+        data-srcset="/images/searchNaverMap.gif, /images/searchNaverMap.gif 1.5x, /images/searchNaverMap.gif 2x"
+        data-sizes="auto"
+        alt="/images/searchNaverMap.gif"
+        title="/images/searchNaverMap.gif" /></p>
+<p>위 이미지는 워크플로우 설정에서 <strong>위치를 인천으로 입력하였을 때의 검색결과</strong>이다.</p>
+<h3 id="네이버-지도-검색-2---ip-address의-위치정보-이용">네이버 지도 검색 2 - IP address의 위치정보 이용</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/searchNaverMapIP.gif"
+        data-srcset="/images/searchNaverMapIP.gif, /images/searchNaverMapIP.gif 1.5x, /images/searchNaverMapIP.gif 2x"
+        data-sizes="auto"
+        alt="/images/searchNaverMapIP.gif"
+        title="/images/searchNaverMapIP.gif" /></p>
+<p>호출키워드인 <code>nmi</code>를 눌렀을 때 <del>순간적으로 &ldquo;IP address로부터 위치정보 받기&rdquo; 라는 선택창이 스쳐지나감을 확인할 수 있는데 바로 이 과정에서 해당 API가 작동하고 사용자는 이후의 검색어를 입력하는 동안 아무런 지연 없이 검색정보를 확인할 수 있다.</del></p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>update 2024.03.19<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><a href="#%ea%b0%9c%ec%84%a0-4---%ec%9c%84%ec%b9%98-%ec%a0%95%eb%b3%b4%eb%a5%bc-%ea%b0%80%ec%a0%b8%ec%98%a4%eb%8a%94-api-%eb%b3%80%ea%b2%bd%ea%b3%bc-%ec%ba%90%ec%8b%9c-%ec%82%ac%ec%9a%a9" rel="">개선 4 - 위치 정보를 가져오는 API 변경과 캐시 사용</a> 로 인해 이전의 <strong>&lsquo;IP address로부터 위치정보 받기&rsquo;</strong> 라는 안내는 더이상 의미가 없을만큼 지연시간이 대폭 줄어들어 체감상 느끼기 힘들기에, <strong>제거</strong>하였다.</div>
+        </div>
+    </div>
+<p>IP address API로부터 받은 위치정보를 잘 반영하여 결과를 보여주고 있다.</p>
+<h3 id="워크플로우-다운로드">워크플로우 다운로드</h3>
+<p><a href="https://github.com/inchanS/alfnaversearch/releases/tag/v0.0.5" rel="noopener noreffer" target="_blank"><img
+        class="lazyload version"
+        src="/svg/loading.min.svg"
+        data-src="/svg/version/0.0.5-new.min.svg"
+        data-srcset="/svg/version/0.0.5-new.min.svg, /svg/version/0.0.5-new.min.svg 1.5x, /svg/version/0.0.5-new.min.svg 2x"
+        data-sizes="auto"
+        alt="github-inchan code NEW | 0.0.5"
+        title="github-inchan code NEW | 0.0.5" /></a> <br>
+위 링크에서 본문과 관련된 <code>alfredworkflow</code> 파일을 다운로드 받아 사용할 수 있다.</p>
+<p><strong>버전 0.0.5</strong>의 코드는 원래 워크플로우 <a href="https://github.com/Kuniz/alfnaversearch/pull/25" target="_blank" rel="noopener noreffer ">코드 개발자에게 PR</a>을 넣었고 현재  <strong>merge</strong> 되어있는 상태이다.(참고로 0.0.5는 원 코드개발자의 의사에 따라 Configure 설정과 그를 이용한 지도검색은 제외되어있고, 기본 지도검색시 IP주소를 기반으로 하게끔 되어있다.)<br>
+ </p>
+<p><a href="https://github.com/inchanS/alfnaversearch/releases/tag/v0.0.6" rel="noopener noreffer" target="_blank"><img
+        class="lazyload version"
+        src="/svg/loading.min.svg"
+        data-src="/svg/version/0.0.6-changed.min.svg"
+        data-srcset="/svg/version/0.0.6-changed.min.svg, /svg/version/0.0.6-changed.min.svg 1.5x, /svg/version/0.0.6-changed.min.svg 2x"
+        data-sizes="auto"
+        alt="github-inchan code CHANGED | 0.0.6"
+        title="github-inchan code CHANGED | 0.0.6" /></a> <br>
+<strong>버전 0.0.6</strong>은 이전 버전에서 지도검색시 사용자의 위치와 관련한 우선순위 score에 따라 &lsquo;<strong>장소, 주소, 버스</strong>&rsquo; 3가지 타입의 결과가 반환되도록 수정하였다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>  이전버전은 한가지 타입의 결과만을 반환한다.</p>
+<p> </p>
+<p><a href="https://github.com/inchanS/AlfNaverSearchPlus/releases/tag/v0.1.1" rel="noopener noreffer" target="_blank"><img
+        class="lazyload version"
+        src="/svg/loading.min.svg"
+        data-src="/svg/version/0.1.1-new.min.svg"
+        data-srcset="/svg/version/0.1.1-new.min.svg, /svg/version/0.1.1-new.min.svg 1.5x, /svg/version/0.1.1-new.min.svg 2x"
+        data-sizes="auto"
+        alt="github-inchan code NEW | 0.1.1"
+        title="github-inchan code NEW | 0.1.1" /></a> <strong>기능 추가</strong><br>
+검색어에 해당하는 장소, 주소, 버스의 검색결과가 있을 때만 해당 Search only Place(or Address, Bus) 창이 뜨도록 하였고, 이후 되돌아가기 기능을 추가하였다.</p>
+<img src="/images/nspmap.gif" width="600">    
+<p> </p>
+<p><strong><a href="https://github.com/inchanS/Alfred-NaverSearch/releases/latest" target="_blank" rel="noopener noreffer ">latest release</a></strong><br>
+그리고 다시 사용자가 더욱 세밀한 위치 지정을 할 수 있는 버전과 그 이후의 변경사항을 반영한 워크플로우는 일부 개인적인 설정 및 용도에 맞게 개발하였기에 <strong>개별적인 레포지토리</strong>인 위 링크에서 다운로드 받을 수 있다.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>24.03.22 이 버전 역시 PR을 넣었고, 현재 반영을 기다리는 중이다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 0001-01-01</span>
+                <span>Updated on 2024-03-25</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
@@ -131,8 +328,7 @@
         </section>
     </div>
 
-    <div class="post-nav">
-            <a href="/posts/202209060521/" class="next" rel="next" title="font Awesome 사용하기">font Awesome 사용하기<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/posts/202403090724/" class="prev" rel="prev" title="브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법</a></div>
 </div>
 <div id="comments"><div id="utterances" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
