@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/inchan.dev\/posts\/202403171602\/"
-        },"genre": "posts","wordcount":  1112 ,
+        },"genre": "posts","wordcount":  1117 ,
         "url": "https:\/\/inchan.dev\/posts\/202403171602\/","datePublished": "2024-03-17T16:02:39+09:00","dateModified": "2024-03-25T06:24:11+09:00","publisher": {
             "@type": "Organization",
             "name": "inchan"},"author": {
@@ -102,7 +102,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Alfred workflow - 네이버 검색 워크플로우 지도 검색 개선</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Categories</a>&nbsp;<a href="/categories/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Categories</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-17">2024-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1112 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-17">2024-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1117 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -274,17 +274,19 @@
         alt="github-inchan code NEW | 0.0.5"
         title="github-inchan code NEW | 0.0.5" /></a> <br>
 위 링크에서 본문과 관련된 <code>alfredworkflow</code> 파일을 다운로드 받아 사용할 수 있다.</p>
-<p><strong>버전 0.0.5</strong>의 코드는 원래 워크플로우 <a href="https://github.com/Kuniz/alfnaversearch/pull/25" target="_blank" rel="noopener noreffer ">코드 개발자에게 PR</a>을 넣었고 현재  <strong>merge</strong> 되어있는 상태이다.(참고로 0.0.5는 원 코드개발자의 의사에 따라 Configure 설정과 그를 이용한 지도검색은 제외되어있고, 기본 지도검색시 IP주소를 기반으로 하게끔 되어있다.)<br>
+<p><strong>버전 0.0.5</strong>의 코드는 원래 워크플로우 <a href="https://github.com/Kuniz/alfnaversearch/pull/25" target="_blank" rel="noopener noreffer ">코드 개발자에게 PR</a>을 넣었고 현재  <strong>merge</strong> 되어 반영되어있는 상태이다.(참고로 0.0.5는 원 코드개발자의 의사에 따라 Configure 설정과 그를 이용한 지도검색은 제외되어있고, 기본 지도검색시 IP주소를 기반으로 하게끔 되어있다.)<br>
  </p>
-<p><a href="https://github.com/inchanS/alfnaversearch/releases/tag/v0.0.6" rel="noopener noreffer" target="_blank"><img
+<a href="https://github.com/inchanS/alfnaversearch/releases/tag/v0.0.6" rel="noopener noreffer" target="_blank"><img
         class="lazyload version"
         src="/svg/loading.min.svg"
         data-src="/svg/version/0.0.6-changed.min.svg"
         data-srcset="/svg/version/0.0.6-changed.min.svg, /svg/version/0.0.6-changed.min.svg 1.5x, /svg/version/0.0.6-changed.min.svg 2x"
         data-sizes="auto"
         alt="github-inchan code CHANGED | 0.0.6"
-        title="github-inchan code CHANGED | 0.0.6" /></a> <br>
-<strong>버전 0.0.6</strong>은 이전 버전에서 지도검색시 사용자의 위치와 관련한 우선순위 score에 따라 &lsquo;<strong>장소, 주소, 버스</strong>&rsquo; 3가지 타입의 결과가 반환되도록 수정하였다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>  이전버전은 한가지 타입의 결과만을 반환한다.</p>
+        title="github-inchan code CHANGED | 0.0.6" /></a>
+<ul>
+<li>지도검색시 &lsquo;<strong>장소, 주소, 버스</strong>&rsquo; 3가지 타입의 결과가 <strong>사용자의 위치와 관련한 우선순위(naver 자체 score)에 따라</strong> 반환되도록 수정<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>  (이전버전은 한가지 타입의 결과만을 반환한다.)</li>
+</ul>
 <p> </p>
 <p><a href="https://github.com/inchanS/AlfNaverSearchPlus/releases/tag/v0.1.1" rel="noopener noreffer" target="_blank"><img
         class="lazyload version"
@@ -293,9 +295,12 @@
         data-srcset="/svg/version/0.1.1-new.min.svg, /svg/version/0.1.1-new.min.svg 1.5x, /svg/version/0.1.1-new.min.svg 2x"
         data-sizes="auto"
         alt="github-inchan code NEW | 0.1.1"
-        title="github-inchan code NEW | 0.1.1" /></a> <strong>기능 추가</strong><br>
-검색어에 해당하는 장소, 주소, 버스의 검색결과가 있을 때만 해당 Search only Place(or Address, Bus) 창이 뜨도록 하였고, 이후 되돌아가기 기능을 추가하였다. <br>
-(네이버 주식 검색도 추가하였다.)</p>
+        title="github-inchan code NEW | 0.1.1" /></a> <strong>기능 추가</strong></p>
+<ul>
+<li><strong>검색어에 해당하는 장소, 주소, 버스의 검색결과가 있을 때만</strong> 해당 type의 Search only Place(or Address, Bus) 창이 뜨도록 변경</li>
+<li>Search only Place 보기에서 다시 <strong>돌아가기 기능</strong> 추가</li>
+<li><strong>네이버 주식 검색</strong>도 추가하였다.</li>
+</ul>
 <img src="/images/nspmap.gif" width="600">    
 <p> </p>
 <p><strong><a href="https://github.com/inchanS/Alfred-NaverSearch/releases/latest" target="_blank" rel="noopener noreffer ">latest release</a></strong><br>
@@ -304,7 +309,7 @@
 <hr>
 <ol>
 <li id="fn:1">
-<p>24.03.22 이 버전 역시 PR을 넣었고, 현재 반영을 기다리는 중이다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>24.03.22 이 버전 역시 원래 코드개발자에게 PR을 넣었고, 현재 <a href="https://github.com/Kuniz/alfnaversearch/releases/tag/v0.3.2" target="_blank" rel="noopener noreffer ">v0.3.2</a>에서 반영되어 있다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
