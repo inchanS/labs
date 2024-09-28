@@ -1,90 +1,62 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Miscellaneous - Tag - inchan.dev</title>
-        <link>https://inchan.dev/tags/miscellaneous/</link>
-        <description>Miscellaneous - Tag - inchan.dev</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 09 Mar 2024 07:24:37 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/miscellaneous/" rel="self" type="application/rss+xml" /><item>
-    <title>브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법</title>
-    <link>https://inchan.dev/posts/202403090724/</link>
-    <pubDate>Sat, 09 Mar 2024 07:24:37 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202403090724/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1677696797025-e6a40f6c714d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer">
-            </div>문제상황 브라우저에서 chatGPT 프롬프트의 입력창에 글을 쓰고 아무리 &ldquo;엔터&quot;를 눌러도 반응이 가질 않는 상황이 생겼다.
-일단 의심되는 변화는 macOS를 sonoma 14.4로 업그레이드 한 정황뿐인데 이래저래 만져보다 문제를 찾았다.
-문제는 바로 chatGPT의 local language 지원(Alpha) 기능이었다.
-(chatGPT 웹사이트의 왼쪽 아래, 자신의 아이디를 클릭하고 나오는 설정에서 확인 가능)
-일단 이 기능은 &lsquo;Auto-detect&lsquo;가 default로 설정되어있는데, 만약 이 값을 &lsquo;한국어&rsquo; 등으로 바꾸었다면 먹통 문제가 발현되었다.
-게다가 한번 바꾸면 이 설정에서 아무리 다른 값을 선택해도 먹히질 않는다.]]></description>
-</item>
-<item>
-    <title>Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면</title>
-    <link>https://inchan.dev/posts/202401122324/</link>
-    <pubDate>Fri, 12 Jan 2024 23:24:58 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202401122324/</guid>
-    <description><![CDATA[문제상황 구글이 도메인 사업을 매각한 후, 도메인 이전을 차일피일 미루다 최근에서야 Cloudflare로 도메인을 이전하였다.1
-모든 DNS 역시 정상적으로 이전하였고, 메일서비스를 비롯한 다른 서비스들도 정상작동함을 확인하였다.
-그런데 갑자기 해당 도메인의 주소가 정상적으로 작동하지 않는 문제가 생겼다.
-브라우저에서 20회 이상의 리다이렉션으로 페이지 불러오기 실패
-해결방법 Cloudflare side menu - SSL/TLS - 개요 : SSL/TLS 암호화 모드를
-가변에서 전체로 변경했더니 문제 해결!
-그런데 왜?? 현재 다른 설정은 항상 HTTPS 사용이 체크되어있는데 이 설정과 충돌해서일까?]]></description>
-</item>
-<item>
-    <title>Webina 참여 회고 - 원티드 주최 &#39;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&#39;</title>
-    <link>https://inchan.dev/posts/202306211131/</link>
-    <pubDate>Wed, 21 Jun 2023 11:31:43 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202306211131/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1679083216051-aa510a1a2c0e?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2664&amp;q=80" referrerpolicy="no-referrer">
-            </div>&lt;표지 사진출처: Unsplash&gt; 지난 월요일 저녁 &ldquo;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&rdquo; 라는 아주 흥미로운 주제의 웨비나가 있어 참여하였다. 비단 HR 관계자가 아니더라도 각 팀의 리더 또는 구성원이라면, 또는 조직에 속해있다면, 그리고 발빠르게 변화하는 현시대적 흐름에서 자기 스스로를 육성하는 방면에서도 몹시 듣고 싶은 주제였다.
-현재 Chat GPT를 필두로 한 AI가 대다수의 업계에 미치는 파급효과는 어마어마하다.
-OpenAI로 인한 영향, 방법 등에 관한 콘텐츠가 마구잡이로 쏟아져나오고 있는 현재이다.
-이러한 시대적 상황에서 OpenAI가 조금이라도 나의 업무에 미치는 영향이 있다면 이번 웨비나는 쉽게 지나치기 힘든 주제였다.]]></description>
-</item>
-<item>
-    <title>블로깅 플랫폼 변경: Google Blogger에서 GitHub &#43; Hugo로</title>
-    <link>https://inchan.dev/posts/202303022327/</link>
-    <pubDate>Mon, 06 Mar 2023 01:35:56 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202303022327/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
-            </div>&lt; 이미지 출처 = unsplash &gt;
-github + hugo로 이사! 이전: google blogger 이전에 사용했던 블로그의 플랫폼은 google blogger였다.
-tistory나 naver 블로그에 비해 내가 원하는 문법의 허용범위가 더 커서 오랫동안 사용중이었다.
-(예를 들면 toc, 각주, MarkDown 문법과 HTML 문법으로의 글 작성 모두 지원 등…)
-기술 블로그에서 하나의 문서 양이 스크롤을 필요로 한다면 특히나 필요한 것이,
-바로 TOC(table of contents) 라고 생각한다.
-h태그를 이용한 toc의 가장 큰 장점은
-전체적인 개요를 한 눈에 살펴볼 수 있고, 또한 해당 태그 부분만의 링크를 가질 수 있다는 점!]]></description>
-</item>
-<item>
-    <title>chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.</title>
-    <link>https://inchan.dev/posts/202302100411/</link>
-    <pubDate>Fri, 10 Feb 2023 04:11:51 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202302100411/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1675557009483-e6cf3867976b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2hhdGdwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
-            </div>chatGPT에게 whereClauseBuilder 함수를 물어보았다. 원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 where절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다. 질문은 한글로 했고, 영어로 답변이 오는데 속도는 꽤 빠르다.
-하지만 답변을 한글로 받고자 하면 꽤 오랜 지연이 발생한다.
-whereClauseBuilder함수란? I&rsquo;m sorry, but you haven&rsquo;t provided enough context for me to understand what you&rsquo;re asking about. Could you please provide more information or specify what you&rsquo;re looking to learn about &ldquo;whereClauseBuilder&rdquo;?]]></description>
-</item>
-<item>
-    <title>부트캠프 가도 실패하는 사람 특징</title>
-    <link>https://inchan.dev/posts/202301020441/</link>
-    <pubDate>Mon, 02 Jan 2023 04:41:37 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202301020441/</guid>
-    <description><![CDATA[youtube 서핑을 하다 우연히 보게 된 영상. &ldquo;부트캠프 가셔도 실패하는 분 특징&rdquo; 문구가 굉장히 도발적이었다.
-마침 부트캠프를 막 수료한지라 더욱 내 시선을 끌었었다.
-&nbsp; youtube 내용 요약 - 펼치기 youtube 내용 요약 글쓰기를 잘하는 사람이 개발자로서도 잘한다. 본인의 메세지를 글에 녹일 수 있어야 한다. 컴퓨터가 이해할 수 있는 코드는 어느 바보라도 작성할 수 있다. 좋은 프로그래머는 사람이 이해할 수 있는 코드를 작성한다.
-마틴 파울러, 리팩토링의 저자 코딩 자체가 문서를 정리하는 것이다.]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Miscellaneous - Tag - inchan.dev</title>
+    <link>http://inchan.dev/tags/miscellaneous/</link>
+    <description>inchan.dev</description>
+    <generator>Hugo 0.135.0 &amp; FixIt v0.3.12-456db385</generator>
+    <language>en</language>
+    <managingEditor>song@inchan.dev (inchan)</managingEditor>
+    <webMaster>song@inchan.dev (inchan)</webMaster>
+    <lastBuildDate>Sat, 09 Mar 2024 07:24:37 +0900</lastBuildDate>
+    <atom:link href="http://inchan.dev/tags/miscellaneous/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법</title>
+      <link>http://inchan.dev/posts/202403090724/</link>
+      <pubDate>Sat, 09 Mar 2024 07:24:37 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202403090724/</guid>
+      <category domain="http://inchan.dev/categories/miscellaneous/">Miscellaneous</category>
+      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;문제상황&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;문제상황&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%ac%b8%ec%a0%9c%ec%83%81%ed%99%a9&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;브라우저에서 chatGPT 프롬프트의 입력창에 글을 쓰고 아무리 &amp;ldquo;엔터&amp;quot;를 눌러도 반응이 가질 않는 상황이 생겼다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면</title>
+      <link>http://inchan.dev/posts/202401122324/</link>
+      <pubDate>Fri, 12 Jan 2024 23:24:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202401122324/</guid>
+      <category domain="http://inchan.dev/categories/miscellaneous/">Miscellaneous</category>
+      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;문제상황&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;문제상황&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%ac%b8%ec%a0%9c%ec%83%81%ed%99%a9&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;구글이 도메인 사업을 매각한 후, 도메인 이전을 차일피일 미루다 최근에서야 Cloudflare로 도메인을 이전하였다.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;br&gt;&#xA;모든 DNS 역시 정상적으로 이전하였고, 메일서비스를 비롯한 다른 서비스들도 정상작동함을 확인하였다.&lt;br&gt;&#xA;그런데 갑자기 해당 도메인의 주소가 정상적으로 작동하지 않는 문제가 생겼다.&lt;br&gt;&#xA; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Webina 참여 회고 - 원티드 주최 &#39;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&#39;</title>
+      <link>http://inchan.dev/posts/202306211131/</link>
+      <pubDate>Wed, 21 Jun 2023 11:31:43 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202306211131/</guid>
+      <category domain="http://inchan.dev/categories/miscellaneous/">Miscellaneous</category>
+      <description>&lt;p&gt;&amp;lt;표지 사진출처: &lt;a href=&#34;https://unsplash.com/ko/%EC%82%AC%EC%A7%84/agFmImWyPso&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Unsplash&lt;/a&gt;&amp;gt;&#xA; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;지난 월요일 저녁 &amp;ldquo;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&amp;rdquo; 라는 아주 흥미로운 주제의 웨비나가 있어 참여하였다. 비단 HR 관계자가 아니더라도 각 팀의 리더 또는 구성원이라면, 또는 조직에 속해있다면, 그리고 발빠르게 변화하는 현시대적 흐름에서 자기 스스로를 육성하는 방면에서도 몹시 듣고 싶은 주제였다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;현재 Chat GPT를 필두로 한 AI가 대다수의 업계에 미치는 파급효과는 어마어마하다.&lt;br&gt;&#xA;OpenAI로 인한 영향, 방법 등에 관한 콘텐츠가 마구잡이로 쏟아져나오고 있는 현재이다.&lt;br&gt;&#xA;이러한 시대적 상황에서 OpenAI가 조금이라도 나의 업무에 미치는 영향이 있다면 이번 웨비나는 쉽게 지나치기 힘든 주제였다.&lt;br&gt;&#xA; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>블로깅 플랫폼 변경: Google Blogger에서 GitHub &#43; Hugo로</title>
+      <link>http://inchan.dev/posts/202303022327/</link>
+      <pubDate>Thu, 02 Mar 2023 23:27:35 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202303022327/</guid>
+      <category domain="http://inchan.dev/categories/miscellaneous/">Miscellaneous</category>
+      <description>&lt;p&gt;&amp;lt; 이미지 출처 = &lt;a href=&#34;https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdpdGh1YnxlbnwwfHwwfHw%3D&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=900&amp;amp;q=60&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;unsplash&lt;/a&gt; &amp;gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;github--hugo로-이사&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;github + hugo로 이사!&lt;/span&gt;&#xA;  &lt;a href=&#34;#github--hugo%eb%a1%9c-%ec%9d%b4%ec%82%ac&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;이전-google-blogger&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;이전: google blogger&lt;/span&gt;&#xA;  &lt;a href=&#34;#%ec%9d%b4%ec%a0%84-google-blogger&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;이전에 사용했던 블로그의 플랫폼은 google blogger였다.&lt;br&gt;&#xA; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.</title>
+      <link>http://inchan.dev/posts/202302100411/</link>
+      <pubDate>Fri, 10 Feb 2023 04:11:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202302100411/</guid>
+      <category domain="http://inchan.dev/categories/miscellaneous/">Miscellaneous</category>
+      <description>&lt;h3 id=&#34;chatgpt에게--whereclausebuilder-함수를-물어보았다&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;chatGPT에게  whereClauseBuilder 함수를 물어보았다.&lt;/span&gt;&#xA;  &lt;a href=&#34;#chatgpt%ec%97%90%ea%b2%8c--whereclausebuilder-%ed%95%a8%ec%88%98%eb%a5%bc-%eb%ac%bc%ec%96%b4%eb%b3%b4%ec%95%98%eb%8b%a4&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;원하는 정보는 javascript에서 mySQL DB로 query문을 작성하여 사용시, 반복되는 &lt;code&gt;where&lt;/code&gt;절에 대해 함수화하여 재사용할 수 있는 방법 또는 예시 코드였다.&#xA; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>부트캠프 가도 실패하는 사람 특징</title>
+      <link>http://inchan.dev/posts/202301020441/</link>
+      <pubDate>Mon, 02 Jan 2023 04:41:37 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202301020441/</guid>
+      <category domain="http://inchan.dev/categories/miscellaneous/">Miscellaneous</category>
+      <description>&lt;p&gt;youtube 서핑을 하다 우연히 보게 된 영상.&#xA;&amp;ldquo;&lt;strong&gt;부트캠프 가셔도 실패하는 분 특징&lt;/strong&gt;&amp;rdquo;&#xA;문구가 굉장히 도발적이었다.&lt;br&gt;&#xA;마침 부트캠프를 막 수료한지라 더욱 내 시선을 끌었었다.&lt;/p&gt;&#xA;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/YggPP84w_Lo&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&#xA;&amp;nbsp;  &#xA;&lt;div class=&#34;details admonition info&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;      &lt;i class=&#34;icon fa-solid fa-info-circle fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;youtube 내용 요약 - 펼치기&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&lt;h2 id=&#34;youtube-내용-요약&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;youtube 내용 요약&lt;/span&gt;&#xA;  &lt;a href=&#34;#youtube-%eb%82%b4%ec%9a%a9-%ec%9a%94%ec%95%bd&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;글쓰기를 잘하는 사람이 개발자로서도 잘한다.&lt;/li&gt;&#xA;&lt;li&gt;본인의 메세지를 글에 녹일 수 있어야 한다.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&lt;p&gt;컴퓨터가 이해할 수 있는 코드는 어느 바보라도 작성할 수 있다.&#xA;좋은 프로그래머는 사람이 이해할 수 있는 코드를 작성한다.&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

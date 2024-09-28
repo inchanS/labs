@@ -1,134 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>mac 터미널에서 폴더트리 구조 확인 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="mac 터미널에서 폴더트리 구조 확인" />
-<meta property="og:description" content="&lt;사진: unsplash&gt;
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Mac 터미널에서 폴더트리 구조 확인 - inchan.dev</title><meta name="author" content="inchan">
+<meta name="description" content="&lt;사진: unsplash&gt;
 windows에서는 cmd에서 폴더트리가 바로 나오는것 같던데 macOS의 터미널에서는 따로 tree를 설치해야 볼 수 있다.
+ 
 아래 명령어로 brew를 통해 설치
-$ brew install tree 사용법 기본적인 사용법은 작업중인 폴더로 가서 tree 라고만 입력하면 된다.
-$ tree 폴더 제외 그런데 node project와 같이 node_module이라던가, dist 폴더가 있는 구조에서는 불필요하게 많은 폴더가 출력됨을 볼 수 있다.
-폴더를 제외하고 싶을 땐, tree -I &lt;diretory&gt;로 명령하면 해당 폴더를 제외하고 출력 가능하다.
-예시&gt; 하나의 폴더 제외" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://inchan.dev/posts/202301230429/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-01-23T04:29:44+09:00" />
-<meta property="article:modified_time" content="2024-03-08T20:28:08+09:00" /><meta property="og:site_name" content="inchan.dev" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="mac 터미널에서 폴더트리 구조 확인"/>
-<meta name="twitter:description" content="&lt;사진: unsplash&gt;
-windows에서는 cmd에서 폴더트리가 바로 나오는것 같던데 macOS의 터미널에서는 따로 tree를 설치해야 볼 수 있다.
-아래 명령어로 brew를 통해 설치
-$ brew install tree 사용법 기본적인 사용법은 작업중인 폴더로 가서 tree 라고만 입력하면 된다.
-$ tree 폴더 제외 그런데 node project와 같이 node_module이라던가, dist 폴더가 있는 구조에서는 불필요하게 많은 폴더가 출력됨을 볼 수 있다.
-폴더를 제외하고 싶을 땐, tree -I &lt;diretory&gt;로 명령하면 해당 폴더를 제외하고 출력 가능하다.
-예시&gt; 하나의 폴더 제외"/>
-      <meta name="twitter:site" content="@codject"/>
-<meta name="application-name" content="inchan.dev">
-<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202301230429/" /><link rel="prev" href="https://inchan.dev/posts/202301230424/" /><link rel="next" href="https://inchan.dev/posts/202301280422/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "mac 터미널에서 폴더트리 구조 확인",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/inchan.dev\/posts\/202301230429\/"
-        },"genre": "posts","keywords": "terminal","wordcount":  875 ,
-        "url": "https:\/\/inchan.dev\/posts\/202301230429\/","datePublished": "2023-01-23T04:29:44+09:00","dateModified": "2024-03-08T20:28:08+09:00","publisher": {
-            "@type": "Organization",
-            "name": "inchan"},"author": {
-                "@type": "Person",
-                "name": "inchan"
-            },"description": ""
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+ 
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+
+1
+
+
+$ brew install tree
+
+ 
+사용법
+  
+    
+  
+기본적인 사용법은 작업중인 폴더로 가서 tree 라고만 입력하면 된다.
+ "><meta name="keywords" content='terminal'>
+  <meta itemprop="name" content="mac 터미널에서 폴더트리 구조 확인">
+  <meta itemprop="description" content="&lt;사진: unsplash&gt;
+windows에서는 cmd에서 폴더트리가 바로 나오는것 같던데 macOS의 터미널에서는 따로 tree를 설치해야 볼 수 있다.
+아래 명령어로 brew를 통해 설치
+1 $ brew install tree 사용법 기본적인 사용법은 작업중인 폴더로 가서 tree 라고만 입력하면 된다.">
+  <meta itemprop="datePublished" content="2023-01-23T04:29:44+09:00">
+  <meta itemprop="dateModified" content="2024-03-08T20:28:08+09:00">
+  <meta itemprop="wordCount" content="1014">
+  <meta itemprop="keywords" content="Terminal"><meta property="og:url" content="http://inchan.dev/posts/202301230429/">
+  <meta property="og:site_name" content="inchan.dev">
+  <meta property="og:title" content="mac 터미널에서 폴더트리 구조 확인">
+  <meta property="og:description" content="&lt;사진: unsplash&gt;
+windows에서는 cmd에서 폴더트리가 바로 나오는것 같던데 macOS의 터미널에서는 따로 tree를 설치해야 볼 수 있다.
+아래 명령어로 brew를 통해 설치
+1 $ brew install tree 사용법 기본적인 사용법은 작업중인 폴더로 가서 tree 라고만 입력하면 된다.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-01-23T04:29:44+09:00">
+    <meta property="article:modified_time" content="2024-03-08T20:28:08+09:00">
+    <meta property="article:tag" content="Terminal">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="mac 터미널에서 폴더트리 구조 확인">
+  <meta name="twitter:description" content="&lt;사진: unsplash&gt;
+windows에서는 cmd에서 폴더트리가 바로 나오는것 같던데 macOS의 터미널에서는 따로 tree를 설치해야 볼 수 있다.
+아래 명령어로 brew를 통해 설치
+1 $ brew install tree 사용법 기본적인 사용법은 작업중인 폴더로 가서 tree 라고만 입력하면 된다.">
+      <meta name="twitter:site" content="@cOdject">
+<meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
+<meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://inchan.dev/posts/202301230429/" title="mac 터미널에서 폴더트리 구조 확인 - inchan.dev" /><link rel="prev" type="text/html" href="http://inchan.dev/posts/202301230424/" title="백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리" /><link rel="next" type="text/html" href="http://inchan.dev/posts/202301280422/" title="typescript - satisfies operator 탐구" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "mac 터미널에서 폴더트리 구조 확인",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/inchan.dev\/posts\/202301230429\/"
+    },"genre": "posts","keywords": "terminal","wordcount":  1014 ,
+    "url": "http:\/\/inchan.dev\/posts\/202301230429\/","datePublished": "2023-01-23T04:29:44+09:00","dateModified": "2024-03-08T20:28:08+09:00","publisher": {
+      "@type": "Organization",
+      "name": "inchan"},"author": {
+        "@type": "Person",
+        "name": "inchan"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
     <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
-        </div>
+      <div class="header-title">
+        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
 </header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">mac 터미널에서 폴더트리 구조 확인</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/env/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Env</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-23">2023-01-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;875 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
-        </div><div class="featured-image"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60"
-        data-srcset="https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60, https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60 1.5x, https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60 2x"
-        data-sizes="auto"
-        alt="https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60"
-        title="https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60" /></div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Mac 터미널에서 폴더트리 구조 확인</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/env/" class="post-category" title="Category - Env"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Env</a></span></div><div class="post-meta-line"><span title="published on 2023-01-23 04:29:44"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-01-23">2023-01-23</time></span>&nbsp;<span title="Updated on 2024-03-08 20:28:08"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-08">2024-03-08</time></span>&nbsp;<span title="1014 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1100 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>5 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Mac 터미널에서 폴더트리 구조 확인"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+          </span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="lazy" src="https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60" alt="https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60" data-title="https://images.unsplash.com/photo-1607877361964-bf792b65e593?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFjJTIwdGVybWluYWx8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -145,56 +215,173 @@ $ tree 폴더 제외 그런데 node project와 같이 node_module이라던가, d
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>&lt;사진: <a href="http://unsplash.com" target="_blank" rel="noopener noreffer ">unsplash</a>&gt;</p>
+      </div><div class="content" id="content"><p>&lt;사진: <a href="http://unsplash.com"target="_blank" rel="external nofollow noopener noreferrer">unsplash</a>&gt;</p>
 <p>windows에서는 cmd에서 폴더트리가 바로 나오는것 같던데 macOS의 터미널에서는 따로 tree를 설치해야 볼 수 있다.<br>
  </p>
 <p>아래 명령어로 brew를 통해 설치<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ brew install tree
-</span></span></code></pre></div><p> </p>
-<h3 id="사용법">사용법</h3>
-<p>기본적인 사용법은 작업중인 폴더로 가서 <code>tree</code> 라고만 입력하면 된다.<br>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ brew install tree</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<h3 id="사용법" class="heading-element"><span>사용법</span>
+  <a href="#%ec%82%ac%ec%9a%a9%eb%b2%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>기본적인 사용법은 작업중인 폴더로 가서 <code>tree</code> 라고만 입력하면 된다.<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tree
-</span></span></code></pre></div><p> </p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tree</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <hr>
-<h4 id="폴더-제외">폴더 제외</h4>
-<p>그런데 node project와 같이 <code>node_module</code>이라던가, <code>dist</code> 폴더가 있는 구조에서는 불필요하게 많은 폴더가 출력됨을 볼 수 있다.<br>
+<h4 id="폴더-제외" class="heading-element"><span>폴더 제외</span>
+  <a href="#%ed%8f%b4%eb%8d%94-%ec%a0%9c%ec%99%b8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>그런데 node project와 같이 <code>node_module</code>이라던가, <code>dist</code> 폴더가 있는 구조에서는 불필요하게 많은 폴더가 출력됨을 볼 수 있다.<br>
  </p>
 <p>폴더를 제외하고 싶을 땐, <code>tree -I &lt;diretory&gt;</code>로 명령하면 해당 폴더를 제외하고 출력 가능하다.<br>
  </p>
 <p>예시&gt; 하나의 폴더 제외<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tree -I node_module
-</span></span></code></pre></div><p> </p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tree -I node_module</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>예시&gt; 두 개의 폴더 제외<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tree -I node_module -I dist
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tree -I node_module -I dist
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">// 또는 아래와 같이 
-</span></span><span class="line"><span class="cl">$ tree -I <span class="s1">&#39;node_modules|dist&#39;</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl">$ tree -I <span class="s1">&#39;node_modules|dist&#39;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <hr>
-<h4 id="폴더만-출력">폴더만 출력</h4>
-<p>파일은 제외하고 폴더만 출력하고 싶다면 <code>-d</code> 를 옵션으로 사용할 수 있다.<br>
+<h4 id="폴더만-출력" class="heading-element"><span>폴더만 출력</span>
+  <a href="#%ed%8f%b4%eb%8d%94%eb%a7%8c-%ec%b6%9c%eb%a0%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>파일은 제외하고 폴더만 출력하고 싶다면 <code>-d</code> 를 옵션으로 사용할 수 있다.<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tree -d
-</span></span></code></pre></div><p> </p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tree -d</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>파일은 제외하고 모든 폴더를 출력한다.</p>
 <hr>
-<h4 id="숨겨진-파일-출력">숨겨진 파일 출력</h4>
-<p><code>.env</code>와 같은 파일처럼 <code>.</code>으로 시작하는 파일이나 숨겨진 파일의 경우 <code>-a</code>를 입력하여 출력할 수 있다.<br>
+<h4 id="숨겨진-파일-출력" class="heading-element"><span>숨겨진 파일 출력</span>
+  <a href="#%ec%88%a8%ea%b2%a8%ec%a7%84-%ed%8c%8c%ec%9d%bc-%ec%b6%9c%eb%a0%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p><code>.env</code>와 같은 파일처럼 <code>.</code>으로 시작하는 파일이나 숨겨진 파일의 경우 <code>-a</code>를 입력하여 출력할 수 있다.<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tree -a
-</span></span></code></pre></div><p> </p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tree -a</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <hr>
-<h4 id="실사용-예시">실사용 예시</h4>
-<p> </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tree -a -I <span class="s1">&#39;node_modules|dist|coverage|.idea|.github|.git|http-client&#39;</span>
-</span></span></code></pre></div><p> <br>
+<h4 id="실사용-예시" class="heading-element"><span>실사용 예시</span>
+  <a href="#%ec%8b%a4%ec%82%ac%ec%9a%a9-%ec%98%88%ec%8b%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p> </p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tree -a -I <span class="s1">&#39;node_modules|dist|coverage|.idea|.github|.git|http-client&#39;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> <br>
 이렇게 입력하면 아래와 같이 볼 수 있는데 막상 적고보니 좀&hellip; 번거롭긴 하다.</p>
 <p> </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">.
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">.
 </span></span><span class="line"><span class="cl">├── .env_sample
 </span></span><span class="line"><span class="cl">├── .eslintrc
 </span></span><span class="line"><span class="cl">├── .gitignore
@@ -246,12 +433,96 @@ $ tree 폴더 제외 그런데 node project와 같이 node_module이라던가, d
 </span></span><span class="line"><span class="cl">│   │   └── global.d.ts
 </span></span><span class="line"><span class="cl">│   └── utils
 </span></span><span class="line"><span class="cl">│       └── util.ts
-</span></span><span class="line"><span class="cl">└── tsconfig.json
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl">└── tsconfig.json</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <hr>
-<h3 id="tree-options">tree options</h3>
-<p> </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">usage: tree <span class="o">[</span>-acdfghilnpqrstuvxACDFJQNSUX<span class="o">]</span> <span class="o">[</span>-L level <span class="o">[</span>-R<span class="o">]]</span> <span class="o">[</span>-H  baseHREF<span class="o">]</span>
+<h3 id="tree-options" class="heading-element"><span>tree options</span>
+  <a href="#tree-options" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p> </p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">usage: tree <span class="o">[</span>-acdfghilnpqrstuvxACDFJQNSUX<span class="o">]</span> <span class="o">[</span>-L level <span class="o">[</span>-R<span class="o">]]</span> <span class="o">[</span>-H  baseHREF<span class="o">]</span>
 </span></span><span class="line"><span class="cl"><span class="o">[</span>-T title<span class="o">]</span> <span class="o">[</span>-o filename<span class="o">]</span> <span class="o">[</span>-P pattern<span class="o">]</span> <span class="o">[</span>-I pattern<span class="o">]</span> <span class="o">[</span>--gitignore<span class="o">]</span>
 </span></span><span class="line"><span class="cl"><span class="o">[</span>--gitfile<span class="o">[=]</span>file<span class="o">]</span> <span class="o">[</span>--matchdirs<span class="o">]</span> <span class="o">[</span>--metafirst<span class="o">]</span> <span class="o">[</span>--ignore-case<span class="o">]</span>
 </span></span><span class="line"><span class="cl"><span class="o">[</span>--nolinks<span class="o">]</span> <span class="o">[</span>--hintro<span class="o">[=]</span>file<span class="o">]</span> <span class="o">[</span>--houtro<span class="o">[=]</span>file<span class="o">]</span> <span class="o">[</span>--inodes<span class="o">]</span> <span class="o">[</span>--device<span class="o">]</span>
@@ -326,46 +597,47 @@ $ tree 폴더 제외 그런데 node project와 같이 node_module이라던가, d
 </span></span><span class="line"><span class="cl">  ------- Miscellaneous options -------
 </span></span><span class="line"><span class="cl">  --version     Print version and exit.
 </span></span><span class="line"><span class="cl">  --help        Print usage and this <span class="nb">help</span> message and exit.
-</span></span><span class="line"><span class="cl">  --            Options processing terminator.
-</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2024-03-08</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/terminal/">Terminal</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/posts/202301230424/" class="prev" rel="prev" title="백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리</a>
-            <a href="/posts/202301280422/" class="next" rel="next" title="typescript - satisfies operator 탐구">typescript - satisfies operator 탐구<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</span></span><span class="line"><span class="cl">  --            Options processing terminator.</span></span></code></pre></td></tr></table>
 </div>
-<div id="comments"><div id="utterances" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
+</div></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2024-03-08 20:28:08">Updated on 2024-03-08&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
         </div>
-    </footer></div>
+      </div></div>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/terminal/" class="post-tag" title="Tags - Terminal">Terminal</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/202301230424/" class="post-nav-item" rel="prev" title="백엔드 - Typescript-Express 환경에서 Jest 및 Node 환경에 따라 Dotenv 설정 분리"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>백엔드 - Typescript-Express 환경에서 Jest 및 Node 환경에 따라 Dotenv 설정 분리</a>
+      <a href="/posts/202301280422/" class="post-nav-item" rel="next" title="Typescript - Satisfies Operator 탐구">Typescript - Satisfies Operator 탐구<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.135.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.12-456db385">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">inchan</a></span><span class="license footer-divider">CC BY-NC-SA 4.0</span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><a href="https://github.com/inchanS" title="View source on GitHub"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true" width="56" height="56"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;--progress-h: 5px;--bg-progress: rgba(0, 0, 255, 1);--bg-progress-dark: rgba(255, 165, 0, 1);"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"duration":-1,"loop":false,"speed":100},"version":"v0.3.12-456db385"};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
 </html>

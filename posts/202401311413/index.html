@@ -1,122 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기 - inchan.dev</title><meta name="Description" content="프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법"><meta property="og:title" content="프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기" />
-<meta property="og:description" content="프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://inchan.dev/posts/202401311413/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-02-01T23:11:21+09:00" />
-<meta property="article:modified_time" content="2024-02-01T23:11:10+09:00" /><meta property="og:site_name" content="inchan.dev" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기"/>
-<meta name="twitter:description" content="프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법"/>
-      <meta name="twitter:site" content="@codject"/>
-<meta name="application-name" content="inchan.dev">
-<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202401311413/" /><link rel="prev" href="https://inchan.dev/posts/202401261149/" /><link rel="next" href="https://inchan.dev/posts/202403010802/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/inchan.dev\/posts\/202401311413\/"
-        },"genre": "posts","keywords": "terminal","wordcount":  677 ,
-        "url": "https:\/\/inchan.dev\/posts\/202401311413\/","datePublished": "2024-02-01T23:11:21+09:00","dateModified": "2024-02-01T23:11:10+09:00","publisher": {
-            "@type": "Organization",
-            "name": "inchan"},"author": {
-                "@type": "Person",
-                "name": "inchan"
-            },"description": "프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법"
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>프로젝트별 각각의 Node 버전을 Nvm으로 자동 적용하기 - inchan.dev</title><meta name="author" content="inchan">
+<meta name="description" content="프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법"><meta name="keywords" content='terminal'>
+  <meta itemprop="name" content="프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기">
+  <meta itemprop="description" content="프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법">
+  <meta itemprop="datePublished" content="2024-02-01T23:11:21+09:00">
+  <meta itemprop="dateModified" content="2024-02-01T23:11:10+09:00">
+  <meta itemprop="wordCount" content="753">
+  <meta itemprop="keywords" content="Terminal"><meta property="og:url" content="http://inchan.dev/posts/202401311413/">
+  <meta property="og:site_name" content="inchan.dev">
+  <meta property="og:title" content="프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기">
+  <meta property="og:description" content="프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-02-01T23:11:21+09:00">
+    <meta property="article:modified_time" content="2024-02-01T23:11:10+09:00">
+    <meta property="article:tag" content="Terminal">
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기">
+  <meta name="twitter:description" content="프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법">
+      <meta name="twitter:site" content="@cOdject">
+<meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
+<meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://inchan.dev/posts/202401311413/" title="프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기 - inchan.dev" /><link rel="prev" type="text/html" href="http://inchan.dev/posts/202401261149/" title="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴" /><link rel="next" type="text/html" href="http://inchan.dev/posts/202403010802/" title="typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/inchan.dev\/posts\/202401311413\/"
+    },"genre": "posts","keywords": "terminal","wordcount":  753 ,
+    "url": "http:\/\/inchan.dev\/posts\/202401311413\/","datePublished": "2024-02-01T23:11:21+09:00","dateModified": "2024-02-01T23:11:10+09:00","publisher": {
+      "@type": "Organization",
+      "name": "inchan"},"author": {
+        "@type": "Person",
+        "name": "inchan"
+      },"description": "프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법"
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
     <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
-        </div>
+      <div class="header-title">
+        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
 </header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/env/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Env</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-01">2024-02-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;677 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
-        </div><div class="featured-image"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2880px-Node.js_logo.svg.png"
-        data-srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2880px-Node.js_logo.svg.png, https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2880px-Node.js_logo.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2880px-Node.js_logo.svg.png 2x"
-        data-sizes="auto"
-        alt="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2880px-Node.js_logo.svg.png"
-        title="프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법" /></div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>프로젝트별 각각의 Node 버전을 Nvm으로 자동 적용하기</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/env/" class="post-category" title="Category - Env"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Env</a></span></div><div class="post-meta-line"><span title="published on 2024-02-01 23:11:21"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-02-01">2024-02-01</time></span>&nbsp;<span title="Updated on 2024-02-01 23:11:10"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-02-01">2024-02-01</time></span>&nbsp;<span title="753 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="프로젝트별 각각의 Node 버전을 Nvm으로 자동 적용하기"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+          </span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2880px-Node.js_logo.svg.png" alt="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2880px-Node.js_logo.svg.png" data-title="프로젝트별로 node 버전이 다르다면 nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 적용시킬 수 있는 방법" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#장점">장점</a></li>
     <li><a href="#단점">단점</a></li>
@@ -132,22 +187,49 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p> </p>
+      </div><div class="content" id="content"><p> </p>
 <ul>
-<li>source : <a href="https://github.com/nvm-sh/nvm?tab=readme-ov-file#nvmrc" target="_blank" rel="noopener noreffer ">nvm-sh/nvm: Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions</a></li>
+<li>source : <a href="https://github.com/nvm-sh/nvm?tab=readme-ov-file#nvmrc"target="_blank" rel="external nofollow noopener noreferrer">nvm-sh/nvm: Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions</a></li>
 </ul>
 <hr>
 <p>새로운 프로젝트는 Node 버전 중 현재 최신 LTS 버전인 20 버전으로 진행하려는데, 기존 진행중인 프로젝트가 AWS-ec2에서 node@16으로 세팅되어있던 터라, macOS에서 2개 버전을 설치해 사용해야하는 상황이 왔다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <p>때문에 여러 node 버전을 사용할 수 있는 <strong>nvm</strong>(Node version Manager)을 설치<br>
 설치는 brew를 통해 설치했고 이후 과정은 brew에서 자세하게 설명해준다.</p>
-<h2 id="장점">장점</h2>
-<ol>
+<h2 id="장점" class="heading-element"><span>장점</span>
+  <a href="#%ec%9e%a5%ec%a0%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ol>
 <li>OS에 하나 이상의, 여러 version별 node를 설치하고</li>
 <li>프로젝트별로 각각 다른 버전의 node를 사용할 수 있다.</li>
 </ol>
-<h2 id="단점">단점</h2>
-<p>node 프로젝트 진행시 터미널에서 해당 프로젝트를 적정 버전으로 실행시키기 위해서는 다음 명령어로 node의 버전을 사용할 때마다 <strong>항상</strong> 지정해줘야 한다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># node 특정 버전 설치 (아래 3가지 명령어중 택일)</span>
+<h2 id="단점" class="heading-element"><span>단점</span>
+  <a href="#%eb%8b%a8%ec%a0%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>node 프로젝트 진행시 터미널에서 해당 프로젝트를 적정 버전으로 실행시키기 위해서는 다음 명령어로 node의 버전을 사용할 때마다 <strong>항상</strong> 지정해줘야 한다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># node 특정 버전 설치 (아래 3가지 명령어중 택일)</span>
 </span></span><span class="line"><span class="cl">nvm install --lts // 가장 최신 LTS 버전을 설치
 </span></span><span class="line"><span class="cl">nvm install 18.10.2 // 특정 버전 설치
 </span></span><span class="line"><span class="cl">nvm install <span class="m">20</span>  // 20.x.x에서 가장 최신버전을 설치
@@ -163,39 +245,51 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 특정 버전 사용을 명령 (버전 번호만 적어주면 된다.)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 예시</span>
 </span></span><span class="line"><span class="cl">nvm use <span class="m">18</span>  // 설치된 18.x.x에서 가장 최신버전을 사용
-</span></span><span class="line"><span class="cl">nvm use 16.12.5 // 16.12.5 버전을 사용
-</span></span></code></pre></div><h2 id="보완">보완</h2>
-<h3 id="1-ide-사용하기">1. IDE 사용하기</h3>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/Pasted%20image%2020240201223157.png"
-        data-srcset="/images/Pasted%20image%2020240201223157.png, /images/Pasted%20image%2020240201223157.png 1.5x, /images/Pasted%20image%2020240201223157.png 2x"
-        data-sizes="auto"
-        alt="/images/Pasted%20image%2020240201223157.png"
-        title="/images/Pasted%20image%2020240201223157.png" /></p>
+</span></span><span class="line"><span class="cl">nvm use 16.12.5 // 16.12.5 버전을 사용</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="보완" class="heading-element"><span>보완</span>
+  <a href="#%eb%b3%b4%ec%99%84" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="1-ide-사용하기" class="heading-element"><span>1. IDE 사용하기</span>
+  <a href="#1-ide-%ec%82%ac%ec%9a%a9%ed%95%98%ea%b8%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><a class="lightgallery" href="/images/Pasted%20image%2020240201223157.png?size=large" data-thumbnail="/images/Pasted%20image%2020240201223157.png?size=small" data-sub-html="<h2>/images/Pasted%20image%2020240201223157.png</h2>"><img loading="lazy" src="/images/Pasted%20image%2020240201223157.png" alt="/images/Pasted%20image%2020240201223157.png" srcset="/images/Pasted%20image%2020240201223157.png?size=small, /images/Pasted%20image%2020240201223157.png?size=medium 1.5x, /images/Pasted%20image%2020240201223157.png?size=large 2x" data-title="/images/Pasted%20image%2020240201223157.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
 <p>IntelliJ 또는 WebStorm과 같은 IDE에서는 따로 실행 환경을 설정해줄 수가 있다.</p>
-<h3 id="2-nvmrc-사용하기">2. <code>.nvmrc</code> 사용하기</h3>
-<p><a href="https://github.com/nvm-sh/nvm?tab=readme-ov-file#nvmrc" target="_blank" rel="noopener noreffer ">.nvmrc 관련 문서</a>
+<h3 id="2-nvmrc-사용하기" class="heading-element"><span>2. <code>.nvmrc</code> 사용하기</span>
+  <a href="#2-nvmrc-%ec%82%ac%ec%9a%a9%ed%95%98%ea%b8%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><a href="https://github.com/nvm-sh/nvm?tab=readme-ov-file#nvmrc"target="_blank" rel="external nofollow noopener noreferrer">.nvmrc 관련 문서</a>
 프로젝트별 root 폴더에 <code>.nvmrc</code> 파일을 만들고 아래와 같이 버전만 딱 한줄 넣어주면 된다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">16.20.2
-</span></span></code></pre></div><p>또는 16버전의 최신 버전 사용시 <code>16</code>이라고만 입력해도 된다.<br>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">16.20.2</span></span></code></pre></td></tr></table>
+</div>
+</div><p>또는 16버전의 최신 버전 사용시 <code>16</code>이라고만 입력해도 된다.<br>
  </p>
 <p>그리고 터미널에서 해당프로젝트에 위치해있을 때, 버전을 입력할 필요없이 <code>nvm use</code> 명령어만 입력해줘도 <code>.nvmrc</code>파일에서 버전을 읽어와 해당 node버전을 적용한다.<br>
  </p>
 <div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">이제 프로젝트별로 nvm에서 노드 버전을 지정할 때, 그동안 타이핑하기 힘들었던 3단어(nvm, use, &lt;version&gt;)에서 무려 1단어를 줄이고 단 2단어만(nvm, use) 입력하면 된다.<br>
-별거 아닌것 같지만 프로젝트별 각각의 노드 버전을 사용할때마다 찾아보는 것도 일이다.</div>
-        </div>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>note<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
+    <div class="details-content">
+      <div class="admonition-content">이제 프로젝트별로 nvm에서 노드 버전을 지정할 때, 그동안 타이핑하기 힘들었던 3단어(nvm, use, &lt;version&gt;)에서 무려 1단어를 줄이고 단 2단어만(nvm, use) 입력하면 된다.<br>
+별거 아닌것 같지만 프로젝트별 각각의 노드 버전을 사용할때마다 찾아보는 것도 일이다.</div>
+    </div>
+  </div>
 <p> <br>
  </p>
-<h4 id="프로젝트별-node-버전을-자동으로-적용하기">프로젝트별 node 버전을 자동으로 적용하기</h4>
-<p>위 방법도 편리하지만 여전히 사용할 때마다 명령어를 입력해줘야 하기는 마찬가지다.<br>
+<h4 id="프로젝트별-node-버전을-자동으로-적용하기" class="heading-element"><span>프로젝트별 node 버전을 자동으로 적용하기</span>
+  <a href="#%ed%94%84%eb%a1%9c%ec%a0%9d%ed%8a%b8%eb%b3%84-node-%eb%b2%84%ec%a0%84%ec%9d%84-%ec%9e%90%eb%8f%99%ec%9c%bc%eb%a1%9c-%ec%a0%81%ec%9a%a9%ed%95%98%ea%b8%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>위 방법도 편리하지만 여전히 사용할 때마다 명령어를 입력해줘야 하기는 마찬가지다.<br>
 이제 이 명령어조차 생략하는 방법을 소개한다.<br>
  </p>
 <p>이 방법은 바로 위 <code>.nvmrc</code> 사용하기에서 더 나아가 <code>nvm use</code> 명령까지 자동화하는 방법으로서 다음의 과정을 따른다.</p>
@@ -207,7 +301,36 @@
 <p> </p>
 <p><code>zshrc</code>를 사용하고 있다면 다음 문서의 내용대로 진행할 수 있다.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <p> </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="c1"># place this after nvm initialization!</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="c1"># place this after nvm initialization!</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># nvm을 설치하면서 추가했던 스크립트 바로 다음에 위치시키면 정상 작동한다. </span>
 </span></span><span class="line"><span class="cl">autoload -U add-zsh-hook
 </span></span><span class="line"><span class="cl">
@@ -231,17 +354,55 @@
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">add-zsh-hook chpwd load-nvmrc
-</span></span><span class="line"><span class="cl">load-nvmrc
-</span></span></code></pre></div><p> <br>
+</span></span><span class="line"><span class="cl">load-nvmrc</span></span></code></pre></td></tr></table>
+</div>
+</div><p> <br>
  <br>
  </p>
 <div class="details admonition warning open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>터미널 테마 powerlevel10k 사용자는 주의<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>zsh에서 혹시 <a href="https://github.com/romkatv/powerlevel10k" target="_blank" rel="noopener noreffer ">Powerlevel10k</a>를 사용하고 있다면 기본 터미널 앱 또는 IDE의 터미널 등에서 다음과 같은 <strong>경고 메세지</strong>를 볼 수 있다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>WARNING<span class="o">]</span>: Console output during zsh initialization detected.
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>터미널 테마 powerlevel10k 사용자는 주의<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p>zsh에서 혹시 <a href="https://github.com/romkatv/powerlevel10k"target="_blank" rel="external nofollow noopener noreferrer">Powerlevel10k</a>를 사용하고 있다면 기본 터미널 앱 또는 IDE의 터미널 등에서 다음과 같은 <strong>경고 메세지</strong>를 볼 수 있다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>WARNING<span class="o">]</span>: Console output during zsh initialization detected.
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">When using Powerlevel10k with instant prompt, console output during zsh
 </span></span><span class="line"><span class="cl">initialization may indicate issues.
@@ -273,14 +434,15 @@
 </span></span><span class="line"><span class="cl">Do nothing.
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">* You will see this error message every <span class="nb">time</span> you start zsh.
-</span></span><span class="line"><span class="cl">* Zsh will start quickly but prompt will jump down after initialization.
-</span></span></code></pre></div><p>위 경고 메세지에서 친절하게 제시한 권장 해결방법대로 nvm 자동 스크립트를 Powerlevel10k 스크립트보다 더 윗부분으로 올리면 된다.<br>
+</span></span><span class="line"><span class="cl">* Zsh will start quickly but prompt will jump down after initialization.</span></span></code></pre></td></tr></table>
+</div>
+</div><p>위 경고 메세지에서 친절하게 제시한 권장 해결방법대로 nvm 자동 스크립트를 Powerlevel10k 스크립트보다 더 윗부분으로 올리면 된다.<br>
 대개 Powerlever10k 스크립트는 <code>~/.zshrc</code> 파일의 가장 상단에 위치하고 있다.<br>
  </p>
 <p><strong>단점은 IDE에서 터미널을 실행시켰을 때, 이전에 비해 조금 더 늦게 프롬프트가 나타난다.</strong></p>
 </div>
-        </div>
     </div>
+  </div>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -288,49 +450,49 @@
 <p>EC2에서 node 버전 업 호환을 위해서는 최초 인스턴스 세팅시 진행하는 Linux 버전을 최신버전으로 바꾸면 가능하다. 하지만 그 과정이 꽤나 번거롭다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://github.com/nvm-sh/nvm?tab=readme-ov-file#zsh" target="_blank" rel="noopener noreffer ">zshrc에서 명령 스크립트 공식문서</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://github.com/nvm-sh/nvm?tab=readme-ov-file#zsh"target="_blank" rel="external nofollow noopener noreferrer">zshrc에서 명령 스크립트 공식문서</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
 </div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2024-02-01</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2024-02-01 23:11:10">Updated on 2024-02-01&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
         </div>
-    </div>
+      </div></div>
 
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/terminal/">Terminal</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/posts/202401261149/" class="prev" rel="prev" title="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴</a>
-            <a href="/posts/202403010802/" class="next" rel="next" title="typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란">typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/terminal/" class="post-tag" title="Tags - Terminal">Terminal</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/202401261149/" class="post-nav-item" rel="prev" title="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴</a>
+      <a href="/posts/202403010802/" class="post-nav-item" rel="next" title="TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란">TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-<div id="comments"><div id="utterances" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
-        </div>
-    </footer></div>
+</article>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.135.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.12-456db385">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">inchan</a></span><span class="license footer-divider">CC BY-NC-SA 4.0</span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><a href="https://github.com/inchanS" title="View source on GitHub"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true" width="56" height="56"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;--progress-h: 5px;--bg-progress: rgba(0, 0, 255, 1);--bg-progress-dark: rgba(255, 165, 0, 1);"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"duration":-1,"loop":false,"speed":100},"version":"v0.3.12-456db385"};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
 </html>

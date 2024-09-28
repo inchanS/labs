@@ -1,115 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>CSS - Image Sprite - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="CSS - Image Sprite" />
-<meta property="og:description" content="CSS - Image Sprite Image Sprite란? 화면에 필요한 이미지 하나하나가 파일이고, 네트워크 요청을 하기 때문에 비용이 든다. 하나의 이미지 파일에 모든 이미지를 담은 후, 위치를 조정하며 골라 사용하는 방법 장점 10개의 아이콘이 10개의 파일로 존재한다면 10번을 요청하게 되지만, 1번의 요청으로 줄어들어 웹 성능의 향상을 기대할 수 있다. 이미지를 불러올 때마다 화면에 표현하기 위해 잠깐의 깜빡임이 생기는데, 하나의 이미지파일을 사용하면 이미 브라우저에서 불러온 파일이라 이 깜빡임이 없다. 단점 디자이너와 소통이 필요함 이미지가 하나만 수정되어도 파일이 변경되어야 함 각 이미지의 위치(좌표)를 정확히 관리해야 함 Image sprite 기법 다음은 NAVER 메인페이지의 메뉴아이콘이 할당되어있는 배경이미지 파일이다." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://inchan.dev/posts/202209220520/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-09-22T05:20:53+09:00" />
-<meta property="article:modified_time" content="2022-09-22T05:20:53+09:00" /><meta property="og:site_name" content="inchan.dev" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="CSS - Image Sprite"/>
-<meta name="twitter:description" content="CSS - Image Sprite Image Sprite란? 화면에 필요한 이미지 하나하나가 파일이고, 네트워크 요청을 하기 때문에 비용이 든다. 하나의 이미지 파일에 모든 이미지를 담은 후, 위치를 조정하며 골라 사용하는 방법 장점 10개의 아이콘이 10개의 파일로 존재한다면 10번을 요청하게 되지만, 1번의 요청으로 줄어들어 웹 성능의 향상을 기대할 수 있다. 이미지를 불러올 때마다 화면에 표현하기 위해 잠깐의 깜빡임이 생기는데, 하나의 이미지파일을 사용하면 이미 브라우저에서 불러온 파일이라 이 깜빡임이 없다. 단점 디자이너와 소통이 필요함 이미지가 하나만 수정되어도 파일이 변경되어야 함 각 이미지의 위치(좌표)를 정확히 관리해야 함 Image sprite 기법 다음은 NAVER 메인페이지의 메뉴아이콘이 할당되어있는 배경이미지 파일이다."/>
-      <meta name="twitter:site" content="@codject"/>
-<meta name="application-name" content="inchan.dev">
-<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202209220520/" /><link rel="prev" href="https://inchan.dev/posts/202209120523/" /><link rel="next" href="https://inchan.dev/posts/202209230519/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "CSS - Image Sprite",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/inchan.dev\/posts\/202209220520\/"
-        },"genre": "posts","keywords": "css","wordcount":  284 ,
-        "url": "https:\/\/inchan.dev\/posts\/202209220520\/","datePublished": "2022-09-22T05:20:53+09:00","dateModified": "2022-09-22T05:20:53+09:00","publisher": {
-            "@type": "Organization",
-            "name": "inchan"},"author": {
-                "@type": "Person",
-                "name": "inchan"
-            },"description": ""
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>CSS - Image Sprite - inchan.dev</title><meta name="author" content="inchan">
+<meta name="description" content="CSS - Image Sprite
+  
+    
+  
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+Image Sprite란?
+
+화면에 필요한 이미지 하나하나가 파일이고, 네트워크 요청을 하기 때문에 비용이 든다.
+하나의 이미지 파일에 모든 이미지를 담은 후, 위치를 조정하며 골라 사용하는 방법
+
+
+장점
+
+10개의 아이콘이 10개의 파일로 존재한다면 10번을 요청하게 되지만, 1번의 요청으로 줄어들어 웹 성능의 향상을 기대할 수 있다.
+이미지를 불러올 때마다 화면에 표현하기 위해 잠깐의 깜빡임이 생기는데, 하나의 이미지파일을 사용하면 이미 브라우저에서 불러온 파일이라 이 깜빡임이 없다.
+
+
+단점
+
+디자이너와 소통이 필요함
+이미지가 하나만 수정되어도 파일이 변경되어야 함
+각 이미지의 위치(좌표)를 정확히 관리해야 함
+ 
+ 
+
+
+
+Image sprite 기법
+  
+    
+  
+다음은 NAVER 메인페이지의 메뉴아이콘이 할당되어있는 배경이미지 파일이다.
+ 
+
+ "><meta name="keywords" content='css'>
+  <meta itemprop="name" content="CSS - Image Sprite">
+  <meta itemprop="description" content="CSS - Image Sprite Image Sprite란? 화면에 필요한 이미지 하나하나가 파일이고, 네트워크 요청을 하기 때문에 비용이 든다. 하나의 이미지 파일에 모든 이미지를 담은 후, 위치를 조정하며 골라 사용하는 방법 장점 10개의 아이콘이 10개의 파일로 존재한다면 10번을 요청하게 되지만, 1번의 요청으로 줄어들어 웹 성능의 향상을 기대할 수 있다. 이미지를 불러올 때마다 화면에 표현하기 위해 잠깐의 깜빡임이 생기는데, 하나의 이미지파일을 사용하면 이미 브라우저에서 불러온 파일이라 이 깜빡임이 없다. 단점 디자이너와 소통이 필요함 이미지가 하나만 수정되어도 파일이 변경되어야 함 각 이미지의 위치(좌표)를 정확히 관리해야 함 Image sprite 기법 다음은 NAVER 메인페이지의 메뉴아이콘이 할당되어있는 배경이미지 파일이다. ">
+  <meta itemprop="datePublished" content="2022-09-22T05:20:53+09:00">
+  <meta itemprop="dateModified" content="2022-09-22T05:20:53+09:00">
+  <meta itemprop="wordCount" content="306">
+  <meta itemprop="keywords" content="Css"><meta property="og:url" content="http://inchan.dev/posts/202209220520/">
+  <meta property="og:site_name" content="inchan.dev">
+  <meta property="og:title" content="CSS - Image Sprite">
+  <meta property="og:description" content="CSS - Image Sprite Image Sprite란? 화면에 필요한 이미지 하나하나가 파일이고, 네트워크 요청을 하기 때문에 비용이 든다. 하나의 이미지 파일에 모든 이미지를 담은 후, 위치를 조정하며 골라 사용하는 방법 장점 10개의 아이콘이 10개의 파일로 존재한다면 10번을 요청하게 되지만, 1번의 요청으로 줄어들어 웹 성능의 향상을 기대할 수 있다. 이미지를 불러올 때마다 화면에 표현하기 위해 잠깐의 깜빡임이 생기는데, 하나의 이미지파일을 사용하면 이미 브라우저에서 불러온 파일이라 이 깜빡임이 없다. 단점 디자이너와 소통이 필요함 이미지가 하나만 수정되어도 파일이 변경되어야 함 각 이미지의 위치(좌표)를 정확히 관리해야 함 Image sprite 기법 다음은 NAVER 메인페이지의 메뉴아이콘이 할당되어있는 배경이미지 파일이다. ">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-09-22T05:20:53+09:00">
+    <meta property="article:modified_time" content="2022-09-22T05:20:53+09:00">
+    <meta property="article:tag" content="Css">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CSS - Image Sprite">
+  <meta name="twitter:description" content="CSS - Image Sprite Image Sprite란? 화면에 필요한 이미지 하나하나가 파일이고, 네트워크 요청을 하기 때문에 비용이 든다. 하나의 이미지 파일에 모든 이미지를 담은 후, 위치를 조정하며 골라 사용하는 방법 장점 10개의 아이콘이 10개의 파일로 존재한다면 10번을 요청하게 되지만, 1번의 요청으로 줄어들어 웹 성능의 향상을 기대할 수 있다. 이미지를 불러올 때마다 화면에 표현하기 위해 잠깐의 깜빡임이 생기는데, 하나의 이미지파일을 사용하면 이미 브라우저에서 불러온 파일이라 이 깜빡임이 없다. 단점 디자이너와 소통이 필요함 이미지가 하나만 수정되어도 파일이 변경되어야 함 각 이미지의 위치(좌표)를 정확히 관리해야 함 Image sprite 기법 다음은 NAVER 메인페이지의 메뉴아이콘이 할당되어있는 배경이미지 파일이다. ">
+      <meta name="twitter:site" content="@cOdject">
+<meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
+<meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://inchan.dev/posts/202209220520/" title="CSS - Image Sprite - inchan.dev" /><link rel="prev" type="text/html" href="http://inchan.dev/posts/202209120523/" title="JavaScript - basic 변수" /><link rel="next" type="text/html" href="http://inchan.dev/posts/202209230519/" title="CSS 선택자 - 조합, 그룹, 가상" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "CSS - Image Sprite",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/inchan.dev\/posts\/202209220520\/"
+    },"genre": "posts","keywords": "css","wordcount":  306 ,
+    "url": "http:\/\/inchan.dev\/posts\/202209220520\/","datePublished": "2022-09-22T05:20:53+09:00","dateModified": "2022-09-22T05:20:53+09:00","publisher": {
+      "@type": "Organization",
+      "name": "inchan"},"author": {
+        "@type": "Person",
+        "name": "inchan"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
     <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
-        </div>
+      <div class="header-title">
+        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
 </header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">CSS - Image Sprite</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/front-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Front-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-22">2022-09-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;284 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>CSS - Image Sprite</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/front-end/" class="post-category" title="Category - Front-End"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Front-End</a></span></div><div class="post-meta-line"><span title="published on 2022-09-22 05:20:53"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2022-09-22">2022-09-22</time></span>&nbsp;<span title="306 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>2 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="CSS - Image Sprite"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+          </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -128,8 +224,11 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h3 id="css---image-sprite">CSS - Image Sprite</h3>
-<ul>
+      </div><div class="content" id="content"><h3 id="css---image-sprite" class="heading-element"><span>CSS - Image Sprite</span>
+  <a href="#css---image-sprite" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
 <li><strong>Image Sprite</strong>란?
 <ul>
 <li>화면에 필요한 이미지 하나하나가 파일이고, 네트워크 요청을 하기 때문에 비용이 든다.</li>
@@ -152,17 +251,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="image-sprite-기법">Image sprite 기법</h2>
-<p>다음은 <a href="https://www.naver.com/" target="_blank" rel="noopener noreffer ">NAVER</a> 메인페이지의 메뉴아이콘이 할당되어있는 배경이미지 파일이다.
+<h2 id="image-sprite-기법" class="heading-element"><span>Image sprite 기법</span>
+  <a href="#image-sprite-%ea%b8%b0%eb%b2%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>다음은 <a href="https://www.naver.com/"target="_blank" rel="external nofollow noopener noreferrer">NAVER</a> 메인페이지의 메뉴아이콘이 할당되어있는 배경이미지 파일이다.
  <br>
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png"
-        data-srcset="https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png, https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png 1.5x, https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png 2x"
-        data-sizes="auto"
-        alt="https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png"
-        title="Naver main background image file" />
+<a class="lightgallery" href="https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png?size=large" data-thumbnail="https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png?size=small" data-sub-html="<h2>Naver main background image file</h2>"><img loading="lazy" src="https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png" alt="Naver main background image file" srcset="https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png?size=small, https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png?size=medium 1.5x, https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png?size=large 2x" data-title="Naver main background image file" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
  </p>
 <p>&lt;위 이미지는 실제 Naver 메인화면에서 따온 파일이다.&gt;
  <br>
@@ -175,50 +270,74 @@
 <li>가로는 오른쪽 방향으로 <code>+</code> 수치 증가</li>
 <li>세로는 <strong>아래 방향으로</strong> <code>+</code> 수치 증가</li>
 </ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/L6cmDfl.jpg"
-        data-srcset="https://i.imgur.com/L6cmDfl.jpg, https://i.imgur.com/L6cmDfl.jpg 1.5x, https://i.imgur.com/L6cmDfl.jpg 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/L6cmDfl.jpg"
-        title="https://i.imgur.com/L6cmDfl.jpg" />
+<p><a class="lightgallery" href="https://i.imgur.com/L6cmDfl.jpg?size=large" data-thumbnail="https://i.imgur.com/L6cmDfl.jpg?size=small" data-sub-html="<h2>https://i.imgur.com/L6cmDfl.jpg</h2>"><img loading="lazy" src="https://i.imgur.com/L6cmDfl.jpg" alt="https://i.imgur.com/L6cmDfl.jpg" srcset="https://i.imgur.com/L6cmDfl.jpg?size=small, https://i.imgur.com/L6cmDfl.jpg?size=medium 1.5x, https://i.imgur.com/L6cmDfl.jpg?size=large 2x" data-title="https://i.imgur.com/L6cmDfl.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
  </p>
 <p>예제코드</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;empty-profile&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p> </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">empty-profile</span> <span class="p">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;empty-profile&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">empty-profile</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">314</span><span class="kt">px</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">314</span><span class="kt">px</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s2">&#34;https://s.pstatic.net/static/www/img/uit/sp_main_dba1af.png&#34;</span><span class="p">)</span> <span class="kc">no-repeat</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> <br>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> <br>
  </p>
-<h4 id="중간에-있는-이미지를-골라쓰려면">중간에 있는 이미지를 골라쓰려면?</h4>
-<p>앞서 좌상단 <code>0, 0</code> 좌표를 기준으로 한 뒤, 이미지의 폭과 너비의 값으로 불러온다고 했다.
+<h4 id="중간에-있는-이미지를-골라쓰려면" class="heading-element"><span>중간에 있는 이미지를 골라쓰려면?</span>
+  <a href="#%ec%a4%91%ea%b0%84%ec%97%90-%ec%9e%88%eb%8a%94-%ec%9d%b4%eb%af%b8%ec%a7%80%eb%a5%bc-%ea%b3%a8%eb%9d%bc%ec%93%b0%eb%a0%a4%eb%a9%b4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>앞서 좌상단 <code>0, 0</code> 좌표를 기준으로 한 뒤, 이미지의 폭과 너비의 값으로 불러온다고 했다.
 그럼 중간에 있는 것들은 어떻게 불러올까?
 기준값 <code>0, 0</code>을 <code>background-position</code>  값으로 조정하여 옮겨준다.</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/OIUNMnO.jpg"
-        data-srcset="https://i.imgur.com/OIUNMnO.jpg, https://i.imgur.com/OIUNMnO.jpg 1.5x, https://i.imgur.com/OIUNMnO.jpg 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/OIUNMnO.jpg"
-        title="https://i.imgur.com/OIUNMnO.jpg" />
+<p><a class="lightgallery" href="https://i.imgur.com/OIUNMnO.jpg?size=large" data-thumbnail="https://i.imgur.com/OIUNMnO.jpg?size=small" data-sub-html="<h2>https://i.imgur.com/OIUNMnO.jpg</h2>"><img loading="lazy" src="https://i.imgur.com/OIUNMnO.jpg" alt="https://i.imgur.com/OIUNMnO.jpg" srcset="https://i.imgur.com/OIUNMnO.jpg?size=small, https://i.imgur.com/OIUNMnO.jpg?size=medium 1.5x, https://i.imgur.com/OIUNMnO.jpg?size=large 2x" data-title="https://i.imgur.com/OIUNMnO.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
  </p>
 <p>코드를 살펴보자
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;input-tool&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">input-tool</span> <span class="p">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;input-tool&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">input-tool</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">130</span><span class="kt">px</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s2">&#34;https://s.pstatic.net/static/www/img/uit/sp_main_dba1af.png&#34;</span><span class="p">)</span> <span class="kc">no-repeat</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">background-position</span><span class="p">:</span> <span class="mi">-315</span><span class="kt">px</span> <span class="mi">-225</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> <br>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> <br>
  </p>
 <p><code>background-position: -315px -225px;</code> 바로 이 부분이다.
  </p>
@@ -232,59 +351,74 @@
  <br>
  </li>
 </ol>
-<h4 id="근데-대체-왜-이런-좌표기준-방식을-썼을까">근데 대체 왜 이런 좌표기준 방식을 썼을까?</h4>
-<p>혼자 상상해본다.
+<h4 id="근데-대체-왜-이런-좌표기준-방식을-썼을까" class="heading-element"><span>근데 대체 왜 이런 좌표기준 방식을 썼을까?</span>
+  <a href="#%ea%b7%bc%eb%8d%b0-%eb%8c%80%ec%b2%b4-%ec%99%9c-%ec%9d%b4%eb%9f%b0-%ec%a2%8c%ed%91%9c%ea%b8%b0%ec%a4%80-%eb%b0%a9%ec%8b%9d%ec%9d%84-%ec%8d%bc%ec%9d%84%ea%b9%8c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>혼자 상상해본다.
 만약 1번의 상황으로 간다면 위 코드는 다음과 같이 바뀔것이다.
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">input-tool</span> <span class="p">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">input-tool</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">415</span><span class="kt">px</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">305</span><span class="kt">px</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s2">&#34;https://s.pstatic.net/static/www/img/uit/sp_main_dba1af.png&#34;</span><span class="p">)</span> <span class="kc">no-repeat</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">background-position</span><span class="p">:</span> <span class="mi">315</span><span class="kt">px</span> <span class="mi">225</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>이 방식은 코드만으로 이미지의 크기를 직관적으로 알기가 힘들다.
 아마 이런 문제 때문에 2번의 방식을 쓴걸까?</p>
 </div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2022-09-22</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2022-09-22 05:20:53">Updated on 2022-09-22&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
         </div>
-    </div>
+      </div></div>
 
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/css/">Css</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/posts/202209120523/" class="prev" rel="prev" title="JavaScript - basic 변수"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>JavaScript - basic 변수</a>
-            <a href="/posts/202209230519/" class="next" rel="next" title="CSS 선택자 - 조합, 그룹, 가상">CSS 선택자 - 조합, 그룹, 가상<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/css/" class="post-tag" title="Tags - Css">Css</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/202209120523/" class="post-nav-item" rel="prev" title="JavaScript - Basic 변수"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>JavaScript - Basic 변수</a>
+      <a href="/posts/202209230519/" class="post-nav-item" rel="next" title="CSS 선택자 - 조합, 그룹, 가상">CSS 선택자 - 조합, 그룹, 가상<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-<div id="comments"><div id="utterances" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
-        </div>
-    </footer></div>
+</article>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.135.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.12-456db385">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">inchan</a></span><span class="license footer-divider">CC BY-NC-SA 4.0</span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><a href="https://github.com/inchanS" title="View source on GitHub"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true" width="56" height="56"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;--progress-h: 5px;--bg-progress: rgba(0, 0, 255, 1);--bg-progress-dark: rgba(255, 165, 0, 1);"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"duration":-1,"loop":false,"speed":100},"version":"v0.3.12-456db385"};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
 </html>

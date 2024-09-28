@@ -1,99 +1,70 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>TypeORM - Tag - inchan.dev</title>
-        <link>https://inchan.dev/tags/typeorm/</link>
-        <description>TypeORM - Tag - inchan.dev</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Mon, 05 Feb 2024 08:22:58 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/typeorm/" rel="self" type="application/rss+xml" /><item>
-    <title>typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란</title>
-    <link>https://inchan.dev/posts/202403010802/</link>
-    <pubDate>Mon, 05 Feb 2024 08:22:58 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202403010802/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1525562929550-63ef340cfe1d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer">
-            </div>먼저 알아두기 mySQL - Date 필드의 타입 종류 mySQL에서 Date 필드의 타입 종류는 다음과 같다.
-DATE - 날짜만 TIME - 시간만 DATETIME - 시간대가 반영되지 않은 현재 서버 시간대의 날짜와 시간 데이터 TIMESTAMP - 시간대가 반영된 날짜와 시간 데이터 여기서 주의할 점은 TIMESTAMP 이다.
-이 데이터는 해당 서버의 시간대를 반영하기에 DB에 저장될 때에는 UTC(+00:00) 시간대로 변환되어 저장된다.
-단, 조회시 세션 설정에 따른 시간대를 반영하여 해당 시간대로 변환된 데이터로 조회된다.]]></description>
-</item>
-<item>
-    <title>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</title>
-    <link>https://inchan.dev/posts/202401241017/</link>
-    <pubDate>Wed, 24 Jan 2024 10:19:14 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202401241017/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer">
-            </div>&lt;표지 사진출처: Unsplash&gt;
-Project Tech Stack Overview Language: TypeScript
-Platform: Node.js
-Web Framework: Express.js
-Database: MySQL
-ORM: TypeORM
-Cloud Storage: AWS S3
-Server: AWS EC2
-Development Tool: WebStorm
-Collaboration Tool: Slack
-Version Control and Issue Tracking: GitHub Issue
-문제 상황 프로젝트에서 발견된 주요 문제는 TypeORM을 사용하는 Node.js 환경에서 트랜잭션 관리와 롤백이 제대로 이루어지지 않는 것이었다. 이는 게시글을 등록하는 로직에서 발견되었으며, 예기치 않은 오류가 발생했을 경우 데이터베이스에 불필요한 데이터가 잔존하는 결과를 초래했다.]]></description>
-</item>
-<item>
-    <title>MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</title>
-    <link>https://inchan.dev/posts/202306070208/</link>
-    <pubDate>Wed, 07 Jun 2023 02:08:24 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202306070208/</guid>
-    <description><![CDATA[개발환경 Javascript 런타임 플랫폼: Node.js 언어: TypeScript 프레임워크: Express DB: MySQL ORM: TypeORM 현재 조건 상황 회원가입시, 이메일과 패스워드가 필수 입력입력인데, 이메일의 경우 mySQL에서 unique 처리 회원가입 과정에서 이메일 중복 여부를 확인하고 통과했을 경우에만 회원가입 가능 회원 삭제시, 실제 회원정보를 DB에서 지우지 않고 TypeORM의softDelete 방식으로 deleted_at 컬럼에 삭제일시가 기록되는 방식 (일정기간 이후 삭제할 요량으로 단기간 데이터 보존) Question 이미 회원 삭제된 정보의 이메일로 재가입하려는 경우,
-해당 이메일은 이미 mySQL에서 unique로 입력되어있는 이메일이기 때문에 이메일 중복확인에서 통과되지 않는다.]]></description>
-</item>
-<item>
-    <title>error log - TypeORM migration 할 때 cross ENV 설정 문제</title>
-    <link>https://inchan.dev/posts/202304010529/</link>
-    <pubDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202304010529/</guid>
-    <description><![CDATA[TypeORM migration TypeORM migration:create typeorm migration을 시도해보면서 준비한건 몇가지 되지 않았다. 우선, 터미널에서 typeorm migration 파일을 생성하는 명령어. $ npx typeorm migration:create &lt;path/file_name&gt; 예를 들면 npx typeorm migration:create ./src/migrations/default-tables
-이런 식으로 사용할 수 있다.
-그리고 마이그레이션 실행시 마이그레이션 파일들의 위치를 알려줄 수 있도록 datasource config 부분에 다음과 같이 설정을 추가한다.
-import { DataSource } from &#39;typeorm&#39;; const dataSource = new DataSource({ type: process.env.TYPEORM_CONNECTION, host: process.env.TYPEORM_HOST, port: process.env.TYPEORM_PORT, username: process.env.TYPEORM_USERNAME, password: process.]]></description>
-</item>
-<item>
-    <title>typeORM transaction에서 repository 사용하기</title>
-    <link>https://inchan.dev/posts/202302250414/</link>
-    <pubDate>Sat, 25 Feb 2023 04:14:31 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202302250414/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRyYW5zYWN0aW9ufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
-            </div>&lt;사진: unsplash&gt;
-transaction 구성중 Entity가 아닌 Repository 사용시 typeORM에서 transaction을 사용하는 방법은 몇가지가 있지만,
-복잡한 service단의 처리에서는 아래의 queryRunner 방식이 더 적합할것 같아서
-dataSource.createQueryRunner() 방식을 사용했다.1
-// transaction으로 묶어주기 const queryRunner = dataSource.createQueryRunner(); await queryRunner.connect(); await queryRunner.startTransaction(); try { // feed 저장 let newTempFeed: Feed = plainToInstance(FeedDto, feedInfo); const tempFeed = await FeedRepository.createFeed(newTempFeed); //&lt;- 문제!! // ... 추가 코드들 } catch (err) { await queryRunner.rollbackTransaction(); throw new Error(`createTempFeed TRANSACTION error: ${err}`); } finally { await queryRunner.]]></description>
-</item>
-<item>
-    <title>Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기</title>
-    <link>https://inchan.dev/posts/202302160417/</link>
-    <pubDate>Thu, 16 Feb 2023 04:17:07 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202302160417/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1672308627194-9a2c28daa17a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlwZXNjcmlwdHxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
-            </div>&lt;사진: unsplash&gt;
-기능 구현 목표 댓글, 대댓글&hellip; 대댓글 등의 무한대댓글 구조 typeORM의 Entity를 연계한 createQueryBuilder 등을 지향하며, 최대한 직접적인 QueryRunner 방식 지양 삭제 및 비공개 댓글 가림 json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! ) 가장 오랜시간을 지연시켰던 Blocker typeORM createQueryBuilder 메소드로 출력시 2023-02-14T08:55:24.090Z // ^ ^^^^ &lt;- 거추장스럽다. 이런 식으로 나오는 문제가 있는데 꽤나 씨름했다. 우선 Entity의 Date type은 datetime이 아닌 timestamp로 했다.
-mySQL에서의 출력은 DB가 설치된 서버의 시간대를 따르기에]]></description>
-</item>
-<item>
-    <title>typescript - typeorm 연결 오류 해결</title>
-    <link>https://inchan.dev/posts/202212130459/</link>
-    <pubDate>Tue, 13 Dec 2022 04:59:30 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202212130459/</guid>
-    <description><![CDATA[typescript에서의 typeorm 연결 오류 대략 14시부터 22시까지 무려 8시간을 끼니도 거른채 뚫어져라 모니터만 쳐다보며 찾았다. type 지정이 잘못되었나? 아니면 새롭게 설치해줘야하는 npm이 있는건가? 눈이 빠져라 찾았는데 결과는
-Success server.ts에서
-dotenv.config()
-바로 이 코드의 순서 문제였다. 기존 import createApp from './app.ts' 보다 아래에 있었는데 위로 올렸더니 바로 서버가 열렸다. dotenv.config() import createApp from &#39;./app.ts&#39; // 윗줄과 순서 바꿈 동기/비동기 세션을 진행한게 오늘인데 바로 이러한 문제를 찾지 못하고 엉뚱한 곳에서 하루종일 헤매고 있었다니&hellip; 참고사이트 오류 해결1]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TypeORM - Tag - inchan.dev</title>
+    <link>http://inchan.dev/tags/typeorm/</link>
+    <description>inchan.dev</description>
+    <generator>Hugo 0.135.0 &amp; FixIt v0.3.12-456db385</generator>
+    <language>en</language>
+    <managingEditor>song@inchan.dev (inchan)</managingEditor>
+    <webMaster>song@inchan.dev (inchan)</webMaster>
+    <lastBuildDate>Fri, 08 Mar 2024 20:39:02 +0900</lastBuildDate>
+    <atom:link href="http://inchan.dev/tags/typeorm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란</title>
+      <link>http://inchan.dev/posts/202403010802/</link>
+      <pubDate>Fri, 01 Mar 2024 08:02:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202403010802/</guid>
+      <category domain="http://inchan.dev/categories/back-end/">Back-End</category>
+      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;div class=&#34;details admonition info open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;      &lt;i class=&#34;icon fa-solid fa-info-circle fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;먼저 알아두기&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&lt;h3 id=&#34;mysql---date-필드의-타입-종류&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;mySQL - Date 필드의 타입 종류&lt;/span&gt;&#xA;  &lt;a href=&#34;#mysql---date-%ed%95%84%eb%93%9c%ec%9d%98-%ed%83%80%ec%9e%85-%ec%a2%85%eb%a5%98&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;mySQL에서 Date 필드의 타입 종류는 다음과 같다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</title>
+      <link>http://inchan.dev/posts/202401241017/</link>
+      <pubDate>Wed, 24 Jan 2024 10:19:14 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202401241017/</guid>
+      <category domain="http://inchan.dev/categories/debugging/">Debugging</category>
+      <description>&lt;p&gt;&amp;lt;표지 사진출처: &lt;a href=&#34;https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EC%B2%9C%EC%9E%A5%EC%9D%98-%EB%B2%8C%EB%A0%88%EC%9D%98-%EC%8B%9C%EC%84%A0-%EC%82%AC%EC%A7%84-LqKhnDzSF-8&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Unsplash&lt;/a&gt;&amp;gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;div class=&#34;details admonition abstract&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;      &lt;i class=&#34;icon fa-solid fa-list-ul fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Project Tech Stack Overview&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Language: &lt;strong&gt;TypeScript&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Platform: &lt;strong&gt;Node.js&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Web Framework: &lt;strong&gt;Express.js&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Database: &lt;strong&gt;MySQL&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ORM: &lt;strong&gt;TypeORM&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Cloud Storage: &lt;strong&gt;AWS S3&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Server: &lt;strong&gt;AWS EC2&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Development Tool: &lt;strong&gt;WebStorm&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Collaboration Tool: Slack&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Version Control and Issue Tracking: &lt;strong&gt;GitHub Issue&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;문제-상황&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;문제 상황&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%ac%b8%ec%a0%9c-%ec%83%81%ed%99%a9&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;프로젝트에서 발견된 주요 문제는 TypeORM을 사용하는 Node.js 환경에서 &lt;strong&gt;트랜잭션 관리와 롤백이 제대로 이루어지지 않는 것&lt;/strong&gt;이었다. 이는 게시글을 등록하는 로직에서 발견되었으며, 예기치 않은 오류가 발생했을 경우 &lt;strong&gt;데이터베이스에 불필요한 데이터가 잔존하는 결과를 초래&lt;/strong&gt;했다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</title>
+      <link>http://inchan.dev/posts/202306070208/</link>
+      <pubDate>Wed, 07 Jun 2023 22:47:43 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202306070208/</guid>
+      <category domain="http://inchan.dev/categories/back-end/">Back-End</category>
+      <description>&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;h2 id=&#34;개발환경&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;개발환경&lt;/span&gt;&#xA;  &lt;a href=&#34;#%ea%b0%9c%eb%b0%9c%ed%99%98%ea%b2%bd&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Javascript 런타임 플랫폼: Node.js&lt;/li&gt;&#xA;&lt;li&gt;언어: TypeScript&lt;/li&gt;&#xA;&lt;li&gt;프레임워크: Express&lt;/li&gt;&#xA;&lt;li&gt;DB: MySQL&lt;/li&gt;&#xA;&lt;li&gt;ORM: TypeORM&#xA; &lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;현재-조건-상황&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;현재 조건 상황&lt;/span&gt;&#xA;  &lt;a href=&#34;#%ed%98%84%ec%9e%ac-%ec%a1%b0%ea%b1%b4-%ec%83%81%ed%99%a9&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;회원가입시, 이메일과 패스워드가 필수 입력입력인데, 이메일의 경우 mySQL에서 unique 처리&lt;/li&gt;&#xA;&lt;li&gt;회원가입 과정에서 이메일 중복 여부를 확인하고 통과했을 경우에만 회원가입 가능&lt;/li&gt;&#xA;&lt;li&gt;회원 삭제시, 실제 회원정보를 DB에서 지우지 않고 TypeORM의softDelete 방식으로 deleted_at 컬럼에 삭제일시가 기록되는 방식 (일정기간 이후 삭제할 요량으로 단기간 데이터 보존)&#xA; &lt;br&gt;&#xA; &lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;details admonition question open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;      &lt;i class=&#34;icon fa-solid fa-question-circle fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Question&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;이미 회원 삭제된 정보의 이메일로 &lt;strong&gt;재가입하려는 경우&lt;/strong&gt;,&lt;br&gt;&#xA;해당 이메일은 이미 mySQL에서 unique로 입력되어있는 이메일이기 때문에 이메일 중복확인에서 통과되지 않는다.&lt;br&gt;&#xA;해당 이메일을 재사용하려면?&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>error log - TypeORM migration 할 때 cross ENV 설정 문제</title>
+      <link>http://inchan.dev/posts/202304010529/</link>
+      <pubDate>Sat, 01 Apr 2023 05:30:56 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202304010529/</guid>
+      <category domain="http://inchan.dev/categories/debugging/">Debugging</category>
+      <description>&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;h2 id=&#34;typeorm-migration&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;TypeORM migration&lt;/span&gt;&#xA;  &lt;a href=&#34;#typeorm-migration&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;typeorm-migrationcreate&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;TypeORM migration:&lt;strong&gt;create&lt;/strong&gt;&lt;/span&gt;&#xA;  &lt;a href=&#34;#typeorm-migrationcreate&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;typeorm migration을 시도해보면서 준비한건 몇가지 되지 않았다.&#xA; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>typeORM transaction에서 repository 사용하기</title>
+      <link>http://inchan.dev/posts/202302250414/</link>
+      <pubDate>Sat, 25 Feb 2023 04:14:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202302250414/</guid>
+      <category domain="http://inchan.dev/categories/back-end/">Back-End</category>
+      <description>&lt;p&gt;&amp;lt;사진: &lt;a href=&#34;http://unsplash.com&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;unsplash&lt;/a&gt;&amp;gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;transaction-구성중-entity가-아닌-repository-사용시&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;transaction 구성중 Entity가 아닌 Repository 사용시&lt;/span&gt;&#xA;  &lt;a href=&#34;#transaction-%ea%b5%ac%ec%84%b1%ec%a4%91-entity%ea%b0%80-%ec%95%84%eb%8b%8c-repository-%ec%82%ac%ec%9a%a9%ec%8b%9c&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;typeORM에서 transaction을 사용하는 방법은 몇가지가 있지만,&lt;br&gt;&#xA;복잡한 service단의 처리에서는 아래의 queryRunner 방식이 더 적합할것 같아서&lt;br&gt;&#xA;&lt;code&gt;dataSource.createQueryRunner()&lt;/code&gt; 방식을 사용했다.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;br&gt;&#xA; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기</title>
+      <link>http://inchan.dev/posts/202302160417/</link>
+      <pubDate>Thu, 16 Feb 2023 04:17:07 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202302160417/</guid>
+      <category domain="http://inchan.dev/categories/back-end/">Back-End</category>
+      <description>&lt;p&gt;&amp;lt;사진: &lt;a href=&#34;http://unsplash.com&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;unsplash&lt;/a&gt;&amp;gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;기능-구현-목표&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;기능 구현 목표&lt;/span&gt;&#xA;  &lt;a href=&#34;#%ea%b8%b0%eb%8a%a5-%ea%b5%ac%ed%98%84-%eb%aa%a9%ed%91%9c&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ol&gt;&#xA;&lt;li&gt;댓글, 대댓글&amp;hellip; 대댓글 등의 &lt;strong&gt;무한대댓글&lt;/strong&gt; 구조&lt;/li&gt;&#xA;&lt;li&gt;typeORM의 &lt;strong&gt;Entity를 연계한 createQueryBuilder&lt;/strong&gt; 등을 &lt;strong&gt;지향하며&lt;/strong&gt;, 최대한 직접적인 QueryRunner 방식 &lt;strong&gt;지양&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;삭제 및 비공개 댓글 가림&lt;/li&gt;&#xA;&lt;li&gt;json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! )&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>typescript - typeorm 연결 오류 해결</title>
+      <link>http://inchan.dev/posts/202212130459/</link>
+      <pubDate>Tue, 13 Dec 2022 04:59:30 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202212130459/</guid>
+      <category domain="http://inchan.dev/categories/debugging/">Debugging</category>
+      <description>&lt;h3 id=&#34;typescript에서의-typeorm-연결-오류&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;typescript에서의 typeorm 연결 오류&lt;/span&gt;&#xA;  &lt;a href=&#34;#typescript%ec%97%90%ec%84%9c%ec%9d%98-typeorm-%ec%97%b0%ea%b2%b0-%ec%98%a4%eb%a5%98&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;대략 14시부터 22시까지 무려 8시간을 끼니도 거른채 뚫어져라 모니터만 쳐다보며 찾았다.&#xA; &lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

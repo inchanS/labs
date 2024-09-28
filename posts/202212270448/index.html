@@ -1,123 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>패스트파이브 기업과제 회고록 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="패스트파이브 기업과제 회고록" />
-<meta property="og:description" content="FastFive 프리온보딩 기업과제 과제 진행간 개요 기간 프로젝트 수행 기간 : 2022.12.12. Mon ~ 2022. 12.22. Thu (11일간)
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>패스트파이브 기업과제 회고록 - inchan.dev</title><meta name="author" content="inchan">
+<meta name="description" content="FastFive 프리온보딩 기업과제
+  
+    
+  
+과제 진행간 개요
+  
+    
+  
+기간
+  
+    
+  
+프로젝트 수행 기간 : 2022.12.12. Mon ~ 2022. 12.22. Thu (11일간)
 최초 정식 코드 배포일 : 2022.12.22. Thu
-프로젝트 보수 기간 : 2022.12.23. Fri ~ 2022.12.27. Tue (5일간)
-인원 프론트엔드 3명, 백엔드 2명
-백엔드 기술스택 JavaScript, TypeScript, TYPEORM, mySQL, Node, Express 개발환경 OS : macOS 개발 tool : WebStrom, DBeaver, Postman 형상관리 : GitHub 문서관리 및 티켓관리 : Notion 협업 툴 : Slack 백엔드 기능분담 ERD 분석 및 작성 : 송인찬, 김**님 DBmate 세팅 : 송인찬 User API : 송인찬 category API : 송인찬 feedList API : 송인찬 reply API : 송인찬 posting API : 김**님 임시저장 posting: 김**님 임시저장 수정 posting: 김**님 정식저장 posting: 김**님 delete posting API : 송인찬 결과 github 주소 ERD 구성 백엔드 API Documentation 배포 사이트 최초 문서 분석 이번 프로젝트는 typescript라는 새로 배운 언어를 도입하여 진행하기로 하면서," />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://inchan.dev/posts/202212270448/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-12-27T04:48:11+09:00" />
-<meta property="article:modified_time" content="2022-12-27T04:48:11+09:00" /><meta property="og:site_name" content="inchan.dev" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="패스트파이브 기업과제 회고록"/>
-<meta name="twitter:description" content="FastFive 프리온보딩 기업과제 과제 진행간 개요 기간 프로젝트 수행 기간 : 2022.12.12. Mon ~ 2022. 12.22. Thu (11일간)
+프로젝트 보수 기간 : 2022.12.23. Fri ~ 2022.12.27. Tue (5일간)"><meta name="keywords" content='project_fastfive'>
+  <meta itemprop="name" content="패스트파이브 기업과제 회고록">
+  <meta itemprop="description" content="FastFive 프리온보딩 기업과제 과제 진행간 개요 기간 프로젝트 수행 기간 : 2022.12.12. Mon ~ 2022. 12.22. Thu (11일간)
 최초 정식 코드 배포일 : 2022.12.22. Thu
-프로젝트 보수 기간 : 2022.12.23. Fri ~ 2022.12.27. Tue (5일간)
-인원 프론트엔드 3명, 백엔드 2명
-백엔드 기술스택 JavaScript, TypeScript, TYPEORM, mySQL, Node, Express 개발환경 OS : macOS 개발 tool : WebStrom, DBeaver, Postman 형상관리 : GitHub 문서관리 및 티켓관리 : Notion 협업 툴 : Slack 백엔드 기능분담 ERD 분석 및 작성 : 송인찬, 김**님 DBmate 세팅 : 송인찬 User API : 송인찬 category API : 송인찬 feedList API : 송인찬 reply API : 송인찬 posting API : 김**님 임시저장 posting: 김**님 임시저장 수정 posting: 김**님 정식저장 posting: 김**님 delete posting API : 송인찬 결과 github 주소 ERD 구성 백엔드 API Documentation 배포 사이트 최초 문서 분석 이번 프로젝트는 typescript라는 새로 배운 언어를 도입하여 진행하기로 하면서,"/>
-      <meta name="twitter:site" content="@codject"/>
-<meta name="application-name" content="inchan.dev">
-<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202212270448/" /><link rel="prev" href="https://inchan.dev/posts/202212250509/" /><link rel="next" href="https://inchan.dev/posts/202212280458/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "패스트파이브 기업과제 회고록",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/inchan.dev\/posts\/202212270448\/"
-        },"genre": "posts","keywords": "project_fastfive","wordcount":  1510 ,
-        "url": "https:\/\/inchan.dev\/posts\/202212270448\/","datePublished": "2022-12-27T04:48:11+09:00","dateModified": "2022-12-27T04:48:11+09:00","publisher": {
-            "@type": "Organization",
-            "name": "inchan"},"author": {
-                "@type": "Person",
-                "name": "inchan"
-            },"description": ""
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+프로젝트 보수 기간 : 2022.12.23. Fri ~ 2022.12.27. Tue (5일간)">
+  <meta itemprop="datePublished" content="2022-12-27T04:48:11+09:00">
+  <meta itemprop="dateModified" content="2022-12-27T04:48:11+09:00">
+  <meta itemprop="wordCount" content="1700">
+  <meta itemprop="keywords" content="Project_fastfive"><meta property="og:url" content="http://inchan.dev/posts/202212270448/">
+  <meta property="og:site_name" content="inchan.dev">
+  <meta property="og:title" content="패스트파이브 기업과제 회고록">
+  <meta property="og:description" content="FastFive 프리온보딩 기업과제 과제 진행간 개요 기간 프로젝트 수행 기간 : 2022.12.12. Mon ~ 2022. 12.22. Thu (11일간)
+최초 정식 코드 배포일 : 2022.12.22. Thu
+프로젝트 보수 기간 : 2022.12.23. Fri ~ 2022.12.27. Tue (5일간)">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-12-27T04:48:11+09:00">
+    <meta property="article:modified_time" content="2022-12-27T04:48:11+09:00">
+    <meta property="article:tag" content="Project_fastfive">
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="패스트파이브 기업과제 회고록">
+  <meta name="twitter:description" content="FastFive 프리온보딩 기업과제 과제 진행간 개요 기간 프로젝트 수행 기간 : 2022.12.12. Mon ~ 2022. 12.22. Thu (11일간)
+최초 정식 코드 배포일 : 2022.12.22. Thu
+프로젝트 보수 기간 : 2022.12.23. Fri ~ 2022.12.27. Tue (5일간)">
+      <meta name="twitter:site" content="@cOdject">
+<meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
+<meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://inchan.dev/posts/202212270448/" title="패스트파이브 기업과제 회고록 - inchan.dev" /><link rel="prev" type="text/html" href="http://inchan.dev/posts/202212250509/" title="status code 204" /><link rel="next" type="text/html" href="http://inchan.dev/posts/202212280458/" title="AWS 퍼블릭 IP와 탄력적 IP" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "패스트파이브 기업과제 회고록",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/inchan.dev\/posts\/202212270448\/"
+    },"genre": "posts","keywords": "project_fastfive","wordcount":  1700 ,
+    "url": "http:\/\/inchan.dev\/posts\/202212270448\/","datePublished": "2022-12-27T04:48:11+09:00","dateModified": "2022-12-27T04:48:11+09:00","publisher": {
+      "@type": "Organization",
+      "name": "inchan"},"author": {
+        "@type": "Person",
+        "name": "inchan"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
     <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
-        </div>
+      <div class="header-title">
+        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
 </header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">패스트파이브 기업과제 회고록</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/project/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Project</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-12-27">2022-12-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1510 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>패스트파이브 기업과제 회고록</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/project/" class="post-category" title="Category - Project"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Project</a></span></div><div class="post-meta-line"><span title="published on 2022-12-27 04:48:11"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2022-12-27">2022-12-27</time></span>&nbsp;<span title="1700 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>8 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="패스트파이브 기업과제 회고록"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+          </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#fastfive-프리온보딩-기업과제">FastFive 프리온보딩 기업과제</a></li>
     <li><a href="#과제-진행간-개요">과제 진행간 개요</a>
@@ -144,7 +218,11 @@
       <ul>
         <li><a href="#대댓글은-자기참조-구조--활용">대댓글은 자기참조 구조  활용</a>
           <ul>
-            <li><a href="#sql의-결과를-보기좋게-재가공">sql의 결과를 보기좋게 재가공!!</a></li>
+            <li><a href="#sql의-결과를-보기좋게-재가공">sql의 결과를 보기좋게 재가공!!</a>
+              <ul>
+                <li><a href="#풀이">풀이</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -154,28 +232,49 @@
     <li><a href="#회고">회고</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="fastfive-프리온보딩-기업과제">FastFive 프리온보딩 기업과제</h2>
-<h2 id="과제-진행간-개요">과제 진행간 개요</h2>
-<h3 id="기간">기간</h3>
-<p>프로젝트 수행 기간 : 2022.12.12. Mon ~ 2022. 12.22. Thu (<strong>11일간)</strong><br>
+      </div><div class="content" id="content"><h2 id="fastfive-프리온보딩-기업과제" class="heading-element"><span>FastFive 프리온보딩 기업과제</span>
+  <a href="#fastfive-%ed%94%84%eb%a6%ac%ec%98%a8%eb%b3%b4%eb%94%a9-%ea%b8%b0%ec%97%85%ea%b3%bc%ec%a0%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h2 id="과제-진행간-개요" class="heading-element"><span>과제 진행간 개요</span>
+  <a href="#%ea%b3%bc%ec%a0%9c-%ec%a7%84%ed%96%89%ea%b0%84-%ea%b0%9c%ec%9a%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="기간" class="heading-element"><span>기간</span>
+  <a href="#%ea%b8%b0%ea%b0%84" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>프로젝트 수행 기간 : 2022.12.12. Mon ~ 2022. 12.22. Thu (<strong>11일간)</strong><br>
 최초 정식 코드 배포일 : 2022.12.22. Thu<br>
 프로젝트 보수 기간 : 2022.12.23. Fri ~ 2022.12.27. Tue (<strong>5일간</strong>)</p>
-<h3 id="인원">인원</h3>
-<p>프론트엔드 3명, 백엔드 2명</p>
-<h3 id="백엔드-기술스택">백엔드 기술스택</h3>
-<ul>
+<h3 id="인원" class="heading-element"><span>인원</span>
+  <a href="#%ec%9d%b8%ec%9b%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>프론트엔드 3명, 백엔드 2명</p>
+<h3 id="백엔드-기술스택" class="heading-element"><span>백엔드 기술스택</span>
+  <a href="#%eb%b0%b1%ec%97%94%eb%93%9c-%ea%b8%b0%ec%88%a0%ec%8a%a4%ed%83%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
 <li>JavaScript, TypeScript, TYPEORM, mySQL, Node, Express</li>
 </ul>
-<h3 id="개발환경">개발환경</h3>
-<ul>
+<h3 id="개발환경" class="heading-element"><span>개발환경</span>
+  <a href="#%ea%b0%9c%eb%b0%9c%ed%99%98%ea%b2%bd" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
 <li>OS : macOS</li>
 <li>개발 tool : WebStrom, DBeaver, Postman</li>
 <li>형상관리 : GitHub</li>
 <li>문서관리 및 티켓관리 : Notion</li>
 <li>협업 툴 : Slack</li>
 </ul>
-<h3 id="백엔드-기능분담">백엔드 기능분담</h3>
-<ul>
+<h3 id="백엔드-기능분담" class="heading-element"><span>백엔드 기능분담</span>
+  <a href="#%eb%b0%b1%ec%97%94%eb%93%9c-%ea%b8%b0%eb%8a%a5%eb%b6%84%eb%8b%b4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
 <li><strong>ERD</strong> 분석 및 작성 : 송인찬, 김**님</li>
 <li><strong>DBmate 세팅</strong> : 송인찬</li>
 <li><strong>User API</strong> : 송인찬</li>
@@ -191,16 +290,22 @@
 </ul>
 </li>
 </ul>
-<h3 id="결과">결과</h3>
-<ul>
-<li><a href="https://github.com/c0dject/justcode-7-fastfive-team3-back" target="_blank" rel="noopener noreffer ">github 주소</a></li>
-<li><a href="https://dbdiagram.io/d/6392d285bae3ed7c4545be80" target="_blank" rel="noopener noreffer ">ERD 구성</a></li>
-<li>백엔드 <a href="https://documenter.getpostman.com/view/23823592/2s8Z6x1scq" target="_blank" rel="noopener noreffer ">API Documentation</a></li>
-<li><a href="http://13.231.5.51:3000" target="_blank" rel="noopener noreffer ">배포 사이트</a></li>
+<h3 id="결과" class="heading-element"><span>결과</span>
+  <a href="#%ea%b2%b0%ea%b3%bc" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
+<li><a href="https://github.com/c0dject/justcode-7-fastfive-team3-back"target="_blank" rel="external nofollow noopener noreferrer">github 주소</a></li>
+<li><a href="https://dbdiagram.io/d/6392d285bae3ed7c4545be80"target="_blank" rel="external nofollow noopener noreferrer">ERD 구성</a></li>
+<li>백엔드 <a href="https://documenter.getpostman.com/view/23823592/2s8Z6x1scq"target="_blank" rel="external nofollow noopener noreferrer">API Documentation</a></li>
+<li><a href="http://13.231.5.51:3000"target="_blank" rel="external nofollow noopener noreferrer">배포 사이트</a></li>
 </ul>
 <hr>
-<h2 id="최초-문서-분석">최초 문서 분석</h2>
-<p>이번 프로젝트는 <strong>typescript라는 새로 배운 언어를 도입하여</strong> 진행하기로 하면서,<br>
+<h2 id="최초-문서-분석" class="heading-element"><span>최초 문서 분석</span>
+  <a href="#%ec%b5%9c%ec%b4%88-%eb%ac%b8%ec%84%9c-%eb%b6%84%ec%84%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>이번 프로젝트는 <strong>typescript라는 새로 배운 언어를 도입하여</strong> 진행하기로 하면서,<br>
 처음엔 아니었으나 프로젝트 종료시점에서 어쩌다 보니 내가 맡은 파트가 꽤&hellip; 많아졌다.<br>
  </p>
 <p>패스트파이브에서 준 개발 의뢰문서를 처음 봤을 때, <strong>상세등록과 덧글 부분이 가장 난이도가 높아보였다.</strong><br>
@@ -222,18 +327,42 @@
 </ul>
 <p> </p>
 <hr>
-<h2 id="user-api-작업을-시작하다">User API 작업을 시작하다</h2>
-<p>사실 개발문서에는 직접적인 user API 관련 언급은 없었다.<br>
+<h2 id="user-api-작업을-시작하다" class="heading-element"><span>User API 작업을 시작하다</span>
+  <a href="#user-api-%ec%9e%91%ec%97%85%ec%9d%84-%ec%8b%9c%ec%9e%91%ed%95%98%eb%8b%a4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>사실 개발문서에는 직접적인 user API 관련 언급은 없었다.<br>
 하지만 로그인한 사용자별 등급이 존재했었고, 이에 따른 커뮤니티 이용별 권한이 따로이 나눠져 있었다.<br>
 또한 최종적으로 website 링크를 배포 했을때 이러한 권한을 보여주려면 user API가 무조건 있어야 한다고 판단했다.<br>
 따라서 회원가입과 백엔드측에서 서버 세팅시 필요하게끔 약식으로 작성을 하였고,<br>
 로그인은 프론트엔드가 API 통신 테스트를 하는데 크게 문제되지 않도록 실제와는 달리 의도적으로 에러핸들링을 최소한으로 하였다.<br>
  </p>
-<h4 id="회원권한조회-api">회원권한조회 API</h4>
-<p>user API 중 유일하게 가장 유용하면서도 의미있으며 필수적인 API로써,<br>
+<h4 id="회원권한조회-api" class="heading-element"><span>회원권한조회 API</span>
+  <a href="#%ed%9a%8c%ec%9b%90%ea%b6%8c%ed%95%9c%ec%a1%b0%ed%9a%8c-api" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>user API 중 유일하게 가장 유용하면서도 의미있으며 필수적인 API로써,<br>
 로그인한 회원의 정보를 실시간으로 클라이언트(프론트엔드)에서 확인할 수 있도록 설계를 했다.<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;user_id&#34;</span><span class="err">:</span> <span class="mi">9</span><span class="err">,</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;user_id&#34;</span><span class="err">:</span> <span class="mi">9</span><span class="err">,</span>
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;write_permission&#34;</span><span class="err">:</span> <span class="kc">true</span><span class="err">,</span>
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;is_admin&#34;</span><span class="err">:</span> <span class="kc">true</span><span class="err">,</span>
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;member_type&#34;</span><span class="err">:</span> <span class="s2">&#34;입주예정자&#34;</span><span class="err">,</span>
@@ -246,17 +375,16 @@
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;end_date&#34;</span><span class="err">:</span> <span class="s2">&#34;2023년 12월 31일&#34;</span><span class="err">,</span>
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;period&#34;</span><span class="err">:</span> <span class="s2">&#34;총 306일 계약&#34;</span><span class="err">,</span>
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;group_feed_exist&#34;</span><span class="err">:</span> <span class="kc">true</span><span class="err">,</span>
-</span></span><span class="line"><span class="cl"><span class="s2">&#34;feed_id&#34;</span><span class="err">:</span> <span class="mi">8</span>
-</span></span></code></pre></div><p> <br>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;feed_id&#34;</span><span class="err">:</span> <span class="mi">8</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> <br>
 해당 API는 위와 같은 응답 json을 반환한다.<br>
 로그인시, 위 정보를 한번에 줄수도 있겠지만 다음과 같은 이유로 따로 API를 분리시켰다.</p>
-<blockquote>
-<p>localStorage에는 최소한의 정보만이 암호화 된채 담겨야 한다.
+<blockquote><p>localStorage에는 최소한의 정보만이 암호화 된채 담겨야 한다.
 회원의 권한과 관련된 정보는 localStorage에 저장되지 않는 것이 보안상 유리하다.
 API를 분리하여 사용함으로써 실시간으로 변경되는 권한 내역까지 잡아낼 수 있다.
  </p>
-</blockquote>
-<p>실제 mySQL의 테이블에는 group의 <code>start_date</code>와 <code>end_date</code>만이 담기지만,<br>
+</blockquote><p>실제 mySQL의 테이블에는 group의 <code>start_date</code>와 <code>end_date</code>만이 담기지만,<br>
 이를 바탕으로 model단에서 <code>member_type</code>(멤버 등급)과, <code>write_permission</code>(글쓰기 가능 조건, <code>is_admin</code> 권한이 있더라도 퇴주기업은 글쓰기 불가하기 때문), 그리고 <code>period</code>(해당 업체의 계약기간)를 담아 보낼 수 있도록 하였다.
  </p>
 <p>또한, 회사의 멤버가 &ldquo;우리회사 소개하기&quot;라는 버튼을 누를 때,<br>
@@ -266,11 +394,47 @@ API를 분리하여 사용함으로써 실시간으로 변경되는 권한 내�
 <p>sql where 절의 변수에서는 중간 탈취를 막기 위해 <strong>query injection처리를 하였다.</strong>
  </p>
 <p><div class="details admonition info">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>mySQL query 펼치기<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-info-circle fa-fw" aria-hidden="true"></i>mySQL query 펼치기<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">user_id</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="k">CASE</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHEN</span><span class="w"> </span><span class="kt">date</span><span class="w"> </span><span class="p">(</span><span class="n">ug</span><span class="p">.</span><span class="n">end_date</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="kt">date</span><span class="w"> </span><span class="p">(</span><span class="nf">now</span><span class="p">())</span><span class="w">
@@ -301,26 +465,26 @@ API를 분리하여 사용함으로써 실시간으로 변경되는 권한 내�
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">`</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">[</span><span class="n">userId</span><span class="p">]</span><span class="w">
-</span></span></span></code></pre></div></div>
-        </div>
-    </div><br>
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">[</span><span class="n">userId</span><span class="p">]</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+    </div>
+  </div><br>
  <br>
  </p>
-<h2 id="가장-많이-고민한-reply-api">가장 많이 고민한 reply API</h2>
-<p>댓글 테이블은 다음과 같은 구조를 가졌다.<br>
+<h2 id="가장-많이-고민한-reply-api" class="heading-element"><span>가장 많이 고민한 reply API</span>
+  <a href="#%ea%b0%80%ec%9e%a5-%eb%a7%8e%ec%9d%b4-%ea%b3%a0%eb%af%bc%ed%95%9c-reply-api" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>댓글 테이블은 다음과 같은 구조를 가졌다.<br>
  <br>
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/OSqXWoE.png"
-        data-srcset="https://i.imgur.com/OSqXWoE.png, https://i.imgur.com/OSqXWoE.png 1.5x, https://i.imgur.com/OSqXWoE.png 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/OSqXWoE.png"
-        title="https://i.imgur.com/OSqXWoE.png" />
+<a class="lightgallery" href="https://i.imgur.com/OSqXWoE.png?size=large" data-thumbnail="https://i.imgur.com/OSqXWoE.png?size=small" data-sub-html="<h2>https://i.imgur.com/OSqXWoE.png</h2>"><img loading="lazy" src="https://i.imgur.com/OSqXWoE.png" alt="https://i.imgur.com/OSqXWoE.png" srcset="https://i.imgur.com/OSqXWoE.png?size=small, https://i.imgur.com/OSqXWoE.png?size=medium 1.5x, https://i.imgur.com/OSqXWoE.png?size=large 2x" data-title="https://i.imgur.com/OSqXWoE.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
  </p>
-<h3 id="대댓글은-자기참조-구조--활용">대댓글은 자기참조 구조  활용</h3>
-<p>여기서 난 대댓글의 구조에서 parent_reply_id를 같은 테이블의 id값으로 잡는,<br>
+<h3 id="대댓글은-자기참조-구조--활용" class="heading-element"><span>대댓글은 자기참조 구조  활용</span>
+  <a href="#%eb%8c%80%eb%8c%93%ea%b8%80%ec%9d%80-%ec%9e%90%ea%b8%b0%ec%b0%b8%ec%a1%b0-%ea%b5%ac%ec%a1%b0--%ed%99%9c%ec%9a%a9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>여기서 난 대댓글의 구조에서 parent_reply_id를 같은 테이블의 id값으로 잡는,<br>
 즉 자기참조 구조를 사용하였다.<br>
 최초에는 parent_reply_id에다 같은 테이블의 id값을 foreign key로 잡았었는데, 이 fk를 해제한 이유는 아이러니하게도 검색효율성 때문이었다. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <ul>
@@ -329,21 +493,112 @@ API를 분리하여 사용함으로써 실시간으로 변경되는 권한 내�
 <li>대댓글 그룹핑시 불필요한 함수 사용 제거 가능</li>
 </ul>
 <p> </p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/yhIm3MP.png"
-        data-srcset="https://i.imgur.com/yhIm3MP.png, https://i.imgur.com/yhIm3MP.png 1.5x, https://i.imgur.com/yhIm3MP.png 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/yhIm3MP.png"
-        title="https://i.imgur.com/yhIm3MP.png" />
+<p><a class="lightgallery" href="https://i.imgur.com/yhIm3MP.png?size=large" data-thumbnail="https://i.imgur.com/yhIm3MP.png?size=small" data-sub-html="<h2>https://i.imgur.com/yhIm3MP.png</h2>"><img loading="lazy" src="https://i.imgur.com/yhIm3MP.png" alt="https://i.imgur.com/yhIm3MP.png" srcset="https://i.imgur.com/yhIm3MP.png?size=small, https://i.imgur.com/yhIm3MP.png?size=medium 1.5x, https://i.imgur.com/yhIm3MP.png?size=large 2x" data-title="https://i.imgur.com/yhIm3MP.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
  </p>
 <p><div class="details admonition info">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>read replies by feed API - mySQL query 펼치기<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-info-circle fa-fw" aria-hidden="true"></i>read replies by feed API - mySQL query 펼치기<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">t2</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">reply_id</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">t2</span><span class="p">.</span><span class="n">feed_id</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">u2</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">feed_user_id</span><span class="p">,</span><span class="w">
@@ -436,19 +691,71 @@ API를 분리하여 사용함으로써 실시간으로 변경되는 권한 내�
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">f</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u2</span><span class="p">.</span><span class="n">id</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">reply_group</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">rnk</span><span class="w">
-</span></span></span></code></pre></div></div>
-        </div>
-    </div><br>
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">rnk</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+    </div>
+  </div><br>
  <br>
  </p>
-<h4 id="sql의-결과를-보기좋게-재가공">sql의 결과를 보기좋게 재가공!!</h4>
-<p><div class="details admonition info">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>read replies by feed API - typescript code 펼치기<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<h4 id="sql의-결과를-보기좋게-재가공" class="heading-element"><span>sql의 결과를 보기좋게 재가공!!</span>
+  <a href="#sql%ec%9d%98-%ea%b2%b0%ea%b3%bc%eb%a5%bc-%eb%b3%b4%ea%b8%b0%ec%a2%8b%ea%b2%8c-%ec%9e%ac%ea%b0%80%ea%b3%b5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p><div class="details admonition info">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-info-circle fa-fw" aria-hidden="true"></i>read replies by feed API - typescript code 펼치기<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">value</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">e</span><span class="o">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">value</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">parent_reply_id</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">          <span class="kd">let</span> <span class="nx">temporary</span> <span class="o">=</span> <span class="p">{</span>
@@ -491,26 +798,23 @@ API를 분리하여 사용함으로써 실시간으로 변경되는 권한 내�
 </span></span><span class="line"><span class="cl">        <span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">value</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">e</span><span class="o">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">parent_reply_id</span> <span class="o">===</span> <span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span></code></pre></div></div>
-        </div>
-    </div><br>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+    </div>
+  </div><br>
  <br>
  </p>
 <p>이리하여 나온 멋진 res.json은 아래 이미지와 같다.
  </p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/AVaDb3K.png"
-        data-srcset="https://i.imgur.com/AVaDb3K.png, https://i.imgur.com/AVaDb3K.png 1.5x, https://i.imgur.com/AVaDb3K.png 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/AVaDb3K.png"
-        title="https://i.imgur.com/AVaDb3K.png" />
+<p><a class="lightgallery" href="https://i.imgur.com/AVaDb3K.png?size=large" data-thumbnail="https://i.imgur.com/AVaDb3K.png?size=small" data-sub-html="<h2>https://i.imgur.com/AVaDb3K.png</h2>"><img loading="lazy" src="https://i.imgur.com/AVaDb3K.png" alt="https://i.imgur.com/AVaDb3K.png" srcset="https://i.imgur.com/AVaDb3K.png?size=small, https://i.imgur.com/AVaDb3K.png?size=medium 1.5x, https://i.imgur.com/AVaDb3K.png?size=large 2x" data-title="https://i.imgur.com/AVaDb3K.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
  <br>
  </p>
-<h5 id="풀이">풀이</h5>
-<ul>
+<h5 id="풀이" class="heading-element"><span>풀이</span>
+  <a href="#%ed%92%80%ec%9d%b4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h5><ul>
 <li>댓글과 대댓글의 depth를 나눈 테이블구조가 아닌 자기참조 구조는 <strong>무한대댓글 구조를 구성할 수 있는</strong> 장점이 있다.
 <ol>
 <li>페이지네이션에서 댓글과 대댓글을 포함한 개수를 실행할 수 있도록 db에서는 대댓글을 분리하지 않은채 limit에 따라 댓글을 가져온다</li>
@@ -525,8 +829,11 @@ API를 분리하여 사용함으로써 실시간으로 변경되는 권한 내�
  </li>
 </ul>
 <hr>
-<h2 id="그외-기타-고민의-의사결정-과정들">그외 기타 고민의 의사결정 과정들</h2>
-<ol>
+<h2 id="그외-기타-고민의-의사결정-과정들" class="heading-element"><span>그외 기타 고민의 의사결정 과정들</span>
+  <a href="#%ea%b7%b8%ec%99%b8-%ea%b8%b0%ed%83%80-%ea%b3%a0%eb%af%bc%ec%9d%98-%ec%9d%98%ec%82%ac%ea%b2%b0%ec%a0%95-%ea%b3%bc%ec%a0%95%eb%93%a4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ol>
 <li>
 <p>하위 카테고리 설정</p>
 <ul>
@@ -555,8 +862,11 @@ API를 분리하여 사용함으로써 실시간으로 변경되는 권한 내�
 </li>
 </ol>
 <hr>
-<h2 id="개선과정">개선과정</h2>
-<ul>
+<h2 id="개선과정" class="heading-element"><span>개선과정</span>
+  <a href="#%ea%b0%9c%ec%84%a0%ea%b3%bc%ec%a0%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ul>
 <li>반복코드들의 middleware 처리
 <ul>
 <li>controller단에서 무한히 반복되는 try-catch문을 따로 뽑아내어 미들웨어 처리함으로써 코드를 더 간결히 하였다.</li>
@@ -565,29 +875,36 @@ API를 분리하여 사용함으로써 실시간으로 변경되는 권한 내�
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;</span><span class="p">,</span>  
 </span></span><span class="line"><span class="cl"><span class="nx">catchMiddleware</span><span class="p">(</span><span class="nx">authMiddleware</span><span class="p">),</span>  
 </span></span><span class="line"><span class="cl"><span class="nx">catchMiddleware</span><span class="p">(</span><span class="nx">checkPermission</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl"><span class="nx">catchMiddleware</span><span class="p">(</span><span class="nx">replyController</span><span class="p">.</span><span class="nx">createReply</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">);</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <ul>
 <li>배포 사이트에서 보는 이가 실제로 로그인해서 살펴볼 수 있도록 로그인 페이지와 해당 페이지에 시연용 ID와 PW를 남겨놓자고 건의하였고, 프론트엔드분들의 수고로 다음과 같이 남겨졌다.</li>
 </ul>
 <p> <br>
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/s6vTvwU.png"
-        data-srcset="https://i.imgur.com/s6vTvwU.png, https://i.imgur.com/s6vTvwU.png 1.5x, https://i.imgur.com/s6vTvwU.png 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/s6vTvwU.png"
-        title="https://i.imgur.com/s6vTvwU.png" />
+<a class="lightgallery" href="https://i.imgur.com/s6vTvwU.png?size=large" data-thumbnail="https://i.imgur.com/s6vTvwU.png?size=small" data-sub-html="<h2>https://i.imgur.com/s6vTvwU.png</h2>"><img loading="lazy" src="https://i.imgur.com/s6vTvwU.png" alt="https://i.imgur.com/s6vTvwU.png" srcset="https://i.imgur.com/s6vTvwU.png?size=small, https://i.imgur.com/s6vTvwU.png?size=medium 1.5x, https://i.imgur.com/s6vTvwU.png?size=large 2x" data-title="https://i.imgur.com/s6vTvwU.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
  </p>
 <hr>
-<h2 id="회고">회고</h2>
-<p>저스트코드의 과정중,  내게 이번 프로젝트는 따로 진행한 미니프로젝트를 포함한다면 4번째 프로젝트였다.<br>
+<h2 id="회고" class="heading-element"><span>회고</span>
+  <a href="#%ed%9a%8c%ea%b3%a0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>저스트코드의 과정중,  내게 이번 프로젝트는 따로 진행한 미니프로젝트를 포함한다면 4번째 프로젝트였다.<br>
 이전의 세 프로젝트와 다른 점은 이전까지의 클론프로젝트가 아닌,<br>
 즉, <strong>모체가 없는 단순 문서만으로 진행해야하는 부분이었다.</strong><br>
 때문에 ERD에서 고민이 조금 더 들어갔고,<br>
@@ -602,12 +919,10 @@ API를 분리하여 사용함으로써 실시간으로 변경되는 권한 내�
  </p>
 <p>이번 프로젝트에서 내가 목표로하였던 백엔드 지향점은 다음과 같다.<br>
  </p>
-<blockquote>
-<p><strong>기획의도를 파악하여</strong> 타 부서와의 불필요한 조율 및 미팅을 최소화하고,<br>
+<blockquote><p><strong>기획의도를 파악하여</strong> 타 부서와의 불필요한 조율 및 미팅을 최소화하고,<br>
 클라이언트 즉, <strong>프론트엔드와의 비가시적인 동기화를 최대한 고려할 수 있는</strong> 조화로운 백엔드 엔지니어<br>
  </p>
-</blockquote>
-<p>이러한 점에서 이번 프로젝트에서는 전보다 더 많은 고민과 발전을 이루었음에,<br>
+</blockquote><p>이러한 점에서 이번 프로젝트에서는 전보다 더 많은 고민과 발전을 이루었음에,<br>
 아직 채워지지 않은 나의 포트폴리오 시작점에서 또하나의 유의미한 &ldquo;한 자리&quot;를 기록하게 되었다.<br>
  </p>
 <p><strong>아쉬웠던 점은,</strong>  클론사이트가 아니다보니 처음부터 프론트엔드와의 합을 맞추기까지 꽤나 오랜 시간이 걸렸고, 이로인해 API 통신 테스트까지의 일정이 다소 지연되었었다.  이번 경험은 실무에서 많은 도움이 될 것이다.<br>
@@ -624,49 +939,49 @@ API를 분리하여 사용함으로써 실시간으로 변경되는 권한 내�
 <hr>
 <ol>
 <li id="fn:1">
-<p>참고 [블라인드 따라하기] 8. 대댓글 구현하기 - 디비 성능 개선기 : 네이버 블로그](<a href="https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;blogId=1ilsang&amp;logNo=221569040532" target="_blank" rel="noopener noreffer ">https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=1ilsang&logNo=221569040532</a>)&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>참고 [블라인드 따라하기] 8. 대댓글 구현하기 - 디비 성능 개선기 : 네이버 블로그](<a href="https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;blogId=1ilsang&amp;logNo=221569040532"target="_blank" rel="external nofollow noopener noreferrer">https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=1ilsang&logNo=221569040532</a>)&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
 </div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2022-12-27</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2022-12-27 04:48:11">Updated on 2022-12-27&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
         </div>
-    </div>
+      </div></div>
 
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/project_fastfive/">Project_fastfive</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/posts/202212250509/" class="prev" rel="prev" title="status code 204"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>status code 204</a>
-            <a href="/posts/202212280458/" class="next" rel="next" title="AWS 퍼블릭 IP와 탄력적 IP">AWS 퍼블릭 IP와 탄력적 IP<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/project_fastfive/" class="post-tag" title="Tags - Project_fastfive">Project_fastfive</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/202212250509/" class="post-nav-item" rel="prev" title="Status Code 204"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Status Code 204</a>
+      <a href="/posts/202212280458/" class="post-nav-item" rel="next" title="AWS 퍼블릭 IP와 탄력적 IP">AWS 퍼블릭 IP와 탄력적 IP<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-<div id="comments"><div id="utterances" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
-        </div>
-    </footer></div>
+</article>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.135.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.12-456db385">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">inchan</a></span><span class="license footer-divider">CC BY-NC-SA 4.0</span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><a href="https://github.com/inchanS" title="View source on GitHub"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true" width="56" height="56"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;--progress-h: 5px;--bg-progress: rgba(0, 0, 255, 1);--bg-progress-dark: rgba(255, 165, 0, 1);"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"duration":-1,"loop":false,"speed":100},"version":"v0.3.12-456db385"};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
 </html>

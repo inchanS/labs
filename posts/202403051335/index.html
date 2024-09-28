@@ -1,119 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기" />
-<meta property="og:description" content="작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기 - inchan.dev</title><meta name="author" content="inchan">
+<meta name="description" content=" 
+작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.
 공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그
-AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. 2024년 2월 1일부터 서비스 연결 여부에 관계없이 모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://inchan.dev/posts/202403051335/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-03-05T13:35:51+09:00" />
-<meta property="article:modified_time" content="2024-03-05T13:35:51+09:00" /><meta property="og:site_name" content="inchan.dev" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기"/>
-<meta name="twitter:description" content="작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.
+AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. 2024년 2월 1일부터 서비스 연결 여부에 관계없이 모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다."><meta name="keywords" content='AWS'>
+  <meta itemprop="name" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">
+  <meta itemprop="description" content=" 작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.
 공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그
-AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. 2024년 2월 1일부터 서비스 연결 여부에 관계없이 모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다."/>
-      <meta name="twitter:site" content="@codject"/>
-<meta name="application-name" content="inchan.dev">
-<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202403051335/" /><link rel="prev" href="https://inchan.dev/posts/202403051214/" /><link rel="next" href="https://inchan.dev/posts/202403090724/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/inchan.dev\/posts\/202403051335\/"
-        },"genre": "posts","keywords": "AWS","wordcount":  741 ,
-        "url": "https:\/\/inchan.dev\/posts\/202403051335\/","datePublished": "2024-03-05T13:35:51+09:00","dateModified": "2024-03-05T13:35:51+09:00","publisher": {
-            "@type": "Organization",
-            "name": "inchan"},"author": {
-                "@type": "Person",
-                "name": "inchan"
-            },"description": ""
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. 2024년 2월 1일부터 서비스 연결 여부에 관계없이 모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다.">
+  <meta itemprop="datePublished" content="2024-03-05T13:35:51+09:00">
+  <meta itemprop="dateModified" content="2024-03-05T13:35:51+09:00">
+  <meta itemprop="wordCount" content="741">
+  <meta itemprop="keywords" content="AWS"><meta property="og:url" content="http://inchan.dev/posts/202403051335/">
+  <meta property="og:site_name" content="inchan.dev">
+  <meta property="og:title" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">
+  <meta property="og:description" content=" 작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.
+공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그
+AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. 2024년 2월 1일부터 서비스 연결 여부에 관계없이 모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-03-05T13:35:51+09:00">
+    <meta property="article:modified_time" content="2024-03-05T13:35:51+09:00">
+    <meta property="article:tag" content="AWS">
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">
+  <meta name="twitter:description" content=" 작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.
+공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그
+AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. 2024년 2월 1일부터 서비스 연결 여부에 관계없이 모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다.">
+      <meta name="twitter:site" content="@cOdject">
+<meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
+<meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://inchan.dev/posts/202403051335/" title="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기 - inchan.dev" /><link rel="prev" type="text/html" href="http://inchan.dev/posts/202403051214/" title="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법" /><link rel="next" type="text/html" href="http://inchan.dev/posts/202403090724/" title="브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/inchan.dev\/posts\/202403051335\/"
+    },"genre": "posts","keywords": "AWS","wordcount":  741 ,
+    "url": "http:\/\/inchan.dev\/posts\/202403051335\/","datePublished": "2024-03-05T13:35:51+09:00","dateModified": "2024-03-05T13:35:51+09:00","publisher": {
+      "@type": "Organization",
+      "name": "inchan"},"author": {
+        "@type": "Person",
+        "name": "inchan"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
     <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
-        </div>
+      <div class="header-title">
+        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
 </header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a>&nbsp;<a href="/categories/project/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Project</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-05">2024-03-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;741 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/back-end/" class="post-category" title="Category - Back-End"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Back-End</a>&ensp;<a href="/categories/project/" class="post-category" title="Category - Project"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Project</a></span></div><div class="post-meta-line"><span title="published on 2024-03-05 13:35:51"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-05">2024-03-05</time></span>&nbsp;<span title="741 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+          </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#ipv6-전환">IPv6 전환</a></li>
     <li><a href="#issue">issue</a></li>
@@ -125,29 +192,23 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p> </p>
+      </div><div class="content" id="content"><p> </p>
 <p>작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.</p>
-<p><a href="https://aws.amazon.com/ko/blogs/korea/new-aws-public-ipv4-address-charge-public-ip-insights/?_encoding=UTF8&amp;tag=clien0a-20&amp;linkCode=ur2&amp;linkId=4ef926e41eaa57b3dcfc48b2660f5024&amp;camp=1789&amp;creative=9325" target="_blank" rel="noopener noreffer ">공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그</a></p>
-<blockquote>
-<p>AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. <strong>2024년 2월 1일부터</strong> 서비스 연결 여부에 관계없이 <strong>모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과</strong>됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다.</p>
-</blockquote>
-<p>당시 AWS 크레딧이 꽤 여유가 있었기에 차일 피일 미루다 2월 중순쯤 작업(?)을 시작하였다.</p>
+<p><a href="https://aws.amazon.com/ko/blogs/korea/new-aws-public-ipv4-address-charge-public-ip-insights/?_encoding=UTF8&amp;tag=clien0a-20&amp;linkCode=ur2&amp;linkId=4ef926e41eaa57b3dcfc48b2660f5024&amp;camp=1789&amp;creative=9325"target="_blank" rel="external nofollow noopener noreferrer">공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그</a></p>
+<blockquote><p>AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. <strong>2024년 2월 1일부터</strong> 서비스 연결 여부에 관계없이 <strong>모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과</strong>됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다.</p>
+</blockquote><p>당시 AWS 크레딧이 꽤 여유가 있었기에 차일 피일 미루다 2월 중순쯤 작업(?)을 시작하였다.</p>
 <p>AWS에서 백엔드 서버와 DB를 이용하고 있던 나는 현재 총 4개의 public IP를 사용하고 있었고, 이 중 프리티어 EC2에 부여된 하나의 주소를 제외한 나머지 3개 주소에 대한 요금이 2월부터 청구되고 있었다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<h2 id="ipv6-전환">IPv6 전환</h2>
-<p>일단 AWS에서 준 문서대로 보안그룹과 VPC 서브넷을 이리 저리 만져보며 <strong>IPv6로 세팅을 끝냈다.</strong><br>
+<h2 id="ipv6-전환" class="heading-element"><span>IPv6 전환</span>
+  <a href="#ipv6-%ec%a0%84%ed%99%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>일단 AWS에서 준 문서대로 보안그룹과 VPC 서브넷을 이리 저리 만져보며 <strong>IPv6로 세팅을 끝냈다.</strong><br>
 그런데 아무리 해도 SSH 접속이 안되었다.<br>
 한참을 살펴보다 <strong>현재 이용중인 인터넷 서비스업체 (KT 또는 LGT)가 IPv6를 제대로 지원하지 않는다</strong>는 사실을 알게 되었다.</p>
 <p>(<strong>만약 이 글을 보는 이의 환경이 IPv6를 지원한다면 여기서 모든게 해결된다!!</strong>)</p>
-<p><a href="https://test-ipv6.com/" target="_blank" rel="noopener noreffer ">IPv6을 테스트합니다.</a><br>
+<p><a href="https://test-ipv6.com/"target="_blank" rel="external nofollow noopener noreferrer">IPv6을 테스트합니다.</a><br>
 여기에서 현재 네트워크가 IPv6를 지원하는지 테스트해볼 수 있으며 구글링하면 이외에도 더 있다.</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/SCR-20240305-mhek.png"
-        data-srcset="/images/SCR-20240305-mhek.png, /images/SCR-20240305-mhek.png 1.5x, /images/SCR-20240305-mhek.png 2x"
-        data-sizes="auto"
-        alt="/images/SCR-20240305-mhek.png"
-        title="/images/SCR-20240305-mhek.png" /></p>
+<p><a class="lightgallery" href="/images/SCR-20240305-mhek.png?size=large" data-thumbnail="/images/SCR-20240305-mhek.png?size=small" data-sub-html="<h2>/images/SCR-20240305-mhek.png</h2>"><img loading="lazy" src="/images/SCR-20240305-mhek.png" alt="/images/SCR-20240305-mhek.png" srcset="/images/SCR-20240305-mhek.png?size=small, /images/SCR-20240305-mhek.png?size=medium 1.5x, /images/SCR-20240305-mhek.png?size=large 2x" data-title="/images/SCR-20240305-mhek.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
 <p>허탈했고 이대로라면 AWS에서 프리티어를 이용하더라도 소액의 금액을 지불하지 않을 수 없는 상황이었다.</p>
 <p>현재 이용중인 public IPv4 IP는 다음과 같았다.</p>
 <ul>
@@ -155,8 +216,11 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
 <li><strong>RDS public 주소</strong> - DB 클라이언트와 IDE에서 연결하기 위해 사용</li>
 <li><strong>Load Balancer</strong> - HTTPS와 HTTP를 따로이 연결하며 2개의 public IPv4주소 사용중<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
 </ul>
-<h2 id="issue">issue</h2>
-<p>즉 현재 상황에서 비용지출을 줄이기 위한 당면과제는 다음과 같았다.</p>
+<h2 id="issue" class="heading-element"><span>issue</span>
+  <a href="#issue" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>즉 현재 상황에서 비용지출을 줄이기 위한 당면과제는 다음과 같았다.</p>
 <ol>
 <li>EC2의 경우 다행히 하나의 public 주소는 무료이다.</li>
 <li>HTTPS 연결을 위해 세팅했던 Load Balancer의 public 주소는 다른 방법을 강구해야한다.</li>
@@ -165,27 +229,26 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
 </ol>
 <p>1번은 프리티어 플랜으로서 자연스레 <strong>해결</strong>되었고<br>
 2번의 경우는 Route53과 Load Balancer를 이용한 방법에서, 도메인 서비스의 프록싱을 이용한 직접 연결 방법으로 <strong>해결</strong>하였다.<br>
-(관련 글 - <a href="https://inchan.dev/posts/202403051214/" target="_blank" rel="noopener noreffer ">AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법 - inchan.dev</a>)<br>
+(관련 글 - <a href="https://inchan.dev/posts/202403051214/"target="_blank" rel="external nofollow noopener noreferrer">AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법 - inchan.dev</a>)<br>
  </p>
 <p>그리고 3번 RDS에 관한 해결안은 이제 아래에서 다룬다.<br>
  </p>
-<h2 id="public-엑세스-없이-rds를-외부에서-연결하기">public 엑세스 없이 RDS를 외부에서 연결하기</h2>
-<p>AWS의 RDS 이용시 SQL 클라이언트로 연결할 수 없다면 정말로 불편한게 이만저만이 아니었다.<br>
+<h2 id="public-엑세스-없이-rds를-외부에서-연결하기" class="heading-element"><span>public 엑세스 없이 RDS를 외부에서 연결하기</span>
+  <a href="#public-%ec%97%91%ec%84%b8%ec%8a%a4-%ec%97%86%ec%9d%b4-rds%eb%a5%bc-%ec%99%b8%eb%b6%80%ec%97%90%ec%84%9c-%ec%97%b0%ea%b2%b0%ed%95%98%ea%b8%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>AWS의 RDS 이용시 SQL 클라이언트로 연결할 수 없다면 정말로 불편한게 이만저만이 아니었다.<br>
 오랜시간 끙끙대며 여러 문서들을 살펴보고 이것저것 세팅을 바꿔가며 테스트해보고 고민했다.<br>
  </p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/Pasted%20image%2020240306070849.png"
-        data-srcset="/images/Pasted%20image%2020240306070849.png, /images/Pasted%20image%2020240306070849.png 1.5x, /images/Pasted%20image%2020240306070849.png 2x"
-        data-sizes="auto"
-        alt="/images/Pasted%20image%2020240306070849.png"
-        title="/images/Pasted%20image%2020240306070849.png" /></p>
+<p><a class="lightgallery" href="/images/Pasted%20image%2020240306070849.png?size=large" data-thumbnail="/images/Pasted%20image%2020240306070849.png?size=small" data-sub-html="<h2>/images/Pasted%20image%2020240306070849.png</h2>"><img loading="lazy" src="/images/Pasted%20image%2020240306070849.png" alt="/images/Pasted%20image%2020240306070849.png" srcset="/images/Pasted%20image%2020240306070849.png?size=small, /images/Pasted%20image%2020240306070849.png?size=medium 1.5x, /images/Pasted%20image%2020240306070849.png?size=large 2x" data-title="/images/Pasted%20image%2020240306070849.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
 <p>그렇게 AWS의 여러 공식문서들을 살펴보다가 AWS의 네트워킹 시스템에서 방법을 찾았다.</p>
-<p>위 이미지와 같이 외부에서는 <strong>EC2의 Public subnet</strong>으로 연결할 수 있고, 이 Public subnet은 또다시 <strong>RDS의  Private subnet</strong>으로 연결할 수 있다. 마치 모니터 연결시 bridge 방식으로 연결하는 <a href="http://kb.supremainc.com/knowledge/doku.php?id=ko:daisy_chain" target="_blank" rel="noopener noreffer ">데이지 체인</a>과 같은 원리로 연결을 할 수 있었다.</p>
-<p>(참고문서 - <a href="https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/UserGuide/ec2-rds-connect.html" target="_blank" rel="noopener noreffer ">EC2 인스턴스와 DB 인스턴스를 자동으로 연결 - Amazon Relational Database Service</a>)</p>
-<h3 id="aws-ec2와-rds-연결">AWS EC2와 RDS 연결</h3>
-<p><strong>AWS의 RDS는 EC2에 연결해둘 수가 있다.</strong><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> <br>
+<p>위 이미지와 같이 외부에서는 <strong>EC2의 Public subnet</strong>으로 연결할 수 있고, 이 Public subnet은 또다시 <strong>RDS의  Private subnet</strong>으로 연결할 수 있다. 마치 모니터 연결시 bridge 방식으로 연결하는 <a href="http://kb.supremainc.com/knowledge/doku.php?id=ko:daisy_chain"target="_blank" rel="external nofollow noopener noreferrer">데이지 체인</a>과 같은 원리로 연결을 할 수 있었다.</p>
+<p>(참고문서 - <a href="https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/UserGuide/ec2-rds-connect.html"target="_blank" rel="external nofollow noopener noreferrer">EC2 인스턴스와 DB 인스턴스를 자동으로 연결 - Amazon Relational Database Service</a>)</p>
+<h3 id="aws-ec2와-rds-연결" class="heading-element"><span>AWS EC2와 RDS 연결</span>
+  <a href="#aws-ec2%ec%99%80-rds-%ec%97%b0%ea%b2%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><strong>AWS의 RDS는 EC2에 연결해둘 수가 있다.</strong><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> <br>
  </p>
 <p>즉, EC2의 public IPv4주소를 이용하여 외부에서 AWS EC2 내부 넷망으로 들어갈 수 있고 이때, RDS가 연결되어있다면 내부 넷망을 통해 RDS 역시 접속 가능하다는 것이다.<br>
  </p>
@@ -196,60 +259,35 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
 그리고 EC2를 연결해주면 일단 외부에서도 접속할 수 있는 길은 트이게 된다.<br>
  </p>
 <div class="details admonition warning open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>새로운 RDS 인스턴스 생성시 주의사항<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>주의할 점은 새로운 RDS 인스턴스 생성 및 마이그레이션시,<br>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>새로운 RDS 인스턴스 생성시 주의사항<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p>주의할 점은 새로운 RDS 인스턴스 생성 및 마이그레이션시,<br>
 설정에서 <strong>public 액세스</strong>는 반드시 &ldquo;아니오&quot;를 택해야 한다.<br>
 만약 &ldquo;예&quot;를 택할 경우 새로운 RDS의 인스턴스에는 자동으로 public IPv4 주소가 할당되며 곧 비용청구로 이어진다.</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/Pasted%20image%2020240305140846.png"
-        data-srcset="/images/Pasted%20image%2020240305140846.png, /images/Pasted%20image%2020240305140846.png 1.5x, /images/Pasted%20image%2020240305140846.png 2x"
-        data-sizes="auto"
-        alt="/images/Pasted%20image%2020240305140846.png"
-        title="/images/Pasted%20image%2020240305140846.png" /></p>
+<p><a class="lightgallery" href="/images/Pasted%20image%2020240305140846.png?size=large" data-thumbnail="/images/Pasted%20image%2020240305140846.png?size=small" data-sub-html="<h2>/images/Pasted%20image%2020240305140846.png</h2>"><img loading="lazy" src="/images/Pasted%20image%2020240305140846.png" alt="/images/Pasted%20image%2020240305140846.png" srcset="/images/Pasted%20image%2020240305140846.png?size=small, /images/Pasted%20image%2020240305140846.png?size=medium 1.5x, /images/Pasted%20image%2020240305140846.png?size=large 2x" data-title="/images/Pasted%20image%2020240305140846.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
 </div>
-        </div>
     </div>
+  </div>
 <p>새로운 RDS를 생성하고 세팅중이라면 아래와 같이 EC2와 연결해준다.</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/Pasted%20image%2020240305141043.png"
-        data-srcset="/images/Pasted%20image%2020240305141043.png, /images/Pasted%20image%2020240305141043.png 1.5x, /images/Pasted%20image%2020240305141043.png 2x"
-        data-sizes="auto"
-        alt="/images/Pasted%20image%2020240305141043.png"
-        title="/images/Pasted%20image%2020240305141043.png" /><br>
+<p><a class="lightgallery" href="/images/Pasted%20image%2020240305141043.png?size=large" data-thumbnail="/images/Pasted%20image%2020240305141043.png?size=small" data-sub-html="<h2>/images/Pasted%20image%2020240305141043.png</h2>"><img loading="lazy" src="/images/Pasted%20image%2020240305141043.png" alt="/images/Pasted%20image%2020240305141043.png" srcset="/images/Pasted%20image%2020240305141043.png?size=small, /images/Pasted%20image%2020240305141043.png?size=medium 1.5x, /images/Pasted%20image%2020240305141043.png?size=large 2x" data-title="/images/Pasted%20image%2020240305141043.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><br>
  </p>
 <p>위와 같이 진행하면 EC2와 같은 가용영역으로 확인하며 설치 진행할 수 있으며 이후의 세팅은 용도에 맞춰 진행하면 된다.<br>
  </p>
 <p>만약 이미 이용중인 RDS를 연결하고자 한다면 해당 RDS의 인스턴스 메뉴 중 &ldquo;작업&rdquo; 섹션에서 &ldquo;EC2 연결하기&quot;와 같은 메뉴를 볼 수 있다. 가용영역이 같다면 손쉽게 연결할 수 있다.<br>
  </p>
-<h3 id="sql-클라이언트에-연결하기">SQL 클라이언트에 연결하기</h3>
-<p>현재 DBeaver, DataGrip 등의 SQL 클라이언트를 사용중인데 연결 방법은 모두 대동소이했다.</p>
+<h3 id="sql-클라이언트에-연결하기" class="heading-element"><span>SQL 클라이언트에 연결하기</span>
+  <a href="#sql-%ed%81%b4%eb%9d%bc%ec%9d%b4%ec%96%b8%ed%8a%b8%ec%97%90-%ec%97%b0%ea%b2%b0%ed%95%98%ea%b8%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>현재 DBeaver, DataGrip 등의 SQL 클라이언트를 사용중인데 연결 방법은 모두 대동소이했다.</p>
 <p>아래에서는 DataGrip의 예시로 설명을 한다.<br>
 UI나 일부 메뉴 이름이 다르더라도 이해하는데 큰 지장은 없으리라 본다.</p>
 <p>우선 세션 연결을 위해 &ldquo;새로운 연결&quot;을 진행하고, SSH 구성에서 &ldquo;&hellip;&ldquo;을 클릭한다.</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/Pasted%20image%2020240305141908.png"
-        data-srcset="/images/Pasted%20image%2020240305141908.png, /images/Pasted%20image%2020240305141908.png 1.5x, /images/Pasted%20image%2020240305141908.png 2x"
-        data-sizes="auto"
-        alt="/images/Pasted%20image%2020240305141908.png"
-        title="/images/Pasted%20image%2020240305141908.png" /><br>
+<p><a class="lightgallery" href="/images/Pasted%20image%2020240305141908.png?size=large" data-thumbnail="/images/Pasted%20image%2020240305141908.png?size=small" data-sub-html="<h2>/images/Pasted%20image%2020240305141908.png</h2>"><img loading="lazy" src="/images/Pasted%20image%2020240305141908.png" alt="/images/Pasted%20image%2020240305141908.png" srcset="/images/Pasted%20image%2020240305141908.png?size=small, /images/Pasted%20image%2020240305141908.png?size=medium 1.5x, /images/Pasted%20image%2020240305141908.png?size=large 2x" data-title="/images/Pasted%20image%2020240305141908.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><br>
  </p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/Pasted%20image%2020240325142044.png"
-        data-srcset="/images/Pasted%20image%2020240325142044.png, /images/Pasted%20image%2020240325142044.png 1.5x, /images/Pasted%20image%2020240325142044.png 2x"
-        data-sizes="auto"
-        alt="/images/Pasted%20image%2020240325142044.png"
-        title="/images/Pasted%20image%2020240325142044.png" /><br>
+<p><a class="lightgallery" href="/images/Pasted%20image%2020240325142044.png?size=large" data-thumbnail="/images/Pasted%20image%2020240325142044.png?size=small" data-sub-html="<h2>/images/Pasted%20image%2020240325142044.png</h2>"><img loading="lazy" src="/images/Pasted%20image%2020240325142044.png" alt="/images/Pasted%20image%2020240325142044.png" srcset="/images/Pasted%20image%2020240325142044.png?size=small, /images/Pasted%20image%2020240325142044.png?size=medium 1.5x, /images/Pasted%20image%2020240325142044.png?size=large 2x" data-title="/images/Pasted%20image%2020240325142044.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><br>
  </p>
 <p><strong>호스트에는 EC2 public IPv4 주소를 입력</strong><br>
 포트는 SSH이기에 <code>22</code> 그대로 둔다.<br>
@@ -264,55 +302,55 @@ UI나 일부 메뉴 이름이 다르더라도 이해하는데 큰 지장은 없�
 <p>대략 보름 정도 사용했을 때 $5.63 정도 청구되었다. 즉 한달이면 약 $10정도가 청구된다는 뜻이었다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>EC2용 <a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreffer ">AWS 프리 티어</a>에는 2024년 2월 1일부터 처음 12개월 동안 매월 750시간의 퍼블릭 IPv4 주소 사용이 포함됩니다. - <a href="https://aws.amazon.com/ko/blogs/korea/new-aws-public-ipv4-address-charge-public-ip-insights/?_encoding=UTF8&amp;tag=clien0a-20&amp;linkCode=ur2&amp;linkId=4ef926e41eaa57b3dcfc48b2660f5024&amp;camp=1789&amp;creative=9325" target="_blank" rel="noopener noreffer ">공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그</a> =&gt; 즉 하나의 EC2에서 하나의 IP 주소만 사용한다면 무료이기에 신경쓸 필요가 없다.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>EC2용 <a href="https://aws.amazon.com/free/"target="_blank" rel="external nofollow noopener noreferrer">AWS 프리 티어</a>에는 2024년 2월 1일부터 처음 12개월 동안 매월 750시간의 퍼블릭 IPv4 주소 사용이 포함됩니다. - <a href="https://aws.amazon.com/ko/blogs/korea/new-aws-public-ipv4-address-charge-public-ip-insights/?_encoding=UTF8&amp;tag=clien0a-20&amp;linkCode=ur2&amp;linkId=4ef926e41eaa57b3dcfc48b2660f5024&amp;camp=1789&amp;creative=9325"target="_blank" rel="external nofollow noopener noreferrer">공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그</a> =&gt; 즉 하나의 EC2에서 하나의 IP 주소만 사용한다면 무료이기에 신경쓸 필요가 없다.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p><a href="https://inchan.dev/posts/202401122216/" target="_blank" rel="noopener noreffer ">AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 - inchan.dev</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://inchan.dev/posts/202401122216/"target="_blank" rel="external nofollow noopener noreferrer">AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 - inchan.dev</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4">
-<p>참고문서 : <a href="https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/tutorial-connect-ec2-instance-to-rds-database.html" target="_blank" rel="noopener noreffer ">자습서: Amazon RDS 데이터베이스에 Amazon EC2 인스턴스 연결 - Amazon Elastic Compute Cloud</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>참고문서 : <a href="https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/tutorial-connect-ec2-instance-to-rds-database.html"target="_blank" rel="external nofollow noopener noreferrer">자습서: Amazon RDS 데이터베이스에 Amazon EC2 인스턴스 연결 - Amazon Elastic Compute Cloud</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
 </div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2024-03-05</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2024-03-05 13:35:51">Updated on 2024-03-05&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
         </div>
-    </div>
+      </div></div>
 
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/aws/">AWS</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/posts/202403051214/" class="prev" rel="prev" title="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</a>
-            <a href="/posts/202403090724/" class="next" rel="next" title="브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법">브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/aws/" class="post-tag" title="Tags - AWS">AWS</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/202403051214/" class="post-nav-item" rel="prev" title="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</a>
+      <a href="/posts/202403090724/" class="post-nav-item" rel="next" title="브라우저에서 ChatGPT 프롬프트 입력창이 먹통일때 해결방법">브라우저에서 ChatGPT 프롬프트 입력창이 먹통일때 해결방법<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-<div id="comments"><div id="utterances" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
-        </div>
-    </footer></div>
+</article>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.135.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.12-456db385">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">inchan</a></span><span class="license footer-divider">CC BY-NC-SA 4.0</span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><a href="https://github.com/inchanS" title="View source on GitHub"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true" width="56" height="56"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;--progress-h: 5px;--bg-progress: rgba(0, 0, 255, 1);--bg-progress-dark: rgba(255, 165, 0, 1);"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"duration":-1,"loop":false,"speed":100},"version":"v0.3.12-456db385"};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
 </html>

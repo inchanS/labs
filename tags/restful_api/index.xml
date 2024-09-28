@@ -1,29 +1,30 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>RESTful_API - Tag - inchan.dev</title>
-        <link>https://inchan.dev/tags/restful_api/</link>
-        <description>RESTful_API - Tag - inchan.dev</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/restful_api/" rel="self" type="application/rss+xml" /><item>
-    <title>Swagger를 이용한 백엔드의 효과적인 API명세 전달</title>
-    <link>https://inchan.dev/posts/202303080503/</link>
-    <pubDate>Wed, 08 Mar 2023 05:14:43 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202303080503/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2670&amp;q=80" referrerpolicy="no-referrer">
-            </div>사진출처: unsplash
-백엔드가 효과적인 명세 전달 고민 Failure 그동안 진행했던 프로젝트에서 제대로 된 API 명세를 적시에 프론트측에 전달하지 못했고,
-때문에 최종 출시를 앞두고 서로간의 코드 오류를 잡느라 시간적 비용이 꽤나 낭비됐다. 간단하게는 Request Body 값의 TYPE과 관련된 소통 혼선으로 겪었던 헤프닝도 더러 있었다. 어떻게 하면 좋을까? 우선은 백엔드의 입장에서 생각해본다.
-명세는 코드가 만들어지면서 늘 수정될 수 있다. 때문에 명세는 코드와 함께 작업되어야 하고, API 테스트를 위해 즉각적으로 수정되어야 한다. 같은 백엔드 팀의 경우에는 직접 코드를 보기에 명세의 부족함을 보완할 수는 있다.]]></description>
-</item>
-<item>
-    <title>status code 204</title>
-    <link>https://inchan.dev/posts/202212250509/</link>
-    <pubDate>Sun, 25 Dec 2022 05:09:42 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202212250509/</guid>
-    <description><![CDATA[덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실! statusCode 204는 response를 전송하지 않는다!! 다만 status code &ldquo;204&rdquo; 만 전달할 뿐. 이걸 몰라서 코드의 오류인줄 알고 한참을 헤맸다. status code를 200으로 바꿨더니 다시 원래대로 response가 전송되었다. status code 문서의 개요만 어설프게 보고서는, 삭제니까 no content인 204가 맞겠지 하고 내 멋대로 이해한 실수였다. 204에서 다시 200으로 처리한 이유는, 삭제된 이후의 덧글 리스트와 페이지네이션 위치를 json으로 전달해야할 필요성이 있어서였다.]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RESTful_API - Tag - inchan.dev</title>
+    <link>http://inchan.dev/tags/restful_api/</link>
+    <description>inchan.dev</description>
+    <generator>Hugo 0.135.0 &amp; FixIt v0.3.12-456db385</generator>
+    <language>en</language>
+    <managingEditor>song@inchan.dev (inchan)</managingEditor>
+    <webMaster>song@inchan.dev (inchan)</webMaster>
+    <lastBuildDate>Wed, 08 Mar 2023 05:14:43 +0900</lastBuildDate>
+    <atom:link href="http://inchan.dev/tags/restful_api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swagger를 이용한 백엔드의 효과적인 API명세 전달</title>
+      <link>http://inchan.dev/posts/202303080503/</link>
+      <pubDate>Wed, 08 Mar 2023 05:14:43 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202303080503/</guid>
+      <category domain="http://inchan.dev/categories/back-end/">Back-End</category>
+      <description>&lt;p&gt;사진출처: &lt;a href=&#34;https://unsplash.com/ko/%ec%82%ac%ec%a7%84/2FPjlAyMQTA&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;unsplash&lt;/a&gt;&lt;br&gt;&#xA; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;h2 id=&#34;백엔드가-효과적인-명세-전달-고민&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;백엔드가 효과적인 명세 전달 고민&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%b0%b1%ec%97%94%eb%93%9c%ea%b0%80-%ed%9a%a8%ea%b3%bc%ec%a0%81%ec%9d%b8-%eb%aa%85%ec%84%b8-%ec%a0%84%eb%8b%ac-%ea%b3%a0%eb%af%bc&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>status code 204</title>
+      <link>http://inchan.dev/posts/202212250509/</link>
+      <pubDate>Sun, 25 Dec 2022 05:09:42 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202212250509/</guid>
+      <category domain="http://inchan.dev/categories/back-end/">Back-End</category>
+      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;덧글 삭제 API 관련 코드 리팩토링 중,&#xA;status code를 맞추다가 알게 된 사실!&#xA; &lt;/p&gt;&#xA;&lt;p&gt;statusCode 204는&#xA;response를 전송하지 않는다!!&#xA;다만 &lt;strong&gt;status code &amp;ldquo;204&amp;rdquo;&lt;/strong&gt; 만 전달할 뿐.&#xA; &lt;/p&gt;&#xA;&lt;p&gt;이걸 몰라서 코드의 오류인줄 알고 한참을 헤맸다.&#xA;status code를 200으로 바꿨더니 다시 원래대로 response가 전송되었다.&#xA; &lt;/p&gt;&#xA;&lt;p&gt;status code 문서의 개요만 어설프게 보고서는, 삭제니까 no content인 204가 맞겠지 하고 내 멋대로 이해한 실수였다.&#xA;204에서 다시 200으로 처리한 이유는,&#xA;삭제된 이후의 덧글 리스트와 페이지네이션 위치를 json으로 전달해야할 필요성이 있어서였다.&#xA; &lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

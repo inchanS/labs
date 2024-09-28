@@ -1,16 +1,22 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Html - Tag - inchan.dev</title>
-        <link>https://inchan.dev/tags/html/</link>
-        <description>Html - Tag - inchan.dev</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Tue, 04 Oct 2022 05:15:23 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/html/" rel="self" type="application/rss+xml" /><item>
-    <title>인스타그램 로그인 화면 구성</title>
-    <link>https://inchan.dev/posts/202210040515/</link>
-    <pubDate>Tue, 04 Oct 2022 05:15:23 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202210040515/</guid>
-    <description><![CDATA[justgram - UI 만들기 Mission 1 - 로그인 페이지 레이아웃 처음 HTML 파일을 작성할때, display : flex; 를 쓰지 않았다. 결과는 원하는대로 나왔지만 나의 첫 코드는 쓸데없이 수많은 &lt;div&gt;와 &lt;p&gt;태그로 범벅이 됐다. HTML 초기버전 &lt;div class=&#34;wrapLoginBox&#34;&gt; &lt;div class=&#34;loginBox&#34;&gt; &lt;p id=&#34;title&#34;&gt;justgram&lt;/p&gt; &lt;div class=&#34;inputBox&#34;&gt; &lt;p&gt; &lt;input id=&#34;userInput&#34; type=&#34;text&#34; placeholder=&#34;전화번호, 사용자 이름 또는 이메일&#34;/&gt; &lt;/p&gt; &lt;p&gt; &lt;input id=&#34;pwInput&#34; type=&#34;password&#34; placeholder=&#34;비밀번호&#34; /&gt; &lt;/p&gt; &lt;p&gt;&lt;button class=&#34;loginBtn&#34; disabled&gt;로그인&lt;/button&gt;&lt;/p&gt; &lt;/div&gt; &lt;div class=&#34;foot&#34;&gt; &lt;a href=&#34;https://www.instagram.com/accounts/password/reset/&#34;&gt;비밀번호를 잊으셨나요?&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; 위 코드가 처음 아무 생각없이 짠 HTML이다.]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Html - Tag - inchan.dev</title>
+    <link>http://inchan.dev/tags/html/</link>
+    <description>inchan.dev</description>
+    <generator>Hugo 0.135.0 &amp; FixIt v0.3.12-456db385</generator>
+    <language>en</language>
+    <managingEditor>song@inchan.dev (inchan)</managingEditor>
+    <webMaster>song@inchan.dev (inchan)</webMaster>
+    <lastBuildDate>Tue, 04 Oct 2022 05:15:23 +0900</lastBuildDate>
+    <atom:link href="http://inchan.dev/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>인스타그램 로그인 화면 구성</title>
+      <link>http://inchan.dev/posts/202210040515/</link>
+      <pubDate>Tue, 04 Oct 2022 05:15:23 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202210040515/</guid>
+      <category domain="http://inchan.dev/categories/front-end/">Front-End</category>
+      <description>&lt;h1 id=&#34;justgram---ui-만들기&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;justgram - UI 만들기&lt;/span&gt;&#xA;  &lt;a href=&#34;#justgram---ui-%eb%a7%8c%eb%93%a4%ea%b8%b0&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&lt;h2 id=&#34;mission-1---로그인-페이지-레이아웃&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;Mission 1 - 로그인 페이지 레이아웃&lt;/span&gt;&#xA;  &lt;a href=&#34;#mission-1---%eb%a1%9c%ea%b7%b8%ec%9d%b8-%ed%8e%98%ec%9d%b4%ec%a7%80-%eb%a0%88%ec%9d%b4%ec%95%84%ec%9b%83&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;처음 HTML 파일을 작성할때, &lt;code&gt;display : flex;&lt;/code&gt; 를 쓰지 않았다.&#xA;결과는 원하는대로 나왔지만 나의 첫 코드는 쓸데없이 수많은 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;와 &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;태그로 범벅이 됐다.&#xA; &lt;br&gt;&#xA; &lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

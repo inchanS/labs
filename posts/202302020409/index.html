@@ -1,134 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기" />
-<meta property="og:description" content="&lt;사진: unsplash&gt;
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>WebStorm - Console.log(변수) 자동완성 라이브 템플릿 만들기 - inchan.dev</title><meta name="author" content="inchan">
+<meta name="description" content="&lt;사진: unsplash&gt;
+ 
+ 
 JavaScript로 코딩을 하다보면 적잖이 console.log()를 사용하게 된다.
+ 
 보통 나는 간단하게 현재 흐름상 위치를 잡거나 객체를 확인할 때 자주 쓰는데,
 많은 글자는 아니지만 그래도 같은걸 계속해서 타이핑하는게 귀찮아서 만들었다.
+ 
 축약어는 console.log의 앞글자를 따서 cl로 단축 명령어를 만들었고,
-cl 단축어 입력 후 tab을 누르면 해당 WebStorm의 live template이 실행된다. 간단하게 다음과 같은 역할을 수행된다.
-console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 커서 위치 이동 변수명을 쓰면 따옴표 안에 동일한 변수가 들어가도록 설정 즉 console." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://inchan.dev/posts/202302020409/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-02-02T04:09:55+09:00" />
-<meta property="article:modified_time" content="2023-02-02T04:09:55+09:00" /><meta property="og:site_name" content="inchan.dev" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기"/>
-<meta name="twitter:description" content="&lt;사진: unsplash&gt;
-JavaScript로 코딩을 하다보면 적잖이 console.log()를 사용하게 된다.
-보통 나는 간단하게 현재 흐름상 위치를 잡거나 객체를 확인할 때 자주 쓰는데,
-많은 글자는 아니지만 그래도 같은걸 계속해서 타이핑하는게 귀찮아서 만들었다.
-축약어는 console.log의 앞글자를 따서 cl로 단축 명령어를 만들었고,
-cl 단축어 입력 후 tab을 누르면 해당 WebStorm의 live template이 실행된다. 간단하게 다음과 같은 역할을 수행된다.
-console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 커서 위치 이동 변수명을 쓰면 따옴표 안에 동일한 변수가 들어가도록 설정 즉 console."/>
-      <meta name="twitter:site" content="@codject"/>
-<meta name="application-name" content="inchan.dev">
-<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202302020409/" /><link rel="prev" href="https://inchan.dev/posts/202301280423/" /><link rel="next" href="https://inchan.dev/posts/202302020410/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/inchan.dev\/posts\/202302020409\/"
-        },"genre": "posts","keywords": "webstorm","wordcount":  340 ,
-        "url": "https:\/\/inchan.dev\/posts\/202302020409\/","datePublished": "2023-02-02T04:09:55+09:00","dateModified": "2023-02-02T04:09:55+09:00","publisher": {
-            "@type": "Organization",
-            "name": "inchan"},"author": {
-                "@type": "Person",
-                "name": "inchan"
-            },"description": ""
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+cl 단축어 입력 후 tab을 누르면 해당 WebStorm의 live template이 실행된다.
+ 
+간단하게 다음과 같은 역할을 수행된다.
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+console.log()를 입력
+괄호 안에 변수명을 타이핑할 수 있도록 커서 위치 이동
+변수명을 쓰면 따옴표 안에 동일한 변수가 들어가도록 설정
+
+ "><meta name="keywords" content='webstorm'>
+  <meta itemprop="name" content="WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기">
+  <meta itemprop="description" content="&lt;사진: unsplash&gt;
+JavaScript로 코딩을 하다보면 적잖이 console.log()를 사용하게 된다.
+보통 나는 간단하게 현재 흐름상 위치를 잡거나 객체를 확인할 때 자주 쓰는데,
+많은 글자는 아니지만 그래도 같은걸 계속해서 타이핑하는게 귀찮아서 만들었다.
+축약어는 console.log의 앞글자를 따서 cl로 단축 명령어를 만들었고,
+cl 단축어 입력 후 tab을 누르면 해당 WebStorm의 live template이 실행된다. 간단하게 다음과 같은 역할을 수행된다.
+console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 커서 위치 이동 변수명을 쓰면 따옴표 안에 동일한 변수가 들어가도록 설정 ">
+  <meta itemprop="datePublished" content="2023-02-02T04:09:55+09:00">
+  <meta itemprop="dateModified" content="2023-02-02T04:09:55+09:00">
+  <meta itemprop="wordCount" content="344">
+  <meta itemprop="keywords" content="Webstorm"><meta property="og:url" content="http://inchan.dev/posts/202302020409/">
+  <meta property="og:site_name" content="inchan.dev">
+  <meta property="og:title" content="WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기">
+  <meta property="og:description" content="&lt;사진: unsplash&gt;
+JavaScript로 코딩을 하다보면 적잖이 console.log()를 사용하게 된다.
+보통 나는 간단하게 현재 흐름상 위치를 잡거나 객체를 확인할 때 자주 쓰는데,
+많은 글자는 아니지만 그래도 같은걸 계속해서 타이핑하는게 귀찮아서 만들었다.
+축약어는 console.log의 앞글자를 따서 cl로 단축 명령어를 만들었고,
+cl 단축어 입력 후 tab을 누르면 해당 WebStorm의 live template이 실행된다. 간단하게 다음과 같은 역할을 수행된다.
+console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 커서 위치 이동 변수명을 쓰면 따옴표 안에 동일한 변수가 들어가도록 설정 ">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-02-02T04:09:55+09:00">
+    <meta property="article:modified_time" content="2023-02-02T04:09:55+09:00">
+    <meta property="article:tag" content="Webstorm">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기">
+  <meta name="twitter:description" content="&lt;사진: unsplash&gt;
+JavaScript로 코딩을 하다보면 적잖이 console.log()를 사용하게 된다.
+보통 나는 간단하게 현재 흐름상 위치를 잡거나 객체를 확인할 때 자주 쓰는데,
+많은 글자는 아니지만 그래도 같은걸 계속해서 타이핑하는게 귀찮아서 만들었다.
+축약어는 console.log의 앞글자를 따서 cl로 단축 명령어를 만들었고,
+cl 단축어 입력 후 tab을 누르면 해당 WebStorm의 live template이 실행된다. 간단하게 다음과 같은 역할을 수행된다.
+console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 커서 위치 이동 변수명을 쓰면 따옴표 안에 동일한 변수가 들어가도록 설정 ">
+      <meta name="twitter:site" content="@cOdject">
+<meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
+<meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://inchan.dev/posts/202302020409/" title="WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기 - inchan.dev" /><link rel="prev" type="text/html" href="http://inchan.dev/posts/202301280423/" title="typescript - any와 unknown의 차이" /><link rel="next" type="text/html" href="http://inchan.dev/posts/202302020410/" title="devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/inchan.dev\/posts\/202302020409\/"
+    },"genre": "posts","keywords": "webstorm","wordcount":  344 ,
+    "url": "http:\/\/inchan.dev\/posts\/202302020409\/","datePublished": "2023-02-02T04:09:55+09:00","dateModified": "2023-02-02T04:09:55+09:00","publisher": {
+      "@type": "Organization",
+      "name": "inchan"},"author": {
+        "@type": "Person",
+        "name": "inchan"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
     <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
-        </div>
+      <div class="header-title">
+        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
 </header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/env/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Env</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-02">2023-02-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;340 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
-        </div><div class="featured-image"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
-        data-srcset="https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300, https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300 1.5x, https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300 2x"
-        data-sizes="auto"
-        alt="https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300"
-        title="https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" /></div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>WebStorm - Console.log(변수) 자동완성 라이브 템플릿 만들기</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/env/" class="post-category" title="Category - Env"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Env</a></span></div><div class="post-meta-line"><span title="published on 2023-02-02 04:09:55"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-02-02">2023-02-02</time></span>&nbsp;<span title="344 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>2 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="WebStorm - Console.log(변수) 자동완성 라이브 템플릿 만들기"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+          </span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="lazy" src="https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" alt="https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" data-title="https://images.unsplash.com/photo-1639507986194-48ef61205b61?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amV0YnJhaW5zfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -148,7 +226,7 @@ console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 �
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>&lt;사진: <a href="http://unsplash.com" target="_blank" rel="noopener noreffer ">unsplash</a>&gt;</p>
+      </div><div class="content" id="content"><p>&lt;사진: <a href="http://unsplash.com"target="_blank" rel="external nofollow noopener noreferrer">unsplash</a>&gt;</p>
 <p> <br>
  </p>
 <p>JavaScript로 코딩을 하다보면 적잖이 <code>console.log()</code>를 사용하게 된다.<br>
@@ -160,25 +238,37 @@ console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 �
 <code>cl</code> 단축어 입력 후 <code>tab</code>을 누르면 해당 WebStorm의 <strong>live template</strong>이 실행된다.
  </p>
 <p>간단하게 다음과 같은 역할을 수행된다.</p>
-<blockquote>
-<ol>
+<blockquote><ol>
 <li><code>console.log()</code>를 입력</li>
 <li>괄호 안에 변수명을 타이핑할 수 있도록 커서 위치 이동</li>
 <li>변수명을 쓰면 따옴표 안에 동일한 변수가 들어가도록 설정</li>
 </ol>
-</blockquote>
-<p> </p>
+</blockquote><p> </p>
 <p>즉  <code>console.log(&quot;변수 = &quot;, 변수)</code> 이러한 결과물을 만들어내고<br>
 터미널에는 아래와 같이 출력된다.(version 1)<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">변수</span> <span class="o">=</span> <span class="m">123</span>
-</span></span></code></pre></div><p> </p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">변수</span> <span class="o">=</span> <span class="m">123</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>변수명을 타이핑한 후 <strong>tab키를 한번 더</strong> 누르면 따옴표 안의 왼쪽 설명쪽 변수로 <strong>커서가 이동한다.</strong><br>
 그럼 상황에 맞게<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;변수의 위치는 service.ts의 signUp 함수 중&#39; = &#34;</span><span class="p">,</span> <span class="nx">변수</span><span class="p">)</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;변수의 위치는 service.ts의 signUp 함수 중&#39; = &#34;</span><span class="p">,</span> <span class="nx">변수</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">                <span class="o">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span> <span class="c1">// 추가설명 입력
-</span></span></span></code></pre></div><p> </p>
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>뭐 이런식의 추가입력으로 사용할 수 있다.
  </p>
 <p>만약 위에서 언급된 추가입력 부분을 자주 쓴다면 이 역시 WebStorm의 기능으로 템플릿 처리할 수가 있다.(version 2)
@@ -188,38 +278,32 @@ console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 �
 <p>그런데 어차피 몇 글자만 넣어도 자동으로 나머지 변수명이 팝업으로 뜨는 IDE 특성상,<br>
 그냥 입력하는게 더 편해서 다시 간단하게 만들었고 써보니 너무 편하다.<br>
  </p>
-<h3 id="결과물-예시">결과물 예시</h3>
-<h4 id="version-1">version 1</h4>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/MYYPGxD.gif"
-        data-srcset="https://i.imgur.com/MYYPGxD.gif, https://i.imgur.com/MYYPGxD.gif 1.5x, https://i.imgur.com/MYYPGxD.gif 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/MYYPGxD.gif"
-        title="https://i.imgur.com/MYYPGxD.gif" /><br>
+<h3 id="결과물-예시" class="heading-element"><span>결과물 예시</span>
+  <a href="#%ea%b2%b0%ea%b3%bc%eb%ac%bc-%ec%98%88%ec%8b%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 id="version-1" class="heading-element"><span>version 1</span>
+  <a href="#version-1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p><a class="lightgallery" href="https://i.imgur.com/MYYPGxD.gif?size=large" data-thumbnail="https://i.imgur.com/MYYPGxD.gif?size=small" data-sub-html="<h2>https://i.imgur.com/MYYPGxD.gif</h2>"><img loading="lazy" src="https://i.imgur.com/MYYPGxD.gif" alt="https://i.imgur.com/MYYPGxD.gif" srcset="https://i.imgur.com/MYYPGxD.gif?size=small, https://i.imgur.com/MYYPGxD.gif?size=medium 1.5x, https://i.imgur.com/MYYPGxD.gif?size=large 2x" data-title="https://i.imgur.com/MYYPGxD.gif" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><br>
  </p>
-<h4 id="version-2">version 2</h4>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/Yz5UIYv.gif"
-        data-srcset="https://i.imgur.com/Yz5UIYv.gif, https://i.imgur.com/Yz5UIYv.gif 1.5x, https://i.imgur.com/Yz5UIYv.gif 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/Yz5UIYv.gif"
-        title="https://i.imgur.com/Yz5UIYv.gif" />
+<h4 id="version-2" class="heading-element"><span>version 2</span>
+  <a href="#version-2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p><a class="lightgallery" href="https://i.imgur.com/Yz5UIYv.gif?size=large" data-thumbnail="https://i.imgur.com/Yz5UIYv.gif?size=small" data-sub-html="<h2>https://i.imgur.com/Yz5UIYv.gif</h2>"><img loading="lazy" src="https://i.imgur.com/Yz5UIYv.gif" alt="https://i.imgur.com/Yz5UIYv.gif" srcset="https://i.imgur.com/Yz5UIYv.gif?size=small, https://i.imgur.com/Yz5UIYv.gif?size=medium 1.5x, https://i.imgur.com/Yz5UIYv.gif?size=large 2x" data-title="https://i.imgur.com/Yz5UIYv.gif" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
  </p>
 <hr>
-<h2 id="webstrom-live-templates-추가-방법">WebStrom Live Templates 추가 방법</h2>
-<h3 id="consolelog-version-1">console.log Version 1</h3>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/TrrGPlX.png"
-        data-srcset="https://i.imgur.com/TrrGPlX.png, https://i.imgur.com/TrrGPlX.png 1.5x, https://i.imgur.com/TrrGPlX.png 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/TrrGPlX.png"
-        title="https://i.imgur.com/TrrGPlX.png" /><br>
+<h2 id="webstrom-live-templates-추가-방법" class="heading-element"><span>WebStrom Live Templates 추가 방법</span>
+  <a href="#webstrom-live-templates-%ec%b6%94%ea%b0%80-%eb%b0%a9%eb%b2%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="consolelog-version-1" class="heading-element"><span>console.log Version 1</span>
+  <a href="#consolelog-version-1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><a class="lightgallery" href="https://i.imgur.com/TrrGPlX.png?size=large" data-thumbnail="https://i.imgur.com/TrrGPlX.png?size=small" data-sub-html="<h2>https://i.imgur.com/TrrGPlX.png</h2>"><img loading="lazy" src="https://i.imgur.com/TrrGPlX.png" alt="https://i.imgur.com/TrrGPlX.png" srcset="https://i.imgur.com/TrrGPlX.png?size=small, https://i.imgur.com/TrrGPlX.png?size=medium 1.5x, https://i.imgur.com/TrrGPlX.png?size=large 2x" data-title="https://i.imgur.com/TrrGPlX.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><br>
  </p>
 <p>우선 WebStorm / Settings&hellip; (환경설정)에 진입한다.<br>
 그리고 메뉴 중 Live Templates 선택 (스샷 1번)<br>
@@ -229,14 +313,7 @@ console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 �
 그리고 스샷의 붉은 박스안과 같이 입력한다.  (selector, variable과 같은 변수명은 아무거나 다른걸로 써도 무방) <br>
 이후, 스샷3번의 Edit Variables&hellip;를 클릭하면 아래와 같은 화면이 나타난다.<br>
  <br>
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/CihCD0X.png"
-        data-srcset="https://i.imgur.com/CihCD0X.png, https://i.imgur.com/CihCD0X.png 1.5x, https://i.imgur.com/CihCD0X.png 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/CihCD0X.png"
-        title="https://i.imgur.com/CihCD0X.png" /><br>
+<a class="lightgallery" href="https://i.imgur.com/CihCD0X.png?size=large" data-thumbnail="https://i.imgur.com/CihCD0X.png?size=small" data-sub-html="<h2>https://i.imgur.com/CihCD0X.png</h2>"><img loading="lazy" src="https://i.imgur.com/CihCD0X.png" alt="https://i.imgur.com/CihCD0X.png" srcset="https://i.imgur.com/CihCD0X.png?size=small, https://i.imgur.com/CihCD0X.png?size=medium 1.5x, https://i.imgur.com/CihCD0X.png?size=large 2x" data-title="https://i.imgur.com/CihCD0X.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><br>
  </p>
 <p>여기서 변수의 순서를 설정할 수 있는데, 이는 live template 실행 후 커서의 이동 순서를 나타낸다.<br>
 두번째 변수인 <code>selector</code>안에는 첫번째 변수의 내용이 그대로 들어감으로 첫번째 변수명을 써주면 복사효과(?)처럼 사용된다.<br>
@@ -244,74 +321,69 @@ console.log()를 입력 괄호 안에 변수명을 타이핑할 수 있도록 �
 <p>끝으로 스샷 5번 자리를 보면 아마 처음에 <code>define...</code> 와 같은 이름으로 되어있다.
 클릭시 아래와 같은 창이 뜨는데, 이 단축어를 실행할 파일 종류를 선택할 수 있다.<br>
  <br>
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/253tSrQ.png"
-        data-srcset="https://i.imgur.com/253tSrQ.png, https://i.imgur.com/253tSrQ.png 1.5x, https://i.imgur.com/253tSrQ.png 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/253tSrQ.png"
-        title="https://i.imgur.com/253tSrQ.png" />
+<a class="lightgallery" href="https://i.imgur.com/253tSrQ.png?size=large" data-thumbnail="https://i.imgur.com/253tSrQ.png?size=small" data-sub-html="<h2>https://i.imgur.com/253tSrQ.png</h2>"><img loading="lazy" src="https://i.imgur.com/253tSrQ.png" alt="https://i.imgur.com/253tSrQ.png" srcset="https://i.imgur.com/253tSrQ.png?size=small, https://i.imgur.com/253tSrQ.png?size=medium 1.5x, https://i.imgur.com/253tSrQ.png?size=large 2x" data-title="https://i.imgur.com/253tSrQ.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
  </p>
 <p>console.log니까 javascript/typescript를 선택해주면 된다.<br>
  </p>
 <hr>
-<h3 id="consolelog-version-2">console.log Version 2</h3>
-<p>서두에 언급했던 변수의 설명부분을 템플릿화 하고 싶다면 아래와 같이 진행.<br>
+<h3 id="consolelog-version-2" class="heading-element"><span>console.log Version 2</span>
+  <a href="#consolelog-version-2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>서두에 언급했던 변수의 설명부분을 템플릿화 하고 싶다면 아래와 같이 진행.<br>
  </p>
 <p>settings의 live templates에서 template test 박스안에 아래와 같이 입력<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;🔥🔥$FILE$/$FUNCTION$ :$LINE$ - $SELECTOR$ = &#39;</span><span class="p">,</span> <span class="nx">$VARIABLE$</span><span class="p">)</span>
-</span></span></code></pre></div><p> </p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/uL1tvjM.png"
-        data-srcset="https://i.imgur.com/uL1tvjM.png, https://i.imgur.com/uL1tvjM.png 1.5x, https://i.imgur.com/uL1tvjM.png 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/uL1tvjM.png"
-        title="https://i.imgur.com/uL1tvjM.png" />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;🔥🔥$FILE$/$FUNCTION$ :$LINE$ - $SELECTOR$ = &#39;</span><span class="p">,</span> <span class="nx">$VARIABLE$</span><span class="p">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<p><a class="lightgallery" href="https://i.imgur.com/uL1tvjM.png?size=large" data-thumbnail="https://i.imgur.com/uL1tvjM.png?size=small" data-sub-html="<h2>https://i.imgur.com/uL1tvjM.png</h2>"><img loading="lazy" src="https://i.imgur.com/uL1tvjM.png" alt="https://i.imgur.com/uL1tvjM.png" srcset="https://i.imgur.com/uL1tvjM.png?size=small, https://i.imgur.com/uL1tvjM.png?size=medium 1.5x, https://i.imgur.com/uL1tvjM.png?size=large 2x" data-title="https://i.imgur.com/uL1tvjM.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
  </p>
 <p>그리고 위와 같이 변수를 설정한다.</p>
 </div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2023-02-02</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2023-02-02 04:09:55">Updated on 2023-02-02&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
         </div>
-    </div>
+      </div></div>
 
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/webstorm/">Webstorm</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/posts/202301280423/" class="prev" rel="prev" title="typescript - any와 unknown의 차이"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>typescript - any와 unknown의 차이</a>
-            <a href="/posts/202302020410/" class="next" rel="next" title="devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제">devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/webstorm/" class="post-tag" title="Tags - Webstorm">Webstorm</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/202301280423/" class="post-nav-item" rel="prev" title="Typescript - Any와 Unknown의 차이"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Typescript - Any와 Unknown의 차이</a>
+      <a href="/posts/202302020410/" class="post-nav-item" rel="next" title="Devonthink에서 Markdown으로 웹클리핑시 이미지 주소 문제">Devonthink에서 Markdown으로 웹클리핑시 이미지 주소 문제<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-<div id="comments"><div id="utterances" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
-        </div>
-    </footer></div>
+</article>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.135.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.12-456db385">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">inchan</a></span><span class="license footer-divider">CC BY-NC-SA 4.0</span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><a href="https://github.com/inchanS" title="View source on GitHub"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true" width="56" height="56"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;--progress-h: 5px;--bg-progress: rgba(0, 0, 255, 1);--bg-progress-dark: rgba(255, 165, 0, 1);"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"duration":-1,"loop":false,"speed":100},"version":"v0.3.12-456db385"};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
 </html>

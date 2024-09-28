@@ -1,115 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>error log - jest.spyOn()에서 재사용함수에 대한 모의 불가 - inchan.dev</title><meta name="Description" content="jest.spyOn() 사용중 모듈분리부터 OOP까지의 리팩토링 과정"><meta property="og:title" content="error log - jest.spyOn()에서 재사용함수에 대한 모의 불가" />
-<meta property="og:description" content="jest.spyOn() 사용중 모듈분리부터 OOP까지의 리팩토링 과정" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://inchan.dev/posts/202306291258/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-06-29T12:58:27+09:00" />
-<meta property="article:modified_time" content="2023-06-29T12:58:27+09:00" /><meta property="og:site_name" content="inchan.dev" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="error log - jest.spyOn()에서 재사용함수에 대한 모의 불가"/>
-<meta name="twitter:description" content="jest.spyOn() 사용중 모듈분리부터 OOP까지의 리팩토링 과정"/>
-      <meta name="twitter:site" content="@codject"/>
-<meta name="application-name" content="inchan.dev">
-<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202306291258/" /><link rel="prev" href="https://inchan.dev/posts/202306211131/" /><link rel="next" href="https://inchan.dev/posts/202401122216/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "error log - jest.spyOn()에서 재사용함수에 대한 모의 불가",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/inchan.dev\/posts\/202306291258\/"
-        },"genre": "posts","keywords": "project_review, Jest","wordcount":  1349 ,
-        "url": "https:\/\/inchan.dev\/posts\/202306291258\/","datePublished": "2023-06-29T12:58:27+09:00","dateModified": "2023-06-29T12:58:27+09:00","publisher": {
-            "@type": "Organization",
-            "name": "inchan"},"author": {
-                "@type": "Person",
-                "name": "inchan"
-            },"description": "jest.spyOn() 사용중 모듈분리부터 OOP까지의 리팩토링 과정"
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Error Log - Jest.spyOn()에서 재사용함수에 대한 모의 불가 - inchan.dev</title><meta name="author" content="inchan">
+<meta name="description" content="jest.spyOn() 사용중 모듈분리부터 OOP까지의 리팩토링 과정"><meta name="keywords" content='project_review, Jest'>
+  <meta itemprop="name" content="error log - jest.spyOn()에서 재사용함수에 대한 모의 불가">
+  <meta itemprop="description" content="jest.spyOn() 사용중 모듈분리부터 OOP까지의 리팩토링 과정">
+  <meta itemprop="datePublished" content="2023-06-29T12:58:27+09:00">
+  <meta itemprop="dateModified" content="2023-06-29T12:58:27+09:00">
+  <meta itemprop="wordCount" content="1584">
+  <meta itemprop="keywords" content="Project_review,Jest"><meta property="og:url" content="http://inchan.dev/posts/202306291258/">
+  <meta property="og:site_name" content="inchan.dev">
+  <meta property="og:title" content="error log - jest.spyOn()에서 재사용함수에 대한 모의 불가">
+  <meta property="og:description" content="jest.spyOn() 사용중 모듈분리부터 OOP까지의 리팩토링 과정">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-06-29T12:58:27+09:00">
+    <meta property="article:modified_time" content="2023-06-29T12:58:27+09:00">
+    <meta property="article:tag" content="Project_review">
+    <meta property="article:tag" content="Jest">
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="error log - jest.spyOn()에서 재사용함수에 대한 모의 불가">
+  <meta name="twitter:description" content="jest.spyOn() 사용중 모듈분리부터 OOP까지의 리팩토링 과정">
+      <meta name="twitter:site" content="@cOdject">
+<meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
+<meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://inchan.dev/posts/202306291258/" title="error log - jest.spyOn()에서 재사용함수에 대한 모의 불가 - inchan.dev" /><link rel="prev" type="text/html" href="http://inchan.dev/posts/202306211131/" title="Webina 참여 회고 - 원티드 주최 &#39;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&#39;" /><link rel="next" type="text/html" href="http://inchan.dev/posts/202401122216/" title="AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "error log - jest.spyOn()에서 재사용함수에 대한 모의 불가",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/inchan.dev\/posts\/202306291258\/"
+    },"genre": "posts","keywords": "project_review, Jest","wordcount":  1584 ,
+    "url": "http:\/\/inchan.dev\/posts\/202306291258\/","datePublished": "2023-06-29T12:58:27+09:00","dateModified": "2023-06-29T12:58:27+09:00","publisher": {
+      "@type": "Organization",
+      "name": "inchan"},"author": {
+        "@type": "Person",
+        "name": "inchan"
+      },"description": "jest.spyOn() 사용중 모듈분리부터 OOP까지의 리팩토링 과정"
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
     <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
-        </div>
+      <div class="header-title">
+        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
 </header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">error log - jest.spyOn()에서 재사용함수에 대한 모의 불가</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-06-29">2023-06-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1349 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Error Log - Jest.spyOn()에서 재사용함수에 대한 모의 불가</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/debugging/" class="post-category" title="Category - Debugging"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Debugging</a></span></div><div class="post-meta-line"><span title="published on 2023-06-29 12:58:27"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-29">2023-06-29</time></span>&nbsp;<span title="1584 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1600 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>8 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Error Log - Jest.spyOn()에서 재사용함수에 대한 모의 불가"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+          </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#상황">상황</a>
       <ul>
@@ -132,28 +195,86 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><hr>
+      </div><div class="content" id="content"><hr>
 <p> </p>
 <p>사용환경 : Node.Js, Express<br>
 언어 : typeScript<br>
 테스트 프레임워크 : Jest</p>
-<h2 id="상황">상황</h2>
-<div class="details admonition abstract open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-list-ul fa-fw" aria-hidden="true"></i>Abstract<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">같은 파일 (모듈) 내에 있는 함수의 재사용시,<br>
+<h2 id="상황" class="heading-element"><span>상황</span>
+  <a href="#%ec%83%81%ed%99%a9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><div class="details admonition abstract open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-list-ul fa-fw" aria-hidden="true"></i>Abstract<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">같은 파일 (모듈) 내에 있는 함수의 재사용시,<br>
 테스트 코드를 작성하는데 모의하기가 상당히 까다롭고 불편함.<br>
 특히 테스트 코드가 지나치게 지저분해짐</div>
-        </div>
     </div>
-<h4 id="userservicets-파일-내부"><strong><code>user.service.ts</code></strong> 파일 내부</h4>
-<p>다음은 <code>user.service.ts</code> 파일의 내부 코드 요약이다.</p>
+  </div>
+<h4 id="userservicets-파일-내부" class="heading-element"><span><strong><code>user.service.ts</code></strong> 파일 내부</span>
+  <a href="#userservicets-%ed%8c%8c%ec%9d%bc-%eb%82%b4%eb%b6%80" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>다음은 <code>user.service.ts</code> 파일의 내부 코드 요약이다.</p>
 <p>초점을 맞춰 볼 곳은,<br>
 <code>updateUserInfo</code> 함수 내부에서 <code>checkDuplicateEmail</code> 함수와 <code>checkDuplicateNickname</code> 함수가 재사용되고 있다.<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// ...
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// ...
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">checkDuplicateEmail</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span> <span class="nx">email</span>: <span class="kt">string</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -200,18 +321,19 @@
 </span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="k">await</span> <span class="nx">UserRepository</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span>  
 </span></span><span class="line"><span class="cl">	<span class="nx">where</span><span class="o">:</span> <span class="p">{</span> <span class="nx">id</span>: <span class="kt">userId</span> <span class="p">},</span>  
 </span></span><span class="line"><span class="cl">	<span class="p">});</span>  
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p><div class="details admonition question open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Question<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">즉, 내가 원하는 부분은 간단하게<br>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-question-circle fa-fw" aria-hidden="true"></i>Question<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">즉, 내가 원하는 부분은 간단하게<br>
 <code>checkDuplicateNickname</code> 함수만을 모의하여<br>
 <code>updateUserInfo</code> 함수내부에서 재사용된 <code>checkDuplicateNickname</code> 함수가 호출되었는지 아닌지만 확인하고 싶다.</div>
-        </div>
-    </div><br>
+    </div>
+  </div><br>
  </p>
 <p>그런데&hellip; 문제는<br>
 테스트하려는 함수 내에서 이렇게 재사용되는 함수는 모의할 수가 없다는 것이다 !!</p>
@@ -219,8 +341,36 @@
 원래의 함수가 아닌, 내부에 있는 재사용 함수는 모의가 되지 않기에<br>
 <strong>해당 함수의 내부에서 사용되는 메소드를 모두 모의해야하는 상황</strong>이 나타난다.<br>
  </p>
-<h4 id="userservicets-파일-내에-있는-checkduplicatenickname-함수"><code>user.service.ts</code> 파일 내에 있는 <strong><code>checkDuplicateNickname</code> 함수</strong></h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">checkDuplicateNickname</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">nickname</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">object</span><span class="p">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>  
+<h4 id="userservicets-파일-내에-있는-checkduplicatenickname-함수" class="heading-element"><span><code>user.service.ts</code> 파일 내에 있는 <strong><code>checkDuplicateNickname</code> 함수</strong></span>
+  <a href="#userservicets-%ed%8c%8c%ec%9d%bc-%eb%82%b4%ec%97%90-%ec%9e%88%eb%8a%94-checkduplicatenickname-%ed%95%a8%ec%88%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">checkDuplicateNickname</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">nickname</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">object</span><span class="p">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">nickname</span><span class="p">)</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">		<span class="kr">const</span> <span class="nx">error</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="sb">`NICKNAME_IS_UNDEFINED`</span><span class="p">);</span>  
 </span></span><span class="line"><span class="cl">		<span class="nx">error</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="mi">400</span><span class="p">;</span>  
@@ -240,10 +390,36 @@
 </span></span><span class="line"><span class="cl">		<span class="nx">err</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="mi">409</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl">		<span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>  
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div><p> </p>
-<h4 id="userservicets-파일-내에-있는-checkduplicatenickname-함수-1"><code>user.service.ts</code> 파일 내에 있는 <strong><code>checkDuplicateNickname</code> 함수</strong></h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">checkDuplicateEmail</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">email</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">object</span><span class="p">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<h4 id="userservicets-파일-내에-있는-checkduplicatenickname-함수-1" class="heading-element"><span><code>user.service.ts</code> 파일 내에 있는 <strong><code>checkDuplicateNickname</code> 함수</strong></span>
+  <a href="#userservicets-%ed%8c%8c%ec%9d%bc-%eb%82%b4%ec%97%90-%ec%9e%88%eb%8a%94-checkduplicatenickname-%ed%95%a8%ec%88%98-1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">checkDuplicateEmail</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">email</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">object</span><span class="p">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">email</span><span class="p">)</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">		<span class="kr">const</span> <span class="nx">error</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="sb">`EMAIL_IS_UNDEFINED`</span><span class="p">);</span>  
 </span></span><span class="line"><span class="cl">		<span class="nx">error</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="mi">400</span><span class="p">;</span>  
@@ -260,8 +436,9 @@
 </span></span><span class="line"><span class="cl">		<span class="nx">err</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="mi">409</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl">		<span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>  
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>위에서 언급된 재사용되는 <code>checkDuplicateNickname</code> 함수와 <code>checkDuplicateEmail</code> 함수의 내부를 살펴보면,<br>
 <code>User.findByEmail</code><br>
 <code>User.findByNickname</code><br>
@@ -270,8 +447,67 @@
 <p>하지만 이미 <code>checkDuplicateNickname</code>, <code>checkDuplicateEmail</code> 함수는 따로 유닛 테스트 코드가 작성되어있으므로 굳이 해당 함수 내부까지 모의하여 테스트코드를 작성할 필요는 없다.<br>
 하지만 현재의 상황에서는 해당 함수 내부까지 모의를 해야만 하는 상황으로 테스트코드가 상당히 지저분해진다.<br>
  </p>
-<h4 id="작성된-jest-테스트-코드">작성된 Jest 테스트 코드</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;updateUserInfo&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>  
+<h4 id="작성된-jest-테스트-코드" class="heading-element"><span>작성된 Jest 테스트 코드</span>
+  <a href="#%ec%9e%91%ec%84%b1%eb%90%9c-jest-%ed%85%8c%ec%8a%a4%ed%8a%b8-%ec%bd%94%eb%93%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;updateUserInfo&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">userId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl">	  
 </span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">originUserInfo</span> <span class="o">=</span> <span class="p">{</span>  
@@ -322,29 +558,43 @@
 </span></span><span class="line"><span class="cl">			<span class="nx">newUserInfo</span><span class="p">.</span><span class="nx">nickname</span>  
 </span></span><span class="line"><span class="cl">		<span class="p">);</span>  
 </span></span><span class="line"><span class="cl">	<span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span></code></pre></div><p> </p>
-<h2 id="과정">과정</h2>
-<p>여러번의 코드 수정을 해가며 테스트를 해본 결과,</p>
+</span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<h2 id="과정" class="heading-element"><span>과정</span>
+  <a href="#%ea%b3%bc%ec%a0%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>여러번의 코드 수정을 해가며 테스트를 해본 결과,</p>
 <p>동일 파일 내부에서의 함수를 재사용하는 상황에서 해당 함수를 모의 했을 때,<br>
 <strong>jest는 원래의 함수를 모의하고 추적하며</strong><br>
 <strong>재사용되는 함수 자체는 기능을 할지라도 그 함수를 모의하고 추적하는 것이 아니었다.</strong></p>
-<p>때문에 <a href="https://jestjs.io/docs/jest-object#jestspyonobject-methodname" target="_blank" rel="noopener noreffer ">jest.spyOn() 메소드</a>에 대해 다시 한번 제대로 살펴보았고, 다음은 그에 대한 나의 생각을 정리 기록이다.<br>
+<p>때문에 <a href="https://jestjs.io/docs/jest-object#jestspyonobject-methodname"target="_blank" rel="external nofollow noopener noreferrer">jest.spyOn() 메소드</a>에 대해 다시 한번 제대로 살펴보았고, 다음은 그에 대한 나의 생각을 정리 기록이다.<br>
  </p>
 <div class="details admonition note open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>jest.spyOn() 문법은 <strong>객체</strong>안의 <strong>메소드</strong>를 모의하고 추적한다.</p>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p>jest.spyOn() 문법은 <strong>객체</strong>안의 <strong>메소드</strong>를 모의하고 추적한다.</p>
 <p>여기서 중요한 부분은 &lsquo;객체안의 메소드&rsquo;라는 말이다.</p>
 <p><code>user.service.ts</code> 파일안의 함수들을</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="nx">function1</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="nx">function2</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="nx">function3</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>이런 식으로 내보내기 한다는 것은,<br>
 저 문법 그대로 <code>user.service.ts</code>라는 객체를 만들고 그 안에 함수들을 메소드화 시킨다는 의미가 된다.<br>
  </p>
@@ -379,13 +629,43 @@
 <p>즉 <code>user.service2.ts</code>라는 또다른 파일을 만들고 여기서 내보내기를 하면,
 <strong><code>jest.spyOn(userService2, 'function1')</code></strong> 이라는 객체안 메소드라는 문법이 완성된다.</p>
 </div>
-        </div>
     </div>
+  </div>
 <p> </p>
-<h2 id="해결방안">해결방안</h2>
-<h3 id="1-객체지향-프로그래밍으로-전환">1. 객체지향 프로그래밍으로 전환</h3>
-<p>다음과 같이 <code>user.service.ts</code> 파일의 함수들을 OOP로 리팩토링한다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserService</span> <span class="p">{</span>
+<h2 id="해결방안" class="heading-element"><span>해결방안</span>
+  <a href="#%ed%95%b4%ea%b2%b0%eb%b0%a9%ec%95%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="1-객체지향-프로그래밍으로-전환" class="heading-element"><span>1. 객체지향 프로그래밍으로 전환</span>
+  <a href="#1-%ea%b0%9d%ec%b2%b4%ec%a7%80%ed%96%a5-%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%b0%8d%ec%9c%bc%eb%a1%9c-%ec%a0%84%ed%99%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>다음과 같이 <code>user.service.ts</code> 파일의 함수들을 OOP로 리팩토링한다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserService</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">checkDuplicateEmail</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span> <span class="nx">email</span>: <span class="kt">string</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="p">...</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
@@ -404,18 +684,43 @@
 </span></span><span class="line"><span class="cl">		  
 </span></span><span class="line"><span class="cl">		<span class="p">...</span>
 </span></span><span class="line"><span class="cl">	<span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>이렇게 하면, 재사용 함수 역시 jest가 스코프하는 부분에서 동일한 함수명으로 사용되기 때문에 테스트 코드 작성시 아주 간단하게 해당 메소드만으로 모의가 가능해진다.<br>
  <br>
 이는 <code>this.checkDuplicateNickname</code> 함수가<br>
 <code>UserService</code> 객체 내에 있는 원 함수인 <code>checkDuplicateNickname</code> 그 자체이기 때문이다.</p>
 <p> </p>
-<h3 id="2-함수-모듈-분리">2. 함수 모듈 분리</h3>
-<p>앞서 언급한 OOP 방법과 기본 원리는 같다.<br>
+<h3 id="2-함수-모듈-분리" class="heading-element"><span>2. 함수 모듈 분리</span>
+  <a href="#2-%ed%95%a8%ec%88%98-%eb%aa%a8%eb%93%88-%eb%b6%84%eb%a6%ac" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>앞서 언급한 OOP 방법과 기본 원리는 같다.<br>
 재사용되는 함수를 다른 파일로 이동시킨 후,  해당 파일을 <code>import</code> 하여 사용하면 된다.</p>
 <p>이때의 <code>user.service.ts</code> 파일 내 <code>updateUserInfo</code> 함수에서의 재사용함수는 <code>validate.service.ts</code>라는 파일 내부로 이동시켰고 이에 따라  다음과 같이 코드를 작성할 수 있다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">validateService</span> <span class="kr">from</span> <span class="s1">&#39;./validate.service.ts&#39;</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">validateService</span> <span class="kr">from</span> <span class="s1">&#39;./validate.service.ts&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">updateUserInfo</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">userId</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">userInfo</span>: <span class="kt">UserDto</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">	<span class="c1">// 이전 코드...
@@ -431,11 +736,48 @@
 </span></span><span class="line"><span class="cl">	  
 </span></span><span class="line"><span class="cl">	<span class="c1">// ... 이후 코드...
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">});</span>  
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>그리고 테스트코드는 아래와 같이 가독성 좋게 바뀌고 성공적으로 테스팅도 보장되었다.<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;updateUserInfo&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>  
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;updateUserInfo&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl"><span class="c1">// 이전 코드...
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  
 </span></span><span class="line"><span class="cl"><span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>  
@@ -466,38 +808,71 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 테스트 성공!! 
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">expect</span><span class="p">(</span><span class="nx">usersService</span><span class="p">.</span><span class="nx">checkDuplicateNickname</span><span class="p">).</span><span class="nx">toHaveBeenCalled</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="nx">expect</span><span class="p">(</span><span class="nx">usersService</span><span class="p">.</span><span class="nx">checkDuplicateNickname</span><span class="p">).</span><span class="nx">toHaveBeenCalledWith</span><span class="p">(</span><span class="nx">newUserInfo</span><span class="p">.</span><span class="nx">nickname</span><span class="p">);</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="nx">expect</span><span class="p">(</span><span class="nx">usersService</span><span class="p">.</span><span class="nx">checkDuplicateNickname</span><span class="p">).</span><span class="nx">toHaveBeenCalledWith</span><span class="p">(</span><span class="nx">newUserInfo</span><span class="p">.</span><span class="nx">nickname</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p><div class="details admonition example">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-list-ol fa-fw" aria-hidden="true"></i>모듈분리로 인한 프로젝트 조직 변경 - 눌러서 보기 <i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>기존 조직 구성도</p>
-<pre tabindex="0"><code>├── services
-	├── categories.service.ts
-	├── comments.service.ts
-	├── feeds.service.ts
-	├── search.service.ts
-	├── symbol.service.ts
-	├── upload.service.ts
-	├── uploadFile.service.ts
-	└── users.service.ts
-</code></pre><p>변경된 조직 구성도</p>
-<pre tabindex="0"><code>├── services
-	├── categories.service.ts
-	├── comments.service.ts
-	├── feeds.service.ts
-	├── search.service.ts
-	├── symbol.service.ts
-	├── upload.service.ts
-	├── uploadFile.service.ts
-	└── users
-		├── auth.service.ts
-		├── user.service.ts
-		├── userContent.service.ts
-		└── validator.service.ts
-</code></pre><p>기존 user.service.ts 파일 내 함수들</p>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-list-ol fa-fw" aria-hidden="true"></i>모듈분리로 인한 프로젝트 조직 변경 - 눌러서 보기<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p>기존 조직 구성도</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="err">├──</span> <span class="n">services</span>
+</span></span><span class="line"><span class="cl">	<span class="err">├──</span> <span class="n">categories</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">	<span class="err">├──</span> <span class="n">comments</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">	<span class="err">├──</span> <span class="n">feeds</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">	<span class="err">├──</span> <span class="n">search</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">	<span class="err">├──</span> <span class="n">symbol</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">	<span class="err">├──</span> <span class="n">upload</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">	<span class="err">├──</span> <span class="n">uploadFile</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">	<span class="err">└──</span> <span class="n">users</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>변경된 조직 구성도</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="err">├──</span> <span class="n">services</span>
+</span></span><span class="line"><span class="cl">	<span class="err">├──</span> <span class="n">categories</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">	<span class="err">├──</span> <span class="n">comments</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">	<span class="err">├──</span> <span class="n">feeds</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">	<span class="err">├──</span> <span class="n">search</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">	<span class="err">├──</span> <span class="n">symbol</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">	<span class="err">├──</span> <span class="n">upload</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">	<span class="err">├──</span> <span class="n">uploadFile</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">	<span class="err">└──</span> <span class="n">users</span>
+</span></span><span class="line"><span class="cl">		<span class="err">├──</span> <span class="n">auth</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">		<span class="err">├──</span> <span class="n">user</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">		<span class="err">├──</span> <span class="n">userContent</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span>
+</span></span><span class="line"><span class="cl">		<span class="err">└──</span> <span class="n">validator</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">ts</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>기존 user.service.ts 파일 내 함수들</p>
 <ul>
 <li>checkDuplicateNickname - 재사용 함수</li>
 <li>checkDuplicateEmail - 재사용 함수</li>
@@ -548,50 +923,50 @@
 각 파일은 그에 해당하는 목적에만 집중하게 된다.<br>
 그리고 Jest를 사용하여 테스트 코드를 작성시, 각각의 서비스 파일이 보다 명확한 책임을 가지고 있기 때문에 테스트가 더 쉬워질 뿐더러 테스트 코드 작성 또한 매우 용이해진다.</p>
 </div>
-        </div>
-    </div><br>
+    </div>
+  </div><br>
  </p>
 <p>이에 따라 현재 2개의 git branch를 분기하여 1번 방법인 OOP와 2번의 파일 분리를 대략적으로 진행하여 테스트를 진행해 보았고,</p>
 <p>당연한 결과겠지만 아주 간단하게 test 코드가 작성되면서 성공적으로 테스팅이 이루어졌다.</p>
 </div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2023-06-29</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2023-06-29 12:58:27">Updated on 2023-06-29&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
         </div>
-    </div>
+      </div></div>
 
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/project_review/">Project_review</a>,&nbsp;<a href="/tags/jest/">Jest</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/posts/202306211131/" class="prev" rel="prev" title="Webina 참여 회고 - 원티드 주최 &#39;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&#39;"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Webina 참여 회고 - 원티드 주최 'ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?'</a>
-            <a href="/posts/202401122216/" class="next" rel="next" title="AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용">AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/project_review/" class="post-tag" title="Tags - Project_review">Project_review</a><a href="/tags/jest/" class="post-tag" title="Tags - Jest">Jest</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/202306211131/" class="post-nav-item" rel="prev" title="Webina 참여 회고 - 원티드 주최 &#39;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&#39;"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Webina 참여 회고 - 원티드 주최 &#39;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&#39;</a>
+      <a href="/posts/202401122216/" class="post-nav-item" rel="next" title="AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용">AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-<div id="comments"><div id="utterances" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
-        </div>
-    </footer></div>
+</article>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.135.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.12-456db385">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">inchan</a></span><span class="license footer-divider">CC BY-NC-SA 4.0</span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><a href="https://github.com/inchanS" title="View source on GitHub"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true" width="56" height="56"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;--progress-h: 5px;--bg-progress: rgba(0, 0, 255, 1);--bg-progress-dark: rgba(255, 165, 0, 1);"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"duration":-1,"loop":false,"speed":100},"version":"v0.3.12-456db385"};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
 </html>

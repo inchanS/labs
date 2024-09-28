@@ -1,128 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란" />
-<meta property="og:description" content="먼저 알아두기 mySQL - Date 필드의 타입 종류 mySQL에서 Date 필드의 타입 종류는 다음과 같다.
-DATE - 날짜만 TIME - 시간만 DATETIME - 시간대가 반영되지 않은 현재 서버 시간대의 날짜와 시간 데이터 TIMESTAMP - 시간대가 반영된 날짜와 시간 데이터 여기서 주의할 점은 TIMESTAMP 이다.
-이 데이터는 해당 서버의 시간대를 반영하기에 DB에 저장될 때에는 UTC(&#43;00:00) 시간대로 변환되어 저장된다.
-단, 조회시 세션 설정에 따른 시간대를 반영하여 해당 시간대로 변환된 데이터로 조회된다." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://inchan.dev/posts/202403010802/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-03-01T08:02:58+09:00" />
-<meta property="article:modified_time" content="2024-03-03T07:57:11+09:00" /><meta property="og:site_name" content="inchan.dev" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란"/>
-<meta name="twitter:description" content="먼저 알아두기 mySQL - Date 필드의 타입 종류 mySQL에서 Date 필드의 타입 종류는 다음과 같다.
-DATE - 날짜만 TIME - 시간만 DATETIME - 시간대가 반영되지 않은 현재 서버 시간대의 날짜와 시간 데이터 TIMESTAMP - 시간대가 반영된 날짜와 시간 데이터 여기서 주의할 점은 TIMESTAMP 이다.
-이 데이터는 해당 서버의 시간대를 반영하기에 DB에 저장될 때에는 UTC(&#43;00:00) 시간대로 변환되어 저장된다.
-단, 조회시 세션 설정에 따른 시간대를 반영하여 해당 시간대로 변환된 데이터로 조회된다."/>
-      <meta name="twitter:site" content="@codject"/>
-<meta name="application-name" content="inchan.dev">
-<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202403010802/" /><link rel="prev" href="https://inchan.dev/posts/202401311413/" /><link rel="next" href="https://inchan.dev/posts/202403051214/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/inchan.dev\/posts\/202403010802\/"
-        },"genre": "posts","keywords": "JavaScript, typeORM, mySQL, NodeJS","wordcount":  1552 ,
-        "url": "https:\/\/inchan.dev\/posts\/202403010802\/","datePublished": "2024-03-01T08:02:58+09:00","dateModified": "2024-03-03T07:57:11+09:00","publisher": {
-            "@type": "Organization",
-            "name": "inchan"},"author": {
-                "@type": "Person",
-                "name": "inchan"
-            },"description": ""
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란 - inchan.dev</title><meta name="author" content="inchan">
+<meta name="description" content=" 
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    
+      먼저 알아두기
+    
+    
+      mySQL - Date 필드의 타입 종류
+  
+    
+  
+mySQL에서 Date 필드의 타입 종류는 다음과 같다."><meta name="keywords" content='JavaScript, typeORM, mySQL, NodeJS'>
+  <meta itemprop="name" content="typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란">
+  <meta itemprop="description" content=" 먼저 알아두기 mySQL - Date 필드의 타입 종류 mySQL에서 Date 필드의 타입 종류는 다음과 같다.">
+  <meta itemprop="datePublished" content="2024-03-01T08:02:58+09:00">
+  <meta itemprop="dateModified" content="2024-03-03T07:57:11+09:00">
+  <meta itemprop="wordCount" content="1709">
+  <meta itemprop="keywords" content="JavaScript,TypeORM,MySQL,NodeJS"><meta property="og:url" content="http://inchan.dev/posts/202403010802/">
+  <meta property="og:site_name" content="inchan.dev">
+  <meta property="og:title" content="typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란">
+  <meta property="og:description" content=" 먼저 알아두기 mySQL - Date 필드의 타입 종류 mySQL에서 Date 필드의 타입 종류는 다음과 같다.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-03-01T08:02:58+09:00">
+    <meta property="article:modified_time" content="2024-03-03T07:57:11+09:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="TypeORM">
+    <meta property="article:tag" content="MySQL">
+    <meta property="article:tag" content="NodeJS">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란">
+  <meta name="twitter:description" content=" 먼저 알아두기 mySQL - Date 필드의 타입 종류 mySQL에서 Date 필드의 타입 종류는 다음과 같다.">
+      <meta name="twitter:site" content="@cOdject">
+<meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
+<meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://inchan.dev/posts/202403010802/" title="typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란 - inchan.dev" /><link rel="prev" type="text/html" href="http://inchan.dev/posts/202401311413/" title="프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기" /><link rel="next" type="text/html" href="http://inchan.dev/posts/202403051214/" title="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/inchan.dev\/posts\/202403010802\/"
+    },"genre": "posts","keywords": "JavaScript, typeORM, mySQL, NodeJS","wordcount":  1709 ,
+    "url": "http:\/\/inchan.dev\/posts\/202403010802\/","datePublished": "2024-03-01T08:02:58+09:00","dateModified": "2024-03-03T07:57:11+09:00","publisher": {
+      "@type": "Organization",
+      "name": "inchan"},"author": {
+        "@type": "Person",
+        "name": "inchan"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
     <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
-        </div>
+      <div class="header-title">
+        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
 </header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-01">2024-03-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1552 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;</div>
-        </div><div class="featured-image"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://images.unsplash.com/photo-1525562929550-63ef340cfe1d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        data-srcset="https://images.unsplash.com/photo-1525562929550-63ef340cfe1d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D, https://images.unsplash.com/photo-1525562929550-63ef340cfe1d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1.5x, https://images.unsplash.com/photo-1525562929550-63ef340cfe1d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 2x"
-        data-sizes="auto"
-        alt="https://images.unsplash.com/photo-1525562929550-63ef340cfe1d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        title="https://images.unsplash.com/photo-1525562929550-63ef340cfe1d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" /></div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/back-end/" class="post-category" title="Category - Back-End"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Back-End</a></span></div><div class="post-meta-line"><span title="published on 2024-03-01 08:02:58"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-01">2024-03-01</time></span>&nbsp;<span title="Updated on 2024-03-03 07:57:11"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-03">2024-03-03</time></span>&nbsp;<span title="1709 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>9 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+          </span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="lazy" src="https://images.unsplash.com/photo-1525562929550-63ef340cfe1d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="https://images.unsplash.com/photo-1525562929550-63ef340cfe1d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" data-title="https://images.unsplash.com/photo-1525562929550-63ef340cfe1d?q=80&amp;w=2748&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#typeorm의-datestrings와-timezone-옵션">typeORM의 dateStrings와 timezone 옵션</a>
       <ul>
@@ -130,7 +192,18 @@ DATE - 날짜만 TIME - 시간만 DATETIME - 시간대가 반영되지 않은 �
         <li><a href="#datestrings"><code>dateStrings</code></a></li>
         <li><a href="#timezone"><code>timezone</code></a>
           <ul>
-            <li><a href="#timezone에-대한-실험"><code>timezone</code>에 대한 실험</a></li>
+            <li><a href="#timezone에-대한-실험"><code>timezone</code>에 대한 실험</a>
+              <ul>
+                <li><a href="#timezone-z"><code>timezone: 'Z'</code></a>
+                  <ul>
+                    <li><a href="#실험">실험</a></li>
+                    <li><a href="#결과">결과</a></li>
+                  </ul>
+                </li>
+                <li><a href="#timezone--local"><code>timezone = '&lt;LOCAL&gt;'</code></a></li>
+                <li><a href="#timezone--z와-local의-차이점"><code>timezone = 'Z'와 '(LOCAL)'</code>의 차이점</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -152,14 +225,17 @@ DATE - 날짜만 TIME - 시간만 DATETIME - 시간대가 반영되지 않은 �
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p> </p>
+      </div><div class="content" id="content"><p> </p>
 <div class="details admonition info open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>먼저 알아두기<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><h3 id="mysql---date-필드의-타입-종류">mySQL - Date 필드의 타입 종류</h3>
-<p>mySQL에서 Date 필드의 타입 종류는 다음과 같다.</p>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-info-circle fa-fw" aria-hidden="true"></i>먼저 알아두기<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><h3 id="mysql---date-필드의-타입-종류" class="heading-element"><span>mySQL - Date 필드의 타입 종류</span>
+  <a href="#mysql---date-%ed%95%84%eb%93%9c%ec%9d%98-%ed%83%80%ec%9e%85-%ec%a2%85%eb%a5%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>mySQL에서 Date 필드의 타입 종류는 다음과 같다.</p>
 <ul>
 <li><code>DATE</code> - 날짜만</li>
 <li><code>TIME</code> - 시간만</li>
@@ -170,15 +246,24 @@ DATE - 날짜만 TIME - 시간만 DATETIME - 시간대가 반영되지 않은 �
 이 데이터는 해당 서버의 시간대를 반영하기에 DB에 저장될 때에는 UTC(+00:00) 시간대로 변환되어 저장된다.<br>
 단, 조회시 세션 설정에 따른 시간대를 반영하여 해당 시간대로 변환된 데이터로 조회된다.</p>
 </div>
-        </div>
     </div>
-<h2 id="typeorm의-datestrings와-timezone-옵션">typeORM의 dateStrings와 timezone 옵션</h2>
-<p>dateStrings와 timezone에 대한 개념을 확실하게 잡지 않은 상태에서 서비스를 운영해보니 굉장히 혼란스러웠다. 정확한 서버나 DB의 상태를 내가 통제하고 있지 않은 상태에서 일단 결과물은 내가 원하는대로 나오니까 그동안은 이게 전부이고 이게 맞다고 생각했었다. 하지만 코드를 하나만 바꾸어도 내가 전혀 의도치 않은 방향대로 결과물이 나오는 것을 보며 이는 곧 나의 코드가 다른 환경에서는 언제든지 내가 원치않는 결과를 낼 수 있음을 의미하기에 내심 찝찝했다.<br>
+  </div>
+<h2 id="typeorm의-datestrings와-timezone-옵션" class="heading-element"><span>typeORM의 dateStrings와 timezone 옵션</span>
+  <a href="#typeorm%ec%9d%98-datestrings%ec%99%80-timezone-%ec%98%b5%ec%85%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>dateStrings와 timezone에 대한 개념을 확실하게 잡지 않은 상태에서 서비스를 운영해보니 굉장히 혼란스러웠다. 정확한 서버나 DB의 상태를 내가 통제하고 있지 않은 상태에서 일단 결과물은 내가 원하는대로 나오니까 그동안은 이게 전부이고 이게 맞다고 생각했었다. 하지만 코드를 하나만 바꾸어도 내가 전혀 의도치 않은 방향대로 결과물이 나오는 것을 보며 이는 곧 나의 코드가 다른 환경에서는 언제든지 내가 원치않는 결과를 낼 수 있음을 의미하기에 내심 찝찝했다.<br>
 때문에 이에 대한 문서를 살펴보고 다음과 같이 직접 테스트를 해본다.</p>
-<h3 id="현재-조건">현재 조건</h3>
-<p>mySQL의 Date 필드의 타입은 <code>timestamp</code>이다.</p>
-<h3 id="datestrings"><code>dateStrings</code></h3>
-<p><code>dateStrings: true</code><br>
+<h3 id="현재-조건" class="heading-element"><span>현재 조건</span>
+  <a href="#%ed%98%84%ec%9e%ac-%ec%a1%b0%ea%b1%b4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>mySQL의 Date 필드의 타입은 <code>timestamp</code>이다.</p>
+<h3 id="datestrings" class="heading-element"><span><code>dateStrings</code></span>
+  <a href="#datestrings" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><code>dateStrings: true</code><br>
 DB로부터 Date 타입의 데이터를 String으로 변환하여 가져온다.<br>
 이 때, <strong>시스템의 Local TimeZone이 반영</strong>된다.<br>
 단점은 당연하게도 반환값이 String타입이기에 해당 컬럼과 관련된 서비스 로직에서 Date 타입을 이용한 변환을 사용할 수 없다.   <br>
@@ -186,43 +271,72 @@ DB로부터 Date 타입의 데이터를 String으로 변환하여 가져온다.<
 <p><code>dateStrings: false</code><br>
 Date 타입을 js 객체 형태로 가지고 있으며 시스템의 Local TimeZone을 적용되지 않고 UTC 시간대 그대로 출력한다.<br>
 (번거롭지만) 데이터를 개발자가 더 세밀하게 제어할 수 있다.</p>
-<h3 id="timezone"><code>timezone</code></h3>
-<h4 id="timezone에-대한-실험"><code>timezone</code>에 대한 실험</h4>
-<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>mySQL 세션 시간대 설정과의 관계<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">TIME_ZONE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;+00:00&#39;</span><span class="w"> </span><span class="c1">-- 시간대 설정
+<h3 id="timezone" class="heading-element"><span><code>timezone</code></span>
+  <a href="#timezone" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 id="timezone에-대한-실험" class="heading-element"><span><code>timezone</code>에 대한 실험</span>
+  <a href="#timezone%ec%97%90-%eb%8c%80%ed%95%9c-%ec%8b%a4%ed%97%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>mySQL 세션 시간대 설정과의 관계<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">TIME_ZONE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;+00:00&#39;</span><span class="w"> </span><span class="c1">-- 시간대 설정
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SHOW</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">VARIABLES</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;TIME_ZONE&#39;</span><span class="w"> </span><span class="c1">-- 시간대 확인
-</span></span></span><span class="line"><span class="cl"><span class="c1">-- 시간대 변환 후, mySQL의 세션(typeORM)을 종료후 다시 연결 하여야 반영된다.
-</span></span></span></code></pre></div><p> </p>
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 시간대 변환 후, mySQL의 세션(typeORM)을 종료후 다시 연결 하여야 반영된다.</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>위와 같은 mySQL 서버의 시간대 설정과 typeORM의 <code>timezone</code>을 통한 시간대 설정은 서로 무관하다.
 위 설정은 mySQL의 세션 실행시 적용할 시간대를 설정해주는 건데,<br>
 바로 이 부분을 typeORM의 세션에서는 <code>timezone</code> 설정이 이를 따로이 대신 설정해주는 개념이라고 이해하면 편하다.</p>
 </div>
-        </div>
     </div>
-<h5 id="timezone-z"><code>timezone: 'Z'</code></h5>
-<p>현재 DB에서 받아오는 시간대를 Zulu 시간대(+00:00)라고 해석하여 받아들인다.</p>
-<h6 id="실험">실험</h6>
-<ul>
+  </div>
+<h5 id="timezone-z" class="heading-element"><span><code>timezone: 'Z'</code></span>
+  <a href="#timezone-z" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h5><p>현재 DB에서 받아오는 시간대를 Zulu 시간대(+00:00)라고 해석하여 받아들인다.</p>
+<h6 id="실험" class="heading-element"><span>실험</span>
+  <a href="#%ec%8b%a4%ed%97%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h6><ul>
 <li>typeORM - <code>timezone = 'Z'</code> 옵션을 추가</li>
 <li>한국표준시(KST) 기준 <code>24.02.05 20:04</code> 데이터 입력</li>
 </ul>
-<h6 id="결과">결과</h6>
-<ul>
+<h6 id="결과" class="heading-element"><span>결과</span>
+  <a href="#%ea%b2%b0%ea%b3%bc" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h6><ul>
 <li><code>2024-02-05T11:04:52.788Z</code></li>
 </ul>
 <p>실제 DB에서는 이 시간대로 저장되어 있으며 typeorm에서도 이 시간으로 나온다.<br>
 (물론 DB 조회시 조회 세션의 시간대 설정에 따라 변환되어 조회될 수는 있다.)</p>
 <p>이 때 서버의 시간대는 KST(한국표준시)라 하더라도 이것은 전혀 무관하게 작동한다.</p>
-<h5 id="timezone--local"><code>timezone = '&lt;LOCAL&gt;'</code></h5>
-<p>DB로부터 가져온 데이터를 서버의 시간대에 맞춰 변환한다.</p>
+<h5 id="timezone--local" class="heading-element"><span><code>timezone = '&lt;LOCAL&gt;'</code></span>
+  <a href="#timezone--local" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h5><p>DB로부터 가져온 데이터를 서버의 시간대에 맞춰 변환한다.</p>
 <p>즉, <code>timezone = 'Asia/Seoul</code>로 설정되어있을 때,</p>
 <p>DB에서 09:00로 내보냈다면 서버는 이 데이터를 서버의 시간대인 KST로 변환하여 반영한다.</p>
-<h5 id="timezone--z와-local의-차이점"><code>timezone = 'Z'와 '(LOCAL)'</code>의 차이점</h5>
-<p>&lsquo;Z&rsquo;</p>
+<h5 id="timezone--z와-local의-차이점" class="heading-element"><span><code>timezone = 'Z'와 '(LOCAL)'</code>의 차이점</span>
+  <a href="#timezone--z%ec%99%80-local%ec%9d%98-%ec%b0%a8%ec%9d%b4%ec%a0%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h5><p>&lsquo;Z&rsquo;</p>
 <ul>
 <li>형태 : <code>2024-02-05T11:04:52.788Z</code></li>
 <li>typeof : Object (Date 객체)</li>
@@ -234,48 +348,87 @@ Date 타입을 js 객체 형태로 가지고 있으며 시스템의 Local TimeZo
 <li>typeof : string</li>
 </ul>
 <p><strong>즉 서버의 시간대를 반영하여 내보내고 싶을 경우, 이 옵션을 사용하여 해당 시간대로 맞추어 사용할 수 있다.</strong></p>
-<h2 id="고민">고민</h2>
-<h3 id="서버별-시간대가-다르더라도-이를-자동반영할-수-있는-방법">서버별 시간대가 다르더라도 이를 자동반영할 수 있는 방법?</h3>
-<p>최종사용자에 따른 시간대를 각각 적용하는 방법은 백엔드 입장에선 사실 굉장히 단순하고 쉽게 생각된다. 그저 Date필드의 값을 UTC 기준으로 내보내고 클라이언트에서는 최종사용자의 브라우저로부터 수집된 국가코드를 판별해 이를 바탕으로 변환하면 되지 싶다.<br>
+<h2 id="고민" class="heading-element"><span>고민</span>
+  <a href="#%ea%b3%a0%eb%af%bc" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="서버별-시간대가-다르더라도-이를-자동반영할-수-있는-방법" class="heading-element"><span>서버별 시간대가 다르더라도 이를 자동반영할 수 있는 방법?</span>
+  <a href="#%ec%84%9c%eb%b2%84%eb%b3%84-%ec%8b%9c%ea%b0%84%eb%8c%80%ea%b0%80-%eb%8b%a4%eb%a5%b4%eb%8d%94%eb%9d%bc%eb%8f%84-%ec%9d%b4%eb%a5%bc-%ec%9e%90%eb%8f%99%eb%b0%98%ec%98%81%ed%95%a0-%ec%88%98-%ec%9e%88%eb%8a%94-%eb%b0%a9%eb%b2%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>최종사용자에 따른 시간대를 각각 적용하는 방법은 백엔드 입장에선 사실 굉장히 단순하고 쉽게 생각된다. 그저 Date필드의 값을 UTC 기준으로 내보내고 클라이언트에서는 최종사용자의 브라우저로부터 수집된 국가코드를 판별해 이를 바탕으로 변환하면 되지 싶다.<br>
 대충 다음과 같은 코드가 만들어진다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// UTC로 받은 시간 문자열
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// UTC로 받은 시간 문자열
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">utcDate</span> <span class="o">=</span> <span class="s1">&#39;2024-03-02T12:00:00Z&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 로컬 시간대로 변환
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">localDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">utcDate</span><span class="p">).</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s1">&#39;ko-KR&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">timeZone</span><span class="o">:</span> <span class="s1">&#39;Asia/Seoul&#39;</span> <span class="p">});</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">localDate</span><span class="p">);</span> <span class="c1">// 변환된 로컬 시간 출력
-</span></span></span></code></pre></div><p> </p>
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>하지만 <strong>백엔드 서버를 관리하는 입장에서는 UTC로 데이터가 나오니 테스트를 하면서도 시간대에 대한 감이 맞지 않아 불편</strong>하다.<br>
 즉, 어떤 시간대에서 애플리케이션 서버가 돌아가더라도 따로이 코드를 수정하지 않고 현지 시간대로 Date값을 반환할 수 있는 방법을 찾고 싶었다.<br>
 구글링을 해보면 간단하게 다음 라이브러리들이 나온다.</p>
-<p><a href="https://www.npmjs.com/package/moment" target="_blank" rel="noopener noreffer ">moment - npm</a>
-<a href="https://www.npmjs.com/package/moment-timezone" target="_blank" rel="noopener noreffer ">moment-timezone - npm</a></p>
+<p><a href="https://www.npmjs.com/package/moment"target="_blank" rel="external nofollow noopener noreferrer">moment - npm</a>
+<a href="https://www.npmjs.com/package/moment-timezone"target="_blank" rel="external nofollow noopener noreferrer">moment-timezone - npm</a></p>
 <p><strong>그런데&hellip;</strong><br>
-<a href="https://www.npmjs.com/package/moment" target="_blank" rel="noopener noreffer ">moment - npm</a> 라이브러리를 살펴보던 중 해당 공식문서에서 이상한 문구를 발견했다.</p>
-<blockquote>
-<p><a href="https://dockyard.com/blog/2020/02/14/you-probably-don-t-need-moment-js-anymore" target="_blank" rel="noopener noreffer "><em>You Probably Don&rsquo;t Need Moment.js Anymore</em></a><br>
-<a href="https://github.com/you-dont-need/You-Dont-Need-Momentjs/blob/master/README.md" target="_blank" rel="noopener noreffer "><em>You don&rsquo;t (may not) need Moment.js</em></a><br>
-<a href="https://inventi.studio/en/blog/why-you-shouldnt-use-moment-js" target="_blank" rel="noopener noreffer "><em>Why you shouldn&rsquo;t use Moment.js&hellip;</em></a><br>
-<a href="https://blog.logrocket.com/4-alternatives-to-moment-js-for-internationalizing-dates/" target="_blank" rel="noopener noreffer "><em>4 alternatives to moment.js for internationalizing dates</em></a></p>
-</blockquote>
-<p>&lsquo;<strong>사실 당신은 아마 이 라이브러리가 필요없을지도 모른다</strong>&lsquo;라니&hellip;<br>
+<a href="https://www.npmjs.com/package/moment"target="_blank" rel="external nofollow noopener noreferrer">moment - npm</a> 라이브러리를 살펴보던 중 해당 공식문서에서 이상한 문구를 발견했다.</p>
+<blockquote><p><a href="https://dockyard.com/blog/2020/02/14/you-probably-don-t-need-moment-js-anymore"target="_blank" rel="external nofollow noopener noreferrer"><em>You Probably Don&rsquo;t Need Moment.js Anymore</em></a><br>
+<a href="https://github.com/you-dont-need/You-Dont-Need-Momentjs/blob/master/README.md"target="_blank" rel="external nofollow noopener noreferrer"><em>You don&rsquo;t (may not) need Moment.js</em></a><br>
+<a href="https://inventi.studio/en/blog/why-you-shouldnt-use-moment-js"target="_blank" rel="external nofollow noopener noreferrer"><em>Why you shouldn&rsquo;t use Moment.js&hellip;</em></a><br>
+<a href="https://blog.logrocket.com/4-alternatives-to-moment-js-for-internationalizing-dates/"target="_blank" rel="external nofollow noopener noreferrer"><em>4 alternatives to moment.js for internationalizing dates</em></a></p>
+</blockquote><p>&lsquo;<strong>사실 당신은 아마 이 라이브러리가 필요없을지도 모른다</strong>&lsquo;라니&hellip;<br>
 살펴보니 무겁게 라이브러리를 사용할 필요 없이 간단한 플랫폼의 메소드만으로도 충분히 가능했다.<br>
 무조건 무거운 라이브러리 패키지를 사용하는 것만이 능사는 아니라고 말하고 있다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<h3 id="적용방안">적용방안</h3>
-<h4 id="조건">조건</h4>
-<p>다음 조건으로 DB로부터 UTC 기준의 시간대를 서버로 가져온다.</p>
+<h3 id="적용방안" class="heading-element"><span>적용방안</span>
+  <a href="#%ec%a0%81%ec%9a%a9%eb%b0%a9%ec%95%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 id="조건" class="heading-element"><span>조건</span>
+  <a href="#%ec%a1%b0%ea%b1%b4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>다음 조건으로 DB로부터 UTC 기준의 시간대를 서버로 가져온다.</p>
 <ul>
 <li><code>dateStrings = false</code> (따로이 설정하지 않으면 false가 기본값이다.)</li>
 <li><code>timezone</code>은 따로 설정하지 않고 DB의 시간대를 그대로 받아온다는 조건을 만든다.</li>
 </ul>
-<h4 id="코드">코드</h4>
-<ul>
+<h4 id="코드" class="heading-element"><span>코드</span>
+  <a href="#%ec%bd%94%eb%93%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
 <li>DB서버에서 받아온 Date 정보(UTC 시간대)로부터</li>
 <li>애플리케이션 서버의 현지 시간대(<code>getTimezoneOffset()</code>)와의 차이를 계산하여<br>
 반환함으로써, 어느 시간대의 서버에서든지 서버가 설치된 현지시간대로 데이터를 받아볼 수 있다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 애플리케이션 서버의 타임존을 고려하여 Date타입을 재가공 
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 애플리케이션 서버의 타임존을 고려하여 Date타입을 재가공 
 </span></span></span><span class="line"><span class="cl"><span class="c1">// (ex. 2021-08-01T00:00:00.000Z -&gt; 2021-08-01 00:00:00)
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">public</span> <span class="nx">formatDate</span><span class="p">(</span><span class="nx">date</span>: <span class="kt">Date</span><span class="p">)</span><span class="o">:</span> <span class="kt">string</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl"> <span class="kr">const</span> <span class="nx">localDateTime</span>: <span class="kt">Date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span>
@@ -283,9 +436,50 @@ Date 타입을 js 객체 형태로 가지고 있으며 시스템의 Local TimeZo
 </span></span><span class="line"><span class="cl">    			      <span class="p">);</span>
 </span></span><span class="line"><span class="cl">    			  
 </span></span><span class="line"><span class="cl">    			      <span class="k">return</span> <span class="nx">localDateTime</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">().</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">19</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    			    <span class="p">}</span>
-</span></span></code></pre></div><h4 id="코드-적용">코드 적용</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">DateUtils</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    			    <span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="코드-적용" class="heading-element"><span>코드 적용</span>
+  <a href="#%ec%bd%94%eb%93%9c-%ec%a0%81%ec%9a%a9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="hl"><span class="lnt">19
+</span></span><span class="hl"><span class="lnt">20
+</span></span><span class="hl"><span class="lnt">21
+</span></span><span class="hl"><span class="lnt">22
+</span></span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="hl"><span class="lnt">29
+</span></span><span class="hl"><span class="lnt">30
+</span></span><span class="hl"><span class="lnt">31
+</span></span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">DateUtils</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">  <span class="kr">public</span> <span class="kr">static</span> <span class="nx">formatDate</span><span class="p">(</span><span class="nx">date</span>: <span class="kt">Date</span><span class="p">)</span><span class="o">:</span> <span class="kt">string</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">localDateTime</span>: <span class="kt">Date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span>  
 </span></span><span class="line"><span class="cl">      <span class="nx">date</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getTimezoneOffset</span><span class="p">()</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span>  
@@ -317,23 +511,59 @@ Date 타입을 js 객체 형태로 가지고 있으며 시스템의 Local TimeZo
 </span></span><span class="line hl"><span class="cl">	 <span class="nx">updated_at</span>: <span class="kt">DateUtils.formatDate</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">updated_at</span><span class="p">),</span>
 </span></span><span class="line hl"><span class="cl">	 <span class="nx">deleted_at</span>: <span class="kt">data.deleted_at</span> <span class="o">?</span> <span class="nx">DateUtils</span><span class="p">.</span><span class="nx">formatDate</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">deleted_at</span><span class="p">)</span> <span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="p">}));</span>  
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>  
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>위와 같이 <strong>필요한 컬럼에 위 함수를 적용</strong>하여 시간대와 형태를 바꿀 수 있다.<br>
  </p>
 <p>단점은 이로 인해 <strong>해당 entity의 반환 타입이 깨진다는 문제</strong>가 생긴다.<br>
 예를들어 원래 <code>User entity</code>에서 <code>created_at</code> 컬럼의 타입은 <code>Date</code>타입이다. 그런데 해당 함수로 인해 반환되는 값의 타입은 <code>string</code>이기에 타입 에러가 나타나고 따라서 추가적인 작업을 해줘야 한다.</p>
 <div class="details admonition example open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-list-ol fa-fw" aria-hidden="true"></i>entity의 타입 확장하기<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>위에서 나타나는 타입 에러를 해결하는 방법은 2가지가 있다.<br>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-list-ol fa-fw" aria-hidden="true"></i>entity의 타입 확장하기<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p>위에서 나타나는 타입 에러를 해결하는 방법은 2가지가 있다.<br>
 먼저 간단하게 반환 타입을 <code>Promise&lt;any&gt;</code>로 처리하는 방법이 있다.<br>
 무적의 <code>any</code>이다.<br>
  </p>
 <p>두번째는 아래와 같이 <strong>확장된 타입 또는 인터페이스를 만들어주어 반환 타입으로 적용</strong>해주는 것이다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 원래의 User 엔티티 타입, Date 관련 컬럼의 타입은 `Date`이다.
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="hl"><span class="lnt"> 6
+</span></span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="hl"><span class="lnt"> 9
+</span></span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="hl"><span class="lnt">12
+</span></span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="hl"><span class="lnt">27
+</span></span><span class="hl"><span class="lnt">28
+</span></span><span class="hl"><span class="lnt">29
+</span></span><span class="hl"><span class="lnt">30
+</span></span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 원래의 User 엔티티 타입, Date 관련 컬럼의 타입은 `Date`이다.
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">class</span> <span class="nx">User</span> <span class="kr">extends</span> <span class="nx">BaseEntity</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">  <span class="kd">@PrimaryGeneratedColumn</span><span class="p">()</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">id</span><span class="o">!:</span> <span class="kt">number</span><span class="p">;</span>  
@@ -363,22 +593,54 @@ Date 타입을 js 객체 형태로 가지고 있으며 시스템의 Local TimeZo
 </span></span><span class="line hl"><span class="cl">  <span class="nx">created_at</span>: <span class="kt">string</span><span class="p">;</span>  
 </span></span><span class="line hl"><span class="cl">  <span class="nx">updated_at</span>: <span class="kt">string</span><span class="p">;</span>  
 </span></span><span class="line hl"><span class="cl">  <span class="nx">deleted_at</span>: <span class="kt">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div></div>
-        </div>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div>
     </div>
-<h4 id="장점">장점</h4>
-<p>DB 서버의 시간대는 <strong>DB 담당자</strong> 편한 시간대로 바꾸어도 필드는 <code>timestamp</code>이기에 앱서버에서는 균일하게 UTC 시간대로 받아온다. 따라서 애플리케이션 <strong>서버 담당자</strong>는 서버의 시간대만 신경쓰면 된다.<br>
+  </div>
+<h4 id="장점" class="heading-element"><span>장점</span>
+  <a href="#%ec%9e%a5%ec%a0%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>DB 서버의 시간대는 <strong>DB 담당자</strong> 편한 시간대로 바꾸어도 필드는 <code>timestamp</code>이기에 앱서버에서는 균일하게 UTC 시간대로 받아온다. 따라서 애플리케이션 <strong>서버 담당자</strong>는 서버의 시간대만 신경쓰면 된다.<br>
 만약, 클라이언트에서 브라우저별 시간대를 고려하겠다면 <code>localDateTime</code> 변수대신 <code>date</code> 인자를 그대로 반환하면 된다.</p>
 <p>그리고 그 저 함수를 클라이언트에서 그대로 다시 사용할 수도 있다.</p>
-<h3 id="추가-업데이트-1---formatdate함수를-entity에-바로-적용하기">추가 업데이트 1 - formatDate함수를 Entity에 바로 적용하기</h3>
-<p>위 함수를 서비스 로직에서 적용하고자 하는 해당 Date 필드에 따로이 사용할 수도 있지만 애시당초 typeORM에서 모든 Date 필드에 한번에 적용하게끔 하는 방법도 있다.<br>
+<h3 id="추가-업데이트-1---formatdate함수를-entity에-바로-적용하기" class="heading-element"><span>추가 업데이트 1 - formatDate함수를 Entity에 바로 적용하기</span>
+  <a href="#%ec%b6%94%ea%b0%80-%ec%97%85%eb%8d%b0%ec%9d%b4%ed%8a%b8-1---formatdate%ed%95%a8%ec%88%98%eb%a5%bc-entity%ec%97%90-%eb%b0%94%eb%a1%9c-%ec%a0%81%ec%9a%a9%ed%95%98%ea%b8%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>위 함수를 서비스 로직에서 적용하고자 하는 해당 Date 필드에 따로이 사용할 수도 있지만 애시당초 typeORM에서 모든 Date 필드에 한번에 적용하게끔 하는 방법도 있다.<br>
 무엇보다 이 방법은 위에서 언급한 추가적인 <code>interface</code>를 사용하지 않고 entity 본래의 타입 그대로 반환 타입에서 사용할 수 있다는 장점이 있다.<br>
  </p>
 <p>바로 typeORM의 <code>transformer</code> 옵션을 사용하면 된다.</p>
 <p>현재 프로젝트의 entities에서 <code>id</code>, <code>created_at</code>, <code>updated_at</code>, <code>deleted_at</code>과 같은 기본 필드는 base entity라는 추상화 클래스로 따로이 만들어놓고 여기에서 확장하여 각각의 entity를 작성하였다.<br>
 즉 base entity에서 해당 컬럼에 다음과 같이 적용하면 이제 모든 Date 필드는 자동으로 위 함수가 적용된 채로 조회할 수 있다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">DateUtils</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;../utils/dateUtils&#39;</span><span class="p">;</span>  
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="hl"><span class="lnt"> 3
+</span></span><span class="hl"><span class="lnt"> 4
+</span></span><span class="hl"><span class="lnt"> 5
+</span></span><span class="hl"><span class="lnt"> 6
+</span></span><span class="hl"><span class="lnt"> 7
+</span></span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="hl"><span class="lnt">13
+</span></span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="hl"><span class="lnt">16
+</span></span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="hl"><span class="lnt">19
+</span></span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">DateUtils</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;../utils/dateUtils&#39;</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line hl"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">dateTransformer</span>: <span class="kt">ValueTransformer</span> <span class="o">=</span> <span class="p">{</span>  
 </span></span><span class="line hl"><span class="cl">  <span class="kr">from</span><span class="o">:</span> <span class="p">(</span><span class="nx">value</span>: <span class="kt">Date</span><span class="p">)</span> <span class="o">=&gt;</span>  
@@ -398,13 +660,29 @@ Date 타입을 js 객체 형태로 가지고 있으며 시스템의 Local TimeZo
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line hl"><span class="cl">  <span class="kd">@DeleteDateColumn</span><span class="p">({</span> <span class="kr">type</span><span class="o">:</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="nx">transformer</span>: <span class="kt">dateTransformer</span> <span class="p">})</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">deleted_at?</span>: <span class="kt">Date</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>이 방법은 일일이 서비스로직에서 해당 필드에 함수를 적용했을 때보다 훨씬 더 코드가 깔끔해지고 단일게 공통적으로 적용할 수 있다는 장점이 있다.</p>
-<h3 id="추가-업데이트-2">추가 업데이트 2</h3>
-<p>만약 클라이언트는 UTC 기준의 시간대로 데이터를 받아보려하고, 서버관리자는 현지시간대로 확인을 하려한다면??</p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>이 방법은 일일이 서비스로직에서 해당 필드에 함수를 적용했을 때보다 훨씬 더 코드가 깔끔해지고 단일게 공통적으로 적용할 수 있다는 장점이 있다.</p>
+<h3 id="추가-업데이트-2" class="heading-element"><span>추가 업데이트 2</span>
+  <a href="#%ec%b6%94%ea%b0%80-%ec%97%85%eb%8d%b0%ec%9d%b4%ed%8a%b8-2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>만약 클라이언트는 UTC 기준의 시간대로 데이터를 받아보려하고, 서버관리자는 현지시간대로 확인을 하려한다면??</p>
 <p>여러가지로 고민해봤지만 일단 Entity의 transformer를 동적으로 건드릴 수는 없었다. 왜냐하면 entity파일은 DB연결시점에 고정적으로 작동하기 때문이다. 때문에 결국은 모든 서비스 로직을 손봐야한다.</p>
 <p>우선, 아래와 같이 미들웨어를 만들어준다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// &#39;/global&#39; 경로를 포함하는 요청에 대한 미들웨어 추가 (최상단 위치시킬 것)
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// &#39;/global&#39; 경로를 포함하는 요청에 대한 미들웨어 추가 (최상단 위치시킬 것)
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">router</span><span class="p">.</span><span class="nx">use</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> 
 </span></span><span class="line"><span class="cl"><span class="c1">// 요청 경로가 &#39;/global&#39;로 시작하는지 확인 
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">req</span><span class="p">.</span><span class="kr">global</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">path</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">&#39;/global&#39;</span><span class="p">);</span> 
@@ -412,9 +690,49 @@ Date 타입을 js 객체 형태로 가지고 있으며 시스템의 Local TimeZo
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 이후 router.use 코드들...
-</span></span></span></code></pre></div><p>그리고 formatDate함수의 클래스에 추가적인 메소드를 더해준다.<br>
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>그리고 formatDate함수의 클래스에 추가적인 메소드를 더해준다.<br>
 아래의 <code>processDateValues()</code> 메소드가 그것이다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">DateUtils</span> <span class="p">{</span>  
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="hl"><span class="lnt">11
+</span></span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">DateUtils</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">localDateTime</span>: <span class="kt">Date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span>  
 </span></span><span class="line"><span class="cl">      <span class="nx">date</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getTimezoneOffset</span><span class="p">()</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span>  
 </span></span><span class="line"><span class="cl">    <span class="p">);</span>  
@@ -447,9 +765,25 @@ Date 타입을 js 객체 형태로 가지고 있으며 시스템의 Local TimeZo
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>  
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">item</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>  
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>그리고 모든 서비스 로직을 손본다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">SomeService</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>그리고 모든 서비스 로직을 손본다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">SomeService</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">processData</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">someRepository</span><span class="p">.</span><span class="nx">find</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
@@ -459,71 +793,65 @@ Date 타입을 js 객체 형태로 가지고 있으며 시스템의 Local TimeZo
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>우선은 원하는대로, 클라이언트에서의 UTC 시간대 값과 서버의 현지시간대를 고려한 값 모두의 요구를 맞출 수 있도록 구색은 갖춰봤지만&hellip;</p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>우선은 원하는대로, 클라이언트에서의 UTC 시간대 값과 서버의 현지시간대를 고려한 값 모두의 요구를 맞출 수 있도록 구색은 갖춰봤지만&hellip;</p>
 <p>아무래도 위 방법은 모든 서비스로직을 번거롭고 거추장스럽게 하고 있고, 깨끗한 코드(Clean Code)라고 하기 어렵기에 추천하지 않지만 이런 방법을 이용할 수 있다는 의도로 기록을 남긴다.</p>
 <p><strong>가장 추천하는 방법은 백엔드에서는 시간대를 UTC로 내보내고, 클라이언트에서 이를 따로이 변환하는 것이 가장 깔끔하다고 생각</strong>한다.</p>
-<p>github 관련 커밋 보기 - <a href="https://github.com/inchanS/project-review-ts/releases/tag/v3.2.0" rel="noopener noreffer" target="_blank"><img
-        class="lazyload version"
-        src="/svg/loading.min.svg"
-        data-src="/svg/version/3.2.0-new.min.svg"
-        data-srcset="/svg/version/3.2.0-new.min.svg, /svg/version/3.2.0-new.min.svg 1.5x, /svg/version/3.2.0-new.min.svg 2x"
-        data-sizes="auto"
-        alt="github-inchan code NEW | 3.2.0"
-        title="github-inchan code NEW | 3.2.0" /></a></p>
+<p>github 관련 커밋 보기 - <a href="https://github.com/inchanS/project-review-ts/releases/tag/v%25!v%28MISSING%29" rel="external nofollow noopener" target="_blank"><img loading="lazy" src="/images/version/project-review-ts-3.2.0.min.svg" alt="FixIt project-review-ts | " data-title="FixIt project-review-ts | " class="version" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
 <hr>
 <p>함께 읽어볼만한 글</p>
 <ul>
-<li><a href="https://meetup.nhncloud.com/posts/130" target="_blank" rel="noopener noreffer ">자바스크립트에서 타임존 다루기 (2) : NHN Cloud Meetup</a></li>
-<li><a href="https://news.hada.io/topic?id=13495" target="_blank" rel="noopener noreffer ">2024년 자바스크립트 부피 팽창 | GeekNews</a></li>
+<li><a href="https://meetup.nhncloud.com/posts/130"target="_blank" rel="external nofollow noopener noreferrer">자바스크립트에서 타임존 다루기 (2) : NHN Cloud Meetup</a></li>
+<li><a href="https://news.hada.io/topic?id=13495"target="_blank" rel="external nofollow noopener noreferrer">2024년 자바스크립트 부피 팽창 | GeekNews</a></li>
 </ul>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
-<p>관련된 재밌는 기사가 있다. <a href="https://news.hada.io/topic?id=13495" target="_blank" rel="noopener noreffer ">2024년 자바스크립트 부피 팽창 | GeekNews</a> 에서는, 필요기능만을 구현하기위한 가장 가볍고 최적화된 코드는 숙련된 순수 자바스크립트 코드라고도 한다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>관련된 재밌는 기사가 있다. <a href="https://news.hada.io/topic?id=13495"target="_blank" rel="external nofollow noopener noreferrer">2024년 자바스크립트 부피 팽창 | GeekNews</a> 에서는, 필요기능만을 구현하기위한 가장 가볍고 최적화된 코드는 숙련된 순수 자바스크립트 코드라고도 한다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
 </div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2024-03-03</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2024-03-03 07:57:11">Updated on 2024-03-03&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
         </div>
-    </div>
+      </div></div>
 
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/javascript/">JavaScript</a>,&nbsp;<a href="/tags/typeorm/">TypeORM</a>,&nbsp;<a href="/tags/mysql/">MySQL</a>,&nbsp;<a href="/tags/nodejs/">NodeJS</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/posts/202401311413/" class="prev" rel="prev" title="프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기</a>
-            <a href="/posts/202403051214/" class="next" rel="next" title="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법">AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/javascript/" class="post-tag" title="Tags - JavaScript">JavaScript</a><a href="/tags/typeorm/" class="post-tag" title="Tags - TypeORM">TypeORM</a><a href="/tags/mysql/" class="post-tag" title="Tags - MySQL">MySQL</a><a href="/tags/nodejs/" class="post-tag" title="Tags - NodeJS">NodeJS</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/202401311413/" class="post-nav-item" rel="prev" title="프로젝트별 각각의 Node 버전을 Nvm으로 자동 적용하기"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>프로젝트별 각각의 Node 버전을 Nvm으로 자동 적용하기</a>
+      <a href="/posts/202403051214/" class="post-nav-item" rel="next" title="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법">AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-<div id="comments"><div id="utterances" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
-        </div>
-    </footer></div>
+</article>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.135.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.12-456db385">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">inchan</a></span><span class="license footer-divider">CC BY-NC-SA 4.0</span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><a href="https://github.com/inchanS" title="View source on GitHub"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true" width="56" height="56"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;--progress-h: 5px;--bg-progress: rgba(0, 0, 255, 1);--bg-progress-dark: rgba(255, 165, 0, 1);"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"duration":-1,"loop":false,"speed":100},"version":"v0.3.12-456db385"};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
 </html>

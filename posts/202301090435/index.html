@@ -1,132 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>nestJS 시작하기 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="nestJS 시작하기" />
-<meta property="og:description" content="nestJS - cli 설치 사전 조건 : node lts버전 설치
-npm i @nestjs/cli 또는
-npm i -g @nestjs/cli 이렇게 package.json 파일에서 정상적으로 설치되었음을 확인할 수 있다.
-nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 nest new nestjs-test 위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다.
-만약 $ mkdir nestjs-test 로 폴더를 만들고 이 위치에서 진행중이라면,
-nest new ./ 위와 같이 입력시 현재 폴더명 그대로 새로운 프로젝트가 진행된다." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://inchan.dev/posts/202301090435/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-01-09T04:35:58+09:00" />
-<meta property="article:modified_time" content="2023-01-09T04:35:58+09:00" /><meta property="og:site_name" content="inchan.dev" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="nestJS 시작하기"/>
-<meta name="twitter:description" content="nestJS - cli 설치 사전 조건 : node lts버전 설치
-npm i @nestjs/cli 또는
-npm i -g @nestjs/cli 이렇게 package.json 파일에서 정상적으로 설치되었음을 확인할 수 있다.
-nestJS - new Project 시작하기 nest new &lt;new project name&gt; // 예시 nest new nestjs-test 위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다.
-만약 $ mkdir nestjs-test 로 폴더를 만들고 이 위치에서 진행중이라면,
-nest new ./ 위와 같이 입력시 현재 폴더명 그대로 새로운 프로젝트가 진행된다."/>
-      <meta name="twitter:site" content="@codject"/>
-<meta name="application-name" content="inchan.dev">
-<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202301090435/" /><link rel="prev" href="https://inchan.dev/posts/202301020441/" /><link rel="next" href="https://inchan.dev/posts/202301180428/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "nestJS 시작하기",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/inchan.dev\/posts\/202301090435\/"
-        },"genre": "posts","keywords": "NestJS","wordcount":  1761 ,
-        "url": "https:\/\/inchan.dev\/posts\/202301090435\/","datePublished": "2023-01-09T04:35:58+09:00","dateModified": "2023-01-09T04:35:58+09:00","publisher": {
-            "@type": "Organization",
-            "name": "inchan"},"author": {
-                "@type": "Person",
-                "name": "inchan"
-            },"description": ""
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>NestJS 시작하기 - inchan.dev</title><meta name="author" content="inchan">
+<meta name="description" content="nestJS - cli 설치
+  
+    
+  
+사전 조건 : node lts버전 설치"><meta name="keywords" content='NestJS'>
+  <meta itemprop="name" content="nestJS 시작하기">
+  <meta itemprop="description" content="nestJS - cli 설치 사전 조건 : node lts버전 설치">
+  <meta itemprop="datePublished" content="2023-01-09T04:35:58+09:00">
+  <meta itemprop="dateModified" content="2023-01-09T04:35:58+09:00">
+  <meta itemprop="wordCount" content="1969">
+  <meta itemprop="keywords" content="NestJS"><meta property="og:url" content="http://inchan.dev/posts/202301090435/">
+  <meta property="og:site_name" content="inchan.dev">
+  <meta property="og:title" content="nestJS 시작하기">
+  <meta property="og:description" content="nestJS - cli 설치 사전 조건 : node lts버전 설치">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-01-09T04:35:58+09:00">
+    <meta property="article:modified_time" content="2023-01-09T04:35:58+09:00">
+    <meta property="article:tag" content="NestJS">
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="nestJS 시작하기">
+  <meta name="twitter:description" content="nestJS - cli 설치 사전 조건 : node lts버전 설치">
+      <meta name="twitter:site" content="@cOdject">
+<meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
+<meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://inchan.dev/posts/202301090435/" title="nestJS 시작하기 - inchan.dev" /><link rel="prev" type="text/html" href="http://inchan.dev/posts/202301020441/" title="부트캠프 가도 실패하는 사람 특징" /><link rel="next" type="text/html" href="http://inchan.dev/posts/202301180428/" title="error log - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "nestJS 시작하기",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/inchan.dev\/posts\/202301090435\/"
+    },"genre": "posts","keywords": "NestJS","wordcount":  1969 ,
+    "url": "http:\/\/inchan.dev\/posts\/202301090435\/","datePublished": "2023-01-09T04:35:58+09:00","dateModified": "2023-01-09T04:35:58+09:00","publisher": {
+      "@type": "Organization",
+      "name": "inchan"},"author": {
+        "@type": "Person",
+        "name": "inchan"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
     <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
-        </div>
+      <div class="header-title">
+        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
 </header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">nestJS 시작하기</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-09">2023-01-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1761 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;9 minutes&nbsp;</div>
-        </div><div class="featured-image"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/Pasted%20image%2020230301063722.png"
-        data-srcset="/images/Pasted%20image%2020230301063722.png, /images/Pasted%20image%2020230301063722.png 1.5x, /images/Pasted%20image%2020230301063722.png 2x"
-        data-sizes="auto"
-        alt="/images/Pasted%20image%2020230301063722.png"
-        title="/images/Pasted%20image%2020230301063722.png" /></div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>NestJS 시작하기</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/back-end/" class="post-category" title="Category - Back-End"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Back-End</a></span></div><div class="post-meta-line"><span title="published on 2023-01-09 04:35:58"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-01-09">2023-01-09</time></span>&nbsp;<span title="1969 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 2000 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>10 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="NestJS 시작하기"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+          </span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="lazy" src="/images/Pasted%20image%2020230301063722.png" alt="/images/Pasted%20image%2020230301063722.png" data-title="/images/Pasted%20image%2020230301063722.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#nestjs---cli-설치">nestJS - cli 설치</a></li>
     <li><a href="#nestjs---new-project-시작하기">nestJS - new Project 시작하기</a></li>
@@ -156,7 +205,11 @@ nest new ./ 위와 같이 입력시 현재 폴더명 그대로 새로운 프로�
         </li>
         <li><a href="#파이프를-이용한-유효성-체크-검사">파이프를 이용한 유효성 체크 검사</a>
           <ul>
-            <li><a href="#필요한-모듈">필요한 모듈</a></li>
+            <li><a href="#필요한-모듈">필요한 모듈</a>
+              <ul>
+                <li><a href="#예시">예시</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li><a href="#에러를-표출해주기-위해서는">에러를 표출해주기 위해서는</a></li>
@@ -188,7 +241,11 @@ nest new ./ 위와 같이 입력시 현재 폴더명 그대로 새로운 프로�
         <li><a href="#hashedpassword-생성-및-검증">hashedPassword 생성 및 검증</a></li>
         <li><a href="#jwt-token-생성">jwt token 생성</a>
           <ul>
-            <li><a href="#passport-사용">passport 사용</a></li>
+            <li><a href="#passport-사용">passport 사용</a>
+              <ul>
+                <li><a href="#useguards">UseGuards</a></li>
+              </ul>
+            </li>
             <li><a href="#useguards가-아닌-바로-객체에-접근하려면">UseGuards가 아닌 바로 객체에 접근하려면?</a></li>
           </ul>
         </li>
@@ -200,7 +257,11 @@ nest new ./ 위와 같이 입력시 현재 폴더명 그대로 새로운 프로�
       <ul>
         <li>
           <ul>
-            <li><a href="#로그의-종류">로그의 종류</a></li>
+            <li><a href="#로그의-종류">로그의 종류</a>
+              <ul>
+                <li><a href="#예시-1">예시</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -208,99 +269,134 @@ nest new ./ 위와 같이 입력시 현재 폴더명 그대로 새로운 프로�
     <li><a href="#설정-1">설정</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="nestjs---cli-설치">nestJS - cli 설치</h2>
-<p>사전 조건 : node lts버전 설치</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm  i @nestjs/cli
-</span></span></code></pre></div><p> </p>
+      </div><div class="content" id="content"><h2 id="nestjs---cli-설치" class="heading-element"><span>nestJS - cli 설치</span>
+  <a href="#nestjs---cli-%ec%84%a4%ec%b9%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>사전 조건 : node lts버전 설치</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm  i @nestjs/cli</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>또는</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm i -g @nestjs/cli
-</span></span></code></pre></div><p> </p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/j8evD5H.png"
-        data-srcset="https://i.imgur.com/j8evD5H.png, https://i.imgur.com/j8evD5H.png 1.5x, https://i.imgur.com/j8evD5H.png 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/j8evD5H.png"
-        title="https://i.imgur.com/j8evD5H.png" />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm i -g @nestjs/cli</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<p><a class="lightgallery" href="https://i.imgur.com/j8evD5H.png?size=large" data-thumbnail="https://i.imgur.com/j8evD5H.png?size=small" data-sub-html="<h2>https://i.imgur.com/j8evD5H.png</h2>"><img loading="lazy" src="https://i.imgur.com/j8evD5H.png" alt="https://i.imgur.com/j8evD5H.png" srcset="https://i.imgur.com/j8evD5H.png?size=small, https://i.imgur.com/j8evD5H.png?size=medium 1.5x, https://i.imgur.com/j8evD5H.png?size=large 2x" data-title="https://i.imgur.com/j8evD5H.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
  </p>
 <p>이렇게 package.json 파일에서 정상적으로  설치되었음을 확인할 수 있다.<br>
  </p>
-<h2 id="nestjs---new-project-시작하기">nestJS - new Project 시작하기</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest new &lt;new project name&gt;
+<h2 id="nestjs---new-project-시작하기" class="heading-element"><span>nestJS - new Project 시작하기</span>
+  <a href="#nestjs---new-project-%ec%8b%9c%ec%9e%91%ed%95%98%ea%b8%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest new &lt;new project name&gt;
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">// 예시
-</span></span><span class="line"><span class="cl">nest new nestjs-test
-</span></span></code></pre></div><p>위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다.<br>
+</span></span><span class="line"><span class="cl">nest new nestjs-test</span></span></code></pre></td></tr></table>
+</div>
+</div><p>위와 같이 입력하면 현재 터미널이 위치한 폴더 내에 새로운 &ldquo;nestjs-test&quot;폴더가 만들어지면서 그 안에 세팅이 된다.<br>
  </p>
 <p>만약 <code>$ mkdir nestjs-test</code> 로 폴더를 만들고 이 위치에서 진행중이라면,</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest new ./
-</span></span></code></pre></div><p>위와 같이 입력시 현재 폴더명 그대로 새로운 프로젝트가 진행된다.<br>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest new ./</span></span></code></pre></td></tr></table>
+</div>
+</div><p>위와 같이 입력시 현재 폴더명 그대로 새로운 프로젝트가 진행된다.<br>
  </p>
 <p>계속해서 진행시 아래와 같은 선택을 묻는다.</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/bhFD5k1.png"
-        data-srcset="https://i.imgur.com/bhFD5k1.png, https://i.imgur.com/bhFD5k1.png 1.5x, https://i.imgur.com/bhFD5k1.png 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/bhFD5k1.png"
-        title="https://i.imgur.com/bhFD5k1.png" />
+<p><a class="lightgallery" href="https://i.imgur.com/bhFD5k1.png?size=large" data-thumbnail="https://i.imgur.com/bhFD5k1.png?size=small" data-sub-html="<h2>https://i.imgur.com/bhFD5k1.png</h2>"><img loading="lazy" src="https://i.imgur.com/bhFD5k1.png" alt="https://i.imgur.com/bhFD5k1.png" srcset="https://i.imgur.com/bhFD5k1.png?size=small, https://i.imgur.com/bhFD5k1.png?size=medium 1.5x, https://i.imgur.com/bhFD5k1.png?size=large 2x" data-title="https://i.imgur.com/bhFD5k1.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
  </p>
 <p>npm 또는 yarn 등, 편한 패키지로 선택하면<br>
 nestJS 기본 세팅이 이루어진다.<br>
  </p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.imgur.com/vvzzzBK.png"
-        data-srcset="https://i.imgur.com/vvzzzBK.png, https://i.imgur.com/vvzzzBK.png 1.5x, https://i.imgur.com/vvzzzBK.png 2x"
-        data-sizes="auto"
-        alt="https://i.imgur.com/vvzzzBK.png"
-        title="https://i.imgur.com/vvzzzBK.png" />
+<p><a class="lightgallery" href="https://i.imgur.com/vvzzzBK.png?size=large" data-thumbnail="https://i.imgur.com/vvzzzBK.png?size=small" data-sub-html="<h2>https://i.imgur.com/vvzzzBK.png</h2>"><img loading="lazy" src="https://i.imgur.com/vvzzzBK.png" alt="https://i.imgur.com/vvzzzBK.png" srcset="https://i.imgur.com/vvzzzBK.png?size=small, https://i.imgur.com/vvzzzBK.png?size=medium 1.5x, https://i.imgur.com/vvzzzBK.png?size=large 2x" data-title="https://i.imgur.com/vvzzzBK.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
  </p>
 <p>위 이미지와 같이 prettier부터 controller-service-model, main.ts, jest 등 기본적인 구성이 모두 세팅된다.
 (시간이 조금 걸릴 수 있다.)</p>
 <hr>
-<h2 id="모듈-생성">모듈 생성</h2>
-<p>nestJS에서는 nest 명령어로 모듈을 생성할 수 있다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest g module boards
-</span></span></code></pre></div><p> </p>
+<h2 id="모듈-생성" class="heading-element"><span>모듈 생성</span>
+  <a href="#%eb%aa%a8%eb%93%88-%ec%83%9d%ec%84%b1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>nestJS에서는 nest 명령어로 모듈을 생성할 수 있다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest g module boards</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>설명</p>
-<blockquote>
-<p>nest : nest cli 사용
+<blockquote><p>nest : nest cli 사용
 g : generate
 module : schematic that I want to create
 boards : name of schematic</p>
-</blockquote>
-<p> </p>
-<h3 id="controller-service-생성하기">controller, service 생성하기</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest g controller boards --no-spec
-</span></span><span class="line"><span class="cl">nest g service boards --no-spec
-</span></span></code></pre></div><p>한줄씩 차례로 입력하면 된다.<br>
+</blockquote><p> </p>
+<h3 id="controller-service-생성하기" class="heading-element"><span>controller, service 생성하기</span>
+  <a href="#controller-service-%ec%83%9d%ec%84%b1%ed%95%98%ea%b8%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nest g controller boards --no-spec
+</span></span><span class="line"><span class="cl">nest g service boards --no-spec</span></span></code></pre></td></tr></table>
+</div>
+</div><p>한줄씩 차례로 입력하면 된다.<br>
  </p>
 <p>설명</p>
-<blockquote>
-<p>nest : using nest cli
+<blockquote><p>nest : using nest cli
 g : generate
 controller : controller schematic
 service : service schematic
 boards: name of the schematic
 &ndash;no-spec: 테스트를 위한 소스코드 생성을 하지 않겠다!</p>
-</blockquote>
-<blockquote>
-<p>[!tip]
-접근제한자를 이용해서 소스 간단하게하기
+</blockquote><div class="alert alert-tip"><p class="alert-title"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M8 1.5c-2.363.0-4 1.69-4 3.75.0.984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75.0 01-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456.0 00-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863.0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751.0 01-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304.0-2.06-1.637-3.75-4-3.75zM5.75 12h4.5a.75.75.0 010 1.5h-4.5a.75.75.0 010-1.5zM6 15.25a.75.75.0 01.75-.75h2.5a.75.75.0 010 1.5h-2.5A.75.75.0 016 15.25z"/></svg>Tip</p><p>접근제한자를 이용해서 소스 간단하게하기
 접근제한자(public,protected,private)을 생성자(constructor) 파라미터에 선언하면 접근제한자가 사용된 생성자파라미터는 암묵적으로 클래스 프로퍼티로 선언된다.</p>
-</blockquote>
-<p> <br>
+</div><p> <br>
  </p>
-<h2 id="nestjs에서-request의-body값은-어떻게-가져올까">NestJS에서 request의 body값은 어떻게 가져올까?</h2>
-<p>NodeJS에서는 <code>req.body</code>로 가져올 수 있다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="sb">`/`</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<h2 id="nestjs에서-request의-body값은-어떻게-가져올까" class="heading-element"><span>NestJS에서 request의 body값은 어떻게 가져올까?</span>
+  <a href="#nestjs%ec%97%90%ec%84%9c-request%ec%9d%98-body%ea%b0%92%ec%9d%80-%ec%96%b4%eb%96%bb%ea%b2%8c-%ea%b0%80%ec%a0%b8%ec%98%ac%ea%b9%8c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>NodeJS에서는 <code>req.body</code>로 가져올 수 있다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="sb">`/`</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">})</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">})</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>하지만 NestJS에서는 <code>@Body body</code>를 이용해서 가져온다.
 이렇게 하면 모든 request에서 보내온 값을 가져올 수 있으며,
 만약, 하나씩 가져오려면
@@ -308,7 +404,23 @@ boards: name of the schematic
 혹은
 <code>@Body('description') description</code>
 이런식으로 가져올 수 있다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kd">@Post</span><span class="p">()</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kd">@Post</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="nx">createBoard</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="nx">body</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -319,34 +431,44 @@ boards: name of the schematic
 </span></span><span class="line"><span class="cl">		   <span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="nx">title</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="nx">description</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> <br>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> <br>
  </p>
-<h3 id="nestjs에서-param은-어떻게-가져올까">NestJS에서 Param은 어떻게 가져올까?</h3>
-<p>localhost:3000/:id 와 같은 params 값의 경우, body와 유사하다.<br>
+<h3 id="nestjs에서-param은-어떻게-가져올까" class="heading-element"><span>NestJS에서 Param은 어떻게 가져올까?</span>
+  <a href="#nestjs%ec%97%90%ec%84%9c-param%ec%9d%80-%ec%96%b4%eb%96%bb%ea%b2%8c-%ea%b0%80%ec%a0%b8%ec%98%ac%ea%b9%8c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>localhost:3000/:id 와 같은 params 값의 경우, body와 유사하다.<br>
 위의 경우에는 <code>findOne(@Param('id') id: string)</code> 과 같이 가져오면 된다.<br>
 만약 여러개의 Param을 가져와야 한다면,
 <code>findOne(@Param() params: string[])</code> 으로 가져올 수 있다.<br>
  </p>
 <div class="details admonition note open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">@는 데코레이터라고 부른다.<br>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">@는 데코레이터라고 부른다.<br>
 타입스크립트의 데코레이터는 파이썬의 데코레이터나 자바의 어노테이션과 유사한 기능을 한다.<br>
 클래스, 메서드, 접근자, 프로퍼티, 매개변수에 적용 가능<br>
-참고 - <a href="https://wikidocs.net/158481" target="_blank" rel="noopener noreffer ">2.6 데코레이터 - NestJS로 배우는 백엔드 프로그래밍</a></div>
-        </div>
+참고 - <a href="https://wikidocs.net/158481"target="_blank" rel="external nofollow noopener noreferrer">2.6 데코레이터 - NestJS로 배우는 백엔드 프로그래밍</a></div>
     </div>
+  </div>
 <hr>
-<h2 id="dto-data-transfer-object란">DTO (Data Transfer Object)란?</h2>
-<p>계층간 데이터 교환을 위한 객체<br>
+<h2 id="dto-data-transfer-object란" class="heading-element"><span>DTO (Data Transfer Object)란?</span>
+  <a href="#dto-data-transfer-object%eb%9e%80" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>계층간 데이터 교환을 위한 객체<br>
 DB에서 데이터를 얻어 Service나 Controller 등으로 보낼 때 사용하는 객체를 말한다.<br>
 DTO는 데이터가 네트워크를 통해 전송되는 방법을 정의하는 객체이다.</p>
 <p>NestJS 공식문서에서는 interface보다는 class를 이용해서 정의하는 것을 추천하고 있다.</p>
-<h4 id="dtodata-transfer-object를-쓰는-이유는">DTO(Data Transfer Object)를 쓰는 이유는?</h4>
-<ul>
+<h4 id="dtodata-transfer-object를-쓰는-이유는" class="heading-element"><span>DTO(Data Transfer Object)를 쓰는 이유는?</span>
+  <a href="#dtodata-transfer-object%eb%a5%bc-%ec%93%b0%eb%8a%94-%ec%9d%b4%ec%9c%a0%eb%8a%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
 <li>데이터 유효성을 체크하는데 효율적</li>
 <li>더 안정적인 코드로 만들어준다. 타입스크립트의 타입으로도 사용된다.</li>
 </ul>
@@ -355,21 +477,33 @@ DTO는 데이터가 네트워크를 통해 전송되는 방법을 정의하는 �
 <li>인자가 하나인 경우에는 크게 문제가 없겠지만 이것들이 여러개라면 모든 파일에서 인자를 다 수정해줘야 한다.</li>
 <li>하지만 DTO를 이용한다면 이 모든 것을 하나의 class로 처리하고 해당 class만 수정하면 된다.</li>
 </ul>
-<h3 id="pipe란">Pipe란??</h3>
-<p>파이프는 @Injectable() 데코레이터로 주석이 달린 클래스이다.<br>
+<h3 id="pipe란" class="heading-element"><span>Pipe란??</span>
+  <a href="#pipe%eb%9e%80" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>파이프는 @Injectable() 데코레이터로 주석이 달린 클래스이다.<br>
 파이프는 <strong>data transformation</strong> (데이터 변형)과 <strong>data validation</strong> (데이터 유효성)을 위해서 사용된다.<br>
 파이프는 컨트롤러 경로 처리기에 의해 처리되는 인수에 대해 작동한다.<br>
 Nest는 메소드가 호출되기 직전에 파이프를 삽입하고 파이트는 메소드로 향하는 인수를 수신하고 이에 대해 작동한다.</p>
-<h4 id="data-transformation">Data Transformation?</h4>
-<p>입력 데이터를 원하는 형식으로 변환 (예 : 문자열을 정수로)</p>
-<h4 id="pipe-사용하는-법-binding-pipes">PIPE 사용하는 법 (Binding Pipes)</h4>
-<ol>
+<h4 id="data-transformation" class="heading-element"><span>Data Transformation?</span>
+  <a href="#data-transformation" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>입력 데이터를 원하는 형식으로 변환 (예 : 문자열을 정수로)</p>
+<h4 id="pipe-사용하는-법-binding-pipes" class="heading-element"><span>PIPE 사용하는 법 (Binding Pipes)</span>
+  <a href="#pipe-%ec%82%ac%ec%9a%a9%ed%95%98%eb%8a%94-%eb%b2%95-binding-pipes" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ol>
 <li>Handler-level Pipes</li>
 <li>Parameter-level pipes</li>
 <li>Golbal-level Pipes</li>
 </ol>
-<h4 id="built-in-pipes">Built-in PIpes</h4>
-<p>NestJS에서 기본적으로 사용할 수 있는 6가지 파이프</p>
+<h4 id="built-in-pipes" class="heading-element"><span>Built-in PIpes</span>
+  <a href="#built-in-pipes" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>NestJS에서 기본적으로 사용할 수 있는 6가지 파이프</p>
 <ul>
 <li>ValidationPipe</li>
 <li>ParseIntPipe</li>
@@ -378,42 +512,90 @@ Nest는 메소드가 호출되기 직전에 파이프를 삽입하고 파이트�
 <li>ParseUUIDPipe</li>
 <li>DefaultValuesPipe</li>
 </ul>
-<h3 id="파이프를-이용한-유효성-체크-검사">파이프를 이용한 유효성 체크 검사</h3>
-<h4 id="필요한-모듈">필요한 모듈</h4>
-<ul>
+<h3 id="파이프를-이용한-유효성-체크-검사" class="heading-element"><span>파이프를 이용한 유효성 체크 검사</span>
+  <a href="#%ed%8c%8c%ec%9d%b4%ed%94%84%eb%a5%bc-%ec%9d%b4%ec%9a%a9%ed%95%9c-%ec%9c%a0%ed%9a%a8%ec%84%b1-%ec%b2%b4%ed%81%ac-%ea%b2%80%ec%82%ac" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 id="필요한-모듈" class="heading-element"><span>필요한 모듈</span>
+  <a href="#%ed%95%84%ec%9a%94%ed%95%9c-%eb%aa%a8%eb%93%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
 <li>class-validator, class-transformer</li>
 <li><code>npm install class-validator class-transformer --save</code></li>
-<li><a href="https://github.com/typestack/class-validator#manual-validation" target="_blank" rel="noopener noreffer ">Documentation page</a></li>
+<li><a href="https://github.com/typestack/class-validator#manual-validation"target="_blank" rel="external nofollow noopener noreferrer">Documentation page</a></li>
 </ul>
-<h5 id="예시">예시</h5>
-<p>create-board.dto.ts 파일에서</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"> <span class="kr">import</span> <span class="p">{</span> <span class="nx">IsNotEmpty</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;class-validator&#39;</span><span class="p">;</span>  
+<h5 id="예시" class="heading-element"><span>예시</span>
+  <a href="#%ec%98%88%ec%8b%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h5><p>create-board.dto.ts 파일에서</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"> <span class="kr">import</span> <span class="p">{</span> <span class="nx">IsNotEmpty</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;class-validator&#39;</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">CreateBoardDto</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">  <span class="kd">@IsNotEmpty</span><span class="p">()</span>  <span class="c1">// &lt;-- 이렇게
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">title</span>: <span class="kt">string</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl">  <span class="kd">@IsNotEmpty</span><span class="p">()</span>  <span class="c1">// &lt;-- 이렇게
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">description</span>: <span class="kt">string</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>먼저 위와 같이 각 인자별로 반드시 있어야 하는 곳에 <code>@IsNotEmpty</code>를 적용시킨다.<br>
  </p>
 <p>controller 파일에서</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kd">@Post</span><span class="p">()</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kd">@Post</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">@UsePipes</span><span class="p">(</span><span class="nx">ValidationPipe</span><span class="p">)</span>  <span class="c1">// &lt;-- 이렇게
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">createBoard</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span> <span class="nx">createBoardDto</span>: <span class="kt">CreateBoardDto</span><span class="p">)</span><span class="o">:</span> <span class="nx">Board</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">boardsService</span><span class="p">.</span><span class="nx">createBoard</span><span class="p">(</span><span class="nx">createBoardDto</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>다음으로 위와 같이 해당 부분에 <code>@UsePipes(ValidationPipe)</code>를 적용시킨다.<br>
  </p>
 <p>위 방법은 앞서 언급했던 3가지 Binding Pipes 중, <strong>Handler-level Pipes</strong>이다.<br>
  </p>
 <p>@IsNotEmpty를 적용하지 않았을 경우 실제 Postman을 돌려보면 UsePipes에서 해당 함수를 찾을 수 없다는 오류가 뜨며, @UsePipes를 적용하지 않았을 경우에는 해당 유효성 검사 자체가 이루어지지 않는다.<br>
  </p>
-<h3 id="에러를-표출해주기-위해서는">에러를 표출해주기 위해서는</h3>
-<p>예를 들어 찾는 게시물이 없는 경우, 예외 인스턴스를 생성해서 이용할 수 있다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="nx">getBoardById</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Board</span> <span class="p">{</span>
+<h3 id="에러를-표출해주기-위해서는" class="heading-element"><span>에러를 표출해주기 위해서는</span>
+  <a href="#%ec%97%90%eb%9f%ac%eb%a5%bc-%ed%91%9c%ec%b6%9c%ed%95%b4%ec%a3%bc%ea%b8%b0-%ec%9c%84%ed%95%b4%ec%84%9c%eb%8a%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>예를 들어 찾는 게시물이 없는 경우, 예외 인스턴스를 생성해서 이용할 수 있다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="nx">getBoardById</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Board</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">found</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">boards</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">board</span> <span class="o">=&gt;</span> <span class="nx">board</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">found</span><span class="p">)</span> <span class="p">{</span>
@@ -421,17 +603,40 @@ Nest는 메소드가 호출되기 직전에 파이프를 삽입하고 파이트�
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">	
 </span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">found</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p><code>NotFoundException</code>은 nestjs에 있는 인스턴스이다. (import로 사용가능)
 사용시 다음과 같은 에러메세지를 볼 수 있다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;statusCode&#34;</span><span class="p">:</span> <span class="mi">404</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;Not Found&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>여기서 만약 에러메세지를 따로 넣어주고 싶다면,</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="nx">getBoardById</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Board</span> <span class="p">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="nx">getBoardById</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Board</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">found</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">boards</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">board</span> <span class="o">=&gt;</span> <span class="nx">board</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">found</span><span class="p">)</span> <span class="p">{</span>
@@ -439,21 +644,49 @@ Nest는 메소드가 호출되기 직전에 파이프를 삽입하고 파이트�
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">	
 </span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">found</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>이렇게 하면, 아래와 같이 response 된다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;statusCode&#34;</span><span class="p">:</span> <span class="mi">404</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;Can&#39;t find Board with id wefewwefewf&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;error&#34;</span><span class="p">:</span> <span class="s2">&#34;Not Found&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> </p>
-<h3 id="커스텀-파이프-구현방법">커스텀 파이프 구현방법</h3>
-<p>먼저 Pipe Transform이란 인터페이스를 새롭게 만들 커스텀 파이프에 구현해줘야 한다.<br>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<h3 id="커스텀-파이프-구현방법" class="heading-element"><span>커스텀 파이프 구현방법</span>
+  <a href="#%ec%bb%a4%ec%8a%a4%ed%85%80-%ed%8c%8c%ec%9d%b4%ed%94%84-%ea%b5%ac%ed%98%84%eb%b0%a9%eb%b2%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>먼저 Pipe Transform이란 인터페이스를 새롭게 만들 커스텀 파이프에 구현해줘야 한다.<br>
 이 Pipe Transform 인터페이스는 모든 파이프에서 구현해줘야 하는 인터페이스이다.<br>
 그리고 이것과 함께 <strong>모든 파이프는 transform()메소드를 필요로</strong> 한다.<br>
 이 메소드는 NestJS가 인자(arjuments)를 처리하기 위해서 사용된다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ArgumentMetadata</span><span class="p">,</span> <span class="nx">PipeTransform</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/common&#34;</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">ArgumentMetadata</span><span class="p">,</span> <span class="nx">PipeTransform</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@nestjs/common&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">BoardStatusValidationPipe</span> <span class="kr">implements</span> <span class="nx">PipeTransform</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">transfomr</span><span class="p">(</span><span class="nx">value</span>: <span class="kt">any</span><span class="p">,</span> <span class="nx">metadata</span>: <span class="kt">ArgumentMetadata</span><span class="p">)</span> <span class="p">{</span>
@@ -462,10 +695,14 @@ Nest는 메소드가 호출되기 직전에 파이프를 삽입하고 파이트�
 </span></span><span class="line"><span class="cl">	
 </span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> </p>
-<h4 id="transform-메소드">transform() 메소드</h4>
-<p>이 메소드는 2 개의 파라미터를 가진다.</p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<h4 id="transform-메소드" class="heading-element"><span>transform() 메소드</span>
+  <a href="#transform-%eb%a9%94%ec%86%8c%eb%93%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>이 메소드는 2 개의 파라미터를 가진다.</p>
 <ol>
 <li>첫번째 파라미터는 처리가 된 인자의 값(value)이며,</li>
 <li>두번째 파라미터는 인자에 대한 메타 데이터를 포함한 객체이다.</li>
@@ -473,25 +710,49 @@ Nest는 메소드가 호출되기 직전에 파이프를 삽입하고 파이트�
 <p>transform()메소드에서 return된 값은 Route 핸들러로 전해진다.<br>
 만약 예외(Exception)가 발생하면 클라이언트에 바로 전해진다.</p>
 <hr>
-<h2 id="mysql-및-typeorm">mySQL 및 TypeORM</h2>
-<h3 id="설치">설치</h3>
-<ul>
+<h2 id="mysql-및-typeorm" class="heading-element"><span>mySQL 및 TypeORM</span>
+  <a href="#mysql-%eb%b0%8f-typeorm" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="설치" class="heading-element"><span>설치</span>
+  <a href="#%ec%84%a4%ec%b9%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><ul>
 <li>typeorm</li>
 <li>mysql</li>
 <li>@nestjs/typeorm</li>
 </ul>
 <p>이렇게 3가지 모듈을 설치한다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install --save @nestjs/typeorm typeorm mysql
-</span></span></code></pre></div><p>참고문서
-<a href="https://docs.nestjs.com/techniques/database" target="_blank" rel="noopener noreffer ">documentation</a></p>
-<h3 id="설정">설정</h3>
-<p>src 폴더 아래 configs 폴더 생성 후 그 안에 <code>typeorm.config.ts</code> 파일 생성</p>
-<h4 id="dao단-분리">DAO단 분리</h4>
-<p>기존 내가 알던 model폴더에서 <strong>000.dao.ts</strong> 라고 파일명을 붙였던 것과 달리,<br>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install --save @nestjs/typeorm typeorm mysql</span></span></code></pre></td></tr></table>
+</div>
+</div><p>참고문서
+<a href="https://docs.nestjs.com/techniques/database"target="_blank" rel="external nofollow noopener noreferrer">documentation</a></p>
+<h3 id="설정" class="heading-element"><span>설정</span>
+  <a href="#%ec%84%a4%ec%a0%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>src 폴더 아래 configs 폴더 생성 후 그 안에 <code>typeorm.config.ts</code> 파일 생성</p>
+<h4 id="dao단-분리" class="heading-element"><span>DAO단 분리</span>
+  <a href="#dao%eb%8b%a8-%eb%b6%84%eb%a6%ac" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>기존 내가 알던 model폴더에서 <strong>000.dao.ts</strong> 라고 파일명을 붙였던 것과 달리,<br>
 소스 강의에서는 <strong>000.repository.ts</strong> 파일명을 사용하고 있다. 그 외에는 동일하다.</p>
-<h3 id="게시물-삭제">게시물 삭제</h3>
-<h4 id="remove-vs-delete">remove()? vs delete()?</h4>
-<ul>
+<h3 id="게시물-삭제" class="heading-element"><span>게시물 삭제</span>
+  <a href="#%ea%b2%8c%ec%8b%9c%eb%ac%bc-%ec%82%ad%ec%a0%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 id="remove-vs-delete" class="heading-element"><span>remove()? vs delete()?</span>
+  <a href="#remove-vs-delete" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
 <li>remove
 <ul>
 <li>무조건 존재하는 아이템을 remove 메소드를 이용해서 지워야 한다. 그렇지 않으면 에러 발생(404 error)</li>
@@ -505,29 +766,67 @@ Nest는 메소드가 호출되기 직전에 파이프를 삽입하고 파이트�
 </li>
 </ul>
 <hr>
-<h2 id="error-handling">Error Handling</h2>
-<p>에러를 잡아내고 싶다면 우선,</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>
+<h2 id="error-handling" class="heading-element"><span>Error Handling</span>
+  <a href="#error-handling" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>에러를 잡아내고 싶다면 우선,</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="c1">// &lt;- 이건 사용하고자 하는 코드
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>를 이용하여 에러를 확인할 수 있다.<br>
 http에서 해당 API를 돌려보면, 아래와 같은 로그를 터미널에서 확인할 수 있다.<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> code: <span class="s1">&#39;ER_DUP_ENTRY&#39;</span>,
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> code: <span class="s1">&#39;ER_DUP_ENTRY&#39;</span>,
 </span></span><span class="line"><span class="cl">  errno: 1062,
 </span></span><span class="line"><span class="cl">  sqlMessage: <span class="s2">&#34;Duplicate entry &#39;test&#39; for key &#39;user.IDX_78a916df40e02a9deb1c4b75ed&#39;&#34;</span>,
 </span></span><span class="line"><span class="cl">  sqlState: <span class="s1">&#39;23000&#39;</span>,
 </span></span><span class="line"><span class="cl">  index: 0,
 </span></span><span class="line"><span class="cl">  sql: <span class="s2">&#34;INSERT INTO `user`(`id`, `username`, `password`) VALUES (DEFAULT, &#39;test&#39;, &#39;te171&#39;)&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>해당 error code 확인 후,<br>
 다시 아래와 같은 방식으로 수정하면 정상적으로 잡고자 하는 에러를 잡아낼 수 있다.<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>  
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">  <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>  
 </span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">code</span> <span class="o">===</span> <span class="s1">&#39;ER_DUP_ENTRY&#39;</span><span class="p">)</span> <span class="p">{</span>  
@@ -535,11 +834,30 @@ http에서 해당 API를 돌려보면, 아래와 같은 로그를 터미널에�
 </span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">    <span class="k">throw</span> <span class="k">new</span> <span class="nx">InternalServerErrorException</span><span class="p">();</span>  
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>  
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>코드 수정 후, http Request 실행시<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">HTTP/1.1 <span class="m">409</span> Conflict
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">HTTP/1.1 <span class="m">409</span> Conflict
 </span></span><span class="line"><span class="cl">X-Powered-By: Express
 </span></span><span class="line"><span class="cl">Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 </span></span><span class="line"><span class="cl">Content-Length: <span class="m">67</span>
@@ -552,20 +870,66 @@ http에서 해당 API를 돌려보면, 아래와 같은 로그를 터미널에�
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;statusCode&#34;</span>: 409,
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;message&#34;</span>: <span class="s2">&#34;Existing username&#34;</span>,
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;error&#34;</span>: <span class="s2">&#34;Conflict&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>statusCode 409부터 정상적으로 송출하고자 하는 에러 메세지까지 모두 이상없음을 확인가능하다.</p>
 <hr>
-<h2 id="인증-및-인가---bycriptjs">인증 및 인가 - bycriptjs</h2>
-<h3 id="hashedpassword-생성-및-검증">hashedPassword 생성 및 검증</h3>
-<p>우선 인증 인가 부분에 필요한 bcrypt를 설치한다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install bcryptjs --save
-</span></span></code></pre></div><p> </p>
+<h2 id="인증-및-인가---bycriptjs" class="heading-element"><span>인증 및 인가 - bycriptjs</span>
+  <a href="#%ec%9d%b8%ec%a6%9d-%eb%b0%8f-%ec%9d%b8%ea%b0%80---bycriptjs" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="hashedpassword-생성-및-검증" class="heading-element"><span>hashedPassword 생성 및 검증</span>
+  <a href="#hashedpassword-%ec%83%9d%ec%84%b1-%eb%b0%8f-%ea%b2%80%ec%a6%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>우선 인증 인가 부분에 필요한 bcrypt를 설치한다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install bcryptjs --save</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p><code>import</code>는 다음과 같다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">bcrypt</span> <span class="kr">from</span> <span class="s1">&#39;bcryptjs&#39;</span><span class="p">;</span>
-</span></span></code></pre></div><p> </p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">bcrypt</span> <span class="kr">from</span> <span class="s1">&#39;bcryptjs&#39;</span><span class="p">;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>회원가입시, bcrypt로 hashedPassword 생성</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">//user.repository.ts
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">//user.repository.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="kd">@CustomRepository</span><span class="p">(</span><span class="nx">User</span><span class="p">)</span>  
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">UserRepository</span> <span class="kr">extends</span> <span class="nx">Repository</span><span class="p">&lt;</span><span class="nt">User</span><span class="p">&gt;</span> <span class="p">{</span>  
@@ -587,10 +951,27 @@ http에서 해당 API를 돌려보면, 아래와 같은 로그를 터미널에�
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>  
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>  
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>  
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>로그인시, hashedPassword를 비교하여 검증 ( <code>bcrypt.compare</code>)</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// user.service.ts
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// user.service.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="kr">async</span> <span class="nx">signIn</span><span class="p">(</span><span class="nx">authCredentialsDto</span>: <span class="kt">AuthCredentialsDto</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">&gt;</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">username</span><span class="p">,</span> <span class="nx">password</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">authCredentialsDto</span><span class="p">;</span>  
@@ -601,16 +982,26 @@ http에서 해당 API를 돌려보면, 아래와 같은 로그를 터미널에�
 </span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">    <span class="k">throw</span> <span class="k">new</span> <span class="nx">UnauthorizedException</span><span class="p">(</span><span class="s1">&#39;login failed&#39;</span><span class="p">);</span>  
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>  
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> </p>
-<h3 id="jwt-token-생성">jwt token 생성</h3>
-<p>필요 모듈</p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<h3 id="jwt-token-생성" class="heading-element"><span>jwt token 생성</span>
+  <a href="#jwt-token-%ec%83%9d%ec%84%b1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>필요 모듈</p>
 <ul>
 <li>@nestjs/jwt : nestjs에서 jwt를 사용하기 위해 필요한 모듈</li>
 <li>@nestjs/passport : JWT를 이용하여 인증 처리하는 등의 과정을 훨씬 쉽게 만들어주는 모듈</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install @nestjs/jwt @nestjs/passport passport passport-jwt --save
-</span></span></code></pre></div><p> </p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install @nestjs/jwt @nestjs/passport passport passport-jwt --save</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>위 터미널 명령어와 같이 총 4개의 모듈을 설치한다.</p>
 <ul>
 <li>@nestjs/jwt</li>
@@ -619,68 +1010,132 @@ http에서 해당 API를 돌려보면, 아래와 같은 로그를 터미널에�
 <li>passport-jwt
  </li>
 </ul>
-<h4 id="passport-사용">passport 사용</h4>
-<p> </p>
-<blockquote>
-<p>Passport 모듈이란?<br>
+<h4 id="passport-사용" class="heading-element"><span>passport 사용</span>
+  <a href="#passport-%ec%82%ac%ec%9a%a9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p> </p>
+<blockquote><p>Passport 모듈이란?<br>
 토큰이 유효한 토큰인지 서버에서 secret text를 이용해서 알아내면 payload 안에 유저 이름을 이용해서,<br>
 데이터베이스 안에 있는 <strong>유저 이름에 해당하는 유저 정보를</strong> 모두 가져올 수 있다.<br>
 이러한 처리를 쉽게 해주는게 Passport 모듈이다.</p>
-</blockquote>
-<p> </p>
+</blockquote><p> </p>
 <p>&ndash;&gt; 쉽게 말해 로그인 이후, 토큰 확인 과정을 말한다!!!
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install @types/passport-jwt --save
-</span></span></code></pre></div><p> </p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install @types/passport-jwt --save</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p><div class="details admonition note open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><h5 id="nestjs의-미들웨어">nestJS의 미들웨어</h5>
-<ul>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><h5 id="nestjs의-미들웨어" class="heading-element"><span>nestJS의 미들웨어</span>
+  <a href="#nestjs%ec%9d%98-%eb%af%b8%eb%93%a4%ec%9b%a8%ec%96%b4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h5><ul>
 <li>Pipes : 파이프는 요청 유효성 검사 및 페이로드 변환을 위해 만들어진다. 데이터를 예상한 대로 직렬화 한다.</li>
 <li>Filters : 필터는 오류 처리 미들웨어이다. 특정 오류 처리기를 사용할 경로와 각 경로 주변의 복잡성을 관리하는 방법을 알 수 있다.</li>
 <li>Guards : 가드는 인증 미들웨어. 지정된 경로로 통과할 수 있는 사람과 허용되지 않는 사람을 서버에 알려준다.</li>
 <li>Interceptors : 인터셉터는 응답 매핑 및 캐시 관리와 함께 요청 로깅과 같은 전후 미들웨어. 각 요청 전후에 이를 실행하는 기능은 매우 강력하고 유용하다.</li>
 </ul>
 </div>
-        </div>
-    </div><br>
+    </div>
+  </div><br>
  </p>
 <p><div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>각각의 미들웨어가 불러지는(called) 순서</p>
-<pre tabindex="0"><code>middleware -&gt; guard -&gt; interceptor (before) -&gt; pipe -&gt; controller -&gt; service -&gt; controller -&gt; interceptor (after) -&gt; filter (if applicable) -&gt; client
-</code></pre></div>
-        </div>
-    </div><br>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p>각각의 미들웨어가 불러지는(called) 순서</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">middleware -&gt; guard -&gt; interceptor (before) -&gt; pipe -&gt; controller -&gt; service -&gt; controller -&gt; interceptor (after) -&gt; filter (if applicable) -&gt; client</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+    </div>
+  </div><br>
  </p>
-<h5 id="useguards">UseGuards</h5>
-<p>UseGuards 안에 @nestjs/passport에서 가져온 AuthGuard()를 이용하면 요청안에 유저 정보를 넣어준 수 있다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kd">@Post</span><span class="p">(</span><span class="s1">&#39;/authTest&#39;</span><span class="p">)</span>
+<h5 id="useguards" class="heading-element"><span>UseGuards</span>
+  <a href="#useguards" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h5><p>UseGuards 안에 @nestjs/passport에서 가져온 AuthGuard()를 이용하면 요청안에 유저 정보를 넣어준 수 있다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kd">@Post</span><span class="p">(</span><span class="s1">&#39;/authTest&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="kd">@UseGuards</span><span class="p">(</span><span class="nx">AuthGuard</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl"><span class="nx">authTest</span><span class="p">(</span><span class="kd">@Req</span><span class="p">()</span> <span class="nx">req</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p> </p>
-<h4 id="useguards가-아닌-바로-객체에-접근하려면">UseGuards가 아닌 바로 객체에 접근하려면?</h4>
-<p>커스텀 데코레이터를 생성하여 접근할 수 있다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createParamDecorator</span><span class="p">,</span> <span class="nx">ExcutionContext</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/common&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<h4 id="useguards가-아닌-바로-객체에-접근하려면" class="heading-element"><span>UseGuards가 아닌 바로 객체에 접근하려면?</span>
+  <a href="#useguards%ea%b0%80-%ec%95%84%eb%8b%8c-%eb%b0%94%eb%a1%9c-%ea%b0%9d%ec%b2%b4%ec%97%90-%ec%a0%91%ea%b7%bc%ed%95%98%eb%a0%a4%eb%a9%b4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>커스텀 데코레이터를 생성하여 접근할 수 있다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createParamDecorator</span><span class="p">,</span> <span class="nx">ExcutionContext</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/common&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">User</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./user.entity&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">GetUser</span> <span class="o">=</span> <span class="nx">createParamDecorator</span><span class="p">((</span><span class="nx">data</span><span class="p">,</span> <span class="nx">ctx</span>: <span class="kt">ExcutionContext</span><span class="p">)</span><span class="o">:</span> <span class="nx">User</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">req</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">switchToHttp</span><span class="p">().</span><span class="nx">getRequest</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">req</span><span class="p">.</span><span class="nx">user</span>
-</span></span><span class="line"><span class="cl"><span class="p">})</span>
-</span></span></code></pre></div><p>위 예시는, UseGuards를 사용하고 그 안에 있는 정보를 사용하는 방법이기에 UseGuards가 필요하다.</p>
+</span></span><span class="line"><span class="cl"><span class="p">})</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>위 예시는, UseGuards를 사용하고 그 안에 있는 정보를 사용하는 방법이기에 UseGuards가 필요하다.</p>
 <hr>
-<h3 id="인증된-유저만-게시물을-사용할-수-있게-하기">인증된 유저만 게시물을 사용할 수 있게 하기</h3>
-<p>우선 auth 모듈의 인증인가 부분을 boards 모듈에서도 사용할 수 있게 한다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// boards.module.ts 
+<h3 id="인증된-유저만-게시물을-사용할-수-있게-하기" class="heading-element"><span>인증된 유저만 게시물을 사용할 수 있게 하기</span>
+  <a href="#%ec%9d%b8%ec%a6%9d%eb%90%9c-%ec%9c%a0%ec%a0%80%eb%a7%8c-%ea%b2%8c%ec%8b%9c%eb%ac%bc%ec%9d%84-%ec%82%ac%ec%9a%a9%ed%95%a0-%ec%88%98-%ec%9e%88%ea%b2%8c-%ed%95%98%ea%b8%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>우선 auth 모듈의 인증인가 부분을 boards 모듈에서도 사용할 수 있게 한다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// boards.module.ts 
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">@Module</span><span class="p">({</span>  
 </span></span><span class="line"><span class="cl">  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">	  <span class="nx">TypeOrmExModule</span><span class="p">.</span><span class="nx">forCustomRepository</span><span class="p">([</span><span class="nx">BoardRepository</span><span class="p">]),</span> 
@@ -693,47 +1148,94 @@ http에서 해당 API를 돌려보면, 아래와 같은 로그를 터미널에�
 </span></span><span class="line"><span class="cl"><span class="c1">//boards.controller.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">@Controller</span><span class="p">(</span><span class="s1">&#39;boards&#39;</span><span class="p">)</span>  
 </span></span><span class="line"><span class="cl"><span class="kd">@UseGuards</span><span class="p">(</span><span class="nx">AuthGuard</span><span class="p">())</span>  <span class="c1">// &lt;- 추가
-</span></span></span></code></pre></div><p>컨트롤러 boards 아래 넣게되면 미들웨어처럼 작동하여,<br>
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>컨트롤러 boards 아래 넣게되면 미들웨어처럼 작동하여,<br>
 모든 boards API는 토큰을 필요로 하게 된다.</p>
 <hr>
-<h3 id="유저와-게시물-데이터의-관계-형성">유저와 게시물 데이터의 관계 형성</h3>
-<p>사용자 1명은 여러개의 게시물을 작성할 수 있다.<br>
+<h3 id="유저와-게시물-데이터의-관계-형성" class="heading-element"><span>유저와 게시물 데이터의 관계 형성</span>
+  <a href="#%ec%9c%a0%ec%a0%80%ec%99%80-%ea%b2%8c%ec%8b%9c%eb%ac%bc-%eb%8d%b0%ec%9d%b4%ed%84%b0%ec%9d%98-%ea%b4%80%ea%b3%84-%ed%98%95%ec%84%b1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>사용자 1명은 여러개의 게시물을 작성할 수 있다.<br>
 때문에 OneToMany Relationship, ManyToOne Relationship의 성격을 동시에 가지는데,<br>
 User Entity, Board Entity에서 각각 설정할 수 있다.<br>
  </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">//user.entity.ts
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">//user.entity.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">@OneToMany</span><span class="p">(</span><span class="kr">type</span> <span class="o">=&gt;</span> <span class="nx">Board</span><span class="p">,</span> <span class="nx">board</span> <span class="o">=&gt;</span> <span class="nx">board</span><span class="p">.</span><span class="nx">user</span><span class="p">,</span> <span class="p">{</span> <span class="nx">eager</span>: <span class="kt">true</span> <span class="p">})</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">boards</span>: <span class="kt">Board</span><span class="p">[]</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//board.entity.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">@ManyToOne</span><span class="p">((</span><span class="kr">type</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">,</span> <span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">user</span><span class="p">.</span><span class="nx">boards</span><span class="p">,</span> <span class="p">{</span> <span class="nx">eager</span>: <span class="kt">false</span> <span class="p">})</span>  
-</span></span><span class="line"><span class="cl"><span class="nx">user</span>: <span class="kt">User</span><span class="p">;</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl"><span class="nx">user</span>: <span class="kt">User</span><span class="p">;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><h4 id="option-eager">option: eager</h4>
-<ul>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><h4 id="option-eager" class="heading-element"><span>option: eager</span>
+  <a href="#option-eager" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
 <li>true 일때는 user정보를 가져올 때, board도 같이 가져옴</li>
 </ul>
 </div>
-        </div>
     </div>
+  </div>
 <hr>
-<h2 id="log">Log</h2>
-<h4 id="로그의-종류">로그의 종류</h4>
-<ul>
+<h2 id="log" class="heading-element"><span>Log</span>
+  <a href="#log" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h4 id="로그의-종류" class="heading-element"><span>로그의 종류</span>
+  <a href="#%eb%a1%9c%ea%b7%b8%ec%9d%98-%ec%a2%85%eb%a5%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><ul>
 <li>Log - 중요한 정보의 범용 로깅</li>
 <li>Warning - 치명적이거나 파괴적이지 않은 처리되지 않은 문제</li>
 <li>Error - 치명적이거나 파괴적인 처리되지 않은 문제</li>
 <li>Debug - 개발자용  / 오류 발생시 로직을 디버그하는 데 도움이되는 유용한 정보입니다.</li>
 <li>Verbose - 응용자용 / 응용 프로그램의 동작에 대한 통찰력을 제공하는 정보입니다.</li>
 </ul>
-<h5 id="예시-1">예시</h5>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// main.ts
+<h5 id="예시-1" class="heading-element"><span>예시</span>
+  <a href="#%ec%98%88%ec%8b%9c-1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// main.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NestFactory</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/core&#39;</span><span class="p">;</span>  <span class="c1">// &lt;- this
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">AppModule</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./app.module&#39;</span><span class="p">;</span>  
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Logger</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@nestjs/common&#39;</span><span class="p">;</span>  
@@ -746,61 +1248,87 @@ User Entity, Board Entity에서 각각 설정할 수 있다.<br>
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>  
 </span></span><span class="line"><span class="cl"><span class="nx">bootstrap</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"> 
-</span></span></code></pre></div><p> </p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// board.controller.ts
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// board.controller.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="kd">@Get</span><span class="p">()</span>  
 </span></span><span class="line"><span class="cl"><span class="nx">getAllBoard</span><span class="p">(</span><span class="kd">@GetUser</span><span class="p">()</span> <span class="nx">user</span>: <span class="kt">User</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">Board</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>  
 </span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">verbose</span><span class="p">(</span><span class="sb">`User </span><span class="si">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="si">}</span><span class="sb"> trying to get all boards`</span><span class="p">);</span> 
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">boardsService</span><span class="p">.</span><span class="nx">getAllBoards</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>  
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><hr>
-<h2 id="설정-1">설정</h2>
-<p><code>.env</code> 파일 사용 관련</p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="설정-1" class="heading-element"><span>설정</span>
+  <a href="#%ec%84%a4%ec%a0%95-1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><code>.env</code> 파일 사용 관련</p>
 <p>필요 모듈 설치</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install config --save
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install config --save
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">// 또는 
-</span></span><span class="line"><span class="cl">npm install dotenv --save
-</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2023-01-09</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/nestjs/">NestJS</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/posts/202301020441/" class="prev" rel="prev" title="부트캠프 가도 실패하는 사람 특징"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>부트캠프 가도 실패하는 사람 특징</a>
-            <a href="/posts/202301180428/" class="next" rel="next" title="error log - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error">error log - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</span></span><span class="line"><span class="cl">npm install dotenv --save</span></span></code></pre></td></tr></table>
 </div>
-<div id="comments"><div id="utterances" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
+</div></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2023-01-09 04:35:58">Updated on 2023-01-09&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
         </div>
-    </footer></div>
+      </div></div>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/nestjs/" class="post-tag" title="Tags - NestJS">NestJS</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/202301020441/" class="post-nav-item" rel="prev" title="부트캠프 가도 실패하는 사람 특징"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>부트캠프 가도 실패하는 사람 특징</a>
+      <a href="/posts/202301180428/" class="post-nav-item" rel="next" title="Error Log - TypeORM을 DotEnv로 연결하여 설정시 TypeScript에서의 Type Error">Error Log - TypeORM을 DotEnv로 연결하여 설정시 TypeScript에서의 Type Error<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.135.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.12-456db385">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">inchan</a></span><span class="license footer-divider">CC BY-NC-SA 4.0</span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><a href="https://github.com/inchanS" title="View source on GitHub"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true" width="56" height="56"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;--progress-h: 5px;--bg-progress: rgba(0, 0, 255, 1);--bg-progress-dark: rgba(255, 165, 0, 1);"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"duration":-1,"loop":false,"speed":100},"version":"v0.3.12-456db385"};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
 </html>

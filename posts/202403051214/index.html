@@ -1,135 +1,216 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법 - inchan.dev</title><meta name="Description" content="Coding Projects: From Ideas to Execution"><meta property="og:title" content="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법" />
-<meta property="og:description" content="관련 글
-AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS EC2에 HTTPS를 연결하는 방법은 몇가지가 있는데
-그 중 하나는 Route53을 이용하는 것이고,
-다른 하나는 도메인 서비스의 프록싱을 통해 바로 연결하는 방법이다.
-전자의 경우 위 관련 글의 링크에서 참고할 수 있으며 이 글은 후자에 관한 글이다.
-우선 EC2 인스턴스에는 public IPv4 주소를 하나 부여할 수 있다.
-이는 인스턴스 생성시 설정에서 &lsquo;자동으로 부여하기&rsquo;를 통해 부여할 수도 있고, 따로이 탄력적 IP를 하나 생성하여 부여할 수도 있다." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://inchan.dev/posts/202403051214/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-03-05T12:14:30+09:00" />
-<meta property="article:modified_time" content="2024-03-14T22:50:52+09:00" /><meta property="og:site_name" content="inchan.dev" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법"/>
-<meta name="twitter:description" content="관련 글
-AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS EC2에 HTTPS를 연결하는 방법은 몇가지가 있는데
-그 중 하나는 Route53을 이용하는 것이고,
-다른 하나는 도메인 서비스의 프록싱을 통해 바로 연결하는 방법이다.
-전자의 경우 위 관련 글의 링크에서 참고할 수 있으며 이 글은 후자에 관한 글이다.
-우선 EC2 인스턴스에는 public IPv4 주소를 하나 부여할 수 있다.
-이는 인스턴스 생성시 설정에서 &lsquo;자동으로 부여하기&rsquo;를 통해 부여할 수도 있고, 따로이 탄력적 IP를 하나 생성하여 부여할 수도 있다."/>
-      <meta name="twitter:site" content="@codject"/>
-<meta name="application-name" content="inchan.dev">
-<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202403051214/" /><link rel="prev" href="https://inchan.dev/posts/202403010802/" /><link rel="next" href="https://inchan.dev/posts/202403051335/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/inchan.dev\/posts\/202403051214\/"
-        },"genre": "posts","keywords": "AWS","wordcount":  381 ,
-        "url": "https:\/\/inchan.dev\/posts\/202403051214\/","datePublished": "2024-03-05T12:14:30+09:00","dateModified": "2024-03-14T22:50:52+09:00","publisher": {
-            "@type": "Organization",
-            "name": "inchan"},"author": {
-                "@type": "Person",
-                "name": "inchan"
-            },"description": ""
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법 - inchan.dev</title><meta name="author" content="inchan">
+<meta name="description" content="관련 글
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용
+
+ 
+AWS EC2에 HTTPS를 연결하는 방법은 몇가지가 있는데
+그 중 하나는 Route53을 이용하는 것이고,
+다른 하나는 도메인 서비스의 프록싱을 통해 바로 연결하는 방법이다.
+ 
+전자의 경우 위 관련 글의 링크에서 참고할 수 있으며 이 글은 후자에 관한 글이다.
+ 
+우선 EC2 인스턴스에는 public IPv4 주소를 하나 부여할 수 있다.
+이는 인스턴스 생성시 설정에서 &lsquo;자동으로 부여하기&rsquo;를 통해 부여할 수도 있고, 따로이 탄력적 IP를 하나 생성하여 부여할 수도 있다.
+ "><meta name="keywords" content='AWS'>
+  <meta itemprop="name" content="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법">
+  <meta itemprop="description" content="관련 글
+AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS EC2에 HTTPS를 연결하는 방법은 몇가지가 있는데
+그 중 하나는 Route53을 이용하는 것이고,
+다른 하나는 도메인 서비스의 프록싱을 통해 바로 연결하는 방법이다.
+전자의 경우 위 관련 글의 링크에서 참고할 수 있으며 이 글은 후자에 관한 글이다.
+우선 EC2 인스턴스에는 public IPv4 주소를 하나 부여할 수 있다.
+이는 인스턴스 생성시 설정에서 ‘자동으로 부여하기’를 통해 부여할 수도 있고, 따로이 탄력적 IP를 하나 생성하여 부여할 수도 있다.">
+  <meta itemprop="datePublished" content="2024-03-05T12:14:30+09:00">
+  <meta itemprop="dateModified" content="2024-03-14T22:50:52+09:00">
+  <meta itemprop="wordCount" content="381">
+  <meta itemprop="keywords" content="AWS"><meta property="og:url" content="http://inchan.dev/posts/202403051214/">
+  <meta property="og:site_name" content="inchan.dev">
+  <meta property="og:title" content="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법">
+  <meta property="og:description" content="관련 글
+AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS EC2에 HTTPS를 연결하는 방법은 몇가지가 있는데
+그 중 하나는 Route53을 이용하는 것이고,
+다른 하나는 도메인 서비스의 프록싱을 통해 바로 연결하는 방법이다.
+전자의 경우 위 관련 글의 링크에서 참고할 수 있으며 이 글은 후자에 관한 글이다.
+우선 EC2 인스턴스에는 public IPv4 주소를 하나 부여할 수 있다.
+이는 인스턴스 생성시 설정에서 ‘자동으로 부여하기’를 통해 부여할 수도 있고, 따로이 탄력적 IP를 하나 생성하여 부여할 수도 있다.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-03-05T12:14:30+09:00">
+    <meta property="article:modified_time" content="2024-03-14T22:50:52+09:00">
+    <meta property="article:tag" content="AWS">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법">
+  <meta name="twitter:description" content="관련 글
+AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS EC2에 HTTPS를 연결하는 방법은 몇가지가 있는데
+그 중 하나는 Route53을 이용하는 것이고,
+다른 하나는 도메인 서비스의 프록싱을 통해 바로 연결하는 방법이다.
+전자의 경우 위 관련 글의 링크에서 참고할 수 있으며 이 글은 후자에 관한 글이다.
+우선 EC2 인스턴스에는 public IPv4 주소를 하나 부여할 수 있다.
+이는 인스턴스 생성시 설정에서 ‘자동으로 부여하기’를 통해 부여할 수도 있고, 따로이 탄력적 IP를 하나 생성하여 부여할 수도 있다.">
+      <meta name="twitter:site" content="@cOdject">
+<meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
+<meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://inchan.dev/posts/202403051214/" title="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법 - inchan.dev" /><link rel="prev" type="text/html" href="http://inchan.dev/posts/202403010802/" title="typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란" /><link rel="next" type="text/html" href="http://inchan.dev/posts/202403051335/" title="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/inchan.dev\/posts\/202403051214\/"
+    },"genre": "posts","keywords": "AWS","wordcount":  381 ,
+    "url": "http:\/\/inchan.dev\/posts\/202403051214\/","datePublished": "2024-03-05T12:14:30+09:00","dateModified": "2024-03-14T22:50:52+09:00","publisher": {
+      "@type": "Organization",
+      "name": "inchan"},"author": {
+        "@type": "Person",
+        "name": "inchan"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
     <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
-        </div>
+      <div class="header-title">
+        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
 </header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/back-end/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Back-End</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-05">2024-03-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;381 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/back-end/" class="post-category" title="Category - Back-End"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Back-End</a></span></div><div class="post-meta-line"><span title="published on 2024-03-05 12:14:30"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-05">2024-03-05</time></span>&nbsp;<span title="Updated on 2024-03-14 22:50:52"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-14">2024-03-14</time></span>&nbsp;<span title="381 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>2 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+          </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#도메인-연결">도메인 연결</a></li>
     <li><a href="#서버의-port-연결">서버의 port 연결</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>관련 글</p>
+      </div><div class="content" id="content"><p>관련 글</p>
 <ul>
-<li><a href="https://inchan.dev/posts/202401122216/" target="_blank" rel="noopener noreffer ">AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용</a></li>
+<li><a href="https://inchan.dev/posts/202401122216/"target="_blank" rel="external nofollow noopener noreferrer">AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용</a></li>
 </ul>
 <p> </p>
 <p>AWS EC2에 HTTPS를 연결하는 방법은 몇가지가 있는데<br>
@@ -142,15 +223,11 @@ AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS 
 이는 인스턴스 생성시 설정에서 &lsquo;자동으로 부여하기&rsquo;를 통해 부여할 수도 있고, 따로이 탄력적 IP를 하나 생성하여 부여할 수도 있다.<br>
  </p>
 <p>바로 이 주소를 다음과 같이 적용할 수 있다.</p>
-<h2 id="도메인-연결">도메인 연결</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/SCR-20240305-lceq.png"
-        data-srcset="/images/SCR-20240305-lceq.png, /images/SCR-20240305-lceq.png 1.5x, /images/SCR-20240305-lceq.png 2x"
-        data-sizes="auto"
-        alt="/images/SCR-20240305-lceq.png"
-        title="/images/SCR-20240305-lceq.png" /><br>
+<h2 id="도메인-연결" class="heading-element"><span>도메인 연결</span>
+  <a href="#%eb%8f%84%eb%a9%94%ec%9d%b8-%ec%97%b0%ea%b2%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><a class="lightgallery" href="/images/SCR-20240305-lceq.png?size=large" data-thumbnail="/images/SCR-20240305-lceq.png?size=small" data-sub-html="<h2>/images/SCR-20240305-lceq.png</h2>"><img loading="lazy" src="/images/SCR-20240305-lceq.png" alt="/images/SCR-20240305-lceq.png" srcset="/images/SCR-20240305-lceq.png?size=small, /images/SCR-20240305-lceq.png?size=medium 1.5x, /images/SCR-20240305-lceq.png?size=large 2x" data-title="/images/SCR-20240305-lceq.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><br>
  </p>
 <ol>
 <li>이름에는 <strong>하위도메인을 입력</strong>한다.</li>
@@ -163,8 +240,11 @@ AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS 
 <p>누군가 브라우저에서 또는 개발툴에서 등등 위에서 설정한 하위도메인을 포함한 주소로 접속하면 Cloudflare는 이 주소를 EC2의 public IPv4 주소로 연결하여 준다.<br>
  </p>
 <p>매우 간단한 방법이다.</p>
-<h2 id="서버의-port-연결">서버의 port 연결</h2>
-<p>하지만 주의할 점이 있는데, 바로 <strong>EC2에서 서버의 <code>port</code> 적용 부분</strong>이다.<br>
+<h2 id="서버의-port-연결" class="heading-element"><span>서버의 port 연결</span>
+  <a href="#%ec%84%9c%eb%b2%84%ec%9d%98-port-%ec%97%b0%ea%b2%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>하지만 주의할 점이 있는데, 바로 <strong>EC2에서 서버의 <code>port</code> 적용 부분</strong>이다.<br>
  </p>
 <p>예를 들어 EC2에서 어떤 서버를 작동할때 해당 <code>port</code>를 <code>8000</code>이라고 했다면,<br>
 실제 서버의 주소는 <code>http://3.33.333.333:8000</code>이 된다.
@@ -174,14 +254,7 @@ AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS 
 물론 위 이미지에서 콘텐츠부분에 포트번호를 넣어봤자 지원하지 않는 IPv4주소라며 오류를 내뱉을 뿐이다.<br>
  </p>
 <p>이때 Cloudflare의 <strong>&ldquo;규칙&rdquo; 서비스를 이용할 수 있다.</strong></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/SCR-20240305-ljre-2.png"
-        data-srcset="/images/SCR-20240305-ljre-2.png, /images/SCR-20240305-ljre-2.png 1.5x, /images/SCR-20240305-ljre-2.png 2x"
-        data-sizes="auto"
-        alt="/images/SCR-20240305-ljre-2.png"
-        title="/images/SCR-20240305-ljre-2.png" /></p>
+<p><a class="lightgallery" href="/images/SCR-20240305-ljre-2.png?size=large" data-thumbnail="/images/SCR-20240305-ljre-2.png?size=small" data-sub-html="<h2>/images/SCR-20240305-ljre-2.png</h2>"><img loading="lazy" src="/images/SCR-20240305-ljre-2.png" alt="/images/SCR-20240305-ljre-2.png" srcset="/images/SCR-20240305-ljre-2.png?size=small, /images/SCR-20240305-ljre-2.png?size=medium 1.5x, /images/SCR-20240305-ljre-2.png?size=large 2x" data-title="/images/SCR-20240305-ljre-2.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
 <p>Cloudflare의 해당 도메인에서 좌측 사이드메뉴의 <strong>규칙 / Origin Rules</strong>를 선택한다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <ol>
 <li><strong>규칙 이름</strong> : 적당한 규칙이름을 적는다. (아무거나 적어도 상관없다.)</li>
@@ -195,32 +268,18 @@ AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS 
 <p>보통 1~2분 내에 적용되며 매우 간단하고 쉽다.<br>
  </p>
 <div class="details admonition note open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>프록싱을 통한 HTTPS 적용의 단점<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>현재 내가 알기로 이 방법이 가장 <strong>간단하고</strong> 편하며 경제적이다.[^1]</p>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>프록싱을 통한 HTTPS 적용의 단점<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p>현재 내가 알기로 이 방법이 가장 <strong>간단하고</strong> 편하며 경제적이다.[^1]</p>
 <p><strong>단, 치명적인(?) 단점이 있다.</strong><br>
 바로 프록싱 우회로 인한 <strong>속도 저하</strong>이다.</p>
 <ol>
 <li>다음은 현재 Cloudflare의 무료 플랜에서 이용중인 <strong>HTTPS 프록싱 우회시</strong> 최고 속도와 최저속도이다.</li>
 </ol>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/SCR-20240314-trus.png"
-        data-srcset="/images/SCR-20240314-trus.png, /images/SCR-20240314-trus.png 1.5x, /images/SCR-20240314-trus.png 2x"
-        data-sizes="auto"
-        alt="/images/SCR-20240314-trus.png"
-        title="/images/SCR-20240314-trus.png" /></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/SCR-20240314-tryk.png"
-        data-srcset="/images/SCR-20240314-tryk.png, /images/SCR-20240314-tryk.png 1.5x, /images/SCR-20240314-tryk.png 2x"
-        data-sizes="auto"
-        alt="/images/SCR-20240314-tryk.png"
-        title="/images/SCR-20240314-tryk.png" /><br>
+<p><a class="lightgallery" href="/images/SCR-20240314-trus.png?size=large" data-thumbnail="/images/SCR-20240314-trus.png?size=small" data-sub-html="<h2>/images/SCR-20240314-trus.png</h2>"><img loading="lazy" src="/images/SCR-20240314-trus.png" alt="/images/SCR-20240314-trus.png" srcset="/images/SCR-20240314-trus.png?size=small, /images/SCR-20240314-trus.png?size=medium 1.5x, /images/SCR-20240314-trus.png?size=large 2x" data-title="/images/SCR-20240314-trus.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<p><a class="lightgallery" href="/images/SCR-20240314-tryk.png?size=large" data-thumbnail="/images/SCR-20240314-tryk.png?size=small" data-sub-html="<h2>/images/SCR-20240314-tryk.png</h2>"><img loading="lazy" src="/images/SCR-20240314-tryk.png" alt="/images/SCR-20240314-tryk.png" srcset="/images/SCR-20240314-tryk.png?size=small, /images/SCR-20240314-tryk.png?size=medium 1.5x, /images/SCR-20240314-tryk.png?size=large 2x" data-title="/images/SCR-20240314-tryk.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><br>
  </p>
 <p>빨라도 <strong>812ms 정도이고 느릴땐 무려 1초가 넘을 때도</strong> 있었다.<br>
 이 정도의 속도는 프론트에서 아무리 최적화를 하더라도 실제 최종사용자는 화면 전환시 &lsquo;깜.빡&rsquo;하는 딜레이를 느끼며 1초가 넘는 지연시 답답함을 느낄 수 있는 속도이다.<br>
@@ -228,20 +287,13 @@ AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS 
 <ol start="2">
 <li>다음은 AWS의 <strong>Route53과 로드밸런서를 이용한 HTTPS 적용시</strong> 속도이다.</li>
 </ol>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/SCR-20240314-tsbl.png"
-        data-srcset="/images/SCR-20240314-tsbl.png, /images/SCR-20240314-tsbl.png 1.5x, /images/SCR-20240314-tsbl.png 2x"
-        data-sizes="auto"
-        alt="/images/SCR-20240314-tsbl.png"
-        title="/images/SCR-20240314-tsbl.png" /><br>
+<p><a class="lightgallery" href="/images/SCR-20240314-tsbl.png?size=large" data-thumbnail="/images/SCR-20240314-tsbl.png?size=small" data-sub-html="<h2>/images/SCR-20240314-tsbl.png</h2>"><img loading="lazy" src="/images/SCR-20240314-tsbl.png" alt="/images/SCR-20240314-tsbl.png" srcset="/images/SCR-20240314-tsbl.png?size=small, /images/SCR-20240314-tsbl.png?size=medium 1.5x, /images/SCR-20240314-tsbl.png?size=large 2x" data-title="/images/SCR-20240314-tsbl.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><br>
  </p>
 <p><strong>16ms는 거의 클릭과 동시</strong>라는 표현이 맞을 정도로 빠른 속도이다.<br>
 앞서 언급한 HTTPS를 적용하는 두가지 방법간 속도 비교에 있어 충분한 고민이 필요하다고 생각된다.</p>
 </div>
-        </div>
     </div>
+  </div>
 <p> </p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
@@ -252,44 +304,44 @@ AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 AWS 
 </ol>
 </div>
 </div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2024-03-14</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2024-03-14 22:50:52">Updated on 2024-03-14&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
         </div>
-    </div>
+      </div></div>
 
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/aws/">AWS</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/posts/202403010802/" class="prev" rel="prev" title="typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란</a>
-            <a href="/posts/202403051335/" class="next" rel="next" title="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/aws/" class="post-tag" title="Tags - AWS">AWS</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/202403010802/" class="post-nav-item" rel="prev" title="TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란</a>
+      <a href="/posts/202403051335/" class="post-nav-item" rel="next" title="AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-<div id="comments"><div id="utterances" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
-        </div>
-    </footer></div>
+</article>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.135.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.12-456db385">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">inchan</a></span><span class="license footer-divider">CC BY-NC-SA 4.0</span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><a href="https://github.com/inchanS" title="View source on GitHub"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true" width="56" height="56"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;--progress-h: 5px;--bg-progress: rgba(0, 0, 255, 1);--bg-progress-dark: rgba(255, 165, 0, 1);"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"duration":-1,"loop":false,"speed":100},"version":"v0.3.12-456db385"};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
 </html>

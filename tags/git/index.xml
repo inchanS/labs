@@ -1,18 +1,22 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Git - Tag - inchan.dev</title>
-        <link>https://inchan.dev/tags/git/</link>
-        <description>Git - Tag - inchan.dev</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 17 Jun 2023 15:31:26 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/tags/git/" rel="self" type="application/rss+xml" /><item>
-    <title>Git commit message 컨벤션 설정</title>
-    <link>https://inchan.dev/posts/202306171531/</link>
-    <pubDate>Sat, 17 Jun 2023 15:31:26 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202306171531/</guid>
-    <description><![CDATA[문제 발견 git commit message 작성시 보통 첫줄에 위치한 제목줄에 들어가는 가이드로서,
-이전에 내가 사용하던 규칙은 다음과 같았다.
-Add - 레이아웃 / 기능 추가 Remove - 내용 삭제 (폴더 / 파일 삭제) Modify - 수정 (JSON 데이터 포맷 변경 / 버튼 색깔 변경 / 폰트 변경) Fix - 버그/오류 해결 Refactor - 코드 리팩토링 (멘토 리뷰 반영 / 스스로 리팩토링 / 중복 코드 제거 / 불필요 코드 제거 / 성능 개선)]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git - Tag - inchan.dev</title>
+    <link>http://inchan.dev/tags/git/</link>
+    <description>inchan.dev</description>
+    <generator>Hugo 0.135.0 &amp; FixIt v0.3.12-456db385</generator>
+    <language>en</language>
+    <managingEditor>song@inchan.dev (inchan)</managingEditor>
+    <webMaster>song@inchan.dev (inchan)</webMaster>
+    <lastBuildDate>Wed, 21 Jun 2023 15:10:10 +0900</lastBuildDate>
+    <atom:link href="http://inchan.dev/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git commit message 컨벤션 설정</title>
+      <link>http://inchan.dev/posts/202306171531/</link>
+      <pubDate>Sat, 17 Jun 2023 15:31:26 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202306171531/</guid>
+      <category domain="http://inchan.dev/categories/programming/">Programming</category>
+      <description>&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;h2 id=&#34;문제-발견&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;문제 발견&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%ac%b8%ec%a0%9c-%eb%b0%9c%ea%b2%ac&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;git commit message 작성시 보통 첫줄에 위치한 제목줄에 들어가는 가이드로서,&lt;br&gt;&#xA;이전에 내가 사용하던 규칙은 다음과 같았다.&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

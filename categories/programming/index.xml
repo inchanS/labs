@@ -1,65 +1,54 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Programming - Category - inchan.dev</title>
-        <link>https://inchan.dev/categories/programming/</link>
-        <description>Programming - Category - inchan.dev</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Sat, 17 Jun 2023 15:31:26 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/categories/programming/" rel="self" type="application/rss+xml" /><item>
-    <title>Git commit message 컨벤션 설정</title>
-    <link>https://inchan.dev/posts/202306171531/</link>
-    <pubDate>Sat, 17 Jun 2023 15:31:26 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202306171531/</guid>
-    <description><![CDATA[문제 발견 git commit message 작성시 보통 첫줄에 위치한 제목줄에 들어가는 가이드로서,
-이전에 내가 사용하던 규칙은 다음과 같았다.
-Add - 레이아웃 / 기능 추가 Remove - 내용 삭제 (폴더 / 파일 삭제) Modify - 수정 (JSON 데이터 포맷 변경 / 버튼 색깔 변경 / 폰트 변경) Fix - 버그/오류 해결 Refactor - 코드 리팩토링 (멘토 리뷰 반영 / 스스로 리팩토링 / 중복 코드 제거 / 불필요 코드 제거 / 성능 개선)]]></description>
-</item>
-<item>
-    <title>Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점</title>
-    <link>https://inchan.dev/posts/202303311059/</link>
-    <pubDate>Fri, 31 Mar 2023 10:43:08 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202303311059/</guid>
-    <description><![CDATA[Introduction Jest는 페이스북에서 개발한 JavaScript 테스트 프레임워크로, 간편한 사용법과 빠른 실행 속도로 인기가 있다.
-Jest를 이용하여 테스트 코드를 작성하던 중, 수 많은 함수나 루트를 mocking하게 되는데 지저분해진 테스트 코드를 리팩토링 하다가 mock함수의 초기화에 대한 고찰을 하게 되었다.
-Jest의 모의 함수(mock functions)를 사용할 때 중요한 두 가지 함수인 jest.clearAllMocks()와 jest.resetAllMocks()의 차이에 대해 기술한다.
-jest.clearAllMocks() jest.clearAllMocks() 함수는 모든 모의 함수의 호출 정보를 초기화하는 데 사용한다.
-이를 통해 테스트 간 독립성을 보장하며, 다양한 테스트 시나리오에서 중요한 역할을 한다.]]></description>
-</item>
-<item>
-    <title>typescript - any와 unknown의 차이</title>
-    <link>https://inchan.dev/posts/202301280423/</link>
-    <pubDate>Sat, 28 Jan 2023 04:23:52 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202301280423/</guid>
-    <description><![CDATA[typescript로 코딩을 하다가 어떤 타입인지 정의 내리기 힘든 상황에서 주로 any 를 사용한다.
-물론 typescript의 성격상 any는 지양하는 것이 좋다.
-오류를 검증하고 확인하려는 특성으로 엄격한 타입을 지정하려는 typescript에서 어떤 타입이나 가능하다는 성격의 any는 어쩌면 존재 자체가 모순인 타입이기도 하다.
-하지만코딩을 하다보면 아직은 타입을 정하기 전인 상황이거나, 도저히 타입을 알 수 없거나 추론할 수 없을 때, (또는 typescript 초급자일 때 ;;) 가끔 사용하게 되는 것이 또 any 타입이다.
-하지만 이제부터 이럴때 any보다는 unknown을 사용하자.]]></description>
-</item>
-<item>
-    <title>typescript - satisfies operator 탐구</title>
-    <link>https://inchan.dev/posts/202301280422/</link>
-    <pubDate>Sat, 28 Jan 2023 04:22:36 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202301280422/</guid>
-    <description><![CDATA[typescript 4.9에서 새로 나온 기능으로 satisfies 라는 연산자가 있다.
-공식문서를 정말 한참을 봤는데도 잘 이해가 가지 않았는데 직접 코드를 가지고 만져보니 조금 이해가 되었다.
-satisfies 적용 전 Record라는 객체의 key, value를 지정해주는 연산자를 사용하여 객체의 타입을 지정할 때,
-아래 코드를 보면 value의 타입으로 string | RGB2 라는 union type으로 인해 속성에 대한 오류가 잡힌다.
-toUpperCase에서는 only string타입이 들어와야 하는데 union type으로 할당되어 생긴 에러로서 당연한 결과이다.
-type Colors = &#39;red&#39; | &#39;green&#39; | &#39;blue&#39;; type RGB = [red: number, green: number, blue: number]; const palette: Record&lt;Colors, string | RGB2&gt; = { red: [255, 0, 0], green: &#39;#00ff00&#39;, blue: [0, 0, 255], }; const redComponent = palette.]]></description>
-</item>
-<item>
-    <title>JavaScript - basic 변수</title>
-    <link>https://inchan.dev/posts/202209120523/</link>
-    <pubDate>Mon, 12 Sep 2022 05:23:04 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202209120523/</guid>
-    <description><![CDATA[JavaScript - Basic 변수 변수는 2단계로 이루어진다.
-변수의 선언 변수에 대한 값을 할당 let myNumber // myNumber라는 변수를 &#34;선언&#34; myNumber = 100 // 앞에서 선언한 변수에 값을 &#34;할당&#34; 용어 정리 - 변수 : 데이터를 담을 수 있는 대상 - 변수의 선언과 변수에 대한 값을 할당하는 것은 별개이다. 일반적으로 변수의 선언과 할당이 동시에 이루어진다. (아래 코드 참조)
-let myNumber = 100 변수를 선언하는 명령어 var, let, const 각각의 차이는?? 종류 선언 재선언 재할당 var O O O let O X O const O X X 위 표와 같이 즉, let이나 const는 이미 선언했던 변수를 다시 선언할 수 없다.]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming - Category - inchan.dev</title>
+    <link>http://inchan.dev/categories/programming/</link>
+    <description>inchan.dev</description>
+    <generator>Hugo 0.135.0 &amp; FixIt v0.3.12-456db385</generator>
+    <language>en</language>
+    <managingEditor>song@inchan.dev (inchan)</managingEditor>
+    <webMaster>song@inchan.dev (inchan)</webMaster>
+    <lastBuildDate>Tue, 04 Jul 2023 22:25:59 +0900</lastBuildDate>
+    <atom:link href="http://inchan.dev/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git commit message 컨벤션 설정</title>
+      <link>http://inchan.dev/posts/202306171531/</link>
+      <pubDate>Sat, 17 Jun 2023 15:31:26 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202306171531/</guid>
+      <category domain="http://inchan.dev/categories/programming/">Programming</category>
+      <description>&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;h2 id=&#34;문제-발견&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;문제 발견&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%ac%b8%ec%a0%9c-%eb%b0%9c%ea%b2%ac&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;git commit message 작성시 보통 첫줄에 위치한 제목줄에 들어가는 가이드로서,&lt;br&gt;&#xA;이전에 내가 사용하던 규칙은 다음과 같았다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점</title>
+      <link>http://inchan.dev/posts/202303311059/</link>
+      <pubDate>Fri, 31 Mar 2023 10:43:08 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202303311059/</guid>
+      <category domain="http://inchan.dev/categories/programming/">Programming</category>
+      <description>&lt;h2 id=&#34;introduction&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;Introduction&lt;/span&gt;&#xA;  &lt;a href=&#34;#introduction&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Jest는 페이스북에서 개발한 JavaScript 테스트 프레임워크로, 간편한 사용법과 빠른 실행 속도로 인기가 있다.&lt;br&gt;&#xA; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>typescript - any와 unknown의 차이</title>
+      <link>http://inchan.dev/posts/202301280423/</link>
+      <pubDate>Sat, 28 Jan 2023 04:23:52 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202301280423/</guid>
+      <category domain="http://inchan.dev/categories/programming/">Programming</category>
+      <description>&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;typescript&lt;/code&gt;로 코딩을 하다가 어떤 타입인지 정의 내리기 힘든 상황에서 주로 &lt;code&gt;any&lt;/code&gt; 를 사용한다.&lt;br&gt;&#xA;물론 &lt;code&gt;typescript&lt;/code&gt;의 성격상 &lt;code&gt;any&lt;/code&gt;는 지양하는 것이 좋다.&lt;br&gt;&#xA;오류를 검증하고 확인하려는 특성으로 엄격한 타입을 지정하려는 &lt;code&gt;typescript&lt;/code&gt;에서 어떤 타입이나 가능하다는 성격의 &lt;code&gt;any&lt;/code&gt;는 어쩌면 존재 자체가 모순인 타입이기도 하다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;하지만코딩을 하다보면 아직은 타입을 정하기 전인 상황이거나, 도저히 타입을 알 수 없거나 추론할 수 없을 때, (또는 typescript 초급자일 때 ;;) 가끔 사용하게 되는 것이 또 &lt;code&gt;any&lt;/code&gt; 타입이다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;하지만 이제부터 이럴때 &lt;code&gt;any&lt;/code&gt;보다는 &lt;strong&gt;&lt;code&gt;unknown&lt;/code&gt;을 사용하자.&lt;/strong&gt;&lt;br&gt;&#xA; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>typescript - satisfies operator 탐구</title>
+      <link>http://inchan.dev/posts/202301280422/</link>
+      <pubDate>Sat, 28 Jan 2023 04:22:36 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202301280422/</guid>
+      <category domain="http://inchan.dev/categories/programming/">Programming</category>
+      <description>&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;typescript 4.9에서 새로 나온 기능으로 &lt;code&gt;satisfies&lt;/code&gt; 라는 연산자가 있다.&lt;br&gt;&#xA; &lt;br&gt;&#xA;공식문서를 정말 한참을 봤는데도 잘 이해가 가지 않았는데 직접 코드를 가지고 만져보니 조금 이해가 되었다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;h3 id=&#34;satisfies-적용-전&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;satisfies 적용 전&lt;/span&gt;&#xA;  &lt;a href=&#34;#satisfies-%ec%a0%81%ec%9a%a9-%ec%a0%84&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;Record&lt;/code&gt;라는 객체의 key, value를 지정해주는 연산자를 사용하여 객체의 타입을 지정할 때,&lt;br&gt;&#xA; &lt;br&gt;&#xA;아래 코드를 보면 value의 타입으로 &lt;code&gt;string | RGB2&lt;/code&gt; 라는 union type으로 인해 속성에 대한 오류가 잡힌다.&lt;br&gt;&#xA;toUpperCase에서는 only &lt;code&gt;string&lt;/code&gt;타입이 들어와야 하는데 union type으로 할당되어 생긴 에러로서 당연한 결과이다.&lt;br&gt;&#xA; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript - basic 변수</title>
+      <link>http://inchan.dev/posts/202209120523/</link>
+      <pubDate>Mon, 12 Sep 2022 05:23:04 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202209120523/</guid>
+      <category domain="http://inchan.dev/categories/programming/">Programming</category>
+      <description>&lt;h2 id=&#34;javascript---basic&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;JavaScript - Basic&lt;/span&gt;&#xA;  &lt;a href=&#34;#javascript---basic&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;변수&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;변수&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%b3%80%ec%88%98&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;변수는 2단계로 이루어진다.&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

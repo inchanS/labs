@@ -1,122 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법 - inchan.dev</title><meta name="Description" content="Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술"><meta property="og:title" content="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법" />
-<meta property="og:description" content="Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://inchan.dev/posts/202401241017/" /><meta property="og:image" content="https://inchan.dev/images/avatar.png" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-01-24T10:19:14+09:00" />
-<meta property="article:modified_time" content="2024-03-08T20:39:02+09:00" /><meta property="og:site_name" content="inchan.dev" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://inchan.dev/images/avatar.png" /><meta name="twitter:title" content="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법"/>
-<meta name="twitter:description" content="Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술"/>
-      <meta name="twitter:site" content="@codject"/>
-<meta name="application-name" content="inchan.dev">
-<meta name="apple-mobile-web-app-title" content="inchan.dev"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://inchan.dev/posts/202401241017/" /><link rel="prev" href="https://inchan.dev/posts/202401122324/" /><link rel="next" href="https://inchan.dev/posts/202401261149/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/inchan.dev\/posts\/202401241017\/"
-        },"genre": "posts","keywords": "typeORM, mySQL, project_review","wordcount":  1143 ,
-        "url": "https:\/\/inchan.dev\/posts\/202401241017\/","datePublished": "2024-01-24T10:19:14+09:00","dateModified": "2024-03-08T20:39:02+09:00","publisher": {
-            "@type": "Organization",
-            "name": "inchan"},"author": {
-                "@type": "Person",
-                "name": "inchan"
-            },"description": "Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술"
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법 - inchan.dev</title><meta name="author" content="inchan">
+<meta name="description" content="Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술"><meta name="keywords" content='typeORM, mySQL, project_review'>
+  <meta itemprop="name" content="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법">
+  <meta itemprop="description" content="Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술">
+  <meta itemprop="datePublished" content="2024-01-24T10:19:14+09:00">
+  <meta itemprop="dateModified" content="2024-03-08T20:39:02+09:00">
+  <meta itemprop="wordCount" content="1213">
+  <meta itemprop="keywords" content="TypeORM,MySQL,Project_review"><meta property="og:url" content="http://inchan.dev/posts/202401241017/">
+  <meta property="og:site_name" content="inchan.dev">
+  <meta property="og:title" content="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법">
+  <meta property="og:description" content="Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-01-24T10:19:14+09:00">
+    <meta property="article:modified_time" content="2024-03-08T20:39:02+09:00">
+    <meta property="article:tag" content="TypeORM">
+    <meta property="article:tag" content="MySQL">
+    <meta property="article:tag" content="Project_review">
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법">
+  <meta name="twitter:description" content="Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술">
+      <meta name="twitter:site" content="@cOdject">
+<meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
+<meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://inchan.dev/posts/202401241017/" title="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법 - inchan.dev" /><link rel="prev" type="text/html" href="http://inchan.dev/posts/202401122324/" title="Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면" /><link rel="next" type="text/html" href="http://inchan.dev/posts/202401261149/" title="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/inchan.dev\/posts\/202401241017\/"
+    },"genre": "posts","keywords": "typeORM, mySQL, project_review","wordcount":  1213 ,
+    "url": "http:\/\/inchan.dev\/posts\/202401241017\/","datePublished": "2024-01-24T10:19:14+09:00","dateModified": "2024-03-08T20:39:02+09:00","publisher": {
+      "@type": "Organization",
+      "name": "inchan"},"author": {
+        "@type": "Person",
+        "name": "inchan"
+      },"description": "Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술"
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" data-github-corner="right">
+    <div class="header-title">
+      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
     <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="inchan.dev"><span id="id-1" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
-        </div>
+      <div class="header-title">
+        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
     </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="inchan.dev"><span id="id-2" class="typeit"></span></a>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Posts</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> About</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
 </header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>inchan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/debugging/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Debugging</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-24">2024-01-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1143 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
-        </div><div class="featured-image"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        data-srcset="https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D, https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1.5x, https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 2x"
-        data-sizes="auto"
-        alt="https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        title="Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술" /></div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/debugging/" class="post-category" title="Category - Debugging"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Debugging</a></span></div><div class="post-meta-line"><span title="published on 2024-01-24 10:19:14"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-24">2024-01-24</time></span>&nbsp;<span title="Updated on 2024-03-08 20:39:02"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-08">2024-03-08</time></span>&nbsp;<span title="1213 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1300 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>6 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+          </span>&nbsp;</div>
+    </div><div class="featured-image"><img loading="lazy" src="https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" data-title="Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#문제-상황">문제 상황</a>
       <ul>
@@ -137,14 +194,14 @@
     <li><a href="#롤백되지-않는-mysql의-auto_increment-필드">롤백되지 않는 MySQL의 AUTO_INCREMENT 필드</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>&lt;표지 사진출처: <a href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EC%B2%9C%EC%9E%A5%EC%9D%98-%EB%B2%8C%EB%A0%88%EC%9D%98-%EC%8B%9C%EC%84%A0-%EC%82%AC%EC%A7%84-LqKhnDzSF-8" target="_blank" rel="noopener noreffer ">Unsplash</a>&gt;</p>
+      </div><div class="content" id="content"><p>&lt;표지 사진출처: <a href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EC%B2%9C%EC%9E%A5%EC%9D%98-%EB%B2%8C%EB%A0%88%EC%9D%98-%EC%8B%9C%EC%84%A0-%EC%82%AC%EC%A7%84-LqKhnDzSF-8"target="_blank" rel="external nofollow noopener noreferrer">Unsplash</a>&gt;</p>
 <p> </p>
 <div class="details admonition abstract">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-list-ul fa-fw" aria-hidden="true"></i>Project Tech Stack Overview<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-list-ul fa-fw" aria-hidden="true"></i>Project Tech Stack Overview<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><ul>
 <li>
 <p>Language: <strong>TypeScript</strong></p>
 </li>
@@ -177,11 +234,14 @@
 </li>
 </ul>
 </div>
-        </div>
     </div>
+  </div>
 <p> </p>
-<h2 id="문제-상황">문제 상황</h2>
-<p>프로젝트에서 발견된 주요 문제는 TypeORM을 사용하는 Node.js 환경에서 <strong>트랜잭션 관리와 롤백이 제대로 이루어지지 않는 것</strong>이었다. 이는 게시글을 등록하는 로직에서 발견되었으며, 예기치 않은 오류가 발생했을 경우 <strong>데이터베이스에 불필요한 데이터가 잔존하는 결과를 초래</strong>했다.</p>
+<h2 id="문제-상황" class="heading-element"><span>문제 상황</span>
+  <a href="#%eb%ac%b8%ec%a0%9c-%ec%83%81%ed%99%a9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>프로젝트에서 발견된 주요 문제는 TypeORM을 사용하는 Node.js 환경에서 <strong>트랜잭션 관리와 롤백이 제대로 이루어지지 않는 것</strong>이었다. 이는 게시글을 등록하는 로직에서 발견되었으며, 예기치 않은 오류가 발생했을 경우 <strong>데이터베이스에 불필요한 데이터가 잔존하는 결과를 초래</strong>했다.</p>
 <p>좀 더 자세히 풀어보자면, 현재 게시글을 등록하는 로직은 다음과 같다.</p>
 <ol>
 <li>요청을 받으면 트랜잭션을 시작한다.</li>
@@ -196,11 +256,11 @@
 즉, 트랜잭션 롤백이 제대로 작동하고 있지 않는 문제였다.<br>
  </p>
 <div class="details admonition info open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>일러두기<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>사실, 이 문제는 <a href="https://inchan.dev/posts/202302250414/" target="_blank" rel="noopener noreffer ">typeORM transaction에서 repository 사용하기 - inchan.dev</a> 이 글에서 이미 동일하게 발생했던 이슈이고 해결했었다.<br>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-info-circle fa-fw" aria-hidden="true"></i>일러두기<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p>사실, 이 문제는 <a href="https://inchan.dev/posts/202302250414/"target="_blank" rel="external nofollow noopener noreferrer">typeORM transaction에서 repository 사용하기 - inchan.dev</a> 이 글에서 이미 동일하게 발생했던 이슈이고 해결했었다.<br>
 그런데 왜 똑같은 문제가 다시 발생했을까?</p>
 <p>이전과 지금의 로직에서 바뀐 점은 바로 <strong>해당 레포지토리의 성격 변화</strong>이다. 이전 글에서는 해당 레포지토리가 <strong>함수적 확장 레포지토리</strong>로 선언되어있었지만 OOP 리팩토링 과정에서 <strong>클래스 기반 레포지토리</strong>로 수정되었다. 때문에 함수가 사용되는 맥락이 아닌 새로운 인스턴스에서 트랜잭션이 실행되고 있기에 다시 한번 문제가 생긴 것이다.</p>
 <p>함수적 확장 레포지토리에서 <code>queryRunner</code>를 사용할 때, 이것은 이미 시작된 트랜잭션 내에서의 작업을 의미한다. 즉, <code>queryRunner.startTransaction()</code>을 호출한 후, <code>queryRunner</code>의 컨텍스트 내에서 따로이 다른 레포지토리의 <code>save</code>, <code>update</code>, <code>delete</code> 같은 메소드를 호출하면, 이 메소드들은 <code>queryRunner</code>에 의해 시작된 트랜잭션 내에서 실행되었다.</p>
@@ -210,10 +270,48 @@
 <li>이렇게 사용자 정의 클래스 레포지토리를 사용함으로써, 해당 레포지토리는 더 이상 기본 <code>dataSource</code>의 연결과 컨텍스트를 직접 사용하지 않고, 대신 각 인스턴스별로 독립된 엔티티 매니저를 통해 작업을 수행하게 되면서 별개로 트랜잭션 범위 관리를 해줘야 하는 상황이 된 것이다.</li>
 </ul>
 </div>
-        </div>
     </div>
-<h3 id="문제상황의-서비스-코드">문제상황의 서비스 코드</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">private</span> <span class="nx">executeTransactionWithRetry</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span>
+  </div>
+<h3 id="문제상황의-서비스-코드" class="heading-element"><span>문제상황의 서비스 코드</span>
+  <a href="#%eb%ac%b8%ec%a0%9c%ec%83%81%ed%99%a9%ec%9d%98-%ec%84%9c%eb%b9%84%ec%8a%a4-%ec%bd%94%eb%93%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="hl"><span class="lnt">13
+</span></span><span class="hl"><span class="lnt">14
+</span></span><span class="hl"><span class="lnt">15
+</span></span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="hl"><span class="lnt">18
+</span></span><span class="hl"><span class="lnt">19
+</span></span><span class="hl"><span class="lnt">20
+</span></span><span class="hl"><span class="lnt">21
+</span></span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">private</span> <span class="nx">executeTransactionWithRetry</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">attempt</span>: <span class="kt">number</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">feedInfo</span>: <span class="kt">TempFeedDto</span> <span class="o">|</span> <span class="nx">FeedDto</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">fileLinks</span>: <span class="kt">string</span><span class="p">[],</span>
@@ -243,10 +341,32 @@
 </span></span><span class="line"><span class="cl">  	<span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">rollbackTransaction</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">  	<span class="c1">// ... 이후 에러 코드
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span></code></pre></div><p> </p>
-<h3 id="수정-이전의-메서드-코드">수정 이전의 메서드 코드</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 위 문제상황의 서비스코드에서 문제되고 있는 createFeed 메소드의 코드를 살펴본다.
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<h3 id="수정-이전의-메서드-코드" class="heading-element"><span>수정 이전의 메서드 코드</span>
+  <a href="#%ec%88%98%ec%a0%95-%ec%9d%b4%ec%a0%84%ec%9d%98-%eb%a9%94%ec%84%9c%eb%93%9c-%ec%bd%94%eb%93%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="hl"><span class="lnt"> 8
+</span></span><span class="hl"><span class="lnt"> 9
+</span></span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// 위 문제상황의 서비스코드에서 문제되고 있는 createFeed 메소드의 코드를 살펴본다.
 </span></span></span><span class="line"><span class="cl"><span class="c1">// await queryRunner.manager
 </span></span></span><span class="line"><span class="cl"><span class="c1">//     .withRepository(this.feedRepository)
 </span></span></span><span class="line"><span class="cl"><span class="c1">//     .createFeed(newFeedInstance); 
@@ -259,22 +379,43 @@
 </span></span><span class="line"><span class="cl">  	<span class="nx">where</span><span class="o">:</span> <span class="p">{</span> <span class="nx">user</span><span class="o">:</span> <span class="p">{</span> <span class="nx">id</span>: <span class="kt">feedInfo.user.id</span> <span class="p">}</span> <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  	<span class="nx">order</span><span class="o">:</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;DESC&#39;</span> <span class="p">},</span>
 </span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span></code></pre></div><p> </p>
-<h2 id="트랜잭션-중첩-문제">트랜잭션 중첩 문제</h2>
-<p>트랜잭션을 관리하는 해당 서비스를 요청하고 터미널에서 mySQL의 흐름을 살펴보니, <code>START TRANSACTION</code>이 <strong>두번 연속으로</strong> 호출되고 있었다. 그리고 문제의 메서드 코드부분은 트랜잭션 과정이 끝나기 전에 먼저 커밋해버리고 이후 따로이 트랜잭션 롤백이 일어나고 있었다. <code>START TRANSACTION</code> 이후 트랜잭션 내부 로직에서는 커밋과 롤백, 둘 중 하나만 이루어져야 한다. 그런데 이상하게도 커밋과 롤백이 연이어 발생하고 있었다.<br>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<h2 id="트랜잭션-중첩-문제" class="heading-element"><span>트랜잭션 중첩 문제</span>
+  <a href="#%ed%8a%b8%eb%9e%9c%ec%9e%ad%ec%85%98-%ec%a4%91%ec%b2%a9-%eb%ac%b8%ec%a0%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>트랜잭션을 관리하는 해당 서비스를 요청하고 터미널에서 mySQL의 흐름을 살펴보니, <code>START TRANSACTION</code>이 <strong>두번 연속으로</strong> 호출되고 있었다. 그리고 문제의 메서드 코드부분은 트랜잭션 과정이 끝나기 전에 먼저 커밋해버리고 이후 따로이 트랜잭션 롤백이 일어나고 있었다. <code>START TRANSACTION</code> 이후 트랜잭션 내부 로직에서는 커밋과 롤백, 둘 중 하나만 이루어져야 한다. 그런데 이상하게도 커밋과 롤백이 연이어 발생하고 있었다.<br>
  </p>
 <p>문제가 되고있는 typeORM의 <code>save</code> 메서드 문서를 찾아보았다.</p>
-<blockquote>
-<p><strong>save</strong> - Saves a given entity or array of entities. If the entity already exist in the database, it is updated. If the entity does not exist in the database, it is inserted. <code>It saves all given entities in a single transaction</code> (in the case of entity, manager is not transactional). Also supports partial updating since all undefined properties are skipped. Returns the saved entity/entities.</p>
+<blockquote><p><strong>save</strong> - Saves a given entity or array of entities. If the entity already exist in the database, it is updated. If the entity does not exist in the database, it is inserted. <code>It saves all given entities in a single transaction</code> (in the case of entity, manager is not transactional). Also supports partial updating since all undefined properties are skipped. Returns the saved entity/entities.</p>
 <ul>
-<li><a href="https://orkhan.gitbook.io/typeorm/docs/repository-api" target="_blank" rel="noopener noreffer ">typeorm gitbook</a> 문서 중</li>
+<li><a href="https://orkhan.gitbook.io/typeorm/docs/repository-api"target="_blank" rel="external nofollow noopener noreferrer">typeorm gitbook</a> 문서 중</li>
 </ul>
-</blockquote>
-<p>TypeORM의 <code>save</code> 및 <code>update</code> 메서드는 내부적으로 자체 트랜잭션을 생성하고 커밋한다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 이는 별도의 트랜잭션 관리 없이 사용될 때는 문제가 되지 않지만, 따로이 트랜잭션을 관리하는 경우 문제를 일으킬 수 있다.<br>
+</blockquote><p>TypeORM의 <code>save</code> 및 <code>update</code> 메서드는 내부적으로 자체 트랜잭션을 생성하고 커밋한다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 이는 별도의 트랜잭션 관리 없이 사용될 때는 문제가 되지 않지만, 따로이 트랜잭션을 관리하는 경우 문제를 일으킬 수 있다.<br>
 특히, <code>createQueryRunner</code>를 사용하여 시작된 트랜잭션 내에서 <code>save</code> 메서드를 호출하면 <strong>트랜잭션이 중첩되어</strong>, 기대했던 롤백 동작이 정상적으로 이루어지지 않게 된다.</p>
-<h3 id="1차-수정된-메서드-코드">1차 수정된 메서드 코드</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">createFeed</span><span class="p">(</span><span class="nx">feedInfo</span>: <span class="kt">Feed</span><span class="p">,</span> <span class="nx">queryRunner</span>: <span class="kt">QueryRunner</span><span class="p">)</span> <span class="p">{</span>
+<h3 id="1차-수정된-메서드-코드" class="heading-element"><span>1차 수정된 메서드 코드</span>
+  <a href="#1%ec%b0%a8-%ec%88%98%ec%a0%95%eb%90%9c-%eb%a9%94%ec%84%9c%eb%93%9c-%ec%bd%94%eb%93%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="hl"><span class="lnt"> 3
+</span></span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">createFeed</span><span class="p">(</span><span class="nx">feedInfo</span>: <span class="kt">Feed</span><span class="p">,</span> <span class="nx">queryRunner</span>: <span class="kt">QueryRunner</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">feed</span> <span class="o">=</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Feed</span><span class="p">,</span> <span class="nx">feedInfo</span><span class="p">);</span>
 </span></span><span class="line hl"><span class="cl">    <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">feed</span><span class="p">);</span> <span class="c1">// &lt;= parameter에 queryRunner를 추가하고 함께 수정한 코드
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
@@ -285,29 +426,53 @@
 </span></span><span class="line"><span class="cl">    <span class="p">});</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span></code></pre></div><p> </p>
-<h2 id="isolation-level의-중요성">Isolation Level의 중요성</h2>
-<p>1차 수정 이후 <strong>새로운 문제가 생겼다.</strong> 해당 함수는 <strong>새로이 생성된 게시글 데이터의 정보를 반환해야하는데,</strong> 새로 생긴 데이터가 아닌 그 <strong>이전의 데이터를 반환하는 문제</strong>가 발생된 것이다.<br>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<h2 id="isolation-level의-중요성" class="heading-element"><span>Isolation Level의 중요성</span>
+  <a href="#isolation-level%ec%9d%98-%ec%a4%91%ec%9a%94%ec%84%b1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>1차 수정 이후 <strong>새로운 문제가 생겼다.</strong> 해당 함수는 <strong>새로이 생성된 게시글 데이터의 정보를 반환해야하는데,</strong> 새로 생긴 데이터가 아닌 그 <strong>이전의 데이터를 반환하는 문제</strong>가 발생된 것이다.<br>
  <br>
 트랜잭션의 고립 수준(Isolation Level)은 다수의 트랜잭션이 동시에 실행될 때 각각의 트랜잭션이 서로에게 미치는 영향을 정의한다. TypeORM에서는 이 고립 수준을 설정하여, 트랜잭션 간의 간섭을 최소화하고, 데이터의 일관성과 무결성을 유지할 수 있다.<br>
 이번 문제에서는 <strong><code>findOne</code> 메서드가 트랜잭션 외부의 데이터에 접근하고 있었기에, 트랜잭션 내에서 생성된 데이터를 올바르게 찾지 못한 것</strong>이었다.</p>
 <div class="details admonition note open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>데이터 트랜잭션의 ACID<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>데이터 트랜잭션의 ACID<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><ul>
 <li><strong>Atomicity</strong>(원자성): 트랜잭션의 모든 단계가 완료되지 않으면 트랜잭션이 끝나지 않는다. 이는 데이터가 항상 올바른 상태를 유지하도록 돕는다. 예를 들어, 계좌 이체의 경우 돈을 보내는 계좌에서 돈을 빼기만 하고 받는 계좌에 돈을 더하지 않으면 데이터 무결성이 깨진다.</li>
 <li><strong>Consistency</strong>(일관성): 트랜잭션은 데이터베이스의 상태를 일관된 상태에서 다른 일관된 상태로 이동하도록 한다. 만약 트랜잭션 중간에 문제가 발생하면 트랜잭션은 롤백되어 데이터베이스를 이전 일관된 상태로 되돌린다.</li>
 <li><strong>Isolation</strong>(고립성 또는 독립성): 동시에 여러 트랜잭션이 수행되더라도 각 트랜잭션은 서로에게 영향을 주지 않는다. 이는 각 트랜잭션이 독립적으로 수행되도록 보장하며, 이는 병렬 처리를 가능하게 한다.</li>
 <li><strong>Durability</strong>(내구성 또는 지속성): 트랜잭션이 성공적으로 완료되면 그 결과는 영구적으로 데이터베이스에 저장된다. 시스템이 중단되더라도 트랜잭션으로 인한 변경사항은 손실되지 않는다.</li>
 </ul>
-<p>참조링크 - <a href="https://ko.wikipedia.org/wiki/ACID" target="_blank" rel="noopener noreffer ">ACID - 위키백과, 우리 모두의 백과사전</a></p></div>
-        </div>
+<p>참조링크 - <a href="https://ko.wikipedia.org/wiki/ACID"target="_blank" rel="external nofollow noopener noreferrer">ACID - 위키백과, 우리 모두의 백과사전</a></p></div>
     </div>
-<h3 id="2차-수정된-메서드-코드">2차 수정된 메서드 코드</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl">	<span class="kr">async</span> <span class="nx">createFeed</span><span class="p">(</span><span class="nx">feedInfo</span>: <span class="kt">Feed</span><span class="p">,</span> <span class="nx">queryRunner</span>: <span class="kt">QueryRunner</span><span class="p">)</span> <span class="p">{</span>
+  </div>
+<h3 id="2차-수정된-메서드-코드" class="heading-element"><span>2차 수정된 메서드 코드</span>
+  <a href="#2%ec%b0%a8-%ec%88%98%ec%a0%95%eb%90%9c-%eb%a9%94%ec%84%9c%eb%93%9c-%ec%bd%94%eb%93%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="hl"><span class="lnt"> 5
+</span></span><span class="hl"><span class="lnt"> 6
+</span></span><span class="hl"><span class="lnt"> 7
+</span></span><span class="hl"><span class="lnt"> 8
+</span></span><span class="hl"><span class="lnt"> 9
+</span></span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl">	<span class="kr">async</span> <span class="nx">createFeed</span><span class="p">(</span><span class="nx">feedInfo</span>: <span class="kt">Feed</span><span class="p">,</span> <span class="nx">queryRunner</span>: <span class="kt">QueryRunner</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	  <span class="kr">const</span> <span class="nx">feed</span> <span class="o">=</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Feed</span><span class="p">,</span> <span class="nx">feedInfo</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	  <span class="k">await</span> <span class="nx">queryRunner</span><span class="p">.</span><span class="nx">manager</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">feed</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  
@@ -319,11 +484,15 @@
 </span></span><span class="line"><span class="cl">	<span class="c1">// findOne 메소드 역시 dataSource 레포지토리에 직접 연결이 아닌 queryRunner를 끌어와 해당 트랜잭션 내에서 수행될 수 있도록 한다. 
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  
 </span></span><span class="line"><span class="cl">	  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span></code></pre></div><p> </p>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
 <p>수정된 코드에서는 <code>queryRunner.manager.save</code>와 <code>queryRunner.manager.findOne</code>을 사용하여 해당 기능을 트랜잭션 내부에서 동작할 수 있도록 확실히 제어한다. 이를 통해, 트랜잭션 중첩 문제를 해결하고, 트랜잭션의 고립성을 보장하고 있다.</p>
-<h2 id="롤백되지-않는-mysql의-auto_increment-필드">롤백되지 않는 MySQL의 AUTO_INCREMENT 필드</h2>
-<p>특이점을 발견했다.<br>
+<h2 id="롤백되지-않는-mysql의-auto_increment-필드" class="heading-element"><span>롤백되지 않는 MySQL의 AUTO_INCREMENT 필드</span>
+  <a href="#%eb%a1%a4%eb%b0%b1%eb%90%98%ec%a7%80-%ec%95%8a%eb%8a%94-mysql%ec%9d%98-auto_increment-%ed%95%84%eb%93%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>특이점을 발견했다.<br>
 <strong>트랜잭션 롤백 후에도</strong> MySQL의 <code>AUTO_INCREMENT</code> 필드(특히 <strong>PK ID)는 증가된 상태를 유지하고 있다</strong>는 사실이다.<br>
 예를 들자면,</p>
 <ol>
@@ -341,21 +510,14 @@
 </ul>
 <p>즉, 여러 트랜잭션이 동시에 실행되고 있을 때 한 트랜잭션의 롤백이 다른 트랜잭션에 영향을 주면서 <strong>다른 여러 트랜잭션에서의 ID 할당에 혼란이 야기</strong>되는 상황이 그려진다. 이에 <code>AUTO_INCREMENT</code> 값의 연속성을 유지함으로써, <strong>트랜잭션 간의 독립성을 보장하고, 데이터베이스의 일관성 및 무결성을 유지</strong>할 수 있음을 알 수 있다.<br>
  </p>
-<p>github 해당 커밋 보기 - <a href="https://github.com/inchanS/project-review-ts/releases/tag/v2.0.8" rel="noopener noreffer" target="_blank"><img
-        class="lazyload version"
-        src="/svg/loading.min.svg"
-        data-src="/svg/version/2.0.8-changed.min.svg"
-        data-srcset="/svg/version/2.0.8-changed.min.svg, /svg/version/2.0.8-changed.min.svg 1.5x, /svg/version/2.0.8-changed.min.svg 2x"
-        data-sizes="auto"
-        alt="github-inchan code CHANGED | 2.0.8"
-        title="github-inchan code CHANGED | 2.0.8" /></a><br>
+<p>github 해당 커밋 보기 - <a href="https://github.com/inchanS/project-review-ts/releases/tag/v%25!v%28MISSING%29" rel="external nofollow noopener" target="_blank"><img loading="lazy" src="/images/version/project-review-ts-2.0.8.min.svg" alt="FixIt project-review-ts | " data-title="FixIt project-review-ts | " class="version" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><br>
  </p>
 <p>참고문서</p>
 <ul>
-<li><a href="https://orkhan.gitbook.io/typeorm/docs/transactions#using-queryrunner-to-create-and-control-state-of-single-database-connection" target="_blank" rel="noopener noreffer ">Transactions - typeorm</a></li>
-<li><a href="https://orkhan.gitbook.io/typeorm/docs/repository-api" target="_blank" rel="noopener noreffer ">Repository APIs - typeorm</a></li>
+<li><a href="https://orkhan.gitbook.io/typeorm/docs/transactions#using-queryrunner-to-create-and-control-state-of-single-database-connection"target="_blank" rel="external nofollow noopener noreferrer">Transactions - typeorm</a></li>
+<li><a href="https://orkhan.gitbook.io/typeorm/docs/repository-api"target="_blank" rel="external nofollow noopener noreferrer">Repository APIs - typeorm</a></li>
 </ul>
-<p>관련 글 - <a href="https://inchan.dev/posts/202302250414/" target="_blank" rel="noopener noreffer ">typeORM transaction에서 repository 사용하기 - inchan.dev</a></p>
+<p>관련 글 - <a href="https://inchan.dev/posts/202302250414/"target="_blank" rel="external nofollow noopener noreferrer">typeORM transaction에서 repository 사용하기 - inchan.dev</a></p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -365,44 +527,44 @@
 </ol>
 </div>
 </div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2024-03-08</span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2024-03-08 20:39:02">Updated on 2024-03-08&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
         </div>
-    </div>
+      </div></div>
 
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/typeorm/">TypeORM</a>,&nbsp;<a href="/tags/mysql/">MySQL</a>,&nbsp;<a href="/tags/project_review/">Project_review</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/posts/202401122324/" class="prev" rel="prev" title="Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면</a>
-            <a href="/posts/202401261149/" class="next" rel="next" title="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴">Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/typeorm/" class="post-tag" title="Tags - TypeORM">TypeORM</a><a href="/tags/mysql/" class="post-tag" title="Tags - MySQL">MySQL</a><a href="/tags/project_review/" class="post-tag" title="Tags - Project_review">Project_review</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/202401122324/" class="post-nav-item" rel="prev" title="Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면</a>
+      <a href="/posts/202401261149/" class="post-nav-item" rel="next" title="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴">Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-<div id="comments"><div id="utterances" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">inchan</a></span></div>
-        </div>
-    </footer></div>
+</article>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"url","label":"Comment","lightTheme":"github-light","repo":"inchanS/blog-comments"}},"data":{"id-1":"inchan.dev","id-2":"inchan.dev"},"search":{"algoliaAppID":"MKTUFLRGZY","algoliaIndex":"index.ko","algoliaSearchKey":"bc96d1a4ccc0607599f169955ef3e728","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":75}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.135.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.12-456db385">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">inchan</a></span><span class="license footer-divider">CC BY-NC-SA 4.0</span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='Total visitors'><i class="fa-regular fa-user fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='Total visits'><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><a href="https://github.com/inchanS" title="View source on GitHub"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true" width="56" height="56"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;--progress-h: 5px;--bg-progress: rgba(0, 0, 255, 1);--bg-progress-dark: rgba(255, 165, 0, 1);"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="https://vercount.one/js" async defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":70},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"useExtendedSearch":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"duration":-1,"loop":false,"speed":100},"version":"v0.3.12-456db385"};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-F2GSKQJ0MP', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-F2GSKQJ0MP" async></script></body>
 </html>

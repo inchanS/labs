@@ -1,116 +1,78 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Debugging - Category - inchan.dev</title>
-        <link>https://inchan.dev/categories/debugging/</link>
-        <description>Debugging - Category - inchan.dev</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>song@inchan.dev (inchan)</managingEditor>
-            <webMaster>song@inchan.dev (inchan)</webMaster><lastBuildDate>Wed, 24 Jan 2024 10:19:14 &#43;0900</lastBuildDate><atom:link href="https://inchan.dev/categories/debugging/" rel="self" type="application/rss+xml" /><item>
-    <title>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</title>
-    <link>https://inchan.dev/posts/202401241017/</link>
-    <pubDate>Wed, 24 Jan 2024 10:19:14 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202401241017/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer">
-            </div>&lt;표지 사진출처: Unsplash&gt;
-Project Tech Stack Overview Language: TypeScript
-Platform: Node.js
-Web Framework: Express.js
-Database: MySQL
-ORM: TypeORM
-Cloud Storage: AWS S3
-Server: AWS EC2
-Development Tool: WebStorm
-Collaboration Tool: Slack
-Version Control and Issue Tracking: GitHub Issue
-문제 상황 프로젝트에서 발견된 주요 문제는 TypeORM을 사용하는 Node.js 환경에서 트랜잭션 관리와 롤백이 제대로 이루어지지 않는 것이었다. 이는 게시글을 등록하는 로직에서 발견되었으며, 예기치 않은 오류가 발생했을 경우 데이터베이스에 불필요한 데이터가 잔존하는 결과를 초래했다.]]></description>
-</item>
-<item>
-    <title>error log - jest.spyOn()에서 재사용함수에 대한 모의 불가</title>
-    <link>https://inchan.dev/posts/202306291258/</link>
-    <pubDate>Thu, 29 Jun 2023 12:58:27 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202306291258/</guid>
-    <description><![CDATA[사용환경 : Node.Js, Express
-언어 : typeScript
-테스트 프레임워크 : Jest
-상황 Abstract 같은 파일 (모듈) 내에 있는 함수의 재사용시,
-테스트 코드를 작성하는데 모의하기가 상당히 까다롭고 불편함.
-특히 테스트 코드가 지나치게 지저분해짐 user.service.ts 파일 내부 다음은 user.service.ts 파일의 내부 코드 요약이다.
-초점을 맞춰 볼 곳은,
-updateUserInfo 함수 내부에서 checkDuplicateEmail 함수와 checkDuplicateNickname 함수가 재사용되고 있다.
-// ... const checkDuplicateEmail = async ( email: string ) =&gt; { ... } const checkDuplicateNickname = async ( nickname: string ) =&gt; { .]]></description>
-</item>
-<item>
-    <title>error log - TypeORM migration 할 때 cross ENV 설정 문제</title>
-    <link>https://inchan.dev/posts/202304010529/</link>
-    <pubDate>Sat, 01 Apr 2023 05:30:56 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202304010529/</guid>
-    <description><![CDATA[TypeORM migration TypeORM migration:create typeorm migration을 시도해보면서 준비한건 몇가지 되지 않았다. 우선, 터미널에서 typeorm migration 파일을 생성하는 명령어. $ npx typeorm migration:create &lt;path/file_name&gt; 예를 들면 npx typeorm migration:create ./src/migrations/default-tables
-이런 식으로 사용할 수 있다.
-그리고 마이그레이션 실행시 마이그레이션 파일들의 위치를 알려줄 수 있도록 datasource config 부분에 다음과 같이 설정을 추가한다.
-import { DataSource } from &#39;typeorm&#39;; const dataSource = new DataSource({ type: process.env.TYPEORM_CONNECTION, host: process.env.TYPEORM_HOST, port: process.env.TYPEORM_PORT, username: process.env.TYPEORM_USERNAME, password: process.]]></description>
-</item>
-<item>
-    <title>error log - AWS EC2의 SSH 접속이 안될 때</title>
-    <link>https://inchan.dev/posts/202303170023/</link>
-    <pubDate>Fri, 17 Mar 2023 00:17:31 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202303170023/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1633078654544-61b3455b9161?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGVycm9yfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
-            </div>1
-Bug 갑자기 macOS terminal에서 AWS EC2에 ssh접속이 안된다. 접속해보면 즉각적인 반응이 아닌, 오랜 시간 후 다음과 같은 메세지를 뱉었다.
-$ ssh -i my_key.pem ec2-user@11.111.11.111 ssh: connect to host 11.111.11.111 port 22: Operation timed out Operation timed out 이라니&hellip;
-찾아보니 여러 이유가 있을 수 있었다.
-보안규칙에 22포트에 대한 설정이 누락되었거나, 명령어가 잘못 입력되었거나, 방화벽 설정에서 막혔다거나&hellip; 대개 구글링했을때 나오는건 Connetion timed out 이었는데 이건 너무 포괄적인 답변들이라 난감했다.
-여튼 현재상황에서, 설정은 잘못된게 없었고 다른 ssh(github)로 테스트 해보니 모두 정상이었다.]]></description>
-</item>
-<item>
-    <title>error log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</title>
-    <link>https://inchan.dev/posts/202303162353/</link>
-    <pubDate>Thu, 16 Mar 2023 23:56:16 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202303162353/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1599153066743-08810dc8a419?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXdzfGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60&amp;h=300" referrerpolicy="no-referrer">
-            </div>1
-AWS EC2에 배포를 하려하는데, 조그만 문제가 하나 생겼다.
-아래 예시와 같이 .env파일을 개발, 배포 등의 목적으로 각각 나누어 코드를 작성했는데,
-main.ts 파일 코드 예시 if (process.env.NODE_ENV === &#39;production&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.production&#39;) }); } else if (process.env.NODE_ENV === &#39;develop&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.dev&#39;) }); console.log(&#39;process.env.NODE_ENV is &#39;, process.env.NODE_ENV); } else if (process.env.NODE_ENV === &#39;test&#39;) { dotenv.config({ path: path.join(__dirname, &#39;/../env/.env.test&#39;) }); } else { throw new Error(&#39;process.env.NODE_ENV IS_NOT_SET!!&#39;); } 이걸 EC2에서 pm2로 프로세스를 돌릴 때 어떻게 명령을 내려야 하는가 였다.]]></description>
-</item>
-<item>
-    <title>error log - throw와 return</title>
-    <link>https://inchan.dev/posts/202301180430/</link>
-    <pubDate>Wed, 18 Jan 2023 04:30:23 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202301180430/</guid>
-    <description><![CDATA[문제상황 Failure 에러핸들링 중, 에러메세지를 response로 보내려고 한다. 이에 return을 사용 에러가 나와야 할 상황에서 정상적으로 에러메세지를 response로 보낸다. 하지만 에러코드를 알려야 할 status code는 정상을 알리며 이후 모든 함수와 명령이 진행됨 해결 Success return이 아닌 throw를 사용하여야 한다. 특히 node.js에서 서버를 돌릴때,
-단순히 return만으로는 이후의 모든 과정, 즉 controller - service - dao 등에서 return을 한 함수 이외 모든 명령어가 진행 된다.
-하지만 throw의 경우, 에러를 내보내는 것 뿐만 아니라 이후의 모든 명령어를 중지시킨다.]]></description>
-</item>
-<item>
-    <title>error log - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error</title>
-    <link>https://inchan.dev/posts/202301180428/</link>
-    <pubDate>Wed, 18 Jan 2023 04:28:04 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202301180428/</guid>
-    <description><![CDATA[에러 상황 TypeScript로 typeORM을 세팅할때,
-dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼 수 있다.
-위 3개의 해당 error message를 살펴보면 차례로 다음과 같다.
-TS2322: Type &#39;string&#39; is not assignable to type &#39;&#34;mysql&#34; | &#34;mariadb&#34; | &#34;postgres&#34; | &#34;cockroachdb&#34; | &#34;sqlite&#34; | &#34;mssql&#34; | &#34;sap&#34; | &#34;oracle&#34; | &#34;cordova&#34; | &#34;nativescript&#34; | &#34;react-native&#34; | &#34;sqljs&#34; | &#34;mongodb&#34; | &#34;aurora-mysql&#34; | ... 4 more ... | &#34;spanner&#34;&#39;. TS2322: Type &#39;string&#39; is not assignable to type &#39;number&#39;.]]></description>
-</item>
-<item>
-    <title>typescript - typeorm 연결 오류 해결</title>
-    <link>https://inchan.dev/posts/202212130459/</link>
-    <pubDate>Tue, 13 Dec 2022 04:59:30 &#43;0900</pubDate>
-    <author>inchan</author>
-    <guid>https://inchan.dev/posts/202212130459/</guid>
-    <description><![CDATA[typescript에서의 typeorm 연결 오류 대략 14시부터 22시까지 무려 8시간을 끼니도 거른채 뚫어져라 모니터만 쳐다보며 찾았다. type 지정이 잘못되었나? 아니면 새롭게 설치해줘야하는 npm이 있는건가? 눈이 빠져라 찾았는데 결과는
-Success server.ts에서
-dotenv.config()
-바로 이 코드의 순서 문제였다. 기존 import createApp from './app.ts' 보다 아래에 있었는데 위로 올렸더니 바로 서버가 열렸다. dotenv.config() import createApp from &#39;./app.ts&#39; // 윗줄과 순서 바꿈 동기/비동기 세션을 진행한게 오늘인데 바로 이러한 문제를 찾지 못하고 엉뚱한 곳에서 하루종일 헤매고 있었다니&hellip; 참고사이트 오류 해결1]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debugging - Category - inchan.dev</title>
+    <link>http://inchan.dev/categories/debugging/</link>
+    <description>inchan.dev</description>
+    <generator>Hugo 0.135.0 &amp; FixIt v0.3.12-456db385</generator>
+    <language>en</language>
+    <managingEditor>song@inchan.dev (inchan)</managingEditor>
+    <webMaster>song@inchan.dev (inchan)</webMaster>
+    <lastBuildDate>Fri, 08 Mar 2024 20:39:02 +0900</lastBuildDate>
+    <atom:link href="http://inchan.dev/categories/debugging/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</title>
+      <link>http://inchan.dev/posts/202401241017/</link>
+      <pubDate>Wed, 24 Jan 2024 10:19:14 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202401241017/</guid>
+      <category domain="http://inchan.dev/categories/debugging/">Debugging</category>
+      <description>&lt;p&gt;&amp;lt;표지 사진출처: &lt;a href=&#34;https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EC%B2%9C%EC%9E%A5%EC%9D%98-%EB%B2%8C%EB%A0%88%EC%9D%98-%EC%8B%9C%EC%84%A0-%EC%82%AC%EC%A7%84-LqKhnDzSF-8&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Unsplash&lt;/a&gt;&amp;gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;div class=&#34;details admonition abstract&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;      &lt;i class=&#34;icon fa-solid fa-list-ul fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Project Tech Stack Overview&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Language: &lt;strong&gt;TypeScript&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Platform: &lt;strong&gt;Node.js&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Web Framework: &lt;strong&gt;Express.js&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Database: &lt;strong&gt;MySQL&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ORM: &lt;strong&gt;TypeORM&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Cloud Storage: &lt;strong&gt;AWS S3&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Server: &lt;strong&gt;AWS EC2&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Development Tool: &lt;strong&gt;WebStorm&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Collaboration Tool: Slack&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Version Control and Issue Tracking: &lt;strong&gt;GitHub Issue&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;문제-상황&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;문제 상황&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%ac%b8%ec%a0%9c-%ec%83%81%ed%99%a9&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;프로젝트에서 발견된 주요 문제는 TypeORM을 사용하는 Node.js 환경에서 &lt;strong&gt;트랜잭션 관리와 롤백이 제대로 이루어지지 않는 것&lt;/strong&gt;이었다. 이는 게시글을 등록하는 로직에서 발견되었으며, 예기치 않은 오류가 발생했을 경우 &lt;strong&gt;데이터베이스에 불필요한 데이터가 잔존하는 결과를 초래&lt;/strong&gt;했다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>error log - jest.spyOn()에서 재사용함수에 대한 모의 불가</title>
+      <link>http://inchan.dev/posts/202306291258/</link>
+      <pubDate>Thu, 29 Jun 2023 12:58:27 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202306291258/</guid>
+      <category domain="http://inchan.dev/categories/debugging/">Debugging</category>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;사용환경 : Node.Js, Express&lt;br&gt;&#xA;언어 : typeScript&lt;br&gt;&#xA;테스트 프레임워크 : Jest&lt;/p&gt;&#xA;&lt;h2 id=&#34;상황&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;상황&lt;/span&gt;&#xA;  &lt;a href=&#34;#%ec%83%81%ed%99%a9&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;div class=&#34;details admonition abstract open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;      &lt;i class=&#34;icon fa-solid fa-list-ul fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Abstract&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;같은 파일 (모듈) 내에 있는 함수의 재사용시,&lt;br&gt;&#xA;테스트 코드를 작성하는데 모의하기가 상당히 까다롭고 불편함.&lt;br&gt;&#xA;특히 테스트 코드가 지나치게 지저분해짐&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;h4 id=&#34;userservicets-파일-내부&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;&lt;strong&gt;&lt;code&gt;user.service.ts&lt;/code&gt;&lt;/strong&gt; 파일 내부&lt;/span&gt;&#xA;  &lt;a href=&#34;#userservicets-%ed%8c%8c%ec%9d%bc-%eb%82%b4%eb%b6%80&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;다음은 &lt;code&gt;user.service.ts&lt;/code&gt; 파일의 내부 코드 요약이다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>error log - TypeORM migration 할 때 cross ENV 설정 문제</title>
+      <link>http://inchan.dev/posts/202304010529/</link>
+      <pubDate>Sat, 01 Apr 2023 05:30:56 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202304010529/</guid>
+      <category domain="http://inchan.dev/categories/debugging/">Debugging</category>
+      <description>&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;h2 id=&#34;typeorm-migration&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;TypeORM migration&lt;/span&gt;&#xA;  &lt;a href=&#34;#typeorm-migration&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;typeorm-migrationcreate&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;TypeORM migration:&lt;strong&gt;create&lt;/strong&gt;&lt;/span&gt;&#xA;  &lt;a href=&#34;#typeorm-migrationcreate&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;typeorm migration을 시도해보면서 준비한건 몇가지 되지 않았다.&#xA; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>error log - AWS EC2의 SSH 접속이 안될 때</title>
+      <link>http://inchan.dev/posts/202303170023/</link>
+      <pubDate>Fri, 17 Mar 2023 00:17:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202303170023/</guid>
+      <category domain="http://inchan.dev/categories/debugging/">Debugging</category>
+      <description>&lt;p&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;&lt;div class=&#34;details admonition bug open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;      &lt;i class=&#34;icon fa-solid fa-bug fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Bug&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&lt;p&gt;갑자기 macOS terminal에서 AWS EC2에 ssh접속이 안된다.&#xA; &lt;/p&gt;&#xA;&lt;p&gt;접속해보면 즉각적인 반응이 아닌, 오랜 시간 후 다음과 같은 메세지를 뱉었다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; $ ssh -i my_key.pem ec2-user@11.111.11.111&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh: connect to host 11.111.11.111 port 22: Operation timed out&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt; &lt;/p&gt;&#xA;&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;code&gt;Operation timed out&lt;/code&gt; 이라니&amp;hellip;&lt;/strong&gt;&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;찾아보니 여러 이유가 있을 수 있었다.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;보안규칙에 22포트에 대한 설정이 누락되었거나,&lt;/li&gt;&#xA;&lt;li&gt;명령어가 잘못 입력되었거나,&lt;/li&gt;&#xA;&lt;li&gt;방화벽 설정에서 막혔다거나&amp;hellip;&#xA; &lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;대개 구글링했을때 나오는건 &lt;code&gt;Connetion timed out&lt;/code&gt; 이었는데 이건 너무 포괄적인 답변들이라 난감했다.&lt;br&gt;&#xA; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>error log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</title>
+      <link>http://inchan.dev/posts/202303162353/</link>
+      <pubDate>Thu, 16 Mar 2023 23:56:16 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202303162353/</guid>
+      <category domain="http://inchan.dev/categories/debugging/">Debugging</category>
+      <description>&lt;p&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;AWS EC2에 배포를 하려하는데, 조그만 문제가 하나 생겼다.&lt;br&gt;&#xA;아래 예시와 같이 &lt;strong&gt;&lt;code&gt;.env&lt;/code&gt;파일을 개발, 배포 등의 목적으로 각각 나누어&lt;/strong&gt; 코드를 작성했는데,&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;&lt;div class=&#34;details admonition example open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;      &lt;i class=&#34;icon fa-solid fa-list-ol fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;main.ts 파일 코드 예시&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&lt;p&gt; &lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;process&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;NODE_ENV&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;production&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;dotenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;join&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;__dirname&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/../env/.env.production&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;process&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;NODE_ENV&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;develop&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;dotenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;join&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;__dirname&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/../env/.env.dev&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;process.env.NODE_ENV is &amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;process&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;NODE_ENV&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;process&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;NODE_ENV&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;test&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;dotenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;join&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;__dirname&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/../env/.env.test&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;throw&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Error&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;process.env.NODE_ENV IS_NOT_SET!!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>error log - throw와 return</title>
+      <link>http://inchan.dev/posts/202301180430/</link>
+      <pubDate>Wed, 18 Jan 2023 04:30:23 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202301180430/</guid>
+      <category domain="http://inchan.dev/categories/debugging/">Debugging</category>
+      <description>&lt;h2 id=&#34;문제상황&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;문제상황&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%ac%b8%ec%a0%9c%ec%83%81%ed%99%a9&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;div class=&#34;details admonition failure open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;      &lt;i class=&#34;icon fa-solid fa-times-circle fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Failure&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&lt;ol&gt;&#xA;&lt;li&gt;에러핸들링 중, 에러메세지를 response로 보내려고 한다.&lt;/li&gt;&#xA;&lt;li&gt;이에 &lt;code&gt;return&lt;/code&gt;을 사용&lt;/li&gt;&#xA;&lt;li&gt;에러가 나와야 할 상황에서 정상적으로 에러메세지를 response로 보낸다.&lt;/li&gt;&#xA;&lt;li&gt;하지만 에러코드를 알려야 할 &lt;strong&gt;status code는 정상을 알리며 이후 모든 함수와 명령이 진행됨&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&lt;br&gt;&#xA; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>error log - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error</title>
+      <link>http://inchan.dev/posts/202301180428/</link>
+      <pubDate>Wed, 18 Jan 2023 04:28:04 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202301180428/</guid>
+      <category domain="http://inchan.dev/categories/debugging/">Debugging</category>
+      <description>&lt;h2 id=&#34;에러-상황&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;에러 상황&lt;/span&gt;&#xA;  &lt;a href=&#34;#%ec%97%90%eb%9f%ac-%ec%83%81%ed%99%a9&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;TypeScript로 typeORM을 세팅할때,&lt;br&gt;&#xA;dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼 수 있다.&lt;br&gt;&#xA; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>typescript - typeorm 연결 오류 해결</title>
+      <link>http://inchan.dev/posts/202212130459/</link>
+      <pubDate>Tue, 13 Dec 2022 04:59:30 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://inchan.dev/posts/202212130459/</guid>
+      <category domain="http://inchan.dev/categories/debugging/">Debugging</category>
+      <description>&lt;h3 id=&#34;typescript에서의-typeorm-연결-오류&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;typescript에서의 typeorm 연결 오류&lt;/span&gt;&#xA;  &lt;a href=&#34;#typescript%ec%97%90%ec%84%9c%ec%9d%98-typeorm-%ec%97%b0%ea%b2%b0-%ec%98%a4%eb%a5%98&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;대략 14시부터 22시까지 무려 8시간을 끼니도 거른채 뚫어져라 모니터만 쳐다보며 찾았다.&#xA; &lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>
