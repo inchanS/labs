@@ -2,93 +2,93 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>inchan.dev</title>
-    <link>http://inchan.dev/</link>
+    <link>https://inchan.dev/</link>
     <description>inchan.dev</description>
     <generator>Hugo 0.135.0 &amp; FixIt v0.3.12-456db385</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Mon, 25 Mar 2024 06:24:11 +0900</lastBuildDate>
-    <atom:link href="http://inchan.dev/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://inchan.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Alfred workflow - 네이버 검색 워크플로우 지도 검색 개선</title>
-      <link>http://inchan.dev/posts/202403171602/</link>
+      <link>https://inchan.dev/posts/202403171602/</link>
       <pubDate>Sun, 17 Mar 2024 16:02:39 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/posts/202403171602/</guid>
-      <category domain="http://inchan.dev/categories/miscellaneous/">Miscellaneous</category>
+      <guid>https://inchan.dev/posts/202403171602/</guid>
+      <category domain="https://inchan.dev/categories/miscellaneous/">Miscellaneous</category>
       <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;workflow-소개&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;Workflow 소개&lt;/span&gt;&#xA;  &lt;a href=&#34;#workflow-%ec%86%8c%ea%b0%9c&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;macOS에서 가장 많이 사용하는 앱 중 하나가 &lt;a href=&#34;https://www.alfredapp.com&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Alfred&lt;/a&gt;이다. &lt;br&gt;&#xA;그리고 이 앱에서도 가장 높은 빈도로 사용하는 워크플로우 중 하나가 바로 &lt;strong&gt;네이버 검색&lt;/strong&gt;이다. &lt;br&gt;&#xA;이 워크플로우는 &lt;a href=&#34;https://github.com/Kuniz/alfnaversearch&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Kuniz/alfnaversearch: Naver Search Workflow for Alfred (알프레드 네이버 검색/사전/지도 자동완성 워크플로우)&lt;/a&gt; 여기에서 살펴보고 다운로드할 수 있는데 정말 잘 만든 워크플로우다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법</title>
-      <link>http://inchan.dev/posts/202403090724/</link>
+      <link>https://inchan.dev/posts/202403090724/</link>
       <pubDate>Sat, 09 Mar 2024 07:24:37 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/posts/202403090724/</guid>
-      <category domain="http://inchan.dev/categories/miscellaneous/">Miscellaneous</category>
+      <guid>https://inchan.dev/posts/202403090724/</guid>
+      <category domain="https://inchan.dev/categories/miscellaneous/">Miscellaneous</category>
       <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;문제상황&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;문제상황&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%ac%b8%ec%a0%9c%ec%83%81%ed%99%a9&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;브라우저에서 chatGPT 프롬프트의 입력창에 글을 쓰고 아무리 &amp;ldquo;엔터&amp;quot;를 눌러도 반응이 가질 않는 상황이 생겼다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</title>
-      <link>http://inchan.dev/posts/202403051335/</link>
+      <link>https://inchan.dev/posts/202403051335/</link>
       <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/posts/202403051335/</guid>
-      <category domain="http://inchan.dev/categories/back-end/">Back-End</category>
-      <category domain="http://inchan.dev/categories/project/">Project</category>
+      <guid>https://inchan.dev/posts/202403051335/</guid>
+      <category domain="https://inchan.dev/categories/back-end/">Back-End</category>
+      <category domain="https://inchan.dev/categories/project/">Project</category>
       <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/ko/blogs/korea/new-aws-public-ipv4-address-charge-public-ip-insights/?_encoding=UTF8&amp;amp;tag=clien0a-20&amp;amp;linkCode=ur2&amp;amp;linkId=4ef926e41eaa57b3dcfc48b2660f5024&amp;amp;camp=1789&amp;amp;creative=9325&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그&lt;/a&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&lt;p&gt;AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. &lt;strong&gt;2024년 2월 1일부터&lt;/strong&gt; 서비스 연결 여부에 관계없이 &lt;strong&gt;모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과&lt;/strong&gt;됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</title>
-      <link>http://inchan.dev/posts/202403051214/</link>
+      <link>https://inchan.dev/posts/202403051214/</link>
       <pubDate>Tue, 05 Mar 2024 12:14:30 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/posts/202403051214/</guid>
-      <category domain="http://inchan.dev/categories/back-end/">Back-End</category>
+      <guid>https://inchan.dev/posts/202403051214/</guid>
+      <category domain="https://inchan.dev/categories/back-end/">Back-End</category>
       <description>&lt;p&gt;관련 글&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://inchan.dev/posts/202401122216/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;AWS EC2에 HTTPS를 연결하는 방법은 몇가지가 있는데&lt;br&gt;&#xA;그 중 하나는 &lt;strong&gt;Route53을 이용하는 것&lt;/strong&gt;이고,&lt;br&gt;&#xA;다른 하나는 &lt;strong&gt;도메인 서비스의 프록싱을 통해 바로 연결하는 방법&lt;/strong&gt;이다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;전자의 경우 위 관련 글의 링크에서 참고할 수 있으며 이 글은 후자에 관한 글이다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;우선 EC2 인스턴스에는 public IPv4 주소를 하나 부여할 수 있다.&lt;br&gt;&#xA;이는 인스턴스 생성시 설정에서 &amp;lsquo;자동으로 부여하기&amp;rsquo;를 통해 부여할 수도 있고, 따로이 탄력적 IP를 하나 생성하여 부여할 수도 있다.&lt;br&gt;&#xA; &lt;/p&gt;</description>
     </item>
     <item>
       <title>typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란</title>
-      <link>http://inchan.dev/posts/202403010802/</link>
+      <link>https://inchan.dev/posts/202403010802/</link>
       <pubDate>Fri, 01 Mar 2024 08:02:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/posts/202403010802/</guid>
-      <category domain="http://inchan.dev/categories/back-end/">Back-End</category>
+      <guid>https://inchan.dev/posts/202403010802/</guid>
+      <category domain="https://inchan.dev/categories/back-end/">Back-End</category>
       <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;div class=&#34;details admonition info open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;      &lt;i class=&#34;icon fa-solid fa-info-circle fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;먼저 알아두기&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&lt;h3 id=&#34;mysql---date-필드의-타입-종류&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;mySQL - Date 필드의 타입 종류&lt;/span&gt;&#xA;  &lt;a href=&#34;#mysql---date-%ed%95%84%eb%93%9c%ec%9d%98-%ed%83%80%ec%9e%85-%ec%a2%85%eb%a5%98&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;mySQL에서 Date 필드의 타입 종류는 다음과 같다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기</title>
-      <link>http://inchan.dev/posts/202401311413/</link>
+      <link>https://inchan.dev/posts/202401311413/</link>
       <pubDate>Thu, 01 Feb 2024 23:11:21 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/posts/202401311413/</guid>
-      <category domain="http://inchan.dev/categories/env/">Env</category>
+      <guid>https://inchan.dev/posts/202401311413/</guid>
+      <category domain="https://inchan.dev/categories/env/">Env</category>
       <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;source : &lt;a href=&#34;https://github.com/nvm-sh/nvm?tab=readme-ov-file#nvmrc&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;nvm-sh/nvm: Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;새로운 프로젝트는 Node 버전 중 현재 최신 LTS 버전인 20 버전으로 진행하려는데, 기존 진행중인 프로젝트가 AWS-ec2에서 node@16으로 세팅되어있던 터라, macOS에서 2개 버전을 설치해 사용해야하는 상황이 왔다.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;때문에 여러 node 버전을 사용할 수 있는 &lt;strong&gt;nvm&lt;/strong&gt;(Node version Manager)을 설치&lt;br&gt;&#xA;설치는 brew를 통해 설치했고 이후 과정은 brew에서 자세하게 설명해준다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;장점&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;장점&lt;/span&gt;&#xA;  &lt;a href=&#34;#%ec%9e%a5%ec%a0%90&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ol&gt;&#xA;&lt;li&gt;OS에 하나 이상의, 여러 version별 node를 설치하고&lt;/li&gt;&#xA;&lt;li&gt;프로젝트별로 각각 다른 버전의 node를 사용할 수 있다.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;단점&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;단점&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%8b%a8%ec%a0%90&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;node 프로젝트 진행시 터미널에서 해당 프로젝트를 적정 버전으로 실행시키기 위해서는 다음 명령어로 node의 버전을 사용할 때마다 &lt;strong&gt;항상&lt;/strong&gt; 지정해줘야 한다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴</title>
-      <link>http://inchan.dev/posts/202401261149/</link>
+      <link>https://inchan.dev/posts/202401261149/</link>
       <pubDate>Fri, 26 Jan 2024 11:49:52 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/posts/202401261149/</guid>
-      <category domain="http://inchan.dev/categories/back-end/">Back-End</category>
+      <guid>https://inchan.dev/posts/202401261149/</guid>
+      <category domain="https://inchan.dev/categories/back-end/">Back-End</category>
       <description>&lt;p&gt;&amp;lt;표지 사진출처: &lt;a href=&#34;https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EC%8B%B1%EA%B8%80%ED%86%A4-12%EC%84%B8-%EB%B3%91%EC%9D%84-%EB%93%A4%EA%B3%A0-%EC%9E%88%EB%8A%94-%EB%82%A8%EC%9E%90-mUvxrP-IC_k&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Unsplash&lt;/a&gt;)&amp;gt;&#xA; &lt;/p&gt;&#xA;&lt;div class=&#34;details admonition abstract&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;      &lt;i class=&#34;icon fa-solid fa-list-ul fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Project Tech Stack Overview&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Language: &lt;strong&gt;TypeScript&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Platform: &lt;strong&gt;Node.js&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Web Framework: &lt;strong&gt;Express.js&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Database: &lt;strong&gt;MySQL&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ORM: &lt;strong&gt;TypeORM&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Cloud Storage: &lt;strong&gt;AWS S3&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Development Tool: &lt;strong&gt;WebStorm&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Version Control and Issue Tracking: &lt;strong&gt;GitHub Issue&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;얼마 전, 모든 코드를 OOP로 리팩토링한 뒤, 한 문제를 발견했다.&lt;br&gt;&#xA;리포지토리 역시 클래스 기반으로 내보내고 있었는데 때문에 각각의 서비스 로직에서는 이를 &lt;code&gt;new Class()&lt;/code&gt; 형태로 불러오면서 단일 인스턴스가 아닌 여러 인스턴스의 생성 위험이 있었다.&lt;br&gt;&#xA; &lt;/p&gt;</description>
     </item>
     <item>
       <title>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</title>
-      <link>http://inchan.dev/posts/202401241017/</link>
+      <link>https://inchan.dev/posts/202401241017/</link>
       <pubDate>Wed, 24 Jan 2024 10:19:14 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/posts/202401241017/</guid>
-      <category domain="http://inchan.dev/categories/debugging/">Debugging</category>
+      <guid>https://inchan.dev/posts/202401241017/</guid>
+      <category domain="https://inchan.dev/categories/debugging/">Debugging</category>
       <description>&lt;p&gt;&amp;lt;표지 사진출처: &lt;a href=&#34;https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EC%B2%9C%EC%9E%A5%EC%9D%98-%EB%B2%8C%EB%A0%88%EC%9D%98-%EC%8B%9C%EC%84%A0-%EC%82%AC%EC%A7%84-LqKhnDzSF-8&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Unsplash&lt;/a&gt;&amp;gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;div class=&#34;details admonition abstract&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;      &lt;i class=&#34;icon fa-solid fa-list-ul fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Project Tech Stack Overview&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Language: &lt;strong&gt;TypeScript&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Platform: &lt;strong&gt;Node.js&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Web Framework: &lt;strong&gt;Express.js&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Database: &lt;strong&gt;MySQL&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ORM: &lt;strong&gt;TypeORM&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Cloud Storage: &lt;strong&gt;AWS S3&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Server: &lt;strong&gt;AWS EC2&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Development Tool: &lt;strong&gt;WebStorm&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Collaboration Tool: Slack&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Version Control and Issue Tracking: &lt;strong&gt;GitHub Issue&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;문제-상황&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;문제 상황&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%ac%b8%ec%a0%9c-%ec%83%81%ed%99%a9&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;프로젝트에서 발견된 주요 문제는 TypeORM을 사용하는 Node.js 환경에서 &lt;strong&gt;트랜잭션 관리와 롤백이 제대로 이루어지지 않는 것&lt;/strong&gt;이었다. 이는 게시글을 등록하는 로직에서 발견되었으며, 예기치 않은 오류가 발생했을 경우 &lt;strong&gt;데이터베이스에 불필요한 데이터가 잔존하는 결과를 초래&lt;/strong&gt;했다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면</title>
-      <link>http://inchan.dev/posts/202401122324/</link>
+      <link>https://inchan.dev/posts/202401122324/</link>
       <pubDate>Fri, 12 Jan 2024 23:24:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/posts/202401122324/</guid>
-      <category domain="http://inchan.dev/categories/miscellaneous/">Miscellaneous</category>
+      <guid>https://inchan.dev/posts/202401122324/</guid>
+      <category domain="https://inchan.dev/categories/miscellaneous/">Miscellaneous</category>
       <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;문제상황&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;문제상황&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%ac%b8%ec%a0%9c%ec%83%81%ed%99%a9&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;구글이 도메인 사업을 매각한 후, 도메인 이전을 차일피일 미루다 최근에서야 Cloudflare로 도메인을 이전하였다.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;br&gt;&#xA;모든 DNS 역시 정상적으로 이전하였고, 메일서비스를 비롯한 다른 서비스들도 정상작동함을 확인하였다.&lt;br&gt;&#xA;그런데 갑자기 해당 도메인의 주소가 정상적으로 작동하지 않는 문제가 생겼다.&lt;br&gt;&#xA; &lt;/p&gt;</description>
     </item>
     <item>
       <title>AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용</title>
-      <link>http://inchan.dev/posts/202401122216/</link>
+      <link>https://inchan.dev/posts/202401122216/</link>
       <pubDate>Fri, 12 Jan 2024 22:17:59 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/posts/202401122216/</guid>
-      <category domain="http://inchan.dev/categories/back-end/">Back-End</category>
+      <guid>https://inchan.dev/posts/202401122216/</guid>
+      <category domain="https://inchan.dev/categories/back-end/">Back-End</category>
       <description>&lt;p&gt;관련 글&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://inchan.dev/posts/202403051214/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;팀 프로젝트로 백엔드 서버를 EC2에서 배포하여 사용중인데 여기에 &lt;strong&gt;HTTPS&lt;/strong&gt;를 적용하여 보았다.&lt;/p&gt;&#xA;&lt;p&gt;적용방법은 몇가지가 있지만 크게 AWS의 Route53을 이용하는 방법과 도메인서비스의 프록싱을 이용한 방법 등이 있다.&lt;/p&gt;&#xA;&lt;p&gt;그 중 첫번째 방법에 대해 기술한다.&lt;/p&gt;&#xA;&lt;div class=&#34;details admonition tip open&#34;&gt;&#xA;    &lt;div class=&#34;details-summary admonition-title&#34;&gt;&#xA;      &lt;i class=&#34;icon fa-solid fa-lightbulb fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;겁먹지 말기&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;details-content&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;AWS내에서 각 서비스를 이리저리 다니며&lt;br&gt;&#xA;무언가를 자꾸 생성하고 또 세팅하다보니 자칫 어렵다고 지레 겁먹기 쉬운데&lt;br&gt;&#xA;실제로 해보면 생각보다 간단하고 쉽다.&lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;p&gt;구글링을 하다보면 여러 관련 글이 있는데 아래 참고한 2개의 웹페이지가 가장 잘 설명되어있다.&lt;/p&gt;</description>
     </item>
   </channel>

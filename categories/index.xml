@@ -2,61 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories - Category - inchan.dev</title>
-    <link>http://inchan.dev/categories/</link>
+    <link>https://inchan.dev/categories/</link>
     <description>inchan.dev</description>
     <generator>Hugo 0.135.0 &amp; FixIt v0.3.12-456db385</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Mon, 25 Mar 2024 06:24:11 +0900</lastBuildDate>
-    <atom:link href="http://inchan.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://inchan.dev/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Miscellaneous</title>
-      <link>http://inchan.dev/categories/miscellaneous/</link>
+      <link>https://inchan.dev/categories/miscellaneous/</link>
       <pubDate>Sun, 17 Mar 2024 16:02:39 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/categories/miscellaneous/</guid>
+      <guid>https://inchan.dev/categories/miscellaneous/</guid>
       <description>Miscellaneous</description>
     </item>
     <item>
       <title>Back-End</title>
-      <link>http://inchan.dev/categories/back-end/</link>
+      <link>https://inchan.dev/categories/back-end/</link>
       <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/categories/back-end/</guid>
+      <guid>https://inchan.dev/categories/back-end/</guid>
       <description>Back-End</description>
     </item>
     <item>
       <title>Project</title>
-      <link>http://inchan.dev/categories/project/</link>
+      <link>https://inchan.dev/categories/project/</link>
       <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/categories/project/</guid>
+      <guid>https://inchan.dev/categories/project/</guid>
       <description>Project</description>
     </item>
     <item>
       <title>Env</title>
-      <link>http://inchan.dev/categories/env/</link>
+      <link>https://inchan.dev/categories/env/</link>
       <pubDate>Thu, 01 Feb 2024 23:11:21 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/categories/env/</guid>
+      <guid>https://inchan.dev/categories/env/</guid>
       <description>Env</description>
     </item>
     <item>
       <title>Debugging</title>
-      <link>http://inchan.dev/categories/debugging/</link>
+      <link>https://inchan.dev/categories/debugging/</link>
       <pubDate>Wed, 24 Jan 2024 10:19:14 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/categories/debugging/</guid>
+      <guid>https://inchan.dev/categories/debugging/</guid>
       <description>Debugging</description>
     </item>
     <item>
       <title>Programming</title>
-      <link>http://inchan.dev/categories/programming/</link>
+      <link>https://inchan.dev/categories/programming/</link>
       <pubDate>Sat, 17 Jun 2023 15:31:26 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/categories/programming/</guid>
+      <guid>https://inchan.dev/categories/programming/</guid>
       <description>Programming</description>
     </item>
     <item>
       <title>Front-End</title>
-      <link>http://inchan.dev/categories/front-end/</link>
+      <link>https://inchan.dev/categories/front-end/</link>
       <pubDate>Tue, 04 Oct 2022 05:15:23 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://inchan.dev/categories/front-end/</guid>
+      <guid>https://inchan.dev/categories/front-end/</guid>
       <description>Front-End</description>
     </item>
   </channel>
