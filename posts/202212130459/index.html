@@ -236,7 +236,14 @@
 -   에러의 원인 : 정확히 알수는 없으나 대개 app.js 에서 database 까지 연결이 되지 않을 때 나타난다. 처음에는 driver 에러라고 생각했으나 아니었다. 스펠링을 틀려서 연결이 안되거나 router 를 빠뜨려서 연결이 안되는 경우도 드라이버 문제로 나타났다. 정확히 하자면 typeorm 문제로 등장했다.
 -   디버깅 : 콘솔로 일일이 찍으면서 에러의 위치를 찾아야 한다.
 ⇒해결함 : 원인은 dotenv.config() 가 const routes = require(”….”) 보다 아래에 있어서 생겼다. 위치를 바꿔주니 서버가 잘 열렸다.</p>
-</blockquote></div><div class="post-footer" id="post-footer">
+</blockquote></div><hr class="awesome-hr" />
+    <h2 id="see-also">Related Content</h2>
+    <ul><li>
+          <a href="/posts/202302160417/" title="Node.js 백엔드TypeScript &#43; TypeORM으로 무한 대댓글 가공하기">Node.js 백엔드TypeScript &#43; TypeORM으로 무한 대댓글 가공하기</a></li><li>
+          <a href="/posts/202403010802/" title="TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란">TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란</a></li><li>
+          <a href="/posts/202401241017/" title="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법">Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</a></li><li>
+          <a href="/posts/202306070208/" title="MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.">MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</a></li><li>
+          <a href="/posts/202304010529/" title="Error Log - TypeORM Migration 할 때 Cross ENV 설정 문제">Error Log - TypeORM Migration 할 때 Cross ENV 설정 문제</a></li></ul><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
