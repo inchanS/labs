@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://inchan.dev/sitemap.xml
+Sitemap: https://labs.inchan.dev/sitemap.xml
