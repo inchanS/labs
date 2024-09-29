@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>TypeORM Transaction에서 Repository 사용하기 - inchan.dev</title><meta name="author" content="inchan">
+    <title>TypeORM Transaction에서 Repository 사용하기 - labs.inchan.dev</title><meta name="author" content="inchan">
 <meta name="description" content="typeORM transaction시 버전차에 따른 방법 변화"><meta name="keywords" content='typeORM, mySQL, project_review'>
   <meta itemprop="name" content="typeORM transaction에서 repository 사용하기">
   <meta itemprop="description" content="typeORM transaction시 버전차에 따른 방법 변화">
   <meta itemprop="datePublished" content="2023-02-25T04:14:31+09:00">
   <meta itemprop="dateModified" content="2023-02-25T04:14:31+09:00">
   <meta itemprop="wordCount" content="366">
-  <meta itemprop="keywords" content="TypeORM,MySQL,Project_review"><meta property="og:url" content="https://inchan.dev/posts/202302250414/">
-  <meta property="og:site_name" content="inchan.dev">
+  <meta itemprop="keywords" content="TypeORM,MySQL,Project_review"><meta property="og:url" content="https://labs.inchan.dev/posts/202302250414/">
+  <meta property="og:site_name" content="labs.inchan.dev">
   <meta property="og:title" content="typeORM transaction에서 repository 사용하기">
   <meta property="og:description" content="typeORM transaction시 버전차에 따른 방법 변화">
   <meta property="og:locale" content="en">
@@ -32,7 +32,7 @@
 <meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
 <meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://inchan.dev/posts/202302250414/" title="typeORM transaction에서 repository 사용하기 - inchan.dev" /><link rel="prev" type="text/html" href="https://inchan.dev/posts/202302160417/" title="Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기" /><link rel="next" type="text/html" href="https://inchan.dev/posts/202303022327/" title="블로깅 플랫폼 변경: Google Blogger에서 GitHub &#43; Hugo로" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://labs.inchan.dev/posts/202302250414/" title="typeORM transaction에서 repository 사용하기 - labs.inchan.dev" /><link rel="prev" type="text/html" href="https://labs.inchan.dev/posts/202302160417/" title="Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기" /><link rel="next" type="text/html" href="https://labs.inchan.dev/posts/202303022327/" title="블로깅 플랫폼 변경: Google Blogger에서 GitHub &#43; Hugo로" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -42,9 +42,9 @@
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/inchan.dev\/posts\/202302250414\/"
+      "@id": "https:\/\/labs.inchan.dev\/posts\/202302250414\/"
     },"genre": "posts","keywords": "typeORM, mySQL, project_review","wordcount":  366 ,
-    "url": "https:\/\/inchan.dev\/posts\/202302250414\/","datePublished": "2023-02-25T04:14:31+09:00","dateModified": "2023-02-25T04:14:31+09:00","publisher": {
+    "url": "https:\/\/labs.inchan.dev\/posts\/202302250414\/","datePublished": "2023-02-25T04:14:31+09:00","dateModified": "2023-02-25T04:14:31+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
         "@type": "Person",
@@ -55,7 +55,7 @@
   <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper" data-github-corner="right">
     <div class="header-title">
-      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="labs.inchan.dev"><span class="typeit"><template>labs.inchan.dev</template></span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a
@@ -101,7 +101,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="labs.inchan.dev"><span class="typeit"><template>labs.inchan.dev</template></span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>

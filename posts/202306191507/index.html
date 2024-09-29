@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>AWS RDS 데이터 - 다른 계정으로 이전하기 - inchan.dev</title><meta name="author" content="inchan">
+    <title>AWS RDS 데이터 - 다른 계정으로 이전하기 - labs.inchan.dev</title><meta name="author" content="inchan">
 <meta name="description" content="AWS RDS의 데이터를 서로 다른 계정의 RDS로 이동 또는 복사하는 방법"><meta name="keywords" content='AWS, project_review'>
   <meta itemprop="name" content="AWS RDS 데이터 - 다른 계정으로 이전하기">
   <meta itemprop="description" content="AWS RDS의 데이터를 서로 다른 계정의 RDS로 이동 또는 복사하는 방법">
   <meta itemprop="datePublished" content="2023-06-19T15:07:40+09:00">
   <meta itemprop="dateModified" content="2023-06-19T15:07:40+09:00">
   <meta itemprop="wordCount" content="278">
-  <meta itemprop="keywords" content="AWS,Project_review"><meta property="og:url" content="https://inchan.dev/posts/202306191507/">
-  <meta property="og:site_name" content="inchan.dev">
+  <meta itemprop="keywords" content="AWS,Project_review"><meta property="og:url" content="https://labs.inchan.dev/posts/202306191507/">
+  <meta property="og:site_name" content="labs.inchan.dev">
   <meta property="og:title" content="AWS RDS 데이터 - 다른 계정으로 이전하기">
   <meta property="og:description" content="AWS RDS의 데이터를 서로 다른 계정의 RDS로 이동 또는 복사하는 방법">
   <meta property="og:locale" content="en">
@@ -31,7 +31,7 @@
 <meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
 <meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://inchan.dev/posts/202306191507/" title="AWS RDS 데이터 - 다른 계정으로 이전하기 - inchan.dev" /><link rel="prev" type="text/html" href="https://inchan.dev/posts/202306171531/" title="Git commit message 컨벤션 설정" /><link rel="next" type="text/html" href="https://inchan.dev/posts/202306191659/" title="AWS EC2에서 product 서버와 개발용 서버 같이 사용하기" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://labs.inchan.dev/posts/202306191507/" title="AWS RDS 데이터 - 다른 계정으로 이전하기 - labs.inchan.dev" /><link rel="prev" type="text/html" href="https://labs.inchan.dev/posts/202306171531/" title="Git commit message 컨벤션 설정" /><link rel="next" type="text/html" href="https://labs.inchan.dev/posts/202306191659/" title="AWS EC2에서 product 서버와 개발용 서버 같이 사용하기" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -41,9 +41,9 @@
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/inchan.dev\/posts\/202306191507\/"
+      "@id": "https:\/\/labs.inchan.dev\/posts\/202306191507\/"
     },"genre": "posts","keywords": "AWS, project_review","wordcount":  278 ,
-    "url": "https:\/\/inchan.dev\/posts\/202306191507\/","datePublished": "2023-06-19T15:07:40+09:00","dateModified": "2023-06-19T15:07:40+09:00","publisher": {
+    "url": "https:\/\/labs.inchan.dev\/posts\/202306191507\/","datePublished": "2023-06-19T15:07:40+09:00","dateModified": "2023-06-19T15:07:40+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
         "@type": "Person",
@@ -54,7 +54,7 @@
   <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper" data-github-corner="right">
     <div class="header-title">
-      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="labs.inchan.dev"><span class="typeit"><template>labs.inchan.dev</template></span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a
@@ -100,7 +100,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="labs.inchan.dev"><span class="typeit"><template>labs.inchan.dev</template></span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>

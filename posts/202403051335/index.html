@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기 - inchan.dev</title><meta name="author" content="inchan">
+    <title>AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기 - labs.inchan.dev</title><meta name="author" content="inchan">
 <meta name="description" content=" 
 작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.
 공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그
@@ -17,8 +17,8 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
   <meta itemprop="datePublished" content="2024-03-05T13:35:51+09:00">
   <meta itemprop="dateModified" content="2024-03-05T13:35:51+09:00">
   <meta itemprop="wordCount" content="741">
-  <meta itemprop="keywords" content="AWS"><meta property="og:url" content="https://inchan.dev/posts/202403051335/">
-  <meta property="og:site_name" content="inchan.dev">
+  <meta itemprop="keywords" content="AWS"><meta property="og:url" content="https://labs.inchan.dev/posts/202403051335/">
+  <meta property="og:site_name" content="labs.inchan.dev">
   <meta property="og:title" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">
   <meta property="og:description" content=" 작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.
 공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그
@@ -39,7 +39,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
 <meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
 <meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://inchan.dev/posts/202403051335/" title="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기 - inchan.dev" /><link rel="prev" type="text/html" href="https://inchan.dev/posts/202403051214/" title="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법" /><link rel="next" type="text/html" href="https://inchan.dev/posts/202403090724/" title="브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://labs.inchan.dev/posts/202403051335/" title="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기 - labs.inchan.dev" /><link rel="prev" type="text/html" href="https://labs.inchan.dev/posts/202403051214/" title="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법" /><link rel="next" type="text/html" href="https://labs.inchan.dev/posts/202403090724/" title="브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -49,9 +49,9 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/inchan.dev\/posts\/202403051335\/"
+      "@id": "https:\/\/labs.inchan.dev\/posts\/202403051335\/"
     },"genre": "posts","keywords": "AWS","wordcount":  741 ,
-    "url": "https:\/\/inchan.dev\/posts\/202403051335\/","datePublished": "2024-03-05T13:35:51+09:00","dateModified": "2024-03-05T13:35:51+09:00","publisher": {
+    "url": "https:\/\/labs.inchan.dev\/posts\/202403051335\/","datePublished": "2024-03-05T13:35:51+09:00","dateModified": "2024-03-05T13:35:51+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
         "@type": "Person",
@@ -62,7 +62,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
   <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper" data-github-corner="right">
     <div class="header-title">
-      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="labs.inchan.dev"><span class="typeit"><template>labs.inchan.dev</template></span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a
@@ -108,7 +108,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="labs.inchan.dev"><span class="typeit"><template>labs.inchan.dev</template></span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>

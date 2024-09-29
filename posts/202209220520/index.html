@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>CSS - Image Sprite - inchan.dev</title><meta name="author" content="inchan">
+    <title>CSS - Image Sprite - labs.inchan.dev</title><meta name="author" content="inchan">
 <meta name="description" content="CSS - Image Sprite
   
     
@@ -46,8 +46,8 @@ Image sprite 기법
   <meta itemprop="datePublished" content="2022-09-22T05:20:53+09:00">
   <meta itemprop="dateModified" content="2022-09-22T05:20:53+09:00">
   <meta itemprop="wordCount" content="306">
-  <meta itemprop="keywords" content="Css"><meta property="og:url" content="https://inchan.dev/posts/202209220520/">
-  <meta property="og:site_name" content="inchan.dev">
+  <meta itemprop="keywords" content="Css"><meta property="og:url" content="https://labs.inchan.dev/posts/202209220520/">
+  <meta property="og:site_name" content="labs.inchan.dev">
   <meta property="og:title" content="CSS - Image Sprite">
   <meta property="og:description" content="CSS - Image Sprite Image Sprite란? 화면에 필요한 이미지 하나하나가 파일이고, 네트워크 요청을 하기 때문에 비용이 든다. 하나의 이미지 파일에 모든 이미지를 담은 후, 위치를 조정하며 골라 사용하는 방법 장점 10개의 아이콘이 10개의 파일로 존재한다면 10번을 요청하게 되지만, 1번의 요청으로 줄어들어 웹 성능의 향상을 기대할 수 있다. 이미지를 불러올 때마다 화면에 표현하기 위해 잠깐의 깜빡임이 생기는데, 하나의 이미지파일을 사용하면 이미 브라우저에서 불러온 파일이라 이 깜빡임이 없다. 단점 디자이너와 소통이 필요함 이미지가 하나만 수정되어도 파일이 변경되어야 함 각 이미지의 위치(좌표)를 정확히 관리해야 함 Image sprite 기법 다음은 NAVER 메인페이지의 메뉴아이콘이 할당되어있는 배경이미지 파일이다. ">
   <meta property="og:locale" content="en">
@@ -64,7 +64,7 @@ Image sprite 기법
 <meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
 <meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://inchan.dev/posts/202209220520/" title="CSS - Image Sprite - inchan.dev" /><link rel="prev" type="text/html" href="https://inchan.dev/posts/202209120523/" title="JavaScript - basic 변수" /><link rel="next" type="text/html" href="https://inchan.dev/posts/202209230519/" title="CSS 선택자 - 조합, 그룹, 가상" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://labs.inchan.dev/posts/202209220520/" title="CSS - Image Sprite - labs.inchan.dev" /><link rel="prev" type="text/html" href="https://labs.inchan.dev/posts/202209120523/" title="JavaScript - basic 변수" /><link rel="next" type="text/html" href="https://labs.inchan.dev/posts/202209230519/" title="CSS 선택자 - 조합, 그룹, 가상" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -74,9 +74,9 @@ Image sprite 기법
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/inchan.dev\/posts\/202209220520\/"
+      "@id": "https:\/\/labs.inchan.dev\/posts\/202209220520\/"
     },"genre": "posts","keywords": "css","wordcount":  306 ,
-    "url": "https:\/\/inchan.dev\/posts\/202209220520\/","datePublished": "2022-09-22T05:20:53+09:00","dateModified": "2022-09-22T05:20:53+09:00","publisher": {
+    "url": "https:\/\/labs.inchan.dev\/posts\/202209220520\/","datePublished": "2022-09-22T05:20:53+09:00","dateModified": "2022-09-22T05:20:53+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
         "@type": "Person",
@@ -87,7 +87,7 @@ Image sprite 기법
   <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper" data-github-corner="right">
     <div class="header-title">
-      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="labs.inchan.dev"><span class="typeit"><template>labs.inchan.dev</template></span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a
@@ -133,7 +133,7 @@ Image sprite 기법
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="labs.inchan.dev"><span class="typeit"><template>labs.inchan.dev</template></span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>

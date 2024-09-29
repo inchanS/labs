@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Markdown - Tag - inchan.dev</title>
-    <link>https://inchan.dev/tags/markdown/</link>
+    <title>Markdown - Tag - labs.inchan.dev</title>
+    <link>https://labs.inchan.dev/tags/markdown/</link>
     <description>Coding Projects: From Ideas to Execution</description>
     <generator>Hugo 0.135.0 &amp; FixIt v0.3.12-456db385</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Thu, 02 Feb 2023 04:10:40 +0900</lastBuildDate>
-    <atom:link href="https://inchan.dev/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://labs.inchan.dev/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제</title>
-      <link>https://inchan.dev/posts/202302020410/</link>
+      <link>https://labs.inchan.dev/posts/202302020410/</link>
       <pubDate>Thu, 02 Feb 2023 04:10:40 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://inchan.dev/posts/202302020410/</guid>
-      <category domain="https://inchan.dev/categories/env/">Env</category>
+      <guid>https://labs.inchan.dev/posts/202302020410/</guid>
+      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
       <description>&lt;p&gt;&amp;lt;사진: &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;DEVONtechnologies | DEVONthink, professional document and information management for the Mac and iOS&lt;/a&gt;&amp;gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;코딩을 공부하면서 정말 많은 웹 문서들을 참고하며 정리하게 된다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;그 중, 보관하고자 하는 문서는 주로 웹클리핑을 통해 정보를 수집한다.&lt;br&gt;&#xA;이때, 클리핑 포맷은 보통 PDF로 하지만 가끔 &lt;strong&gt;code block내 스크롤이 있는 경우에는&lt;/strong&gt;&lt;br&gt;&#xA;PDF에서 짤린채로 수집되는 문제가 있어 MarkDown 포맷으로 클리핑을 한다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;나는 주로 아래 두 도구를 사용하여 자료를 정리한다.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Obsidian(note taking app)&lt;/li&gt;&#xA;&lt;li&gt;DevonThink(note database)&#xA; &lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;이때, 웹클리핑은 Obsidian 노트내로 바로 삽입할 수 있는 방법도 있지만 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;br&gt;&#xA;파일자체에 Tag 및 Annotation 관리를 위해 DevonThink의 웹클리핑 tool을 사용한다.&lt;br&gt;&#xA; &lt;br&gt;&#xA;&lt;a class=&#34;lightgallery&#34; href=&#34;https://i.imgur.com/VvMWMd0.png?size=large&#34; data-thumbnail=&#34;https://i.imgur.com/VvMWMd0.png?size=small&#34; data-sub-html=&#34;&lt;h2&gt;https://i.imgur.com/VvMWMd0.png&lt;/h2&gt;&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/VvMWMd0.png&#34; alt=&#34;https://i.imgur.com/VvMWMd0.png&#34; srcset=&#34;https://i.imgur.com/VvMWMd0.png?size=small, https://i.imgur.com/VvMWMd0.png?size=medium 1.5x, https://i.imgur.com/VvMWMd0.png?size=large 2x&#34; data-title=&#34;https://i.imgur.com/VvMWMd0.png&#34; style=&#34;background: url(/images/loading.min.svg) no-repeat center;&#34; onload=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}this.dataset.lazyloaded=&#39;&#39;;&#34; onerror=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}&#34;/&gt;&lt;/a&gt;&#xA; &lt;/p&gt;</description>
     </item>
   </channel>

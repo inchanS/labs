@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>Jest에서 Jest.clearAllMocks()와 Jest.resetAllMocks() 차이점 - inchan.dev</title><meta name="author" content="inchan">
+    <title>Jest에서 Jest.clearAllMocks()와 Jest.resetAllMocks() 차이점 - labs.inchan.dev</title><meta name="author" content="inchan">
 <meta name="description" content="jest에서 mock 함수를 초기화하는 2가지 메소드에 대한 기술"><meta name="keywords" content='Jest'>
   <meta itemprop="name" content="Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점">
   <meta itemprop="description" content="jest에서 mock 함수를 초기화하는 2가지 메소드에 대한 기술">
   <meta itemprop="datePublished" content="2023-03-31T10:43:08+09:00">
   <meta itemprop="dateModified" content="2023-03-31T10:43:08+09:00">
   <meta itemprop="wordCount" content="522">
-  <meta itemprop="keywords" content="Jest"><meta property="og:url" content="https://inchan.dev/posts/202303311059/">
-  <meta property="og:site_name" content="inchan.dev">
+  <meta itemprop="keywords" content="Jest"><meta property="og:url" content="https://labs.inchan.dev/posts/202303311059/">
+  <meta property="og:site_name" content="labs.inchan.dev">
   <meta property="og:title" content="Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점">
   <meta property="og:description" content="jest에서 mock 함수를 초기화하는 2가지 메소드에 대한 기술">
   <meta property="og:locale" content="en">
@@ -30,7 +30,7 @@
 <meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
 <meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://inchan.dev/posts/202303311059/" title="Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점 - inchan.dev" /><link rel="prev" type="text/html" href="https://inchan.dev/posts/202303170023/" title="error log - AWS EC2의 SSH 접속이 안될 때" /><link rel="next" type="text/html" href="https://inchan.dev/posts/202304010529/" title="error log - TypeORM migration 할 때 cross ENV 설정 문제" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://labs.inchan.dev/posts/202303311059/" title="Jest에서 jest.clearAllMocks()와 jest.resetAllMocks() 차이점 - labs.inchan.dev" /><link rel="prev" type="text/html" href="https://labs.inchan.dev/posts/202303170023/" title="error log - AWS EC2의 SSH 접속이 안될 때" /><link rel="next" type="text/html" href="https://labs.inchan.dev/posts/202304010529/" title="error log - TypeORM migration 할 때 cross ENV 설정 문제" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -40,9 +40,9 @@
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/inchan.dev\/posts\/202303311059\/"
+      "@id": "https:\/\/labs.inchan.dev\/posts\/202303311059\/"
     },"genre": "posts","keywords": "Jest","wordcount":  522 ,
-    "url": "https:\/\/inchan.dev\/posts\/202303311059\/","datePublished": "2023-03-31T10:43:08+09:00","dateModified": "2023-03-31T10:43:08+09:00","publisher": {
+    "url": "https:\/\/labs.inchan.dev\/posts\/202303311059\/","datePublished": "2023-03-31T10:43:08+09:00","dateModified": "2023-03-31T10:43:08+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
         "@type": "Person",
@@ -53,7 +53,7 @@
   <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper" data-github-corner="right">
     <div class="header-title">
-      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="labs.inchan.dev"><span class="typeit"><template>labs.inchan.dev</template></span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a
@@ -99,7 +99,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="labs.inchan.dev"><span class="typeit"><template>labs.inchan.dev</template></span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>

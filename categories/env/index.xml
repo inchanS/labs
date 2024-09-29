@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Env - Category - inchan.dev</title>
-    <link>https://inchan.dev/categories/env/</link>
+    <title>Env - Category - labs.inchan.dev</title>
+    <link>https://labs.inchan.dev/categories/env/</link>
     <description>Coding Projects: From Ideas to Execution</description>
     <generator>Hugo 0.135.0 &amp; FixIt v0.3.12-456db385</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Fri, 08 Mar 2024 20:28:08 +0900</lastBuildDate>
-    <atom:link href="https://inchan.dev/categories/env/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://labs.inchan.dev/categories/env/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기</title>
-      <link>https://inchan.dev/posts/202401311413/</link>
+      <link>https://labs.inchan.dev/posts/202401311413/</link>
       <pubDate>Thu, 01 Feb 2024 23:11:21 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://inchan.dev/posts/202401311413/</guid>
-      <category domain="https://inchan.dev/categories/env/">Env</category>
+      <guid>https://labs.inchan.dev/posts/202401311413/</guid>
+      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
       <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;source : &lt;a href=&#34;https://github.com/nvm-sh/nvm?tab=readme-ov-file#nvmrc&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;nvm-sh/nvm: Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;새로운 프로젝트는 Node 버전 중 현재 최신 LTS 버전인 20 버전으로 진행하려는데, 기존 진행중인 프로젝트가 AWS-ec2에서 node@16으로 세팅되어있던 터라, macOS에서 2개 버전을 설치해 사용해야하는 상황이 왔다.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;때문에 여러 node 버전을 사용할 수 있는 &lt;strong&gt;nvm&lt;/strong&gt;(Node version Manager)을 설치&lt;br&gt;&#xA;설치는 brew를 통해 설치했고 이후 과정은 brew에서 자세하게 설명해준다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;장점&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;장점&lt;/span&gt;&#xA;  &lt;a href=&#34;#%ec%9e%a5%ec%a0%90&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ol&gt;&#xA;&lt;li&gt;OS에 하나 이상의, 여러 version별 node를 설치하고&lt;/li&gt;&#xA;&lt;li&gt;프로젝트별로 각각 다른 버전의 node를 사용할 수 있다.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;단점&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;단점&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%8b%a8%ec%a0%90&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;node 프로젝트 진행시 터미널에서 해당 프로젝트를 적정 버전으로 실행시키기 위해서는 다음 명령어로 node의 버전을 사용할 때마다 &lt;strong&gt;항상&lt;/strong&gt; 지정해줘야 한다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제</title>
-      <link>https://inchan.dev/posts/202302020410/</link>
+      <link>https://labs.inchan.dev/posts/202302020410/</link>
       <pubDate>Thu, 02 Feb 2023 04:10:40 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://inchan.dev/posts/202302020410/</guid>
-      <category domain="https://inchan.dev/categories/env/">Env</category>
+      <guid>https://labs.inchan.dev/posts/202302020410/</guid>
+      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
       <description>&lt;p&gt;&amp;lt;사진: &lt;a href=&#34;https://www.devontechnologies.com/apps/devonthink&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;DEVONtechnologies | DEVONthink, professional document and information management for the Mac and iOS&lt;/a&gt;&amp;gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;코딩을 공부하면서 정말 많은 웹 문서들을 참고하며 정리하게 된다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;그 중, 보관하고자 하는 문서는 주로 웹클리핑을 통해 정보를 수집한다.&lt;br&gt;&#xA;이때, 클리핑 포맷은 보통 PDF로 하지만 가끔 &lt;strong&gt;code block내 스크롤이 있는 경우에는&lt;/strong&gt;&lt;br&gt;&#xA;PDF에서 짤린채로 수집되는 문제가 있어 MarkDown 포맷으로 클리핑을 한다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;나는 주로 아래 두 도구를 사용하여 자료를 정리한다.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Obsidian(note taking app)&lt;/li&gt;&#xA;&lt;li&gt;DevonThink(note database)&#xA; &lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;이때, 웹클리핑은 Obsidian 노트내로 바로 삽입할 수 있는 방법도 있지만 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;br&gt;&#xA;파일자체에 Tag 및 Annotation 관리를 위해 DevonThink의 웹클리핑 tool을 사용한다.&lt;br&gt;&#xA; &lt;br&gt;&#xA;&lt;a class=&#34;lightgallery&#34; href=&#34;https://i.imgur.com/VvMWMd0.png?size=large&#34; data-thumbnail=&#34;https://i.imgur.com/VvMWMd0.png?size=small&#34; data-sub-html=&#34;&lt;h2&gt;https://i.imgur.com/VvMWMd0.png&lt;/h2&gt;&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/VvMWMd0.png&#34; alt=&#34;https://i.imgur.com/VvMWMd0.png&#34; srcset=&#34;https://i.imgur.com/VvMWMd0.png?size=small, https://i.imgur.com/VvMWMd0.png?size=medium 1.5x, https://i.imgur.com/VvMWMd0.png?size=large 2x&#34; data-title=&#34;https://i.imgur.com/VvMWMd0.png&#34; style=&#34;background: url(/images/loading.min.svg) no-repeat center;&#34; onload=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}this.dataset.lazyloaded=&#39;&#39;;&#34; onerror=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}&#34;/&gt;&lt;/a&gt;&#xA; &lt;/p&gt;</description>
     </item>
     <item>
       <title>WebStorm - console.log(변수) 자동완성 라이브 템플릿 만들기</title>
-      <link>https://inchan.dev/posts/202302020409/</link>
+      <link>https://labs.inchan.dev/posts/202302020409/</link>
       <pubDate>Thu, 02 Feb 2023 04:09:55 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://inchan.dev/posts/202302020409/</guid>
-      <category domain="https://inchan.dev/categories/env/">Env</category>
+      <guid>https://labs.inchan.dev/posts/202302020409/</guid>
+      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
       <description>&lt;p&gt;&amp;lt;사진: &lt;a href=&#34;http://unsplash.com&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;unsplash&lt;/a&gt;&amp;gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;JavaScript로 코딩을 하다보면 적잖이 &lt;code&gt;console.log()&lt;/code&gt;를 사용하게 된다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;보통 나는 간단하게 &lt;strong&gt;현재 흐름상 위치를 잡거나 객체를 확인할 때&lt;/strong&gt; 자주 쓰는데,&lt;br&gt;&#xA;많은 글자는 아니지만 그래도 같은걸 계속해서 타이핑하는게 귀찮아서 만들었다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;축약어는 console.log의 앞글자를 따서 &lt;code&gt;cl&lt;/code&gt;로 단축 명령어를 만들었고,&lt;br&gt;&#xA;&lt;code&gt;cl&lt;/code&gt; 단축어 입력 후 &lt;code&gt;tab&lt;/code&gt;을 누르면 해당 WebStorm의 &lt;strong&gt;live template&lt;/strong&gt;이 실행된다.&#xA; &lt;/p&gt;&#xA;&lt;p&gt;간단하게 다음과 같은 역할을 수행된다.&lt;/p&gt;&#xA;&lt;blockquote&gt;&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;console.log()&lt;/code&gt;를 입력&lt;/li&gt;&#xA;&lt;li&gt;괄호 안에 변수명을 타이핑할 수 있도록 커서 위치 이동&lt;/li&gt;&#xA;&lt;li&gt;변수명을 쓰면 따옴표 안에 동일한 변수가 들어가도록 설정&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/blockquote&gt;&lt;p&gt; &lt;/p&gt;</description>
     </item>
     <item>
       <title>mac 터미널에서 폴더트리 구조 확인</title>
-      <link>https://inchan.dev/posts/202301230429/</link>
+      <link>https://labs.inchan.dev/posts/202301230429/</link>
       <pubDate>Mon, 23 Jan 2023 04:29:44 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://inchan.dev/posts/202301230429/</guid>
-      <category domain="https://inchan.dev/categories/env/">Env</category>
+      <guid>https://labs.inchan.dev/posts/202301230429/</guid>
+      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
       <description>&lt;p&gt;&amp;lt;사진: &lt;a href=&#34;http://unsplash.com&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;unsplash&lt;/a&gt;&amp;gt;&lt;/p&gt;&#xA;&lt;p&gt;windows에서는 cmd에서 폴더트리가 바로 나오는것 같던데 macOS의 터미널에서는 따로 tree를 설치해야 볼 수 있다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;아래 명령어로 brew를 통해 설치&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ brew install tree&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h3 id=&#34;사용법&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;사용법&lt;/span&gt;&#xA;  &lt;a href=&#34;#%ec%82%ac%ec%9a%a9%eb%b2%95&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;기본적인 사용법은 작업중인 폴더로 가서 &lt;code&gt;tree&lt;/code&gt; 라고만 입력하면 된다.&lt;br&gt;&#xA; &lt;/p&gt;</description>
     </item>
     <item>
       <title>터미널에서 &#39;바로가기&#39; 단축키 등록하기</title>
-      <link>https://inchan.dev/posts/202210130407/</link>
+      <link>https://labs.inchan.dev/posts/202210130407/</link>
       <pubDate>Thu, 13 Oct 2022 04:07:19 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://inchan.dev/posts/202210130407/</guid>
-      <category domain="https://inchan.dev/categories/env/">Env</category>
+      <guid>https://labs.inchan.dev/posts/202210130407/</guid>
+      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
       <description>&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;터미널을 처음 실행하면 꼭 사용자 폴더에서 시작한다.&lt;br&gt;&#xA;&lt;code&gt;cd ...&lt;/code&gt;로 찾아가는게 &lt;strong&gt;너무 귀찮다.&lt;/strong&gt;&lt;br&gt;&#xA;그렇다고 finder에서 폴더를 drag &amp;amp; drop해서 직접경로를 떨어뜨리는 방법도 있지만,&lt;br&gt;&#xA;굳이 키보드에서 또 마우스나 트랙패드로 &lt;strong&gt;손을 움직이고 싶지 않다.&lt;/strong&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;때문에 알게 된 것이 바로 &lt;strong&gt;alias&lt;/strong&gt;를 활용한 터미널 단축키 방법!&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;우선 zsh라는 &lt;a href=&#34;https://jhnyang.tistory.com/57&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;쉘&lt;/a&gt; 을 한번 가볍게 알아본다.&#xA; &lt;/p&gt;&#xA;&lt;p&gt;힘들면 Pass하고, 바로 적용할 수 있는 방법으로 가자!&#xA; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;h3 id=&#34;1-zshrc-편집&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;1. zshrc 편집&lt;/span&gt;&#xA;  &lt;a href=&#34;#1-zshrc-%ed%8e%b8%ec%a7%91&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;터미널에서 다음을 실행&#xA; &lt;/p&gt;</description>
     </item>
   </channel>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>Error Log - Throw와 Return - inchan.dev</title><meta name="author" content="inchan">
+    <title>Error Log - Throw와 Return - labs.inchan.dev</title><meta name="author" content="inchan">
 <meta name="description" content="문제상황
   
     
@@ -30,8 +30,8 @@
   <meta itemprop="datePublished" content="2023-01-18T04:30:23+09:00">
   <meta itemprop="dateModified" content="2023-01-18T04:30:23+09:00">
   <meta itemprop="wordCount" content="192">
-  <meta itemprop="keywords" content="JavaScript"><meta property="og:url" content="https://inchan.dev/posts/202301180430/">
-  <meta property="og:site_name" content="inchan.dev">
+  <meta itemprop="keywords" content="JavaScript"><meta property="og:url" content="https://labs.inchan.dev/posts/202301180430/">
+  <meta property="og:site_name" content="labs.inchan.dev">
   <meta property="og:title" content="error log - throw와 return">
   <meta property="og:description" content="문제상황 Failure 에러핸들링 중, 에러메세지를 response로 보내려고 한다. 이에 return을 사용 에러가 나와야 할 상황에서 정상적으로 에러메세지를 response로 보낸다. 하지만 에러코드를 알려야 할 status code는 정상을 알리며 이후 모든 함수와 명령이 진행됨 ">
   <meta property="og:locale" content="en">
@@ -48,7 +48,7 @@
 <meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
 <meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://inchan.dev/posts/202301180430/" title="error log - throw와 return - inchan.dev" /><link rel="prev" type="text/html" href="https://inchan.dev/posts/202301180428/" title="error log - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error" /><link rel="next" type="text/html" href="https://inchan.dev/posts/202301230424/" title="백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://labs.inchan.dev/posts/202301180430/" title="error log - throw와 return - labs.inchan.dev" /><link rel="prev" type="text/html" href="https://labs.inchan.dev/posts/202301180428/" title="error log - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error" /><link rel="next" type="text/html" href="https://labs.inchan.dev/posts/202301230424/" title="백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -58,9 +58,9 @@
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/inchan.dev\/posts\/202301180430\/"
+      "@id": "https:\/\/labs.inchan.dev\/posts\/202301180430\/"
     },"genre": "posts","keywords": "JavaScript","wordcount":  192 ,
-    "url": "https:\/\/inchan.dev\/posts\/202301180430\/","datePublished": "2023-01-18T04:30:23+09:00","dateModified": "2023-01-18T04:30:23+09:00","publisher": {
+    "url": "https:\/\/labs.inchan.dev\/posts\/202301180430\/","datePublished": "2023-01-18T04:30:23+09:00","dateModified": "2023-01-18T04:30:23+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
         "@type": "Person",
@@ -71,7 +71,7 @@
   <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper" data-github-corner="right">
     <div class="header-title">
-      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="labs.inchan.dev"><span class="typeit"><template>labs.inchan.dev</template></span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a
@@ -117,7 +117,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="labs.inchan.dev"><span class="typeit"><template>labs.inchan.dev</template></span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
