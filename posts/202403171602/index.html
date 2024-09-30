@@ -11,7 +11,7 @@
   <meta itemprop="description" content="알프레드 워크플로우 중, 네이버 검색 워크플로우의 지도 검색 기능 문제에 따른 해결 및 개선된 워크플로우 파일 제공">
   <meta itemprop="datePublished" content="2024-03-17T16:02:39+09:00">
   <meta itemprop="dateModified" content="2024-03-25T06:24:11+09:00">
-  <meta itemprop="wordCount" content="1130">
+  <meta itemprop="wordCount" content="1132">
   <meta itemprop="keywords" content="Miscellaneous"><meta property="og:url" content="https://labs.inchan.dev/posts/202403171602/">
   <meta property="og:site_name" content="labs.inchan.dev">
   <meta property="og:title" content="Alfred workflow - 네이버 검색 워크플로우 지도 검색 개선">
@@ -40,7 +40,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/labs.inchan.dev\/posts\/202403171602\/"
-    },"genre": "posts","wordcount":  1130 ,
+    },"genre": "posts","wordcount":  1132 ,
     "url": "https:\/\/labs.inchan.dev\/posts\/202403171602\/","datePublished": "2024-03-17T16:02:39+09:00","dateModified": "2024-03-25T06:24:11+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
@@ -163,7 +163,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Alfred Workflow - 네이버 검색 워크플로우 지도 검색 개선</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/miscellaneous/" class="post-category" title="Category - Miscellaneous"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Miscellaneous</a></span></div><div class="post-meta-line"><span title="published on 2024-03-17 16:02:39"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-17">2024-03-17</time></span>&nbsp;<span title="Updated on 2024-03-25 06:24:11"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-25">2024-03-25</time></span>&nbsp;<span title="1130 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1200 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>6 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Alfred Workflow - 네이버 검색 워크플로우 지도 검색 개선"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/miscellaneous/" class="post-category" title="Category - Miscellaneous"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Miscellaneous</a></span></div><div class="post-meta-line"><span title="published on 2024-03-17 16:02:39"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-17">2024-03-17</time></span>&nbsp;<span title="Updated on 2024-03-25 06:24:11"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-25">2024-03-25</time></span>&nbsp;<span title="1132 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1200 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>6 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Alfred Workflow - 네이버 검색 워크플로우 지도 검색 개선"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -369,7 +369,7 @@
 <li>지도검색시 &lsquo;<strong>장소, 주소, 버스</strong>&rsquo; 3가지 타입의 결과가 <strong>사용자의 위치와 관련한 우선순위(naver 자체 score)에 따라</strong> 반환되도록 수정<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>  (이전버전은 한가지 타입의 결과만을 반환한다.)</li>
 </ul>
 <p> </p>
-<p><a href="https://github.com/inchanS/AlfNaverSearchPlus/releases/tag/v0.1.1" rel="external nofollow noopener" target="_blank"><img loading="lazy" src="/images/version/v0.1.1-new.min.svg" alt="github-inchan code v0.1.1 | NEW" data-title="github-inchan code v0.1.1 | NEW" class="version" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a> <strong>기능 추가</strong></p>
+<p><a href="https://github.com/inchanS/AlfNaverSearchPlus/releases/tag/v0.1.1" rel="external nofollow noopener" target="_blank"><img loading="lazy" src="/images/version/v0.1.1-new.min.svg" alt="github-inchan code v0.1.1 | NEW" data-title="github-inchan code v0.1.1 | NEW" class="version" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a> - <strong>기능 추가</strong></p>
 <ul>
 <li><strong>검색어에 해당하는 장소, 주소, 버스의 검색결과가 있을 때만</strong> 해당 type의 Search only Place(or Address, Bus) 창이 뜨도록 변경</li>
 <li>Search only Place 보기에서 다시 <strong>돌아가기 기능</strong> 추가</li>
@@ -377,8 +377,7 @@
 </ul>
 <img src="/images/nspmap.gif" width="600">    
 <p> </p>
-<p><a href="https://github.com/inchanS/AlfNaverSearchPlus/releases/latest" rel="external nofollow noopener" target="_blank"><img loading="lazy" src="/images/version/latest-new.min.svg" alt="github-inchan code latest | NEW" data-title="github-inchan code latest | NEW" class="version" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
-<strong><a href="https://github.com/inchanS/Alfred-NaverSearch/releases/latest"target="_blank" rel="external nofollow noopener noreferrer">latest release</a></strong><br>
+<p><a href="https://github.com/inchanS/AlfNaverSearchPlus/releases/latest" rel="external nofollow noopener" target="_blank"><img loading="lazy" src="/images/version/latest-new.min.svg" alt="github-inchan code latest | NEW" data-title="github-inchan code latest | NEW" class="version" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a> - <strong>최신 버전</strong><br>
 그리고 다시 사용자가 더욱 세밀한 위치 지정을 할 수 있는 버전과 그 이후의 변경사항을 반영한 워크플로우는 일부 개인적인 설정 및 용도에 맞게 개발하였기에 <strong>개별적인 레포지토리</strong>인 위 링크에서 다운로드 받을 수 있다.</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
