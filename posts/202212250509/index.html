@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>Status Code 204 - labs.inchan.dev</title><meta name="author" content="inchan">
+    <title>Status Code 204 - labs.inchan</title><meta name="author" content="inchan">
 <meta name="description" content=" 
 덧글 삭제 API 관련 코드 리팩토링 중,
 status code를 맞추다가 알게 된 사실!
@@ -27,7 +27,7 @@ status code 문서의 개요만 어설프게 보고서는, 삭제니까 no conte
   <meta itemprop="dateModified" content="2022-12-25T05:09:42+09:00">
   <meta itemprop="wordCount" content="147">
   <meta itemprop="keywords" content="RESTful_API"><meta property="og:url" content="https://labs.inchan.dev/posts/202212250509/">
-  <meta property="og:site_name" content="labs.inchan.dev">
+  <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="status code 204">
   <meta property="og:description" content=" 덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실! statusCode 204는 response를 전송하지 않는다!! 다만 status code “204” 만 전달할 뿐. 이걸 몰라서 코드의 오류인줄 알고 한참을 헤맸다. status code를 200으로 바꿨더니 다시 원래대로 response가 전송되었다. status code 문서의 개요만 어설프게 보고서는, 삭제니까 no content인 204가 맞겠지 하고 내 멋대로 이해한 실수였다. 204에서 다시 200으로 처리한 이유는, 삭제된 이후의 덧글 리스트와 페이지네이션 위치를 json으로 전달해야할 필요성이 있어서였다. ">
   <meta property="og:locale" content="en">
@@ -44,7 +44,7 @@ status code 문서의 개요만 어설프게 보고서는, 삭제니까 no conte
 <meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
 <meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://labs.inchan.dev/posts/202212250509/" title="status code 204 - labs.inchan.dev" /><link rel="prev" type="text/html" href="https://labs.inchan.dev/posts/202212130459/" title="typescript - typeorm 연결 오류 해결" /><link rel="next" type="text/html" href="https://labs.inchan.dev/posts/202212270448/" title="패스트파이브 기업과제 회고록" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://labs.inchan.dev/posts/202212250509/" title="status code 204 - labs.inchan" /><link rel="prev" type="text/html" href="https://labs.inchan.dev/posts/202212130459/" title="typescript - typeorm 연결 오류 해결" /><link rel="next" type="text/html" href="https://labs.inchan.dev/posts/202212270448/" title="패스트파이브 기업과제 회고록" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -67,7 +67,7 @@ status code 문서의 개요만 어설프게 보고서는, 삭제니까 no conte
   <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper" data-github-corner="right">
     <div class="header-title">
-      <a href="/" title="labs.inchan.dev"><span class="typeit"><template>labs.inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="labs.inchan"><span class="typeit"><template>labs.inchan</template></span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a
@@ -113,7 +113,7 @@ status code 문서의 개요만 어설프게 보고서는, 삭제니까 no conte
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="labs.inchan.dev"><span class="typeit"><template>labs.inchan.dev</template></span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="labs.inchan"><span class="typeit"><template>labs.inchan</template></span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
