@@ -11,7 +11,7 @@
   <meta itemprop="description" content="Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술">
   <meta itemprop="datePublished" content="2024-01-24T10:19:14+09:00">
   <meta itemprop="dateModified" content="2024-03-08T20:39:02+09:00">
-  <meta itemprop="wordCount" content="1213">
+  <meta itemprop="wordCount" content="1210">
   <meta itemprop="keywords" content="TypeORM,MySQL,Project_review"><meta property="og:url" content="https://labs.inchan.dev/posts/202401241017/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법">
@@ -43,7 +43,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/labs.inchan.dev\/posts\/202401241017\/"
-    },"genre": "posts","keywords": "typeORM, mySQL, project_review","wordcount":  1213 ,
+    },"genre": "posts","keywords": "typeORM, mySQL, project_review","wordcount":  1210 ,
     "url": "https:\/\/labs.inchan.dev\/posts\/202401241017\/","datePublished": "2024-01-24T10:19:14+09:00","dateModified": "2024-03-08T20:39:02+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
@@ -166,9 +166,9 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/debugging/" class="post-category" title="Category - Debugging"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Debugging</a></span></div><div class="post-meta-line"><span title="published on 2024-01-24 10:19:14"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-24">2024-01-24</time></span>&nbsp;<span title="Updated on 2024-03-08 20:39:02"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-08">2024-03-08</time></span>&nbsp;<span title="1213 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1300 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>6 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/debugging/" class="post-category" title="Category - Debugging"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Debugging</a></span></div><div class="post-meta-line"><span title="published on 2024-01-24 10:19:14"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-24">2024-01-24</time></span>&nbsp;<span title="Updated on 2024-03-08 20:39:02"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-08">2024-03-08</time></span>&nbsp;<span title="1210 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1300 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>6 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
-    </div><div class="featured-image"><img loading="lazy" src="https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&amp;w=2938&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" data-title="Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
+    </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span>
           <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
@@ -194,9 +194,7 @@
     <li><a href="#롤백되지-않는-mysql의-auto_increment-필드">롤백되지 않는 MySQL의 AUTO_INCREMENT 필드</a></li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><p>&lt;표지 사진출처: <a href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EC%B2%9C%EC%9E%A5%EC%9D%98-%EB%B2%8C%EB%A0%88%EC%9D%98-%EC%8B%9C%EC%84%A0-%EC%82%AC%EC%A7%84-LqKhnDzSF-8"target="_blank" rel="external nofollow noopener noreferrer">Unsplash</a>&gt;</p>
-<p> </p>
-<div class="details admonition abstract">
+      </div><div class="content" id="content"><div class="details admonition abstract">
     <div class="details-summary admonition-title">
       <i class="icon fa-solid fa-list-ul fa-fw" aria-hidden="true"></i>Project Tech Stack Overview<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
