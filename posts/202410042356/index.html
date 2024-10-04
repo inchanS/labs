@@ -216,7 +216,7 @@
 <p>이러한 기본 키 파일명을 사용할 때 AddKeysToAgent yes와 UseKeychain yes 옵션이 설정되어 있으면, SSH 클라이언트는 자동으로 해당 키를 SSH 에이전트에 추가하고 macOS 키체인에서 암호를 가져온다.</p>
 <p> </p>
 <p>보면 알겠지만 기본 키 파일명은 바로 <a href="https://labs.inchan.dev/posts/202410041532/#keygen"target="_blank" rel="external nofollow noopener noreferrer">키 생성시</a> 설정한 암호화 알고리즘 옵션명, 즉 <code>id_알고리즘</code>으로 이루어져있다.<br>
-따라서 <code>AddKeysToAgent yes</code> 옵션을 사용하고자 한다면 ssh key 파일명은 위에서 언급한대로 설정하여야 한다.</p>
+따라서 <code>AddKeysToAgent yes</code> 옵션을 사용하고자 한다면 ssh <strong>key 파일명은 위에서 언급한대로 설정하여야 한다</strong>.</p>
 <p> </p>
 <p>그럼에도 불구하고 파일명을 달리하고 싶다면 2가지 방법이 있다.</p>
 <ol>
@@ -383,7 +383,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-add --apple-use-keychain ~/.ssh/id_ed25519 <span class="p">&amp;</span>&gt;/dev/null</span></span></code></pre></td></tr></table>
 </div>
 </div><p>재부팅 후, 터미널 실행시 해당 명령이 실행되면서 이제 비대화형 세션(<code>git fetch</code>와 같은)을 처음 진행하더라도 암호를 되묻지 않는다.</p>
-<p>이 방법은 SSH key 생성시 기본 파일명이 아니더라도 <code>AddKeysToAgent yes</code> 옵션이 마치 항상 실행하듯 해준다는 장점이 있다.</p>
+<p>이 방법은 SSH key 생성시 <strong>기본 파일명이 아니더라도</strong> <code>AddKeysToAgent yes</code> 옵션이 마치 항상 실행하듯 해준다는 장점이 있다.</p>
 <div class="details admonition warning open">
     <div class="details-summary admonition-title">
       <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Warning<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
