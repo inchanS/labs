@@ -12,8 +12,8 @@
 <meta name="description" content="개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다."><meta name="keywords" content='백엔드, 프론트엔드, 웹개발, javascript, 자바스크립트, typescript, 타입스크립트, mysql, rdbms'>
   <meta itemprop="name" content="labs.inchan">
   <meta itemprop="description" content="개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.">
-  <meta itemprop="datePublished" content="2024-03-17T16:02:39+09:00">
-  <meta itemprop="dateModified" content="2024-03-25T06:24:11+09:00"><meta property="og:url" content="https://labs.inchan.dev/">
+  <meta itemprop="datePublished" content="2024-10-04T23:56:31+09:00">
+  <meta itemprop="dateModified" content="2024-10-04T23:56:31+09:00"><meta property="og:url" content="https://labs.inchan.dev/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="labs.inchan">
   <meta property="og:description" content="개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.">
@@ -153,6 +153,30 @@
     </a><a href="mailto:song@inchan.dev" title="Email"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-regular fa-envelope fa-fw" aria-hidden="true"></i>
     </a><a href="/index.xml" title="RSS"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-solid fa-rss fa-fw" aria-hidden="true"></i>
     </a></div></div>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202304010529/">Error Log - TypeORM Migration 할 때 Cross ENV 설정 문제</a>
+  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2023-04-01 05:30:56'>published on <time datetime="2023-04-01">2023-04-01</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/debugging/" class="post-category" title="Category - Debugging"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Debugging</a></span></div><div class="content"><p> <br>
+ </p>
+<h2 id="typeorm-migration" class="heading-element"><span>TypeORM migration</span>
+  <a href="#typeorm-migration" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="typeorm-migrationcreate" class="heading-element"><span>TypeORM migration:<strong>create</strong></span>
+  <a href="#typeorm-migrationcreate" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>typeorm migration을 시도해보면서 준비한건 몇가지 되지 않았다.
+ </p></div><div class="post-footer">
+    <a href="/posts/202304010529/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/typeorm/' class="post-tag">TypeORM</a><a href='/tags/project_review/' class="post-tag">Project_review</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202303311059/">Jest에서 Jest.clearAllMocks()와 Jest.resetAllMocks() 차이점</a>
+  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2023-03-31 10:43:08'>published on <time datetime="2023-03-31">2023-03-31</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/programming/" class="post-category" title="Category - Programming"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Programming</a></span></div><div class="content"><h2 id="introduction" class="heading-element"><span>Introduction</span>
+  <a href="#introduction" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Jest는 페이스북에서 개발한 JavaScript 테스트 프레임워크로, 간편한 사용법과 빠른 실행 속도로 인기가 있다.<br>
+ </p></div><div class="post-footer">
+    <a href="/posts/202303311059/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/jest/' class="post-tag">Jest</a></div></div>
+</article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202303170023/">Error Log - AWS EC2의 SSH 접속이 안될 때</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2023-03-17 00:17:31'>published on <time datetime="2023-03-17">2023-03-17</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/debugging/" class="post-category" title="Category - Debugging"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Debugging</a></span></div><div class="content"><p><div class="details admonition bug open">
     <div class="details-summary admonition-title">
@@ -254,31 +278,6 @@
 </h3><p>이전에 사용했던 블로그의 플랫폼은 google blogger였다.<br>
  </p></div><div class="post-footer">
     <a href="/posts/202303022327/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/miscellaneous/' class="post-tag">Miscellaneous</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202302250414/">TypeORM Transaction에서 Repository 사용하기</a>
-  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2023-02-25 04:14:31'>published on <time datetime="2023-02-25">2023-02-25</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/back-end/" class="post-category" title="Category - Back-End"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Back-End</a></span></div><div class="content"><h2 id="transaction-구성중-entity가-아닌-repository-사용시" class="heading-element"><span>transaction 구성중 Entity가 아닌 Repository 사용시</span>
-  <a href="#transaction-%ea%b5%ac%ec%84%b1%ec%a4%91-entity%ea%b0%80-%ec%95%84%eb%8b%8c-repository-%ec%82%ac%ec%9a%a9%ec%8b%9c" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><p>typeORM에서 transaction을 사용하는 방법은 몇가지가 있지만,<br>
-복잡한 service단의 처리에서는 아래의 queryRunner 방식이 더 적합할것 같아서<br>
-<code>dataSource.createQueryRunner()</code> 방식을 사용했다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><br>
- </p></div><div class="post-footer">
-    <a href="/posts/202302250414/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/typeorm/' class="post-tag">TypeORM</a><a href='/tags/mysql/' class="post-tag">MySQL</a><a href='/tags/project_review/' class="post-tag">Project_review</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202302160417/">Node.js 백엔드TypeScript &#43; TypeORM으로 무한 대댓글 가공하기</a>
-  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2023-02-16 04:17:07'>published on <time datetime="2023-02-16">2023-02-16</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/back-end/" class="post-category" title="Category - Back-End"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Back-End</a></span></div><div class="content"><h2 id="기능-구현-목표" class="heading-element"><span>기능 구현 목표</span>
-  <a href="#%ea%b8%b0%eb%8a%a5-%ea%b5%ac%ed%98%84-%eb%aa%a9%ed%91%9c" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><ol>
-<li>댓글, 대댓글&hellip; 대댓글 등의 <strong>무한대댓글</strong> 구조</li>
-<li>typeORM의 <strong>Entity를 연계한 createQueryBuilder</strong> 등을 <strong>지향하며</strong>, 최대한 직접적인 QueryRunner 방식 <strong>지양</strong></li>
-<li>삭제 및 비공개 댓글 가림</li>
-<li>json 출력시 불필요한 요소 제거 (특히 Date 타입에서 !! )</li>
-</ol>
-<p> </p></div><div class="post-footer">
-    <a href="/posts/202302160417/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/typescript/' class="post-tag">TypeScript</a><a href='/tags/typeorm/' class="post-tag">TypeORM</a><a href='/tags/project_review/' class="post-tag">Project_review</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item">
           <span class="page-link">

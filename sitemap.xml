@@ -2,14 +2,18 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
+      <loc>https://labs.inchan.dev/categories/</loc><lastmod>2024-10-04T23:56:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://labs.inchan.dev/tags/env/</loc><lastmod>2024-10-04T23:56:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://labs.inchan.dev/</loc><lastmod>2024-10-04T23:56:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://labs.inchan.dev/posts/202410042356/</loc><lastmod>2024-10-04T23:56:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://labs.inchan.dev/posts/</loc><lastmod>2024-10-04T23:56:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://labs.inchan.dev/categories/programming/</loc><lastmod>2024-10-04T23:56:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://labs.inchan.dev/tags/</loc><lastmod>2024-10-04T23:56:31&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://labs.inchan.dev/posts/202410041532/</loc><lastmod>2024-10-04T15:33:08&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://labs.inchan.dev/posts/202403171602/</loc><lastmod>2024-03-25T06:24:11&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://labs.inchan.dev/categories/</loc><lastmod>2024-03-25T06:24:11&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://labs.inchan.dev/</loc><lastmod>2024-03-25T06:24:11&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://labs.inchan.dev/categories/miscellaneous/</loc><lastmod>2024-03-25T06:24:11&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://labs.inchan.dev/posts/</loc><lastmod>2024-03-25T06:24:11&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://labs.inchan.dev/about/</loc><lastmod>2024-03-10T18:07:15&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://labs.inchan.dev/tags/miscellaneous/</loc><lastmod>2024-03-09T07:24:37&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://labs.inchan.dev/tags/</loc><lastmod>2024-03-14T22:50:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://labs.inchan.dev/posts/202403090724/</loc><lastmod>2024-03-09T07:24:37&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://labs.inchan.dev/tags/aws/</loc><lastmod>2024-03-14T22:50:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://labs.inchan.dev/posts/202403051335/</loc><lastmod>2024-03-05T13:35:51&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -37,7 +41,6 @@
       <loc>https://labs.inchan.dev/posts/202306191507/</loc><lastmod>2023-06-19T15:07:40&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://labs.inchan.dev/tags/git/</loc><lastmod>2023-06-21T15:10:10&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://labs.inchan.dev/posts/202306171531/</loc><lastmod>2023-06-21T15:10:10&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-      <loc>https://labs.inchan.dev/categories/programming/</loc><lastmod>2023-07-04T22:25:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://labs.inchan.dev/posts/202306070208/</loc><lastmod>2023-06-07T22:47:59&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://labs.inchan.dev/posts/202304010529/</loc><lastmod>2023-04-01T05:30:56&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
       <loc>https://labs.inchan.dev/posts/202303311059/</loc><lastmod>2023-03-31T10:43:08&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

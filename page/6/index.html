@@ -12,8 +12,8 @@
 <meta name="description" content="개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다."><meta name="keywords" content='백엔드, 프론트엔드, 웹개발, javascript, 자바스크립트, typescript, 타입스크립트, mysql, rdbms'>
   <meta itemprop="name" content="labs.inchan">
   <meta itemprop="description" content="개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.">
-  <meta itemprop="datePublished" content="2024-03-17T16:02:39+09:00">
-  <meta itemprop="dateModified" content="2024-03-25T06:24:11+09:00"><meta property="og:url" content="https://labs.inchan.dev/">
+  <meta itemprop="datePublished" content="2024-10-04T23:56:31+09:00">
+  <meta itemprop="dateModified" content="2024-10-04T23:56:31+09:00"><meta property="og:url" content="https://labs.inchan.dev/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="labs.inchan">
   <meta property="og:description" content="개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.">
@@ -153,6 +153,45 @@
     </a><a href="mailto:song@inchan.dev" title="Email"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-regular fa-envelope fa-fw" aria-hidden="true"></i>
     </a><a href="/index.xml" title="RSS"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-solid fa-rss fa-fw" aria-hidden="true"></i>
     </a></div></div>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202301280422/">Typescript - Satisfies Operator 탐구</a>
+  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2023-01-28 04:22:36'>published on <time datetime="2023-01-28">2023-01-28</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/programming/" class="post-category" title="Category - Programming"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Programming</a></span></div><div class="content"><p> <br>
+ </p>
+<p>typescript 4.9에서 새로 나온 기능으로 <code>satisfies</code> 라는 연산자가 있다.<br>
+ <br>
+공식문서를 정말 한참을 봤는데도 잘 이해가 가지 않았는데 직접 코드를 가지고 만져보니 조금 이해가 되었다.<br>
+ </p>
+<h3 id="satisfies-적용-전" class="heading-element"><span>satisfies 적용 전</span>
+  <a href="#satisfies-%ec%a0%81%ec%9a%a9-%ec%a0%84" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><code>Record</code>라는 객체의 key, value를 지정해주는 연산자를 사용하여 객체의 타입을 지정할 때,<br>
+ <br>
+아래 코드를 보면 value의 타입으로 <code>string | RGB2</code> 라는 union type으로 인해 속성에 대한 오류가 잡힌다.<br>
+toUpperCase에서는 only <code>string</code>타입이 들어와야 하는데 union type으로 할당되어 생긴 에러로서 당연한 결과이다.<br>
+ </p></div><div class="post-footer">
+    <a href="/posts/202301280422/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/typescript/' class="post-tag">TypeScript</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202301230429/">Mac 터미널에서 폴더트리 구조 확인</a>
+  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2023-01-23 04:29:44'>published on <time datetime="2023-01-23">2023-01-23</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/env/" class="post-category" title="Category - Env"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Env</a></span></div><div class="content"><p>windows에서는 cmd에서 폴더트리가 바로 나오는것 같던데 macOS의 터미널에서는 따로 tree를 설치해야 볼 수 있다.<br>
+ </p>
+<p>아래 명령어로 brew를 통해 설치<br>
+ </p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ brew install tree</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<h3 id="사용법" class="heading-element"><span>사용법</span>
+  <a href="#%ec%82%ac%ec%9a%a9%eb%b2%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>기본적인 사용법은 작업중인 폴더로 가서 <code>tree</code> 라고만 입력하면 된다.<br>
+ </p></div><div class="post-footer">
+    <a href="/posts/202301230429/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/terminal/' class="post-tag">Terminal</a></div></div>
+</article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202301230424/">백엔드 - Typescript-Express 환경에서 Jest 및 Node 환경에 따라 Dotenv 설정 분리</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2023-01-23 04:24:50'>published on <time datetime="2023-01-23">2023-01-23</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/back-end/" class="post-category" title="Category - Back-End"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Back-End</a></span></div><div class="content"><h2 id="문제상황" class="heading-element"><span>문제상황</span>
   <a href="#%eb%ac%b8%ec%a0%9c%ec%83%81%ed%99%a9" class="heading-mark">
@@ -202,46 +241,6 @@ dotEnv로 설정값을 주고 연결을 해보면 다음과 같은 오류를 볼
   </a>
 </h2><p>사전 조건 : node lts버전 설치</p></div><div class="post-footer">
     <a href="/posts/202301090435/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/nestjs/' class="post-tag">NestJS</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202301020441/">부트캠프 가도 실패하는 사람 특징</a>
-  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2023-01-02 04:41:37'>published on <time datetime="2023-01-02">2023-01-02</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/miscellaneous/" class="post-category" title="Category - Miscellaneous"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Miscellaneous</a></span></div><div class="content"><p>youtube 서핑을 하다 우연히 보게 된 영상.
-&ldquo;<strong>부트캠프 가셔도 실패하는 분 특징</strong>&rdquo;
-문구가 굉장히 도발적이었다.<br>
-마침 부트캠프를 막 수료한지라 더욱 내 시선을 끌었었다.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YggPP84w_Lo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-&nbsp;  
-<div class="details admonition info">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-info-circle fa-fw" aria-hidden="true"></i>youtube 내용 요약 - 펼치기<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content"><h2 id="youtube-내용-요약" class="heading-element"><span>youtube 내용 요약</span>
-  <a href="#youtube-%eb%82%b4%ec%9a%a9-%ec%9a%94%ec%95%bd" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><ul>
-<li>글쓰기를 잘하는 사람이 개발자로서도 잘한다.</li>
-<li>본인의 메세지를 글에 녹일 수 있어야 한다.</li>
-</ul>
-<blockquote><p>컴퓨터가 이해할 수 있는 코드는 어느 바보라도 작성할 수 있다.
-좋은 프로그래머는 사람이 이해할 수 있는 코드를 작성한다.</p></div><div class="post-footer">
-    <a href="/posts/202301020441/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/miscellaneous/' class="post-tag">Miscellaneous</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202212280458/">AWS 퍼블릭 IP와 탄력적 IP</a>
-  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2022-12-28 04:58:02'>published on <time datetime="2022-12-28">2022-12-28</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/back-end/" class="post-category" title="Category - Back-End"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Back-End</a></span></div><div class="content"><p> </p>
-<p>AWS EC2에서 백엔드 서버와 프론트엔드 서버를 돌리는 와중,
-백엔드 서버의 PM2 리스트 전체가 다운이 되면서 멈추는 일이 발생했다.<br>
-이래저래 복구를 하다가, 프리티어 t2의 메모리 부족 현상때문이라는 결론에 다달았고<br>
-ec2를 재부팅하였다.<br>
- </p>
-<h2 id="aws-퍼블릭-ip-주소가-바뀌었다" class="heading-element"><span>AWS 퍼블릭 IP 주소가 바뀌었다?</span>
-  <a href="#aws-%ed%8d%bc%eb%b8%94%eb%a6%ad-ip-%ec%a3%bc%ec%86%8c%ea%b0%80-%eb%b0%94%eb%80%8c%ec%97%88%eb%8b%a4" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><p>EC2 재부팅 결과,
-서버의 퍼블릭 IPv4 주소가 바뀌는 일이 발생했다.<br>
- </p></div><div class="post-footer">
-    <a href="/posts/202212280458/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/aws/' class="post-tag">AWS</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item">
           <span class="page-link">
