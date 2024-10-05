@@ -10,8 +10,8 @@
   <meta itemprop="name" content="macOS에서 SSH 키 자동 등록 및 암호 관리 문제 해결 방법">
   <meta itemprop="description" content="재부팅 후 SSH 키가 자동으로 등록되지 않거나 암호를 계속해서 묻는 문제? macOS에서 SSH 키 관리와 관련된 AddKeysToAgent 및 UseKeychain 설정 문제를 해결하는 방법을 알아본다.">
   <meta itemprop="datePublished" content="2024-10-04T23:56:31+09:00">
-  <meta itemprop="dateModified" content="2024-10-04T23:56:31+09:00">
-  <meta itemprop="wordCount" content="707">
+  <meta itemprop="dateModified" content="2024-10-05T15:54:08+09:00">
+  <meta itemprop="wordCount" content="709">
   <meta itemprop="keywords" content="SSH,github,github 여러 계정,SSH 자동등록,재부팅"><meta property="og:url" content="https://labs.inchan.dev/posts/202410042356/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="macOS에서 SSH 키 자동 등록 및 암호 관리 문제 해결 방법">
@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-10-04T23:56:31+09:00">
-    <meta property="article:modified_time" content="2024-10-04T23:56:31+09:00">
+    <meta property="article:modified_time" content="2024-10-05T15:54:08+09:00">
     <meta property="article:tag" content="Env">
 
   <meta name="twitter:card" content="summary">
@@ -41,8 +41,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/labs.inchan.dev\/posts\/202410042356\/"
-    },"genre": "posts","keywords": "Env","wordcount":  707 ,
-    "url": "https:\/\/labs.inchan.dev\/posts\/202410042356\/","datePublished": "2024-10-04T23:56:31+09:00","dateModified": "2024-10-04T23:56:31+09:00","publisher": {
+    },"genre": "posts","keywords": "Env","wordcount":  709 ,
+    "url": "https:\/\/labs.inchan.dev\/posts\/202410042356\/","datePublished": "2024-10-04T23:56:31+09:00","dateModified": "2024-10-05T15:54:08+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
         "@type": "Person",
@@ -164,7 +164,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>MacOS에서 SSH 키 자동 등록 및 암호 관리 문제 해결 방법</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/programming/" class="post-category" title="Category - Programming"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Programming</a></span></div><div class="post-meta-line"><span title="published on 2024-10-04 23:56:31"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="707 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="MacOS에서 SSH 키 자동 등록 및 암호 관리 문제 해결 방법"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/programming/" class="post-category" title="Category - Programming"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Programming</a></span></div><div class="post-meta-line"><span title="published on 2024-10-04 23:56:31"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-04">2024-10-04</time></span>&nbsp;<span title="Updated on 2024-10-05 15:54:08"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-05">2024-10-05</time></span>&nbsp;<span title="709 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="MacOS에서 SSH 키 자동 등록 및 암호 관리 문제 해결 방법"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -205,7 +205,7 @@
   <a href="#AddKeysToAgent-issue" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><p>macOS에서 SSH 클라이언트는 <strong>기본 키 파일명은 다음과 같은 경우에 대해 특별한 처리</strong>를 한다.</p>
+</h2><p>macOS에서 SSH 클라이언트는 <strong>파일 이름이 다음과 같은 경우 기본 키파일명으로서 특별한 처리</strong>를 한다.</p>
 <ul>
 <li><strong>id_rsa</strong></li>
 <li><strong>id_dsa</strong></li>
@@ -235,7 +235,7 @@
 <p>1번의 경우에는 다시 <a href="#%ec%9e%ac%eb%b6%80%ed%8c%85-%ed%9b%84-SSH-%ed%82%a4%ea%b0%80-%ec%9e%90%eb%8f%99%ec%9c%bc%eb%a1%9c-ssh-agent%ec%97%90-%eb%93%b1%eb%a1%9d%eb%90%98%ec%a7%80-%ec%95%8a%eb%8a%94%eb%8b%a4">재부팅 후 SSH 키가 자동으로 ssh agent에 등록되지 않는다?</a>를 참고한다.</p>
 <p> </p>
 <p>2번의 경우에는 다음의 상황이 있을 수 있다.<br>
-해당 레포지토리가 있는 경로에서 <code>git fetch</code>, <code>git push</code>와 같은 명령을 했을 때, 암호를 묻는다. 암호를 묻는다는건 키는 제대로 가져오고 있다는 뜻이다. 그런데 분명 <code>UseKeychain yes</code> 설정을 했는데 왜 계속해서 묻는걸까?</p>
+해당 레포지토리가 있는 경로에서 <code>git fetch</code>, <code>git push</code>와 같은 명령을 했을 때, 암호를 묻는다. 암호를 묻는다는건 ssh key는 제대로 가져오고 있다는 뜻이다. 그런데 분명 <code>UseKeychain yes</code> 설정을 했는데 왜 계속해서 묻는걸까?</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -263,12 +263,12 @@
 <p> </p>
 <p><strong>비대화형 환경에서의 키체인 연동 문제:</strong></p>
 <ul>
-<li><code>git fetch</code>와 같은 <em>비대화형 명령</em>에서는 UseKeychain yes 옵션이 기대한 대로 동작하지 않을 수 있다.</li>
+<li><code>git fetch</code>와 같은 <em>비대화형 명령</em>에서는 <code>UseKeychain yes</code> 옵션이 기대한 대로 동작하지 않을 수 있다.</li>
 <li>AddKeysToAgent yes <strong>옵션은 SSH 클라이언트가 키를 사용할 때만 동작하며, 자동으로 키를 로드하지 않는다.</strong></li>
 <li>키체인은 SSH 클라이언트가 아닌 ssh agent를 통해 암호(passphrase)를 가져온다.</li>
 <li><code>ssh -T git@github.com</code>와 같은 명령은 대화형(interactive) 세션에서 동작하며 대화형 세션이 진행될 때, 에이전트에서는 config파일 설정에 따라 에이전트에 다시 키를 로드한다.</li>
-<li>때문에 재부팅 후, 바로 ssh 비대화형 명령을 질행하면 SSH 클라이언트가 키체인에서 암호를 가져오지 못해 암호 묻게된다.</li>
-<li>따라서 만약 한번이라도 대화형 세션을 진행했다면 키는 정상적으로 ssh agent에 로드되고, 이후 암호를 묻는 일이 없다.</li>
+<li>때문에 재부팅 후, 바로 ssh 비대화형 명령을 질행하면 SSH 클라이언트가 키체인에서 암호를 가져오지 못하기에 암호를 매번 묻게된다.</li>
+<li>따라서 만약 한번이라도 대화형 세션을 진행했다면 키는 정상적으로 ssh agent에 로드되고, 이후 암호를 되묻는 일이 없다.</li>
 </ul>
 <h2 id="해결방법" class="heading-element"><span>해결방법</span>
   <a href="#%ed%95%b4%ea%b2%b0%eb%b0%a9%eb%b2%95" class="heading-mark">
@@ -402,7 +402,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="Updated on 2024-10-04 23:56:31">Updated on 2024-10-04&nbsp;</span>
+        <span title="Updated on 2024-10-05 15:54:08">Updated on 2024-10-05&nbsp;</span>
       </div><div class="post-info-license">
             <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
           </div></div><div class="post-info-line">
