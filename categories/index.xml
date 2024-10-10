@@ -39,13 +39,6 @@
       <description>Back-End</description>
     </item>
     <item>
-      <title>Project</title>
-      <link>https://labs.inchan.dev/categories/project/</link>
-      <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/categories/project/</guid>
-      <description>Project</description>
-    </item>
-    <item>
       <title>Env</title>
       <link>https://labs.inchan.dev/categories/env/</link>
       <pubDate>Thu, 01 Feb 2024 23:11:21 +0900</pubDate><author>song@inchan.dev (inchan)</author>
@@ -58,6 +51,13 @@
       <pubDate>Wed, 24 Jan 2024 10:19:14 +0900</pubDate><author>song@inchan.dev (inchan)</author>
       <guid>https://labs.inchan.dev/categories/debugging/</guid>
       <description>Debugging</description>
+    </item>
+    <item>
+      <title>Project</title>
+      <link>https://labs.inchan.dev/categories/project/</link>
+      <pubDate>Tue, 27 Dec 2022 04:48:11 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>https://labs.inchan.dev/categories/project/</guid>
+      <description>Project</description>
     </item>
   </channel>
 </rss>

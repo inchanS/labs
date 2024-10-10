@@ -56,7 +56,6 @@
       <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
       <guid>https://labs.inchan.dev/posts/202403051335/</guid>
       <category domain="https://labs.inchan.dev/categories/back-end/">Back-End</category>
-      <category domain="https://labs.inchan.dev/categories/project/">Project</category>
       <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/ko/blogs/korea/new-aws-public-ipv4-address-charge-public-ip-insights/?_encoding=UTF8&amp;amp;tag=clien0a-20&amp;amp;linkCode=ur2&amp;amp;linkId=4ef926e41eaa57b3dcfc48b2660f5024&amp;amp;camp=1789&amp;amp;creative=9325&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그&lt;/a&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&lt;p&gt;AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. &lt;strong&gt;2024년 2월 1일부터&lt;/strong&gt; 서비스 연결 여부에 관계없이 &lt;strong&gt;모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과&lt;/strong&gt;됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
