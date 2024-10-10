@@ -30,7 +30,7 @@
 <meta name="twitter:creator" content="@cOdject" /><meta name="application-name" content="inchan">
 <meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://labs.inchan.dev/posts/202410042356/" title="macOS에서 SSH 키 자동 등록 및 암호 관리 문제 해결 방법 - labs.inchan" /><link rel="prev" type="text/html" href="https://labs.inchan.dev/posts/202410041532/" title="GitHub 계정 다중 사용자를 위한 macOS SSH 설정 방법" /><link rel="stylesheet" href="/css/style.min.6b6d369005f335001b567066cd5ddb626ad3733eabe4573c3ac8f06b82c435ae.css" integrity="sha256-a202kAXzNQAbVnBmzV3bYmrTcz6r5Fc8Osjwa4LENa4="><link rel="preload" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://labs.inchan.dev/posts/202410042356/" title="macOS에서 SSH 키 자동 등록 및 암호 관리 문제 해결 방법 - labs.inchan" /><link rel="prev" type="text/html" href="https://labs.inchan.dev/posts/202410041532/" title="GitHub 계정 다중 사용자를 위한 macOS SSH 설정 방법" /><link rel="stylesheet" href="/css/style.min.a75ea0d288a6fb327e25c82c1d09c9353d326a6f279ee1b75307c592e190b68f.css" integrity="sha256-p16g0oim+zJ+JcgsHQnJNT0yam8nnuG3UwfFkuGQto8="><link rel="preload" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
@@ -374,7 +374,7 @@
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>이 방법은 최초 터미널 실행시 로드되는 쉘 초기화 파일에서 SSH 키를 자동으로 로드시키는 방법이다.<br>
-~/.bash_profile <strong>또는</strong> ~/.zshrc <strong>파일에 다음을 추가</strong>한다.</p>
+<code>~/.bash_profile</code> 또는 <code>~/.zshrc</code> <strong>파일에 다음을 추가</strong>한다.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -383,7 +383,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-add --apple-use-keychain ~/.ssh/id_ed25519 <span class="p">&amp;</span>&gt;/dev/null</span></span></code></pre></td></tr></table>
 </div>
 </div><p>재부팅 후, 터미널 실행시 해당 명령이 실행되면서 이제 비대화형 세션(<code>git fetch</code>와 같은)을 처음 진행하더라도 암호를 되묻지 않는다.</p>
-<p>이 방법은 SSH key 생성시 <strong>기본 파일명이 아니더라도</strong> <code>AddKeysToAgent yes</code> 옵션이 마치 항상 실행하듯 해준다는 장점이 있다.</p>
+<p>이 방법은 SSH key 생성시 <em>기본 파일명이 아니더라도</em> <code>AddKeysToAgent yes</code> 옵션이 마치 항상 실행하듯 해준다는 장점이 있다.</p>
 <div class="details admonition warning open">
     <div class="details-summary admonition-title">
       <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Warning<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
