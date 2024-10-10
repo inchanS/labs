@@ -2,12 +2,12 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>https://labs.inchan.dev/</loc><lastmod>2024-10-10T13:53:38&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://labs.inchan.dev/posts/</loc><lastmod>2024-10-10T13:53:38&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://labs.inchan.dev/categories/</loc><lastmod>2024-10-05T16:07:36&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://labs.inchan.dev/tags/env/</loc><lastmod>2024-10-05T16:07:36&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://labs.inchan.dev/</loc><lastmod>2024-10-05T16:07:36&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://labs.inchan.dev/tags/macos/</loc><lastmod>2024-10-05T16:07:36&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://labs.inchan.dev/posts/202410042356/</loc><lastmod>2024-10-05T15:54:08&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://labs.inchan.dev/posts/</loc><lastmod>2024-10-05T16:07:36&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://labs.inchan.dev/categories/programming/</loc><lastmod>2024-10-05T16:07:36&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://labs.inchan.dev/tags/</loc><lastmod>2024-10-05T16:07:36&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://labs.inchan.dev/posts/202410041532/</loc><lastmod>2024-10-05T16:07:36&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
