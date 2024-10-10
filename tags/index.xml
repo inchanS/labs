@@ -164,26 +164,5 @@
       <guid>https://labs.inchan.dev/tags/dbmate/</guid>
       <description>DBmate</description>
     </item>
-    <item>
-      <title>Css</title>
-      <link>https://labs.inchan.dev/tags/css/</link>
-      <pubDate>Tue, 04 Oct 2022 05:15:23 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/css/</guid>
-      <description>Css</description>
-    </item>
-    <item>
-      <title>Html</title>
-      <link>https://labs.inchan.dev/tags/html/</link>
-      <pubDate>Tue, 04 Oct 2022 05:15:23 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/html/</guid>
-      <description>Html</description>
-    </item>
-    <item>
-      <title>FontAwesome</title>
-      <link>https://labs.inchan.dev/tags/fontawesome/</link>
-      <pubDate>Tue, 06 Sep 2022 05:21:43 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/fontawesome/</guid>
-      <description>FontAwesome</description>
-    </item>
   </channel>
 </rss>

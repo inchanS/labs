@@ -59,12 +59,5 @@
       <guid>https://labs.inchan.dev/categories/debugging/</guid>
       <description>Debugging</description>
     </item>
-    <item>
-      <title>Front-End</title>
-      <link>https://labs.inchan.dev/categories/front-end/</link>
-      <pubDate>Tue, 04 Oct 2022 05:15:23 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/categories/front-end/</guid>
-      <description>Front-End</description>
-    </item>
   </channel>
 </rss>
