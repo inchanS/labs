@@ -8,8 +8,15 @@
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
-    <lastBuildDate>Sat, 05 Oct 2024 16:07:36 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 10 Oct 2024 13:53:38 +0900</lastBuildDate>
     <atom:link href="https://labs.inchan.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Utilities</title>
+      <link>https://labs.inchan.dev/categories/utilities/</link>
+      <pubDate>Thu, 10 Oct 2024 11:08:34 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>https://labs.inchan.dev/categories/utilities/</guid>
+      <description>Utilities</description>
+    </item>
     <item>
       <title>Programming</title>
       <link>https://labs.inchan.dev/categories/programming/</link>
@@ -20,7 +27,7 @@
     <item>
       <title>Miscellaneous</title>
       <link>https://labs.inchan.dev/categories/miscellaneous/</link>
-      <pubDate>Sun, 17 Mar 2024 16:02:39 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <pubDate>Sat, 09 Mar 2024 07:24:37 +0900</pubDate><author>song@inchan.dev (inchan)</author>
       <guid>https://labs.inchan.dev/categories/miscellaneous/</guid>
       <description>Miscellaneous</description>
     </item>
