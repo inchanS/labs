@@ -153,6 +153,26 @@
     </a><a href="mailto:song@inchan.dev" title="Email"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-regular fa-envelope fa-fw" aria-hidden="true"></i>
     </a><a href="/index.xml" title="RSS"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-solid fa-rss fa-fw" aria-hidden="true"></i>
     </a></div></div>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202401122216/">AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용</a>
+  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2024-01-12 22:17:59'>published on <time datetime="2024-01-12">2024-01-12</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="content"><p>관련 글</p>
+<ul>
+<li><a href="https://inchan.dev/posts/202403051214/"target="_blank" rel="external nofollow noopener noreferrer">AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</a></li>
+</ul>
+<p> </p>
+<p>팀 프로젝트로 백엔드 서버를 EC2에서 배포하여 사용중인데 여기에 <strong>HTTPS</strong>를 적용하여 보았다.</p>
+<p>적용방법은 몇가지가 있지만 크게 AWS의 Route53을 이용하는 방법과 도메인서비스의 프록싱을 이용한 방법 등이 있다.</p>
+<p>그 중 첫번째 방법에 대해 기술한다.</p>
+<div class="details admonition tip open">
+  <div class="details-summary admonition-title"><i class="icon fa-fw fa-regular fa-lightbulb" aria-hidden="true"></i>겁먹지 말기<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+  <div class="details-content">
+    <div class="admonition-content">AWS내에서 각 서비스를 이리저리 다니며<br>
+무언가를 자꾸 생성하고 또 세팅하다보니 자칫 어렵다고 지레 겁먹기 쉬운데<br>
+실제로 해보면 생각보다 간단하고 쉽다.</div>
+  </div>
+</div>
+<p>구글링을 하다보면 여러 관련 글이 있는데 아래 참고한 2개의 웹페이지가 가장 잘 설명되어있다.</p></div><div class="post-footer">
+    <a href="/posts/202401122216/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/aws/' class="post-tag">AWS</a><a href='/tags/back-end/' class="post-tag">Back-End</a></div></div>
+</article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202306291258/">Error Log - Jest.spyOn()에서 재사용함수에 대한 모의 불가</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2023-06-29 12:58:27'>published on <time datetime="2023-06-29">2023-06-29</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="content"><hr>
 <p> </p>
@@ -223,44 +243,6 @@ OpenAI로 인한 영향, 방법 등에 관한 콘텐츠가 마구잡이로 쏟�
 </h2><p>git commit message 작성시 보통 첫줄에 위치한 제목줄에 들어가는 가이드로서,<br>
 이전에 내가 사용하던 규칙은 다음과 같았다.</p></div><div class="post-footer">
     <a href="/posts/202306171531/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/git/' class="post-tag">Git</a><a href='/tags/project_review/' class="post-tag">Project_review</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202306070208/">MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</a>
-  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2023-06-07 22:47:43'>published on <time datetime="2023-06-07">2023-06-07</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="content"><p> <br>
- </p>
-<h2 id="개발환경" class="heading-element"><span>개발환경</span>
-  <a href="#%ea%b0%9c%eb%b0%9c%ed%99%98%ea%b2%bd" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><ul>
-<li>Javascript 런타임 플랫폼: Node.js</li>
-<li>언어: TypeScript</li>
-<li>프레임워크: Express</li>
-<li>DB: MySQL</li>
-<li>ORM: TypeORM
- </li>
-</ul>
-<h2 id="현재-조건-상황" class="heading-element"><span>현재 조건 상황</span>
-  <a href="#%ed%98%84%ec%9e%ac-%ec%a1%b0%ea%b1%b4-%ec%83%81%ed%99%a9" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><ul>
-<li>회원가입시, 이메일과 패스워드가 필수 입력입력인데, 이메일의 경우 mySQL에서 unique 처리</li>
-<li>회원가입 과정에서 이메일 중복 여부를 확인하고 통과했을 경우에만 회원가입 가능</li>
-<li>회원 삭제시, 실제 회원정보를 DB에서 지우지 않고 TypeORM의softDelete 방식으로 deleted_at 컬럼에 삭제일시가 기록되는 방식 (일정기간 이후 삭제할 요량으로 단기간 데이터 보존)
- <br>
- </li>
-</ul>
-<div class="details admonition question open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-regular fa-circle-question" aria-hidden="true"></i>Question<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content">이미 회원 삭제된 정보의 이메일로 <strong>재가입하려는 경우</strong>,<br>
-해당 이메일은 이미 mySQL에서 unique로 입력되어있는 이메일이기 때문에 이메일 중복확인에서 통과되지 않는다.<br>
-해당 이메일을 재사용하려면?</div>
-  </div>
-</div>
-<p> <br>
- </p></div><div class="post-footer">
-    <a href="/posts/202306070208/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/typeorm/' class="post-tag">TypeORM</a><a href='/tags/mysql/' class="post-tag">MySQL</a><a href='/tags/project_review/' class="post-tag">Project_review</a><a href='/tags/back-end/' class="post-tag">Back-End</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item">
           <span class="page-link">
