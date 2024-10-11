@@ -16,8 +16,8 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
 공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그
 AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. 2024년 2월 1일부터 서비스 연결 여부에 관계없이 모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다.">
   <meta itemprop="datePublished" content="2024-03-05T13:35:51+09:00">
-  <meta itemprop="dateModified" content="2024-03-05T13:35:51+09:00">
-  <meta itemprop="wordCount" content="742">
+  <meta itemprop="dateModified" content="2024-10-12T05:42:19+09:00">
+  <meta itemprop="wordCount" content="757">
   <meta itemprop="keywords" content="AWS,Back-End"><meta property="og:url" content="https://labs.inchan.dev/posts/202403051335/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">
@@ -28,7 +28,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-03-05T13:35:51+09:00">
-    <meta property="article:modified_time" content="2024-03-05T13:35:51+09:00">
+    <meta property="article:modified_time" content="2024-10-12T05:42:19+09:00">
     <meta property="article:tag" content="AWS">
     <meta property="article:tag" content="Back-End">
 
@@ -52,8 +52,8 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/labs.inchan.dev\/posts\/202403051335\/"
-    },"genre": "posts","keywords": "AWS, Back-End","wordcount":  742 ,
-    "url": "https:\/\/labs.inchan.dev\/posts\/202403051335\/","datePublished": "2024-03-05T13:35:51+09:00","dateModified": "2024-03-05T13:35:51+09:00","publisher": {
+    },"genre": "posts","keywords": "AWS, Back-End","wordcount":  757 ,
+    "url": "https:\/\/labs.inchan.dev\/posts\/202403051335\/","datePublished": "2024-03-05T13:35:51+09:00","dateModified": "2024-10-12T05:42:19+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
         "@type": "Person",
@@ -175,7 +175,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2024-03-05 13:35:51"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-05">2024-03-05</time></span>&nbsp;<span title="742 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2024-03-05 13:35:51"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-05">2024-03-05</time></span>&nbsp;<span title="Updated on 2024-10-12 05:42:19"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-12">2024-10-12</time></span>&nbsp;<span title="757 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -294,9 +294,11 @@ UI나 일부 메뉴 이름이 다르더라도 이해하는데 큰 지장은 없�
 <p><strong>호스트에는 EC2 public IPv4 주소를 입력</strong><br>
 포트는 SSH이기에 <code>22</code> 그대로 둔다.<br>
 그리고 <strong>인증타입은 AWS EC2의 보안그룹에 따라 key.pem 파일이나</strong> 비밀번호 등 세팅한 방식에 맞게 맞춰준다.</p>
-<p>그리고 연결테스트를 하면 끝!<br>
- </p>
+<p>그리고 연결테스트를 하면 확인 끝!<br>
+마무리로 다시 일반 탭(general) 으로 가서 <strong>Host</strong> 부분을 입력하고 적용 및 확인을 누르면 된다.</p>
+<p> </p>
 <p>이제 EC2의 public주소와 SSH 연결 방법을 통해 RDS 역시 외부망에서 접속할 수 있다.</p>
+<p> </p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -325,7 +327,7 @@ UI나 일부 메뉴 이름이 다르더라도 이해하는데 큰 지장은 없�
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="Updated on 2024-03-05 13:35:51">Updated on 2024-03-05&nbsp;</span>
+        <span title="Updated on 2024-10-12 05:42:19">Updated on 2024-10-12&nbsp;</span>
       </div><div class="post-info-license">
             <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
           </div></div><div class="post-info-line">

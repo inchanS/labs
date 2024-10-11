@@ -8,7 +8,7 @@
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
-    <lastBuildDate>Thu, 14 Mar 2024 22:50:52 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Oct 2024 05:42:19 +0900</lastBuildDate>
     <atom:link href="https://labs.inchan.dev/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</title>
