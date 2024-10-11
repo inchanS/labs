@@ -11,53 +11,39 @@
     <lastBuildDate>Sat, 05 Oct 2024 16:07:36 +0900</lastBuildDate>
     <atom:link href="https://labs.inchan.dev/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Programming</title>
-      <link>https://labs.inchan.dev/categories/programming/</link>
-      <pubDate>Fri, 04 Oct 2024 23:56:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/categories/programming/</guid>
-      <description>Programming</description>
-    </item>
-    <item>
-      <title>Utilities</title>
-      <link>https://labs.inchan.dev/categories/utilities/</link>
-      <pubDate>Sun, 17 Mar 2024 16:02:39 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/categories/utilities/</guid>
-      <description>Utilities</description>
-    </item>
-    <item>
-      <title>Back-End</title>
-      <link>https://labs.inchan.dev/categories/back-end/</link>
-      <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/categories/back-end/</guid>
-      <description>Back-End</description>
-    </item>
-    <item>
       <title>Env</title>
       <link>https://labs.inchan.dev/categories/env/</link>
-      <pubDate>Thu, 01 Feb 2024 23:11:21 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <pubDate>Fri, 04 Oct 2024 23:56:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
       <guid>https://labs.inchan.dev/categories/env/</guid>
       <description>Env</description>
     </item>
     <item>
-      <title>Debugging</title>
-      <link>https://labs.inchan.dev/categories/debugging/</link>
-      <pubDate>Wed, 24 Jan 2024 10:19:14 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/categories/debugging/</guid>
-      <description>Debugging</description>
+      <title>Apps</title>
+      <link>https://labs.inchan.dev/categories/apps/</link>
+      <pubDate>Sun, 17 Mar 2024 16:02:39 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>https://labs.inchan.dev/categories/apps/</guid>
+      <description>Apps</description>
     </item>
     <item>
-      <title>Miscellaneous</title>
-      <link>https://labs.inchan.dev/categories/miscellaneous/</link>
+      <title>Dev</title>
+      <link>https://labs.inchan.dev/categories/dev/</link>
+      <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>https://labs.inchan.dev/categories/dev/</guid>
+      <description>Dev</description>
+    </item>
+    <item>
+      <title>Misc</title>
+      <link>https://labs.inchan.dev/categories/misc/</link>
       <pubDate>Fri, 12 Jan 2024 23:24:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/categories/miscellaneous/</guid>
-      <description>Miscellaneous</description>
+      <guid>https://labs.inchan.dev/categories/misc/</guid>
+      <description>Misc</description>
     </item>
     <item>
-      <title>Project</title>
-      <link>https://labs.inchan.dev/categories/project/</link>
+      <title>Projects</title>
+      <link>https://labs.inchan.dev/categories/projects/</link>
       <pubDate>Tue, 27 Dec 2022 04:48:11 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/categories/project/</guid>
-      <description>Project</description>
+      <guid>https://labs.inchan.dev/categories/projects/</guid>
+      <description>Projects</description>
     </item>
   </channel>
 </rss>

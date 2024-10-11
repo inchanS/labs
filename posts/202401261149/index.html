@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <title>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴 - labs.inchan</title><meta name="author" content="inchan">
-<meta name="description" content="OOP로 작성된 NodeJS 백엔드 코드에서 리포지토리의 단일 인스턴스 생성을 위한 리팩토링 과정 설명"><meta name="keywords" content='project_review, NodeJS'>
+<meta name="description" content="OOP로 작성된 NodeJS 백엔드 코드에서 리포지토리의 단일 인스턴스 생성을 위한 리팩토링 과정 설명"><meta name="keywords" content='project_review, NodeJS, Back-End'>
   <meta itemprop="name" content="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴">
   <meta itemprop="description" content="OOP로 작성된 NodeJS 백엔드 코드에서 리포지토리의 단일 인스턴스 생성을 위한 리팩토링 과정 설명">
   <meta itemprop="datePublished" content="2024-01-26T11:49:52+09:00">
   <meta itemprop="dateModified" content="2024-01-28T12:55:05+09:00">
   <meta itemprop="wordCount" content="1086">
-  <meta itemprop="keywords" content="Project_review,NodeJS"><meta property="og:url" content="https://labs.inchan.dev/posts/202401261149/">
+  <meta itemprop="keywords" content="Project_review,NodeJS,Back-End"><meta property="og:url" content="https://labs.inchan.dev/posts/202401261149/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴">
   <meta property="og:description" content="OOP로 작성된 NodeJS 백엔드 코드에서 리포지토리의 단일 인스턴스 생성을 위한 리팩토링 과정 설명">
@@ -23,6 +23,7 @@
     <meta property="article:modified_time" content="2024-01-28T12:55:05+09:00">
     <meta property="article:tag" content="Project_review">
     <meta property="article:tag" content="NodeJS">
+    <meta property="article:tag" content="Back-End">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴">
@@ -42,7 +43,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/labs.inchan.dev\/posts\/202401261149\/"
-    },"genre": "posts","keywords": "project_review, NodeJS","wordcount":  1086 ,
+    },"genre": "posts","keywords": "project_review, NodeJS, Back-End","wordcount":  1086 ,
     "url": "https:\/\/labs.inchan.dev\/posts\/202401261149\/","datePublished": "2024-01-26T11:49:52+09:00","dateModified": "2024-01-28T12:55:05+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
@@ -165,7 +166,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/back-end/" class="post-category" title="Category - Back-End"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Back-End</a></span></div><div class="post-meta-line"><span title="published on 2024-01-26 11:49:52"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-26">2024-01-26</time></span>&nbsp;<span title="Updated on 2024-01-28 12:55:05"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-28">2024-01-28</time></span>&nbsp;<span title="1086 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1100 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>6 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2024-01-26 11:49:52"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-26">2024-01-26</time></span>&nbsp;<span title="Updated on 2024-01-28 12:55:05"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-28">2024-01-28</time></span>&nbsp;<span title="1086 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1100 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>6 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -611,10 +612,10 @@ OOP로 작성된 클래스의 리포지토리를 서비스 로직에서 각각 <
     <h2 id="see-also">Related Content</h2>
     <ul><li>
           <a href="/posts/202403010802/" title="TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란">TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란</a></li><li>
-          <a href="/posts/202401241017/" title="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법">Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</a></li><li>
-          <a href="/posts/202306291258/" title="Error Log - Jest.spyOn()에서 재사용함수에 대한 모의 불가">Error Log - Jest.spyOn()에서 재사용함수에 대한 모의 불가</a></li><li>
           <a href="/posts/202306191659/" title="AWS EC2에서 Product 서버와 개발용 서버 같이 사용하기">AWS EC2에서 Product 서버와 개발용 서버 같이 사용하기</a></li><li>
-          <a href="/posts/202306191507/" title="AWS RDS 데이터 - 다른 계정으로 이전하기">AWS RDS 데이터 - 다른 계정으로 이전하기</a></li></ul><div class="post-footer" id="post-footer">
+          <a href="/posts/202306191507/" title="AWS RDS 데이터 - 다른 계정으로 이전하기">AWS RDS 데이터 - 다른 계정으로 이전하기</a></li><li>
+          <a href="/posts/202306070208/" title="MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.">MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</a></li><li>
+          <a href="/posts/202303080503/" title="Swagger를 이용한 백엔드의 효과적인 API명세 전달">Swagger를 이용한 백엔드의 효과적인 API명세 전달</a></li></ul><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
@@ -629,7 +630,7 @@ OOP로 작성된 클래스의 리포지토리를 서비스 로직에서 각각 <
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/project_review/" class="post-tag" title="Tags - Project_review">Project_review</a><a href="/tags/nodejs/" class="post-tag" title="Tags - NodeJS">NodeJS</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/project_review/" class="post-tag" title="Tags - Project_review">Project_review</a><a href="/tags/nodejs/" class="post-tag" title="Tags - NodeJS">NodeJS</a><a href="/tags/back-end/" class="post-tag" title="Tags - Back-End">Back-End</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
     </section>

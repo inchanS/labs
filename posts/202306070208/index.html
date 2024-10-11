@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <title>MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다. - labs.inchan</title><meta name="author" content="inchan">
-<meta name="description" content="MySQL에서 회원탈퇴시 탈퇴한 회원 정보를 DB에서 완전히 삭제하지 않고 softDelete 처리했을 때, 해당 이메일을 중복확인에서 통과시키고 재사용할 수 있게한 고민들"><meta name="keywords" content='typeORM, mySQL, project_review'>
+<meta name="description" content="MySQL에서 회원탈퇴시 탈퇴한 회원 정보를 DB에서 완전히 삭제하지 않고 softDelete 처리했을 때, 해당 이메일을 중복확인에서 통과시키고 재사용할 수 있게한 고민들"><meta name="keywords" content='typeORM, mySQL, project_review, Back-End'>
   <meta itemprop="name" content="MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.">
   <meta itemprop="description" content="MySQL에서 회원탈퇴시 탈퇴한 회원 정보를 DB에서 완전히 삭제하지 않고 softDelete 처리했을 때, 해당 이메일을 중복확인에서 통과시키고 재사용할 수 있게한 고민들">
   <meta itemprop="datePublished" content="2023-06-07T22:47:43+09:00">
   <meta itemprop="dateModified" content="2023-06-07T22:47:59+09:00">
   <meta itemprop="wordCount" content="586">
-  <meta itemprop="keywords" content="TypeORM,MySQL,Project_review"><meta property="og:url" content="https://labs.inchan.dev/posts/202306070208/">
+  <meta itemprop="keywords" content="TypeORM,MySQL,Project_review,Back-End"><meta property="og:url" content="https://labs.inchan.dev/posts/202306070208/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.">
   <meta property="og:description" content="MySQL에서 회원탈퇴시 탈퇴한 회원 정보를 DB에서 완전히 삭제하지 않고 softDelete 처리했을 때, 해당 이메일을 중복확인에서 통과시키고 재사용할 수 있게한 고민들">
@@ -24,6 +24,7 @@
     <meta property="article:tag" content="TypeORM">
     <meta property="article:tag" content="MySQL">
     <meta property="article:tag" content="Project_review">
+    <meta property="article:tag" content="Back-End">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.">
@@ -43,7 +44,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/labs.inchan.dev\/posts\/202306070208\/"
-    },"genre": "posts","keywords": "typeORM, mySQL, project_review","wordcount":  586 ,
+    },"genre": "posts","keywords": "typeORM, mySQL, project_review, Back-End","wordcount":  586 ,
     "url": "https:\/\/labs.inchan.dev\/posts\/202306070208\/","datePublished": "2023-06-07T22:47:43+09:00","dateModified": "2023-06-07T22:47:59+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
@@ -166,7 +167,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/back-end/" class="post-category" title="Category - Back-End"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Back-End</a></span></div><div class="post-meta-line"><span title="published on 2023-06-07 22:47:43"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-07">2023-06-07</time></span>&nbsp;<span title="Updated on 2023-06-07 22:47:59"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-07">2023-06-07</time></span>&nbsp;<span title="586 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 600 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>3 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다."><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2023-06-07 22:47:43"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-07">2023-06-07</time></span>&nbsp;<span title="Updated on 2023-06-07 22:47:59"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-07">2023-06-07</time></span>&nbsp;<span title="586 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 600 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>3 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다."><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -404,10 +405,10 @@
     <h2 id="see-also">Related Content</h2>
     <ul><li>
           <a href="/posts/202302250414/" title="TypeORM Transaction에서 Repository 사용하기">TypeORM Transaction에서 Repository 사용하기</a></li><li>
-          <a href="/posts/202401241017/" title="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법">Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</a></li><li>
-          <a href="/posts/202304010529/" title="Error Log - TypeORM Migration 할 때 Cross ENV 설정 문제">Error Log - TypeORM Migration 할 때 Cross ENV 설정 문제</a></li><li>
           <a href="/posts/202302160417/" title="Node.js 백엔드TypeScript &#43; TypeORM으로 무한 대댓글 가공하기">Node.js 백엔드TypeScript &#43; TypeORM으로 무한 대댓글 가공하기</a></li><li>
-          <a href="/posts/202403010802/" title="TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란">TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란</a></li></ul><div class="post-footer" id="post-footer">
+          <a href="/posts/202403010802/" title="TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란">TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란</a></li><li>
+          <a href="/posts/202401241017/" title="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법">Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</a></li><li>
+          <a href="/posts/202306191659/" title="AWS EC2에서 Product 서버와 개발용 서버 같이 사용하기">AWS EC2에서 Product 서버와 개발용 서버 같이 사용하기</a></li></ul><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
@@ -422,7 +423,7 @@
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/typeorm/" class="post-tag" title="Tags - TypeORM">TypeORM</a><a href="/tags/mysql/" class="post-tag" title="Tags - MySQL">MySQL</a><a href="/tags/project_review/" class="post-tag" title="Tags - Project_review">Project_review</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/typeorm/" class="post-tag" title="Tags - TypeORM">TypeORM</a><a href="/tags/mysql/" class="post-tag" title="Tags - MySQL">MySQL</a><a href="/tags/project_review/" class="post-tag" title="Tags - Project_review">Project_review</a><a href="/tags/back-end/" class="post-tag" title="Tags - Back-End">Back-End</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
     </section>

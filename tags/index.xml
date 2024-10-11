@@ -11,13 +11,6 @@
     <lastBuildDate>Sat, 05 Oct 2024 16:07:36 +0900</lastBuildDate>
     <atom:link href="https://labs.inchan.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Env</title>
-      <link>https://labs.inchan.dev/tags/env/</link>
-      <pubDate>Fri, 04 Oct 2024 23:56:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/env/</guid>
-      <description>Env</description>
-    </item>
-    <item>
       <title>MacOS</title>
       <link>https://labs.inchan.dev/tags/macos/</link>
       <pubDate>Fri, 04 Oct 2024 23:56:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
@@ -25,18 +18,18 @@
       <description>MacOS</description>
     </item>
     <item>
-      <title>App</title>
-      <link>https://labs.inchan.dev/tags/app/</link>
+      <title>Apps</title>
+      <link>https://labs.inchan.dev/tags/apps/</link>
       <pubDate>Sun, 17 Mar 2024 16:02:39 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/app/</guid>
-      <description>App</description>
+      <guid>https://labs.inchan.dev/tags/apps/</guid>
+      <description>Apps</description>
     </item>
     <item>
-      <title>Miscellaneous</title>
-      <link>https://labs.inchan.dev/tags/miscellaneous/</link>
+      <title>Misc</title>
+      <link>https://labs.inchan.dev/tags/misc/</link>
       <pubDate>Sat, 09 Mar 2024 07:24:37 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/miscellaneous/</guid>
-      <description>Miscellaneous</description>
+      <guid>https://labs.inchan.dev/tags/misc/</guid>
+      <description>Misc</description>
     </item>
     <item>
       <title>AWS</title>
@@ -44,6 +37,13 @@
       <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
       <guid>https://labs.inchan.dev/tags/aws/</guid>
       <description>AWS</description>
+    </item>
+    <item>
+      <title>Back-End</title>
+      <link>https://labs.inchan.dev/tags/back-end/</link>
+      <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>https://labs.inchan.dev/tags/back-end/</guid>
+      <description>Back-End</description>
     </item>
     <item>
       <title>JavaScript</title>
@@ -86,6 +86,13 @@
       <pubDate>Fri, 26 Jan 2024 11:49:52 +0900</pubDate><author>song@inchan.dev (inchan)</author>
       <guid>https://labs.inchan.dev/tags/project_review/</guid>
       <description>Project_review</description>
+    </item>
+    <item>
+      <title>Debugging</title>
+      <link>https://labs.inchan.dev/tags/debugging/</link>
+      <pubDate>Wed, 24 Jan 2024 10:19:14 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>https://labs.inchan.dev/tags/debugging/</guid>
+      <description>Debugging</description>
     </item>
     <item>
       <title>Jest</title>

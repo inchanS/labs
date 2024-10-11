@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <title>AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용 - labs.inchan</title><meta name="author" content="inchan">
-<meta name="description" content="AWS EC2 서버의 퍼블릭 주소에 인증서를 받고 HTTPS 보안 설정을 하는 방법"><meta name="keywords" content='AWS'>
+<meta name="description" content="AWS EC2 서버의 퍼블릭 주소에 인증서를 받고 HTTPS 보안 설정을 하는 방법"><meta name="keywords" content='AWS, Back-End'>
   <meta itemprop="name" content="AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용">
   <meta itemprop="description" content="AWS EC2 서버의 퍼블릭 주소에 인증서를 받고 HTTPS 보안 설정을 하는 방법">
   <meta itemprop="datePublished" content="2024-01-12T22:17:59+09:00">
   <meta itemprop="dateModified" content="2024-03-14T22:45:29+09:00">
   <meta itemprop="wordCount" content="551">
-  <meta itemprop="keywords" content="AWS"><meta property="og:url" content="https://labs.inchan.dev/posts/202401122216/">
+  <meta itemprop="keywords" content="AWS,Back-End"><meta property="og:url" content="https://labs.inchan.dev/posts/202401122216/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용">
   <meta property="og:description" content="AWS EC2 서버의 퍼블릭 주소에 인증서를 받고 HTTPS 보안 설정을 하는 방법">
@@ -22,6 +22,7 @@
     <meta property="article:published_time" content="2024-01-12T22:17:59+09:00">
     <meta property="article:modified_time" content="2024-03-14T22:45:29+09:00">
     <meta property="article:tag" content="AWS">
+    <meta property="article:tag" content="Back-End">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용">
@@ -41,7 +42,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/labs.inchan.dev\/posts\/202401122216\/"
-    },"genre": "posts","keywords": "AWS","wordcount":  551 ,
+    },"genre": "posts","keywords": "AWS, Back-End","wordcount":  551 ,
     "url": "https:\/\/labs.inchan.dev\/posts\/202401122216\/","datePublished": "2024-01-12T22:17:59+09:00","dateModified": "2024-03-14T22:45:29+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
@@ -164,7 +165,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/back-end/" class="post-category" title="Category - Back-End"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Back-End</a></span></div><div class="post-meta-line"><span title="published on 2024-01-12 22:17:59"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-12">2024-01-12</time></span>&nbsp;<span title="Updated on 2024-03-14 22:45:29"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-14">2024-03-14</time></span>&nbsp;<span title="551 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 600 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>3 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2024-01-12 22:17:59"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-12">2024-01-12</time></span>&nbsp;<span title="Updated on 2024-03-14 22:45:29"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-14">2024-03-14</time></span>&nbsp;<span title="551 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 600 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>3 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -354,7 +355,7 @@
           <a href="/posts/202403051214/" title="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법">AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</a></li><li>
           <a href="/posts/202306191659/" title="AWS EC2에서 Product 서버와 개발용 서버 같이 사용하기">AWS EC2에서 Product 서버와 개발용 서버 같이 사용하기</a></li><li>
           <a href="/posts/202306191507/" title="AWS RDS 데이터 - 다른 계정으로 이전하기">AWS RDS 데이터 - 다른 계정으로 이전하기</a></li><li>
-          <a href="/posts/202303170023/" title="Error Log - AWS EC2의 SSH 접속이 안될 때">Error Log - AWS EC2의 SSH 접속이 안될 때</a></li></ul><div class="post-footer" id="post-footer">
+          <a href="/posts/202212280458/" title="AWS 퍼블릭 IP와 탄력적 IP">AWS 퍼블릭 IP와 탄력적 IP</a></li></ul><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
@@ -369,7 +370,7 @@
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/aws/" class="post-tag" title="Tags - AWS">AWS</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/aws/" class="post-tag" title="Tags - AWS">AWS</a><a href="/tags/back-end/" class="post-tag" title="Tags - Back-End">Back-End</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
     </section>

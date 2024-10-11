@@ -10,7 +10,7 @@
 작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.
 공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그
 
-AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. 2024년 2월 1일부터 서비스 연결 여부에 관계없이 모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다."><meta name="keywords" content='AWS'>
+AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. 2024년 2월 1일부터 서비스 연결 여부에 관계없이 모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다."><meta name="keywords" content='AWS, Back-End'>
   <meta itemprop="name" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">
   <meta itemprop="description" content=" 작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.
 공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그
@@ -18,7 +18,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
   <meta itemprop="datePublished" content="2024-03-05T13:35:51+09:00">
   <meta itemprop="dateModified" content="2024-03-05T13:35:51+09:00">
   <meta itemprop="wordCount" content="741">
-  <meta itemprop="keywords" content="AWS"><meta property="og:url" content="https://labs.inchan.dev/posts/202403051335/">
+  <meta itemprop="keywords" content="AWS,Back-End"><meta property="og:url" content="https://labs.inchan.dev/posts/202403051335/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">
   <meta property="og:description" content=" 작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.
@@ -30,6 +30,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
     <meta property="article:published_time" content="2024-03-05T13:35:51+09:00">
     <meta property="article:modified_time" content="2024-03-05T13:35:51+09:00">
     <meta property="article:tag" content="AWS">
+    <meta property="article:tag" content="Back-End">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">
@@ -51,7 +52,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/labs.inchan.dev\/posts\/202403051335\/"
-    },"genre": "posts","keywords": "AWS","wordcount":  741 ,
+    },"genre": "posts","keywords": "AWS, Back-End","wordcount":  741 ,
     "url": "https:\/\/labs.inchan.dev\/posts\/202403051335\/","datePublished": "2024-03-05T13:35:51+09:00","dateModified": "2024-03-05T13:35:51+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
@@ -174,7 +175,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/back-end/" class="post-category" title="Category - Back-End"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Back-End</a></span></div><div class="post-meta-line"><span title="published on 2024-03-05 13:35:51"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-05">2024-03-05</time></span>&nbsp;<span title="741 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2024-03-05 13:35:51"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-05">2024-03-05</time></span>&nbsp;<span title="741 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -320,7 +321,7 @@ UI나 일부 메뉴 이름이 다르더라도 이해하는데 큰 지장은 없�
           <a href="/posts/202401122216/" title="AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용">AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용</a></li><li>
           <a href="/posts/202306191659/" title="AWS EC2에서 Product 서버와 개발용 서버 같이 사용하기">AWS EC2에서 Product 서버와 개발용 서버 같이 사용하기</a></li><li>
           <a href="/posts/202306191507/" title="AWS RDS 데이터 - 다른 계정으로 이전하기">AWS RDS 데이터 - 다른 계정으로 이전하기</a></li><li>
-          <a href="/posts/202303170023/" title="Error Log - AWS EC2의 SSH 접속이 안될 때">Error Log - AWS EC2의 SSH 접속이 안될 때</a></li></ul><div class="post-footer" id="post-footer">
+          <a href="/posts/202212280458/" title="AWS 퍼블릭 IP와 탄력적 IP">AWS 퍼블릭 IP와 탄력적 IP</a></li></ul><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
@@ -335,7 +336,7 @@ UI나 일부 메뉴 이름이 다르더라도 이해하는데 큰 지장은 없�
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/aws/" class="post-tag" title="Tags - AWS">AWS</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/aws/" class="post-tag" title="Tags - AWS">AWS</a><a href="/tags/back-end/" class="post-tag" title="Tags - Back-End">Back-End</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
     </section>

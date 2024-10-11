@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <title>Error Log - Jest.spyOn()에서 재사용함수에 대한 모의 불가 - labs.inchan</title><meta name="author" content="inchan">
-<meta name="description" content="jest.spyOn() 사용중 모듈분리부터 OOP까지의 리팩토링 과정"><meta name="keywords" content='project_review, Jest'>
+<meta name="description" content="jest.spyOn() 사용중 모듈분리부터 OOP까지의 리팩토링 과정"><meta name="keywords" content='project_review, Jest, Debugging'>
   <meta itemprop="name" content="error log - jest.spyOn()에서 재사용함수에 대한 모의 불가">
   <meta itemprop="description" content="jest.spyOn() 사용중 모듈분리부터 OOP까지의 리팩토링 과정">
   <meta itemprop="datePublished" content="2023-06-29T12:58:27+09:00">
   <meta itemprop="dateModified" content="2023-06-29T12:58:27+09:00">
   <meta itemprop="wordCount" content="1584">
-  <meta itemprop="keywords" content="Project_review,Jest"><meta property="og:url" content="https://labs.inchan.dev/posts/202306291258/">
+  <meta itemprop="keywords" content="Project_review,Jest,Debugging"><meta property="og:url" content="https://labs.inchan.dev/posts/202306291258/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="error log - jest.spyOn()에서 재사용함수에 대한 모의 불가">
   <meta property="og:description" content="jest.spyOn() 사용중 모듈분리부터 OOP까지의 리팩토링 과정">
@@ -23,6 +23,7 @@
     <meta property="article:modified_time" content="2023-06-29T12:58:27+09:00">
     <meta property="article:tag" content="Project_review">
     <meta property="article:tag" content="Jest">
+    <meta property="article:tag" content="Debugging">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="error log - jest.spyOn()에서 재사용함수에 대한 모의 불가">
@@ -42,7 +43,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/labs.inchan.dev\/posts\/202306291258\/"
-    },"genre": "posts","keywords": "project_review, Jest","wordcount":  1584 ,
+    },"genre": "posts","keywords": "project_review, Jest, Debugging","wordcount":  1584 ,
     "url": "https:\/\/labs.inchan.dev\/posts\/202306291258\/","datePublished": "2023-06-29T12:58:27+09:00","dateModified": "2023-06-29T12:58:27+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
@@ -165,7 +166,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Error Log - Jest.spyOn()에서 재사용함수에 대한 모의 불가</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/debugging/" class="post-category" title="Category - Debugging"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Debugging</a></span></div><div class="post-meta-line"><span title="published on 2023-06-29 12:58:27"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-29">2023-06-29</time></span>&nbsp;<span title="1584 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1600 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>8 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Error Log - Jest.spyOn()에서 재사용함수에 대한 모의 불가"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2023-06-29 12:58:27"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-29">2023-06-29</time></span>&nbsp;<span title="1584 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1600 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>8 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Error Log - Jest.spyOn()에서 재사용함수에 대한 모의 불가"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -923,11 +924,11 @@
 </div><hr class="awesome-hr" />
     <h2 id="see-also">Related Content</h2>
     <ul><li>
+          <a href="/posts/202304010529/" title="Error Log - TypeORM Migration 할 때 Cross ENV 설정 문제">Error Log - TypeORM Migration 할 때 Cross ENV 설정 문제</a></li><li>
+          <a href="/posts/202303162353/" title="Error Log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어">Error Log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</a></li><li>
           <a href="/posts/202302160417/" title="Node.js 백엔드TypeScript &#43; TypeORM으로 무한 대댓글 가공하기">Node.js 백엔드TypeScript &#43; TypeORM으로 무한 대댓글 가공하기</a></li><li>
-          <a href="/posts/202306191659/" title="AWS EC2에서 Product 서버와 개발용 서버 같이 사용하기">AWS EC2에서 Product 서버와 개발용 서버 같이 사용하기</a></li><li>
-          <a href="/posts/202306191507/" title="AWS RDS 데이터 - 다른 계정으로 이전하기">AWS RDS 데이터 - 다른 계정으로 이전하기</a></li><li>
-          <a href="/posts/202306171531/" title="Git Commit Message 컨벤션 설정">Git Commit Message 컨벤션 설정</a></li><li>
-          <a href="/posts/202306070208/" title="MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.">MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</a></li></ul><div class="post-footer" id="post-footer">
+          <a href="/posts/202401241017/" title="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법">Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</a></li><li>
+          <a href="/posts/202306191659/" title="AWS EC2에서 Product 서버와 개발용 서버 같이 사용하기">AWS EC2에서 Product 서버와 개발용 서버 같이 사용하기</a></li></ul><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
@@ -942,7 +943,7 @@
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/project_review/" class="post-tag" title="Tags - Project_review">Project_review</a><a href="/tags/jest/" class="post-tag" title="Tags - Jest">Jest</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/project_review/" class="post-tag" title="Tags - Project_review">Project_review</a><a href="/tags/jest/" class="post-tag" title="Tags - Jest">Jest</a><a href="/tags/debugging/" class="post-tag" title="Tags - Debugging">Debugging</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
     </section>
