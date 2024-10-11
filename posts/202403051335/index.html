@@ -17,7 +17,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
 AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. 2024년 2월 1일부터 서비스 연결 여부에 관계없이 모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다.">
   <meta itemprop="datePublished" content="2024-03-05T13:35:51+09:00">
   <meta itemprop="dateModified" content="2024-03-05T13:35:51+09:00">
-  <meta itemprop="wordCount" content="744">
+  <meta itemprop="wordCount" content="742">
   <meta itemprop="keywords" content="AWS,Back-End"><meta property="og:url" content="https://labs.inchan.dev/posts/202403051335/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">
@@ -52,7 +52,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/labs.inchan.dev\/posts\/202403051335\/"
-    },"genre": "posts","keywords": "AWS, Back-End","wordcount":  744 ,
+    },"genre": "posts","keywords": "AWS, Back-End","wordcount":  742 ,
     "url": "https:\/\/labs.inchan.dev\/posts\/202403051335\/","datePublished": "2024-03-05T13:35:51+09:00","dateModified": "2024-03-05T13:35:51+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
@@ -175,7 +175,7 @@ AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩�
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2024-03-05 13:35:51"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-05">2024-03-05</time></span>&nbsp;<span title="744 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2024-03-05 13:35:51"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-05">2024-03-05</time></span>&nbsp;<span title="742 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -301,7 +301,7 @@ UI나 일부 메뉴 이름이 다르더라도 이해하는데 큰 지장은 없�
 <hr>
 <ol>
 <li id="fn:1">
-<p>대략 보름 정도 사용했을 때  5.63 USD 정도 청구되었다. 즉 한달이면 약 10 USD 정도가 청구된다는 뜻이었다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>대략 보름 정도 사용했을 때  5.63USD 정도 청구되었다. 즉 한달이면 약 10USD 정도가 청구된다는 뜻이었다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
 <p>EC2용 <a href="https://aws.amazon.com/free/"target="_blank" rel="external nofollow noopener noreferrer">AWS 프리 티어</a>에는 2024년 2월 1일부터 처음 12개월 동안 매월 750시간의 퍼블릭 IPv4 주소 사용이 포함됩니다. - <a href="https://aws.amazon.com/ko/blogs/korea/new-aws-public-ipv4-address-charge-public-ip-insights/?_encoding=UTF8&amp;tag=clien0a-20&amp;linkCode=ur2&amp;linkId=4ef926e41eaa57b3dcfc48b2660f5024&amp;camp=1789&amp;creative=9325"target="_blank" rel="external nofollow noopener noreferrer">공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그</a> =&gt; 즉 하나의 EC2에서 하나의 IP 주소만 사용한다면 무료이기에 신경쓸 필요가 없다.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
