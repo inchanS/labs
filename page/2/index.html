@@ -12,8 +12,8 @@
 <meta name="description" content="개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다."><meta name="keywords" content='백엔드, 프론트엔드, 웹개발, javascript, 자바스크립트, typescript, 타입스크립트, mysql, rdbms'>
   <meta itemprop="name" content="labs.inchan">
   <meta itemprop="description" content="개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.">
-  <meta itemprop="datePublished" content="2024-10-10T11:08:34+09:00">
-  <meta itemprop="dateModified" content="2024-10-12T05:42:19+09:00"><meta property="og:url" content="https://labs.inchan.dev/">
+  <meta itemprop="datePublished" content="2024-10-12T20:44:31+09:00">
+  <meta itemprop="dateModified" content="2024-10-12T20:51:00+09:00"><meta property="og:url" content="https://labs.inchan.dev/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="labs.inchan">
   <meta property="og:description" content="개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.">
@@ -153,6 +153,14 @@
     </a><a href="mailto:song@inchan.dev" title="Email"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-regular fa-envelope fa-fw" aria-hidden="true"></i>
     </a><a href="/index.xml" title="RSS"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-solid fa-rss fa-fw" aria-hidden="true"></i>
     </a></div></div>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202403051335/">AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</a>
+  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2024-03-05 13:35:51'>published on <time datetime="2024-03-05">2024-03-05</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="content"><p> </p>
+<p>작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.</p>
+<p><a href="https://aws.amazon.com/ko/blogs/korea/new-aws-public-ipv4-address-charge-public-ip-insights/?_encoding=UTF8&amp;tag=clien0a-20&amp;linkCode=ur2&amp;linkId=4ef926e41eaa57b3dcfc48b2660f5024&amp;camp=1789&amp;creative=9325"target="_blank" rel="external nofollow noopener noreferrer">공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그</a></p>
+<blockquote>
+<p>AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. <strong>2024년 2월 1일부터</strong> 서비스 연결 여부에 관계없이 <strong>모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과</strong>됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다.</p></div><div class="post-footer">
+    <a href="/posts/202403051335/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/aws/' class="post-tag">AWS</a><a href='/tags/back-end/' class="post-tag">Back-End</a></div></div>
+</article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202403051214/">AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2024-03-05 12:14:30'>published on <time datetime="2024-03-05">2024-03-05</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="content"><p>관련 글</p>
 <ul>
@@ -291,18 +299,6 @@
   </a>
 </h2><p>프로젝트에서 발견된 주요 문제는 TypeORM을 사용하는 Node.js 환경에서 <strong>트랜잭션 관리와 롤백이 제대로 이루어지지 않는 것</strong>이었다. 이는 게시글을 등록하는 로직에서 발견되었으며, 예기치 않은 오류가 발생했을 경우 <strong>데이터베이스에 불필요한 데이터가 잔존하는 결과를 초래</strong>했다.</p></div><div class="post-footer">
     <a href="/posts/202401241017/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/typeorm/' class="post-tag">TypeORM</a><a href='/tags/mysql/' class="post-tag">MySQL</a><a href='/tags/project_review/' class="post-tag">Project_review</a><a href='/tags/debugging/' class="post-tag">Debugging</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202401122324/">Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면</a>
-  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2024-01-12 23:24:58'>published on <time datetime="2024-01-12">2024-01-12</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/misc/" class="post-category" title="Category - Misc"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Misc</a></span></div><div class="content"><p> </p>
-<h2 id="문제상황" class="heading-element"><span>문제상황</span>
-  <a href="#%eb%ac%b8%ec%a0%9c%ec%83%81%ed%99%a9" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><p>구글이 도메인 사업을 매각한 후, 도메인 이전을 차일피일 미루다 최근에서야 Cloudflare로 도메인을 이전하였다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><br>
-모든 DNS 역시 정상적으로 이전하였고, 메일서비스를 비롯한 다른 서비스들도 정상작동함을 확인하였다.<br>
-그런데 갑자기 해당 도메인의 주소가 정상적으로 작동하지 않는 문제가 생겼다.<br>
- </p></div><div class="post-footer">
-    <a href="/posts/202401122324/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/misc/' class="post-tag">Misc</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item">
           <span class="page-link">

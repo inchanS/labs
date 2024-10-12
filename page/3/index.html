@@ -12,8 +12,8 @@
 <meta name="description" content="개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다."><meta name="keywords" content='백엔드, 프론트엔드, 웹개발, javascript, 자바스크립트, typescript, 타입스크립트, mysql, rdbms'>
   <meta itemprop="name" content="labs.inchan">
   <meta itemprop="description" content="개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.">
-  <meta itemprop="datePublished" content="2024-10-10T11:08:34+09:00">
-  <meta itemprop="dateModified" content="2024-10-12T05:42:19+09:00"><meta property="og:url" content="https://labs.inchan.dev/">
+  <meta itemprop="datePublished" content="2024-10-12T20:44:31+09:00">
+  <meta itemprop="dateModified" content="2024-10-12T20:51:00+09:00"><meta property="og:url" content="https://labs.inchan.dev/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="labs.inchan">
   <meta property="og:description" content="개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.">
@@ -153,6 +153,18 @@
     </a><a href="mailto:song@inchan.dev" title="Email"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-regular fa-envelope fa-fw" aria-hidden="true"></i>
     </a><a href="/index.xml" title="RSS"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-solid fa-rss fa-fw" aria-hidden="true"></i>
     </a></div></div>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202401122324/">Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면</a>
+  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2024-01-12 23:24:58'>published on <time datetime="2024-01-12">2024-01-12</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/misc/" class="post-category" title="Category - Misc"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Misc</a></span></div><div class="content"><p> </p>
+<h2 id="문제상황" class="heading-element"><span>문제상황</span>
+  <a href="#%eb%ac%b8%ec%a0%9c%ec%83%81%ed%99%a9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>구글이 도메인 사업을 매각한 후, 도메인 이전을 차일피일 미루다 최근에서야 Cloudflare로 도메인을 이전하였다.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><br>
+모든 DNS 역시 정상적으로 이전하였고, 메일서비스를 비롯한 다른 서비스들도 정상작동함을 확인하였다.<br>
+그런데 갑자기 해당 도메인의 주소가 정상적으로 작동하지 않는 문제가 생겼다.<br>
+ </p></div><div class="post-footer">
+    <a href="/posts/202401122324/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/misc/' class="post-tag">Misc</a></div></div>
+</article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202401122216/">AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2024-01-12 22:17:59'>published on <time datetime="2024-01-12">2024-01-12</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="content"><p>관련 글</p>
 <ul>
@@ -232,17 +244,6 @@ OpenAI로 인한 영향, 방법 등에 관한 콘텐츠가 마구잡이로 쏟�
   </a>
 </h2><p>우선 간략히 설명하자면 순서는 다음과 같다.</p></div><div class="post-footer">
     <a href="/posts/202306191507/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/aws/' class="post-tag">AWS</a><a href='/tags/project_review/' class="post-tag">Project_review</a><a href='/tags/back-end/' class="post-tag">Back-End</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/202306171531/">Git Commit Message 컨벤션 설정</a>
-  </h2><div class="post-meta"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span>&nbsp;<span class="post-publish" title='2023-06-17 15:31:26'>published on <time datetime="2023-06-17">2023-06-17</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="content"><p> <br>
- </p>
-<h2 id="문제-발견" class="heading-element"><span>문제 발견</span>
-  <a href="#%eb%ac%b8%ec%a0%9c-%eb%b0%9c%ea%b2%ac" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><p>git commit message 작성시 보통 첫줄에 위치한 제목줄에 들어가는 가이드로서,<br>
-이전에 내가 사용하던 규칙은 다음과 같았다.</p></div><div class="post-footer">
-    <a href="/posts/202306171531/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/git/' class="post-tag">Git</a><a href='/tags/project_review/' class="post-tag">Project_review</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item">
           <span class="page-link">

@@ -8,8 +8,16 @@
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
-    <lastBuildDate>Sat, 12 Oct 2024 02:36:54 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Oct 2024 20:51:00 +0900</lastBuildDate>
     <atom:link href="https://labs.inchan.dev/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PopClip 번역 확장 문제 해결 - DeepL &amp; Papago 비공식 버전 배포</title>
+      <link>https://labs.inchan.dev/posts/202410122044/</link>
+      <pubDate>Sat, 12 Oct 2024 20:44:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>https://labs.inchan.dev/posts/202410122044/</guid>
+      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
+      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://labs.inchan.dev/posts/202410101108/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;PopClip 앱이 맥 앱스토어에서 내려갔다.&lt;/a&gt;&lt;br&gt;&#xA;이 사실을 늦게 알게된 바람에 약 1년간의 공백을 건너띄고 업데이트를 했더니 몇몇 Extension에서 문제들이 발생했다.&lt;br&gt;&#xA;특히 가장 빈번하게 사용하던 번역 기능 확장들이 제대로 동작하지 않다보니 급한대로 만들었다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;popclip-extension---deepl-translation&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;PopClip Extension - deepL translation&lt;/span&gt;&#xA;  &lt;a href=&#34;#popclip-extension---deepl-translation&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.popclip.app/extensions/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;PopClip Extensions Directory&lt;/a&gt;의 리스트에 있는 &lt;a href=&#34;https://www.deepl.com/en/translator&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;DeepL Translate&lt;/a&gt; Extension이 제대로 작동하지 않는다.  (2024-10-10 기준)&lt;/p&gt;</description>
+    </item>
     <item>
       <title>PopClip 앱이 맥 앱스토어에서 내려갔다.</title>
       <link>https://labs.inchan.dev/posts/202410101108/</link>
