@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Project_fastfive - Tag - labs.inchan</title>
-    <link>http://localhost:1313/tags/project_fastfive/</link>
+    <link>https://labs.inchan.dev/tags/project_fastfive/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.135.0 &amp; FixIt v0.3.13</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Tue, 27 Dec 2022 04:48:11 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/project_fastfive/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://labs.inchan.dev/tags/project_fastfive/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>패스트파이브 기업과제 회고록</title>
-      <link>http://localhost:1313/posts/202212270448/</link>
+      <link>https://labs.inchan.dev/posts/202212270448/</link>
       <pubDate>Tue, 27 Dec 2022 04:48:11 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202212270448/</guid>
-      <category domain="http://localhost:1313/categories/projects/">Projects</category>
+      <guid>https://labs.inchan.dev/posts/202212270448/</guid>
+      <category domain="https://labs.inchan.dev/categories/projects/">Projects</category>
       <description>FastFive 프리온보딩 기업과제 참여 및 진행간 회고 기록</description>
     </item>
   </channel>

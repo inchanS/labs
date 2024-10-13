@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git - Tag - labs.inchan</title>
-    <link>http://localhost:1313/tags/git/</link>
+    <link>https://labs.inchan.dev/tags/git/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.135.0 &amp; FixIt v0.3.13</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Wed, 21 Jun 2023 15:10:10 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://labs.inchan.dev/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git commit message 컨벤션 설정</title>
-      <link>http://localhost:1313/posts/202306171531/</link>
+      <link>https://labs.inchan.dev/posts/202306171531/</link>
       <pubDate>Sat, 17 Jun 2023 15:31:26 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202306171531/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202306171531/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>git commit message 작성시 일관된 규칙의 제목줄을 통해 가시성을 높일 수 있는 방법 고찰 중 컨벤션 설정</description>
     </item>
   </channel>

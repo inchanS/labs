@@ -2,68 +2,68 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TypeORM - Tag - labs.inchan</title>
-    <link>http://localhost:1313/tags/typeorm/</link>
+    <link>https://labs.inchan.dev/tags/typeorm/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.135.0 &amp; FixIt v0.3.13</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Fri, 08 Mar 2024 20:39:02 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/typeorm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://labs.inchan.dev/tags/typeorm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란</title>
-      <link>http://localhost:1313/posts/202403010802/</link>
+      <link>https://labs.inchan.dev/posts/202403010802/</link>
       <pubDate>Fri, 01 Mar 2024 08:02:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202403010802/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202403010802/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>mySQL에서 timestamp 타입 필드를 사용하고, TypeORM의 dateStrings와 timezone 옵션을 적절히 활용하여 시간대를 제어하는 방법을 다룬다. UTC 시간대를 기준으로 데이터를 처리하면서 서버와 클라이언트에서 각각 다른 시간대를 적용할 수 있는 방안에 대해 고민한 결과를 실험과 코드 예시를 통해 공유</description>
     </item>
     <item>
       <title>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</title>
-      <link>http://localhost:1313/posts/202401241017/</link>
+      <link>https://labs.inchan.dev/posts/202401241017/</link>
       <pubDate>Wed, 24 Jan 2024 10:19:14 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202401241017/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202401241017/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술</description>
     </item>
     <item>
       <title>MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</title>
-      <link>http://localhost:1313/posts/202306070208/</link>
+      <link>https://labs.inchan.dev/posts/202306070208/</link>
       <pubDate>Wed, 07 Jun 2023 22:47:43 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202306070208/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202306070208/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>MySQL에서 회원탈퇴시 탈퇴한 회원 정보를 DB에서 완전히 삭제하지 않고 softDelete 처리했을 때, 해당 이메일을 중복확인에서 통과시키고 재사용할 수 있게한 고민들</description>
     </item>
     <item>
       <title>error log - TypeORM migration 할 때 cross ENV 설정 문제</title>
-      <link>http://localhost:1313/posts/202304010529/</link>
+      <link>https://labs.inchan.dev/posts/202304010529/</link>
       <pubDate>Sat, 01 Apr 2023 05:30:56 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202304010529/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202304010529/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>typeORM migration 설정간 dotenv.config 설정 문제를 기술</description>
     </item>
     <item>
       <title>typeORM transaction에서 repository 사용하기</title>
-      <link>http://localhost:1313/posts/202302250414/</link>
+      <link>https://labs.inchan.dev/posts/202302250414/</link>
       <pubDate>Sat, 25 Feb 2023 04:14:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202302250414/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202302250414/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>TypeORM을 사용하여 트랜잭션을 구성하는 방법에 대한 고찰. dataSource.createQueryRunner() 방식으로 트랜잭션을 설정하는 과정에서, 리포지토리 메소드 사용 시 중복된 트랜잭션 실행으로 인해 발생하는 rollback 문제를 설명. 또한, manager.withRepository 메소드를 활용해 트랜잭션 내에서 커스텀 리포지토리를 사용하는 해결 방법 제시</description>
     </item>
     <item>
       <title>Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기</title>
-      <link>http://localhost:1313/posts/202302160417/</link>
+      <link>https://labs.inchan.dev/posts/202302160417/</link>
       <pubDate>Thu, 16 Feb 2023 04:17:07 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202302160417/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202302160417/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>TypeORM을 사용하여 댓글과 대댓글의 무한 트리 구조를 구현하는 과정에서 발생한 문제와 그 해결 방법을 다룬다. 특히, Date 타입 필드에서 불필요한 시간대 정보(T, Z 등)와 밀리초 부분을 제거하고 원하는 형식으로 출력하기 위한 방법을 상세히 설명</description>
     </item>
     <item>
       <title>typescript - typeorm 연결 오류 해결</title>
-      <link>http://localhost:1313/posts/202212130459/</link>
+      <link>https://labs.inchan.dev/posts/202212130459/</link>
       <pubDate>Tue, 13 Dec 2022 04:59:30 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202212130459/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202212130459/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;h3 id=&#34;typescript에서의-typeorm-연결-오류&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;typescript에서의 typeorm 연결 오류&lt;/span&gt;&#xA;  &lt;a href=&#34;#typescript%ec%97%90%ec%84%9c%ec%9d%98-typeorm-%ec%97%b0%ea%b2%b0-%ec%98%a4%eb%a5%98&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;대략 14시부터 22시까지 무려 8시간을 끼니도 거른채 뚫어져라 모니터만 쳐다보며 찾았다.&lt;/p&gt;</description>
     </item>
   </channel>

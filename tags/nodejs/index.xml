@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NodeJS - Tag - labs.inchan</title>
-    <link>http://localhost:1313/tags/nodejs/</link>
+    <link>https://labs.inchan.dev/tags/nodejs/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.135.0 &amp; FixIt v0.3.13</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Sun, 03 Mar 2024 07:57:11 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://labs.inchan.dev/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란</title>
-      <link>http://localhost:1313/posts/202403010802/</link>
+      <link>https://labs.inchan.dev/posts/202403010802/</link>
       <pubDate>Fri, 01 Mar 2024 08:02:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202403010802/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202403010802/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>mySQL에서 timestamp 타입 필드를 사용하고, TypeORM의 dateStrings와 timezone 옵션을 적절히 활용하여 시간대를 제어하는 방법을 다룬다. UTC 시간대를 기준으로 데이터를 처리하면서 서버와 클라이언트에서 각각 다른 시간대를 적용할 수 있는 방안에 대해 고민한 결과를 실험과 코드 예시를 통해 공유</description>
     </item>
     <item>
       <title>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴</title>
-      <link>http://localhost:1313/posts/202401261149/</link>
+      <link>https://labs.inchan.dev/posts/202401261149/</link>
       <pubDate>Fri, 26 Jan 2024 11:49:52 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202401261149/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202401261149/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>OOP로 작성된 NodeJS 백엔드 코드에서 리포지토리의 단일 인스턴스 생성을 위한 리팩토링 과정 설명</description>
     </item>
   </channel>

@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Terminal - Tag - labs.inchan</title>
-    <link>http://localhost:1313/tags/terminal/</link>
+    <link>https://labs.inchan.dev/tags/terminal/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.135.0 &amp; FixIt v0.3.13</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Fri, 08 Mar 2024 20:28:08 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://labs.inchan.dev/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기</title>
-      <link>http://localhost:1313/posts/202401311413/</link>
+      <link>https://labs.inchan.dev/posts/202401311413/</link>
       <pubDate>Thu, 01 Feb 2024 23:11:21 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202401311413/</guid>
-      <category domain="http://localhost:1313/categories/env/">Env</category>
+      <guid>https://labs.inchan.dev/posts/202401311413/</guid>
+      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
       <description>프로젝트별로 node 버전이 다를 경우, nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 자동으로 적용시킬 수 있는 방법 소개</description>
     </item>
     <item>
       <title>mac 터미널에서 폴더트리 구조 확인</title>
-      <link>http://localhost:1313/posts/202301230429/</link>
+      <link>https://labs.inchan.dev/posts/202301230429/</link>
       <pubDate>Mon, 23 Jan 2023 04:29:44 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202301230429/</guid>
-      <category domain="http://localhost:1313/categories/env/">Env</category>
+      <guid>https://labs.inchan.dev/posts/202301230429/</guid>
+      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
       <description>터미널에서 폴더트리 구조를 확인할 수 있는 유틸리티 &#39;tree&#39;의 설치부터 사용까지 설명</description>
     </item>
     <item>
       <title>터미널에서 &#39;바로가기&#39; 단축키 등록하기</title>
-      <link>http://localhost:1313/posts/202210130407/</link>
+      <link>https://labs.inchan.dev/posts/202210130407/</link>
       <pubDate>Thu, 13 Oct 2022 04:07:19 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202210130407/</guid>
-      <category domain="http://localhost:1313/categories/env/">Env</category>
+      <guid>https://labs.inchan.dev/posts/202210130407/</guid>
+      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
       <description>&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;터미널을 처음 실행하면 꼭 사용자 폴더에서 시작한다.&lt;br&gt;&#xA;&lt;code&gt;cd ...&lt;/code&gt;로 찾아가는게 &lt;strong&gt;너무 귀찮다.&lt;/strong&gt;&lt;br&gt;&#xA;그렇다고 finder에서 폴더를 drag &amp;amp; drop해서 직접경로를 떨어뜨리는 방법도 있지만,&lt;br&gt;&#xA;굳이 키보드에서 또 마우스나 트랙패드로 &lt;strong&gt;손을 움직이고 싶지 않다.&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>

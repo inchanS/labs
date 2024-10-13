@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DBmate - Tag - labs.inchan</title>
-    <link>http://localhost:1313/tags/dbmate/</link>
+    <link>https://labs.inchan.dev/tags/dbmate/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.135.0 &amp; FixIt v0.3.13</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Tue, 18 Oct 2022 05:02:17 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/dbmate/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://labs.inchan.dev/tags/dbmate/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DBmate 사용법</title>
-      <link>http://localhost:1313/posts/202210180502/</link>
+      <link>https://labs.inchan.dev/posts/202210180502/</link>
       <pubDate>Tue, 18 Oct 2022 05:02:17 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202210180502/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202210180502/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>&lt;p&gt; &lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;mySQL을 사용하여 Database를 쌓아 나갈때,&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/amacneil/dbmate&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;DBmate&lt;/a&gt; 를 사용하면&lt;br&gt;&#xA;초기 세팅값을 마치 git을 저장하듯 이력을 남겨 언제든 migration 할 수 있다.&lt;/p&gt;</description>
     </item>
   </channel>

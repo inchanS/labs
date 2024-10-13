@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MySQL - Tag - labs.inchan</title>
-    <link>http://localhost:1313/tags/mysql/</link>
+    <link>https://labs.inchan.dev/tags/mysql/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.135.0 &amp; FixIt v0.3.13</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Fri, 08 Mar 2024 20:39:02 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://labs.inchan.dev/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란</title>
-      <link>http://localhost:1313/posts/202403010802/</link>
+      <link>https://labs.inchan.dev/posts/202403010802/</link>
       <pubDate>Fri, 01 Mar 2024 08:02:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202403010802/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202403010802/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>mySQL에서 timestamp 타입 필드를 사용하고, TypeORM의 dateStrings와 timezone 옵션을 적절히 활용하여 시간대를 제어하는 방법을 다룬다. UTC 시간대를 기준으로 데이터를 처리하면서 서버와 클라이언트에서 각각 다른 시간대를 적용할 수 있는 방안에 대해 고민한 결과를 실험과 코드 예시를 통해 공유</description>
     </item>
     <item>
       <title>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</title>
-      <link>http://localhost:1313/posts/202401241017/</link>
+      <link>https://labs.inchan.dev/posts/202401241017/</link>
       <pubDate>Wed, 24 Jan 2024 10:19:14 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202401241017/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202401241017/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술</description>
     </item>
     <item>
       <title>MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</title>
-      <link>http://localhost:1313/posts/202306070208/</link>
+      <link>https://labs.inchan.dev/posts/202306070208/</link>
       <pubDate>Wed, 07 Jun 2023 22:47:43 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202306070208/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202306070208/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>MySQL에서 회원탈퇴시 탈퇴한 회원 정보를 DB에서 완전히 삭제하지 않고 softDelete 처리했을 때, 해당 이메일을 중복확인에서 통과시키고 재사용할 수 있게한 고민들</description>
     </item>
     <item>
       <title>typeORM transaction에서 repository 사용하기</title>
-      <link>http://localhost:1313/posts/202302250414/</link>
+      <link>https://labs.inchan.dev/posts/202302250414/</link>
       <pubDate>Sat, 25 Feb 2023 04:14:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202302250414/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202302250414/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>TypeORM을 사용하여 트랜잭션을 구성하는 방법에 대한 고찰. dataSource.createQueryRunner() 방식으로 트랜잭션을 설정하는 과정에서, 리포지토리 메소드 사용 시 중복된 트랜잭션 실행으로 인해 발생하는 rollback 문제를 설명. 또한, manager.withRepository 메소드를 활용해 트랜잭션 내에서 커스텀 리포지토리를 사용하는 해결 방법 제시</description>
     </item>
   </channel>

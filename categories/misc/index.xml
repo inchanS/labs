@@ -2,60 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Misc - Category - labs.inchan</title>
-    <link>http://localhost:1313/categories/misc/</link>
+    <link>https://labs.inchan.dev/categories/misc/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.135.0 &amp; FixIt v0.3.13</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Fri, 12 Jan 2024 23:24:58 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/misc/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://labs.inchan.dev/categories/misc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github Pages에 Cloudflare 도메인 연결 중 리다이렉션 실패가 난다면</title>
-      <link>http://localhost:1313/posts/202401122324/</link>
+      <link>https://labs.inchan.dev/posts/202401122324/</link>
       <pubDate>Fri, 12 Jan 2024 23:24:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202401122324/</guid>
-      <category domain="http://localhost:1313/categories/misc/">Misc</category>
+      <guid>https://labs.inchan.dev/posts/202401122324/</guid>
+      <category domain="https://labs.inchan.dev/categories/misc/">Misc</category>
       <description>github Pages를 이용한 블로그에 Cloudflare에서 관리중인 도메인 연결 중, 리다이렉션 문제로 해당 웹페이지가 정상적으로 나타나지 않을 때의 문제 기술</description>
     </item>
     <item>
-      <title>Obsidian 사용자가 Logseq를 같이 사용하려면, 알아야 할 사항</title>
-      <link>http://localhost:1313/posts/202307121503/</link>
-      <pubDate>Wed, 12 Jul 2023 15:03:26 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202307121503/</guid>
-      <category domain="http://localhost:1313/categories/misc/">Misc</category>
-      <description>Obsidian과 logseq를 함께 사용하기 위한 시도 중 알게 된 주의 사항들</description>
-    </item>
-    <item>
       <title>Webina 참여 회고 - 원티드 주최 &#39;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&#39;</title>
-      <link>http://localhost:1313/posts/202306211131/</link>
+      <link>https://labs.inchan.dev/posts/202306211131/</link>
       <pubDate>Wed, 21 Jun 2023 11:31:43 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202306211131/</guid>
-      <category domain="http://localhost:1313/categories/misc/">Misc</category>
+      <guid>https://labs.inchan.dev/posts/202306211131/</guid>
+      <category domain="https://labs.inchan.dev/categories/misc/">Misc</category>
       <description>2023년 6월 19일 Wanted 주최하 &#39;ChatGPT 시대에 구성원의 역량을 어떻게 육성할 것인가?&#39; 웨비나 참석 후의 정리와 생각 기록</description>
     </item>
     <item>
       <title>블로깅 플랫폼 변경: Google Blogger에서 GitHub &#43; Hugo로</title>
-      <link>http://localhost:1313/posts/202303022327/</link>
+      <link>https://labs.inchan.dev/posts/202303022327/</link>
       <pubDate>Thu, 02 Mar 2023 23:27:35 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202303022327/</guid>
-      <category domain="http://localhost:1313/categories/misc/">Misc</category>
+      <guid>https://labs.inchan.dev/posts/202303022327/</guid>
+      <category domain="https://labs.inchan.dev/categories/misc/">Misc</category>
       <description>github hugo 시스템으로 블로그 이전에 대한 장단점과 관련 정보 기술</description>
     </item>
     <item>
       <title>chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다.</title>
-      <link>http://localhost:1313/posts/202302100411/</link>
+      <link>https://labs.inchan.dev/posts/202302100411/</link>
       <pubDate>Fri, 10 Feb 2023 04:11:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202302100411/</guid>
-      <category domain="http://localhost:1313/categories/misc/">Misc</category>
+      <guid>https://labs.inchan.dev/posts/202302100411/</guid>
+      <category domain="https://labs.inchan.dev/categories/misc/">Misc</category>
       <description>ChatGPT의 답변을 분석하며, chatGPT의 검색 방식과 기존 구글링 방식의 차이 및 ChatGPT의 장점과 한계 평가. 더불어 chatGPT를 효율적으로 사용하는 방법에 대한 제안과 개선점을 함께 제시</description>
     </item>
     <item>
       <title>부트캠프 가도 실패하는 사람 특징</title>
-      <link>http://localhost:1313/posts/202301020441/</link>
+      <link>https://labs.inchan.dev/posts/202301020441/</link>
       <pubDate>Mon, 02 Jan 2023 04:41:37 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202301020441/</guid>
-      <category domain="http://localhost:1313/categories/misc/">Misc</category>
+      <guid>https://labs.inchan.dev/posts/202301020441/</guid>
+      <category domain="https://labs.inchan.dev/categories/misc/">Misc</category>
       <description>유튜브 영상 &#34;부트캠프 가셔도 실패하는 분 특징&#34; 시청후 느낀 점 정리</description>
     </item>
   </channel>

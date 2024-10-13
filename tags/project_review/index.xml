@@ -2,108 +2,108 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Project_review - Tag - labs.inchan</title>
-    <link>http://localhost:1313/tags/project_review/</link>
+    <link>https://labs.inchan.dev/tags/project_review/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.135.0 &amp; FixIt v0.3.13</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Fri, 08 Mar 2024 20:39:02 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/project_review/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://labs.inchan.dev/tags/project_review/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴</title>
-      <link>http://localhost:1313/posts/202401261149/</link>
+      <link>https://labs.inchan.dev/posts/202401261149/</link>
       <pubDate>Fri, 26 Jan 2024 11:49:52 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202401261149/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202401261149/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>OOP로 작성된 NodeJS 백엔드 코드에서 리포지토리의 단일 인스턴스 생성을 위한 리팩토링 과정 설명</description>
     </item>
     <item>
       <title>Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</title>
-      <link>http://localhost:1313/posts/202401241017/</link>
+      <link>https://labs.inchan.dev/posts/202401241017/</link>
       <pubDate>Wed, 24 Jan 2024 10:19:14 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202401241017/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202401241017/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>Node.js환경에서 트랜잭션 롤백이 제대로 되지 않아 발생한 데이터 무결성 문제의 원인 분석과 해결방법 기술</description>
     </item>
     <item>
       <title>error log - jest.spyOn()에서 재사용함수에 대한 모의 불가</title>
-      <link>http://localhost:1313/posts/202306291258/</link>
+      <link>https://labs.inchan.dev/posts/202306291258/</link>
       <pubDate>Thu, 29 Jun 2023 12:58:27 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202306291258/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202306291258/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>jest.spyOn() 사용중 모듈 분리부터 OOP까지의 리팩토링 과정 기술</description>
     </item>
     <item>
       <title>AWS EC2에서 product 서버와 개발용 서버 같이 사용하기</title>
-      <link>http://localhost:1313/posts/202306191659/</link>
+      <link>https://labs.inchan.dev/posts/202306191659/</link>
       <pubDate>Mon, 19 Jun 2023 16:59:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202306191659/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202306191659/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>AWS EC2에서 테스트 프로젝트 운용시 배포용 서버 외에 추가서버 및 추가비용 없이 &#39;개발용 서버&#39;를 상시 여는 방법 기술</description>
     </item>
     <item>
       <title>AWS RDS 데이터 - 다른 계정으로 이전하기</title>
-      <link>http://localhost:1313/posts/202306191507/</link>
+      <link>https://labs.inchan.dev/posts/202306191507/</link>
       <pubDate>Mon, 19 Jun 2023 15:07:40 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202306191507/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202306191507/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>AWS RDS의 데이터를 &#39;다른 계정&#39;의 AWS RDS로 이동 또는 복사하는 방법</description>
     </item>
     <item>
       <title>Git commit message 컨벤션 설정</title>
-      <link>http://localhost:1313/posts/202306171531/</link>
+      <link>https://labs.inchan.dev/posts/202306171531/</link>
       <pubDate>Sat, 17 Jun 2023 15:31:26 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202306171531/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202306171531/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>git commit message 작성시 일관된 규칙의 제목줄을 통해 가시성을 높일 수 있는 방법 고찰 중 컨벤션 설정</description>
     </item>
     <item>
       <title>MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</title>
-      <link>http://localhost:1313/posts/202306070208/</link>
+      <link>https://labs.inchan.dev/posts/202306070208/</link>
       <pubDate>Wed, 07 Jun 2023 22:47:43 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202306070208/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202306070208/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>MySQL에서 회원탈퇴시 탈퇴한 회원 정보를 DB에서 완전히 삭제하지 않고 softDelete 처리했을 때, 해당 이메일을 중복확인에서 통과시키고 재사용할 수 있게한 고민들</description>
     </item>
     <item>
       <title>error log - TypeORM migration 할 때 cross ENV 설정 문제</title>
-      <link>http://localhost:1313/posts/202304010529/</link>
+      <link>https://labs.inchan.dev/posts/202304010529/</link>
       <pubDate>Sat, 01 Apr 2023 05:30:56 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202304010529/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202304010529/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>typeORM migration 설정간 dotenv.config 설정 문제를 기술</description>
     </item>
     <item>
       <title>error log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</title>
-      <link>http://localhost:1313/posts/202303162353/</link>
+      <link>https://labs.inchan.dev/posts/202303162353/</link>
       <pubDate>Thu, 16 Mar 2023 23:56:16 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202303162353/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202303162353/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>코드에 NODE_ENV 설정이 되어있을 경우, EC2에서 PM2 실행시 NODE_ENV 설정 명령 처리에 대한 에러 노트</description>
     </item>
     <item>
       <title>Swagger를 이용한 백엔드의 효과적인 API명세 전달</title>
-      <link>http://localhost:1313/posts/202303080503/</link>
+      <link>https://labs.inchan.dev/posts/202303080503/</link>
       <pubDate>Wed, 08 Mar 2023 05:14:43 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202303080503/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202303080503/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>백엔드에서 프론트엔드로 API 명세를 전달함에 효과적인 Swagger 사용방법을 고찰하였다.</description>
     </item>
     <item>
       <title>typeORM transaction에서 repository 사용하기</title>
-      <link>http://localhost:1313/posts/202302250414/</link>
+      <link>https://labs.inchan.dev/posts/202302250414/</link>
       <pubDate>Sat, 25 Feb 2023 04:14:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202302250414/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202302250414/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>TypeORM을 사용하여 트랜잭션을 구성하는 방법에 대한 고찰. dataSource.createQueryRunner() 방식으로 트랜잭션을 설정하는 과정에서, 리포지토리 메소드 사용 시 중복된 트랜잭션 실행으로 인해 발생하는 rollback 문제를 설명. 또한, manager.withRepository 메소드를 활용해 트랜잭션 내에서 커스텀 리포지토리를 사용하는 해결 방법 제시</description>
     </item>
     <item>
       <title>Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기</title>
-      <link>http://localhost:1313/posts/202302160417/</link>
+      <link>https://labs.inchan.dev/posts/202302160417/</link>
       <pubDate>Thu, 16 Feb 2023 04:17:07 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>http://localhost:1313/posts/202302160417/</guid>
-      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <guid>https://labs.inchan.dev/posts/202302160417/</guid>
+      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
       <description>TypeORM을 사용하여 댓글과 대댓글의 무한 트리 구조를 구현하는 과정에서 발생한 문제와 그 해결 방법을 다룬다. 특히, Date 타입 필드에서 불필요한 시간대 정보(T, Z 등)와 밀리초 부분을 제거하고 원하는 형식으로 출력하기 위한 방법을 상세히 설명</description>
     </item>
   </channel>
