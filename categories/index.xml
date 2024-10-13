@@ -2,48 +2,55 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories - Category - labs.inchan</title>
-    <link>https://labs.inchan.dev/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
-    <generator>Hugo 0.135.0 &amp; FixIt v0.3.13-da4664b6</generator>
+    <generator>Hugo 0.135.0 &amp; FixIt v0.3.13</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Sat, 12 Oct 2024 20:51:00 +0900</lastBuildDate>
-    <atom:link href="https://labs.inchan.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apps</title>
-      <link>https://labs.inchan.dev/categories/apps/</link>
+      <link>http://localhost:1313/categories/apps/</link>
       <pubDate>Sat, 12 Oct 2024 20:44:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/categories/apps/</guid>
+      <guid>http://localhost:1313/categories/apps/</guid>
       <description>Apps</description>
     </item>
     <item>
       <title>Env</title>
-      <link>https://labs.inchan.dev/categories/env/</link>
+      <link>http://localhost:1313/categories/env/</link>
       <pubDate>Fri, 04 Oct 2024 23:56:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/categories/env/</guid>
+      <guid>http://localhost:1313/categories/env/</guid>
       <description>Env</description>
     </item>
     <item>
       <title>Dev</title>
-      <link>https://labs.inchan.dev/categories/dev/</link>
+      <link>http://localhost:1313/categories/dev/</link>
       <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/categories/dev/</guid>
+      <guid>http://localhost:1313/categories/dev/</guid>
       <description>Dev</description>
     </item>
     <item>
       <title>Misc</title>
-      <link>https://labs.inchan.dev/categories/misc/</link>
+      <link>http://localhost:1313/categories/misc/</link>
       <pubDate>Fri, 12 Jan 2024 23:24:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/categories/misc/</guid>
+      <guid>http://localhost:1313/categories/misc/</guid>
       <description>Misc</description>
     </item>
     <item>
       <title>Projects</title>
-      <link>https://labs.inchan.dev/categories/projects/</link>
+      <link>http://localhost:1313/categories/projects/</link>
       <pubDate>Tue, 27 Dec 2022 04:48:11 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/categories/projects/</guid>
+      <guid>http://localhost:1313/categories/projects/</guid>
       <description>Projects</description>
+    </item>
+    <item>
+      <title>Front-End</title>
+      <link>http://localhost:1313/categories/front-end/</link>
+      <pubDate>Tue, 04 Oct 2022 05:15:23 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://localhost:1313/categories/front-end/</guid>
+      <description>Front-End</description>
     </item>
   </channel>
 </rss>

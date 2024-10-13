@@ -2,93 +2,93 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>labs.inchan</title>
-    <link>https://labs.inchan.dev/</link>
+    <link>http://localhost:1313/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
-    <generator>Hugo 0.135.0 &amp; FixIt v0.3.13-da4664b6</generator>
+    <generator>Hugo 0.135.0 &amp; FixIt v0.3.13</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Sat, 12 Oct 2024 20:51:00 +0900</lastBuildDate>
-    <atom:link href="https://labs.inchan.dev/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PopClip 번역 확장 문제 해결 - DeepL &amp; Papago 비공식 버전 배포</title>
-      <link>https://labs.inchan.dev/posts/202410122044/</link>
+      <link>http://localhost:1313/posts/202410122044/</link>
       <pubDate>Sat, 12 Oct 2024 20:44:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202410122044/</guid>
-      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
-      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://labs.inchan.dev/posts/202410101108/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;PopClip 앱이 맥 앱스토어에서 내려갔다.&lt;/a&gt;&lt;br&gt;&#xA;이 사실을 늦게 알게된 바람에 약 1년간의 공백을 건너띄고 업데이트를 했더니 몇몇 Extension에서 문제들이 발생했다.&lt;br&gt;&#xA;특히 가장 빈번하게 사용하던 번역 기능 확장들이 제대로 동작하지 않다보니 급한대로 만들었다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;popclip-extension---deepl-translation&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;PopClip Extension - deepL translation&lt;/span&gt;&#xA;  &lt;a href=&#34;#popclip-extension---deepl-translation&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www.popclip.app/extensions/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;PopClip Extensions Directory&lt;/a&gt;의 리스트에 있는 &lt;a href=&#34;https://www.deepl.com/en/translator&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;DeepL Translate&lt;/a&gt; Extension이 제대로 작동하지 않는다.  (2024-10-10 기준)&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/202410122044/</guid>
+      <category domain="http://localhost:1313/categories/apps/">Apps</category>
+      <description>PopClip에서 DeepL과 Papago 번역 확장이 제대로 작동하지 않아, 비공식 확장을 만들어 배포. 다운로드 링크 포함.</description>
     </item>
     <item>
       <title>PopClip 앱이 맥 앱스토어에서 내려갔다.</title>
-      <link>https://labs.inchan.dev/posts/202410101108/</link>
+      <link>http://localhost:1313/posts/202410101108/</link>
       <pubDate>Thu, 10 Oct 2024 11:08:34 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202410101108/</guid>
-      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
-      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;&lt;a class=&#34;lightgallery&#34; href=&#34;https://labs.inchan.dev/images/Pasted%20image%2020241010141050.png?size=large&#34; data-thumbnail=&#34;/images/Pasted%20image%2020241010141050.png?size=small&#34; data-sub-html=&#34;&lt;h2&gt;/images/Pasted%20image%2020241010141050.png&lt;/h2&gt;&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://labs.inchan.dev/images/Pasted%20image%2020241010141050.png&#34; alt=&#34;/images/Pasted%20image%2020241010141050.png&#34; srcset=&#34;https://labs.inchan.dev/images/Pasted%20image%2020241010141050.png?size=small, https://labs.inchan.dev/images/Pasted%20image%2020241010141050.png?size=medium 1.5x, https://labs.inchan.dev/images/Pasted%20image%2020241010141050.png?size=large 2x&#34; data-title=&#34;/images/Pasted%20image%2020241010141050.png&#34; style=&#34;background: url(/images/loading.min.svg) no-repeat center;&#34; onload=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}this.dataset.lazyloaded=&#39;&#39;;&#34; onerror=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}&#34;/&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;macOS에서 요긴하게 사용중인 앱 중 하나가 &lt;a href=&#34;https://www.popclip.app/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;PopClip for Mac&lt;/a&gt;이다.&lt;br&gt;&#xA;그런데 2024년 3월 20일자로 &lt;a href=&#34;https://forum.popclip.app/t/popclip-is-leaving-the-mac-app-store/2188&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;PopClip 앱이 MacAppStore(이하 MAS)에서 내려갔다는 글&lt;/a&gt;을 보게 되었다.&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;더이상 MAS에서는 구매할 수 없으며 업데이트 또한 받을 수 없다.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;하지만 이미 구입한 경우, &lt;strong&gt;MAS의 구입목록&lt;/strong&gt;에서는 여전히 다운로드 받을 수는 있다.&lt;br&gt;&#xA;&lt;em&gt;문제는 MAS에서의 마지막 버전은 &lt;code&gt;2023.9&lt;/code&gt;라는 점이다.&lt;/em&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/202410101108/</guid>
+      <category domain="http://localhost:1313/categories/apps/">Apps</category>
+      <description>2024년 3월부로 더이상 맥 앱스토어에서는 PopClip을 구매할 수 없기에 기존 MacAppStore(MAS) 버전으로부터 StandAlone License 버전으로의 마이그레이션 방법을 소개한다.</description>
     </item>
     <item>
       <title>macOS에서 SSH 키 자동 등록 및 암호 관리 문제 해결 방법</title>
-      <link>https://labs.inchan.dev/posts/202410042356/</link>
+      <link>http://localhost:1313/posts/202410042356/</link>
       <pubDate>Fri, 04 Oct 2024 23:56:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202410042356/</guid>
-      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
-      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;div class=&#34;details admonition failure open&#34;&gt;&#xA;  &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-xmark&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Failure&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&#xA;  &lt;div class=&#34;details-content&#34;&gt;&#xA;    &lt;div class=&#34;admonition-content&#34;&gt;&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;AddKeysToAgent yes&lt;/code&gt; 설정을 했지만 재부팅 후 SSH 키가 자동으로 ssh agent에 등록되지 않는다?&lt;/li&gt;&#xA;&lt;li&gt;ssh key의 암호(passphrase) 설정후 &lt;code&gt;UseKeychain yes&lt;/code&gt; 설정을 했는데 왜 자꾸 암호를 물을까?&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;h2 id=&#34;AddKeysToAgent-issue&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;재부팅 후 SSH 키가 자동으로 ssh agent에 등록되지 않는다?&lt;/span&gt;&#xA;  &lt;a href=&#34;#AddKeysToAgent-issue&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;macOS에서 SSH 클라이언트는 &lt;strong&gt;파일 이름이 다음과 같은 경우 기본 키파일명으로서 특별한 처리&lt;/strong&gt;를 한다.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/202410042356/</guid>
+      <category domain="http://localhost:1313/categories/env/">Env</category>
+      <description>재부팅 후 SSH 키가 자동으로 등록되지 않거나 암호를 계속해서 묻는 문제? macOS에서 SSH 키 관리와 관련된 AddKeysToAgent 및 UseKeychain 설정 문제를 해결하는 방법을 알아본다.</description>
     </item>
     <item>
       <title>GitHub 계정 다중 사용자를 위한 macOS SSH 설정 방법</title>
-      <link>https://labs.inchan.dev/posts/202410041532/</link>
+      <link>http://localhost:1313/posts/202410041532/</link>
       <pubDate>Fri, 04 Oct 2024 15:33:08 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202410041532/</guid>
-      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
-      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;github를 이용하다보면 개인계정, 회사계정 등등 여러 계정을 사용하는 상황이 오곤 한다.&lt;br&gt;&#xA;이 글은 &lt;strong&gt;macOS의 터미널에서 각 레포지토리별 다른 github 계정을 사용할 때, SSH를 이용하는 방법&lt;/strong&gt;을 설명한다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;새-ssh-키-생성-및-ssh-agent에-추가하기&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;새 SSH 키 생성 및 ssh-agent에 추가하기&lt;/span&gt;&#xA;  &lt;a href=&#34;#%ec%83%88-ssh-%ed%82%a4-%ec%83%9d%ec%84%b1-%eb%b0%8f-ssh-agent%ec%97%90-%ec%b6%94%ea%b0%80%ed%95%98%ea%b8%b0&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;1-ssh-키-생성&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;1. SSH 키 생성&lt;/span&gt;&#xA;  &lt;a href=&#34;#1-ssh-%ed%82%a4-%ec%83%9d%ec%84%b1&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;h4 id=&#34;keygen&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;1. 키 생성&lt;/span&gt;&#xA;  &lt;a href=&#34;#keygen&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h4&gt;&lt;p&gt;우선 터미널을 열고 다음을 입력한다.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/202410041532/</guid>
+      <category domain="http://localhost:1313/categories/env/">Env</category>
+      <description>터미널에서 각 레포지토리별로 github 다계정 사용시 SSH키 생성 및 등록, 그리고 재부팅 이후에도 에이전트에 자동 등록하는 방법, SSH키 암호(passphrase) 사용시 macOS의 키체인을 이용해 암호입력 패스하는 방법 기술</description>
     </item>
     <item>
       <title>Alfred workflow - 네이버 검색 워크플로우 지도 검색 개선</title>
-      <link>https://labs.inchan.dev/posts/202403171602/</link>
+      <link>http://localhost:1313/posts/202403171602/</link>
       <pubDate>Sun, 17 Mar 2024 16:02:39 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202403171602/</guid>
-      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
-      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;workflow-소개&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;Workflow 소개&lt;/span&gt;&#xA;  &lt;a href=&#34;#workflow-%ec%86%8c%ea%b0%9c&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;macOS에서 가장 많이 사용하는 앱 중 하나가 &lt;a href=&#34;https://www.alfredapp.com&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Alfred&lt;/a&gt;이다. &lt;br&gt;&#xA;그리고 이 앱에서도 가장 높은 빈도로 사용하는 워크플로우 중 하나가 바로 &lt;strong&gt;네이버 검색&lt;/strong&gt;이다. &lt;br&gt;&#xA;이 워크플로우는 &lt;a href=&#34;https://github.com/Kuniz/alfnaversearch&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Kuniz/alfnaversearch: Naver Search Workflow for Alfred (알프레드 네이버 검색/사전/지도 자동완성 워크플로우)&lt;/a&gt; 여기에서 살펴보고 다운로드할 수 있는데 정말 잘 만든 워크플로우다.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/202403171602/</guid>
+      <category domain="http://localhost:1313/categories/apps/">Apps</category>
+      <description>알프레드 워크플로우 중, 네이버 검색 워크플로우의 지도 검색 기능 문제에 따른 해결 및 개선된 워크플로우 파일 제공</description>
     </item>
     <item>
       <title>브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법</title>
-      <link>https://labs.inchan.dev/posts/202403090724/</link>
+      <link>http://localhost:1313/posts/202403090724/</link>
       <pubDate>Sat, 09 Mar 2024 07:24:37 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202403090724/</guid>
-      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
-      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;문제상황&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;문제상황&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%ac%b8%ec%a0%9c%ec%83%81%ed%99%a9&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;브라우저에서 chatGPT 프롬프트의 입력창에 글을 쓰고 아무리 &amp;ldquo;엔터&amp;quot;를 눌러도 반응이 가질 않는 상황이 생겼다.&lt;br&gt;&#xA;일단 의심되는 변화는 macOS를 sonoma 14.4로 업그레이드 한 정황뿐인데 이래저래 만져보다 문제를 찾았다.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/202403090724/</guid>
+      <category domain="http://localhost:1313/categories/apps/">Apps</category>
+      <description>2024년 3월 현재 브라우저에서 chatGPT 입력이 되지 않는 경우 해결방법에 대한 설명</description>
     </item>
     <item>
       <title>AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</title>
-      <link>https://labs.inchan.dev/posts/202403051335/</link>
+      <link>http://localhost:1313/posts/202403051335/</link>
       <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202403051335/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
-      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;작년 말 즈음 AWS로부터 한통의 메일을 받았고, 그 내용은 AWS에서의 모든 public IP에 대한 요금을 부과 하겠다는 것이었다.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/ko/blogs/korea/new-aws-public-ipv4-address-charge-public-ip-insights/?_encoding=UTF8&amp;amp;tag=clien0a-20&amp;amp;linkCode=ur2&amp;amp;linkId=4ef926e41eaa57b3dcfc48b2660f5024&amp;amp;camp=1789&amp;amp;creative=9325&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;공지 – AWS Public IPv4 주소 요금 변경 및 Public IP Insights 기능 출시 | Amazon Web Services 한국 블로그&lt;/a&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;AWS에서 퍼블릭(Public) IPv4 주소에 대한 새로운 요금이 도입됩니다. &lt;strong&gt;2024년 2월 1일부터&lt;/strong&gt; 서비스 연결 여부에 관계없이 &lt;strong&gt;모든 퍼블릭 IPv4 주소에 대해 시간당 IP당 0.005 USD의 요금이 부과&lt;/strong&gt;됩니다. 계정에 할당했지만 EC2 인스턴스에 연결하지 않은 퍼블릭 IPv4 주소에 대해서는 이미 요금이 부과되고 있습니다.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/202403051335/</guid>
+      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <description>AWS에서 2024년 2월부터 퍼블릭 IPv4 주소에 대한 요금이 부과되기 시작하면서, 비용 절감을 위해 AWS 인프라를 IPv6로 전환하고 퍼블릭 IP 사용을 최소화하려는 노력이 필요해졌다. 이에 퍼블릭 IP 없이 RDS와 같은 AWS 리소스를 외부에서 접근하는 방법에 대해 자세히 설명한다.</description>
     </item>
     <item>
       <title>AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</title>
-      <link>https://labs.inchan.dev/posts/202403051214/</link>
+      <link>http://localhost:1313/posts/202403051214/</link>
       <pubDate>Tue, 05 Mar 2024 12:14:30 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202403051214/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
-      <description>&lt;p&gt;관련 글&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://inchan.dev/posts/202401122216/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;AWS EC2에 HTTPS를 연결하는 방법은 몇가지가 있는데&lt;br&gt;&#xA;그 중 하나는 &lt;strong&gt;Route53을 이용하는 것&lt;/strong&gt;이고,&lt;br&gt;&#xA;다른 하나는 &lt;strong&gt;도메인 서비스의 프록싱을 통해 바로 연결하는 방법&lt;/strong&gt;이다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;전자의 경우 위 관련 글의 링크에서 참고할 수 있으며 이 글은 후자에 관한 글이다.&lt;br&gt;&#xA; &lt;/p&gt;&#xA;&lt;p&gt;우선 EC2 인스턴스에는 public IPv4 주소를 하나 부여할 수 있다.&lt;br&gt;&#xA;이는 인스턴스 생성시 설정에서 &amp;lsquo;자동으로 부여하기&amp;rsquo;를 통해 부여할 수도 있고, 따로이 탄력적 IP를 하나 생성하여 부여할 수도 있다.&lt;br&gt;&#xA; &lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/202403051214/</guid>
+      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <description>AWS EC2에 HTTPS를 연결하는 방법중 도메인 서비스의 프록싱을 통해 바로 연결하는 방법 소개</description>
     </item>
     <item>
       <title>typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란</title>
-      <link>https://labs.inchan.dev/posts/202403010802/</link>
+      <link>http://localhost:1313/posts/202403010802/</link>
       <pubDate>Fri, 01 Mar 2024 08:02:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202403010802/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
-      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;div class=&#34;details admonition info open&#34;&gt;&#xA;  &lt;div class=&#34;details-summary admonition-title&#34;&gt;&lt;i class=&#34;icon fa-fw fa-solid fa-circle-info&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;먼저 알아두기&lt;i class=&#34;details-icon fa-solid fa-angle-right fa-fw&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&#xA;  &lt;div class=&#34;details-content&#34;&gt;&#xA;    &lt;div class=&#34;admonition-content&#34;&gt;&lt;h3 id=&#34;mysql---date-필드의-타입-종류&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;mySQL - Date 필드의 타입 종류&lt;/span&gt;&#xA;  &lt;a href=&#34;#mysql---date-%ed%95%84%eb%93%9c%ec%9d%98-%ed%83%80%ec%9e%85-%ec%a2%85%eb%a5%98&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;mySQL에서 Date 필드의 타입 종류는 다음과 같다.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/202403010802/</guid>
+      <category domain="http://localhost:1313/categories/dev/">Dev</category>
+      <description>mySQL에서 timestamp 타입 필드를 사용하고, TypeORM의 dateStrings와 timezone 옵션을 적절히 활용하여 시간대를 제어하는 방법을 다룬다. UTC 시간대를 기준으로 데이터를 처리하면서 서버와 클라이언트에서 각각 다른 시간대를 적용할 수 있는 방안에 대해 고민한 결과를 실험과 코드 예시를 통해 공유</description>
     </item>
     <item>
       <title>프로젝트별 각각의 node 버전을 nvm으로 자동 적용하기</title>
-      <link>https://labs.inchan.dev/posts/202401311413/</link>
+      <link>http://localhost:1313/posts/202401311413/</link>
       <pubDate>Thu, 01 Feb 2024 23:11:21 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202401311413/</guid>
-      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
-      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;source : &lt;a href=&#34;https://github.com/nvm-sh/nvm?tab=readme-ov-file#nvmrc&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;nvm-sh/nvm: Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;새로운 프로젝트는 Node 버전 중 현재 최신 LTS 버전인 20 버전으로 진행하려는데, 기존 진행중인 프로젝트가 AWS-ec2에서 node@16으로 세팅되어있던 터라, macOS에서 2개 버전을 설치해 사용해야하는 상황이 왔다.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;때문에 여러 node 버전을 사용할 수 있는 &lt;strong&gt;nvm&lt;/strong&gt;(Node version Manager)을 설치&lt;br&gt;&#xA;설치는 brew를 통해 설치했고 이후 과정은 brew에서 자세하게 설명해준다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;장점&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;장점&lt;/span&gt;&#xA;  &lt;a href=&#34;#%ec%9e%a5%ec%a0%90&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ol&gt;&#xA;&lt;li&gt;OS에 하나 이상의, 여러 version별 node를 설치하고&lt;/li&gt;&#xA;&lt;li&gt;프로젝트별로 각각 다른 버전의 node를 사용할 수 있다.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;단점&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;단점&lt;/span&gt;&#xA;  &lt;a href=&#34;#%eb%8b%a8%ec%a0%90&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;node 프로젝트 진행시 터미널에서 해당 프로젝트를 적정 버전으로 실행시키기 위해서는 다음 명령어로 node의 버전을 사용할 때마다 &lt;strong&gt;항상&lt;/strong&gt; 지정해줘야 한다.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/202401311413/</guid>
+      <category domain="http://localhost:1313/categories/env/">Env</category>
+      <description>프로젝트별로 node 버전이 다를 경우, nvm을 통해 버전별 node를 설치하고 프로젝트에 맞춰 해당 버전을 자동으로 적용시킬 수 있는 방법 소개</description>
     </item>
   </channel>
 </rss>

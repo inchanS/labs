@@ -2,174 +2,195 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags - Tag - labs.inchan</title>
-    <link>https://labs.inchan.dev/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
-    <generator>Hugo 0.135.0 &amp; FixIt v0.3.13-da4664b6</generator>
+    <generator>Hugo 0.135.0 &amp; FixIt v0.3.13</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Sat, 12 Oct 2024 20:51:00 +0900</lastBuildDate>
-    <atom:link href="https://labs.inchan.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apps</title>
-      <link>https://labs.inchan.dev/tags/apps/</link>
+      <link>http://localhost:1313/tags/apps/</link>
       <pubDate>Sat, 12 Oct 2024 20:44:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/apps/</guid>
+      <guid>http://localhost:1313/tags/apps/</guid>
       <description>Apps</description>
     </item>
     <item>
       <title>MacOS</title>
-      <link>https://labs.inchan.dev/tags/macos/</link>
+      <link>http://localhost:1313/tags/macos/</link>
       <pubDate>Sat, 12 Oct 2024 20:44:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/macos/</guid>
+      <guid>http://localhost:1313/tags/macos/</guid>
       <description>MacOS</description>
     </item>
     <item>
       <title>Misc</title>
-      <link>https://labs.inchan.dev/tags/misc/</link>
+      <link>http://localhost:1313/tags/misc/</link>
       <pubDate>Sat, 09 Mar 2024 07:24:37 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/misc/</guid>
+      <guid>http://localhost:1313/tags/misc/</guid>
       <description>Misc</description>
     </item>
     <item>
       <title>AWS</title>
-      <link>https://labs.inchan.dev/tags/aws/</link>
+      <link>http://localhost:1313/tags/aws/</link>
       <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/aws/</guid>
+      <guid>http://localhost:1313/tags/aws/</guid>
       <description>AWS</description>
     </item>
     <item>
       <title>Back-End</title>
-      <link>https://labs.inchan.dev/tags/back-end/</link>
+      <link>http://localhost:1313/tags/back-end/</link>
       <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/back-end/</guid>
+      <guid>http://localhost:1313/tags/back-end/</guid>
       <description>Back-End</description>
     </item>
     <item>
       <title>JavaScript</title>
-      <link>https://labs.inchan.dev/tags/javascript/</link>
+      <link>http://localhost:1313/tags/javascript/</link>
       <pubDate>Fri, 01 Mar 2024 08:02:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/javascript/</guid>
+      <guid>http://localhost:1313/tags/javascript/</guid>
       <description>JavaScript</description>
     </item>
     <item>
       <title>MySQL</title>
-      <link>https://labs.inchan.dev/tags/mysql/</link>
+      <link>http://localhost:1313/tags/mysql/</link>
       <pubDate>Fri, 01 Mar 2024 08:02:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/mysql/</guid>
+      <guid>http://localhost:1313/tags/mysql/</guid>
       <description>MySQL</description>
     </item>
     <item>
       <title>NodeJS</title>
-      <link>https://labs.inchan.dev/tags/nodejs/</link>
+      <link>http://localhost:1313/tags/nodejs/</link>
       <pubDate>Fri, 01 Mar 2024 08:02:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/nodejs/</guid>
+      <guid>http://localhost:1313/tags/nodejs/</guid>
       <description>NodeJS</description>
     </item>
     <item>
       <title>TypeORM</title>
-      <link>https://labs.inchan.dev/tags/typeorm/</link>
+      <link>http://localhost:1313/tags/typeorm/</link>
       <pubDate>Fri, 01 Mar 2024 08:02:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/typeorm/</guid>
+      <guid>http://localhost:1313/tags/typeorm/</guid>
       <description>TypeORM</description>
     </item>
     <item>
       <title>Terminal</title>
-      <link>https://labs.inchan.dev/tags/terminal/</link>
+      <link>http://localhost:1313/tags/terminal/</link>
       <pubDate>Thu, 01 Feb 2024 23:11:21 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/terminal/</guid>
+      <guid>http://localhost:1313/tags/terminal/</guid>
       <description>Terminal</description>
     </item>
     <item>
       <title>Project_review</title>
-      <link>https://labs.inchan.dev/tags/project_review/</link>
+      <link>http://localhost:1313/tags/project_review/</link>
       <pubDate>Fri, 26 Jan 2024 11:49:52 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/project_review/</guid>
+      <guid>http://localhost:1313/tags/project_review/</guid>
       <description>Project_review</description>
     </item>
     <item>
       <title>Debugging</title>
-      <link>https://labs.inchan.dev/tags/debugging/</link>
+      <link>http://localhost:1313/tags/debugging/</link>
       <pubDate>Wed, 24 Jan 2024 10:19:14 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/debugging/</guid>
+      <guid>http://localhost:1313/tags/debugging/</guid>
       <description>Debugging</description>
     </item>
     <item>
       <title>Jest</title>
-      <link>https://labs.inchan.dev/tags/jest/</link>
+      <link>http://localhost:1313/tags/jest/</link>
       <pubDate>Thu, 29 Jun 2023 12:58:27 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/jest/</guid>
+      <guid>http://localhost:1313/tags/jest/</guid>
       <description>Jest</description>
     </item>
     <item>
       <title>Git</title>
-      <link>https://labs.inchan.dev/tags/git/</link>
+      <link>http://localhost:1313/tags/git/</link>
       <pubDate>Sat, 17 Jun 2023 15:31:26 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/git/</guid>
+      <guid>http://localhost:1313/tags/git/</guid>
       <description>Git</description>
     </item>
     <item>
       <title>RESTful_API</title>
-      <link>https://labs.inchan.dev/tags/restful_api/</link>
+      <link>http://localhost:1313/tags/restful_api/</link>
       <pubDate>Wed, 08 Mar 2023 05:14:43 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/restful_api/</guid>
+      <guid>http://localhost:1313/tags/restful_api/</guid>
       <description>RESTful_API</description>
     </item>
     <item>
       <title>TypeScript</title>
-      <link>https://labs.inchan.dev/tags/typescript/</link>
+      <link>http://localhost:1313/tags/typescript/</link>
       <pubDate>Thu, 16 Feb 2023 04:17:07 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/typescript/</guid>
+      <guid>http://localhost:1313/tags/typescript/</guid>
       <description>TypeScript</description>
     </item>
     <item>
       <title>Devonthink</title>
-      <link>https://labs.inchan.dev/tags/devonthink/</link>
+      <link>http://localhost:1313/tags/devonthink/</link>
       <pubDate>Thu, 02 Feb 2023 04:10:40 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/devonthink/</guid>
+      <guid>http://localhost:1313/tags/devonthink/</guid>
       <description>Devonthink</description>
     </item>
     <item>
       <title>Markdown</title>
-      <link>https://labs.inchan.dev/tags/markdown/</link>
+      <link>http://localhost:1313/tags/markdown/</link>
       <pubDate>Thu, 02 Feb 2023 04:10:40 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/markdown/</guid>
+      <guid>http://localhost:1313/tags/markdown/</guid>
       <description>Markdown</description>
     </item>
     <item>
       <title>Webstorm</title>
-      <link>https://labs.inchan.dev/tags/webstorm/</link>
+      <link>http://localhost:1313/tags/webstorm/</link>
       <pubDate>Thu, 02 Feb 2023 04:09:55 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/webstorm/</guid>
+      <guid>http://localhost:1313/tags/webstorm/</guid>
       <description>Webstorm</description>
     </item>
     <item>
       <title>Express</title>
-      <link>https://labs.inchan.dev/tags/express/</link>
+      <link>http://localhost:1313/tags/express/</link>
       <pubDate>Mon, 23 Jan 2023 04:24:50 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/express/</guid>
+      <guid>http://localhost:1313/tags/express/</guid>
       <description>Express</description>
     </item>
     <item>
       <title>NestJS</title>
-      <link>https://labs.inchan.dev/tags/nestjs/</link>
+      <link>http://localhost:1313/tags/nestjs/</link>
       <pubDate>Mon, 09 Jan 2023 04:35:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/nestjs/</guid>
+      <guid>http://localhost:1313/tags/nestjs/</guid>
       <description>NestJS</description>
     </item>
     <item>
       <title>Project_fastfive</title>
-      <link>https://labs.inchan.dev/tags/project_fastfive/</link>
+      <link>http://localhost:1313/tags/project_fastfive/</link>
       <pubDate>Tue, 27 Dec 2022 04:48:11 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/project_fastfive/</guid>
+      <guid>http://localhost:1313/tags/project_fastfive/</guid>
       <description>Project_fastfive</description>
     </item>
     <item>
       <title>DBmate</title>
-      <link>https://labs.inchan.dev/tags/dbmate/</link>
+      <link>http://localhost:1313/tags/dbmate/</link>
       <pubDate>Tue, 18 Oct 2022 05:02:17 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/tags/dbmate/</guid>
+      <guid>http://localhost:1313/tags/dbmate/</guid>
       <description>DBmate</description>
+    </item>
+    <item>
+      <title>Css</title>
+      <link>http://localhost:1313/tags/css/</link>
+      <pubDate>Tue, 04 Oct 2022 05:15:23 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://localhost:1313/tags/css/</guid>
+      <description>Css</description>
+    </item>
+    <item>
+      <title>Html</title>
+      <link>http://localhost:1313/tags/html/</link>
+      <pubDate>Tue, 04 Oct 2022 05:15:23 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://localhost:1313/tags/html/</guid>
+      <description>Html</description>
+    </item>
+    <item>
+      <title>FontAwesome</title>
+      <link>http://localhost:1313/tags/fontawesome/</link>
+      <pubDate>Tue, 06 Sep 2022 05:21:43 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>http://localhost:1313/tags/fontawesome/</guid>
+      <description>FontAwesome</description>
     </item>
   </channel>
 </rss>
