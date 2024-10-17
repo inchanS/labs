@@ -1,49 +1,61 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://labs.inchan.dev/tags/alfred/</loc>
+    <lastmod>2024-10-17T09:21:42+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://labs.inchan.dev/posts/202410170921/</loc>
+    <lastmod>2024-10-17T09:21:42+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://labs.inchan.dev/tags/apps/</loc>
-    <lastmod>2024-10-12T20:51:00+09:00</lastmod>
+    <lastmod>2024-10-17T09:21:42+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://labs.inchan.dev/categories/apps/</loc>
-    <lastmod>2024-10-12T20:51:00+09:00</lastmod>
+    <lastmod>2024-10-17T09:21:42+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://labs.inchan.dev/categories/</loc>
-    <lastmod>2024-10-12T20:51:00+09:00</lastmod>
+    <lastmod>2024-10-17T09:21:42+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://labs.inchan.dev/</loc>
-    <lastmod>2024-10-13T08:16:35+09:00</lastmod>
+    <lastmod>2024-10-17T09:21:42+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://labs.inchan.dev/tags/macos/</loc>
-    <lastmod>2024-10-12T20:51:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://labs.inchan.dev/posts/202410122044/</loc>
-    <lastmod>2024-10-12T20:51:00+09:00</lastmod>
+    <lastmod>2024-10-17T09:21:42+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://labs.inchan.dev/posts/</loc>
-    <lastmod>2024-10-12T20:51:00+09:00</lastmod>
+    <lastmod>2024-10-17T09:21:42+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://labs.inchan.dev/tags/</loc>
+    <lastmod>2024-10-17T09:21:42+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://labs.inchan.dev/posts/202410122044/</loc>
     <lastmod>2024-10-12T20:51:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

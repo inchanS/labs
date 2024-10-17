@@ -4,12 +4,20 @@
     <title>MacOS - Tag - labs.inchan</title>
     <link>https://labs.inchan.dev/tags/macos/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
-    <generator>Hugo 0.135.0 &amp; FixIt v0.3.13</generator>
+    <generator>Hugo 0.136.1 &amp; FixIt v0.3.13</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
-    <lastBuildDate>Sat, 12 Oct 2024 20:51:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 17 Oct 2024 09:21:42 +0900</lastBuildDate>
     <atom:link href="https://labs.inchan.dev/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alfred Workflow - 국립국어원 우리말샘 검색어 자동완성</title>
+      <link>https://labs.inchan.dev/posts/202410170921/</link>
+      <pubDate>Thu, 17 Oct 2024 09:21:42 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>https://labs.inchan.dev/posts/202410170921/</guid>
+      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
+      <description>국립국어원 우리말샘 웹사이트의 검색어를 알프레드 호출창에서 자동완성으로 사용할 수 있는 워크플로우. 다운로드 링크 포함</description>
+    </item>
     <item>
       <title>PopClip 번역 확장 문제 해결 - DeepL &amp; Papago 비공식 버전 배포</title>
       <link>https://labs.inchan.dev/posts/202410122044/</link>

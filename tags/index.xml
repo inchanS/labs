@@ -4,23 +4,30 @@
     <title>Tags - Tag - labs.inchan</title>
     <link>https://labs.inchan.dev/tags/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
-    <generator>Hugo 0.135.0 &amp; FixIt v0.3.13</generator>
+    <generator>Hugo 0.136.1 &amp; FixIt v0.3.13</generator>
     <language>en</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
-    <lastBuildDate>Sat, 12 Oct 2024 20:51:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 17 Oct 2024 09:21:42 +0900</lastBuildDate>
     <atom:link href="https://labs.inchan.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alfred</title>
+      <link>https://labs.inchan.dev/tags/alfred/</link>
+      <pubDate>Thu, 17 Oct 2024 09:21:42 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <guid>https://labs.inchan.dev/tags/alfred/</guid>
+      <description>Alfred</description>
+    </item>
     <item>
       <title>Apps</title>
       <link>https://labs.inchan.dev/tags/apps/</link>
-      <pubDate>Sat, 12 Oct 2024 20:44:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <pubDate>Thu, 17 Oct 2024 09:21:42 +0900</pubDate><author>song@inchan.dev (inchan)</author>
       <guid>https://labs.inchan.dev/tags/apps/</guid>
       <description>Apps</description>
     </item>
     <item>
       <title>MacOS</title>
       <link>https://labs.inchan.dev/tags/macos/</link>
-      <pubDate>Sat, 12 Oct 2024 20:44:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
+      <pubDate>Thu, 17 Oct 2024 09:21:42 +0900</pubDate><author>song@inchan.dev (inchan)</author>
       <guid>https://labs.inchan.dev/tags/macos/</guid>
       <description>MacOS</description>
     </item>
