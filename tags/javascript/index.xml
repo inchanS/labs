@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JavaScript - Tag - labs.inchan</title>
-    <link>https://labs.inchan.dev/tags/javascript/</link>
+    <title>JavaScript - Tag - inchan.dev</title>
+    <link>https://inchan.dev/tags/javascript/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.136.2 &amp; FixIt v0.3.13</generator>
     <language>ko</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Sun, 03 Mar 2024 07:57:11 +0900</lastBuildDate>
-    <atom:link href="https://labs.inchan.dev/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://inchan.dev/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란</title>
-      <link>https://labs.inchan.dev/posts/202403010802/</link>
+      <link>https://inchan.dev/posts/202403010802/</link>
       <pubDate>Fri, 01 Mar 2024 08:02:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202403010802/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202403010802/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>mySQL에서 timestamp 타입 필드를 사용하고, TypeORM의 dateStrings와 timezone 옵션을 적절히 활용하여 시간대를 제어하는 방법을 다룬다. UTC 시간대를 기준으로 데이터를 처리하면서 서버와 클라이언트에서 각각 다른 시간대를 적용할 수 있는 방안에 대해 고민한 결과를 실험과 코드 예시를 통해 공유</description>
     </item>
     <item>
       <title>error log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</title>
-      <link>https://labs.inchan.dev/posts/202303162353/</link>
+      <link>https://inchan.dev/posts/202303162353/</link>
       <pubDate>Thu, 16 Mar 2023 23:56:16 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202303162353/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202303162353/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>코드에 NODE_ENV 설정이 되어있을 경우, EC2에서 PM2 실행시 NODE_ENV 설정 명령 처리에 대한 에러 노트</description>
     </item>
     <item>
       <title>error log - throw와 return</title>
-      <link>https://labs.inchan.dev/posts/202301180430/</link>
+      <link>https://inchan.dev/posts/202301180430/</link>
       <pubDate>Wed, 18 Jan 2023 04:30:23 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202301180430/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202301180430/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>Node.js에서 에러 핸들링 중 return과 throw의 차이를 설명.</description>
     </item>
   </channel>

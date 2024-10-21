@@ -1,77 +1,77 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AWS - Tag - labs.inchan</title>
-    <link>https://labs.inchan.dev/tags/aws/</link>
+    <title>AWS - Tag - inchan.dev</title>
+    <link>https://inchan.dev/tags/aws/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.136.2 &amp; FixIt v0.3.13</generator>
     <language>ko</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Sat, 12 Oct 2024 05:42:19 +0900</lastBuildDate>
-    <atom:link href="https://labs.inchan.dev/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://inchan.dev/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</title>
-      <link>https://labs.inchan.dev/posts/202403051335/</link>
+      <link>https://inchan.dev/posts/202403051335/</link>
       <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202403051335/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202403051335/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>AWS에서 2024년 2월부터 퍼블릭 IPv4 주소에 대한 요금이 부과되기 시작하면서, 비용 절감을 위해 AWS 인프라를 IPv6로 전환하고 퍼블릭 IP 사용을 최소화하려는 노력이 필요해졌다. 이에 퍼블릭 IP 없이 RDS와 같은 AWS 리소스를 외부에서 접근하는 방법에 대해 자세히 설명한다.</description>
     </item>
     <item>
       <title>AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</title>
-      <link>https://labs.inchan.dev/posts/202403051214/</link>
+      <link>https://inchan.dev/posts/202403051214/</link>
       <pubDate>Tue, 05 Mar 2024 12:14:30 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202403051214/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202403051214/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>AWS EC2에 HTTPS를 연결하는 방법중 도메인 서비스의 프록싱을 통해 바로 연결하는 방법 소개</description>
     </item>
     <item>
       <title>AWS EC2 서버에 HTTPS 적용하기(1) - Route53과 로드밸런서 이용</title>
-      <link>https://labs.inchan.dev/posts/202401122216/</link>
+      <link>https://inchan.dev/posts/202401122216/</link>
       <pubDate>Fri, 12 Jan 2024 22:17:59 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202401122216/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202401122216/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>AWS Route 53을 이용하여 EC2 서버의 퍼블릭 주소에 인증서를 받고 HTTPS 보안 설정을 하는 방법 소개</description>
     </item>
     <item>
       <title>AWS EC2에서 product 서버와 개발용 서버 같이 사용하기</title>
-      <link>https://labs.inchan.dev/posts/202306191659/</link>
+      <link>https://inchan.dev/posts/202306191659/</link>
       <pubDate>Mon, 19 Jun 2023 16:59:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202306191659/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202306191659/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>AWS EC2에서 테스트 프로젝트 운용시 배포용 서버 외에 추가서버 및 추가비용 없이 &#39;개발용 서버&#39;를 상시 여는 방법 기술</description>
     </item>
     <item>
       <title>AWS RDS 데이터 - 다른 계정으로 이전하기</title>
-      <link>https://labs.inchan.dev/posts/202306191507/</link>
+      <link>https://inchan.dev/posts/202306191507/</link>
       <pubDate>Mon, 19 Jun 2023 15:07:40 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202306191507/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202306191507/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>AWS RDS의 데이터를 &#39;다른 계정&#39;의 AWS RDS로 이동 또는 복사하는 방법</description>
     </item>
     <item>
       <title>error log - AWS EC2의 SSH 접속이 안될 때</title>
-      <link>https://labs.inchan.dev/posts/202303170023/</link>
+      <link>https://inchan.dev/posts/202303170023/</link>
       <pubDate>Fri, 17 Mar 2023 00:17:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202303170023/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202303170023/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>macOS 터미널에서 AWS EC2 ssh 접속불가 문제를 해결한 설명</description>
     </item>
     <item>
       <title>error log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</title>
-      <link>https://labs.inchan.dev/posts/202303162353/</link>
+      <link>https://inchan.dev/posts/202303162353/</link>
       <pubDate>Thu, 16 Mar 2023 23:56:16 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202303162353/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202303162353/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>코드에 NODE_ENV 설정이 되어있을 경우, EC2에서 PM2 실행시 NODE_ENV 설정 명령 처리에 대한 에러 노트</description>
     </item>
     <item>
       <title>AWS 퍼블릭 IP와 탄력적 IP</title>
-      <link>https://labs.inchan.dev/posts/202212280458/</link>
+      <link>https://inchan.dev/posts/202212280458/</link>
       <pubDate>Wed, 28 Dec 2022 04:58:02 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202212280458/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202212280458/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>AWS EC2에서 발생하는 퍼블릭 IP 변경 문제와 이를 해결하기 위한 탄력적 IP(EIP) 설정 방법에 대해 설명. EC2 인스턴스 재부팅 시 퍼블릭 IP가 변경되는 이유 및 문제점, 그리고 퍼블릭 IP를 고정하기 위해 탄력적 IP를 사용하는 방법과 비용 관련 사항 안내</description>
     </item>
   </channel>

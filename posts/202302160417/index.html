@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>Node.js 백엔드TypeScript &#43; TypeORM으로 무한 대댓글 가공하기 - labs.inchan</title><meta name="author" content="inchan">
+    <title>Node.js 백엔드TypeScript &#43; TypeORM으로 무한 대댓글 가공하기 - inchan.dev</title><meta name="author" content="inchan">
 <meta name="description" content="TypeORM을 사용하여 댓글과 대댓글의 무한 트리 구조를 구현하는 과정에서 발생한 문제와 그 해결 방법을 다룬다. 특히, Date 타입 필드에서 불필요한 시간대 정보(T, Z 등)와 밀리초 부분을 제거하고 원하는 형식으로 출력하기 위한 방법을 상세히 설명"><meta name="keywords" content='TypeScript, typeORM, project_review, Back-End'>
   <meta itemprop="name" content="Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기">
   <meta itemprop="description" content="TypeORM을 사용하여 댓글과 대댓글의 무한 트리 구조를 구현하는 과정에서 발생한 문제와 그 해결 방법을 다룬다. 특히, Date 타입 필드에서 불필요한 시간대 정보(T, Z 등)와 밀리초 부분을 제거하고 원하는 형식으로 출력하기 위한 방법을 상세히 설명">
   <meta itemprop="datePublished" content="2023-02-16T04:17:07+09:00">
   <meta itemprop="dateModified" content="2024-03-03T08:06:05+09:00">
   <meta itemprop="wordCount" content="3366">
-  <meta itemprop="keywords" content="TypeScript,TypeORM,Project_review,Back-End"><meta property="og:url" content="https://labs.inchan.dev/posts/202302160417/">
-  <meta property="og:site_name" content="labs.inchan">
+  <meta itemprop="keywords" content="TypeScript,TypeORM,Project_review,Back-End"><meta property="og:url" content="https://inchan.dev/posts/202302160417/">
+  <meta property="og:site_name" content="inchan.dev">
   <meta property="og:title" content="Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기">
   <meta property="og:description" content="TypeORM을 사용하여 댓글과 대댓글의 무한 트리 구조를 구현하는 과정에서 발생한 문제와 그 해결 방법을 다룬다. 특히, Date 타입 필드에서 불필요한 시간대 정보(T, Z 등)와 밀리초 부분을 제거하고 원하는 형식으로 출력하기 위한 방법을 상세히 설명">
   <meta property="og:locale" content="ko">
@@ -32,7 +32,7 @@
 <meta name="application-name" content="inchan">
 <meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://labs.inchan.dev/posts/202302160417/" title="Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기 - labs.inchan" /><link rel="prev" type="text/html" href="https://labs.inchan.dev/posts/202302100411/" title="chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다." /><link rel="next" type="text/html" href="https://labs.inchan.dev/posts/202302250414/" title="typeORM transaction에서 repository 사용하기" /><link rel="stylesheet" href="/css/style.min.579d16bb12487293abb496e05fe32317762575c4adb9fea34925b5935847526d.css" integrity="sha256-V50WuxJIcpOrtJbgX+MjF3YldcStuf6jSSW1k1hHUm0="><link rel="preload" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://inchan.dev/posts/202302160417/" title="Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기 - inchan.dev" /><link rel="prev" type="text/html" href="https://inchan.dev/posts/202302100411/" title="chatGPT 사용기 - whereClauseBuilder 함수를 물어보았다." /><link rel="next" type="text/html" href="https://inchan.dev/posts/202302250414/" title="typeORM transaction에서 repository 사용하기" /><link rel="stylesheet" href="/css/style.min.579d16bb12487293abb496e05fe32317762575c4adb9fea34925b5935847526d.css" integrity="sha256-V50WuxJIcpOrtJbgX+MjF3YldcStuf6jSSW1k1hHUm0="><link rel="preload" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
@@ -42,9 +42,9 @@
     "inLanguage": "ko",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/labs.inchan.dev\/posts\/202302160417\/"
+      "@id": "https:\/\/inchan.dev\/posts\/202302160417\/"
     },"genre": "posts","keywords": "TypeScript, typeORM, project_review, Back-End","wordcount":  3366 ,
-    "url": "https:\/\/labs.inchan.dev\/posts\/202302160417\/","datePublished": "2023-02-16T04:17:07+09:00","dateModified": "2024-03-03T08:06:05+09:00","publisher": {
+    "url": "https:\/\/inchan.dev\/posts\/202302160417\/","datePublished": "2023-02-16T04:17:07+09:00","dateModified": "2024-03-03T08:06:05+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
         "@type": "Person",
@@ -55,7 +55,7 @@
   <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper" data-github-corner="right">
     <div class="header-title">
-      <a href="/" title="labs.inchan"><span class="typeit"><template>labs.inchan</template></span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a
@@ -101,7 +101,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="labs.inchan"><span class="typeit"><template>labs.inchan</template></span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
@@ -1002,7 +1002,7 @@ mySQL의 출력방식을 따르기때문에 SQL의 query문에 직접적인 수�
 <div id="comments"><div id="giscus" class="comment">
           <script
             src="https://giscus.app/client.js"
-            data-repo="inchanS/labsComments"
+            data-repo="inchanS/blogComments"
             data-repo-id="R_kgDOJCnPXQ"
             data-category="Comments"
             data-category-id="DIC_kwDOJCnPXc4CjSm4"

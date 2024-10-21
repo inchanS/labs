@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Devonthink - Tag - labs.inchan</title>
-    <link>https://labs.inchan.dev/tags/devonthink/</link>
+    <title>Devonthink - Tag - inchan.dev</title>
+    <link>https://inchan.dev/tags/devonthink/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.136.2 &amp; FixIt v0.3.13</generator>
     <language>ko</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Thu, 02 Feb 2023 04:10:40 +0900</lastBuildDate>
-    <atom:link href="https://labs.inchan.dev/tags/devonthink/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://inchan.dev/tags/devonthink/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>devonthink에서 markdown으로 웹클리핑시 이미지 주소 문제</title>
-      <link>https://labs.inchan.dev/posts/202302020410/</link>
+      <link>https://inchan.dev/posts/202302020410/</link>
       <pubDate>Thu, 02 Feb 2023 04:10:40 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202302020410/</guid>
-      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
+      <guid>https://inchan.dev/posts/202302020410/</guid>
+      <category domain="https://inchan.dev/categories/env/">Env</category>
       <description>DevonThink에서 MarkDown 웹클리핑 시 발생하는 이미지 링크 주석 처리 문제를 해결하기 위한 스크립트 작성과 적용 방법을 설명</description>
     </item>
   </channel>

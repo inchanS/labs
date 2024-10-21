@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>NestJS - Tag - labs.inchan</title>
-    <link>https://labs.inchan.dev/tags/nestjs/</link>
+    <title>NestJS - Tag - inchan.dev</title>
+    <link>https://inchan.dev/tags/nestjs/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.136.2 &amp; FixIt v0.3.13</generator>
     <language>ko</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Mon, 09 Jan 2023 04:35:58 +0900</lastBuildDate>
-    <atom:link href="https://labs.inchan.dev/tags/nestjs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://inchan.dev/tags/nestjs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>nestJS 시작하기</title>
-      <link>https://labs.inchan.dev/posts/202301090435/</link>
+      <link>https://inchan.dev/posts/202301090435/</link>
       <pubDate>Mon, 09 Jan 2023 04:35:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202301090435/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202301090435/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>NestJS 프로젝트에서 CLI 설치부터 기본적인 프로젝트 설정, 모듈 생성, 컨트롤러 및 서비스 작성 방법 등을 설명. 또한 DTO, 파이프, 커스텀 파이프, 에러 핸들링, 인증 및 인가를 포함한 다양한 기능들을 세부적으로 기술</description>
     </item>
   </channel>

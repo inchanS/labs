@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Apps - Tag - labs.inchan</title>
-    <link>https://labs.inchan.dev/tags/apps/</link>
+    <title>Apps - Tag - inchan.dev</title>
+    <link>https://inchan.dev/tags/apps/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.136.2 &amp; FixIt v0.3.13</generator>
     <language>ko</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Thu, 17 Oct 2024 09:21:42 +0900</lastBuildDate>
-    <atom:link href="https://labs.inchan.dev/tags/apps/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://inchan.dev/tags/apps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Alfred Workflow - 국립국어원 우리말샘 검색어 자동완성</title>
-      <link>https://labs.inchan.dev/posts/202410170921/</link>
+      <link>https://inchan.dev/posts/202410170921/</link>
       <pubDate>Thu, 17 Oct 2024 09:21:42 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202410170921/</guid>
-      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
+      <guid>https://inchan.dev/posts/202410170921/</guid>
+      <category domain="https://inchan.dev/categories/apps/">Apps</category>
       <description>국립국어원 우리말샘 웹사이트의 검색어를 알프레드 호출창에서 자동완성으로 사용할 수 있는 워크플로우. 다운로드 링크 포함</description>
     </item>
     <item>
       <title>PopClip 번역 확장 문제 해결 - DeepL &amp; Papago 비공식 버전 배포</title>
-      <link>https://labs.inchan.dev/posts/202410122044/</link>
+      <link>https://inchan.dev/posts/202410122044/</link>
       <pubDate>Sat, 12 Oct 2024 20:44:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202410122044/</guid>
-      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
+      <guid>https://inchan.dev/posts/202410122044/</guid>
+      <category domain="https://inchan.dev/categories/apps/">Apps</category>
       <description>PopClip에서 DeepL과 Papago 번역 확장이 제대로 작동하지 않아, 비공식 확장을 만들어 배포. 다운로드 링크 포함.</description>
     </item>
     <item>
       <title>PopClip 앱이 맥 앱스토어에서 내려갔다.</title>
-      <link>https://labs.inchan.dev/posts/202410101108/</link>
+      <link>https://inchan.dev/posts/202410101108/</link>
       <pubDate>Thu, 10 Oct 2024 11:08:34 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202410101108/</guid>
-      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
+      <guid>https://inchan.dev/posts/202410101108/</guid>
+      <category domain="https://inchan.dev/categories/apps/">Apps</category>
       <description>2024년 3월부로 더이상 맥 앱스토어에서는 PopClip을 구매할 수 없기에 기존 MacAppStore(MAS) 버전으로부터 StandAlone License 버전으로의 마이그레이션 방법을 소개한다.</description>
     </item>
     <item>
       <title>Alfred workflow - 네이버 검색 워크플로우 지도 검색 개선</title>
-      <link>https://labs.inchan.dev/posts/202403171602/</link>
+      <link>https://inchan.dev/posts/202403171602/</link>
       <pubDate>Sun, 17 Mar 2024 16:02:39 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202403171602/</guid>
-      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
+      <guid>https://inchan.dev/posts/202403171602/</guid>
+      <category domain="https://inchan.dev/categories/apps/">Apps</category>
       <description>알프레드 워크플로우 중, 네이버 검색 워크플로우의 지도 검색 기능 문제에 따른 해결 및 개선된 워크플로우 파일 제공</description>
     </item>
   </channel>

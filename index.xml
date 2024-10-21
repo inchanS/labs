@@ -1,93 +1,93 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>labs.inchan</title>
-    <link>https://labs.inchan.dev/</link>
+    <title>inchan.dev</title>
+    <link>https://inchan.dev/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.136.2 &amp; FixIt v0.3.13</generator>
     <language>ko</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Thu, 17 Oct 2024 09:21:42 +0900</lastBuildDate>
-    <atom:link href="https://labs.inchan.dev/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://inchan.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Alfred Workflow - 국립국어원 우리말샘 검색어 자동완성</title>
-      <link>https://labs.inchan.dev/posts/202410170921/</link>
+      <link>https://inchan.dev/posts/202410170921/</link>
       <pubDate>Thu, 17 Oct 2024 09:21:42 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202410170921/</guid>
-      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
+      <guid>https://inchan.dev/posts/202410170921/</guid>
+      <category domain="https://inchan.dev/categories/apps/">Apps</category>
       <description>국립국어원 우리말샘 웹사이트의 검색어를 알프레드 호출창에서 자동완성으로 사용할 수 있는 워크플로우. 다운로드 링크 포함</description>
     </item>
     <item>
       <title>PopClip 번역 확장 문제 해결 - DeepL &amp; Papago 비공식 버전 배포</title>
-      <link>https://labs.inchan.dev/posts/202410122044/</link>
+      <link>https://inchan.dev/posts/202410122044/</link>
       <pubDate>Sat, 12 Oct 2024 20:44:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202410122044/</guid>
-      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
+      <guid>https://inchan.dev/posts/202410122044/</guid>
+      <category domain="https://inchan.dev/categories/apps/">Apps</category>
       <description>PopClip에서 DeepL과 Papago 번역 확장이 제대로 작동하지 않아, 비공식 확장을 만들어 배포. 다운로드 링크 포함.</description>
     </item>
     <item>
       <title>PopClip 앱이 맥 앱스토어에서 내려갔다.</title>
-      <link>https://labs.inchan.dev/posts/202410101108/</link>
+      <link>https://inchan.dev/posts/202410101108/</link>
       <pubDate>Thu, 10 Oct 2024 11:08:34 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202410101108/</guid>
-      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
+      <guid>https://inchan.dev/posts/202410101108/</guid>
+      <category domain="https://inchan.dev/categories/apps/">Apps</category>
       <description>2024년 3월부로 더이상 맥 앱스토어에서는 PopClip을 구매할 수 없기에 기존 MacAppStore(MAS) 버전으로부터 StandAlone License 버전으로의 마이그레이션 방법을 소개한다.</description>
     </item>
     <item>
       <title>macOS에서 SSH 키 자동 등록 및 암호 관리 문제 해결 방법</title>
-      <link>https://labs.inchan.dev/posts/202410042356/</link>
+      <link>https://inchan.dev/posts/202410042356/</link>
       <pubDate>Fri, 04 Oct 2024 23:56:31 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202410042356/</guid>
-      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
+      <guid>https://inchan.dev/posts/202410042356/</guid>
+      <category domain="https://inchan.dev/categories/env/">Env</category>
       <description>재부팅 후 SSH 키가 자동으로 등록되지 않거나 암호를 계속해서 묻는 문제? macOS에서 SSH 키 관리와 관련된 AddKeysToAgent 및 UseKeychain 설정 문제를 해결하는 방법을 알아본다.</description>
     </item>
     <item>
       <title>GitHub 계정 다중 사용자를 위한 macOS SSH 설정 방법</title>
-      <link>https://labs.inchan.dev/posts/202410041532/</link>
+      <link>https://inchan.dev/posts/202410041532/</link>
       <pubDate>Fri, 04 Oct 2024 15:33:08 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202410041532/</guid>
-      <category domain="https://labs.inchan.dev/categories/env/">Env</category>
+      <guid>https://inchan.dev/posts/202410041532/</guid>
+      <category domain="https://inchan.dev/categories/env/">Env</category>
       <description>터미널에서 각 레포지토리별로 github 다계정 사용시 SSH키 생성 및 등록, 그리고 재부팅 이후에도 에이전트에 자동 등록하는 방법, SSH키 암호(passphrase) 사용시 macOS의 키체인을 이용해 암호입력 패스하는 방법 기술</description>
     </item>
     <item>
       <title>Alfred workflow - 네이버 검색 워크플로우 지도 검색 개선</title>
-      <link>https://labs.inchan.dev/posts/202403171602/</link>
+      <link>https://inchan.dev/posts/202403171602/</link>
       <pubDate>Sun, 17 Mar 2024 16:02:39 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202403171602/</guid>
-      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
+      <guid>https://inchan.dev/posts/202403171602/</guid>
+      <category domain="https://inchan.dev/categories/apps/">Apps</category>
       <description>알프레드 워크플로우 중, 네이버 검색 워크플로우의 지도 검색 기능 문제에 따른 해결 및 개선된 워크플로우 파일 제공</description>
     </item>
     <item>
       <title>브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법</title>
-      <link>https://labs.inchan.dev/posts/202403090724/</link>
+      <link>https://inchan.dev/posts/202403090724/</link>
       <pubDate>Sat, 09 Mar 2024 07:24:37 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202403090724/</guid>
-      <category domain="https://labs.inchan.dev/categories/apps/">Apps</category>
+      <guid>https://inchan.dev/posts/202403090724/</guid>
+      <category domain="https://inchan.dev/categories/apps/">Apps</category>
       <description>2024년 3월 현재 브라우저에서 chatGPT 입력이 되지 않는 경우 해결방법에 대한 설명</description>
     </item>
     <item>
       <title>AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기</title>
-      <link>https://labs.inchan.dev/posts/202403051335/</link>
+      <link>https://inchan.dev/posts/202403051335/</link>
       <pubDate>Tue, 05 Mar 2024 13:35:51 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202403051335/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202403051335/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>AWS에서 2024년 2월부터 퍼블릭 IPv4 주소에 대한 요금이 부과되기 시작하면서, 비용 절감을 위해 AWS 인프라를 IPv6로 전환하고 퍼블릭 IP 사용을 최소화하려는 노력이 필요해졌다. 이에 퍼블릭 IP 없이 RDS와 같은 AWS 리소스를 외부에서 접근하는 방법에 대해 자세히 설명한다.</description>
     </item>
     <item>
       <title>AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법</title>
-      <link>https://labs.inchan.dev/posts/202403051214/</link>
+      <link>https://inchan.dev/posts/202403051214/</link>
       <pubDate>Tue, 05 Mar 2024 12:14:30 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202403051214/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202403051214/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>AWS EC2에 HTTPS를 연결하는 방법중 도메인 서비스의 프록싱을 통해 바로 연결하는 방법 소개</description>
     </item>
     <item>
       <title>typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란</title>
-      <link>https://labs.inchan.dev/posts/202403010802/</link>
+      <link>https://inchan.dev/posts/202403010802/</link>
       <pubDate>Fri, 01 Mar 2024 08:02:58 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202403010802/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202403010802/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>mySQL에서 timestamp 타입 필드를 사용하고, TypeORM의 dateStrings와 timezone 옵션을 적절히 활용하여 시간대를 제어하는 방법을 다룬다. UTC 시간대를 기준으로 데이터를 처리하면서 서버와 클라이언트에서 각각 다른 시간대를 적용할 수 있는 방안에 대해 고민한 결과를 실험과 코드 예시를 통해 공유</description>
     </item>
   </channel>

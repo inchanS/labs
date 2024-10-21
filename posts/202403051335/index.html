@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기 - labs.inchan</title><meta name="author" content="inchan">
+    <title>AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기 - inchan.dev</title><meta name="author" content="inchan">
 <meta name="description" content="AWS에서 2024년 2월부터 퍼블릭 IPv4 주소에 대한 요금이 부과되기 시작하면서, 비용 절감을 위해 AWS 인프라를 IPv6로 전환하고 퍼블릭 IP 사용을 최소화하려는 노력이 필요해졌다. 이에 퍼블릭 IP 없이 RDS와 같은 AWS 리소스를 외부에서 접근하는 방법에 대해 자세히 설명한다."><meta name="keywords" content='aws, rds'>
   <meta itemprop="name" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">
   <meta itemprop="description" content="AWS에서 2024년 2월부터 퍼블릭 IPv4 주소에 대한 요금이 부과되기 시작하면서, 비용 절감을 위해 AWS 인프라를 IPv6로 전환하고 퍼블릭 IP 사용을 최소화하려는 노력이 필요해졌다. 이에 퍼블릭 IP 없이 RDS와 같은 AWS 리소스를 외부에서 접근하는 방법에 대해 자세히 설명한다.">
   <meta itemprop="datePublished" content="2024-03-05T13:35:51+09:00">
   <meta itemprop="dateModified" content="2024-10-12T05:42:19+09:00">
   <meta itemprop="wordCount" content="2401">
-  <meta itemprop="keywords" content="aws,rds"><meta property="og:url" content="https://labs.inchan.dev/posts/202403051335/">
-  <meta property="og:site_name" content="labs.inchan">
+  <meta itemprop="keywords" content="aws,rds"><meta property="og:url" content="https://inchan.dev/posts/202403051335/">
+  <meta property="og:site_name" content="inchan.dev">
   <meta property="og:title" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">
   <meta property="og:description" content="AWS에서 2024년 2월부터 퍼블릭 IPv4 주소에 대한 요금이 부과되기 시작하면서, 비용 절감을 위해 AWS 인프라를 IPv6로 전환하고 퍼블릭 IP 사용을 최소화하려는 노력이 필요해졌다. 이에 퍼블릭 IP 없이 RDS와 같은 AWS 리소스를 외부에서 접근하는 방법에 대해 자세히 설명한다.">
   <meta property="og:locale" content="ko">
@@ -30,7 +30,7 @@
 <meta name="application-name" content="inchan">
 <meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://labs.inchan.dev/posts/202403051335/" title="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기 - labs.inchan" /><link rel="prev" type="text/html" href="https://labs.inchan.dev/posts/202403051214/" title="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법" /><link rel="next" type="text/html" href="https://labs.inchan.dev/posts/202403090724/" title="브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법" /><link rel="stylesheet" href="/css/style.min.579d16bb12487293abb496e05fe32317762575c4adb9fea34925b5935847526d.css" integrity="sha256-V50WuxJIcpOrtJbgX+MjF3YldcStuf6jSSW1k1hHUm0="><link rel="preload" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://inchan.dev/posts/202403051335/" title="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기 - inchan.dev" /><link rel="prev" type="text/html" href="https://inchan.dev/posts/202403051214/" title="AWS EC2 서버에 HTTPS 적용하기(2) - Cloudflare 이용 방법" /><link rel="next" type="text/html" href="https://inchan.dev/posts/202403090724/" title="브라우저에서 chatGPT 프롬프트 입력창이 먹통일때 해결방법" /><link rel="stylesheet" href="/css/style.min.579d16bb12487293abb496e05fe32317762575c4adb9fea34925b5935847526d.css" integrity="sha256-V50WuxJIcpOrtJbgX+MjF3YldcStuf6jSSW1k1hHUm0="><link rel="preload" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
@@ -40,9 +40,9 @@
     "inLanguage": "ko",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/labs.inchan.dev\/posts\/202403051335\/"
+      "@id": "https:\/\/inchan.dev\/posts\/202403051335\/"
     },"genre": "posts","keywords": "AWS, Back-End","wordcount":  2401 ,
-    "url": "https:\/\/labs.inchan.dev\/posts\/202403051335\/","datePublished": "2024-03-05T13:35:51+09:00","dateModified": "2024-10-12T05:42:19+09:00","publisher": {
+    "url": "https:\/\/inchan.dev\/posts\/202403051335\/","datePublished": "2024-03-05T13:35:51+09:00","dateModified": "2024-10-12T05:42:19+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
         "@type": "Person",
@@ -53,7 +53,7 @@
   <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper" data-github-corner="right">
     <div class="header-title">
-      <a href="/" title="labs.inchan"><span class="typeit"><template>labs.inchan</template></span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li class="menu-item">
               <a
@@ -99,7 +99,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="labs.inchan"><span class="typeit"><template>labs.inchan</template></span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="inchan.dev"><span class="typeit"><template>inchan.dev</template></span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
@@ -335,7 +335,7 @@ UI나 일부 메뉴 이름이 다르더라도 이해하는데 큰 지장은 없�
 <div id="comments"><div id="giscus" class="comment">
           <script
             src="https://giscus.app/client.js"
-            data-repo="inchanS/labsComments"
+            data-repo="inchanS/blogComments"
             data-repo-id="R_kgDOJCnPXQ"
             data-category="Comments"
             data-category-id="DIC_kwDOJCnPXc4CjSm4"

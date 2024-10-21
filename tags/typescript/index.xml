@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>TypeScript - Tag - labs.inchan</title>
-    <link>https://labs.inchan.dev/tags/typescript/</link>
+    <title>TypeScript - Tag - inchan.dev</title>
+    <link>https://inchan.dev/tags/typescript/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.136.2 &amp; FixIt v0.3.13</generator>
     <language>ko</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Thu, 07 Mar 2024 07:14:54 +0900</lastBuildDate>
-    <atom:link href="https://labs.inchan.dev/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://inchan.dev/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Node.js 백엔드TypeScript &#43; typeORM으로 무한 대댓글 가공하기</title>
-      <link>https://labs.inchan.dev/posts/202302160417/</link>
+      <link>https://inchan.dev/posts/202302160417/</link>
       <pubDate>Thu, 16 Feb 2023 04:17:07 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202302160417/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202302160417/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>TypeORM을 사용하여 댓글과 대댓글의 무한 트리 구조를 구현하는 과정에서 발생한 문제와 그 해결 방법을 다룬다. 특히, Date 타입 필드에서 불필요한 시간대 정보(T, Z 등)와 밀리초 부분을 제거하고 원하는 형식으로 출력하기 위한 방법을 상세히 설명</description>
     </item>
     <item>
       <title>typescript - any와 unknown의 차이</title>
-      <link>https://labs.inchan.dev/posts/202301280423/</link>
+      <link>https://inchan.dev/posts/202301280423/</link>
       <pubDate>Sat, 28 Jan 2023 04:23:52 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202301280423/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202301280423/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>TypeScript에서 any 대신 unknown 타입을 사용하는 것이 왜 더 좋은까에 대해 설명 및 고찰</description>
     </item>
     <item>
       <title>typescript - satisfies operator 탐구</title>
-      <link>https://labs.inchan.dev/posts/202301280422/</link>
+      <link>https://inchan.dev/posts/202301280422/</link>
       <pubDate>Sat, 28 Jan 2023 04:22:36 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202301280422/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202301280422/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>TypeScript 4.9에서 새로 도입된 satisfies 연산자를 소개하고, 이를 사용하여 객체의 유니온 타입을 보다 정확하게 처리하는 방법을 설명</description>
     </item>
     <item>
       <title>백엔드 - typescript-express 환경에서 jest 및 node 환경에 따라 dotenv 설정 분리</title>
-      <link>https://labs.inchan.dev/posts/202301230424/</link>
+      <link>https://inchan.dev/posts/202301230424/</link>
       <pubDate>Mon, 23 Jan 2023 04:24:50 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202301230424/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202301230424/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>Jest를 이용한 테스트 환경에서 개발 DB와 테스트 DB를 분리하고, 환경별로 dotenv 파일을 유동적으로 적용하는 방법을 설명. cross-env 패키지를 사용하여 npm 스크립트에서 NODE_ENV 값을 설정하고, 그에 따라 각기 다른 dotenv 파일을 적용하는 과정과 TypeORM 초기화 문제를 해결하는 방법을 코드 예시와 함께 제시</description>
     </item>
     <item>
       <title>error log - typeORM을 dotEnv로 연결하여 설정시 TypeScript에서의 type Error</title>
-      <link>https://labs.inchan.dev/posts/202301180428/</link>
+      <link>https://inchan.dev/posts/202301180428/</link>
       <pubDate>Wed, 18 Jan 2023 04:28:04 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202301180428/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202301180428/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>TypeScript로 TypeORM을 설정할 때, dotenv에서 불러온 설정값이 TypeORM의 타입과 일치하지 않아 발생하는 타입 에러를 해결하는 방법을 설명</description>
     </item>
     <item>
       <title>typescript - typeorm 연결 오류 해결</title>
-      <link>https://labs.inchan.dev/posts/202212130459/</link>
+      <link>https://inchan.dev/posts/202212130459/</link>
       <pubDate>Tue, 13 Dec 2022 04:59:30 +0900</pubDate><author>song@inchan.dev (inchan)</author>
-      <guid>https://labs.inchan.dev/posts/202212130459/</guid>
-      <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
+      <guid>https://inchan.dev/posts/202212130459/</guid>
+      <category domain="https://inchan.dev/categories/dev/">Dev</category>
       <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;h3 id=&#34;typescript에서의-typeorm-연결-오류&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;typescript에서의 typeorm 연결 오류&lt;/span&gt;&#xA;  &lt;a href=&#34;#typescript%ec%97%90%ec%84%9c%ec%9d%98-typeorm-%ec%97%b0%ea%b2%b0-%ec%98%a4%eb%a5%98&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;대략 14시부터 22시까지 무려 8시간을 끼니도 거른채 뚫어져라 모니터만 쳐다보며 찾았다.&lt;/p&gt;</description>
     </item>
   </channel>
