@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <title>AWS Public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기 - labs.inchan</title><meta name="author" content="inchan">
-<meta name="description" content="AWS에서 2024년 2월부터 퍼블릭 IPv4 주소에 대한 요금이 부과되기 시작하면서, 비용 절감을 위해 AWS 인프라를 IPv6로 전환하고 퍼블릭 IP 사용을 최소화하려는 노력이 필요해졌다. 이에 퍼블릭 IP 없이 RDS와 같은 AWS 리소스를 외부에서 접근하는 방법에 대해 자세히 설명한다."><meta name="keywords" content='AWS, Back-End'>
+<meta name="description" content="AWS에서 2024년 2월부터 퍼블릭 IPv4 주소에 대한 요금이 부과되기 시작하면서, 비용 절감을 위해 AWS 인프라를 IPv6로 전환하고 퍼블릭 IP 사용을 최소화하려는 노력이 필요해졌다. 이에 퍼블릭 IP 없이 RDS와 같은 AWS 리소스를 외부에서 접근하는 방법에 대해 자세히 설명한다."><meta name="keywords" content='aws, rds'>
   <meta itemprop="name" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">
   <meta itemprop="description" content="AWS에서 2024년 2월부터 퍼블릭 IPv4 주소에 대한 요금이 부과되기 시작하면서, 비용 절감을 위해 AWS 인프라를 IPv6로 전환하고 퍼블릭 IP 사용을 최소화하려는 노력이 필요해졌다. 이에 퍼블릭 IP 없이 RDS와 같은 AWS 리소스를 외부에서 접근하는 방법에 대해 자세히 설명한다.">
   <meta itemprop="datePublished" content="2024-03-05T13:35:51+09:00">
   <meta itemprop="dateModified" content="2024-10-12T05:42:19+09:00">
   <meta itemprop="wordCount" content="757">
-  <meta itemprop="keywords" content="AWS,Back-End"><meta property="og:url" content="https://labs.inchan.dev/posts/202403051335/">
+  <meta itemprop="keywords" content="aws,rds"><meta property="og:url" content="https://labs.inchan.dev/posts/202403051335/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="AWS public IP 요금 부과에 따른 대처 및 EC2를 이용한 RDS 외부 연결하기">
   <meta property="og:description" content="AWS에서 2024년 2월부터 퍼블릭 IPv4 주소에 대한 요금이 부과되기 시작하면서, 비용 절감을 위해 AWS 인프라를 IPv6로 전환하고 퍼블릭 IP 사용을 최소화하려는 노력이 필요해졌다. 이에 퍼블릭 IP 없이 RDS와 같은 AWS 리소스를 외부에서 접근하는 방법에 대해 자세히 설명한다.">

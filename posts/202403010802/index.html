@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <title>TypeORM 시간대 설정에 관한 고찰 - TypeORM의 DateStrings와 Timezone 옵션에 따른 시간대 혼란 - labs.inchan</title><meta name="author" content="inchan">
-<meta name="description" content="mySQL에서 timestamp 타입 필드를 사용하고, TypeORM의 dateStrings와 timezone 옵션을 적절히 활용하여 시간대를 제어하는 방법을 다룬다. UTC 시간대를 기준으로 데이터를 처리하면서 서버와 클라이언트에서 각각 다른 시간대를 적용할 수 있는 방안에 대해 고민한 결과를 실험과 코드 예시를 통해 공유"><meta name="keywords" content='JavaScript, typeORM, mySQL, NodeJS, Back-End'>
+<meta name="description" content="mySQL에서 timestamp 타입 필드를 사용하고, TypeORM의 dateStrings와 timezone 옵션을 적절히 활용하여 시간대를 제어하는 방법을 다룬다. UTC 시간대를 기준으로 데이터를 처리하면서 서버와 클라이언트에서 각각 다른 시간대를 적용할 수 있는 방안에 대해 고민한 결과를 실험과 코드 예시를 통해 공유"><meta name="keywords" content='mysql, typeorm'>
   <meta itemprop="name" content="typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란">
   <meta itemprop="description" content="mySQL에서 timestamp 타입 필드를 사용하고, TypeORM의 dateStrings와 timezone 옵션을 적절히 활용하여 시간대를 제어하는 방법을 다룬다. UTC 시간대를 기준으로 데이터를 처리하면서 서버와 클라이언트에서 각각 다른 시간대를 적용할 수 있는 방안에 대해 고민한 결과를 실험과 코드 예시를 통해 공유">
   <meta itemprop="datePublished" content="2024-03-01T08:02:58+09:00">
   <meta itemprop="dateModified" content="2024-03-03T07:57:11+09:00">
   <meta itemprop="wordCount" content="1709">
-  <meta itemprop="keywords" content="JavaScript,TypeORM,MySQL,NodeJS,Back-End"><meta property="og:url" content="https://labs.inchan.dev/posts/202403010802/">
+  <meta itemprop="keywords" content="mysql,typeorm"><meta property="og:url" content="https://labs.inchan.dev/posts/202403010802/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="typeORM 시간대 설정에 관한 고찰 - typeORM의 dateStrings와 timezone 옵션에 따른 시간대 혼란">
   <meta property="og:description" content="mySQL에서 timestamp 타입 필드를 사용하고, TypeORM의 dateStrings와 timezone 옵션을 적절히 활용하여 시간대를 제어하는 방법을 다룬다. UTC 시간대를 기준으로 데이터를 처리하면서 서버와 클라이언트에서 각각 다른 시간대를 적용할 수 있는 방안에 대해 고민한 결과를 실험과 코드 예시를 통해 공유">
@@ -803,9 +803,9 @@ Date 타입을 js 객체 형태로 가지고 있으며 시스템의 Local TimeZo
     <ul><li>
           <a href="/posts/202306070208/" title="MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.">MySQL에서 이메일 재사용 가능하게 하기- Soft Delete와 Unique를 함께 활용하다.</a></li><li>
           <a href="/posts/202302250414/" title="TypeORM Transaction에서 Repository 사용하기">TypeORM Transaction에서 Repository 사용하기</a></li><li>
-          <a href="/posts/202401261149/" title="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴">Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴</a></li><li>
           <a href="/posts/202401241017/" title="Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법">Node.js와 TypeORM에서 겪은 트랜잭션 롤백 문제 - 원인 분석과 해결 방법</a></li><li>
-          <a href="/posts/202303080503/" title="Swagger를 이용한 백엔드의 효과적인 API명세 전달">Swagger를 이용한 백엔드의 효과적인 API명세 전달</a></li></ul><div class="post-footer" id="post-footer">
+          <a href="/posts/202303080503/" title="Swagger를 이용한 백엔드의 효과적인 API명세 전달">Swagger를 이용한 백엔드의 효과적인 API명세 전달</a></li><li>
+          <a href="/posts/202302160417/" title="Node.js 백엔드TypeScript &#43; TypeORM으로 무한 대댓글 가공하기">Node.js 백엔드TypeScript &#43; TypeORM으로 무한 대댓글 가공하기</a></li></ul><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
