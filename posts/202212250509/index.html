@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+<html itemscope itemtype="http://schema.org/WebPage" lang="ko">
   <head>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <title>Status Code 204 - labs.inchan</title><meta name="author" content="inchan">
-<meta name="description" content=" 덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실! statusCode 204는 response를 전송하지 않는다!! 다만 status code &ldquo;204&rdquo; 만 전달할 뿐. "><meta name="keywords" content='RESTful_API, Back-End'>
+<meta name="description" content=" 덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실! "><meta name="keywords" content='RESTful_API, Back-End'>
   <meta itemprop="name" content="status code 204">
-  <meta itemprop="description" content=" 덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실! statusCode 204는 response를 전송하지 않는다!! 다만 status code “204” 만 전달할 뿐.">
+  <meta itemprop="description" content=" 덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실!">
   <meta itemprop="datePublished" content="2022-12-25T05:09:42+09:00">
   <meta itemprop="dateModified" content="2022-12-25T05:09:42+09:00">
-  <meta itemprop="wordCount" content="147">
+  <meta itemprop="wordCount" content="455">
   <meta itemprop="keywords" content="RESTful_API,Back-End"><meta property="og:url" content="https://labs.inchan.dev/posts/202212250509/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="status code 204">
-  <meta property="og:description" content=" 덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실! statusCode 204는 response를 전송하지 않는다!! 다만 status code “204” 만 전달할 뿐.">
-  <meta property="og:locale" content="en">
+  <meta property="og:description" content=" 덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실!">
+  <meta property="og:locale" content="ko">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2022-12-25T05:09:42+09:00">
@@ -26,7 +26,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="status code 204">
-  <meta name="twitter:description" content=" 덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실! statusCode 204는 response를 전송하지 않는다!! 다만 status code “204” 만 전달할 뿐.">
+  <meta name="twitter:description" content=" 덧글 삭제 API 관련 코드 리팩토링 중, status code를 맞추다가 알게 된 사실!">
 <meta name="application-name" content="inchan">
 <meta name="apple-mobile-web-app-title" content="inchan"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -37,11 +37,11 @@
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "status code 204",
-    "inLanguage": "en",
+    "inLanguage": "ko",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/labs.inchan.dev\/posts\/202212250509\/"
-    },"genre": "posts","keywords": "RESTful_API, Back-End","wordcount":  147 ,
+    },"genre": "posts","keywords": "RESTful_API, Back-End","wordcount":  455 ,
     "url": "https:\/\/labs.inchan.dev\/posts\/202212250509\/","datePublished": "2022-12-25T05:09:42+09:00","dateModified": "2022-12-25T05:09:42+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
@@ -164,7 +164,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Status Code 204</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2022-12-25 05:09:42"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2022-12-25">2022-12-25</time></span>&nbsp;<span title="147 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 200 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>One minute</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Status Code 204"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2022-12-25 05:09:42"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2022-12-25">2022-12-25</time></span>&nbsp;<span title="455 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 500 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>One minute</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Status Code 204"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">

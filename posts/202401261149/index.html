@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+<html itemscope itemtype="http://schema.org/WebPage" lang="ko">
   <head>
     
     <meta charset="utf-8">
@@ -11,12 +11,12 @@
   <meta itemprop="description" content="OOP로 작성된 NodeJS 백엔드 코드에서 리포지토리의 단일 인스턴스 생성을 위한 리팩토링 과정 설명">
   <meta itemprop="datePublished" content="2024-01-26T11:49:52+09:00">
   <meta itemprop="dateModified" content="2024-01-28T12:55:05+09:00">
-  <meta itemprop="wordCount" content="1086">
+  <meta itemprop="wordCount" content="2601">
   <meta itemprop="keywords" content="nodejs,oop"><meta property="og:url" content="https://labs.inchan.dev/posts/202401261149/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴">
   <meta property="og:description" content="OOP로 작성된 NodeJS 백엔드 코드에서 리포지토리의 단일 인스턴스 생성을 위한 리팩토링 과정 설명">
-  <meta property="og:locale" content="en">
+  <meta property="og:locale" content="ko">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-01-26T11:49:52+09:00">
@@ -38,11 +38,11 @@
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴",
-    "inLanguage": "en",
+    "inLanguage": "ko",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/labs.inchan.dev\/posts\/202401261149\/"
-    },"genre": "posts","keywords": "project_review, NodeJS, Back-End","wordcount":  1086 ,
+    },"genre": "posts","keywords": "project_review, NodeJS, Back-End","wordcount":  2601 ,
     "url": "https:\/\/labs.inchan.dev\/posts\/202401261149\/","datePublished": "2024-01-26T11:49:52+09:00","dateModified": "2024-01-28T12:55:05+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
@@ -165,7 +165,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2024-01-26 11:49:52"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-26">2024-01-26</time></span>&nbsp;<span title="Updated on 2024-01-28 12:55:05"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-28">2024-01-28</time></span>&nbsp;<span title="1086 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1100 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>6 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2024-01-26 11:49:52"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-26">2024-01-26</time></span>&nbsp;<span title="Updated on 2024-01-28 12:55:05"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-28">2024-01-28</time></span>&nbsp;<span title="2601 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 2700 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>6 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Node.js에서 OOP 기반 리포지토리에 적용한 싱글톤 디자인패턴"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+<html itemscope itemtype="http://schema.org/WebPage" lang="ko">
   <head>
     
     <meta charset="utf-8">
@@ -11,12 +11,12 @@
   <meta itemprop="description" content="jest.spyOn() 사용중 모듈 분리부터 OOP까지의 리팩토링 과정 기술">
   <meta itemprop="datePublished" content="2023-06-29T12:58:27+09:00">
   <meta itemprop="dateModified" content="2023-06-29T12:58:27+09:00">
-  <meta itemprop="wordCount" content="1584">
+  <meta itemprop="wordCount" content="3412">
   <meta itemprop="keywords" content="Project_review,Jest,Debugging"><meta property="og:url" content="https://labs.inchan.dev/posts/202306291258/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="error log - jest.spyOn()에서 재사용함수에 대한 모의 불가">
   <meta property="og:description" content="jest.spyOn() 사용중 모듈 분리부터 OOP까지의 리팩토링 과정 기술">
-  <meta property="og:locale" content="en">
+  <meta property="og:locale" content="ko">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2023-06-29T12:58:27+09:00">
@@ -38,11 +38,11 @@
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "error log - jest.spyOn()에서 재사용함수에 대한 모의 불가",
-    "inLanguage": "en",
+    "inLanguage": "ko",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/labs.inchan.dev\/posts\/202306291258\/"
-    },"genre": "posts","keywords": "project_review, Jest, Debugging","wordcount":  1584 ,
+    },"genre": "posts","keywords": "project_review, Jest, Debugging","wordcount":  3412 ,
     "url": "https:\/\/labs.inchan.dev\/posts\/202306291258\/","datePublished": "2023-06-29T12:58:27+09:00","dateModified": "2023-06-29T12:58:27+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
@@ -165,7 +165,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Error Log - Jest.spyOn()에서 재사용함수에 대한 모의 불가</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2023-06-29 12:58:27"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-29">2023-06-29</time></span>&nbsp;<span title="1584 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1600 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>8 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Error Log - Jest.spyOn()에서 재사용함수에 대한 모의 불가"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2023-06-29 12:58:27"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-06-29">2023-06-29</time></span>&nbsp;<span title="3412 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 3500 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>7 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Error Log - Jest.spyOn()에서 재사용함수에 대한 모의 불가"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">

@@ -5,7 +5,7 @@
     <link>https://labs.inchan.dev/tags/back-end/</link>
     <description>개발 과정에서 얻은 다양한 지식과 인사이트를 공유하는 블로그입니다. 백엔드, 프론트엔드, 다양한 프로그래밍 언어와 기술을 다룹니다.</description>
     <generator>Hugo 0.136.2 &amp; FixIt v0.3.13</generator>
-    <language>en</language>
+    <language>ko</language>
     <managingEditor>song@inchan.dev (inchan)</managingEditor>
     <webMaster>song@inchan.dev (inchan)</webMaster>
     <lastBuildDate>Sat, 12 Oct 2024 05:42:19 +0900</lastBuildDate>
@@ -128,7 +128,7 @@
       <pubDate>Sun, 25 Dec 2022 05:09:42 +0900</pubDate><author>song@inchan.dev (inchan)</author>
       <guid>https://labs.inchan.dev/posts/202212250509/</guid>
       <category domain="https://labs.inchan.dev/categories/dev/">Dev</category>
-      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;덧글 삭제 API 관련 코드 리팩토링 중,&#xA;status code를 맞추다가 알게 된 사실!&#xA; &lt;/p&gt;&#xA;&lt;p&gt;statusCode 204는&#xA;response를 전송하지 않는다!!&#xA;다만 &lt;strong&gt;status code &amp;ldquo;204&amp;rdquo;&lt;/strong&gt; 만 전달할 뿐.&#xA; &lt;/p&gt;</description>
+      <description>&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;덧글 삭제 API 관련 코드 리팩토링 중,&#xA;status code를 맞추다가 알게 된 사실!&#xA; &lt;/p&gt;</description>
     </item>
     <item>
       <title>DBmate 사용법</title>

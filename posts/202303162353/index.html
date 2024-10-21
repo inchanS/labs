@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+<html itemscope itemtype="http://schema.org/WebPage" lang="ko">
   <head>
     
     <meta charset="utf-8">
@@ -11,12 +11,12 @@
   <meta itemprop="description" content="코드에 NODE_ENV 설정이 되어있을 경우, EC2에서 PM2 실행시 NODE_ENV 설정 명령 처리에 대한 에러 노트">
   <meta itemprop="datePublished" content="2023-03-16T23:56:16+09:00">
   <meta itemprop="dateModified" content="2023-03-16T23:56:16+09:00">
-  <meta itemprop="wordCount" content="218">
+  <meta itemprop="wordCount" content="449">
   <meta itemprop="keywords" content="AWS,JavaScript,Project_review,Debugging"><meta property="og:url" content="https://labs.inchan.dev/posts/202303162353/">
   <meta property="og:site_name" content="labs.inchan">
   <meta property="og:title" content="error log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어">
   <meta property="og:description" content="코드에 NODE_ENV 설정이 되어있을 경우, EC2에서 PM2 실행시 NODE_ENV 설정 명령 처리에 대한 에러 노트">
-  <meta property="og:locale" content="en">
+  <meta property="og:locale" content="ko">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2023-03-16T23:56:16+09:00">
@@ -39,11 +39,11 @@
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "headline": "error log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어",
-    "inLanguage": "en",
+    "inLanguage": "ko",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/labs.inchan.dev\/posts\/202303162353\/"
-    },"genre": "posts","keywords": "AWS, JavaScript, project_review, Debugging","wordcount":  218 ,
+    },"genre": "posts","keywords": "AWS, JavaScript, project_review, Debugging","wordcount":  449 ,
     "url": "https:\/\/labs.inchan.dev\/posts\/202303162353\/","datePublished": "2023-03-16T23:56:16+09:00","dateModified": "2023-03-16T23:56:16+09:00","publisher": {
       "@type": "Organization",
       "name": "inchan"},"author": {
@@ -166,7 +166,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Error Log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2023-03-16 23:56:16"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-03-16">2023-03-16</time></span>&nbsp;<span title="218 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 300 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>2 minutes</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Error Log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img loading="lazy" src="/images/avatar.png" alt="inchan" data-title="inchan" width="20" height="20" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;inchan</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dev/" class="post-category" title="Category - Dev"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Dev</a></span></div><div class="post-meta-line"><span title="published on 2023-03-16 23:56:16"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-03-16">2023-03-16</time></span>&nbsp;<span title="449 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 500 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>One minute</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Error Log - EC2에서 PM2 실행시 NODE_ENV 설정 명령어"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;views
           </span>&nbsp;</div>
     </div><div class="content" id="content"><p> </p>
 <p>AWS EC2에 배포를 하려하는데, 조그만 문제가 하나 생겼다.<br>
